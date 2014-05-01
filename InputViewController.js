@@ -43,6 +43,7 @@ function handleMouseDblClickonCanvas(event) {
     
     
     doubleTap();
+    mouseDown = false;
     
 }
 
