@@ -1,0 +1,141 @@
+Amaranth
+Amber
+Amethyst
+Apricot
+Aqua
+Aquamarine
+Arsenic
+Auburn
+Azure
+Baby blue
+Beige
+Bittersweet
+Black
+Blue
+Bole
+Bronze
+Brown
+Buff
+Burgundy
+Burnt umber
+Byzantium
+Caput Mortuum
+Cardinal
+Carmine
+Carrot Orange
+Celadon
+Celeste
+Cerise
+Cerulean
+Charcoal
+Chartreuse
+Chocolate
+Cinnamon
+Cobalt
+Copper
+coral
+Cordovan
+Cream
+Crimson
+Cyan
+Denim
+Desert sand
+Ecru
+Eggplant
+Egyptian Blue
+Emerald
+Fallow
+Feldgrau
+Folly
+Forest green
+Fuchsia
+Fulvous
+Gamboge
+Gold
+Goldenrod
+Gray
+Green
+Harlequin
+Heliotrope
+Hot pink
+hue
+Indigo
+Iris
+ivory
+Jade
+Jet
+Jonquil
+Jungle green
+Khaki
+Lavender
+Lemon
+Lilac
+Lime
+Magenta
+Mahogany
+Majorelle Blue
+Malachite
+Maroon
+Mauve
+Mint
+Mustard
+Navy
+navy blue
+Ochre
+Olive
+Orange
+Orchid
+Peach
+Periwinkle
+persimmon
+pewter
+Phthalo Blue
+Pink
+Platinum
+Plum
+Puce
+Pumpkin
+Purple
+Razzmatazz
+Red
+Rose
+Ruby
+Russet
+Rust
+Saffron
+Salmon
+Sapphire
+Scarlet
+Sea green
+Sepia
+shade
+shamrock
+Sienna
+Silver
+Sinopia
+Skobeloff
+Slate
+Steel blue
+Tan
+Tangerine
+Taupe
+Tawny
+Teal
+Terracotta
+Thistle
+Tomato
+tomato
+topaz
+Turquoise
+Ultramarine
+Umber
+Vermilion
+Violet
+Viridian
+wheat
+White
+Wisteria
+Xanadu
+Yellow
+Yellow Green
+Zaffre
