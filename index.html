@@ -101,7 +101,7 @@
     }
     
     #starbox {
-        margin-left: 50px;
+        margin-left: 40px;
     }
     
     #namebox{
@@ -124,7 +124,7 @@
         font-family: arial, Helvetica, sans-serif;
         font-size:  24px; 
         font-weight:  500;// bold;
-        margin-left: 40px;
+        margin-left : 45px;
         text-align: right;
     }
     
@@ -392,7 +392,7 @@
                 frameCount = 0;
                 elapsedTime -= 1000;
 
-                document.getElementById('test').innerHTML = "FPS3: " + fps;
+                document.getElementById('test').innerHTML = "FPS: " + fps;
             }
 
             lastTime = new Date().getTime();
@@ -414,7 +414,6 @@
         canvas.onmousemove = handleMouseMoveonCanvas;
         canvas.onmouseup = handleMouseUponCanvas;
         canvas.ondblclick = handleMouseDblClickonCanvas;
-        //canvas.onclick = handleMouseClickonCanvas;
         canvas.onmouseout = handleMouseOutonCanvas;
         
         

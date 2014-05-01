@@ -9,8 +9,6 @@ var mouseDown = false;
 
 function handleMouseDownonCanvas(event) {
     
-    
-    
     mouseDown = true;
     
     $( "#dialog" ).dialog( "close" );
@@ -36,12 +34,24 @@ function handleMouseMoveonCanvas(event) {
     
     touchesMoved(event);
     
+    if (event.preventDefault)
+        event.preventDefault();
+    else
+        event.returnValue= false;
+    return false;
+    
 }
 
 function handleMouseUponCanvas(event) {
     
     mouseDown = false;
     touchesEnd();
+    
+    if (event.preventDefault)
+        event.preventDefault();
+    else
+        event.returnValue= false;
+    return false;
 }
 
 function handleMouseDblClickonCanvas(event) {
@@ -56,14 +66,16 @@ function handleMouseDblClickonCanvas(event) {
     return false;
 }
 
-function handleMouseClickonCanvas(event) {
-    
-    mouseDown = false;
-}
+
 
 function handleMouseOutonCanvas(event){
     
     mouseDown = false;
     
+    if (event.preventDefault)
+        event.preventDefault();
+    else
+        event.returnValue= false;
+    return false;
 }
 
