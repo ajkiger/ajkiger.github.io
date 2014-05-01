@@ -392,7 +392,7 @@
                 frameCount = 0;
                 elapsedTime -= 1000;
 
-                document.getElementById('test').innerHTML = "FPS: " + fps;
+                document.getElementById('test').innerHTML = "FPS2: " + fps;
             }
 
             lastTime = new Date().getTime();
@@ -414,8 +414,10 @@
         canvas.onmousemove = handleMouseMoveonCanvas;
         canvas.onmouseup = handleMouseUponCanvas;
         canvas.ondblclick = handleMouseDblClickonCanvas;
+        canvas.onclick = handleMouseClickonCanvas;
         canvas.onmouseout = handleMouseOutonCanvas;
         
+        document.ondblclick = handleMouseDblClickonDocument;
         
         
         sceneController = new Object();
@@ -438,7 +440,7 @@
         $( "#dialog" ).dialog({
           autoOpen: false,
           height: 580,
-          width: 600,
+          width: 620,
           //modal: true,
           draggable: false,
           resizable: false,
@@ -475,7 +477,7 @@
         $( "#dialogHints" ).dialog({
           autoOpen: false,
           height: 170,
-          width: 250,
+          width: 252,
           //modal: true,
           draggable: false,
           resizable: false,
@@ -525,7 +527,7 @@
         $( "#dialogSettings" ).dialog({
           autoOpen: false,
           height: 200,
-          width: 250,
+          width: 252,
           //modal: true,
           draggable: false,
           resizable: false,
@@ -579,7 +581,7 @@
         $( "#dialoggames" ).dialog({
           autoOpen: false,
           height: 580,
-          width: 600,
+          width: 620,
           //modal: true,
           draggable: false,
           resizable: false,

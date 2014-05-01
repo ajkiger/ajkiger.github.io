@@ -25,29 +25,37 @@ function handleMouseMoveonCanvas(event) {
         return;
     }
     
-    
     touchesMoved(event);
-    
     
 }
 
 function handleMouseUponCanvas(event) {
     
     mouseDown = false;
-    
-    
     touchesEnd();
 }
 
 function handleMouseDblClickonCanvas(event) {
     
-    
+    mouseDown = false;
     doubleTap();
+    
+}
+
+function handleMouseClickonCanvas(event) {
+    
+    mouseDown = false;
+}
+
+function handleMouseOutonCanvas(event){
+    
     mouseDown = false;
     
 }
 
-function handleMouseOutonCanvas(event){
+
+
+function handleMouseDblClickonDocument(event){
     
     mouseDown = false;
     
