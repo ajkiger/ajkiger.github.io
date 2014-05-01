@@ -316,7 +316,7 @@ function sceneControllerLoadScene(){
     
     sceneController.postGameWinMessage = false;
     sceneController.cubeSize = sceneController.preCubeSize;
-    document.getElementById('scorebox').innerHTML = "99999";
+    document.getElementById('scorebox').innerHTML = "00000";
     //document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
     document.getElementById('scoreratebox').innerHTML = " ";
     
