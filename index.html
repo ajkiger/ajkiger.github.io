@@ -421,7 +421,7 @@
         
     }
 
-
+    var startTimer;
     function webGLStart() {
         canvas = document.getElementById("WordCubed-canvas");
         
@@ -435,17 +435,16 @@
         canvas.ondblclick = handleMouseDblClickonCanvas;
         canvas.onmouseout = handleMouseOutonCanvas;
         
-        
+        var checks = $( "#settingsformat" ).buttonset();
+        $( "#dialogSettings" ).empty().append(checks);
         
         sceneController = new Object();
         sceneControllerInit();
         sceneControllerLoadScene();
-        
-        var checks = $( "#settingsformat" ).buttonset();
-        $( "#dialogSettings" ).empty().append(checks);
+        startTimer = setTimeout(function(){GameLoop();}, 1000);
         
         
-        GameLoop();
+        //GameLoop();
     }
     
     

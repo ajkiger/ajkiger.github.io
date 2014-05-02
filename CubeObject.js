@@ -1054,6 +1054,7 @@ function cObjectUpdate() {
             firstTouch2 = false;
             firstTouch = false;
             cLImage.makeVisible = true;
+            
         }
 
 
@@ -1964,6 +1965,8 @@ function selectFinalSquare(index){
                 var turnLetters = false;
                 if (!str.wordFound && !str.hideHiddenWord)
                 {
+                    clearTimeout(starTimer1);
+                    clearTimeout(starTimer2);
                     str.wordFound = true;
                     //[self saveGameAction];
                     turnLetters = true;
@@ -1974,7 +1977,6 @@ function selectFinalSquare(index){
                 {
                     if (!str.alphabetQuestHiddenWord)
                     {
-
                         var NumberOfSquares = 0;
                         for (var i = str.wordLength -1; i >= 0; i=i-1)
                         {
@@ -1990,10 +1992,10 @@ function selectFinalSquare(index){
                         sceneController.totalLetteronCube = sceneController.totalLetteronCube + NumberOfSquares;
 
                         ResetTimer = true;
+                        
                     }
                     else
                     {
-
                         var NumberOfSquares2 = 0;
                         for (var i = str.wordLength -1; i >= 0; i=i-1)
                         {
@@ -2009,6 +2011,7 @@ function selectFinalSquare(index){
                         sceneController.totalLetteronCube = sceneController.totalLetteronCube + NumberOfSquares2;
 
                         ResetTimer = true;
+                        
                     }
                 }
 
@@ -2078,8 +2081,6 @@ function selectFinalSquare(index){
                     if(!(numberStars === 3)){
                         updateScoreStar("BlueStars");
                     }
-                    clearTimeout(starTimer1);
-                    clearTimeout(starTimer2);
                     
                     starTimer1 = setTimeout(function(){updateScoreStar("RedStars");}, 30000);
                     starTimer2 = setTimeout(function(){updateScoreStar("YellowStars");}, 60000);

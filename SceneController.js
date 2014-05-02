@@ -29,6 +29,8 @@ var secondTime;
 var weeklyLists;
 var weeklyWordLists = new Array();
 
+
+
 function sceneControllerInit(){
     
     sceneController.totalLetteronCube = 0;
@@ -401,6 +403,7 @@ function sceneControllerLoadScene(){
     sceneController.stopCubeSceneObject = false;
     
     $( "#container" ).fadeTo(4000, 1.0);
+    
 }
 
 
