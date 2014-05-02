@@ -105,7 +105,9 @@ var setupWebGL = function(canvas, opt_attribs) {
   function showLink(str) {
     var container = canvas.parentNode;
     if (container) {
-      container.innerHTML = makeFailHTML(str);
+        //$( "#container" ).fadeTo(400, 1.0);
+        container.innerHTML = makeFailHTML(str);
+      
     }
   };
 
@@ -117,6 +119,7 @@ var setupWebGL = function(canvas, opt_attribs) {
   var context = create3DContext(canvas, opt_attribs);
   if (!context) {
     showLink(OTHER_PROBLEM);
+    
   }
   return context;
 };
