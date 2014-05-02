@@ -78,4 +78,3 @@ function handleMouseOutonCanvas(event){
         event.returnValue= false;
     return false;
 }
-

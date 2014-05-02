@@ -22,6 +22,7 @@
 <script type="text/javascript" src="ParticleSystem.js"></script>
 <script type="text/javascript" src="Particle.js"></script>
 <script type="text/javascript" src="TableRowObject.js"></script>
+<script type="text/javascript" src="FormMenus.js"></script>
 
 <script type="text/javascript" src="jquery-1.10.2.js"></script>
 <script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
@@ -32,14 +33,17 @@
         background-color: #cccccc;
         color: black;
         
+        height: 100%;
+        overflow: hidden;
+        
     }
     
     
     
     #WordCubed-canvas{
         
-        //margin-top: 5px;
-        //margin-bottom: 5px;
+        width: 640px;
+        height: 640px;
         
     }
     
@@ -411,7 +415,7 @@
                 frameCount = 0;
                 elapsedTime -= 1000;
 
-                document.getElementById('test').innerHTML = "FPS: " + fps;
+                //document.getElementById('test').innerHTML = "FPS: " + fps;
             }
 
             lastTime = new Date().getTime();
@@ -435,6 +439,7 @@
         canvas.ondblclick = handleMouseDblClickonCanvas;
         canvas.onmouseout = handleMouseOutonCanvas;
         
+        
         var checks = $( "#settingsformat" ).buttonset();
         $( "#dialogSettings" ).empty().append(checks);
         
@@ -448,6 +453,8 @@
         //GameLoop();
     }
     
+    
+   
     
     $(function() {
         $( document ).tooltip();
