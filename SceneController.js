@@ -400,6 +400,7 @@ function sceneControllerLoadScene(){
     sceneController.endAnimationActive = false;
     sceneController.stopCubeSceneObject = false;
     
+    $( "#container" ).fadeTo(4000, 1.0);
 }
 
 
@@ -524,6 +525,7 @@ function SceneControllerUpdateModel(){
         particleEmitterRed.update();
         particleEmitterBlue.update();
         particleEmitterBlack.update();
+        
         
         
         if(!sceneController.postGameWinMessage && sceneController.gameOver && particleEmitterYellow.activeParticles.length === 0 && particleEmitterRed.activeParticles.length === 0 && particleEmitterBlue.activeParticles.length === 0 && particleEmitterBlack.activeParticles.length === 0){
