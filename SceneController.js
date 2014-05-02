@@ -402,7 +402,7 @@ function sceneControllerLoadScene(){
     sceneController.endAnimationActive = false;
     sceneController.stopCubeSceneObject = false;
     
-    $( "#container" ).fadeTo(4000, 1.0);
+    $( "#container" ).fadeTo(5500, 1.0);
     
 }
 
