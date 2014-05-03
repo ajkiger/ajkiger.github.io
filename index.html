@@ -29,9 +29,13 @@ and open the template in the editor.
             }
             else if (WURFL.is_mobile){
                 window.open ("index2.html", "_self", "height=830, width=660,toolbar=no,scrollbars=no,menubar=no");
+                
+                alert("  Device: " + WURFL.complete_device_name + "  Form Factor: " + WURFL.form_factor);
             }
             else {
-                window.open ("index2.html", "_default", "height=830, width=660,toolbar=no,scrollbars=no,menubar=no");
+                window.open ("index2.html", "_self", "height=830, width=660,toolbar=no,scrollbars=no,menubar=no");
+                
+                //alert("  Device: " + WURFL.complete_device_name + "  Form Factor: " + WURFL.form_factor);
             }
             
         </script>
