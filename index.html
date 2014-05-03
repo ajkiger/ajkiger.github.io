@@ -12,13 +12,26 @@ and open the template in the editor.
         
         <script type='text/javascript' src="//wurfl.io/wurfl.js"></script>
         
+        <style>
+            body {
+
+                background-color: #cccccc;
+                height: 100%;
+                overflow: hidden;
+
+            }
+        </style>
+        
         <script type="text/javascript">
             
-            if(WURFL.is_mobile){
+            if(WURFL.is_mobile === null || WURFL.is_mobile === undefined){
+                window.open ("index2.html", "_self", "height=830, width=660,toolbar=no,scrollbars=no,menubar=no");
+            }
+            else if (WURFL.is_mobile){
                 window.open ("index2.html", "_self", "height=830, width=660,toolbar=no,scrollbars=no,menubar=no");
             }
             else {
-                window.open ("index2.html", "_blank", "height=830, width=660,toolbar=no,scrollbars=no,menubar=no");
+                window.open ("index2.html", "_default", "height=830, width=660,toolbar=no,scrollbars=no,menubar=no");
             }
             
         </script>
