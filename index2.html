@@ -464,6 +464,20 @@
               e.preventDefault();
             }
          );
+ 
+    $(document).bind(
+               'touchstart',
+               function(e) {
+                 e.preventDefault();
+               }
+            );
+   
+   $(document).bind(
+            'touchend',
+            function(e) {
+              e.preventDefault();
+            }
+         );
    
     $(function() {
         $( document ).tooltip();
