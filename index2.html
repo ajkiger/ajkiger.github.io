@@ -452,11 +452,18 @@
         sceneControllerInit();
         sceneControllerLoadScene();
         
+        
+        
         startTimer = setTimeout(function(){GameLoop();}, 1500);
         
     }
     
-    
+    $(document).bind(
+            'touchmove',
+            function(e) {
+              e.preventDefault();
+            }
+         );
    
     $(function() {
         $( document ).tooltip();
