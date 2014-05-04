@@ -457,22 +457,30 @@
         startTimer = setTimeout(function(){GameLoop();}, 1500);
         
     }
-    
+    /*
     $(document).bind(
             'touchmove',
             function(e) {
               e.preventDefault();
             }
          );
- 
+    */
+   
+    $(document).on({
+        "touchmove" : function(e){ e.preventDefault(); }
+    });
     
+    $(document).on({
+        //"click": function() { alert( "clicked!" ); },
+        "mouseover": function() { $( document ).tooltip(); }
+    });
    
-   
-   
+    /*
     $(function() {
         $( document ).tooltip();
     });
-
+    */
+   
     $(function() {
         $( "#dialog" ).dialog({
           autoOpen: false,
