@@ -468,16 +468,11 @@
          );
     */
     
-    $(document).on({
+    $("#container").on({
         "touchmove" : function(e){ e.preventDefault(); }
     });
     
-    $("#wordboxcontainer").on({
-        "touchmove" : function(e){ return true; }
-    });
     
-    //$('#some_link').unbind('click');
-   
     /*
     $(function() {
         $( document ).tooltip();
