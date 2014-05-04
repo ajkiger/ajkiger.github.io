@@ -13,10 +13,6 @@
     var mvp = document.getElementById('viewport');
     mvp.setAttribute('content',tempScale);
     
-    //tempScale = browserWidth/680;
-    //tempScale = "maximum-scale=" + tempScale;
-    //mvp.setAttribute('content',tempScale);
-    
 </script>
 
 <script type="text/javascript" src="gl-matrix-min.js"></script>
@@ -261,17 +257,6 @@
     var canvas;
 
     function initGL(canvas) {
-        /*
-        try {
-            gl = canvas.getContext("experimental-webgl");
-            gl.viewportWidth = canvas.width;
-            gl.viewportHeight = canvas.height;
-        } catch (e) {
-        }
-        if (!gl) {
-            alert("Could not initialise WebGL, sorry :-(");
-        }
-        */
         
         gl = WebGLUtils.setupWebGL(canvas);
         if (!gl) {
@@ -449,9 +434,9 @@
         
         canvas = document.getElementById("WordCubed-canvas");
         
-        initGL(canvas);
-        initShaders();
-        initContext();
+        //initGL(canvas);
+        //initShaders();
+        //initContext();
         
         canvas.onmousedown = handleMouseDownonCanvas;
         canvas.onmousemove = handleMouseMoveonCanvas;
