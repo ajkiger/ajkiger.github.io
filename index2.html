@@ -13,6 +13,10 @@
     var mvp = document.getElementById('viewport');
     mvp.setAttribute('content',tempScale);
     
+    tempScale = browserWidth/680;
+    tempScale = "maximum-scale=" + tempScale;
+    mvp.setAttribute('content',tempScale);
+    
 </script>
 
 <script type="text/javascript" src="gl-matrix-min.js"></script>
