@@ -49,7 +49,7 @@ function sceneControllerInit(){
     sceneController.preCubeSize = null;
     sceneController.cubeSizeCount = 1;
     sceneController.cubeColorKey = "Normal";  // "Normal"  "Inverse"
-    sceneController.maxWordKey = "High Word Density";  // "Low Word Density"  "High Word Density"
+    sceneController.maxWordKey = "Low Word Density";  // "Low Word Density"  "High Word Density"
     sceneController.wordListPlay = null;
     sceneController.currentGame = null;
     sceneController.todayDate = getTodaysDate();

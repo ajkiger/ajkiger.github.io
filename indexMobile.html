@@ -15,6 +15,9 @@
     
 </script>
 
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
 
 <script type="text/javascript" src="gl-matrix-min.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
@@ -37,9 +40,6 @@
 <script type="text/javascript" src="FormMenus.js"></script>
 
 
-<script type="text/javascript" src="jquery-1.10.2.js"></script>
-<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
-<link rel="stylesheet" href="jquery-ui-1.10.4.custom.min.css">
 
 <style>
     body {
@@ -436,14 +436,15 @@
         
         canvas = document.getElementById("WordCubed-canvas");
         
-        initGL(canvas);
-        initShaders();
-        initContext();
+        //initGL(canvas);
+        //initShaders();
+        //initContext();
+        $( "#container" ).fadeTo(400, 1.0);
         
         canvas.onmousedown = handleMouseDownonCanvas;
         canvas.onmousemove = handleMouseMoveonCanvas;
         canvas.onmouseup = handleMouseUponCanvas;
-        canvas.ondblclick = handleMouseDblClickonCanvas;
+        //canvas.ondblclick = handleMouseDblClickonCanvas;
         canvas.onmouseout = handleMouseOutonCanvas;
         
         
@@ -459,25 +460,30 @@
         startTimer = setTimeout(function(){GameLoop();}, 1500);
         
     }
-    
+    /*
     $(document).bind(
             'touchmove',
             function(e) {
               e.preventDefault();
             }
          );
-    
+    */
     /*
     $("#container").on({
         "touchmove" : function(e){ e.preventDefault(); }
     });
     */
     
-    
+    $(function() {
+        $( "#container" ).dblclick(function(e) {
+              handleMouseDblClickonCanvas(e);
+            });
+    });
+    /*
     $(function() {
         $( document ).tooltip();
     });
-    
+    */
    
     $(function() {
         $( "#dialog" ).dialog({

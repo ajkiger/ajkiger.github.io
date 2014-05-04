@@ -1521,7 +1521,6 @@ function touchesBegan(event) {
 function touchesMoved(event) {
     var currentPoint = new Point(event.clientX, event.clientY);
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    xAdjustment = (browserWidth - 640)/2;
     var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var netGain = event.pageY - event.clientY;
     if(browserHeight > 828){
