@@ -471,10 +471,9 @@
         "dblclick" : function(e){ e.preventDefault(); }
     });
     
-    $("#container").on({
-        "touchstart" : function(e){ e.preventDefault(); }
-        
-    });
+    $("#container").dblclick(
+        function(e){ e.preventDefault(); }
+    );
     
     
    
