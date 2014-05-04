@@ -2,8 +2,18 @@
 
 <head>
 <title>Word Cubed Weekly</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="windows-1252">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,">
+<script>
+    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    
+    var tempScale = browserWidth/660;
+    tempScale = "initial-scale=" + tempScale;
+    
+    var mvp = document.getElementById('viewport');
+    mvp.setAttribute('content',tempScale);
+    
+</script>
 
 <script type="text/javascript" src="gl-matrix-min.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
