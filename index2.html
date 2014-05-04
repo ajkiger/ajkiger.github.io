@@ -467,21 +467,11 @@
     */
    
     $(document).on({
-        "touchmove" : function(e){ e.preventDefault(); },
-        "click" : function(e){ e.preventDefault(); }
+        "touchmove" : function(e){ e.preventDefault(); }
+        
     });
     
-    $( document ).on({
-        
-        "click": function() { $( "#btninfo" ).click(function() {
-          var tabs = $("#tabs");
-          $( "#dialog" ).empty().append(tabs);
-          $( "#dialog" ).dialog( "open" );
-          tabs.show();
-          tabs.tabs();
-        }); },
-        "mouseover": function() { $( "#btninfo" ).tooltip(); }
-    });
+    
    
     /*
     $(function() {
