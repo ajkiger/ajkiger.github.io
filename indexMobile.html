@@ -140,6 +140,7 @@
     
     
     #starbox {
+        margin-top: 2px;
         margin-left: 50px;
     }
     
@@ -779,6 +780,10 @@
 
 <body onload="webGLStart();">
     
+    <div id="dialogMenu" title="WORD CUBED MENU">
+        <button id = "namebox" type="button" onclick="ButtonHints();">WORD CUBED MENU</button><br>
+    </div>
+    
     <div id="btncontainer">
         
         <label id="starbox" ><img id="starimage" src="images/blueStar40x40.png" width="30" height="30" alt="Blue" title=" 3 Stars/Letter "></label>
@@ -795,9 +800,7 @@
         <p id="wordbox"> </p>
     </div>
     
-    <div id="dialogMenu" title="WORD CUBED MENU">
-        <button id = "namebox" type="button" onclick="ButtonHints();">WORD CUBED MENU</button><br>
-    </div>
+    
     
     <div id="dialog" title="Information">
         <p></p>
