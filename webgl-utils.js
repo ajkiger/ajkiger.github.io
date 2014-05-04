@@ -89,7 +89,11 @@ var GET_A_WEBGL_BROWSER = '' +
  */
 var OTHER_PROBLEM = '' +
   "It doesn't appear your computer can support WebGL.<br/>" +
-  '<a href="http://get.webgl.org/troubleshooting/">Click here for more information.</a>';
+  '<a href="http://get.webgl.org/troubleshooting/">Click here for more information.</a>' +
+  "<br/><br/><br/>Word Cubed & Word Head are available in the App Store.<br/><br/>" +
+  '<a href="https://itunes.apple.com/us/app/word-cubed-3d-word-search/id672401704?mt=8">Word Cubed</a>' +
+  "<br/><br/>" +
+  '<a href="https://itunes.apple.com/us/app/word-head/id561785863?mt=8">Word Head</a>';
 
 /**
  * Creates a webgl context. If creation fails it will
