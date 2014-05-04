@@ -318,8 +318,10 @@ function sceneControllerLoadScene(){
     
     sceneController.postGameWinMessage = false;
     sceneController.cubeSize = sceneController.preCubeSize;
-    document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
-    document.getElementById('scoreratebox').innerHTML = " ";
+    //document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+    //document.getElementById('scoreratebox').innerHTML = " ";
+    document.getElementById('scorebox').innerHTML = "99999";
+    document.getElementById('scoreratebox').innerHTML = "100%";
     
     cubeBoard = new Array();
     setupCube();
