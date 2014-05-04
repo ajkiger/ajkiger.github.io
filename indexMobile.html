@@ -114,6 +114,7 @@
     
     #btncontainer{
         width: 640px;
+        height: 50px;
         margin-left: auto;
         margin-right: auto;
         
@@ -464,14 +465,14 @@
         startTimer = setTimeout(function(){GameLoop();}, 1500);
         
     }
-    
+    /*
     $(document).bind(
             'touchmove',
             function(e) {
               e.preventDefault();
             }
          );
-    
+    */
     /*
     $("#container").on({
         "touchmove" : function(e){ e.preventDefault(); }
@@ -802,7 +803,7 @@
     </div>
     
     <div id="dialogMenu" title="HINTS - SETTINGS - GAMES - INFO">
-        <button id = "namebox" type="button" onclick="ButtonHints();"><img alt="HINTS - SETTINGS - GAMES - INFO" src="images/games2.png" width="40" height="40"></button><br>
+        <button id = "namebox" type="button" onclick="ButtonHints();"><img alt="HINTS - SETTINGS - GAMES - INFO" src="images/games2.png" width="30" height="30"></button><br>
     </div>
     
     <div id="dialog" title="Information">
