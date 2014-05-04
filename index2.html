@@ -91,7 +91,7 @@
         
         //float: bottom;
         //float: none;
-        overflow-y: auto;
+        overflow-y: hidden;
         
         font-family: arial, Helvetica, sans-serif;
         font-size:  24px; 
@@ -443,7 +443,7 @@
         canvas.onmousedown = handleMouseDownonCanvas;
         canvas.onmousemove = handleMouseMoveonCanvas;
         canvas.onmouseup = handleMouseUponCanvas;
-        canvas.ondblclick = handleMouseDblClickonCanvas;
+        //canvas.ondblclick = handleMouseDblClickonCanvas;
         canvas.onmouseout = handleMouseOutonCanvas;
         
         
@@ -459,20 +459,25 @@
         startTimer = setTimeout(function(){GameLoop();}, 1500);
         
     }
-    /*
+    
     $(document).bind(
             'touchmove',
             function(e) {
               e.preventDefault();
             }
          );
-    */
     
+    /*
     $("#container").on({
         "touchmove" : function(e){ e.preventDefault(); }
     });
+    */
     
-    
+    $(function() {
+        $( "#container" ).dblclick(function(e) {
+              handleMouseDblClickonCanvas(e);
+            });
+    });
     /*
     $(function() {
         $( document ).tooltip();
@@ -507,7 +512,7 @@
           }
         });
         
-        $( "#btninfo" ).click(function() {
+        $( "#wordbox" ).click(function() {  //"#btninfo"
           var tabs = $("#tabs");
           $( "#dialog" ).empty().append(tabs);
           $( "#dialog" ).dialog( "open" );
