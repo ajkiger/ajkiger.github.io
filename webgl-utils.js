@@ -91,7 +91,7 @@ var OTHER_PROBLEM = '' +
   "Word Cubed Weekly requires WebGL to function.<br/>" +
   "It doesn't appear your computer can support WebGL.<br/>" +
   '<a href="http://get.webgl.org/troubleshooting/">Click here for more information.</a>' +
-  "<br/><br/><br/>Word Cubed & Word Head are available for the iPad and iPhone in the App Store.<br/><br/>" +
+  "<br/><br/><br/>Word Cubed & Word Head are available for<br/>iOS devices in the App Store.<br/><br/>" +
   '<a href="https://itunes.apple.com/us/app/word-cubed-3d-word-search/id672401704?mt=8">Word Cubed</a>' +
   "<br/><br/>" +
   '<a href="https://itunes.apple.com/us/app/word-head/id561785863?mt=8">Word Head</a>';
