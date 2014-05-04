@@ -466,14 +466,14 @@
         startTimer = setTimeout(function(){GameLoop();}, 1500);
         
     }
-    /*
+    
     $(document).bind(
             'touchmove',
             function(e) {
               e.preventDefault();
             }
          );
-    */
+    
     /*
     $("#container").on({
         "touchmove" : function(e){ e.preventDefault(); }
@@ -785,7 +785,9 @@
 
 <body onload="webGLStart();">
     
-    
+    <div id="dialogMenu" title="HINTS - SETTINGS - GAMES - INFO">
+        <button id = "namebox" type="button" onclick="ButtonHints();"><img alt="HINTS - SETTINGS - GAMES - INFO" src="images/games2.png" width="30" height="30"></button><br>
+    </div>
     
     <div id="btncontainer">
         
@@ -803,9 +805,6 @@
         <p id="wordbox"> </p>
     </div>
     
-    <div id="dialogMenu" title="HINTS - SETTINGS - GAMES - INFO">
-        <button id = "namebox" type="button" onclick="ButtonHints();"><img alt="HINTS - SETTINGS - GAMES - INFO" src="images/games2.png" width="30" height="30"></button><br>
-    </div>
     
     <div id="dialog" title="Information">
         <p></p>
