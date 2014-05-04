@@ -56,6 +56,7 @@ function handleMouseUponCanvas(event) {
 
 function handleMouseDblClickonCanvas(event) {
     
+    alert("double Tap");
     mouseDown = false;
     doubleTap();
     
