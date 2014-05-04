@@ -442,10 +442,10 @@
         
         canvas = document.getElementById("WordCubed-canvas");
         
-        //initGL(canvas);
-        //initShaders();
-        //initContext();
-        $( "#container" ).fadeTo(400, 1.0);
+        initGL(canvas);
+        initShaders();
+        initContext();
+        //$( "#container" ).fadeTo(400, 1.0);
         
         canvas.onmousedown = handleMouseDownonCanvas;
         canvas.onmousemove = handleMouseMoveonCanvas;
