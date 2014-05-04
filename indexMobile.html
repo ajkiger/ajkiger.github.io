@@ -140,7 +140,7 @@
     
     
     #starbox {
-        margin-left: 45px;
+        margin-left: 50px;
     }
     
     #namebox{
@@ -154,7 +154,7 @@
         font-family: arial, Helvetica, sans-serif;
         font-size:  22px; 
         font-weight:  500;// bold;
-        margin-left: 415px;
+        margin-left: 200px;
         text-align: right;
     }
     
@@ -163,7 +163,7 @@
         font-family: arial, Helvetica, sans-serif;
         font-size:  24px; 
         font-weight:  500;// bold;
-        margin-left : 60px;
+        margin-left : 200px;
         text-align: right;
     }
     
@@ -780,7 +780,7 @@
 <body onload="webGLStart();">
     
     <div id="btncontainer">
-        <button id = "namebox" type="button" onclick="ButtonHints();">WORD CUBED</button><br>
+        
         <label id="starbox" ><img id="starimage" src="images/blueStar40x40.png" width="40" height="40" alt="Blue" title=" 3 Stars/Letter "></label>
         <label id="scoreratebox" title=" Score Rate ">100%</label>
         <label id="scorebox" title=" Score ">99999</label>
@@ -857,8 +857,14 @@
     </div>
     
     <div id="dialogWin" title="Congratulations!">
-        <p>You Win!</p>
+        <p></p>
     </div>
+    
+    <div id="dialogMenu" title="WORD CUBED MENU">
+        <button id = "namebox" type="button" onclick="ButtonHints();">WORD CUBED MENU</button><br>
+    </div>
+    
+    
     
     
 <div id="xcoord">
