@@ -8,13 +8,10 @@
 <meta name="HandheldFriendly" content="True">
 <script>
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    
     var tempScale = browserWidth/720;
-    //tempScale = 1.0;
     tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale + ", user-scalable=no";
     var mvp = document.getElementById('viewport');
     mvp.setAttribute('content',tempScale);
-    
     
 </script>
 
@@ -127,24 +124,33 @@
     }
     
     #btnhints {
-        width: 55px;
-        height: 45px;
-        margin-left: 185px;
+        width: 40px;
+        height: 40px;
+        //margin-left: -150px;
     }
     
     #btnsettings{
-        width: 55px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
+        //margin-left: 50px;
     }
     
     #btngames{
-        width: 55px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
+        //margin-left: 50px;
     }
     
     #btninfo{
-        width: 55px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
+        //margin-left: 50px;
+    }
+    
+    #starimage {
+        width: 40px;
+        height: 40px;
+        //margin-left: -150px;
     }
     
     
@@ -166,8 +172,8 @@
         font-family: arial, Helvetica, sans-serif;
         font-size:  32px; 
         font-weight:  700;// bold;
-        margin-left: 215px;
-        text-align: right;
+        //margin-left: 215px;
+        //text-align: right;
     }
     
     #scorebox{
@@ -175,8 +181,18 @@
         font-family: arial, Helvetica, sans-serif;
         font-size:  32px; 
         font-weight:  700;// bold;
-        margin-left : 150px;
-        text-align: right;
+        //margin-left : 150px;
+        //text-align: right;
+    }
+    
+    #btnTable{
+        margin: 1em 0; border-collapse: collapse; width: 100%;
+        
+    }
+    
+    #btnTable td{
+         text-align: center;
+        
     }
     
     div#weekly-games { width: 550px; margin: 20px 0; }
@@ -793,17 +809,29 @@
     
     <div id="dialogMenu" title="HINTS - SETTINGS - GAMES - INFO">
         <button id = "namebox" type="button" onclick="ButtonHints();">
-            <img alt="HINTS - SETTINGS - GAMES - INFO" src="images/menulong.png" width="278" height="40">
-        </button><br>
+            <table id="btnTable" width="100%">
+                <tr>
+                    <td><img id="btnhints" alt="Hints" src="images/hint2.png" width="40" height="40" title=" Hints "></td>
+                    <td><img id="btnsettings" alt="Settings" src="images/settings2.png" width="40" height="40" title=" Settings "></td>
+                    <td><img id="btngames" alt="Games" src="images/games2.png" width="40" height="40" title=" Games "></td>
+                    <td><img id="btninfo" alt="Info" src="images/instructions2.png" width="40" height="40" title=" Info "></td>
+                    <td></td>
+                    <td id="scoreratebox">100%</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><img id="starimage" src="images/blueStar40x40.png" width="30" height="30" alt="Blue" title=" 3 Stars/Letter "></td>
+                    <td id="scorebox">99999</td>
+                </tr>
+            </table>
+            
+        </button>
     </div>
     
-    <div id="btncontainer">
-        
-        <label id="starbox" ><img id="starimage" src="images/blueStar40x40.png" width="30" height="30" alt="Blue" title=" 3 Stars/Letter "></label>
-        <label id="scoreratebox" title=" Score Rate ">100%</label>
-        <label id="scorebox" title=" Score ">99999</label>
-    </div>
-
+    
     
     <div id="container">
         <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
