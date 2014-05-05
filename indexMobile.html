@@ -9,14 +9,14 @@
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     
     var tempScale = browserWidth/720;
-    tempScale = "initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale + ", user-scalable=no";
+    tempScale = "width=device-width, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale + ", user-scalable=no";
     
     var mvp = document.getElementById('viewport1');
     mvp.setAttribute('content',tempScale);
     
     
     var tempScale2 = browserWidth/720;
-    tempScale2 = "initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale + ", user-scalable=no";
+    tempScale2 = "width=device-width, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale + ", user-scalable=no";
     var mvp2 = document.getElementById('viewport2');
     mvp2.setAttribute('content',tempScale2);
     
@@ -50,14 +50,14 @@
 
 
 <style>
-    body {
+    body, html {
         
         background-color: #cccccc;
         color: black;
         
         height: 100%;
         overflow: hidden;
-        
+        overflow-x: hidden;
     }
     
     
