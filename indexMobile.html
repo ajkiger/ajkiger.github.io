@@ -10,7 +10,7 @@
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     
     var tempScale = browserWidth/720;
-    tempScale = 1.0;
+    //tempScale = 1.0;
     tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale + ", user-scalable=no";
     var mvp = document.getElementById('viewport');
     mvp.setAttribute('content',tempScale);
