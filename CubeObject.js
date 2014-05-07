@@ -1469,7 +1469,7 @@ function doubleTap() {
 
 function touchesBegan(event) {
     var currentPoint = new Point(event.clientX, event.clientY);
-    //var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     //var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     //var netGain = event.pageY - event.clientY;
     //if(browserHeight > 828){
@@ -1478,10 +1478,10 @@ function touchesBegan(event) {
     //else{
         //xAdjustment = (browserWidth - 640)/2 - 10;
     //}
-    //xAdjustment = (browserWidth - 640)/2;
-    xAdjustment = 16;
+    xAdjustment = (browserWidth - 640)/2;
+    //xAdjustment = 16;
     //yAdjustment = 112 - netGain; //89
-    yAdjustment = 112;
+    yAdjustment = 96;
     currentPoint.x = currentPoint.x - xAdjustment;
     currentPoint.y = currentPoint.y - yAdjustment;
     
@@ -1523,7 +1523,7 @@ function touchesBegan(event) {
 
 function touchesMoved(event) {
     var currentPoint = new Point(event.clientX, event.clientY);
-    //var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     //var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     //var netGain = event.pageY - event.clientY;
     //if(browserHeight > 828){
@@ -1532,10 +1532,10 @@ function touchesMoved(event) {
     //else{
         //xAdjustment = (browserWidth - 640)/2 - 10;
     //}
-    //xAdjustment = (browserWidth - 640)/2;
-    xAdjustment = 16;
+    xAdjustment = (browserWidth - 640)/2;
+    //xAdjustment = 16;
     //yAdjustment = 112 - netGain; //89
-    yAdjustment = 112;
+    yAdjustment = 96;
     currentPoint.x = currentPoint.x - xAdjustment;
     currentPoint.y = currentPoint.y - yAdjustment;
     
