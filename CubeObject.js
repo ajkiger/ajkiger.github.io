@@ -1469,21 +1469,23 @@ function doubleTap() {
 
 function touchesBegan(event) {
     var currentPoint = new Point(event.clientX, event.clientY);
-    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    var netGain = event.pageY - event.clientY;
+    //var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    //var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    //var netGain = event.pageY - event.clientY;
     //if(browserHeight > 828){
         //xAdjustment = (browserWidth - 640)/2;
     //}
     //else{
         //xAdjustment = (browserWidth - 640)/2 - 10;
     //}
-    xAdjustment = (browserWidth - 640)/2;
-    yAdjustment = 124 - netGain; //89
+    //xAdjustment = (browserWidth - 640)/2;
+    xAdjustment = 16;
+    //yAdjustment = 112 - netGain; //89
+    yAdjustment = 112;
     currentPoint.x = currentPoint.x - xAdjustment;
     currentPoint.y = currentPoint.y - yAdjustment;
     
-    //document.getElementById('namebox').innerHTML = "P - C: " + netGain;
+    //document.getElementById('xcoord').innerHTML = "browserWidth: " + browserWidth;
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
     //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
     
@@ -1521,21 +1523,23 @@ function touchesBegan(event) {
 
 function touchesMoved(event) {
     var currentPoint = new Point(event.clientX, event.clientY);
-    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    var netGain = event.pageY - event.clientY;
+    //var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    //var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    //var netGain = event.pageY - event.clientY;
     //if(browserHeight > 828){
         //xAdjustment = (browserWidth - 640)/2;
     //}
     //else{
         //xAdjustment = (browserWidth - 640)/2 - 10;
     //}
-    xAdjustment = (browserWidth - 640)/2;
-    yAdjustment = 124 - netGain; //89
+    //xAdjustment = (browserWidth - 640)/2;
+    xAdjustment = 16;
+    //yAdjustment = 112 - netGain; //89
+    yAdjustment = 112;
     currentPoint.x = currentPoint.x - xAdjustment;
     currentPoint.y = currentPoint.y - yAdjustment;
     
-    //document.getElementById('namebox').innerHTML = "W: " + browserWidth + "  H: " + browserHeight;
+    //document.getElementById('xcoord').innerHTML = "browserWidth: " + browserWidth;
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
     //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
     
