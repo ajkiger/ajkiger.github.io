@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -15,10 +16,14 @@
     
 </script>
 
+<script type="text/javascript" src="jquery-1.10.2.js"></script>
 
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
-<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+<link rel="stylesheet" href="jquery-ui-1.10.4.custom.min.css">
+
+<script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+<link rel="stylesheet" href="jquery.mobile-1.4.2.min.css">
+
 
 <script type="text/javascript" src="gl-matrix-min.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
@@ -57,7 +62,7 @@
     
     
     
-    #dialogMenu{
+    #topButton{
         
         width: 640px;
         margin-left: auto;
@@ -83,7 +88,7 @@
     
     #wordboxcontainer{
         
-        width: 630px;
+        width: 640px;
         height: 85px;
         
         margin-left: auto;
@@ -91,20 +96,26 @@
         margin-top: 2px;
         margin-bottom: 2px;
         
-        padding-top: 2px;
-        padding-bottom: 2px;
-        padding-left: 5px;
-        padding-right: 5px;
+        //padding-top: 2px;
+        //padding-bottom: 2px;
+        //padding-left: 5px;
+        //padding-right: 5px;
         
         //float: bottom;
         //float: none;
-        overflow-y: hidden;
+        //overflow-y:  auto;
+        overflow-x: auto;
+        
+        //font-family: arial, Helvetica, sans-serif;
+        //font-size:  24px; 
+        //font-weight:  500;// bold;
+        //background-color:  #b3b3b3;
         
         font-family: arial, Helvetica, sans-serif;
-        font-size:  24px; 
-        font-weight:  500;// bold;
-        background-color:  #b3b3b3;    
-        
+        font-size:  32px; 
+        font-weight:  700;// bold;
+        //word-wrap:  normal;
+        //word-break:  normal
     }
     
     #wordbox{
@@ -162,9 +173,10 @@
     }
     
     #namebox{
-        font-family: arial, Helvetica, sans-serif;
-        font-size:  22px; 
-        font-weight:  500;// bold;
+        width: 640px;
+        //font-family: arial, Helvetica, sans-serif;
+        //font-size:  22px; 
+        //font-weight:  500;// bold;
         
     }
     
@@ -187,12 +199,13 @@
     
     #btnTable{
         width: 100%;
-        
+        border-collapse: collapse;
+        table-layout:fixed;
     }
     
     #btnTable td{
         text-align: center;
-        
+        overflow: hidden;
     }
     
     div#weekly-games { width: 550px; margin: 20px 0; }
@@ -464,10 +477,10 @@
         
         canvas = document.getElementById("WordCubed-canvas");
         
-        initGL(canvas);
-        initShaders();
-        initContext();
-        //$( "#container" ).fadeTo(400, 1.0);
+        //initGL(canvas);
+        //initShaders();
+        //initContext();
+        $( "#container" ).fadeTo(400, 1.0);
         
         canvas.onmousedown = handleMouseDownonCanvas;
         canvas.onmousemove = handleMouseMoveonCanvas;
@@ -507,11 +520,49 @@
               handleMouseDblClickonCanvas(e);
             });
     });
-    /*
+    
     $(function() {
         $( document ).tooltip();
     });
-    */
+    
+   
+   $(function() {
+        $( "#dialogWordBox" ).dialog({
+          autoOpen: false,
+          height: 580,
+          width: 620,
+          //modal: true,
+          draggable: false,
+          resizable: false,
+          buttons: {
+            Close: function() {
+              $( this ).dialog( "close" );
+            }
+          },
+          position: {
+              my: "top",
+              at: "top",
+              of: container
+          },
+          show: {
+            effect: "fade",
+            duration: 200
+          },
+          hide: {
+            effect: "fade",
+            duration: 200
+          }
+        });
+        
+        $( "#topButton" ).click(function() {
+          
+          $( "#dialogWordBox" ).dialog( "open" );
+          
+        });
+        
+    });
+   
+   
    
     $(function() {
         $( "#dialog" ).dialog({
@@ -656,7 +707,7 @@
     });
     
     $(function() {
-        $( "#dialoggames" ).dialog({
+        $( "#dialoggames" ).dialog({ //#dialoggames
           autoOpen: false,
           height: 580,
           width: 620,
@@ -683,7 +734,7 @@
           }
         });
 
-        $( "#btngames" ).click(function() {
+        $( "#btngames" ).click(function() { //btngames
           var table = $("#weekly-games");
           $( "#users tbody" ).empty();
           for(var i = 0; i < weeklyWordLists.length; i++){
@@ -807,40 +858,45 @@
 
 <body onload="webGLStart();">
     
-    <div id="dialogMenu" title="HINTS - SETTINGS - GAMES - INFO">
-        <button id = "namebox" type="button" onclick="ButtonHints();">
-            <table id="btnTable" width="100%">
+    <div id="topButton">
+        <button id = "namebox" type="button" onclick="ButtonGames();">
+            <table id="btnTable">
                 <tr>
+
                     <td><img id="btnhints" alt="Hints" src="images/hint2.png" width="40" height="40" title=" Hints "></td>
                     <td><img id="btnsettings" alt="Settings" src="images/settings2.png" width="40" height="40" title=" Settings "></td>
+
                     <td><img id="btngames" alt="Games" src="images/games2.png" width="40" height="40" title=" Games "></td>
                     <td><img id="btninfo" alt="Info" src="images/instructions2.png" width="40" height="40" title=" Info "></td>
                     <td></td>
-                    <td id="scoreratebox">100%</td>
+                    <td id="scoreratebox" title=" Score Rate "></td>
+
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
+
                     <td></td>
                     <td></td>
-                    <td><img id="starimage" src="images/blueStar40x40.png" width="30" height="30" alt="Blue" title=" 3 Stars/Letter "></td>
-                    <td id="scorebox">99999</td>
+                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" width="30" height="30" alt="Blue" title=" 3 Stars/Letter "></td>
+                    <td id="scorebox" title=" Score "></td>
+
                 </tr>
             </table>
-            
+
         </button>
     </div>
-    
     
     
     <div id="container">
         <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
     </div>
     
-    <div id="wordboxcontainer" title=" Find words on cube above ">
-        <p id="wordbox"> </p>
+    <div>
+        <button id="wordboxcontainer" type="button" title=" Find words on cube above ">
+            <p id="wordbox"></p>
+        </button>
     </div>
-    
     
     <div id="dialog" title="Information">
         <p></p>
@@ -901,6 +957,12 @@
           <tbody></tbody>
         </table>
     </div>
+    
+    
+    <div id="dialogWordBox" title="Find the Words!">
+        <p></p>
+    </div>
+    
     
     <div id="dialogWin" title="Congratulations!">
         <p></p>

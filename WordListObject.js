@@ -107,7 +107,7 @@ function UpdateTextAreaView(wordList){
             {
                 // Place on text view first time (All Non Hidden Words)
                 tempWord.wordPlacedScrollView = true;
-                displayText = displayText + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
+                displayText = displayText + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp "; //" &nbsp&nbsp&nbsp&nbsp&nbsp "
             }
             else if (tempWord.wordFound && !tempWord.wordStrikedScrollView  && !tempWord.alphabetQuestHiddenWord)  // Word Just Found (Not Hidden Word)
             {

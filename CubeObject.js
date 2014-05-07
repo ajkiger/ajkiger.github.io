@@ -1472,13 +1472,14 @@ function touchesBegan(event) {
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var netGain = event.pageY - event.clientY;
-    if(browserHeight > 828){
-        xAdjustment = (browserWidth - 640)/2;
-    }
-    else{
-        xAdjustment = (browserWidth - 640)/2 - 10;
-    }
-    yAdjustment = 89 - netGain;
+    //if(browserHeight > 828){
+        //xAdjustment = (browserWidth - 640)/2;
+    //}
+    //else{
+        //xAdjustment = (browserWidth - 640)/2 - 10;
+    //}
+    xAdjustment = (browserWidth - 640)/2;
+    yAdjustment = 124 - netGain; //89
     currentPoint.x = currentPoint.x - xAdjustment;
     currentPoint.y = currentPoint.y - yAdjustment;
     
@@ -1523,13 +1524,14 @@ function touchesMoved(event) {
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var netGain = event.pageY - event.clientY;
-    if(browserHeight > 828){
-        xAdjustment = (browserWidth - 640)/2;
-    }
-    else{
-        xAdjustment = (browserWidth - 640)/2 - 10;
-    }
-    yAdjustment = 89 - netGain;
+    //if(browserHeight > 828){
+        //xAdjustment = (browserWidth - 640)/2;
+    //}
+    //else{
+        //xAdjustment = (browserWidth - 640)/2 - 10;
+    //}
+    xAdjustment = (browserWidth - 640)/2;
+    yAdjustment = 124 - netGain; //89
     currentPoint.x = currentPoint.x - xAdjustment;
     currentPoint.y = currentPoint.y - yAdjustment;
     
