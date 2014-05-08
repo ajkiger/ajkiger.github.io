@@ -1313,107 +1313,111 @@ function solveCubeNow(){
 
 
 function showHint(){
+    
+    if(sceneController.wordHintWords.length === 0){
         
-    for (var i = 0; i < sceneController.cubeSize; i++) 
-    {
-        cubeLetterBounds[i] = letterBounds(i);
-    }
-
-    var wordListNotFound = new Array();
-
-    var tempSquare;
-    for (var i = 0; i < wordListSortedByLength.length; i++)
-    {
-        var str = wordListSortedByLength[i];
-        if (!str.wordFound && !str.alphabetQuestHiddenWord)
+        for (var i = 0; i < sceneController.cubeSize; i++) 
         {
-            wordListNotFound.push(str);
+            cubeLetterBounds[i] = letterBounds(i);
         }
 
-    }
+        var wordListNotFound = new Array();
 
-    if (wordListNotFound.length === 0)  // get Hidden Word if all other words have been found
-    {
+        var tempSquare;
         for (var i = 0; i < wordListSortedByLength.length; i++)
         {
             var str = wordListSortedByLength[i];
-            if (!str.wordFound && str.alphabetQuestHiddenWord)
+            if (!str.wordFound && !str.alphabetQuestHiddenWord)
             {
                 wordListNotFound.push(str);
             }
 
         }
-    }
 
-
-    if (!(wordListNotFound.length === 0))
-    {
-        //var rNumber = random(wordListNotFound.size());
-        var rNumber = Math.floor(Math.random() * wordListNotFound.length);
-        var tempWord = wordListNotFound[rNumber];
-
-
-        //ArrayList wordHintWords = new ArrayList();
-
-        for (var i = 0; i < wordListSortedByLength.length; i++)
+        if (wordListNotFound.length === 0)  // get Hidden Word if all other words have been found
         {
-            var strX = wordListSortedByLength[i];
-            if (tempWord.allLetters[0] === strX.allLetters[0] && tempWord.firstLetterSquare === strX.firstLetterSquare && !strX.wordFound)
+            for (var i = 0; i < wordListSortedByLength.length; i++)
             {
-                sceneController.wordHintWords.push(strX.wordName);
-            }
+                var str = wordListSortedByLength[i];
+                if (!str.wordFound && str.alphabetQuestHiddenWord)
+                {
+                    wordListNotFound.push(str);
+                }
 
+            }
         }
 
-        //[self setGameDataObject:wordHintWords forKey:@"wordHintWordsKey"];
 
-        for (var i = 0; i < sceneController.wordHintWords.length; i++)
+        if (!(wordListNotFound.length === 0))
         {
-            var temppwe = sceneController.wordHintWords[i];
-            for (var j = 0; j < wordListSortedByLength.length; j++)
+            //var rNumber = random(wordListNotFound.size());
+            var rNumber = Math.floor(Math.random() * wordListNotFound.length);
+            var tempWord = wordListNotFound[rNumber];
+
+
+            //ArrayList wordHintWords = new ArrayList();
+
+            for (var i = 0; i < wordListSortedByLength.length; i++)
             {
-                var strX = wordListSortedByLength[j];
-                if (strX.wordName === temppwe)
+                var strX = wordListSortedByLength[i];
+                if (tempWord.allLetters[0] === strX.allLetters[0] && tempWord.firstLetterSquare === strX.firstLetterSquare && !strX.wordFound)
                 {
-                    strX.wordHint = true;
-                    break;
+                    sceneController.wordHintWords.push(strX.wordName);
+                }
+
+            }
+
+            //[self setGameDataObject:wordHintWords forKey:@"wordHintWordsKey"];
+
+            for (var i = 0; i < sceneController.wordHintWords.length; i++)
+            {
+                var temppwe = sceneController.wordHintWords[i];
+                for (var j = 0; j < wordListSortedByLength.length; j++)
+                {
+                    var strX = wordListSortedByLength[j];
+                    if (strX.wordName === temppwe)
+                    {
+                        strX.wordHint = true;
+                        break;
+                    }
                 }
             }
-        }
 
-        for (var i = 0; i < sceneController.wordHintWords.length; i++)
-        {
-            var temppwe = sceneController.wordHintWords[i];
-            for (var j = 0; j < wordList.length; j++)
+            for (var i = 0; i < sceneController.wordHintWords.length; i++)
             {
-                var strA = wordList[j];
-                if (strA.wordName === temppwe)
+                var temppwe = sceneController.wordHintWords[i];
+                for (var j = 0; j < wordList.length; j++)
                 {
-                    strA.wordHint = true;
-                    break;
+                    var strA = wordList[j];
+                    if (strA.wordName === temppwe)
+                    {
+                        strA.wordHint = true;
+                        break;
+                    }
                 }
             }
+
+            tempSquare = tempWord.allSquares[0];
+
+            wordSelectMarkers[tempSquare.currentPosition] = 3;
+            wordSelectMarkers2[tempSquare.currentPosition] = 3;
+
+            /*
+            if ([OpenALSoundController sharedSoundController].inInterruption == NO)
+            {
+                [self.soundSourceObject playSound:[[OpenALSoundController sharedSoundController] soundBufferDataFromFileBaseName:@"sound5"]];
+            }
+            */
+
+
+            for (var i = 1; i <= tempWord.wordLength; i++)
+            {
+                emitStar(-i, particleEmitterBlack, -i);
+            }
         }
-
-        tempSquare = tempWord.allSquares[0];
-
-        wordSelectMarkers[tempSquare.currentPosition] = 3;
-        wordSelectMarkers2[tempSquare.currentPosition] = 3;
-
-        /*
-        if ([OpenALSoundController sharedSoundController].inInterruption == NO)
-        {
-            [self.soundSourceObject playSound:[[OpenALSoundController sharedSoundController] soundBufferDataFromFileBaseName:@"sound5"]];
-        }
-        */
-
-
-        for (var i = 1; i <= tempWord.wordLength; i++)
-        {
-            emitStar(-i, particleEmitterBlack, -i);
-        }
+        
     }
-
+    
 }
 
 

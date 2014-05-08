@@ -4,10 +4,11 @@
 <head>
 <title>Word Cubed Weekly</title>
 
-<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="MobileOptimized" content="640">
 <meta name="HandheldFriendly" content="True">
 <script>
+    
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var tempScale = browserWidth/680;
     tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale + ", user-scalable=no";
@@ -60,12 +61,9 @@
         overflow-y: hidden;
     }
     
-    #pageWH{
+    #pageWH, #hintsPage, #settingsPage{
         
-        //width: 640px;
-        //margin-left: auto;
-        //margin-right: auto;
-        
+        background-color: #cccccc;
     }
     
     #topHeader{
@@ -551,6 +549,28 @@
     });
     */
     
+    
+    $(function(){
+        $( "#topHeader" ).bind( "tap", tapHandler );
+
+        function tapHandler( event ){
+          $( event.target ).addClass( "tap" );
+          
+          
+          $( "#popupHeader" ).popup("open", { positionTo: "#menuAlign", transition: "pop" });
+          
+          
+          
+          
+          
+        }
+    });
+    
+    
+    
+    
+    
+    
     $(function(){
         $( "#bottomFooter" ).bind( "tap", tapHandler );
 
@@ -558,58 +578,24 @@
           $( event.target ).addClass( "tap" );
           
           document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
-          $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter" });
+          $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
           
         }
     });
     
-    /*
-    $(function(){
-        $( "#popupBasic" ).bind( "tap", tapHandler );
-
-        function tapHandler( event ){
-          $( event.target ).addClass( "tap" );
-          $( "#popupBasic" ).popup("close");
-        }
-    });
-    */
     
+    
+    $( "#btnNewGame" ).click(function() {
+        
+        alert("Made it here");
+        
+        
+        
+    });
    
-   $(function() {
-        $( "#dialogWordBox" ).dialog({
-          autoOpen: false,
-          height: 580,
-          width: 620,
-          //modal: true,
-          draggable: false,
-          resizable: false,
-          buttons: {
-            Close: function() {
-              $( this ).dialog( "close" );
-            }
-          },
-          position: {
-              my: "top",
-              at: "top",
-              of: container
-          },
-          show: {
-            effect: "fade",
-            duration: 200
-          },
-          hide: {
-            effect: "fade",
-            duration: 200
-          }
-        });
-        
-        $( "#topButton" ).click(function() {
-          
-          $( "#dialogWordBox" ).dialog( "open" );
-          
-        });
-        
-    });
+   
+   
+   
    
    
    
@@ -913,17 +899,17 @@
             <table id="btnTable">
                 <tr>
 
-                    <td><img id="btnhints" alt="Hints" src="images/hint2.png" width="40" height="40" title=" Hints "></td>
-                    <td><img id="btnsettings" alt="Settings" src="images/settings2.png" width="40" height="40" title=" Settings "></td>
+                    <td><img alt="Hints" src="images/hint2.png" width="40" height="40" title=" Hints "></td>
+                    <td><img alt="Settings" src="images/settings2.png" width="40" height="40" title=" Settings "></td>
 
-                    <td><img id="btngames" alt="Games" src="images/games2.png" width="40" height="40" title=" Games "></td>
-                    <td><img id="btninfo" alt="Info" src="images/instructions2.png" width="40" height="40" title=" Info "></td>
+                    <td><img alt="Games" src="images/games2.png" width="40" height="40" title=" Games "></td>
+                    <td><img alt="Info" src="images/instructions2.png" width="40" height="40" title=" Info "></td>
                     <td></td>
                     <td id="scoreratebox" title=" Score Rate "></td>
 
                 </tr>
                 <tr>
-                    <td></td>
+                    <td id = "menuAlign"></td>
                     <td></td>
 
                     <td></td>
@@ -946,18 +932,71 @@
 	</div><!-- /footer -->
         
         
-        
         <div data-role="popup" id="popupBasic">
             <p id="wordboxpopup"></p>
         </div>
         
         
+        <div data-role="popup" id="popupHeader">
+            <ul data-role="listview" data-inset="true" style="min-width:210px;">
+                <li data-role="list-divider">Menu</li>
+                <li><a href="#hintsPage" data-rel="dialog" data-transition="pop"><img alt="Hints" src="images/hint2.png" width="40" height="40" title=" Hints "></a></li>
+                <li><a href="#settingsPage" data-rel="dialog" data-transition="pop"><img alt="Settings" src="images/settings2.png" width="40" height="40" title=" Settings "></a></li>
+                <li><a href="#"><img alt="Games" src="images/games2.png" width="40" height="40" title=" Games "></a></li>
+                <li><a href="#"><img alt="Info" src="images/instructions2.png" width="40" height="40" title=" Info "></a></li>
+            </ul>
+        </div>
         
+        
+    </div> <!--/WH page -->
+        
+      
+        
+        
+    <div data-role="page" id="hintsPage">
+
+        <div data-role="header">
+            <h1>Hints</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <p><a href="#pageWH" data-rel="back" onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
+            <p><a href="#pageWH" data-rel="back" onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
+        </div><!-- /content -->
+
+        <div data-role="footer">
+            <h4></h4>
+        </div><!-- /footer -->
+
+    </div><!-- /hints Page -->
+    
+    
+    <div data-role="page" id="settingsPage">
+
+        <div data-role="header">
+            <h1>Settings</h1>
+        </div><!-- /header -->
+
+        <div role="main" class="ui-content">
+            <p><input type="checkbox" id="check1"><label for="check1">High Word Density</label></p>
+            <p><input type="checkbox" id="check2"><label for="check2">Inverse Colors</label></p>
+            <p><a href="#pageWH" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
+        </div><!-- /content -->
+
+        <div data-role="footer">
+            <h4></h4>
+        </div><!-- /footer -->
+
+    </div><!-- /settings Page -->
         
 
+        
+        
         <div id="dialog" title="Information">
             <p></p>
         </div>
+        
+        
 
         <div id="tabs" style="display:none">
             <ul>
@@ -984,19 +1023,13 @@
             </div>
         </div>
 
-        <div id="dialogHints" title="Hints">
-            <p></p>
-        </div>
-
-        <div id="dialogSettings" title="Settings">
-            <p></p>
-        </div>
-
+        
+        <!---
         <div id="settingsformat" style="display:none">
             <input type="checkbox" id="check1"><label for="check1">High Word Density</label>
             <input type="checkbox" id="check2"><label for="check2">Inverse Colors</label>
         </div>
-
+        -->
         <div id="dialoggames" title="Daily Games">
             <p></p>
         </div>
@@ -1038,7 +1071,7 @@
         <div id="ycoord2">
         </div>
 
-    </div> <!--/page -->
+    
     
 </body>
 

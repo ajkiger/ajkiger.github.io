@@ -49,7 +49,7 @@ function sceneControllerInit(){
     sceneController.preCubeSize = null;
     sceneController.cubeSizeCount = 1;
     sceneController.cubeColorKey = "Normal";  // "Normal"  "Inverse"
-    sceneController.maxWordKey = "High Word Density";  // "Low Word Density"  "High Word Density"
+    sceneController.maxWordKey = "Low Word Density";  // "Low Word Density"  "High Word Density"
     sceneController.wordListPlay = null;
     sceneController.currentGame = null;
     sceneController.todayDate = getTodaysDate();
@@ -434,14 +434,30 @@ function ButtonHints(){
 }
 
 
-function ButtonSettings(){
+function ButtonNewGame(){
     
+    if($('#check1').prop('checked')){
+        sceneController.maxWordKey = "High Word Density";
+    }
+    else
+    {
+        sceneController.maxWordKey = "Low Word Density";
+    }
+    if($('#check2').prop('checked')){
+        sceneController.cubeColorKey = "Inverse";
+    }
+    else
+    {
+        sceneController.cubeColorKey = "Normal";
+    }
+    
+    sceneController.endAnimationActive = true;
     
 }
 
 
 function ButtonGames(){
-    sceneController.endAnimationActive = true;
+    //sceneController.endAnimationActive = true;
     
 }
 
