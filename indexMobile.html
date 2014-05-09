@@ -628,7 +628,10 @@
    
     $(function(){
         $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout", function( event ){ 
-
+            
+            
+            $.vmouse.resetTimerDuration = 10000000;
+            $.vmouse.moveDistanceThreshold = 10000000;
             if (event.type === "vmousedown") {
 
                 handleMouseDownonCanvas(event);
