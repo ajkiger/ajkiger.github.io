@@ -36,7 +36,7 @@ function handleMouseDownonCanvas(event) {
 
 function handleMouseMoveonCanvas(event) {
     
-    
+    document.getElementById('mouseCoord').innerHTML = "Yes";
     if (!mouseDown) {
         return;
     }
@@ -47,7 +47,7 @@ function handleMouseMoveonCanvas(event) {
     
     document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
     document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
-    document.getElementById('mouseCoord').innerHTML = mouseDown;
+    //document.getElementById('mouseCoord').innerHTML = mouseDown;
     document.getElementById('vMoveEvent').innerHTML = "Yes";
 
     
