@@ -515,7 +515,7 @@
         
         //canvas.onmousedown = handleMouseDownonCanvas;
         //canvas.onmousemove = handleMouseMoveonCanvas;
-        canvas.onmouseup = handleMouseUponCanvas;
+        //canvas.onmouseup = handleMouseUponCanvas;
         canvas.ondblclick = handleMouseDblClickonCanvas;
         canvas.onmouseout = handleMouseOutonCanvas;
         
@@ -613,8 +613,8 @@
     
     $(function(){
         $( "#container" ).bind( "vmousedown", vmousedownHandler );
-        document.getElementById('menuAlign').innerHTML = "touchx";
-        document.getElementById('ycoord3').innerHTML = "touchy";
+        //document.getElementById('menuAlign').innerHTML = "touchx";
+        //document.getElementById('ycoord3').innerHTML = "touchy";
         function vmousedownHandler( event ){
           $( event.target ).addClass( "vmousedown" );
           
@@ -626,12 +626,25 @@
     
     $(function(){
         $( "#container" ).bind( "vmousemove", vmousemoveHandler );
-        document.getElementById('menuAlign').innerHTML = "dragx";
-        document.getElementById('ycoord3').innerHTML = "dragy";
+        //document.getElementById('menuAlign').innerHTML = "dragx";
+        //document.getElementById('ycoord3').innerHTML = "dragy";
         function vmousemoveHandler( event ){
           $( event.target ).addClass( "vmousemove" );
           
           handleMouseMoveonCanvas(event);
+          
+        }
+    });
+    
+    
+    $(function(){
+        $( "#container" ).bind( "vmouseup", vmouseupHandler );
+        document.getElementById('menuAlign').innerHTML = "upx";
+        document.getElementById('ycoord3').innerHTML = "upy";
+        function vmouseupHandler( event ){
+          $( event.target ).addClass( "vmouseup" );
+          
+          handleMouseUponCanvas(event);
           
         }
     });
@@ -952,8 +965,8 @@
 
                 </tr>
                 <tr>
-                    <td id = "menuAlign">x:1</td>
-                    <td id = "ycoord3">y:1</td>
+                    <td id = "menuAlign"></td>
+                    <td id = "ycoord3"></td>
 
                     <td></td>
                     <td></td>
