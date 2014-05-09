@@ -4,14 +4,14 @@
 <head>
 <title>Word Cubed Weekly</title>
 
-<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, , minimum-scale=1.0, user-scalable=yes">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes">
 <meta name="MobileOptimized" content="640">
 <meta name="HandheldFriendly" content="True">
 <script>
     
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var tempScale = browserWidth/680;
-    tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale + ", user-scalable=no";
+    tempScale = "width=device-width, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;
     var mvp = document.getElementById('viewport');
     mvp.setAttribute('content',tempScale);
     
@@ -499,10 +499,10 @@
         
         canvas = document.getElementById("WordCubed-canvas");
         
-        //initGL(canvas);
-        //initShaders();
-        //initContext();
-        $( "#container" ).fadeTo(400, 1.0);
+        initGL(canvas);
+        initShaders();
+        initContext();
+        //$( "#container" ).fadeTo(400, 1.0);
         
         canvas.onmousedown = handleMouseDownonCanvas;
         canvas.onmousemove = handleMouseMoveonCanvas;
@@ -960,8 +960,8 @@
         </div><!-- /header -->
 
         <div role="main" class="ui-content">
-            <p><a href="#pageWH" data-rel="back" onclick="showHint2();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p><!--showHint();-->
-            <p><a href="#pageWH" data-rel="back" onclick="SolveTheCube2();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p><!--SolveTheCube();-->
+            <p><a href="#pageWH" data-rel="back" onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p><!--showHint();-->
+            <p><a href="#pageWH" data-rel="back" onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p><!--SolveTheCube();-->
         </div><!-- /content -->
 
         <div data-role="footer">
@@ -980,7 +980,7 @@
         <div role="main" class="ui-content">
             <p><input type="checkbox" id="check1"><label for="check1">High Word Density</label></p>
             <p><input type="checkbox" id="check2"><label for="check2">Inverse Colors</label></p>
-            <p><a href="#pageWH" data-rel="back" onclick="ButtonNewGame2();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p><!--ButtonNewGame();-->
+            <p><a href="#pageWH" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p><!--ButtonNewGame();-->
         </div><!-- /content -->
 
         <div data-role="footer">
