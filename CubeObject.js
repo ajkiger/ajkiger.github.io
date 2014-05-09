@@ -1310,7 +1310,9 @@ function solveCubeNow(){
 }
 
 
-
+function showHint2(){
+    alert("ShowHint");
+}
 
 function showHint(){
     

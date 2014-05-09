@@ -416,6 +416,9 @@ function sceneControllerUnloadScene(){
     
 }
 
+function SolveTheCube2(){
+    alert("SolveTheCube");
+}
 
 function SolveTheCube(){
     
@@ -433,6 +436,9 @@ function ButtonHints(){
     
 }
 
+function ButtonNewGame2(){
+    alert("ButtonNewGame");
+}
 
 function ButtonNewGame(){
     
