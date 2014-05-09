@@ -517,7 +517,7 @@
         //canvas.onmousemove = handleMouseMoveonCanvas;
         //canvas.onmouseup = handleMouseUponCanvas;
         canvas.ondblclick = handleMouseDblClickonCanvas;
-        canvas.onmouseout = handleMouseOutonCanvas;
+        //canvas.onmouseout = handleMouseOutonCanvas;
         
         
         var checks = $( "#settingsformat" ).buttonset();
@@ -645,6 +645,19 @@
           $( event.target ).addClass( "vmouseup" );
           
           handleMouseUponCanvas(event);
+          
+        }
+    });
+    
+    
+    $(function(){
+        $( "#container" ).bind( "vmouseout", vmouseoutHandler );
+        //document.getElementById('menuAlign').innerHTML = "upx";
+        //document.getElementById('ycoord3').innerHTML = "upy";
+        function vmouseoutHandler( event ){
+          $( event.target ).addClass( "vmouseout" );
+          
+          handleMouseOutonCanvas(event);
           
         }
     });
