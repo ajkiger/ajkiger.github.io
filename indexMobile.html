@@ -10,7 +10,16 @@
 <script>
     
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var tempScale = browserWidth/1280;
+    var tempScale;
+    if(browserWidth === 1536){
+        tempScale = 1.1;
+    }
+    else if (browserWidth === 640){
+        tempScale = 0.5;
+    }
+    else if (browserWidth === 320){
+        tempScale = 0.5;
+    }
     tempScale = "width=device-width, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;
     var mvp = document.getElementById('viewport');
     mvp.setAttribute('content',tempScale);
