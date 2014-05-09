@@ -543,8 +543,9 @@
     */
     
     
-    $(document).on({
-        "touchmove" : function(e){ e.preventDefault(); }
+    $(document).on(
+        "touchmove", function(e){ e.preventDefault();
+    
     });
     
    
@@ -626,13 +627,16 @@
     );
     */
    
-   $.vmouse = {
-        moveDistanceThreshold: 1000000,
-        clickDistanceThreshold: 1000000,
-        resetTimerDuration: 15000000
-    };
+   
    
     $(function(){
+        
+        $.vmouse = {
+            moveDistanceThreshold: 1000000,
+            clickDistanceThreshold: 1000000,
+            resetTimerDuration: 15000000
+        };
+        
         $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout", function( event ){ 
             
             
