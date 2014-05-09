@@ -665,8 +665,8 @@
     });
     */
     
-    $(function(){
-        $( "#container" ).bind( "vmousedown vmousemove vmouseup", vmouseHandler );
+    //$(function(){
+        $(document).bind( "vmousedown vmousemove vmouseup", vmouseHandler );
         
         function vmouseHandler( event ){
           
@@ -681,7 +681,7 @@
                 handleMouseUponCanvas(event);
             }
         }
-    });
+    //});
    
    
     
