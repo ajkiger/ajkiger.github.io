@@ -613,14 +613,14 @@
     
     
     $(document).bind(
-        'vmouseout', "#container", function(event) {
+        "vmouseout", "#container", function(event) {
             handleMouseOutonCanvas(event);
         }
     );
     
     
     $(function(){
-        $( "#container" ).bind( "vmousedown vmousemove vmouseup vmouseout", vmouseHandler );
+        $( "#container" ).bind( "vmousedown vmousemove vmouseup", vmouseHandler );
         
         function vmouseHandler( event ){
           
@@ -636,11 +636,8 @@
 
                 handleMouseUponCanvas(event);
                 
-            } else if (event.type === "vmouseout") {
-
-                //handleMouseOutonCanvas(event);
-                
             }
+            
         }
     });
    
