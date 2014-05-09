@@ -572,13 +572,13 @@
         });
     });
     
-    
+    /*
     $(function() {
         $( "#container" ).dblclick(function(e) {
                 e.preventDefault();
             });
     });
-    
+    */
     /*
     $(function() {
         $( document ).tooltip();
@@ -613,7 +613,8 @@
     
     $(function(){
         $( "#container" ).bind( "vmousedown", vmousedownHandler );
-
+        document.getElementById('menuAlign').innerHTML = "touchx";
+        document.getElementById('ycoord3').innerHTML = "touchy";
         function vmousedownHandler( event ){
           $( event.target ).addClass( "vmousedown" );
           
@@ -625,7 +626,8 @@
     
     $(function(){
         $( "#container" ).bind( "vmousemove", vmousemoveHandler );
-
+        document.getElementById('menuAlign').innerHTML = "dragx";
+        document.getElementById('ycoord3').innerHTML = "dragy";
         function vmousemoveHandler( event ){
           $( event.target ).addClass( "vmousemove" );
           
@@ -950,8 +952,8 @@
 
                 </tr>
                 <tr>
-                    <td id = "menuAlign">x:0</td>
-                    <td id = "ycoord3">y:0</td>
+                    <td id = "menuAlign">x:1</td>
+                    <td id = "ycoord3">y:1</td>
 
                     <td></td>
                     <td></td>
