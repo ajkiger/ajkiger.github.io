@@ -575,7 +575,6 @@
     
     $(function() {
         $( "#container" ).dblclick(function(e) {
-                alert("Double Click");
                 e.preventDefault();
             });
     });
@@ -593,19 +592,10 @@
         function tapHandler( event ){
           $( event.target ).addClass( "tap" );
           
-          
           $( "#popupHeader" ).popup("open", { positionTo: "#menuAlign", transition: "pop" });
-          
-          
-          
-          
           
         }
     });
-    
-    
-    
-    
     
     
     $(function(){
@@ -621,15 +611,17 @@
     });
     
     
-    
-    $( "#btnNewGame" ).click(function() {
-        
-        alert("Made it here");
-        
-        
-        
+    $(function(){
+        $( "#container" ).bind( "vmousemove", vmousemoveHandler );
+
+        function vmousemoveHandler( event ){
+          $( event.target ).addClass( "vmousemove" );
+          
+          handleMouseMoveonCanvas(event);
+          
+        }
     });
-   
+    
    
    
    
@@ -947,7 +939,7 @@
                 </tr>
                 <tr>
                     <td id = "menuAlign"></td>
-                    <td></td>
+                    <td id = "ycoord3"></td>
 
                     <td></td>
                     <td></td>

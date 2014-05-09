@@ -8,6 +8,9 @@ var mouseDown = false;
 
 
 function handleMouseDownonCanvas(event) {
+    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var xCoord = event.clientX - (browserWidth - 640)/2;
+    var yCoord = event.clientY - 96;
     
     mouseDown = true;
     
@@ -16,6 +19,9 @@ function handleMouseDownonCanvas(event) {
     $( "#dialogSettings" ).dialog( "close" );
     $( "#dialoggames" ).dialog( "close" );
     
+    
+    document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
+    document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
     touchesBegan(event);
     
     if (event.preventDefault)
@@ -24,6 +30,11 @@ function handleMouseDownonCanvas(event) {
         event.returnValue= false;
     return false;
     
+    
+    
+    
+    
+    
 }
 
 function handleMouseMoveonCanvas(event) {
@@ -31,7 +42,12 @@ function handleMouseMoveonCanvas(event) {
     if (!mouseDown) {
         return;
     }
+    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var xCoord = event.clientX - (browserWidth - 640)/2;
+    var yCoord = event.clientY - 96;
     
+    document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
+    document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
     touchesMoved(event);
     
     if (event.preventDefault)
@@ -56,8 +72,10 @@ function handleMouseUponCanvas(event) {
 
 function handleMouseDblClickonCanvas(event) {
     
-    //alert("double Tap");
     mouseDown = false;
+    
+    document.getElementById('menuAlign').innerHTML = "DT";
+    document.getElementById('ycoord3').innerHTML = "DT";
     doubleTap();
     
     if (event.preventDefault)
