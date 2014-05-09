@@ -518,7 +518,7 @@
         //canvas.onmousemove = handleMouseMoveonCanvas;
         //canvas.onmouseup = handleMouseUponCanvas;
         canvas.ondblclick = handleMouseDblClickonCanvas;
-        canvas.onmouseout = handleMouseOutonCanvas;
+        //canvas.onmouseout = handleMouseOutonCanvas;
         
         
         var checks = $( "#settingsformat" ).buttonset();
@@ -611,62 +611,10 @@
         }
     });
     
-    /*
-    $(function(){
-        $( "#container" ).bind( "vmousedown", vmousedownHandler );
-        //document.getElementById('menuAlign').innerHTML = "touchx";
-        //document.getElementById('ycoord3').innerHTML = "touchy";
-        function vmousedownHandler( event ){
-          $( event.target ).addClass( "vmousedown" );
-          
-          handleMouseDownonCanvas(event);
-          
-        }
-    });
     
     
     $(function(){
-        $( "#container" ).bind( "vmousemove", vmousemoveHandler );
-        //document.getElementById('menuAlign').innerHTML = "dragx";
-        //document.getElementById('ycoord3').innerHTML = "dragy";
-        function vmousemoveHandler( event1 ){
-          $( event1.target ).addClass( "vmousemove" );
-          
-          handleMouseMoveonCanvas(event1);
-          
-        }
-    });
-    
-    
-    $(function(){
-        $( "#container" ).bind( "vmouseup", vmouseupHandler );
-        //document.getElementById('menuAlign').innerHTML = "upx";
-        //document.getElementById('ycoord3').innerHTML = "upy";
-        function vmouseupHandler( event ){
-          $( event.target ).addClass( "vmouseup" );
-          
-          handleMouseUponCanvas(event);
-          
-          
-        }
-    });
-    
-    
-    $(function(){
-        $( "#container" ).bind( "vmouseout", vmouseoutHandler );
-        //document.getElementById('menuAlign').innerHTML = "upx";
-        //document.getElementById('ycoord3').innerHTML = "upy";
-        function vmouseoutHandler( event ){
-          $( event.target ).addClass( "vmouseout" );
-          
-          handleMouseOutonCanvas(event);
-          
-        }
-    });
-    */
-    
-    $(function(){
-        $( "#container" ).bind( "vmousedown vmousemove vmouseup", vmouseHandler );
+        $( "#container" ).bind( "vmousedown vmousemove vmouseup vmouseout", vmouseHandler );
         
         function vmouseHandler( event ){
           
@@ -674,14 +622,17 @@
 
                 handleMouseDownonCanvas(event);
                 
-                
             } else if (event.type === "vmousemove") {
 
                 handleMouseMoveonCanvas(event);
+                
             } else if (event.type === "vmouseup") {
 
                 handleMouseUponCanvas(event);
                 
+            } else if (event.type === "vmouseout") {
+
+                handleMouseOutonCanvas(event);
                 
             }
         }

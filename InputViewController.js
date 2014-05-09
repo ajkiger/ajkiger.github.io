@@ -22,7 +22,7 @@ function handleMouseDownonCanvas(event) {
     
     document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
     document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
-    document.getElementById('mouseCoord').innerHTML = mouseDown;
+    //document.getElementById('mouseCoord').innerHTML = mouseDown;
     touchesBegan(event);
     
     if (event.preventDefault)
@@ -36,7 +36,7 @@ function handleMouseDownonCanvas(event) {
 
 function handleMouseMoveonCanvas(event) {
     
-    document.getElementById('mouseCoord').innerHTML = "Yes";
+    //document.getElementById('mouseCoord').innerHTML = "Yes";
     if (!mouseDown) {
         return;
     }
@@ -48,7 +48,7 @@ function handleMouseMoveonCanvas(event) {
     document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
     document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
     //document.getElementById('mouseCoord').innerHTML = mouseDown;
-    document.getElementById('vMoveEvent').innerHTML = "Yes";
+    //document.getElementById('vMoveEvent').innerHTML = "Yes";
 
     
     
@@ -65,8 +65,8 @@ function handleMouseMoveonCanvas(event) {
 function handleMouseUponCanvas(event) {
     
     mouseDown = false;
-    document.getElementById('mouseCoord').innerHTML = mouseDown;
-    document.getElementById('vMoveEvent').innerHTML = "No";
+    //document.getElementById('mouseCoord').innerHTML = mouseDown;
+    //document.getElementById('vMoveEvent').innerHTML = "No";
     touchesEnd();
     
     if (event.preventDefault)
