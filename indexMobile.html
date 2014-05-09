@@ -540,7 +540,7 @@
     */
     
     $( "#container" ).on({
-        "touchstart" : function(e){ 
+        "touchmove" : function(e){ 
             e.preventDefault(); 
             $(document).bind(
                 'touchmove', function(e) {
@@ -550,13 +550,11 @@
         }
     });
     
-    $( "#bottomFooter" ).on({
-        "touchstart" : function(e){ 
+    $( "#container" ).on({
+        "touchend" : function(e){ 
             e.preventDefault(); 
             $(document).unbind(
-                'touchmove', function(e) {
-                    e.preventDefault();
-                }
+                'touchmove'
             );
         }
     });
