@@ -524,40 +524,42 @@
         
     }
     
-    
+    /*
     $(document).bind(
         'touchmove', function(e) {
             e.preventDefault();
         }
     );
-    
+    */
     
     /*
     $(document).on({
         "touchmove" : function(e){ e.preventDefault(); }
     });
     */
-    
-    $( "#container" ).on({
-        "touchmove" : function(e){ 
-            e.preventDefault(); 
-            $(document).bind(
-                'touchmove', function(e) {
-                    e.preventDefault();
-                }
-            );
-        }
+    $(function() {
+        $( "#container" ).on({
+            "touchmove" : function(e){ 
+                e.preventDefault(); 
+                $(document).bind(
+                    'touchmove', function(e) {
+                        e.preventDefault();
+                    }
+                );
+            }
+        });
     });
     
-    $( "#container" ).on({
-        "touchend" : function(e){ 
-            e.preventDefault(); 
-            $(document).unbind(
-                'touchmove'
-            );
-        }
+    $(function() {
+        $( "#container" ).on({
+            "touchend" : function(e){ 
+                e.preventDefault(); 
+                $(document).unbind(
+                    'touchmove'
+                );
+            }
+        });
     });
-    
     
     
     $(function() {
