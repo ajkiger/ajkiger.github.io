@@ -618,16 +618,41 @@
         }
     );
     */
-   
+   /*
     $(document).on(
         "vmouseout", "#container", function(event) {
             handleMouseOutonCanvas(event);
         }
     );
-    
-    
+    */
+   
     $(function(){
-        $( "#container" ).bind( "vmousedown vmousemove vmouseup", vmouseHandler );
+        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout", function( event ){ 
+
+            if (event.type === "vmousedown") {
+
+                handleMouseDownonCanvas(event);
+
+            } else if (event.type === "vmousemove") {
+
+                handleMouseMoveonCanvas(event);
+
+            } else if (event.type === "vmouseup") {
+
+                handleMouseUponCanvas(event);
+
+            } else if (event.type === "vmouseout") {
+
+                handleMouseOutonCanvas(event);
+
+            }
+
+        });
+    });
+    
+    /*
+    $(function(){
+        $( "#container" ).bind( "vmousedown vmousemove vmouseup vmouseout", vmouseHandler );
         
         function vmouseHandler( event ){
           
@@ -643,11 +668,15 @@
 
                 handleMouseUponCanvas(event);
                 
+            } else if (event.type === "vmouseout") {
+
+                handleMouseOutonCanvas(event);
+                
             }
             
         }
     });
-   
+   */
    
     
    
