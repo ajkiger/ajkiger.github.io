@@ -517,8 +517,8 @@
         //canvas.onmousedown = handleMouseDownonCanvas;
         //canvas.onmousemove = handleMouseMoveonCanvas;
         //canvas.onmouseup = handleMouseUponCanvas;
-        canvas.ondblclick = handleMouseDblClickonCanvas;
-        canvas.onmouseout = handleMouseOutonCanvas;
+        //canvas.ondblclick = handleMouseDblClickonCanvas;
+        //canvas.onmouseout = handleMouseOutonCanvas;
         
         
         var checks = $( "#settingsformat" ).buttonset();
@@ -548,7 +548,7 @@
     });
     */
    
-   
+   /*
     $(function() {
         $( "#container" ).on({
             "touchmove" : function(e){ 
@@ -572,7 +572,7 @@
             }
         });
     });
-    
+    */
     /*
     $(function() {
         $( "#container" ).dblclick(function(e) {
@@ -673,7 +673,7 @@
             if (event.type === "vmousedown") {
 
                 handleMouseDownonCanvas(event);
-                $(document).bind( "vmousemove", vmouseHandler );
+                
                 
             } else if (event.type === "vmousemove") {
 
@@ -681,7 +681,7 @@
             } else if (event.type === "vmouseup") {
 
                 handleMouseUponCanvas(event);
-                $(document).unbind( "vmousemove");
+                
                 
             }
         }
@@ -1012,7 +1012,7 @@
 	</div><!-- /header -->
         
         
-        <div role="main" id="container">
+        <div id="container">
             <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
 	</div>
         
