@@ -627,12 +627,12 @@
     
     $(function(){
         $( "#container" ).bind( "vmousemove", vmousemoveHandler );
-        document.getElementById('menuAlign').innerHTML = "dragx";
-        document.getElementById('ycoord3').innerHTML = "dragy";
-        function vmousemoveHandler( event ){
-          $( event.target ).addClass( "vmousemove" );
+        //document.getElementById('menuAlign').innerHTML = "dragx";
+        //document.getElementById('ycoord3').innerHTML = "dragy";
+        function vmousemoveHandler( event1 ){
+          $( event1.target ).addClass( "vmousemove" );
           
-          handleMouseMoveonCanvas(event);
+          handleMouseMoveonCanvas(event1);
           
         }
     });
