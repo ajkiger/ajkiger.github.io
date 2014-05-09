@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-var mouseDown = false;
+//var mouseDown = false;
 
 
 function handleMouseDownonCanvas(event) {
@@ -31,23 +31,23 @@ function handleMouseDownonCanvas(event) {
     return false;
     
     
-    
-    
-    
-    
 }
 
 function handleMouseMoveonCanvas(event) {
     
-    if (!mouseDown) {
-        return;
-    }
+    
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var xCoord = event.clientX - (browserWidth - 640)/2;
     var yCoord = event.clientY - 96;
     
     document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
     document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
+    
+    if (!mouseDown) {
+        return;
+    }
+    
+    
     touchesMoved(event);
     
     if (event.preventDefault)
