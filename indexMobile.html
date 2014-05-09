@@ -611,8 +611,15 @@
         }
     });
     
-    
+    /*
     $(document).bind(
+        "vmouseout", "#container", function(event) {
+            handleMouseOutonCanvas(event);
+        }
+    );
+    */
+   
+    $(document).on(
         "vmouseout", "#container", function(event) {
             handleMouseOutonCanvas(event);
         }
