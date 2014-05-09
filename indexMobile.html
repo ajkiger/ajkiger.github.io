@@ -523,6 +523,7 @@
         startTimer = setTimeout(function(){GameLoop();}, 1500);
         
     }
+    
     /*
     $(document).bind(
             'touchmove',
@@ -532,9 +533,34 @@
          );
     */
     
+    /*
     $(document).on({
         "touchmove" : function(e){ e.preventDefault(); }
     });
+    */
+    
+    $( "#container" ).on({
+        "touchstart" : function(e){ 
+            e.preventDefault(); 
+            $(document).bind(
+                'touchmove', function(e) {
+                    e.preventDefault();
+                }
+            );
+        }
+    });
+    
+    $( "#container" ).on({
+        "touchend" : function(e){ 
+            e.preventDefault(); 
+            $(document).unbind(
+                'touchmove', function(e) {
+                    e.preventDefault();
+                }
+            );
+        }
+    });
+    
     
     
     $(function() {
