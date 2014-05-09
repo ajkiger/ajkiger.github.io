@@ -513,8 +513,8 @@
         //initContext();
         $( "#container" ).fadeTo(400, 1.0);
         
-        canvas.onmousedown = handleMouseDownonCanvas;
-        canvas.onmousemove = handleMouseMoveonCanvas;
+        //canvas.onmousedown = handleMouseDownonCanvas;
+        //canvas.onmousemove = handleMouseMoveonCanvas;
         canvas.onmouseup = handleMouseUponCanvas;
         canvas.ondblclick = handleMouseDblClickonCanvas;
         canvas.onmouseout = handleMouseOutonCanvas;
@@ -606,6 +606,18 @@
           
           document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
           $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
+          
+        }
+    });
+    
+    
+    $(function(){
+        $( "#container" ).bind( "vmousedown", vmousedownHandler );
+
+        function vmousedownHandler( event ){
+          $( event.target ).addClass( "vmousedown" );
+          
+          handleMouseDownonCanvas(event);
           
         }
     });
