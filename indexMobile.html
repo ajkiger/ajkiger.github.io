@@ -518,7 +518,7 @@
         //canvas.onmousemove = handleMouseMoveonCanvas;
         //canvas.onmouseup = handleMouseUponCanvas;
         canvas.ondblclick = handleMouseDblClickonCanvas;
-        //canvas.onmouseout = handleMouseOutonCanvas;
+        canvas.onmouseout = handleMouseOutonCanvas;
         
         
         var checks = $( "#settingsformat" ).buttonset();
@@ -611,7 +611,7 @@
         }
     });
     
-    
+    /*
     $(function(){
         $( "#container" ).bind( "vmousedown", vmousedownHandler );
         //document.getElementById('menuAlign').innerHTML = "touchx";
@@ -647,7 +647,7 @@
           
           handleMouseUponCanvas(event);
           
-          $( "#container" ).bind( "vmousemove", vmousemoveHandler );
+          
         }
     });
     
@@ -663,11 +663,28 @@
           
         }
     });
+    */
     
+    $(function(){
+        $( "#container" ).bind( "vmousedown vmousemove vmouseup", vmouseHandler );
+        
+        function vmouseHandler( event ){
+          
+            if (event.type === "vmousedown") {
+
+                handleMouseDownonCanvas(event);
+            } else if (event.type === "vmousemove") {
+
+                handleMouseMoveonCanvas(event);
+            } else if (event.type === "vmouseup") {
+
+                handleMouseUponCanvas(event);
+            }
+        }
+    });
    
    
-   
-   
+    
    
    
     $(function() {
