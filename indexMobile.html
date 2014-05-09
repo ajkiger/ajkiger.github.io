@@ -673,12 +673,16 @@
             if (event.type === "vmousedown") {
 
                 handleMouseDownonCanvas(event);
+                $(document).bind( "vmousemove", vmouseHandler );
+                
             } else if (event.type === "vmousemove") {
 
                 handleMouseMoveonCanvas(event);
             } else if (event.type === "vmouseup") {
 
                 handleMouseUponCanvas(event);
+                $(document).unbind( "vmousemove");
+                
             }
         }
     //});
