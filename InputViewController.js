@@ -22,6 +22,7 @@ function handleMouseDownonCanvas(event) {
     
     document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
     document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
+    document.getElementById('mouseCoord').innerHTML = mouseDown;
     touchesBegan(event);
     
     if (event.preventDefault)
@@ -35,6 +36,7 @@ function handleMouseDownonCanvas(event) {
 
 function handleMouseMoveonCanvas(event) {
     
+    document.getElementById('mouseCoord').innerHTML = mouseDown;
     if (!mouseDown) {
         return;
     }
@@ -62,6 +64,7 @@ function handleMouseMoveonCanvas(event) {
 function handleMouseUponCanvas(event) {
     
     mouseDown = false;
+    document.getElementById('mouseCoord').innerHTML = mouseDown;
     touchesEnd();
     
     if (event.preventDefault)
