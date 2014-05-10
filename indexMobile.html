@@ -141,6 +141,20 @@
         //word-break:  normal
     }
     
+    #popupHints, #popupSettings {
+        width: 500px;
+        
+    }
+    
+    #showHint, #solveTheCube, #buttonNewGame, #check1id, #check2id {
+        
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  28px; 
+        font-weight:  700;// bold;
+        
+    }
+    
+    
     #wordbox{
         margin-top: 0px;
         margin-bottom: 0px;
@@ -150,8 +164,13 @@
     
     #popupBasic{
         
-        width: 600px;
+        //width: 600px;
         //height: 600px;
+        
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
         
         font-family: arial, Helvetica, sans-serif;
         font-size:  32px; 
@@ -170,29 +189,16 @@
         
     }
     
-    #btnhints {
-        width: 40px;
-        height: 40px;
+    
+    #btnhints, #btnsettings, #btngames, #btninfo {
+        //width: 40px;
+        //height: 40px;
         //margin-left: -150px;
+        cursor:  pointer;
+        
     }
     
-    #btnsettings{
-        width: 40px;
-        height: 40px;
-        //margin-left: 50px;
-    }
     
-    #btngames{
-        width: 40px;
-        height: 40px;
-        //margin-left: 50px;
-    }
-    
-    #btninfo{
-        width: 40px;
-        height: 40px;
-        //margin-left: 50px;
-    }
     
     #starimage {
         width: 40px;
@@ -595,13 +601,33 @@
     
     
     $(function(){
-        $( "#topHeader" ).on( "tap", function( event ){
+        $( "#btnhints" ).on( "tap", function( event ){
           $( event.target ).addClass( "tap" );
           
-          $( "#popupHeader" ).popup("open", { positionTo: "#menuAlign", transition: "pop" });
+          
+          //$( "#popupHints" ).popup({ theme: "b" });
+          $( "#popupHints" ).popup("open", { positionTo: "#container",
+                                             transition: "pop"
+                                             
+          });
           
         });
     });
+    
+    $(function(){
+        $( "#btnsettings" ).on( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          $( "#popupSettings" ).popup("open", { positionTo: "#container",
+                                                transition: "pop" 
+                                            
+          });
+          
+        });
+    });
+    
+    
+    
     
     
     $(function(){
@@ -952,10 +978,10 @@
             <table id="btnTable">
                 <tr>
 
-                    <td><img alt="Hints" src="images/hint2.png" width="40" height="40" title=" Hints "></td>
-                    <td><img alt="Settings" src="images/settings2.png" width="40" height="40" title=" Settings "></td>
-                    <td><img alt="Games" src="images/games2.png" width="40" height="40" title=" Games "></td>
-                    <td><img alt="Info" src="images/instructions2.png" width="40" height="40" title=" Info "></td>
+                    <td id = "btnhints"><img alt="Hints" src="images/hint2.png" width="40" height="40" title=" Hints "></td>
+                    <td id = "btnsettings"><img alt="Settings" src="images/settings2.png" width="40" height="40" title=" Settings "></td>
+                    <td id = "btngames"><img alt="Games" src="images/games2.png" width="40" height="40" title=" Games "></td>
+                    <td id = "btninfo"><img alt="Info" src="images/instructions2.png" width="40" height="40" title=" Info "></td>
                     <td></td>
                     <td id="scoreratebox" title=" Score Rate "></td>
 
@@ -983,11 +1009,29 @@
 	</div><!-- /footer -->
         
         
-        <div data-role="popup" id="popupBasic">
+        <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:560px" data-dismissible="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
             <p id="wordboxpopup"></p>
         </div>
         
         
+        <div data-role="popup" id="popupHints" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <p><a id="showHint" href="#pageWH" data-rel="back" onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
+            <p><a id="solveTheCube" href="#pageWH" data-rel="back" onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
+        </div>
+        
+        
+        <div data-role="popup" id="popupSettings" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <p><input type="checkbox" id="check1"><label id="check1id" for="check1">High Word Density</label></p>
+            <p><input type="checkbox" id="check2"><label id="check2id" for="check2">Inverse Colors</label></p>
+            <p><a id="buttonNewGame" href="#pageWH" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
+        </div>
+        
+        
+        
+        <!--
         <div data-role="popup" id="popupHeader">
             <ul data-role="listview" data-inset="true" style="min-width:210px;">
                 <li data-role="list-divider">Menu</li>
@@ -997,49 +1041,49 @@
                 <li><a href="#"><img alt="Info" src="images/instructions2.png" width="40" height="40" title=" Info "></a></li>
             </ul>
         </div>
-        
+        -->
         
     </div> <!--/WH page -->
         
       
         
-        
+    <!--
     <div data-role="page" id="hintsPage">
 
         <div data-role="header">
             <h1>Hints</h1>
-        </div><!-- /header -->
+        </div>
 
         <div role="main" class="ui-content">
-            <p><a href="#pageWH" data-rel="back" onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p><!--showHint();-->
-            <p><a href="#pageWH" data-rel="back" onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p><!--SolveTheCube();-->
-        </div><!-- /content -->
+            <p><a href="#pageWH" data-rel="back" onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
+            <p><a href="#pageWH" data-rel="back" onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
+        </div>
 
         <div data-role="footer">
             <h4></h4>
-        </div><!-- /footer -->
+        </div>
 
-    </div><!-- /hints Page -->
+    </div>
     
     
     <div data-role="page" id="settingsPage">
 
         <div data-role="header">
             <h1>Settings</h1>
-        </div><!-- /header -->
+        </div>
 
         <div role="main" class="ui-content">
             <p><input type="checkbox" id="check1"><label for="check1">High Word Density</label></p>
             <p><input type="checkbox" id="check2"><label for="check2">Inverse Colors</label></p>
-            <p><a href="#pageWH" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p><!--ButtonNewGame();-->
-        </div><!-- /content -->
+            <p><a href="#pageWH" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
+        </div>
 
         <div data-role="footer">
             <h4></h4>
-        </div><!-- /footer -->
+        </div>
 
-    </div><!-- /settings Page -->
-        
+    </div>
+    -->
 
         
         
