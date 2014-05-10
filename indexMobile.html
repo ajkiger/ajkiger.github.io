@@ -251,11 +251,11 @@
         overflow: hidden;
     }
     
-    div#weekly-games { width: 550px; margin: 20px 0; }
-    div#weekly-games table { margin: 1em 0; border-collapse: collapse; width: 100%; }
-    div#weekly-games table td, div#weekly-games table th { border: 1px solid #eee; padding: .6em 10px; text-align: center; }
+    div#popupGames { width: 550px; margin: 20px 0; }
+    div#popupGames table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+    div#popupGames table td, div#popupGames table th { border: 1px solid #eee; padding: .6em 10px; text-align: center; }
     
-    div#weekly-games table tbody tr:hover {
+    div#popupGames table tbody tr:hover {
     background-color: #cccccc;
     cursor: pointer;
     
@@ -533,8 +533,8 @@
         canvas.ondblclick = handleMouseDblClickonCanvas;
         
         
-        var checks = $( "#settingsformat" ).buttonset();
-        $( "#dialogSettings" ).empty().append(checks);
+        //var checks = $( "#settingsformat" ).buttonset();
+        //$( "#dialogSettings" ).empty().append(checks);
         
         sceneController = new Object();
         sceneControllerInit();
@@ -628,6 +628,97 @@
     });
     
     
+    $(function(){
+        $( "#btngames" ).on( "tap", function( event ){
+            $( event.target ).addClass( "tap" );
+          
+            $( "#users tbody" ).empty();
+            for(var i = 0; i < weeklyWordLists.length; i++){
+                var tElement = weeklyWordLists[i];
+                if(tElement.date === sceneController.currentGame){
+                   $( "#users tbody" ).append( "<tr style=\"background: #ffccff\">" +
+                    "<td>" + tElement.date + "</td>" +
+                    "<td>" + tElement.cubeSize + "</td>" +
+                    "<td>" + tElement.highScore + "</td>" +
+                    "<td>" + tElement.scoreRate + "</td>" +
+                    "</tr>" );
+                }
+                else{
+                    $( "#users tbody" ).append( "<tr>" +
+                    "<td>" + tElement.date + "</td>" +
+                    "<td>" + tElement.cubeSize + "</td>" +
+                    "<td>" + tElement.highScore + "</td>" +
+                    "<td>" + tElement.scoreRate + "</td>" +
+                    "</tr>" );
+                }
+                
+            }
+          
+          
+            $( "#popupGames" ).popup("open", { positionTo: "#container",
+                                                  transition: "pop" 
+
+            });
+          
+          
+            $(function(){
+                $("#usersTBody tr").on( "tap", function( event ){
+                  //$( event.target ).addClass( "tap" );
+
+
+                    var selectedList = $( this ).text();
+                        selectedList = selectedList.substring(0, 8);
+
+                        if(!(sceneController.currentGame === selectedList)){
+                            for(var i = 0; i < weeklyWordLists.length; i++){
+                                var tElement = weeklyWordLists[i];
+                                if(tElement.date === selectedList){
+
+                                    if (tElement.cubeSize === "4x4"){
+                                        sceneController.preCubeSize = 96;
+                                    }
+                                    else if (tElement.cubeSize === "5x5"){
+                                        sceneController.preCubeSize = 150;
+                                    }
+                                    else if (tElement.cubeSize === "6x6"){
+                                        sceneController.preCubeSize = 216;
+                                    }
+                                    sceneController.wordListPlay = "wordlists/" + tElement.wordList;
+                                    sceneController.currentGame = tElement.date;
+                                    break;
+                                }
+                            }
+
+                            if($('#check1').prop('checked')){
+                                sceneController.maxWordKey = "High Word Density";
+                            }
+                            else
+                            {
+                                sceneController.maxWordKey = "Low Word Density";
+                            }
+                            if($('#check2').prop('checked')){
+                                sceneController.cubeColorKey = "Inverse";
+                            }
+                            else
+                            {
+                                sceneController.cubeColorKey = "Normal";
+                            }
+
+                            sceneController.endAnimationActive = true;
+
+                        }
+
+                        $( "#popupGames" ).popup( "close" );
+
+                  });
+
+            });
+          
+          
+        });
+        
+    });
+    
     
     
     
@@ -643,15 +734,9 @@
     
    
    
+   
+   
     $(function(){
-        
-        /*
-        $.vmouse = {
-            moveDistanceThreshold: 1000000,
-            clickDistanceThreshold: 1000000,
-            resetTimerDuration: 15000000
-        };
-        */
        
         $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout", function( event ){ 
             
@@ -678,7 +763,7 @@
    
     
    
-   
+   /*
     $(function() {
         $( "#dialog" ).dialog({
           autoOpen: false,
@@ -716,7 +801,8 @@
         });
         
     });
-    
+    */
+    /*
     $(function() {
         $( "#dialogHints" ).dialog({
           autoOpen: false,
@@ -766,7 +852,8 @@
         });
         
     });
-    
+    */
+    /*
     $(function() {
         $( "#dialogSettings" ).dialog({
           autoOpen: false,
@@ -820,7 +907,8 @@
           
         });
     });
-    
+    */
+    /*
     $(function() {
         $( "#dialoggames" ).dialog({ //#dialoggames
           autoOpen: false,
@@ -848,8 +936,8 @@
             duration: 200
           }
         });
-
-        $( "#btngames" ).click(function() { //btngames
+        
+        $( "#btngames2" ).click(function() { //btngames
           var table = $("#weekly-games");
           $( "#users tbody" ).empty();
           for(var i = 0; i < weeklyWordLists.length; i++){
@@ -927,8 +1015,8 @@
           
         });
     });
-    
-    
+    */
+    /*
     $(function() {
         $( "#dialogWin" ).dialog({
           autoOpen: false,
@@ -963,7 +1051,7 @@
         });
         
     });
-    
+    */
     
 </script>
 
@@ -1011,7 +1099,7 @@
 	</div><!-- /footer -->
         
         
-        <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:580px" data-dismissible="false">
+        <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:600px" data-dismissible="false">
             <p id="wordboxpopup"></p>
             <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
         </div>
@@ -1038,18 +1126,23 @@
         </div>
         
         
-        
-        <!--
-        <div data-role="popup" id="popupHeader">
-            <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                <li data-role="list-divider">Menu</li>
-                <li><a href="#hintsPage" data-rel="dialog" data-transition="pop"><img alt="Hints" src="images/hint2.png" width="40" height="40" title=" Hints "></a></li>
-                <li><a href="#settingsPage" data-rel="dialog" data-transition="pop"><img alt="Settings" src="images/settings2.png" width="40" height="40" title=" Settings "></a></li>
-                <li><a href="#"><img alt="Games" src="images/games2.png" width="40" height="40" title=" Games "></a></li>
-                <li><a href="#"><img alt="Info" src="images/instructions2.png" width="40" height="40" title=" Info "></a></li>
-            </ul>
+        <div data-role="popup" id="popupGames" class="ui-widget" style="max-width:600px" data-dismissible="false">
+            <table id="users" class="ui-widget ui-widget-content">
+              <thead>
+                <tr class="ui-widget-header ">
+                  <th>Puzzle</th>
+                  <th>Cube</th>
+                  <th>High Score</th>
+                  <th>Score Rate</th>
+                </tr>
+              </thead>
+              <tbody id="usersTBody"></tbody>
+            </table>
         </div>
-        -->
+        
+        
+        
+       
         
     </div> <!--/WH page -->
         
@@ -1091,14 +1184,14 @@
         </div>
 
     </div>
-    -->
+    
 
         
         
         <div id="dialog" title="Information">
             <p></p>
         </div>
-        
+    -->    
         
 
         <div id="tabs" style="display:none">
@@ -1132,24 +1225,12 @@
             <input type="checkbox" id="check1"><label for="check1">High Word Density</label>
             <input type="checkbox" id="check2"><label for="check2">Inverse Colors</label>
         </div>
-        -->
+        
         <div id="dialoggames" title="Daily Games">
             <p></p>
         </div>
 
-        <div id="weekly-games" class="ui-widget" style="display:none">
-            <table id="users" class="ui-widget ui-widget-content">
-              <thead>
-                <tr class="ui-widget-header ">
-                  <th>Puzzle</th>
-                  <th>Cube</th>
-                  <th>High Score</th>
-                  <th>Score Rate</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-        </div>
+        
 
 
         <div id="dialogWordBox" title="Find the Words!">
@@ -1160,7 +1241,7 @@
         <div id="dialogWin" title="Congratulations!">
             <p></p>
         </div>
-
+        -->
 
 
         <div id="xcoord">
