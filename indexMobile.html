@@ -594,14 +594,13 @@
     
     
     $(function(){
-        $( "#topHeader" ).bind( "tap", tapHandler );
-
-        function tapHandler( event ){
-          $( event.target ).addClass( "tap" );
+        $( "#topHeader" ).on( "vmousedown", function( event ){
+            
+          $( event.target ).addClass( "vmousedown" );
           
           $( "#popupHeader" ).popup("open", { positionTo: "#menuAlign", transition: "pop" });
           
-        }
+        });
     });
     
     
