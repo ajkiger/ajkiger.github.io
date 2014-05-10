@@ -83,6 +83,9 @@
         //margin-top: 1px;
         //margin-bottom: 1px;
         
+        overflow:  hidden;
+        -ms-touch-action: none;
+        
     }
     
     #container{
@@ -124,6 +127,7 @@
         //overflow-y:  auto;
         //overflow-x: auto;
         overflow:  hidden;
+        -ms-touch-action: none;
         
         //font-family: arial, Helvetica, sans-serif;
         //font-size:  24px; 
@@ -543,12 +547,12 @@
     );
     */
     
-    
+    /*
     $(document).on(
         "touchmove", function(e){ e.preventDefault();
     
     });
-    
+    */
    
    /*
     $(function() {
@@ -632,15 +636,15 @@
    
     $(function(){
         
+        /*
         $.vmouse = {
             moveDistanceThreshold: 1000000,
             clickDistanceThreshold: 1000000,
             resetTimerDuration: 15000000
         };
-        
+        */
+       
         $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout", function( event ){ 
-            
-            
             
             if (event.type === "vmousedown") {
 
