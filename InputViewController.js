@@ -10,7 +10,7 @@ var mouseDown = false;
 function handleMouseDownonCanvas(event) {
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var xCoord = event.clientX - (browserWidth - 640)/2;
-    var yCoord = event.clientY - 96;
+    var yCoord = event.clientY - 96 - 25;
     xCoord = parseFloat(Math.round(xCoord * 100) / 100).toFixed(0);
     yCoord = parseFloat(Math.round(yCoord * 100) / 100).toFixed(0);
     
@@ -45,7 +45,7 @@ function handleMouseMoveonCanvas(event) {
     
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var xCoord = event.clientX - (browserWidth - 640)/2;
-    var yCoord = event.clientY - 96;
+    var yCoord = event.clientY - 96 - 25;
     xCoord = parseFloat(Math.round(xCoord * 100) / 100).toFixed(0);
     yCoord = parseFloat(Math.round(yCoord * 100) / 100).toFixed(0);
     

@@ -1487,7 +1487,7 @@ function touchesBegan(event) {
     xAdjustment = (browserWidth - 640)/2;
     //xAdjustment = 16;
     //yAdjustment = 112 - netGain; //89
-    yAdjustment = 96;
+    yAdjustment = 96 + 25;
     currentPoint.x = currentPoint.x - xAdjustment;
     currentPoint.y = currentPoint.y - yAdjustment;
     
@@ -1541,7 +1541,7 @@ function touchesMoved(event) {
     xAdjustment = (browserWidth - 640)/2;
     //xAdjustment = 16;
     //yAdjustment = 112 - netGain; //89
-    yAdjustment = 96;
+    yAdjustment = 96 + 25;
     currentPoint.x = currentPoint.x - xAdjustment;
     currentPoint.y = currentPoint.y - yAdjustment;
     
