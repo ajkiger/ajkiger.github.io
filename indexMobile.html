@@ -266,6 +266,13 @@
     }
     
     
+    #tabs-1, #tabs-2, #tabs-3, #tabs-4, #tabs-5{
+        
+        font-size: 20px;
+        font-weight: 700;
+        
+    }
+    
     
 </style>
 
@@ -536,9 +543,6 @@
         canvas.ondblclick = handleMouseDblClickonCanvas;
         
         
-        //var checks = $( "#settingsformat" ).buttonset();
-        //$( "#dialogSettings" ).empty().append(checks);
-        
         sceneController = new Object();
         sceneControllerInit();
         sceneControllerLoadScene();
@@ -610,7 +614,7 @@
           
           
           //$( "#popupHints" ).popup({ theme: "b" });
-          $( "#popupHints" ).popup("open", { positionTo: "#container",
+          $( "#popupHints" ).popup("open", { positionTo: "#topHeader",
                                              transition: "pop"
                                              
           });
@@ -622,7 +626,7 @@
         $( "#btnsettings" ).on( "tap", function( event ){
           $( event.target ).addClass( "tap" );
           
-          $( "#popupSettings" ).popup("open", { positionTo: "#container",
+          $( "#popupSettings" ).popup("open", { positionTo: "#topHeader",
                                                 transition: "pop" 
                                             
           });
@@ -658,7 +662,7 @@
             }
           
           
-            $( "#popupGames" ).popup("open", { positionTo: "#container",
+            $( "#popupGames" ).popup("open", { positionTo: "#topHeader",
                                                   transition: "pop" 
 
             });
@@ -724,6 +728,22 @@
     
     
     
+    $(function(){
+        $( "#btninfo" ).on( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          $("#popupTabs").show();
+          $("#popupTabs").tabs();
+          
+          $( "#popupTabs" ).popup("open", { positionTo: "#topHeader",
+                                                transition: "pop" 
+                                            
+          });
+          
+        });
+    });
+    
+    
     
     $(function(){
         $( "#bottomFooter" ).bind( "tap", function( event ){
@@ -765,260 +785,6 @@
     });
    
     
-   
-   /*
-    $(function() {
-        $( "#dialog" ).dialog({
-          autoOpen: false,
-          height: 580,
-          width: 620,
-          //modal: true,
-          draggable: false,
-          resizable: false,
-          buttons: {
-            Close: function() {
-              $( this ).dialog( "close" );
-            }
-          },
-          position: {
-              my: "top",
-              at: "top",
-              of: container
-          },
-          show: {
-            effect: "fade",
-            duration: 200
-          },
-          hide: {
-            effect: "fade",
-            duration: 200
-          }
-        });
-        
-        $( "#btninfo" ).click(function() {  //"#btninfo"
-          var tabs = $("#tabs");
-          $( "#dialog" ).empty().append(tabs);
-          $( "#dialog" ).dialog( "open" );
-          tabs.show();
-          tabs.tabs();
-        });
-        
-    });
-    */
-    /*
-    $(function() {
-        $( "#dialogHints" ).dialog({
-          autoOpen: false,
-          height: 170,
-          width: 240,
-          //modal: true,
-          draggable: false,
-          resizable: false,
-          buttons: {
-            "Take a Hint": function() {
-              showHint();
-              $( this ).dialog( "close" );
-            },
-            "Solve Cube": function() {
-              SolveTheCube();
-              $( this ).dialog( "close" );
-            }
-          },
-          position: {
-              my: "left top",
-              at: "left top",
-              of: container
-          },
-          show: {
-            effect: "fade",
-            duration: 200
-          },
-          hide: {
-            effect: "fade",
-            duration: 200
-          }
-        });
-        
-        $( "#btnhints" ).click(function() {
-          $( "#dialogHints" ).empty();
-          $( "#dialogHints" ).dialog( "open" );
-          if(sceneController.wordHintWords.length > 0){
-              $(":button:contains('Take a Hint')").attr("disabled","disabled").addClass( 'ui-state-disabled' );
-          }
-          else
-          {
-              $(":button:contains('Take a Hint')").removeAttr('disabled').removeClass( 'ui-state-disabled' );
-          }
-          if(sceneController.solveCube){
-              $(":button:contains('Take a Hint')").removeAttr('disabled').removeClass( 'ui-state-disabled' );
-          }
-        });
-        
-    });
-    */
-    /*
-    $(function() {
-        $( "#dialogSettings" ).dialog({
-          autoOpen: false,
-          height: 200,
-          width: 240,
-          //modal: true,
-          draggable: false,
-          resizable: false,
-          buttons: {
-            "New Game": function() {
-             if($('#check1').prop('checked')){
-                 sceneController.maxWordKey = "High Word Density";
-             }
-             else
-             {
-                 sceneController.maxWordKey = "Low Word Density";
-             }
-             if($('#check2').prop('checked')){
-                 sceneController.cubeColorKey = "Inverse";
-             }
-             else
-             {
-                 sceneController.cubeColorKey = "Normal";
-             }
-             
-             sceneController.endAnimationActive = true;
-              $( this ).dialog( "close" );
-            }
-          },
-          position: {
-              my: "left top",
-              at: "left top",
-              of: container
-          },
-          show: {
-            effect: "fade",
-            duration: 200
-          },
-          hide: {
-            effect: "fade",
-            duration: 200
-          }
-        });
-
-        $( "#btnsettings" ).click(function() {
-          
-          var checks = $( "#settingsformat" ).buttonset();
-          $( "#dialogSettings" ).empty().append(checks);
-          $( "#dialogSettings" ).dialog( "open" );
-          checks.show();
-          
-        });
-    });
-    */
-    /*
-    $(function() {
-        $( "#dialoggames" ).dialog({ //#dialoggames
-          autoOpen: false,
-          height: 580,
-          width: 620,
-          //modal: true,
-          draggable: false,
-          resizable: false,
-          buttons: {
-            Close: function() {
-              $( this ).dialog( "close" );
-            }
-          },
-          position: {
-              my: "top",
-              at: "top",
-              of: container
-          },
-          show: {
-            effect: "fade",
-            duration: 200
-          },
-          hide: {
-            effect: "fade",
-            duration: 200
-          }
-        });
-        
-        $( "#btngames2" ).click(function() { //btngames
-          var table = $("#weekly-games");
-          $( "#users tbody" ).empty();
-          for(var i = 0; i < weeklyWordLists.length; i++){
-                var tElement = weeklyWordLists[i];
-                if(tElement.date === sceneController.currentGame){
-                   $( "#users tbody" ).append( "<tr style=\"background: #ffccff\">" +
-                    "<td>" + tElement.date + "</td>" +
-                    "<td>" + tElement.cubeSize + "</td>" +
-                    "<td>" + tElement.highScore + "</td>" +
-                    "<td>" + tElement.scoreRate + "</td>" +
-                    "</tr>" );
-                }
-                else{
-                    $( "#users tbody" ).append( "<tr>" +
-                    "<td>" + tElement.date + "</td>" +
-                    "<td>" + tElement.cubeSize + "</td>" +
-                    "<td>" + tElement.highScore + "</td>" +
-                    "<td>" + tElement.scoreRate + "</td>" +
-                    "</tr>" );
-                }
-                
-           }
-          
-          $( "#dialoggames" ).empty().append(table);
-          $( "#dialoggames" ).dialog( "open" );
-          table.show();
-          
-          
-          $('table tbody tr').click(function(){
-                var selectedList = $( this ).text();
-                selectedList = selectedList.substring(0, 8);
-                
-                if(!(sceneController.currentGame === selectedList)){
-                    for(var i = 0; i < weeklyWordLists.length; i++){
-                        var tElement = weeklyWordLists[i];
-                        if(tElement.date === selectedList){
-
-                            if (tElement.cubeSize === "4x4"){
-                                sceneController.preCubeSize = 96;
-                            }
-                            else if (tElement.cubeSize === "5x5"){
-                                sceneController.preCubeSize = 150;
-                            }
-                            else if (tElement.cubeSize === "6x6"){
-                                sceneController.preCubeSize = 216;
-                            }
-                            sceneController.wordListPlay = "wordlists/" + tElement.wordList;
-                            sceneController.currentGame = tElement.date;
-                            break;
-                        }
-                    }
-                    
-                    if($('#check1').prop('checked')){
-                        sceneController.maxWordKey = "High Word Density";
-                    }
-                    else
-                    {
-                        sceneController.maxWordKey = "Low Word Density";
-                    }
-                    if($('#check2').prop('checked')){
-                        sceneController.cubeColorKey = "Inverse";
-                    }
-                    else
-                    {
-                        sceneController.cubeColorKey = "Normal";
-                    }
-
-                    sceneController.endAnimationActive = true;
-                    
-                }
-                
-                $( "#dialoggames" ).dialog( "close" );
-                
-           });
-          
-        });
-    });
-    */
     /*
     $(function() {
         $( "#dialogWin" ).dialog({
@@ -1144,7 +910,32 @@
         </div>
         
         
-        
+        <div data-role="popup" id="popupTabs" class="ui-content" style="max-width:600px" data-dismissible="false">
+            <ul>
+              <li><a href="#tabs-1">Instructions</a></li>
+              <li><a href="#tabs-2">Scoring</a></li>
+              <li><a href="#tabs-3">Hints</a></li>
+              <li><a href="#tabs-4">Credit</a></li>
+              <li><a href="#tabs-5">Support</a></li>
+            </ul>
+            <div id="tabs-1">
+              <p>Rotate the cube to find the words listed at the bottom of the screen. &nbsp; Once a word is found, maneuver the cube so the first and last letters of the word are visible, and then double tap the screen to freeze the cube. &nbsp; Tap the first and last letters of the word or drag your finger from one end letter to the other. &nbsp; Selecting words will score points. &nbsp; Double tap the screen again to put the cube back in free rotate mode. &nbsp; Continue to look for and select words until all words are found. &nbsp; Then find the hidden word to win the game.</p>
+            </div>
+            <div id="tabs-2">
+              <p>Scoring</p>
+            </div>
+            <div id="tabs-3">
+              <p>Hints</p>
+            </div>
+            <div id="tabs-4">
+              <p>Credit</p>
+            </div>
+            <div id="tabs-5">
+              <p>Support</p>
+            </div>
+            
+            <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+        </div>
        
         
     </div> <!--/WH page -->
@@ -1187,64 +978,8 @@
         </div>
 
     </div>
-    
+    -->
 
-        
-        
-        <div id="dialog" title="Information">
-            <p></p>
-        </div>
-    -->    
-        
-
-        <div id="tabs" style="display:none">
-            <ul>
-              <li><a href="#tabs-1">Instructions</a></li>
-              <li><a href="#tabs-2">Scoring</a></li>
-              <li><a href="#tabs-3">Hints</a></li>
-              <li><a href="#tabs-4">Credit</a></li>
-              <li><a href="#tabs-5">Support</a></li>
-            </ul>
-            <div id="tabs-1">
-              <p>Rotate the cube to find the words listed at the bottom of the screen. &nbsp; Once a word is found, maneuver the cube so the first and last letters of the word are visible, and then double tap the screen to freeze the cube. &nbsp; Tap the first and last letters of the word or drag your finger from one end letter to the other. &nbsp; Selecting words will score points. &nbsp; Double tap the screen again to put the cube back in free rotate mode. &nbsp; Continue to look for and select words until all words are found. &nbsp; Then find the hidden word to win the game.</p>
-            </div>
-            <div id="tabs-2">
-              <p>Scoring</p>
-            </div>
-            <div id="tabs-3">
-              <p>Hints</p>
-            </div>
-            <div id="tabs-4">
-              <p>Credit</p>
-            </div>
-            <div id="tabs-5">
-              <p>Support</p>
-            </div>
-        </div>
-
-        
-        <!---
-        <div id="settingsformat" style="display:none">
-            <input type="checkbox" id="check1"><label for="check1">High Word Density</label>
-            <input type="checkbox" id="check2"><label for="check2">Inverse Colors</label>
-        </div>
-        
-        <div id="dialoggames" title="Daily Games">
-            <p></p>
-        </div>
-
-        
-
-
-        <div id="dialogWordBox" title="Find the Words!">
-            <p></p>
-        </div>
-
-
-        <div id="dialogWin" title="Congratulations!">
-            <p></p>
-        </div>
-        -->
 
 
         <div id="xcoord">
