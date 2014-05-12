@@ -69,6 +69,7 @@
         overflow-x: hidden;
         overflow-y: hidden;
         -ms-touch-action: none;
+         
     }
     
     #pageWH{
@@ -260,9 +261,12 @@
     div#popupGames table td, div#popupGames table th { border: 1px solid #eee; padding: .6em 10px; text-align: center; font-size: 20px; font-weight: 700;}
     
     div#popupGames table tbody tr:hover {
-    background-color: #cccccc;
+    //background-color: #cccccc;
     cursor: pointer;
     
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
     }
     
     
@@ -273,6 +277,30 @@
         //overflow-y: auto;
         
     }
+    
+    
+    /* Grow */
+
+    .grow {
+      display: inline-block;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-property: -webkit-transform;
+      transition-property: transform;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    }
+
+    .grow:hover {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1);
+    }
+    
+    
     
     
 </style>
