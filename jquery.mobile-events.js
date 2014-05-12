@@ -40,7 +40,7 @@
             swipe_h_threshold: 50,
             swipe_v_threshold: 50,
             taphold_threshold: 750,
-            doubletap_int: 300,
+            doubletap_int: 400,
 
             touch_capable: ('ontouchstart' in document.documentElement && !isChromeDesktop),
             orientation_support: ('orientation' in window && 'onorientationchange' in window),
@@ -290,6 +290,29 @@
 
                     return true;
                 }
+            }).on(settings.moveevent, function (e) {
+                var now = new Date().getTime();
+                //var lastTouch = $this.data('lastTouch') || now + 1;
+                //var delta = now - lastTouch;
+                if (firsttime) {
+                    
+                    window.clearTimeout(action);
+                    $this.data('callee3', arguments.callee);
+
+                    $this.data('lastTouch', now);
+                    action = window.setTimeout(function (e) {
+                        window.clearTimeout(action);
+                        window.clearTimeout(settings.tap_timer);
+                        $this.data('firsttime', false);
+                    }, 0.0, [e]);
+                    
+                    $this.data('lastTouch', now);
+                    
+                    
+                    return false;
+                }
+                
+                
             }).on(settings.endevent, function (e) {
                 var now = new Date().getTime();
                 var lastTouch = $this.data('lastTouch') || now + 1;
@@ -334,8 +357,9 @@
                 $this.data('lastTouch', now);
             });
         },
+        
         remove: function () {
-            $(this).off(settings.startevent, $(this).data.callee1).off(settings.endevent, $(this).data.callee2);
+            $(this).off(settings.startevent, $(this).data.callee1).off(settings.endevent, $(this).data.callee2).off(settings.moveevent, $(this).data.callee3);
         }
     };
 
