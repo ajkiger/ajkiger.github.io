@@ -35,6 +35,7 @@
 <link rel="stylesheet" href="jquery.mobile-1.4.2.min.css">
 
 
+<script type="text/javascript" src="jquery.mobile-events.js"></script>
 <script type="text/javascript" src="gl-matrix-min.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
 
@@ -624,7 +625,7 @@
         //canvas.onmousemove = handleMouseMoveonCanvas;
         //canvas.onmouseup = handleMouseUponCanvas;
         //canvas.onmouseout = handleMouseOutonCanvas;
-        canvas.ondblclick = handleMouseDblClickonCanvas;
+        //canvas.ondblclick = handleMouseDblClickonCanvas;
         
         
         sceneController = new Object();
@@ -864,7 +865,7 @@
    
     $(function(){
        
-        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout", function( event ){ 
+        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
             
             if (event.type === "vmousedown") {
 
@@ -882,9 +883,16 @@
 
                 handleMouseOutonCanvas(event);
 
+            } else if (event.type === "doubletap") {
+
+                handleMouseDblClickonCanvas(event);
+
             }
 
         });
+        
+        
+        
     });
    
     
