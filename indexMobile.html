@@ -865,18 +865,18 @@
    
     $(function(){
        
-        //$( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap singletap", function( event ){ 
-        $( "#container" ).on( "tapstart tapmove tapend doubletap singletap", function( event ){ 
+        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap singletap", function( event ){ 
+        //$( "#container" ).on( "tapstart tapmove tapend doubletap singletap", function( event ){ 
             
-            if (event.type === "tapstart") {  //"vmousedown"
+            if (event.type === "vmousedown") {  //"vmousedown"
 
                 handleMouseDownonCanvas(event);
 
-            } else if (event.type === "tapmove") {  //"vmousemove"
+            } else if (event.type === "vmousemove") {  //"vmousemove"
 
                 handleMouseMoveonCanvas(event);
 
-            } else if (event.type === "tapend") {  //"vmouseup"
+            } else if (event.type === "vmouseup") {  //"vmouseup"
 
                 handleMouseUponCanvas(event);
 

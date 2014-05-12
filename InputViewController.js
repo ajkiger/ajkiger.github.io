@@ -86,7 +86,7 @@ function handleMouseDblClickonCanvas(event) {
     
     document.getElementById('menuAlign').innerHTML = "DT";
     document.getElementById('ycoord3').innerHTML = "DT";
-    doubleTap();
+    //doubleTap();
     
     if (event.preventDefault)
         event.preventDefault();
