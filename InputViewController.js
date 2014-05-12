@@ -51,7 +51,7 @@ function handleMouseMoveonCanvas(event) {
     
     document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
     document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
-    document.getElementById('mouseCoord').innerHTML = mouseDown;
+    //document.getElementById('mouseCoord').innerHTML = mouseDown;
     //document.getElementById('vMoveEvent').innerHTML = "Yes";
 
     
@@ -69,7 +69,7 @@ function handleMouseMoveonCanvas(event) {
 function handleMouseUponCanvas(event) {
     
     mouseDown = false;
-    document.getElementById('mouseCoord').innerHTML = mouseDown;
+    //document.getElementById('mouseCoord').innerHTML = mouseDown;
     //document.getElementById('vMoveEvent').innerHTML = "No";
     touchesEnd();
     
@@ -100,7 +100,7 @@ function handleMouseDblClickonCanvas(event) {
 function handleMouseOutonCanvas(event){
     
     mouseDown = false;
-    document.getElementById('mouseCoord').innerHTML = mouseDown;
+    //document.getElementById('mouseCoord').innerHTML = mouseDown;
     
     if (event.preventDefault)
         event.preventDefault();

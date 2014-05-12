@@ -428,6 +428,7 @@ function SolveTheCube(){
     numberStars = 3;
     document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"40\" height=\"40\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
     solveCubeNow();
+    
 }
 
 
