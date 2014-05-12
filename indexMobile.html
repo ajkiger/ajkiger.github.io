@@ -282,28 +282,28 @@
     /* Wobble Horizontal */
     @-webkit-keyframes wobble-horizontal {
       16.65% {
-        -webkit-transform: translateX(8px);
-        transform: translateX(8px);
+        -webkit-transform: translateX(-8px);
+        transform: translateX(-8px);
       }
 
       33.3% {
-        -webkit-transform: translateX(-6px);
-        transform: translateX(-6px);
+        -webkit-transform: translateX(6px);
+        transform: translateX(6px);
       }
 
       49.95% {
-        -webkit-transform: translateX(4px);
-        transform: translateX(4px);
+        -webkit-transform: translateX(-4px);
+        transform: translateX(-4px);
       }
 
       66.6% {
-        -webkit-transform: translateX(-2px);
-        transform: translateX(-2px);
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
       }
 
       83.25% {
-        -webkit-transform: translateX(1px);
-        transform: translateX(1px);
+        -webkit-transform: translateX(-1px);
+        transform: translateX(-1px);
       }
 
       100% {
@@ -314,28 +314,28 @@
 
     @keyframes wobble-horizontal {
       16.65% {
-        -webkit-transform: translateX(8px);
-        transform: translateX(8px);
+        -webkit-transform: translateX(-8px);
+        transform: translateX(-8px);
       }
 
       33.3% {
-        -webkit-transform: translateX(-6px);
-        transform: translateX(-6px);
+        -webkit-transform: translateX(6px);
+        transform: translateX(6px);
       }
 
       49.95% {
-        -webkit-transform: translateX(4px);
-        transform: translateX(4px);
+        -webkit-transform: translateX(-4px);
+        transform: translateX(-4px);
       }
 
       66.6% {
-        -webkit-transform: translateX(-2px);
-        transform: translateX(-2px);
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
       }
 
       83.25% {
-        -webkit-transform: translateX(1px);
-        transform: translateX(1px);
+        -webkit-transform: translateX(-1px);
+        transform: translateX(-1px);
       }
 
       100% {
@@ -759,7 +759,7 @@
                         var selectedList = $( this ).text();
                         selectedList = selectedList.substring(0, 8);
 
-                        //$( this ).css("background-color", "#cccccc");
+                        $( this ).css("background-color", "rgba(255, 255, 255, 0.0)");
                         //$( this ).css("transform", "scale(1.05)");
 
                         if(!(sceneController.currentGame === selectedList)){
@@ -767,6 +767,7 @@
                             $( this ).addClass( "wobble-horizontal" );
                         }
                         else {
+                            $( this ).addClass( "wobble-horizontal" );
                             listChanged = false;
                         }
                     
@@ -811,12 +812,12 @@
 
                         }
                         
-                        if(listChanged){
-                            setTimeout(function(){$( "#popupGames" ).popup( "close" );}, 300);
-                        }
-                        else {
-                            $( "#popupGames" ).popup( "close" );
-                        }
+                        //if(listChanged){
+                            setTimeout(function(){$( "#popupGames" ).popup( "close" );}, 600);
+                        //}
+                        //else {
+                            //$( "#popupGames" ).popup( "close" );
+                        //}
                         
                         
                   });
