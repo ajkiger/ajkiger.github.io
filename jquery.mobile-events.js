@@ -270,6 +270,7 @@
                     return false;
                 } else {
                     $this.data('firsttime', true);
+                    $this.data('dbltapcanceled', false);
                     $this.data('doubletapped', false);
                     origTarget = e.target;
                     $this.data('callee1', arguments.callee);
@@ -291,36 +292,37 @@
                     return true;
                 }
             }).on(settings.moveevent, function (e) {
-                var now = new Date().getTime();
+                //var now = new Date().getTime();
                 //var lastTouch = $this.data('lastTouch') || now + 1;
                 //var delta = now - lastTouch;
-                if (firsttime) {
+                //if (firsttime) {
                     
-                    window.clearTimeout(action);
-                    $this.data('callee3', arguments.callee);
+                    //window.clearTimeout(action);
+                    //$this.data('callee3', arguments.callee);
 
-                    $this.data('lastTouch', now);
-                    action = window.setTimeout(function (e) {
-                        window.clearTimeout(action);
-                        window.clearTimeout(settings.tap_timer);
-                        $this.data('firsttime', false);
-                    }, 0.0, [e]);
+                    //$this.data('lastTouch', now);
+                    //action = window.setTimeout(function (e) {
+                        //window.clearTimeout(action);
+                        //window.clearTimeout(settings.tap_timer);
+                        //$this.data('firsttime', false);
+                    //}, 0.0, [e]);
                     
-                    $this.data('lastTouch', now);
+                    //$this.data('lastTouch', now);
+                    $this.data('dbltapcanceled', true);
                     
-                    
-                    return false;
-                }
+                    //return false;
+                //}
                 
                 
             }).on(settings.endevent, function (e) {
                 var now = new Date().getTime();
                 var lastTouch = $this.data('lastTouch') || now + 1;
                 var delta = now - lastTouch;
+                var dbltapcanceled = $this.data('dbltapcanceled');
                 window.clearTimeout(action);
                 $this.data('callee2', arguments.callee);
 
-                if (delta < settings.doubletap_int && delta > 0 && (e.target === origTarget) && delta > 100) {
+                if (delta < settings.doubletap_int && delta > 0 && (e.target === origTarget) && delta > 100 && !dbltapcanceled) {
                     $this.data('firsttime', false);
                     $this.data('doubletapped', true);
                     window.clearTimeout(settings.tap_timer);
@@ -355,6 +357,7 @@
                     }, settings.doubletap_int, [e]);
                 }
                 $this.data('lastTouch', now);
+                $this.data('dbltapcanceled', false);
             });
         },
         
