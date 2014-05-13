@@ -775,15 +775,17 @@
                         var selectedList = $( this ).text();
                         selectedList = selectedList.substring(0, 8);
 
-                        $( this ).css("background-color", "rgba(255, 255, 255, 0.0)");
+                        //$( this ).css("background-color", "rgba(255, 255, 255, 0.0)");
+                        $( this ).css("background-color", "#cccccc");
+                        
                         //$( this ).css("transform", "scale(1.05)");
 
                         if(!(sceneController.currentGame === selectedList)){
                             listChanged = true;
-                            $( this ).addClass( "wobble-horizontal" );
+                            //$( this ).addClass( "wobble-horizontal" );
                         }
                         else {
-                            $( this ).addClass( "wobble-horizontal" );
+                            //$( this ).addClass( "wobble-horizontal" );
                             listChanged = false;
                         }
                     
