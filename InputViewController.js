@@ -22,8 +22,8 @@ function handleMouseDownonCanvas(event) {
     $( "#dialoggames" ).dialog( "close" );
     
     
-    //document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
-    //document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
+    document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
+    document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
     //document.getElementById('mouseCoord').innerHTML = mouseDown;
     touchesBegan(event);
     
@@ -49,8 +49,8 @@ function handleMouseMoveonCanvas(event) {
     xCoord = parseFloat(Math.round(xCoord * 100) / 100).toFixed(0);
     yCoord = parseFloat(Math.round(yCoord * 100) / 100).toFixed(0);
     
-    //document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
-    //document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
+    document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
+    document.getElementById('ycoord3').innerHTML = "y:" + yCoord;
     //document.getElementById('mouseCoord').innerHTML = mouseDown;
     //document.getElementById('vMoveEvent').innerHTML = "Yes";
 
@@ -84,8 +84,8 @@ function handleMouseDblClickonCanvas(event) {
     
     mouseDown = false;
     
-    //document.getElementById('menuAlign').innerHTML = "DT";
-    //document.getElementById('ycoord3').innerHTML = "DT";
+    document.getElementById('menuAlign').innerHTML = "DT";
+    document.getElementById('ycoord3').innerHTML = "DT";
     doubleTap();
     
     if (event.preventDefault)

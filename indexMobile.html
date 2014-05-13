@@ -464,8 +464,10 @@
         if (!gl) {
             //alert("Could not initialise WebGL, sorry :-(");
             $( "#container" ).fadeTo(400, 1.0);
+            validCanvas = false;
             return;
         }
+        validCanvas = true;
         gl.viewportWidth = canvas.width;
         gl.viewportHeight = canvas.height;
         
@@ -632,32 +634,37 @@
     }
 
     var startTimer;
-    var xAdjustment;
-    var yAdjustment;
+    var validCanvas;
     
     function webGLStart() {
         
         canvas = document.getElementById("WordCubed-canvas");
-        
+        validCanvas = true;
         initGL(canvas);
-        initShaders();
-        initContext();
-        //$( "#container" ).fadeTo(400, 1.0);
         
-        //canvas.onmousedown = handleMouseDownonCanvas;
-        //canvas.onmousemove = handleMouseMoveonCanvas;
-        //canvas.onmouseup = handleMouseUponCanvas;
-        //canvas.onmouseout = handleMouseOutonCanvas;
-        //canvas.ondblclick = handleMouseDblClickonCanvas;
+        if(validCanvas){
+            
+            initShaders();
+            initContext();
+            //$( "#container" ).fadeTo(400, 1.0);
+
+            //canvas.onmousedown = handleMouseDownonCanvas;
+            //canvas.onmousemove = handleMouseMoveonCanvas;
+            //canvas.onmouseup = handleMouseUponCanvas;
+            //canvas.onmouseout = handleMouseOutonCanvas;
+            //canvas.ondblclick = handleMouseDblClickonCanvas;
+
+
+            sceneController = new Object();
+            sceneControllerInit();
+            sceneControllerLoadScene();
+
+
+
+            startTimer = setTimeout(function(){GameLoop();}, 1500);
+            
+        }
         
-        
-        sceneController = new Object();
-        sceneControllerInit();
-        sceneControllerLoadScene();
-        
-        
-        
-        startTimer = setTimeout(function(){GameLoop();}, 1500);
         
     }
     
@@ -889,28 +896,37 @@
    
    
     $(function(){
+        
+        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout", function( event ){ 
        
-        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout", function( event ){  
-            
-            if (event.type === "vmousedown") {  //"vmousedown"
+            if(validCanvas){
 
-                handleMouseDownonCanvas(event);
 
-            } else if (event.type === "vmousemove") {  //"vmousemove"
 
-                handleMouseMoveonCanvas(event);
+                if (event.type === "vmousedown") {  //"vmousedown"
 
-            } else if (event.type === "vmouseup") {  //"vmouseup"
+                    handleMouseDownonCanvas(event);
 
-                handleMouseUponCanvas(event);
+                } else if (event.type === "vmousemove") {  //"vmousemove"
 
-            } else if (event.type === "vmouseout") {
+                    handleMouseMoveonCanvas(event);
 
-                handleMouseOutonCanvas(event);
+                } else if (event.type === "vmouseup") {  //"vmouseup"
+
+                    handleMouseUponCanvas(event);
+
+                } else if (event.type === "vmouseout") {
+
+                    handleMouseOutonCanvas(event);
+
+                }
+
+
 
             }
-
+        
         });
+        
         
     });
     
@@ -920,10 +936,14 @@
 
         $( "#container" ).on( "doubletap", function( event, touch ){  
 
-            if (event.type === "doubletap") {
+            if(validCanvas){
+                
+                if (event.type === "doubletap") {
 
-                handleMouseDblClickonCanvas(event);
+                    handleMouseDblClickonCanvas(event);
 
+                }
+                
             }
 
         });
