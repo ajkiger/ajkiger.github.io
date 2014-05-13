@@ -727,12 +727,14 @@
         $( "#btnhints" ).on( "tap", function( event ){
           $( event.target ).addClass( "tap" );
           
-          
-          //$( "#popupHints" ).popup({ theme: "b" });
-          $( "#popupHints" ).popup("open", { positionTo: "#topHeader",
-                                             transition: "pop"
-                                             
-          });
+          if(validCanvas){
+              
+                //$( "#popupHints" ).popup({ theme: "b" });
+                $( "#popupHints" ).popup("open", { positionTo: "#topHeader",
+                                                   transition: "pop"
+
+                });
+          }
           
         });
     });
@@ -741,10 +743,13 @@
         $( "#btnsettings" ).on( "tap", function( event ){
           $( event.target ).addClass( "tap" );
           
-          $( "#popupSettings" ).popup("open", { positionTo: "#topHeader",
+          if(validCanvas){
+              
+                $( "#popupSettings" ).popup("open", { positionTo: "#topHeader",
                                                 transition: "pop" 
                                             
-          });
+                });
+          }
           
         });
     });
@@ -754,110 +759,115 @@
         $( "#btngames" ).on( "tap", function( event ){
             $( event.target ).addClass( "tap" );
           
-            $( "#users tbody" ).empty();
-            for(var i = 0; i < weeklyWordLists.length; i++){
-                var tElement = weeklyWordLists[i];
-                if(tElement.date === sceneController.currentGame){
-                   $( "#users tbody" ).append( "<tr style=\"background: #ffccff\">" +
-                    "<td>" + tElement.date + "</td>" +
-                    "<td>" + tElement.cubeSize + "</td>" +
-                    "<td>" + tElement.highScore + "</td>" +
-                    "<td>" + tElement.scoreRate + "</td>" +
-                    "</tr>" );
+            if(validCanvas){
+                
+                $( "#users tbody" ).empty();
+                for(var i = 0; i < weeklyWordLists.length; i++){
+                    var tElement = weeklyWordLists[i];
+                    if(tElement.date === sceneController.currentGame){
+                       $( "#users tbody" ).append( "<tr style=\"background: #ffccff\">" +
+                        "<td>" + tElement.date + "</td>" +
+                        "<td>" + tElement.cubeSize + "</td>" +
+                        "<td>" + tElement.highScore + "</td>" +
+                        "<td>" + tElement.scoreRate + "</td>" +
+                        "</tr>" );
+                    }
+                    else{
+                        $( "#users tbody" ).append( "<tr>" +
+                        "<td>" + tElement.date + "</td>" +
+                        "<td>" + tElement.cubeSize + "</td>" +
+                        "<td>" + tElement.highScore + "</td>" +
+                        "<td>" + tElement.scoreRate + "</td>" +
+                        "</tr>" );
+                    }
+
                 }
-                else{
-                    $( "#users tbody" ).append( "<tr>" +
-                    "<td>" + tElement.date + "</td>" +
-                    "<td>" + tElement.cubeSize + "</td>" +
-                    "<td>" + tElement.highScore + "</td>" +
-                    "<td>" + tElement.scoreRate + "</td>" +
-                    "</tr>" );
-                }
+
+
+                $( "#popupGames" ).popup("open", { positionTo: "#topHeader",
+                                                      transition: "pop" 
+
+                });
+
+
+                $(function(){
+                    $("#usersTBody tr").on( "tap", function( event ){
+                      //$( event.target ).addClass( "tap" );
+                            var listChanged;
+                            var selectedList = $( this ).text();
+                            selectedList = selectedList.substring(0, 8);
+
+                            //$( this ).css("background-color", "rgba(255, 255, 255, 0.0)");
+                            $( this ).css("background-color", "#cccccc");
+
+                            //$( this ).css("transform", "scale(1.05)");
+
+                            if(!(sceneController.currentGame === selectedList)){
+                                listChanged = true;
+                                //$( this ).addClass( "wobble-horizontal" );
+                            }
+                            else {
+                                //$( this ).addClass( "wobble-horizontal" );
+                                listChanged = false;
+                            }
+
+
+
+                            if(!(sceneController.currentGame === selectedList)){
+                                for(var i = 0; i < weeklyWordLists.length; i++){
+                                    var tElement = weeklyWordLists[i];
+                                    if(tElement.date === selectedList){
+
+                                        if (tElement.cubeSize === "4x4"){
+                                            sceneController.preCubeSize = 96;
+                                        }
+                                        else if (tElement.cubeSize === "5x5"){
+                                            sceneController.preCubeSize = 150;
+                                        }
+                                        else if (tElement.cubeSize === "6x6"){
+                                            sceneController.preCubeSize = 216;
+                                        }
+                                        sceneController.wordListPlay = "wordlists/" + tElement.wordList;
+                                        sceneController.currentGame = tElement.date;
+                                        break;
+                                    }
+                                }
+
+                                if($('#check1').prop('checked')){
+                                    sceneController.maxWordKey = "High Word Density";
+                                }
+                                else
+                                {
+                                    sceneController.maxWordKey = "Low Word Density";
+                                }
+                                if($('#check2').prop('checked')){
+                                    sceneController.cubeColorKey = "Inverse";
+                                }
+                                else
+                                {
+                                    sceneController.cubeColorKey = "Normal";
+                                }
+
+                                sceneController.endAnimationActive = true;
+
+                            }
+
+                            //if(listChanged){
+                                setTimeout(function(){$( "#popupGames" ).popup( "close" );}, 300);
+                            //}
+                            //else {
+                                //$( "#popupGames" ).popup( "close" );
+                            //}
+
+
+                      });
+
+                });
+                
                 
             }
           
-          
-            $( "#popupGames" ).popup("open", { positionTo: "#topHeader",
-                                                  transition: "pop" 
-
-            });
-          
-          
-            $(function(){
-                $("#usersTBody tr").on( "tap", function( event ){
-                  //$( event.target ).addClass( "tap" );
-                        var listChanged;
-                        var selectedList = $( this ).text();
-                        selectedList = selectedList.substring(0, 8);
-
-                        //$( this ).css("background-color", "rgba(255, 255, 255, 0.0)");
-                        $( this ).css("background-color", "#cccccc");
-                        
-                        //$( this ).css("transform", "scale(1.05)");
-
-                        if(!(sceneController.currentGame === selectedList)){
-                            listChanged = true;
-                            //$( this ).addClass( "wobble-horizontal" );
-                        }
-                        else {
-                            //$( this ).addClass( "wobble-horizontal" );
-                            listChanged = false;
-                        }
-                    
-                    
-
-                        if(!(sceneController.currentGame === selectedList)){
-                            for(var i = 0; i < weeklyWordLists.length; i++){
-                                var tElement = weeklyWordLists[i];
-                                if(tElement.date === selectedList){
-
-                                    if (tElement.cubeSize === "4x4"){
-                                        sceneController.preCubeSize = 96;
-                                    }
-                                    else if (tElement.cubeSize === "5x5"){
-                                        sceneController.preCubeSize = 150;
-                                    }
-                                    else if (tElement.cubeSize === "6x6"){
-                                        sceneController.preCubeSize = 216;
-                                    }
-                                    sceneController.wordListPlay = "wordlists/" + tElement.wordList;
-                                    sceneController.currentGame = tElement.date;
-                                    break;
-                                }
-                            }
-
-                            if($('#check1').prop('checked')){
-                                sceneController.maxWordKey = "High Word Density";
-                            }
-                            else
-                            {
-                                sceneController.maxWordKey = "Low Word Density";
-                            }
-                            if($('#check2').prop('checked')){
-                                sceneController.cubeColorKey = "Inverse";
-                            }
-                            else
-                            {
-                                sceneController.cubeColorKey = "Normal";
-                            }
-
-                            sceneController.endAnimationActive = true;
-
-                        }
-                        
-                        //if(listChanged){
-                            setTimeout(function(){$( "#popupGames" ).popup( "close" );}, 300);
-                        //}
-                        //else {
-                            //$( "#popupGames" ).popup( "close" );
-                        //}
-                        
-                        
-                  });
-
-            });
-          
-          
+            
         });
         
     });
@@ -885,8 +895,12 @@
         $( "#bottomFooter" ).bind( "tap", function( event ){
           $( event.target ).addClass( "tap" );
           
-          document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
-          $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
+          if(validCanvas){
+              
+            document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
+            $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
+            
+          }
           
         });
     });
