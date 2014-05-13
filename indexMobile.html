@@ -182,7 +182,7 @@
         font-family: arial, Helvetica, sans-serif;
         font-size:  32px; 
         font-weight:  700;// bold;
-        
+        -ms-touch-action: none;
         
     }
     
@@ -775,7 +775,7 @@
                         var selectedList = $( this ).text();
                         selectedList = selectedList.substring(0, 8);
 
-                        //$( this ).css("background-color", "rgba(255, 255, 255, 0.0)");
+                        $( this ).css("background-color", "rgba(255, 255, 255, 0.0)");
                         //$( this ).css("transform", "scale(1.05)");
 
                         if(!(sceneController.currentGame === selectedList)){
