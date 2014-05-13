@@ -266,14 +266,15 @@
     div#popupGames table { margin: 1em 0; border-collapse: collapse; width: 100%; }
     div#popupGames table td, div#popupGames table th { border: 1px solid #eee; padding: .6em 10px; text-align: center; font-size: 20px; font-weight: 700;}
     
-    //div#popupGames table tbody tr:hover {
+    
+    div#popupGames table tbody tr:hover {
     //background-color: #cccccc;
-    //cursor: pointer;
+    cursor: pointer;
     
     //-webkit-transform: scale(1.05);
     //-ms-transform: scale(1.05);
     //transform: scale(1.05);
-    //}
+    }
     
     
     #tabs-1, #tabs-2, #tabs-3, #tabs-4, #tabs-5{
@@ -631,15 +632,17 @@
     }
 
     var startTimer;
+    var xAdjustment;
+    var yAdjustment;
     
     function webGLStart() {
         
         canvas = document.getElementById("WordCubed-canvas");
         
-        //initGL(canvas);
-        //initShaders();
-        //initContext();
-        $( "#container" ).fadeTo(400, 1.0);
+        initGL(canvas);
+        initShaders();
+        initContext();
+        //$( "#container" ).fadeTo(400, 1.0);
         
         //canvas.onmousedown = handleMouseDownonCanvas;
         //canvas.onmousemove = handleMouseMoveonCanvas;
@@ -836,7 +839,7 @@
                         }
                         
                         //if(listChanged){
-                            setTimeout(function(){$( "#popupGames" ).popup( "close" );}, 600);
+                            setTimeout(function(){$( "#popupGames" ).popup( "close" );}, 300);
                         //}
                         //else {
                             //$( "#popupGames" ).popup( "close" );

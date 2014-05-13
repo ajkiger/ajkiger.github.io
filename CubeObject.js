@@ -6,8 +6,7 @@
 
 var newTexture;
 
-var xAdjustment;
-var yAdjustment;
+
 
 var startTime;
 var UITouchPhaseEnded = null;
@@ -890,18 +889,21 @@ function cObjectUpdate() {
         {
             zoomSizeMin = 90.0;
             zoomSizeMax = 90.0;
+            //zoomSizeMax = 45.0;
             growSpeed = 1.25;
         }
         else if (sceneController.cubeSize === 216)
         {
             zoomSizeMin = 65.0;
             zoomSizeMax = 65.0;
+            //zoomSizeMax = 32.0;
             growSpeed = 0.90;
         }
         else if (sceneController.cubeSize === 150)
         {
             zoomSizeMin = 75.0;
             zoomSizeMax = 75.0;
+            //zoomSizeMax = 37.0;
             growSpeed = 1.0;
         }
 
@@ -1474,24 +1476,12 @@ function doubleTap() {
 
 
 function touchesBegan(event) {
-    var currentPoint = new Point(event.clientX, event.clientY);
-    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    //var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    //var netGain = event.pageY - event.clientY;
-    //if(browserHeight > 828){
-        //xAdjustment = (browserWidth - 640)/2;
-    //}
-    //else{
-        //xAdjustment = (browserWidth - 640)/2 - 10;
-    //}
-    xAdjustment = (browserWidth - 640)/2;
-    //xAdjustment = 16;
-    //yAdjustment = 112 - netGain; //89
-    yAdjustment = 96 + 25;
-    currentPoint.x = currentPoint.x - xAdjustment;
-    currentPoint.y = currentPoint.y - yAdjustment;
     
-    //document.getElementById('xcoord').innerHTML = "browserWidth: " + browserWidth;
+    var parentOffset = $("#container").offset();
+    var relX = event.pageX - parentOffset.left;
+    var relY = event.pageY - parentOffset.top;
+    var currentPoint = new Point(relX, relY);
+    
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
     //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
     
@@ -1528,24 +1518,12 @@ function touchesBegan(event) {
 
 
 function touchesMoved(event) {
-    var currentPoint = new Point(event.clientX, event.clientY);
-    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    //var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    //var netGain = event.pageY - event.clientY;
-    //if(browserHeight > 828){
-        //xAdjustment = (browserWidth - 640)/2;
-    //}
-    //else{
-        //xAdjustment = (browserWidth - 640)/2 - 10;
-    //}
-    xAdjustment = (browserWidth - 640)/2;
-    //xAdjustment = 16;
-    //yAdjustment = 112 - netGain; //89
-    yAdjustment = 96 + 25;
-    currentPoint.x = currentPoint.x - xAdjustment;
-    currentPoint.y = currentPoint.y - yAdjustment;
     
-    //document.getElementById('xcoord').innerHTML = "browserWidth: " + browserWidth;
+    var parentOffset = $("#container").offset();
+    var relX = event.pageX - parentOffset.left;
+    var relY = event.pageY - parentOffset.top;
+    var currentPoint = new Point(relX, relY);
+    
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
     //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
     

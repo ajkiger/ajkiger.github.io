@@ -12,7 +12,6 @@ var wordListString;
 var wordListSortedByLength = new Array();
 var wordList = new Array();
 
-
 var badCube;
 var wordFit;
 var rDirection;

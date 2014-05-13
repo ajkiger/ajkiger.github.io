@@ -23,7 +23,7 @@ function EAGLViewBeginDraw(){
 
     //mat4.perspective(pMatrix, 45, gl.viewportWidth / gl.viewportHeight, 0.1, 1000.0);
     mat4.ortho(pMatrix, -gl.viewportWidth/2.0, gl.viewportWidth/2.0, -gl.viewportHeight/2.0, gl.viewportHeight/2.0, 0.1, 1000.0);
-    mat4.translate(pMatrix, pMatrix, [0.0, 0.0, -500.0]);
+    mat4.translate(pMatrix, pMatrix, [0.0, 0.0, -500.0]); //-500
     
     
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); //gl.ONE_MINUS_SRC_ALPHA
