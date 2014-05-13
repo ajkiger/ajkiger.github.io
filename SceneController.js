@@ -517,7 +517,7 @@ function SaveScores(){
 
 function PostScore(){
     
-    var cScore = document.getElementById('scorebox').innerHTML;
+    var cScore = document.getElementById('scorebox').innerHTML * 1.0;
     var cScoreRate = document.getElementById('scoreratebox').innerHTML;
     
     for(var i = 0; i < weeklyWordLists.length; i++){
@@ -565,10 +565,23 @@ function SceneControllerUpdateModel(){
             var cMessage = "<p>" + "Cube Cleared!<br><br>Score: " + cScore + "<br>" + "Score Rate: " + cScoreRate + "</p>";
 
             PostScore();
+            
             $( "#dialogWin" ).empty();
             $( "#dialogWin" ).append( cMessage );
-
             $( "#dialogWin" ).dialog( "open" );
+            
+            
+            document.getElementById('Winmessage').innerHTML = "Cube Cleared!<br><br>Score: " + cScore + "<br>" + "Score Rate: " + cScoreRate;
+            $( "#popupWin" ).popup("open", { positionTo: "#topHeader",
+                                                transition: "pop" 
+                                            
+            });
+            
+        }
+        
+        if(sceneController.postGameWinMessage && sceneController.gameOver && particleEmitterYellow.activeParticles.length === 0 && particleEmitterRed.activeParticles.length === 0 && particleEmitterBlue.activeParticles.length === 0 && particleEmitterBlack.activeParticles.length === 0){
+            
+            PostScore();
         }
         
     }

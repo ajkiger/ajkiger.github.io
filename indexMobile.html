@@ -146,8 +146,9 @@
         
     }
     
-    #popupHints, #popupSettings {
+    #popupHints, #popupSettings, #popupWin {
         width: 500px;
+        font-family: arial, Helvetica, sans-serif;
         -ms-touch-action: none;
     }
     
@@ -377,7 +378,10 @@
       
     }
     
-    
+    .ui-header .ui-title {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
     
     
 </style>
@@ -966,42 +970,6 @@
     
    
     
-    /*
-    $(function() {
-        $( "#dialogWin" ).dialog({
-          autoOpen: false,
-          height: 300,
-          width: 300,
-          modal: true,
-          draggable: false,
-          resizable: false,
-          buttons: {
-            "Play Again": function() {
-              sceneController.endAnimationActive = true;
-              $( this ).dialog( "close" );
-            },
-            "Close": function() {
-             
-              $( this ).dialog( "close" );
-            }
-          },
-          position: {
-              my: "center",
-              at: "center",
-              of: container
-          },
-          show: {
-            effect: "fade",
-            duration: 200
-          },
-          hide: {
-            effect: "fade",
-            duration: 200
-          }
-        });
-        
-    });
-    */
     
 </script>
 
@@ -1117,51 +1085,24 @@
             
             <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
         </div>
+        
+        
+        
+        
+        <div data-role="popup" id="popupWin" class="ui-content" style="max-width:500px" data-dismissible="false">
+         <div data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Congratulation!</h1>
+            </div>
+            <p id="Winmessage" style="font-size:30px"></p>
+            <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+            <a href="#" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Play Again</a>
+        </div>
+        
        
         
     </div> <!--/WH page -->
         
-      
-        
-    <!--
-    <div data-role="page" id="hintsPage">
-
-        <div data-role="header">
-            <h1>Hints</h1>
-        </div>
-
-        <div role="main" class="ui-content">
-            <p><a href="#pageWH" data-rel="back" onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
-            <p><a href="#pageWH" data-rel="back" onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
-        </div>
-
-        <div data-role="footer">
-            <h4></h4>
-        </div>
-
-    </div>
-    
-    
-    <div data-role="page" id="settingsPage">
-
-        <div data-role="header">
-            <h1>Settings</h1>
-        </div>
-
-        <div role="main" class="ui-content">
-            <p><input type="checkbox" id="check1"><label for="check1">High Word Density</label></p>
-            <p><input type="checkbox" id="check2"><label for="check2">Inverse Colors</label></p>
-            <p><a href="#pageWH" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
-        </div>
-
-        <div data-role="footer">
-            <h4></h4>
-        </div>
-
-    </div>
-    -->
-
-
+     
 
         <div id="xcoord">
         </div>
