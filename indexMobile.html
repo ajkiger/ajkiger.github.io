@@ -912,17 +912,7 @@
 
             if (event.type === "doubletap") {
 
-                var firstTapX = touch.firstTap.offset.x * 1.0;
-                var firstTapY = touch.firstTap.offset.y * 1.0;
-                var secondTapX = touch.secondTap.offset.x * 1.0;
-                var secondTapY = touch.secondTap.offset.y * 1.0;
-                
-                document.getElementById('mouseCoord').innerHTML = "1: " + firstTapX;
-                document.getElementById('vMoveEvent').innerHTML = "2: " + secondTapX;
-
-                //if( Math.abs(firstTapX - secondTapX) <= 10 && Math.abs(firstTapY - secondTapY) <= 10 ){
-                    handleMouseDblClickonCanvas(event);
-                //}
+                handleMouseDblClickonCanvas(event);
 
             }
 
