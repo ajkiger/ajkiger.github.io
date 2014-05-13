@@ -40,7 +40,7 @@
             swipe_h_threshold: 50,
             swipe_v_threshold: 50,
             taphold_threshold: 750,
-            doubletap_int: 400,
+            doubletap_int: 500,
 
             touch_capable: ('ontouchstart' in document.documentElement && !isChromeDesktop),
             orientation_support: ('orientation' in window && 'onorientationchange' in window),
@@ -270,7 +270,6 @@
                     return false;
                 } else {
                     $this.data('firsttime', true);
-                    $this.data('dbltapcanceled', false);
                     $this.data('doubletapped', false);
                     origTarget = e.target;
                     $this.data('callee1', arguments.callee);
@@ -291,44 +290,23 @@
 
                     return true;
                 }
-            }).on(settings.moveevent, function (e) {
-                //var now = new Date().getTime();
-                //var lastTouch = $this.data('lastTouch') || now + 1;
-                //var delta = now - lastTouch;
-                //if (firsttime) {
-                    
-                    //window.clearTimeout(action);
-                    //$this.data('callee3', arguments.callee);
-
-                    //$this.data('lastTouch', now);
-                    //action = window.setTimeout(function (e) {
-                        //window.clearTimeout(action);
-                        //window.clearTimeout(settings.tap_timer);
-                        //$this.data('firsttime', false);
-                    //}, 0.0, [e]);
-                    
-                    //$this.data('lastTouch', now);
-                    $this.data('dbltapcanceled', true);
-                    
-                    //return false;
-                //}
-                
-                
             }).on(settings.endevent, function (e) {
                 var now = new Date().getTime();
                 var lastTouch = $this.data('lastTouch') || now + 1;
                 var delta = now - lastTouch;
-                var dbltapcanceled = $this.data('dbltapcanceled');
+                var lastTap;
+                
                 window.clearTimeout(action);
                 $this.data('callee2', arguments.callee);
 
-                if (delta < settings.doubletap_int && delta > 0 && (e.target === origTarget) && delta > 100 && !dbltapcanceled) {
+                if (delta < settings.doubletap_int && delta > 0 && (e.target === origTarget) && delta > 100) {
                     $this.data('firsttime', false);
                     $this.data('doubletapped', true);
-                    window.clearTimeout(settings.tap_timer);
+                    window.clearTimeout(action);
+                    //window.clearTimeout(settings.tap_timer);
 
                     // Now get the current event:
-                    var lastTap = {
+                    lastTap = {
                         'position': {
                             'x': (settings.touch_capable) ? origEvent.touches[0].screenX : e.screenX,
                             'y': (settings.touch_capable) ? origEvent.touches[0].screenY : e.screenY
@@ -349,20 +327,47 @@
 
                     triggerCustomEvent(thisObject, 'doubletap', e, touchData);
                 } else {
-                    $this.data('lastTouch', now);
-                    action = window.setTimeout(function (e) {
+                    //$this.data('lastTouch', now);
+                    
+                    lastTap = {
+                        'position': {
+                            'x': (settings.touch_capable) ? origEvent.touches[0].screenX : e.screenX,
+                            'y': (settings.touch_capable) ? origEvent.touches[0].screenY : e.screenY
+                        },
+                        'offset': {
+                            'x': (settings.touch_capable) ? origEvent.touches[0].pageX - origEvent.touches[0].target.offsetLeft : e.offsetX,
+                            'y': (settings.touch_capable) ? origEvent.touches[0].pageY - origEvent.touches[0].target.offsetTop : e.offsetY
+                        },
+                        'time': new Date().getTime(),
+                        'target': e.target
+                    };
+                    
+                    var deltaX = Math.abs(lastTap.offset.x * 1.0 - firstTap.offset.x * 1.0);
+                    var deltaY = Math.abs(lastTap.offset.y * 1.0 - firstTap.offset.y * 1.0);
+                    if( deltaX <= 10 && deltaY <= 10 ){
+                        
+                        action = window.setTimeout(function (e) {
+                            window.clearTimeout(action);
+                            //window.clearTimeout(settings.tap_timer);
+                            $this.data('firsttime', false);
+                        }, settings.doubletap_int, [e]);
+                    }
+                    else
+                    {
                         window.clearTimeout(action);
-                        window.clearTimeout(settings.tap_timer);
+                        //window.clearTimeout(settings.tap_timer);
                         $this.data('firsttime', false);
-                    }, settings.doubletap_int, [e]);
+                        return;
+                    }
+                    
                 }
                 $this.data('lastTouch', now);
-                $this.data('dbltapcanceled', false);
+                
             });
         },
         
         remove: function () {
-            $(this).off(settings.startevent, $(this).data.callee1).off(settings.endevent, $(this).data.callee2).off(settings.moveevent, $(this).data.callee3);
+            $(this).off(settings.startevent, $(this).data.callee1).off(settings.endevent, $(this).data.callee2);
         }
     };
 
