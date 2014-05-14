@@ -885,22 +885,22 @@ function cObjectUpdate() {
         if (sceneController.cubeSize === 96)
         {
             zoomSizeMin = 90.0;
-            zoomSizeMax = 90.0;
-            //zoomSizeMax = 45.0;
+            //zoomSizeMax = 90.0;
+            zoomSizeMax = 45.0;
             growSpeed = 1.25;
         }
         else if (sceneController.cubeSize === 216)
         {
             zoomSizeMin = 65.0;
-            zoomSizeMax = 65.0;
-            //zoomSizeMax = 32.0;
+            //zoomSizeMax = 65.0;
+            zoomSizeMax = 32.0;
             growSpeed = 0.90;
         }
         else if (sceneController.cubeSize === 150)
         {
             zoomSizeMin = 75.0;
-            zoomSizeMax = 75.0;
-            //zoomSizeMax = 37.0;
+            //zoomSizeMax = 75.0;
+            zoomSizeMax = 38.0;
             growSpeed = 1.0;
         }
 
@@ -1475,8 +1475,8 @@ function doubleTap() {
 function touchesBegan(event) {
     
     var parentOffset = $("#container").offset();
-    var relX = event.pageX - parentOffset.left;
-    var relY = event.pageY - parentOffset.top;
+    var relX = (event.pageX - parentOffset.left)/2;
+    var relY = (event.pageY - parentOffset.top)/2;
     var currentPoint = new Point(relX, relY);
     
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
@@ -1517,8 +1517,8 @@ function touchesBegan(event) {
 function touchesMoved(event) {
     
     var parentOffset = $("#container").offset();
-    var relX = event.pageX - parentOffset.left;
-    var relY = event.pageY - parentOffset.top;
+    var relX = (event.pageX - parentOffset.left)/2;
+    var relY = (event.pageY - parentOffset.top)/2;
     var currentPoint = new Point(relX, relY);
     
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
