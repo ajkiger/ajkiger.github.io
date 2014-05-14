@@ -27,7 +27,12 @@ var secondTime;
 
 var weeklyLists;
 var weeklyWordLists = new Array();
+var lastParticle;
 
+var starTimer1;
+var starTimer2;
+var starString;
+var numberStars = 3;
 
 
 function sceneControllerInit(){
@@ -187,7 +192,7 @@ function updateGameScore(score){
         gamePercentage = parseFloat(Math.round(gamePercentage * 100) / 100).toFixed(0);
         if (sceneController.iGameScore <= 0) {
             document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
-            document.getElementById('scoreratebox').innerHTML = " ";
+            document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
         }
         else
         {
@@ -225,7 +230,7 @@ function  resetGameScore(){
     });
     $("#scoreratebox").effect("fade", "swing", "300", function() {
         
-        document.getElementById('scoreratebox').innerHTML = " ";
+        document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
         //document.getElementById('scoreratebox').innerHTML = "Temp";
     });
     
@@ -314,6 +319,7 @@ function endOldStartNewGame(){
 
 function sceneControllerLoadScene(){
     
+    lastParticle = false;
     sceneController.postGameWinMessage = false;
     sceneController.cubeSize = sceneController.preCubeSize;
     document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
@@ -582,6 +588,25 @@ function SceneControllerUpdateModel(){
             
             PostScore();
         }
+        
+        if(particleEmitterYellow.activeParticles.length > 0 || particleEmitterRed.activeParticles.length > 0 || particleEmitterBlue.activeParticles.length > 0){
+            lastParticle = true;
+            //document.getElementById('mouseCoord').innerHTML = "Particles";
+            //document.getElementById('vMoveEvent').innerHTML = "";
+        }
+        else if (lastParticle){
+            lastParticle = false;
+            //document.getElementById('mouseCoord').innerHTML = "";
+            //document.getElementById('vMoveEvent').innerHTML = "No Particles";
+            if(!(numberStars === 3)){
+                updateScoreStar("BlueStars");
+            }
+            
+            starTimer1 = setTimeout(function(){updateScoreStar("RedStars");}, 30000);
+            starTimer2 = setTimeout(function(){updateScoreStar("YellowStars");}, 60000);
+        }
+        
+        
         
     }
     

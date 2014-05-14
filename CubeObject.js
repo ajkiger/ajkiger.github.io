@@ -141,10 +141,7 @@ var tranSquareT;
 
 var rDirection;
 
-var starTimer1;
-var starTimer2;
-var starString;
-var numberStars = 3;
+
 
 
 function CubeObjectInit() {
@@ -1955,9 +1952,10 @@ function selectFinalSquare(index){
                 }
 
                 //[self saveGameAction];
-                
+                /*
                 if (ResetTimer)
                 {
+                    
                     if(!(numberStars === 3)){
                         updateScoreStar("BlueStars");
                     }
@@ -1966,7 +1964,7 @@ function selectFinalSquare(index){
                     starTimer2 = setTimeout(function(){updateScoreStar("YellowStars");}, 60000);
                     
                 }
-                
+                */
                 UpdateTextAreaView(wordList);
                 
                
