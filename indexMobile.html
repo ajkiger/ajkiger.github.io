@@ -197,7 +197,7 @@
     
     #btncontainer{
         width: 640px;
-        height: 35px;
+        //height: 35px;
         margin-left: auto;
         margin-right: auto;
         
@@ -207,7 +207,10 @@
     #btnhints, #btnsettings, #btngames, #btninfo {
         //width: 40px;
         //height: 40px;
-        //margin-left: -150px;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-top: 1px;
+        margin-bottom: 1px;
         cursor:  pointer;
         
     }
@@ -401,6 +404,8 @@
         margin-right: 10%;
         margin-left: 10%;
     }
+    
+    
     
     
 </style>
@@ -1004,10 +1009,10 @@
             <table id="btnTable">
                 <tr>
 
-                    <td id = "btnhints"><button><img alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button></td>
-                    <td id = "btnsettings"><button><img alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button></td>
-                    <td id = "btngames"><button><img alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button></td>
-                    <td id = "btninfo"><button><img alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button></td>
+                    <td ><button id = "btnhints" type="button"><img alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button></td>
+                    <td ><button id = "btnsettings" type="button"><img alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button></td>
+                    <td ><button id = "btngames" type="button"><img alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button></td>
+                    <td ><button id = "btninfo" type="button"><img alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button></td>
                     <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter "></td>
                     <!--<td id="scoreratebox" title=" Score Rate "></td>-->
                     
