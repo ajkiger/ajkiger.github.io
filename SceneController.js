@@ -133,7 +133,6 @@ function sceneControllerInit(){
     }
     SaveScores();
     
-    document.getElementById('scorebox').innerHTML = "99999";
 }
 
 
