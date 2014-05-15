@@ -742,36 +742,13 @@ function CubeObjectAwake() {
     mat4.rotateZ(mvMatrix, mvMatrix, degToRad(cObject.zRotation));
 
 
-
-    if (sceneController.cubeSize === 96)
-    {
-        deltaX = -2.9;
-        var randomN = Math.floor(Math.random() * 10);
-        if (randomN <= 4)
-            deltaY = 2.9;
-        else
-            deltaY = -2.9;
-    }
-    else if (sceneController.cubeSize === 216)
-    {
-        deltaX = -2.9;
-        var randomN = Math.floor(Math.random() * 10);
-        if (randomN <= 4)
-            deltaY = 2.9;
-        else
-            deltaY = -2.9;
-    }
-    else if (sceneController.cubeSize === 150)
-    {
-        deltaX = -2.9;
-        var randomN = Math.floor(Math.random() * 10);
-        if (randomN <= 4)
-            deltaY = 2.9;
-        else
-            deltaY = -2.9;
-    }
-
-
+    
+    deltaX = -2.9;
+    var randomN = Math.floor(Math.random() * 10);
+    if (randomN <= 4)
+        deltaY = 2.9;
+    else
+        deltaY = -2.9;
 
 
 }
@@ -882,26 +859,43 @@ function cObjectUpdate() {
     if (firstTouch2)
     {
         var growSpeed = 1.25;
+        
         if (sceneController.cubeSize === 96)
         {
-            zoomSizeMin = 90.0;
-            //zoomSizeMax = 90.0;
-            zoomSizeMax = 45.0;
-            growSpeed = 1.25;
+            //zoomSizeMin = 90.0;
+            if (containerScale){
+                zoomSizeMax = 90.0;
+                growSpeed = 1.25;
+            }
+            else{
+                zoomSizeMax = 45.0;
+                growSpeed = 1.25/2;
+            }
         }
         else if (sceneController.cubeSize === 216)
         {
-            zoomSizeMin = 65.0;
-            //zoomSizeMax = 65.0;
-            zoomSizeMax = 32.0;
-            growSpeed = 0.90;
+            //zoomSizeMin = 65.0;
+            if (containerScale){
+                zoomSizeMax = 65.0;
+                growSpeed = 0.90;
+            }
+            else{
+                zoomSizeMax = 32.0;
+                growSpeed = 0.90/2;
+            }
         }
         else if (sceneController.cubeSize === 150)
         {
-            zoomSizeMin = 75.0;
-            //zoomSizeMax = 75.0;
-            zoomSizeMax = 38.0;
-            growSpeed = 1.0;
+            //zoomSizeMin = 75.0;
+            if (containerScale){
+                zoomSizeMax = 75.0;
+                growSpeed = 1.0;
+            }
+            else{
+                zoomSizeMax = 38.0;
+                growSpeed = 1.0/2;
+            }
+            
         }
 
 
@@ -1475,8 +1469,16 @@ function doubleTap() {
 function touchesBegan(event) {
     
     var parentOffset = $("#container").offset();
-    var relX = (event.pageX - parentOffset.left)/2;
-    var relY = (event.pageY - parentOffset.top)/2;
+    var relX;
+    var relY;
+    if (containerScale){
+        relX = (event.pageX - parentOffset.left);
+        relY = (event.pageY - parentOffset.top);
+    }
+    else{
+        relX = (event.pageX - parentOffset.left)/2;
+        relY = (event.pageY - parentOffset.top)/2;
+    }
     var currentPoint = new Point(relX, relY);
     
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
@@ -1517,8 +1519,16 @@ function touchesBegan(event) {
 function touchesMoved(event) {
     
     var parentOffset = $("#container").offset();
-    var relX = (event.pageX - parentOffset.left)/2;
-    var relY = (event.pageY - parentOffset.top)/2;
+    var relX;
+    var relY;
+    if (containerScale){
+        relX = (event.pageX - parentOffset.left);
+        relY = (event.pageY - parentOffset.top);
+    }
+    else{
+        relX = (event.pageX - parentOffset.left)/2;
+        relY = (event.pageY - parentOffset.top)/2;
+    }
     var currentPoint = new Point(relX, relY);
     
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
