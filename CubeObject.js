@@ -1813,8 +1813,8 @@ function touchesBegan(event) {
     }
     var currentPoint = new Point(relX, relY);
     
-    document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
-    document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
+    //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
+    //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
     
     startTime = new Date().getTime() / 1000;  // seconds
 
@@ -1863,8 +1863,8 @@ function touchesMoved(event) {
     }
     var currentPoint = new Point(relX, relY);
     
-    document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
-    document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
+    //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
+    //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
     
     currentPosition = currentPoint;
     

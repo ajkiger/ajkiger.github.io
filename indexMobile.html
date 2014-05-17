@@ -580,7 +580,7 @@
                 frameCount = 0;
                 elapsedTime -= 1000;
 
-                document.getElementById('test').innerHTML = "FPS: " + fps;
+                document.getElementById('test').innerHTML = fps;
             }
 
             lastTime = new Date().getTime();
@@ -942,7 +942,7 @@
                     <td ><button id = "btnsettings" type="button"><img alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button></td>
                     <td ><button id = "btngames" type="button"><img alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button></td>
                     <td ><button id = "btninfo" type="button"><img alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button></td>
-                    <td id = "starbox"><label id="cScale" title=" Browser Width "></label><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter "></td>
+                    <td id = "starbox"><label id="cScale" title=" Browser Width "></label><label id="test" title=" FPS "></label><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter "></td>
                     <!--<td id="scoreratebox" title=" Score Rate "></td>-->
                     
                     <td id = "srsbox"><label id="scoreratebox" title=" Score Rate "></label><label id="scorebox" title=" Score "></label></td>
@@ -1078,7 +1078,7 @@
         </div>
         <div id="ycoord">
         </div>
-        <div id="test">
+        <div id="test1">
         </div>
         <div id="xcoord2">
         </div>
