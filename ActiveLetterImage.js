@@ -71,32 +71,32 @@ ActiveLetterImage.prototype.awakeNow = function(){
     this.selectLetter = 26;
     this.makeVisible = false;
 
-    this.alphabetLetters[0] = alphabetLettersWhite[0];
-    this.alphabetLetters[1] = alphabetLettersWhite[1];
-    this.alphabetLetters[2] = alphabetLettersWhite[2];
-    this.alphabetLetters[3] = alphabetLettersWhite[3];
-    this.alphabetLetters[4] = alphabetLettersWhite[4];
-    this.alphabetLetters[5] = alphabetLettersWhite[5];
-    this.alphabetLetters[6] = alphabetLettersWhite[6];
-    this.alphabetLetters[7] = alphabetLettersWhite[7];
-    this.alphabetLetters[8] = alphabetLettersWhite[8];
-    this.alphabetLetters[9] = alphabetLettersWhite[9];
-    this.alphabetLetters[10] = alphabetLettersWhite[10];
-    this.alphabetLetters[11] = alphabetLettersWhite[11];
-    this.alphabetLetters[12] = alphabetLettersWhite[12];
-    this.alphabetLetters[13] = alphabetLettersWhite[13];
-    this.alphabetLetters[14] = alphabetLettersWhite[14];
-    this.alphabetLetters[15] = alphabetLettersWhite[15];
-    this.alphabetLetters[16] = alphabetLettersWhite[16];
-    this.alphabetLetters[17] = alphabetLettersWhite[17];
-    this.alphabetLetters[18] = alphabetLettersWhite[18];
-    this.alphabetLetters[19] = alphabetLettersWhite[19];
-    this.alphabetLetters[20] = alphabetLettersWhite[20];
-    this.alphabetLetters[21] = alphabetLettersWhite[21];
-    this.alphabetLetters[22] = alphabetLettersWhite[22];
-    this.alphabetLetters[23] = alphabetLettersWhite[23];
-    this.alphabetLetters[24] = alphabetLettersWhite[24];
-    this.alphabetLetters[25] = alphabetLettersWhite[25];
+    this.alphabetLetters[0] = loadTexture("images/A_Letter_Gray_256.png");
+    this.alphabetLetters[1] = loadTexture("images/B_Letter_Gray_256.png");
+    this.alphabetLetters[2] = loadTexture("images/C_Letter_Gray_256.png");
+    this.alphabetLetters[3] = loadTexture("images/D_Letter_Gray_256.png");
+    this.alphabetLetters[4] = loadTexture("images/E_Letter_Gray_256.png");
+    this.alphabetLetters[5] = loadTexture("images/F_Letter_Gray_256.png");
+    this.alphabetLetters[6] = loadTexture("images/G_Letter_Gray_256.png");
+    this.alphabetLetters[7] = loadTexture("images/H_Letter_Gray_256.png");
+    this.alphabetLetters[8] = loadTexture("images/I_Letter_Gray_256.png");
+    this.alphabetLetters[9] = loadTexture("images/J_Letter_Gray_256.png");
+    this.alphabetLetters[10] = loadTexture("images/K_Letter_Gray_256.png");
+    this.alphabetLetters[11] = loadTexture("images/L_Letter_Gray_256.png");
+    this.alphabetLetters[12] = loadTexture("images/M_Letter_Gray_256.png");
+    this.alphabetLetters[13] = loadTexture("images/N_Letter_Gray_256.png");
+    this.alphabetLetters[14] = loadTexture("images/O_Letter_Gray_256.png");
+    this.alphabetLetters[15] = loadTexture("images/P_Letter_Gray_256.png");
+    this.alphabetLetters[16] = loadTexture("images/Q_Letter_Gray_256.png");
+    this.alphabetLetters[17] = loadTexture("images/R_Letter_Gray_256.png");
+    this.alphabetLetters[18] = loadTexture("images/S_Letter_Gray_256.png");
+    this.alphabetLetters[19] = loadTexture("images/T_Letter_Gray_256.png");
+    this.alphabetLetters[20] = loadTexture("images/U_Letter_Gray_256.png");
+    this.alphabetLetters[21] = loadTexture("images/V_Letter_Gray_256.png");
+    this.alphabetLetters[22] = loadTexture("images/W_Letter_Gray_256.png");
+    this.alphabetLetters[23] = loadTexture("images/X_Letter_Gray_256.png");
+    this.alphabetLetters[24] = loadTexture("images/Y_Letter_Gray_256.png");
+    this.alphabetLetters[25] = loadTexture("images/Z_Letter_Gray_256.png");
     this.alphabetLetters[26] = loadTexture("images/Blank.png");
 
     
@@ -109,17 +109,17 @@ ActiveLetterImage.prototype.awakeNow = function(){
 
 ActiveLetterImage.prototype.setupVertex = function(){
        
-        var vertex0 = [1.2, -1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 0, 0, 0, 0, 1,
-                          1.2, 1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 0, 1, 0, 0, 1,
-                          -1.2, 1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 1, 1, 0, 0, 1,
-                          -1.2, -1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 1, 0, 0, 0, 1];
+        var vertex0 = [1.2, -1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 0, 0, 0, 0, 1, 0, 0,
+                          1.2, 1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 0, 1, 0, 0, 1, 0, 0,
+                          -1.2, 1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 1, 1, 0, 0, 1, 0, 0,
+                          -1.2, -1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 1, 0, 0, 0, 1, 0, 0];
       
         
         this.vertexBufferBS = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBufferBS);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertex0), gl.STATIC_DRAW);
         
-        this.vertexBufferBS.stride = 12*Float32Array.BYTES_PER_ELEMENT;
+        this.vertexBufferBS.stride = 14*Float32Array.BYTES_PER_ELEMENT;
         this.vertexBufferBS.positionElementCount = 3;
         this.vertexBufferBS.positionOffset = 0;
         this.vertexBufferBS.colorElementCount = 4;
@@ -128,6 +128,8 @@ ActiveLetterImage.prototype.setupVertex = function(){
         this.vertexBufferBS.uvOffset = 7*Float32Array.BYTES_PER_ELEMENT;
         this.vertexBufferBS.normalElementCount = 3;
         this.vertexBufferBS.normalOffset = 9*Float32Array.BYTES_PER_ELEMENT;
+        this.vertexBufferBS.uvElementCountuv = 2;
+        this.vertexBufferBS.uvOffsetuv = 12*Float32Array.BYTES_PER_ELEMENT;
         this.vertexBufferBS.numItems = 4;
 
 
@@ -203,6 +205,15 @@ ActiveLetterImage.prototype.mesh = function(){
                          false,
                          this.vertexBufferBS.stride,
                          this.vertexBufferBS.normalOffset
+                         );
+                 
+    gl.vertexAttribPointer(
+                         shaderProgram.textureCoordAttributeuv,
+                         this.vertexBufferBS.uvElementCountuv,
+                         gl.FLOAT,
+                         false,
+                         this.vertexBufferBS.stride,
+                         this.vertexBufferBS.uvOffsetuv
                          );
 
 

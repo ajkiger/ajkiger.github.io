@@ -16,10 +16,12 @@ function ParticleSystem(){
     this.vertexes = null;
     this.colors = null;
     this.normals = null;
+    this.uvCoordinatesuv = null;
     this.uvCoordinatesFB = null;
     this.vertexesFB = null;
     this.colorsFB = null;
     this.normalsFB = null;
+    this.uvCoordinatesuvFB = null;
     this.vertexIndex = null;
     this.partText = null;
     this.indexIncrease = null;
@@ -50,6 +52,7 @@ ParticleSystem.prototype.uvCoordinates = null;
 ParticleSystem.prototype.vertexes = null;
 ParticleSystem.prototype.colors = null;
 ParticleSystem.prototype.normals = null;
+ParticleSystem.prototype.uvCoordinatesuv = null;
 ParticleSystem.prototype.uvCoordinatesFB = null;
 ParticleSystem.prototype.vertexesFB = null;
 ParticleSystem.prototype.colorsFB = null;
@@ -124,6 +127,7 @@ ParticleSystem.prototype.awake = function(){
     
     this.colors = new Array();
     this.normals = new Array();
+    this.uvCoordinatesuv = new Array();
     
     for(i = 0; i < (6 * this.BB_MAX_PARTICLES); i++){
         this.colors.push(1);
@@ -134,6 +138,9 @@ ParticleSystem.prototype.awake = function(){
         this.normals.push(0);
         this.normals.push(0);
         this.normals.push(1);
+        
+        this.uvCoordinatesuv.push(0);
+        this.uvCoordinatesuv.push(0);
     }
     
 };
@@ -416,6 +423,10 @@ ParticleSystem.prototype.render = function(){
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.normals), gl.STATIC_DRAW);
     //this.normalsFB.vertexSize = 3;
     
+    this.uvCoordinatesuvFB = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.uvCoordinatesuvFB);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.uvCoordinatesuv), gl.STATIC_DRAW);
+    //this.normalsFB.vertexSize = 3;
     
     
     gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexesFB);
@@ -430,6 +441,8 @@ ParticleSystem.prototype.render = function(){
     gl.bindBuffer(gl.ARRAY_BUFFER, this.normalsFB);
     gl.vertexAttribPointer(shaderProgram.vertexNormalAttribute, 3, gl.FLOAT, false, 0, 0);
     
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.uvCoordinatesuvFB);
+    gl.vertexAttribPointer(shaderProgram.textureCoordAttributeuv, 2, gl.FLOAT, false, 0, 0);
     
     
     gl.activeTexture(gl.TEXTURE0);

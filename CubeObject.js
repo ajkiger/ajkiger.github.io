@@ -73,7 +73,7 @@ var wordSelectMarkers2 = new Array();
 var selectedCubeSquares = new Array();
 var nonSelectedCubeSquares = new Array();
 
-//var textureAtlasLetters;
+var textureAtlasLetters;
 
 
 var tileTexture; // = new Object();
@@ -81,6 +81,7 @@ var tileTextureObjects = new Array();
 var reverseTileGrid; // = new Object();
 var reverseTileGridObjects = new Array();
 
+/*
 var letter_A_Objects = new Array();
 var letter_B_Objects = new Array();
 var letter_C_Objects = new Array();
@@ -134,6 +135,7 @@ var flippedLetter_W_Objects = new Array();
 var flippedLetter_X_Objects = new Array();
 var flippedLetter_Y_Objects = new Array();
 var flippedLetter_Z_Objects = new Array();
+*/
 
 var currentSquareT;
 var startSquareT;
@@ -175,6 +177,8 @@ function CubeObjectInit() {
     
     tileTextureObjects.length = 0;
     reverseTileGridObjects.length = 0;
+    
+    /*
     letter_A_Objects.length = 0;
     letter_B_Objects.length = 0;
     letter_C_Objects.length = 0;
@@ -228,7 +232,7 @@ function CubeObjectInit() {
     flippedLetter_X_Objects.length = 0;
     flippedLetter_Y_Objects.length = 0;
     flippedLetter_Z_Objects.length = 0;
-    
+    */
 }
 
 
@@ -239,30 +243,343 @@ function CubeObjectAwake() {
 
     
     
-    //textureAtlasLetters = loadTexture("images/LettersTA1024x1024.png");
+    textureAtlasLetters = loadTexture("images/LettersTA1024x1024.png");
+    
     
     if (sceneController.cubeColorKey === "Inverse")
     {
         tileTexture = loadTexture("images/blacksquareTR65128x128.png");
         reverseTileGrid = loadTexture("images/whitesquareTR65128x128.png");
-        
     }
     else
     {
-        
         tileTexture = loadTexture("images/whitesquareTR65128x128.png");
         reverseTileGrid = loadTexture("images/blacksquareTR65128x128.png");
-        
     }
     
     vertexBufferTexturesTileGrid = tileTexture;
+    
     for(var i = 0; i < sceneController.cubeSize; i++){
-        
         tileTextureObjects.push(i);
     }
     
     
+    alphabetLetters[0] = new Object();
+    alphabetLetters[0].minU = 0.0; //A
+    alphabetLetters[0].maxU = 0.125;
+    alphabetLetters[0].minV = 0.875;
+    alphabetLetters[0].maxV = 1.0;
     
+    alphabetLetters[1] = new Object();
+    alphabetLetters[1].minU = 0.125; //B
+    alphabetLetters[1].maxU = 0.25;
+    alphabetLetters[1].minV = 0.875;
+    alphabetLetters[1].maxV = 1.0;
+    
+    alphabetLetters[2] = new Object();
+    alphabetLetters[2].minU = 0.25; //C
+    alphabetLetters[2].maxU = 0.375;
+    alphabetLetters[2].minV = 0.875;
+    alphabetLetters[2].maxV = 1.0;
+    
+    alphabetLetters[3] = new Object();
+    alphabetLetters[3].minU = 0.375; //D
+    alphabetLetters[3].maxU = 0.5;
+    alphabetLetters[3].minV = 0.875;
+    alphabetLetters[3].maxV = 1.0;
+    
+    alphabetLetters[4] = new Object();
+    alphabetLetters[4].minU = 0.5; //E
+    alphabetLetters[4].maxU = 0.625;
+    alphabetLetters[4].minV = 0.875;
+    alphabetLetters[4].maxV = 1.0;
+    
+    alphabetLetters[5] = new Object();
+    alphabetLetters[5].minU = 0.625; //F
+    alphabetLetters[5].maxU = 0.75;
+    alphabetLetters[5].minV = 0.875;
+    alphabetLetters[5].maxV = 1.0;
+    
+    alphabetLetters[6] = new Object();
+    alphabetLetters[6].minU = 0.75; //G
+    alphabetLetters[6].maxU = 0.875;
+    alphabetLetters[6].minV = 0.875;
+    alphabetLetters[6].maxV = 1.0;
+    
+    alphabetLetters[7] = new Object();
+    alphabetLetters[7].minU = 0.875; //H
+    alphabetLetters[7].maxU = 1.0;
+    alphabetLetters[7].minV = 0.875;
+    alphabetLetters[7].maxV = 1.0;
+    
+    alphabetLetters[8] = new Object();
+    alphabetLetters[8].minU = 0.0; //I
+    alphabetLetters[8].maxU = 0.125;
+    alphabetLetters[8].minV = 0.75;
+    alphabetLetters[8].maxV = 0.875;
+    
+    alphabetLetters[9] = new Object();
+    alphabetLetters[9].minU = 0.125; //J
+    alphabetLetters[9].maxU = 0.25;
+    alphabetLetters[9].minV = 0.75;
+    alphabetLetters[9].maxV = 0.875;
+    
+    alphabetLetters[10] = new Object();
+    alphabetLetters[10].minU = 0.25; //K
+    alphabetLetters[10].maxU = 0.375;
+    alphabetLetters[10].minV = 0.75;
+    alphabetLetters[10].maxV = 0.875;
+    
+    alphabetLetters[11] = new Object();
+    alphabetLetters[11].minU = 0.375; //L
+    alphabetLetters[11].maxU = 0.5;
+    alphabetLetters[11].minV = 0.75;
+    alphabetLetters[11].maxV = 0.875;
+    
+    alphabetLetters[12] = new Object();
+    alphabetLetters[12].minU = 0.5; //M
+    alphabetLetters[12].maxU = 0.625;
+    alphabetLetters[12].minV = 0.75;
+    alphabetLetters[12].maxV = 0.875;
+    
+    alphabetLetters[13] = new Object();
+    alphabetLetters[13].minU = 0.625; //N
+    alphabetLetters[13].maxU = 0.75;
+    alphabetLetters[13].minV = 0.75;
+    alphabetLetters[13].maxV = 0.875;
+    
+    alphabetLetters[14] = new Object();
+    alphabetLetters[14].minU = 0.75; //O
+    alphabetLetters[14].maxU = 0.875;
+    alphabetLetters[14].minV = 0.75;
+    alphabetLetters[14].maxV = 0.875;
+    
+    alphabetLetters[15] = new Object();
+    alphabetLetters[15].minU = 0.875; //P
+    alphabetLetters[15].maxU = 1.0;
+    alphabetLetters[15].minV = 0.75;
+    alphabetLetters[15].maxV = 0.875;
+    
+    alphabetLetters[16] = new Object();
+    alphabetLetters[16].minU = 0.0; //Q
+    alphabetLetters[16].maxU = 0.125;
+    alphabetLetters[16].minV = 0.625;
+    alphabetLetters[16].maxV = 0.75;
+    
+    alphabetLetters[17] = new Object();
+    alphabetLetters[17].minU = 0.125; //R
+    alphabetLetters[17].maxU = 0.25;
+    alphabetLetters[17].minV = 0.625;
+    alphabetLetters[17].maxV = 0.75;
+    
+    alphabetLetters[18] = new Object();
+    alphabetLetters[18].minU = 0.25; //S
+    alphabetLetters[18].maxU = 0.375;
+    alphabetLetters[18].minV = 0.625;
+    alphabetLetters[18].maxV = 0.75;
+    
+    alphabetLetters[19] = new Object();
+    alphabetLetters[19].minU = 0.375; //T
+    alphabetLetters[19].maxU = 0.5;
+    alphabetLetters[19].minV = 0.625;
+    alphabetLetters[19].maxV = 0.75;
+    
+    alphabetLetters[20] = new Object();
+    alphabetLetters[20].minU = 0.5; //U
+    alphabetLetters[20].maxU = 0.625;
+    alphabetLetters[20].minV = 0.625;
+    alphabetLetters[20].maxV = 0.75;
+    
+    alphabetLetters[21] = new Object();
+    alphabetLetters[21].minU = 0.625; //V
+    alphabetLetters[21].maxU = 0.75;
+    alphabetLetters[21].minV = 0.625;
+    alphabetLetters[21].maxV = 0.75;
+    
+    alphabetLetters[22] = new Object();
+    alphabetLetters[22].minU = 0.75; //W
+    alphabetLetters[22].maxU = 0.875;
+    alphabetLetters[22].minV = 0.625;
+    alphabetLetters[22].maxV = 0.75;
+    
+    alphabetLetters[23] = new Object();
+    alphabetLetters[23].minU = 0.875; //X
+    alphabetLetters[23].maxU = 1.0;
+    alphabetLetters[23].minV = 0.625;
+    alphabetLetters[23].maxV = 0.75;
+    
+    alphabetLetters[24] = new Object();
+    alphabetLetters[24].minU = 0.0; //Y
+    alphabetLetters[24].maxU = 0.125;
+    alphabetLetters[24].minV = 0.5;
+    alphabetLetters[24].maxV = 0.625;
+    
+    alphabetLetters[25] = new Object();
+    alphabetLetters[25].minU = 0.125; //Z
+    alphabetLetters[25].maxU = 0.25;
+    alphabetLetters[25].minV = 0.5;
+    alphabetLetters[25].maxV = 0.625;
+    
+    
+    // White Letters
+    alphabetLettersWhite[0] = new Object();
+    alphabetLettersWhite[0].minU = 0.25; //A
+    alphabetLettersWhite[0].maxU = 0.375;
+    alphabetLettersWhite[0].minV = 0.5;
+    alphabetLettersWhite[0].maxV = 0.625;
+    
+    alphabetLettersWhite[1] = new Object();
+    alphabetLettersWhite[1].minU = 0.375; //B
+    alphabetLettersWhite[1].maxU = 0.5;
+    alphabetLettersWhite[1].minV = 0.5;
+    alphabetLettersWhite[1].maxV = 0.625;
+    
+    alphabetLettersWhite[2] = new Object();
+    alphabetLettersWhite[2].minU = 0.5; //C
+    alphabetLettersWhite[2].maxU = 0.625;
+    alphabetLettersWhite[2].minV = 0.5;
+    alphabetLettersWhite[2].maxV = 0.625;
+    
+    alphabetLettersWhite[3] = new Object();
+    alphabetLettersWhite[3].minU = 0.625; //D
+    alphabetLettersWhite[3].maxU = 0.75;
+    alphabetLettersWhite[3].minV = 0.5;
+    alphabetLettersWhite[3].maxV = 0.625;
+    
+    alphabetLettersWhite[4] = new Object();
+    alphabetLettersWhite[4].minU = 0.75; //E
+    alphabetLettersWhite[4].maxU = 0.875;
+    alphabetLettersWhite[4].minV = 0.5;
+    alphabetLettersWhite[4].maxV = 0.625;
+    
+    alphabetLettersWhite[5] = new Object();
+    alphabetLettersWhite[5].minU = 0.875; //F
+    alphabetLettersWhite[5].maxU = 1.0;
+    alphabetLettersWhite[5].minV = 0.5;
+    alphabetLettersWhite[5].maxV = 0.625;
+    
+    alphabetLettersWhite[6] = new Object();
+    alphabetLettersWhite[6].minU = 0.0; //G
+    alphabetLettersWhite[6].maxU = 0.125;
+    alphabetLettersWhite[6].minV = 0.375;
+    alphabetLettersWhite[6].maxV = 0.5;
+    
+    alphabetLettersWhite[7] = new Object();
+    alphabetLettersWhite[7].minU = 0.125; //H
+    alphabetLettersWhite[7].maxU = 0.25;
+    alphabetLettersWhite[7].minV = 0.375;
+    alphabetLettersWhite[7].maxV = 0.5;
+    
+    alphabetLettersWhite[8] = new Object();
+    alphabetLettersWhite[8].minU = 0.25; //I
+    alphabetLettersWhite[8].maxU = 0.375;
+    alphabetLettersWhite[8].minV = 0.375;
+    alphabetLettersWhite[8].maxV = 0.5;
+    
+    alphabetLettersWhite[9] = new Object();
+    alphabetLettersWhite[9].minU = 0.375; //J
+    alphabetLettersWhite[9].maxU = 0.5;
+    alphabetLettersWhite[9].minV = 0.375;
+    alphabetLettersWhite[9].maxV = 0.5;
+    
+    alphabetLettersWhite[10] = new Object();
+    alphabetLettersWhite[10].minU = 0.5; //K
+    alphabetLettersWhite[10].maxU = 0.625;
+    alphabetLettersWhite[10].minV = 0.375;
+    alphabetLettersWhite[10].maxV = 0.5;
+    
+    alphabetLettersWhite[11] = new Object();
+    alphabetLettersWhite[11].minU = 0.0; //L
+    alphabetLettersWhite[11].maxU = 0.125;
+    alphabetLettersWhite[11].minV = 0.25;
+    alphabetLettersWhite[11].maxV = 0.375;
+    
+    alphabetLettersWhite[12] = new Object();
+    alphabetLettersWhite[12].minU = 0.125; //M
+    alphabetLettersWhite[12].maxU = 0.25;
+    alphabetLettersWhite[12].minV = 0.25;
+    alphabetLettersWhite[12].maxV = 0.375;
+    
+    alphabetLettersWhite[13] = new Object();
+    alphabetLettersWhite[13].minU = 0.25; //N
+    alphabetLettersWhite[13].maxU = 0.375;
+    alphabetLettersWhite[13].minV = 0.25;
+    alphabetLettersWhite[13].maxV = 0.375;
+    
+    alphabetLettersWhite[14] = new Object();
+    alphabetLettersWhite[14].minU = 0.375; //O
+    alphabetLettersWhite[14].maxU = 0.5;
+    alphabetLettersWhite[14].minV = 0.25;
+    alphabetLettersWhite[14].maxV = 0.375;
+    
+    alphabetLettersWhite[15] = new Object();
+    alphabetLettersWhite[15].minU = 0.5; //P
+    alphabetLettersWhite[15].maxU = 0.625;
+    alphabetLettersWhite[15].minV = 0.25;
+    alphabetLettersWhite[15].maxV = 0.375;
+    
+    alphabetLettersWhite[16] = new Object();
+    alphabetLettersWhite[16].minU = 0.0; //Q
+    alphabetLettersWhite[16].maxU = 0.125;
+    alphabetLettersWhite[16].minV = 0.125;
+    alphabetLettersWhite[16].maxV = 0.25;
+    
+    alphabetLettersWhite[17] = new Object();
+    alphabetLettersWhite[17].minU = 0.125; //R
+    alphabetLettersWhite[17].maxU = 0.25;
+    alphabetLettersWhite[17].minV = 0.125;
+    alphabetLettersWhite[17].maxV = 0.25;
+    
+    alphabetLettersWhite[18] = new Object();
+    alphabetLettersWhite[18].minU = 0.25; //S
+    alphabetLettersWhite[18].maxU = 0.375;
+    alphabetLettersWhite[18].minV = 0.125;
+    alphabetLettersWhite[18].maxV = 0.25;
+    
+    alphabetLettersWhite[19] = new Object();
+    alphabetLettersWhite[19].minU = 0.375; //T
+    alphabetLettersWhite[19].maxU = 0.5;
+    alphabetLettersWhite[19].minV = 0.125;
+    alphabetLettersWhite[19].maxV = 0.25;
+    
+    alphabetLettersWhite[20] = new Object();
+    alphabetLettersWhite[20].minU = 0.5; //U
+    alphabetLettersWhite[20].maxU = 0.625;
+    alphabetLettersWhite[20].minV = 0.125;
+    alphabetLettersWhite[20].maxV = 0.25;
+    
+    alphabetLettersWhite[21] = new Object();
+    alphabetLettersWhite[21].minU = 0.0; //V
+    alphabetLettersWhite[21].maxU = 0.125;
+    alphabetLettersWhite[21].minV = 0.0;
+    alphabetLettersWhite[21].maxV = 0.125;
+    
+    alphabetLettersWhite[22] = new Object();
+    alphabetLettersWhite[22].minU = 0.125; //W
+    alphabetLettersWhite[22].maxU = 0.25;
+    alphabetLettersWhite[22].minV = 0.0;
+    alphabetLettersWhite[22].maxV = 0.125;
+    
+    alphabetLettersWhite[23] = new Object();
+    alphabetLettersWhite[23].minU = 0.25; //X
+    alphabetLettersWhite[23].maxU = 0.375;
+    alphabetLettersWhite[23].minV = 0.0;
+    alphabetLettersWhite[23].maxV = 0.125;
+    
+    alphabetLettersWhite[24] = new Object();
+    alphabetLettersWhite[24].minU = 0.375; //Y
+    alphabetLettersWhite[24].maxU = 0.5;
+    alphabetLettersWhite[24].minV = 0.0;
+    alphabetLettersWhite[24].maxV = 0.125;
+    
+    alphabetLettersWhite[25] = new Object();
+    alphabetLettersWhite[25].minU = 0.5; //Z
+    alphabetLettersWhite[25].maxU = 0.625;
+    alphabetLettersWhite[25].minV = 0.0;
+    alphabetLettersWhite[25].maxV = 0.125;
+    
+    
+    /*
     alphabetLetters[0] = loadTexture("images/A_Letter_Black_128.png");
     alphabetLetters[1] = loadTexture("images/B_Letter_Black_128.png");
     alphabetLetters[2] = loadTexture("images/C_Letter_Black_128.png");
@@ -316,7 +633,7 @@ function CubeObjectAwake() {
     alphabetLettersWhite[23] = loadTexture("images/X_Letter_Gray_256.png");
     alphabetLettersWhite[24] = loadTexture("images/Y_Letter_Gray_256.png");
     alphabetLettersWhite[25] = loadTexture("images/Z_Letter_Gray_256.png");
-    
+    */
 
     for (var i = 0; i < sceneController.cubeSize; i++) 
     {
@@ -326,15 +643,17 @@ function CubeObjectAwake() {
         {
             if (sceneController.cubeColorKey === "Inverse")
             {
+                
                 vertexBufferTextures[i] = alphabetLettersWhite[0];
                 vertexBufferTexturesRed[i] = alphabetLetters[0];
-                flippedLetter_A_Objects.push(i);
+                //flippedLetter_A_Objects.push(i);
             }
             else
             {
+                
                 vertexBufferTextures[i] = alphabetLetters[0];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[0];
-                letter_A_Objects.push(i);
+                //letter_A_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "B")
@@ -343,13 +662,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[1];
                 vertexBufferTexturesRed[i] = alphabetLetters[1];
-                flippedLetter_B_Objects.push(i);
+                //flippedLetter_B_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[1];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[1];
-                letter_B_Objects.push(i);
+                //letter_B_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "C" || tempSquare.squareLetter === "Ç")
@@ -358,13 +677,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[2];
                 vertexBufferTexturesRed[i] = alphabetLetters[2];
-                flippedLetter_C_Objects.push(i);
+                //flippedLetter_C_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[2];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[2];
-                letter_C_Objects.push(i);
+                //letter_C_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "D")
@@ -373,13 +692,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[3];
                 vertexBufferTexturesRed[i] = alphabetLetters[3];
-                flippedLetter_D_Objects.push(i);
+                //flippedLetter_D_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[3];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[3];
-                letter_D_Objects.push(i);
+                //letter_D_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "E" || tempSquare.squareLetter === "É" || tempSquare.squareLetter === "Ê" || tempSquare.squareLetter === "È" || tempSquare.squareLetter === "Ë")
@@ -388,13 +707,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[4];
                 vertexBufferTexturesRed[i] = alphabetLetters[4];
-                flippedLetter_E_Objects.push(i);
+                //flippedLetter_E_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[4];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[4];
-                letter_E_Objects.push(i);
+                //letter_E_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "F")
@@ -403,13 +722,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[5];
                 vertexBufferTexturesRed[i] = alphabetLetters[5];
-                flippedLetter_F_Objects.push(i);
+                //flippedLetter_F_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[5];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[5];
-                letter_F_Objects.push(i);
+                //letter_F_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "G")
@@ -418,13 +737,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[6];
                 vertexBufferTexturesRed[i] = alphabetLetters[6];
-                flippedLetter_G_Objects.push(i);
+                //flippedLetter_G_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[6];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[6];
-                letter_G_Objects.push(i);
+                //letter_G_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "H")
@@ -433,13 +752,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[7];
                 vertexBufferTexturesRed[i] = alphabetLetters[7];
-                flippedLetter_H_Objects.push(i);
+                //flippedLetter_H_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[7];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[7];
-                letter_H_Objects.push(i);
+                //letter_H_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "I" || tempSquare.squareLetter === "Ï" || tempSquare.squareLetter === "Î" || tempSquare.squareLetter === "Í" || tempSquare.squareLetter === "Ì")
@@ -448,13 +767,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[8];
                 vertexBufferTexturesRed[i] = alphabetLetters[8];
-                flippedLetter_I_Objects.push(i);
+                //flippedLetter_I_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[8];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[8];
-                letter_I_Objects.push(i);
+                //letter_I_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "J")
@@ -463,13 +782,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[9];
                 vertexBufferTexturesRed[i] = alphabetLetters[9];
-                flippedLetter_J_Objects.push(i);
+                //flippedLetter_J_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[9];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[9];
-                letter_J_Objects.push(i);
+                //letter_J_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "K")
@@ -478,13 +797,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[10];
                 vertexBufferTexturesRed[i] = alphabetLetters[10];
-                flippedLetter_K_Objects.push(i);
+                //flippedLetter_K_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[10];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[10];
-                letter_K_Objects.push(i);
+                //letter_K_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "L")
@@ -493,13 +812,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[11];
                 vertexBufferTexturesRed[i] = alphabetLetters[11];
-                flippedLetter_L_Objects.push(i);
+                //flippedLetter_L_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[11];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[11];
-                letter_L_Objects.push(i);
+                //letter_L_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "M")
@@ -508,13 +827,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[12];
                 vertexBufferTexturesRed[i] = alphabetLetters[12];
-                flippedLetter_M_Objects.push(i);
+                //flippedLetter_M_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[12];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[12];
-                letter_M_Objects.push(i);
+                //letter_M_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "N" || tempSquare.squareLetter === "Ñ")
@@ -523,13 +842,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[13];
                 vertexBufferTexturesRed[i] = alphabetLetters[13];
-                flippedLetter_N_Objects.push(i);
+                //flippedLetter_N_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[13];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[13];
-                letter_N_Objects.push(i);
+                //letter_N_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "O" || tempSquare.squareLetter === "Ô" || tempSquare.squareLetter === "Ö" || tempSquare.squareLetter === "Ò" || tempSquare.squareLetter === "Ó")
@@ -538,13 +857,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[14];
                 vertexBufferTexturesRed[i] = alphabetLetters[14];
-                flippedLetter_O_Objects.push(i);
+                //flippedLetter_O_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[14];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[14];
-                letter_O_Objects.push(i);
+                //letter_O_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "P")
@@ -553,13 +872,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[15];
                 vertexBufferTexturesRed[i] = alphabetLetters[15];
-                flippedLetter_P_Objects.push(i);
+                //flippedLetter_P_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[15];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[15];
-                letter_P_Objects.push(i);
+                //letter_P_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "Q")
@@ -568,13 +887,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[16];
                 vertexBufferTexturesRed[i] = alphabetLetters[16];
-                flippedLetter_Q_Objects.push(i);
+                //flippedLetter_Q_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[16];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[16];
-                letter_Q_Objects.push(i);
+                //letter_Q_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "R")
@@ -583,13 +902,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[17];
                 vertexBufferTexturesRed[i] = alphabetLetters[17];
-                flippedLetter_R_Objects.push(i);
+                //flippedLetter_R_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[17];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[17];
-                letter_R_Objects.push(i);
+                //letter_R_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "S")
@@ -598,13 +917,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[18];
                 vertexBufferTexturesRed[i] = alphabetLetters[18];
-                flippedLetter_S_Objects.push(i);
+                //flippedLetter_S_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[18];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[18];
-                letter_S_Objects.push(i);
+                //letter_S_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "T")
@@ -613,13 +932,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[19];
                 vertexBufferTexturesRed[i] = alphabetLetters[19];
-                flippedLetter_T_Objects.push(i);
+                //flippedLetter_T_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[19];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[19];
-                letter_T_Objects.push(i);
+                //letter_T_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "U" || tempSquare.squareLetter === "Ü" || tempSquare.squareLetter === "Û" || tempSquare.squareLetter === "Ù" || tempSquare.squareLetter === "Ú")
@@ -628,13 +947,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[20];
                 vertexBufferTexturesRed[i] = alphabetLetters[20];
-                flippedLetter_U_Objects.push(i);
+                //flippedLetter_U_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[20];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[20];
-                letter_U_Objects.push(i);
+                //letter_U_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "V")
@@ -643,13 +962,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[21];
                 vertexBufferTexturesRed[i] = alphabetLetters[21];
-                flippedLetter_V_Objects.push(i);
+                //flippedLetter_V_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[21];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[21];
-                letter_V_Objects.push(i);
+                //letter_V_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "W")
@@ -658,13 +977,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[22];
                 vertexBufferTexturesRed[i] = alphabetLetters[22];
-                flippedLetter_W_Objects.push(i);
+                //flippedLetter_W_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[22];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[22];
-                letter_W_Objects.push(i);
+                //letter_W_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "X")
@@ -673,13 +992,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[23];
                 vertexBufferTexturesRed[i] = alphabetLetters[23];
-                flippedLetter_X_Objects.push(i);
+                //flippedLetter_X_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[23];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[23];
-                letter_X_Objects.push(i);
+                //letter_X_Objects.push(i);
             }
         }
         else if (tempSquare.squareLetter === "Y" || tempSquare.squareLetter === "Ÿ")
@@ -688,13 +1007,13 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[24];
                 vertexBufferTexturesRed[i] = alphabetLetters[24];
-                flippedLetter_Y_Objects.push(i);
+                //flippedLetter_Y_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[24];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[24];
-                letter_Y_Objects.push(i);
+                //letter_Y_Objects.push(i);
             }
 
         }
@@ -704,20 +1023,33 @@ function CubeObjectAwake() {
             {
                 vertexBufferTextures[i] = alphabetLettersWhite[25];
                 vertexBufferTexturesRed[i] = alphabetLetters[25];
-                flippedLetter_Z_Objects.push(i);
+                //flippedLetter_Z_Objects.push(i);
             }
             else
             {
                 vertexBufferTextures[i] = alphabetLetters[25];
                 vertexBufferTexturesRed[i] = alphabetLettersWhite[25];
-                letter_Z_Objects.push(i);
+                //letter_Z_Objects.push(i);
             }
         }
-
-    }
         
-    vertexBufferTextures[sceneController.cubeSize] = loadTexture("images/selectSquareBlue2.png");
-    vertexBufferTextures[sceneController.cubeSize + 1] = loadTexture("images/selectSquareRed.png");
+    }
+    
+    vertexBufferTextures[sceneController.cubeSize] = new Object();
+    vertexBufferTextures[sceneController.cubeSize].minU = 0.75; //Blue Marker
+    vertexBufferTextures[sceneController.cubeSize].maxU = 0.875;
+    vertexBufferTextures[sceneController.cubeSize].minV = 0.25;
+    vertexBufferTextures[sceneController.cubeSize].maxV = 0.375;
+    
+    vertexBufferTextures[sceneController.cubeSize + 1] = new Object();
+    vertexBufferTextures[sceneController.cubeSize + 1].minU = 0.75; //Red Marker
+    vertexBufferTextures[sceneController.cubeSize + 1].maxU = 0.875;
+    vertexBufferTextures[sceneController.cubeSize + 1].minV = 0.125;
+    vertexBufferTextures[sceneController.cubeSize + 1].maxV = 0.25;
+    
+    //vertexBufferTextures[sceneController.cubeSize] = loadTexture("images/selectSquareBlue2.png");
+    //vertexBufferTextures[sceneController.cubeSize + 1] = loadTexture("images/selectSquareRed.png");
+    
     //vertexBufferTextures[sceneController.cubeSize + 2] = loadTexture("images/Blank.png");
     //vertexBufferTextures[sceneController.cubeSize + 3] = loadTexture("images/selectSquareRed.png");
     //vertexBufferTextures[sceneController.cubeSize] = blueSquare;
@@ -1481,8 +1813,8 @@ function touchesBegan(event) {
     }
     var currentPoint = new Point(relX, relY);
     
-    //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
-    //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
+    document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
+    document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
     
     startTime = new Date().getTime() / 1000;  // seconds
 
@@ -1531,8 +1863,8 @@ function touchesMoved(event) {
     }
     var currentPoint = new Point(relX, relY);
     
-    //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
-    //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
+    document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
+    document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
     
     currentPosition = currentPoint;
     
@@ -2298,7 +2630,6 @@ function highlightLetter(index, hideSelectionMarker){
 
     vertexBufferTexturesTileGrid[index] = reverseTileGrid;  //switch Tile Grid
     
-    
     for(var i = 0; i < tileTextureObjects.length; i++){
         var temp = tileTextureObjects[i];
         if (temp === index) {
@@ -2307,8 +2638,8 @@ function highlightLetter(index, hideSelectionMarker){
         }
     }
     reverseTileGridObjects.push(index);
-
     
+    /*
     var letterSquare = cubeBoard[index];
     var letter = letterSquare.squareLetter;
     if (letter === "A") {
@@ -2519,7 +2850,7 @@ function highlightLetter(index, hideSelectionMarker){
             switchLetters(letter_Z_Objects, flippedLetter_Z_Objects, index);
         }
     }
-
+    */
 
 
     if (sceneController.wordHintWords.length === 0)
@@ -2534,7 +2865,7 @@ function highlightLetter(index, hideSelectionMarker){
 }
 
 
-
+/*
 function switchLetters(first, second, index){
     
     for(var i = 0; i < first.length; i++){
@@ -2547,7 +2878,7 @@ function switchLetters(first, second, index){
     second.push(index);
     
 }
-
+*/
 
 
 function secondCheck(){

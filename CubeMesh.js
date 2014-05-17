@@ -128,10 +128,109 @@ function cubeMeshRender(){
     tempBufferIndex = 0;
     
     
+    
+    
+    //Letters
+    gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
+    // Rotate Letters
+    gl.uniform1f(shaderProgram.rAngleUniform, letterAngleZ);
+    
+    if (visibleSides[0])
+    {
+        for (var i = 0; i < sceneController.cubeSize*1/6; i++) {
+            if (textureFlipped0 === false)
+            {
+                setUpLetters(i);
+            }
+            else
+            {
+                setUpLettersFlipped(i);
+            }
+        }
+    }
+    if (visibleSides[1])
+    {
+        for (var i = sceneController.cubeSize*1/6; i < sceneController.cubeSize*2/6; i++) {
+            if (textureFlipped0 === false)
+            {
+                setUpLetters(i);
+            }
+            else
+            {
+                setUpLettersFlipped(i);
+            }
+        }
+    }
+    if (visibleSides[2])
+    {
+        for (var i = sceneController.cubeSize*2/6; i < sceneController.cubeSize*3/6; i++) {
+            if (textureFlipped0 === false)
+            {
+                setUpLetters(i);
+            }
+            else
+            {
+                setUpLettersFlipped(i);
+            }
+        }
+    }
+    if (visibleSides[3])
+    {
+        for (var i = sceneController.cubeSize*3/6; i < sceneController.cubeSize*4/6; i++) {
+            if (textureFlipped0 === false)
+            {
+                setUpLetters(i);
+            }
+            else
+            {
+                setUpLettersFlipped(i);
+            }
+        }
+    }
+    
+    drawLetters(0);
+    tempBuffer.length = 0;
+    tempBufferIndex = 0;
+    // Rotate Letters
+    gl.uniform1f(shaderProgram.rAngleUniform, letterAngleY);
+    
+    if (visibleSides[4])
+    {
+        for (var i = sceneController.cubeSize*4/6; i < sceneController.cubeSize*5/6; i++) {
+            if (textureFlipped1 === false)
+            {
+                setUpLetters(i);
+            }
+            else
+            {
+                setUpLettersFlipped(i);
+            }
+        }
+    }
+    if (visibleSides[5])
+    {
+        for (var i = sceneController.cubeSize*5/6; i < sceneController.cubeSize; i++) {
+            if (textureFlipped1 === false)
+            {
+                setUpLetters(i);
+            }
+            else
+            {
+                setUpLettersFlipped(i);
+            }
+        }
+    }
+    
+    drawLetters(0);
+    tempBuffer.length = 0;
+    tempBufferIndex = 0;
+    
+    /*
     if (letter_A_Objects.length > 0){
         gl.bindTexture(gl.TEXTURE_2D, alphabetLetters[0]); // A
         preSetLetters(letter_A_Objects);
     }
+    
     if (letter_B_Objects.length > 0){
         gl.bindTexture(gl.TEXTURE_2D, alphabetLetters[1]); // B
         preSetLetters(letter_B_Objects);
@@ -338,11 +437,11 @@ function cubeMeshRender(){
         gl.bindTexture(gl.TEXTURE_2D, alphabetLettersWhite[25]); // Z
         preSetLetters(flippedLetter_Z_Objects);
     }
+    */
+   
     
-    tempBuffer.length = 0;
-    tempBufferIndex = 0;
     
-    gl.bindTexture(gl.TEXTURE_2D, vertexBufferTextures[sceneController.cubeSize]); // Blue Markers
+    //gl.bindTexture(gl.TEXTURE_2D, vertexBufferTextures[sceneController.cubeSize]); // Blue Markers
     // Blue Markers
     for (var i = 0; i < sceneController.cubeSize; i++) {
         if (visibleSides[0])
@@ -400,12 +499,8 @@ function cubeMeshRender(){
             }
         }
     } // End for 
-    drawMarkers(0);
-    tempBuffer.length = 0;
-    tempBufferIndex = 0;
 
-
-    gl.bindTexture(gl.TEXTURE_2D, vertexBufferTextures[sceneController.cubeSize + 1]); // Red Markers
+    //gl.bindTexture(gl.TEXTURE_2D, vertexBufferTextures[sceneController.cubeSize + 1]); // Red Markers
     // Red Markers
     for (var i = 0; i < sceneController.cubeSize; i++) {
         if (visibleSides[0])
@@ -466,6 +561,8 @@ function cubeMeshRender(){
     drawMarkers(0);
     tempBuffer.length = 0;
     tempBufferIndex = 0;
+    
+   
 }
 
 
@@ -566,24 +663,41 @@ function setUpSquares(index){
    vertex3 = test0.splice(0,12);
    vertex4 = test0;
    
-   for(var i = 0; i < 12; i++){
-        tempBuffer.push(vertex4[i]);
-    }
-    for(var i = 0; i < 12; i++){
-        tempBuffer.push(vertex1[i]);
-    }
-    for(var i = 0; i < 12; i++){
-        tempBuffer.push(vertex2[i]);
-    }
-    for(var i = 0; i < 12; i++){
-        tempBuffer.push(vertex2[i]);
-    }
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex3[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex4[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
+    for(var i = 0; i < 12; i++){
+        tempBuffer.push(vertex2[i]);
+    }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
+    for(var i = 0; i < 12; i++){
+        tempBuffer.push(vertex2[i]);
+    }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
+    for(var i = 0; i < 12; i++){
+        tempBuffer.push(vertex4[i]);
+    }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
+    for(var i = 0; i < 12; i++){
+        tempBuffer.push(vertex1[i]);
+    }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
     
     tempBufferIndex = tempBufferIndex + 6;
     
@@ -639,7 +753,7 @@ function setUpSquares(index){
         test[2 + 12] = test[2 + 12] + 0.01;
         test[2 + 2*12] = test[2 + 2*12] + 0.01;
         test[2 + 3*12] = test[2 + 3*12] + 0.01;
-        /*
+        
         test[7] = vertexBufferTextures[index].minU;
         test[8] = vertexBufferTextures[index].minV;
         test[7 + 12] = vertexBufferTextures[index].minU;
@@ -648,7 +762,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].maxV;
         test[7 + 3*12] = vertexBufferTextures[index].maxU;
         test[8 + 3*12] = vertexBufferTextures[index].minV;
-        */
+        
         
     }
     else if (index >= sceneController.cubeSize*1/6 && index < sceneController.cubeSize*2/6) // back
@@ -657,7 +771,7 @@ function setUpSquares(index){
         test[2 + 12] = test[2 + 12] - 0.01;
         test[2 + 2*12] = test[2 + 2*12] - 0.01;
         test[2 + 3*12] = test[2 + 3*12] - 0.01;
-        /*
+        
         test[7] = vertexBufferTextures[index].minU;
         test[8] = vertexBufferTextures[index].minV;
         test[7 + 12] = vertexBufferTextures[index].minU;
@@ -666,7 +780,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].maxV;
         test[7 + 3*12] = vertexBufferTextures[index].maxU;
         test[8 + 3*12] = vertexBufferTextures[index].minV;
-        */
+        
         
     }
     else if (index >= sceneController.cubeSize*2/6 && index < sceneController.cubeSize*3/6) // left
@@ -675,7 +789,7 @@ function setUpSquares(index){
         test[0 + 12] = test[0 + 12] - 0.01;
         test[0 + 2*12] = test[0 + 2*12] - 0.01;
         test[0 + 3*12] = test[0 + 3*12] - 0.01;
-        /*
+        
         test[7] = vertexBufferTextures[index].minU;
         test[8] = vertexBufferTextures[index].minV;
         test[7 + 12] = vertexBufferTextures[index].minU;
@@ -684,7 +798,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].maxV;
         test[7 + 3*12] = vertexBufferTextures[index].maxU;
         test[8 + 3*12] = vertexBufferTextures[index].minV;
-        */
+        
         
     }
     else if (index >= sceneController.cubeSize*3/6 && index < sceneController.cubeSize*4/6) // right
@@ -693,7 +807,7 @@ function setUpSquares(index){
         test[0 + 12] = test[0 + 12] + 0.01;
         test[0 + 2*12] = test[0 + 2*12] + 0.01;
         test[0 + 3*12] = test[0 + 3*12] + 0.01;
-        /*
+        
         test[7] = vertexBufferTextures[index].minU;
         test[8] = vertexBufferTextures[index].minV;
         test[7 + 12] = vertexBufferTextures[index].minU;
@@ -702,7 +816,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].maxV;
         test[7 + 3*12] = vertexBufferTextures[index].maxU;
         test[8 + 3*12] = vertexBufferTextures[index].minV;
-        */
+        
         
     }
     else if (index >= sceneController.cubeSize*4/6 && index < sceneController.cubeSize*5/6) // top
@@ -722,7 +836,7 @@ function setUpSquares(index){
         test[8 + 2*12] = 0;
         test[7 + 3*12] = 0;
         test[8 + 3*12] = 0;
-        /*
+        
         test[7] = vertexBufferTextures[index].minU;
         test[8] = vertexBufferTextures[index].maxV;
         test[7 + 12] = vertexBufferTextures[index].maxU;
@@ -731,7 +845,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].minV;
         test[7 + 3*12] = vertexBufferTextures[index].minU;
         test[8 + 3*12] = vertexBufferTextures[index].minV;
-        */
+        
         
         
     }
@@ -752,7 +866,7 @@ function setUpSquares(index){
         test[8 + 2*12] = 0;
         test[7 + 3*12] = 0;
         test[8 + 3*12] = 0;
-        /*
+        
         test[7] = vertexBufferTextures[index].minU;
         test[8] = vertexBufferTextures[index].maxV;
         test[7 + 12] = vertexBufferTextures[index].maxU;
@@ -761,7 +875,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].minV;
         test[7 + 3*12] = vertexBufferTextures[index].minU;
         test[8 + 3*12] = vertexBufferTextures[index].minV;
-        */
+        
         
     }
 
@@ -787,21 +901,38 @@ function setUpSquares(index){
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex3[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex4[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex2[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex2[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex4[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex1[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
     
     tempBufferIndex = tempBufferIndex + 6;
     
@@ -945,7 +1076,7 @@ function setUpSquares(index){
         test[8 + 2*12] = 0;
         test[7 + 3*12] = 0;
         test[8 + 3*12] = 1;
-        /*
+        
         test[7] = vertexBufferTextures[index].maxU;
         test[8] = vertexBufferTextures[index].maxV;
         test[7 + 12] = vertexBufferTextures[index].maxU;
@@ -954,7 +1085,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].minV;
         test[7 + 3*12] = vertexBufferTextures[index].minU;
         test[8 + 3*12] = vertexBufferTextures[index].maxV;
-        */
+        
     }
     else if (index >= sceneController.cubeSize*1/6 && index < sceneController.cubeSize*2/6) // back
     {
@@ -967,7 +1098,7 @@ function setUpSquares(index){
         test[8 + 2*12] = 0;
         test[7 + 3*12] = 0;
         test[8 + 3*12] = 1;
-        /*
+        
         test[7] = vertexBufferTextures[index].maxU;
         test[8] = vertexBufferTextures[index].maxV;
         test[7 + 12] = vertexBufferTextures[index].maxU;
@@ -976,7 +1107,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].minV;
         test[7 + 3*12] = vertexBufferTextures[index].minU;
         test[8 + 3*12] = vertexBufferTextures[index].maxV;
-        */
+        
     }
     else if (index >= sceneController.cubeSize*2/6 && index < sceneController.cubeSize*3/6) // left
     {
@@ -989,7 +1120,7 @@ function setUpSquares(index){
         test[8 + 2*12] = 0;
         test[7 + 3*12] = 0;
         test[8 + 3*12] = 1;
-        /*
+        
         test[7] = vertexBufferTextures[index].maxU;
         test[8] = vertexBufferTextures[index].maxV;
         test[7 + 12] = vertexBufferTextures[index].maxU;
@@ -998,7 +1129,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].minV;
         test[7 + 3*12] = vertexBufferTextures[index].minU;
         test[8 + 3*12] = vertexBufferTextures[index].maxV;
-        */
+        
     }
     else if (index >= sceneController.cubeSize*3/6 && index < sceneController.cubeSize*4/6) // right
     {
@@ -1011,7 +1142,7 @@ function setUpSquares(index){
         test[8 + 2*12] = 0;
         test[7 + 3*12] = 0;
         test[8 + 3*12] = 1;
-        /*
+        
         test[7] = vertexBufferTextures[index].maxU;
         test[8] = vertexBufferTextures[index].maxV;
         test[7 + 12] = vertexBufferTextures[index].maxU;
@@ -1020,7 +1151,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].minV;
         test[7 + 3*12] = vertexBufferTextures[index].minU;
         test[8 + 3*12] = vertexBufferTextures[index].maxV;
-        */
+        
     }
 
     else if (index >= sceneController.cubeSize*4/6 && index < sceneController.cubeSize*5/6) // top
@@ -1035,7 +1166,7 @@ function setUpSquares(index){
         test[8 + 2*12] = 1;
         test[7 + 3*12] = 1;
         test[8 + 3*12] = 1;
-        /*
+        
         test[7] = vertexBufferTextures[index].maxU;
         test[8] = vertexBufferTextures[index].minV;
         test[7 + 12] = vertexBufferTextures[index].minU;
@@ -1044,7 +1175,7 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].maxV;
         test[7 + 3*12] = vertexBufferTextures[index].maxU;
         test[8 + 3*12] = vertexBufferTextures[index].maxV;
-        */
+        
     }
     else if (index >= sceneController.cubeSize*5/6 && index < sceneController.cubeSize) // bottom
     {
@@ -1058,7 +1189,7 @@ function setUpSquares(index){
         test[8 + 2*12] = 1;
         test[7 + 3*12] = 1;
         test[8 + 3*12] = 1;
-        /*
+        
         test[7] = vertexBufferTextures[index].maxU;
         test[8] = vertexBufferTextures[index].minV;
         test[7 + 12] = vertexBufferTextures[index].minU;
@@ -1067,10 +1198,13 @@ function setUpSquares(index){
         test[8 + 2*12] = vertexBufferTextures[index].maxV;
         test[7 + 3*12] = vertexBufferTextures[index].maxU;
         test[8 + 3*12] = vertexBufferTextures[index].maxV;
-        */
+        
     }
-
-
+    
+    
+    //gl.uniform1f(shaderProgram.xUminUniform, vertexBufferTextures[index].minU);
+    //gl.uniform1f(shaderProgram.xVminUniform, vertexBufferTextures[index].minV);
+    
     //tempBuffer.length = 0;
     //tempBufferIndex = 0;
     /*
@@ -1090,21 +1224,38 @@ function setUpSquares(index){
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex3[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex4[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex2[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex2[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex4[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex1[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
     
     tempBufferIndex = tempBufferIndex + 6;
     
@@ -1203,6 +1354,30 @@ function setUpWordSelect(index){
         test1[1 + 3*12] = test1[1 + 3*12] - 0.03;
     }
    
+    if (wordSelectMarkers[index] === 1 || wordSelectMarkers[index] === 2)
+    {
+        test1[7] = vertexBufferTextures[sceneController.cubeSize].minU;
+        test1[8] = vertexBufferTextures[sceneController.cubeSize].minV;
+        test1[7 + 12] = vertexBufferTextures[sceneController.cubeSize].minU;
+        test1[8 + 12] = vertexBufferTextures[sceneController.cubeSize].maxV;
+        test1[7 + 2*12] = vertexBufferTextures[sceneController.cubeSize].maxU;
+        test1[8 + 2*12] = vertexBufferTextures[sceneController.cubeSize].maxV;
+        test1[7 + 3*12] = vertexBufferTextures[sceneController.cubeSize].maxU;
+        test1[8 + 3*12] = vertexBufferTextures[sceneController.cubeSize].minV;
+    }
+    else if (wordSelectMarkers[index] === 3)
+    {
+        test1[7] = vertexBufferTextures[sceneController.cubeSize + 1].minU;
+        test1[8] = vertexBufferTextures[sceneController.cubeSize + 1].minV;
+        test1[7 + 12] = vertexBufferTextures[sceneController.cubeSize + 1].minU;
+        test1[8 + 12] = vertexBufferTextures[sceneController.cubeSize + 1].maxV;
+        test1[7 + 2*12] = vertexBufferTextures[sceneController.cubeSize + 1].maxU;
+        test1[8 + 2*12] = vertexBufferTextures[sceneController.cubeSize + 1].maxV;
+        test1[7 + 3*12] = vertexBufferTextures[sceneController.cubeSize + 1].maxU;
+        test1[8 + 3*12] = vertexBufferTextures[sceneController.cubeSize + 1].minV;
+    }
+    
+   
     vertex1 = test1.splice(0,12);
     vertex2 = test1.splice(0,12);
     vertex3 = test1.splice(0,12);
@@ -1211,21 +1386,38 @@ function setUpWordSelect(index){
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex3[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex4[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex2[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex2[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex4[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
+    
     for(var i = 0; i < 12; i++){
         tempBuffer.push(vertex1[i]);
     }
+    tempBuffer.push(vertexBufferTextures[index].minU);
+    tempBuffer.push(vertexBufferTextures[index].minV);
     
     tempBufferIndex = tempBufferIndex + 6;
    
@@ -1247,7 +1439,7 @@ function drawSquares(index){
     gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer[index]);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(tempBuffer), gl.STATIC_DRAW);
 
-    squareVertexPositionBuffer[index].stride = 12*Float32Array.BYTES_PER_ELEMENT;
+    squareVertexPositionBuffer[index].stride = 14*Float32Array.BYTES_PER_ELEMENT;
     squareVertexPositionBuffer[index].positionElementCount = 3;
     squareVertexPositionBuffer[index].positionOffset = 0;
     squareVertexPositionBuffer[index].colorElementCount = 4;
@@ -1256,7 +1448,9 @@ function drawSquares(index){
     squareVertexPositionBuffer[index].uvOffset = 7*Float32Array.BYTES_PER_ELEMENT;
     squareVertexPositionBuffer[index].normalElementCount = 3;
     squareVertexPositionBuffer[index].normalOffset = 9*Float32Array.BYTES_PER_ELEMENT;
-    //squareVertexPositionBuffer[index].numItems = 4;
+    squareVertexPositionBuffer[index].uvElementCountuv = 2;
+    squareVertexPositionBuffer[index].uvOffsetuv = 12*Float32Array.BYTES_PER_ELEMENT;
+    squareVertexPositionBuffer[index].numItems = 4;
     
 
     //gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer[index]);
@@ -1297,10 +1491,18 @@ function drawSquares(index){
                          squareVertexPositionBuffer[index].normalOffset
                          );
 
+    gl.vertexAttribPointer(
+                         shaderProgram.textureCoordAttributeuv,
+                         squareVertexPositionBuffer[index].uvElementCountuv,
+                         gl.FLOAT,
+                         false,
+                         squareVertexPositionBuffer[index].stride,
+                         squareVertexPositionBuffer[index].uvOffsetuv
+                         );
 
 
-    gl.uniform1i(shaderProgram.samplerUniform, 0);
-    gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate squares
+    //gl.uniform1i(shaderProgram.samplerUniform, 0);
+    //gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate squares
 
 
 
@@ -1317,11 +1519,13 @@ function drawSquares(index){
 function drawLetters(index){
     
     vertexBufferLetters[index] = gl.createBuffer();
+    
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBufferLetters[index]);
+    
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(tempBuffer), gl.STATIC_DRAW);
     
     
-    vertexBufferLetters[index].stride = 12*Float32Array.BYTES_PER_ELEMENT;
+    vertexBufferLetters[index].stride = 14*Float32Array.BYTES_PER_ELEMENT;
     vertexBufferLetters[index].positionElementCount = 3;
     vertexBufferLetters[index].positionOffset = 0;
     vertexBufferLetters[index].colorElementCount = 4;
@@ -1330,6 +1534,8 @@ function drawLetters(index){
     vertexBufferLetters[index].uvOffset = 7*Float32Array.BYTES_PER_ELEMENT;
     vertexBufferLetters[index].normalElementCount = 3;
     vertexBufferLetters[index].normalOffset = 9*Float32Array.BYTES_PER_ELEMENT;
+    vertexBufferLetters[index].uvElementCountuv = 2;
+    vertexBufferLetters[index].uvOffsetuv = 12*Float32Array.BYTES_PER_ELEMENT;
     vertexBufferLetters[index].numItems = 4;
     
     
@@ -1371,6 +1577,15 @@ function drawLetters(index){
                         vertexBufferLetters[index].stride,
                         vertexBufferLetters[index].normalOffset
                         );
+                
+    gl.vertexAttribPointer(
+                         shaderProgram.textureCoordAttributeuv,
+                         vertexBufferLetters[index].uvElementCountuv,
+                         gl.FLOAT,
+                         false,
+                         vertexBufferLetters[index].stride,
+                         vertexBufferLetters[index].uvOffsetuv
+                         );
 
     
     //gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
@@ -1382,6 +1597,7 @@ function drawLetters(index){
     
 }
 
+/*
 function preSetLetters(letter_Objects){
     
     if (visibleSides[0])
@@ -1478,16 +1694,16 @@ function preSetLetters(letter_Objects){
             var temp = letter_Objects[i];
             if (temp >= sceneController.cubeSize*4/6 && temp < sceneController.cubeSize*5/6) {
                 
-                /*
+                
                 if (textureFlipped0 === false)
                 {
-                    setUpLetters(temp);
+                    //setUpLetters(temp);
                 }
                 else
                 {
-                    setUpLettersFlipped(temp);
+                    //setUpLettersFlipped(temp);
                 }
-                */
+                
                 if (textureFlipped1 === false)
                 {
                     setUpLetters(temp);
@@ -1511,16 +1727,16 @@ function preSetLetters(letter_Objects){
             var temp = letter_Objects[i];
             if (temp >= sceneController.cubeSize*5/6 && temp < sceneController.cubeSize) {
                 
-                /*
+                
                 if (textureFlipped0 === false)
                 {
-                    setUpLetters(temp);
+                    //setUpLetters(temp);
                 }
                 else
                 {
-                    setUpLettersFlipped(temp);
+                    //setUpLettersFlipped(temp);
                 }
-                */
+                
                 if (textureFlipped1 === false)
                 {
                     setUpLetters(temp);
@@ -1540,6 +1756,7 @@ function preSetLetters(letter_Objects){
     }
     
 }
+*/
 
 
 function drawMarkers(index){
@@ -1549,7 +1766,7 @@ function drawMarkers(index){
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBufferWordSelect[index]);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(tempBuffer), gl.STATIC_DRAW);
     
-    vertexBufferWordSelect[index].stride = 12*Float32Array.BYTES_PER_ELEMENT;
+    vertexBufferWordSelect[index].stride = 14*Float32Array.BYTES_PER_ELEMENT;
     vertexBufferWordSelect[index].positionElementCount = 3;
     vertexBufferWordSelect[index].positionOffset = 0;
     vertexBufferWordSelect[index].colorElementCount = 4;
@@ -1558,6 +1775,8 @@ function drawMarkers(index){
     vertexBufferWordSelect[index].uvOffset = 7*Float32Array.BYTES_PER_ELEMENT;
     vertexBufferWordSelect[index].normalElementCount = 3;
     vertexBufferWordSelect[index].normalOffset = 9*Float32Array.BYTES_PER_ELEMENT;
+    vertexBufferWordSelect[index].uvElementCountuv = 2;
+    vertexBufferWordSelect[index].uvOffsetuv = 12*Float32Array.BYTES_PER_ELEMENT;
     vertexBufferWordSelect[index].numItems = 4;
     
 
@@ -1595,6 +1814,15 @@ function drawMarkers(index){
                          false,
                          vertexBufferWordSelect[index].stride,
                          vertexBufferWordSelect[index].normalOffset
+                         );
+                 
+    gl.vertexAttribPointer(
+                         shaderProgram.textureCoordAttributeuv,
+                         vertexBufferWordSelect[index].uvElementCountuv,
+                         gl.FLOAT,
+                         false,
+                         vertexBufferWordSelect[index].stride,
+                         vertexBufferWordSelect[index].uvOffsetuv
                          );
 
     
