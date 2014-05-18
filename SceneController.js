@@ -34,6 +34,10 @@ var starTimer2;
 var starString;
 var numberStars = 3;
 
+var whiteSquaresTexture;
+var blackSquaresTexture;
+var allLettersTexture;
+
 
 function sceneControllerInit(){
     
@@ -59,6 +63,9 @@ function sceneControllerInit(){
     sceneController.todayDate = getTodaysDate();
     secondTime = " First";
     
+    whiteSquaresTexture = loadTexture("images/whitesquareTR65128x128.png");
+    blackSquaresTexture = loadTexture("images/blacksquareTR65128x128.png");
+    allLettersTexture = loadTexture("images/LettersTA1024x1024.png");
     
     // Load weekly lists
     loadWordList("wordlists/MonthlyIput.txt");
@@ -2045,5 +2052,34 @@ function selectWords(wordArrayBig){
     }
     
     return tempArray;
+
+}
+
+
+function loadTexture(str) {
+
+    var newTexture = gl.createTexture();
+    newTexture.image = new Image();
+
+    newTexture.image.onload = function() {
+        handleLoadedTexture(newTexture);
+    };
+
+    newTexture.image.src = str;
+    return newTexture;
+}
+
+
+function handleLoadedTexture(texture) {
+
+
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+    gl.generateMipmap(gl.TEXTURE_2D);
+
+    gl.bindTexture(gl.TEXTURE_2D, null);
 
 }

@@ -242,19 +242,17 @@ function CubeObjectAwake() {
     cMesh = new Object();
 
     
-    
-    textureAtlasLetters = loadTexture("images/LettersTA1024x1024.png");
-    
+    textureAtlasLetters = allLettersTexture;
     
     if (sceneController.cubeColorKey === "Inverse")
     {
-        tileTexture = loadTexture("images/blacksquareTR65128x128.png");
-        reverseTileGrid = loadTexture("images/whitesquareTR65128x128.png");
+        tileTexture = blackSquaresTexture;
+        reverseTileGrid = whiteSquaresTexture;
     }
     else
     {
-        tileTexture = loadTexture("images/whitesquareTR65128x128.png");
-        reverseTileGrid = loadTexture("images/blacksquareTR65128x128.png");
+        tileTexture = whiteSquaresTexture;
+        reverseTileGrid = blackSquaresTexture;
     }
     
     vertexBufferTexturesTileGrid = tileTexture;
@@ -1368,37 +1366,6 @@ function cObjectRender() {
 }
 
 
-
-
-
-
-function loadTexture(str) {
-
-    var newTexture = gl.createTexture();
-    newTexture.image = new Image();
-
-    newTexture.image.onload = function() {
-        handleLoadedTexture(newTexture);
-    };
-
-    newTexture.image.src = str;
-    return newTexture;
-}
-
-
-function handleLoadedTexture(texture) {
-
-
-    gl.bindTexture(gl.TEXTURE_2D, texture);
-    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
-    gl.generateMipmap(gl.TEXTURE_2D);
-
-    gl.bindTexture(gl.TEXTURE_2D, null);
-
-}
 
 
 
