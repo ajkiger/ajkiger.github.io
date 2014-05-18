@@ -1992,7 +1992,12 @@ function touchesEnd() {
 
     if (!wordSelect)
     {
-        fingerSpeed = Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime;
+        if (containerScale){
+            fingerSpeed = Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime;
+        }
+        else{
+            fingerSpeed = (Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime) * 2;
+        }
 
         xVector = deltaX * fingerSpeed / 50;
         yVector = deltaY * fingerSpeed / 50;
