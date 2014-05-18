@@ -578,6 +578,12 @@ function CubeObjectAwake() {
     alphabetLettersWhite[25].minV = 0.0;
     alphabetLettersWhite[25].maxV = 0.125;
     
+    alphabetLettersWhite[26] = new Object();
+    alphabetLettersWhite[26].minU = 0.875; //Blank
+    alphabetLettersWhite[26].maxU = 1.0;
+    alphabetLettersWhite[26].minV = 0.0;
+    alphabetLettersWhite[26].maxV = 0.125;
+    
     
     /*
     alphabetLetters[0] = loadTexture("images/A_Letter_Black_128.png");

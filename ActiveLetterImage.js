@@ -70,7 +70,36 @@ ActiveLetterImage.prototype.awakeNow = function(){
     this.alphabetLetters = new Array();
     this.selectLetter = 26;
     this.makeVisible = false;
-
+    
+    
+    this.alphabetLetters[0] = alphabetLettersWhite[0];
+    this.alphabetLetters[1] = alphabetLettersWhite[1];
+    this.alphabetLetters[2] = alphabetLettersWhite[2];
+    this.alphabetLetters[3] = alphabetLettersWhite[3];
+    this.alphabetLetters[4] = alphabetLettersWhite[4];
+    this.alphabetLetters[5] = alphabetLettersWhite[5];
+    this.alphabetLetters[6] = alphabetLettersWhite[6];
+    this.alphabetLetters[7] = alphabetLettersWhite[7];
+    this.alphabetLetters[8] = alphabetLettersWhite[8];
+    this.alphabetLetters[9] = alphabetLettersWhite[9];
+    this.alphabetLetters[10] = alphabetLettersWhite[10];
+    this.alphabetLetters[11] = alphabetLettersWhite[11];
+    this.alphabetLetters[12] = alphabetLettersWhite[12];
+    this.alphabetLetters[13] = alphabetLettersWhite[13];
+    this.alphabetLetters[14] = alphabetLettersWhite[14];
+    this.alphabetLetters[15] = alphabetLettersWhite[15];
+    this.alphabetLetters[16] = alphabetLettersWhite[16];
+    this.alphabetLetters[17] = alphabetLettersWhite[17];
+    this.alphabetLetters[18] = alphabetLettersWhite[18];
+    this.alphabetLetters[19] = alphabetLettersWhite[19];
+    this.alphabetLetters[20] = alphabetLettersWhite[20];
+    this.alphabetLetters[21] = alphabetLettersWhite[21];
+    this.alphabetLetters[22] = alphabetLettersWhite[22];
+    this.alphabetLetters[23] = alphabetLettersWhite[23];
+    this.alphabetLetters[24] = alphabetLettersWhite[24];
+    this.alphabetLetters[25] = alphabetLettersWhite[25];
+    this.alphabetLetters[26] = alphabetLettersWhite[26];
+    /*
     this.alphabetLetters[0] = loadTexture("images/A_Letter_Gray_128.png");
     this.alphabetLetters[1] = loadTexture("images/B_Letter_Gray_128.png");
     this.alphabetLetters[2] = loadTexture("images/C_Letter_Gray_128.png");
@@ -98,7 +127,7 @@ ActiveLetterImage.prototype.awakeNow = function(){
     this.alphabetLetters[24] = loadTexture("images/Y_Letter_Gray_128.png");
     this.alphabetLetters[25] = loadTexture("images/Z_Letter_Gray_128.png");
     this.alphabetLetters[26] = loadTexture("images/Blank.png");
-
+    */
     
     mat4.identity(this.alMatrix);
     mat4.translate(this.alMatrix, this.alMatrix, [this.x, this.y, this.z]);
@@ -109,11 +138,20 @@ ActiveLetterImage.prototype.awakeNow = function(){
 
 ActiveLetterImage.prototype.setupVertex = function(){
        
-        var vertex0 = [1.2, -1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 0, 0, 0, 0, 1, 0, 0,
-                          1.2, 1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 0, 1, 0, 0, 1, 0, 0,
-                          -1.2, 1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 1, 1, 0, 0, 1, 0, 0,
-                          -1.2, -1.2, 0.0, 0.6, 0.6, 0.6, 0.6, 1, 0, 0, 0, 1, 0, 0];
+        var vertex0 = [1.2, -1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 0, 0, 0, 0, 1, 0, 0,
+                          1.2, 1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 0, 1, 0, 0, 1, 0, 0,
+                          -1.2, 1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 1, 1, 0, 0, 1, 0, 0,
+                          -1.2, -1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 1, 0, 0, 0, 1, 0, 0];
       
+        vertex0[7] = this.alphabetLetters[this.selectLetter].minU;
+        vertex0[8] = this.alphabetLetters[this.selectLetter].minV;
+        vertex0[7 + 14] = this.alphabetLetters[this.selectLetter].minU;
+        vertex0[8 + 14] = this.alphabetLetters[this.selectLetter].maxV;
+        vertex0[7 + 2*14] = this.alphabetLetters[this.selectLetter].maxU;
+        vertex0[8 + 2*14] = this.alphabetLetters[this.selectLetter].maxV;
+        vertex0[7 + 3*14] = this.alphabetLetters[this.selectLetter].maxU;
+        vertex0[8 + 3*14] = this.alphabetLetters[this.selectLetter].minV;
+        
         
         this.vertexBufferBS = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBufferBS);
@@ -218,10 +256,13 @@ ActiveLetterImage.prototype.mesh = function(){
 
 
     gl.activeTexture(gl.TEXTURE0);
-    gl.bindTexture(gl.TEXTURE_2D, this.alphabetLetters[this.selectLetter]);
+    //gl.bindTexture(gl.TEXTURE_2D, this.alphabetLetters[this.selectLetter]);
+    gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
+    
+    
     gl.uniform1i(shaderProgram.samplerUniform, 0);
     gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate letter
-    gl.uniform1f(shaderProgram.alphaUniform, 0.6);
+    gl.uniform1f(shaderProgram.alphaUniform, 0.5);
 
 
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.indexBufferBS);

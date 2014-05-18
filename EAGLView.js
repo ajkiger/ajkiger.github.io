@@ -39,7 +39,7 @@ function EAGLViewBeginDraw(){
     
     gl.uniform3fv(shaderProgram.ambientLightColorUniform, [0.2, 0.2, 0.2]);
     gl.uniform3fv(shaderProgram.diffuseLightColorUniform, [1.0, 1.0, 1.0]); //1.3
-    gl.uniform3fv(shaderProgram.specularLightColorUniform, [1.0, 1.0, 1.0]);
+    //gl.uniform3fv(shaderProgram.specularLightColorUniform, [1.0, 1.0, 1.0]);
       
     
     
