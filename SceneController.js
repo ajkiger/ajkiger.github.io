@@ -463,6 +463,7 @@ function SolveTheCube2(){
 function SolveTheCube(){
     
     sceneController.solveCube = true;
+    //sceneController.gameOver = true;
     clearTimeout(starTimer1);
     clearTimeout(starTimer2);
     numberStars = 3;
@@ -637,12 +638,16 @@ function SceneControllerUpdateModel(){
             lastParticle = false;
             //document.getElementById('mouseCoord').innerHTML = "";
             //document.getElementById('vMoveEvent').innerHTML = "No Particles";
+            
             if(!(numberStars === 3)){
                 updateScoreStar("BlueStars");
             }
             
-            starTimer1 = setTimeout(function(){updateScoreStar("RedStars");}, 30000);
-            starTimer2 = setTimeout(function(){updateScoreStar("YellowStars");}, 60000);
+            if(!sceneController.gameOver && !sceneController.solveCube){
+                starTimer1 = setTimeout(function(){updateScoreStar("RedStars");}, 30000);
+                starTimer2 = setTimeout(function(){updateScoreStar("YellowStars");}, 60000);
+            }
+            
         }
         
         

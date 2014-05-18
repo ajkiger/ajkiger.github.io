@@ -16,23 +16,12 @@ var vertex4;
 
 
 function cubeMeshRender(){
-    /*
-    indexBuffer = gl.createBuffer();
-    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
-    //var cubeVertexIndices = [1, 0, 2, 3];
-    cubeVertexIndices = [3, 4, 2, 2, 4, 1];
-    gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(cubeVertexIndices), gl.STATIC_DRAW);
-    indexBuffer.itemSize = 1;
-    //indexBuffer.numItems = 4;
-    */
    
     tempBuffer.length = 0;
     tempBufferIndex = 0;
-    //cubeVertexIndices.length = 0;
     
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, tileTexture);
-    
     // Squares
     for (var i = 0; i < tileTextureObjects.length; i++) {
         var temp = tileTextureObjects[i];
@@ -73,13 +62,10 @@ function cubeMeshRender(){
             }
         }
     } // End for 
-    //document.getElementById('xcoord').innerHTML = "Vertexes: " + tempBuffer.length/12;
-    //document.getElementById('ycoord').innerHTML = "Made it here: " + tempBufferIndex;
+    
     drawSquares(0);
     tempBuffer.length = 0;
     tempBufferIndex = 0;
-    //cubeVertexIndices.length = 0;
-    
     
     gl.bindTexture(gl.TEXTURE_2D, reverseTileGrid);
     // Squares Reverse
