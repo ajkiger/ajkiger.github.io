@@ -642,6 +642,13 @@
         
     }
     
+    
+    $(document).ready(function(){
+        $("*").dblclick(function(e){
+            e.preventDefault();
+        });
+    });
+
     /*
     $(document).bind(
         'touchmove', function(e) {
