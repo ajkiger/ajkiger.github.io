@@ -35,7 +35,7 @@
     
     if (retina){
         pixelRatio = window.devicePixelRatio;
-        tempScale = tempScale / 2;
+        tempScale = tempScale / pixelRatio;
     }
     
     
@@ -922,7 +922,7 @@
     
     $(function(){
 
-        $( "#container" ).on( "doubletap", function( event, touch ){  
+        $( "#container" ).on( "doubletap", function( event ){  
 
             if(validCanvas){
                 
@@ -994,7 +994,7 @@
         else{
             cWidth = "320";
         }
-        document.getElementById('cScale').innerHTML = pixelRatio;
+        document.getElementById('cScale').innerHTML = browserWidth;
         document.getElementById('test').innerHTML = "&nbsp&nbsp";
         var mvcontent = document.getElementById('WordCubed-canvas');
         mvcontent.setAttribute('width',cWidth);
