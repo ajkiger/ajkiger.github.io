@@ -12,7 +12,7 @@
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var retina = window.devicePixelRatio > 1;
-    var pixelRatio;
+    var pixelRatio = 0.25;
     
     var tempScale;
     var tempScaleW = browserWidth / 640;
@@ -885,7 +885,7 @@
    
     $(function(){
         
-        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout", function( event ){ 
+        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
        
             if(validCanvas){
 
@@ -907,9 +907,11 @@
 
                     handleMouseOutonCanvas(event);
 
+                } else if (event.type === "doubletap") {
+
+                    handleMouseDblClickonCanvas(event);
+
                 }
-
-
 
             }
         
@@ -919,7 +921,7 @@
     });
     
     
-    
+    /*
     $(function(){
 
         $( "#container" ).on( "doubletap", function( event ){  
@@ -937,7 +939,7 @@
         });
 
     });
-    
+    */
    
     
     
@@ -994,7 +996,7 @@
         else{
             cWidth = "320";
         }
-        document.getElementById('cScale').innerHTML = browserWidth;
+        document.getElementById('cScale').innerHTML = pixelRatio;
         document.getElementById('test').innerHTML = "&nbsp&nbsp";
         var mvcontent = document.getElementById('WordCubed-canvas');
         mvcontent.setAttribute('width',cWidth);
