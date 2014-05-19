@@ -10,9 +10,13 @@
 <script>
     var containerScale;
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
     var retina = window.devicePixelRatio > 1;
     
     var tempScale;
+    var tempScaleW = browserWidth / 640;
+    var tempScaleH = browserHeight / 842;
+    var scaleFactor = browserHeight/tempScaleW;
     
     if(browserWidth > 320){
         containerScale = true;
@@ -21,12 +25,12 @@
         containerScale = false;
     }
     
-    if(browserWidth >= 640){
-        tempScale = browserWidth / 640;
+    if(scaleFactor > 842){
+        
+        tempScale = (browserWidth/scaleFactor) / 640;
     }
     else {
-        //tempScale = 0.5;
-        tempScale = browserWidth / 640;
+        tempScale = tempScaleW;
     }
     
     if (retina){
@@ -985,12 +989,11 @@
         var cWidth;
         if (containerScale){
             cWidth = "640";
-            document.getElementById('cScale').innerHTML = browserWidth;
         }
         else{
             cWidth = "320";
-            document.getElementById('cScale').innerHTML = browserWidth;
         }
+        document.getElementById('cScale').innerHTML = browserHeight;
         var mvcontent = document.getElementById('WordCubed-canvas');
         mvcontent.setAttribute('width',cWidth);
         mvcontent.setAttribute('height',cWidth);
