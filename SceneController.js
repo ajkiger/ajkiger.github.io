@@ -607,13 +607,13 @@ function SceneControllerUpdateModel(){
             var cScore = document.getElementById('scorebox').innerHTML;
             var cScoreRate = document.getElementById('scoreratebox').innerHTML;
 
-            var cMessage = "<p>" + "Cube Cleared!<br><br>Score: " + cScore + "<br>" + "Score Rate: " + cScoreRate + "</p>";
+            //var cMessage = "<p>" + "Cube Cleared!<br><br>Score: " + cScore + "<br>" + "Score Rate: " + cScoreRate + "</p>";
 
             PostScore();
             
-            $( "#dialogWin" ).empty();
-            $( "#dialogWin" ).append( cMessage );
-            $( "#dialogWin" ).dialog( "open" );
+            //$( "#dialogWin" ).empty();
+            //$( "#dialogWin" ).append( cMessage );
+            //$( "#dialogWin" ).dialog( "open" );
             
             
             document.getElementById('Winmessage').innerHTML = "Cube Cleared!<br><br>Score: " + cScore + "<br>" + "Score Rate: " + cScoreRate;

@@ -16,10 +16,10 @@ function handleMouseDownonCanvas(event) {
     
     mouseDown = true;
     
-    $( "#dialog" ).dialog( "close" );
-    $( "#dialogHints" ).dialog( "close" );
-    $( "#dialogSettings" ).dialog( "close" );
-    $( "#dialoggames" ).dialog( "close" );
+    //$( "#dialog" ).dialog( "close" );
+    //$( "#dialogHints" ).dialog( "close" );
+    //$( "#dialogSettings" ).dialog( "close" );
+    //$( "#dialoggames" ).dialog( "close" );
     
     
     //document.getElementById('menuAlign').innerHTML = "x:" + xCoord;
