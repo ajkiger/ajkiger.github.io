@@ -16,7 +16,6 @@
     var tempScale;
     var tempScaleW = browserWidth / 640;
     var tempScaleH = browserHeight / 842;
-    var scaleFactor = browserHeight/tempScaleW;
     
     if(browserWidth > 320){
         containerScale = true;
@@ -25,9 +24,9 @@
         containerScale = false;
     }
     
-    if(scaleFactor > 842){
+    if(tempScaleH < tempScaleW){
         
-        tempScale = (browserWidth/scaleFactor) / 640;
+        tempScale = tempScaleH;
     }
     else {
         tempScale = tempScaleW;
