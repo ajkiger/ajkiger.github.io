@@ -84,7 +84,7 @@
 <style>
     body, html {
         
-        background-color: #cccccc;
+        background-color: #eee;// #cccccc;
         color: black;
         
         height: 100%;
@@ -98,7 +98,7 @@
     
     #pageWH{
         
-        background-color: #cccccc;
+        background-color: #eee;
         -ms-touch-action: none;
     }
     
@@ -107,11 +107,13 @@
         width: 640px;
         margin-left: auto;
         margin-right: auto;
+        background-color:  #eee; //#b3b3b3;
         //margin-top: 1px;
         //margin-bottom: 1px;
         
         overflow:  hidden;
         -ms-touch-action: none;
+        
         
     }
     
@@ -131,7 +133,7 @@
         
         opacity:0.0;
         filter:alpha(opacity=100); /* For IE8 and earlier */
-        background-color:  #b3b3b3;
+        background-color:  #eee; //#b3b3b3;
         
         overflow:  hidden;
         -ms-touch-action: none;
@@ -164,7 +166,7 @@
         //font-family: arial, Helvetica, sans-serif;
         //font-size:  24px; 
         //font-weight:  500;// bold;
-        //background-color:  #b3b3b3;
+        background-color:  #eee; //#b3b3b3;
         
         font-family: arial, Helvetica, sans-serif;
         font-size:  32px; 
@@ -895,7 +897,6 @@
         $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
        
             if(validCanvas){
-
 
 
                 if (event.type === "vmousedown") {  //"vmousedown"

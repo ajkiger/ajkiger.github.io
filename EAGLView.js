@@ -8,7 +8,7 @@
 function initContext(){
     
     
-    gl.clearColor(179/255, 179/255, 179/255, 1.0);
+    gl.clearColor(238/255, 238/255, 238/255, 1.0);
     gl.enable(gl.DEPTH_TEST);
     
     

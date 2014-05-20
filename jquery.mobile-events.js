@@ -41,16 +41,16 @@
             swipe_h_threshold: 50,
             swipe_v_threshold: 50,
             taphold_threshold: 750,
-            doubletap_int: 400,
+            doubletap_int: 300,
 
             touch_capable: ('ontouchstart' in document.documentElement && !isChromeDesktop),
-            orientation_support: ('orientation' in window && 'onorientationchange' in window),
+            //orientation_support: ('orientation' in window && 'onorientationchange' in window),
 
             startevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'touchstart' : 'mousedown',
             endevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'touchend' : 'mouseup',
             moveevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'touchmove' : 'mousemove',
-            tapevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'tap' : 'click',
-            scrollevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'touchmove' : 'scroll',
+            //tapevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'tap' : 'click',
+            //scrollevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'touchmove' : 'scroll',
 
             hold_timer: null,
             tap_timer: null
@@ -61,11 +61,12 @@
     $.getStartEvent = function() { return settings.startevent; };
     $.getEndEvent = function() { return settings.endevent; };
     $.getMoveEvent = function() { return settings.moveevent; };
-    $.getTapEvent = function() { return settings.tapevent; };
-    $.getScrollEvent = function() { return settings.scrollevent; };
+    //$.getTapEvent = function() { return settings.tapevent; };
+    //$.getScrollEvent = function() { return settings.scrollevent; };
     
     // Add Event shortcuts:
-    $.each(['tapstart', 'tapend', 'tap', 'singletap', 'doubletap', 'taphold', 'swipe', 'swipeup', 'swiperight', 'swipedown', 'swipeleft', 'swipeend', 'scrollstart', 'scrollend', 'orientationchange'], function (i, name) {
+    //$.each(['tapstart', 'tapend', 'tap', 'singletap', 'doubletap', 'taphold', 'swipe', 'swipeup', 'swiperight', 'swipedown', 'swipeleft', 'swipeend', 'scrollstart', 'scrollend', 'orientationchange'], function (i, name) {
+    $.each(['doubletap'], function (i, name) {
         $.fn[name] = function (fn) {
             return fn ? this.on(name, fn) : this.trigger(name);
         };
