@@ -44,6 +44,9 @@
     var mvp = document.getElementById('viewport');
     mvp.setAttribute('content',tempScale);
     
+    //var agent = navigator.userAgent.toLowerCase();
+    
+    
     //content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes"
     // + ", maximum-scale=1.0"  + ", minimum-scale=" + tempScale
     
@@ -896,7 +899,7 @@
    
     $(function(){
         
-        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
+        $( document ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
        
             if(validCanvas){
 
@@ -915,7 +918,7 @@
 
                 } else if (event.type === "vmouseout") {
 
-                    handleMouseOutonCanvas(event);
+                    //handleMouseOutonCanvas(event);
 
                 } else if (event.type === "doubletap") {
 
