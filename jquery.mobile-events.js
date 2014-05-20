@@ -35,13 +35,14 @@
     var //agent = navigator.userAgent.toLowerCase(),
         //isChromeDesktop = (agent.indexOf('chrome') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0),
         isChromeDesktop = false,
-         
+        
+        
         settings = {
             tap_pixel_range: 5,
             swipe_h_threshold: 50,
             swipe_v_threshold: 50,
             taphold_threshold: 750,
-            doubletap_int: 300,
+            doubletap_int: 400,
 
             touch_capable: ('ontouchstart' in document.documentElement && !isChromeDesktop),
             //orientation_support: ('orientation' in window && 'onorientationchange' in window),
@@ -55,6 +56,7 @@
             hold_timer: null,
             tap_timer: null
         };
+        
     
     // Convenience functions:
     $.isTouchCapable = function() { return settings.touch_capable; };

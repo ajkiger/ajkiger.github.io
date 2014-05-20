@@ -899,7 +899,7 @@
    
     $(function(){
         
-        $( document ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
+        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
        
             if(validCanvas){
 
@@ -918,7 +918,7 @@
 
                 } else if (event.type === "vmouseout") {
 
-                    //handleMouseOutonCanvas(event);
+                    handleMouseOutonCanvas(event);
 
                 } else if (event.type === "doubletap") {
 
@@ -1009,7 +1009,7 @@
         else{
             cWidth = "320";
         }
-        document.getElementById('cScale').innerHTML = pixelRatio;
+        document.getElementById('cScale').innerHTML = browserWidth;
         document.getElementById('test').innerHTML = "&nbsp&nbsp";
         var mvcontent = document.getElementById('WordCubed-canvas');
         mvcontent.setAttribute('width',cWidth);
