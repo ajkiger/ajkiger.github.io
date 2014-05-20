@@ -19,7 +19,7 @@
     var tempScaleH = browserHeight / 842;
     
     if(browserWidth > 320){
-        containerScale = true;
+        containerScale = false;
     }
     else {
         containerScale = false;
@@ -33,7 +33,7 @@
         tempScale = tempScaleW;
     }
     
-    if (retina){
+    if (retina && browserWidth >= 640){
         pixelRatio = window.devicePixelRatio;
         tempScale = tempScale / pixelRatio;
     }
