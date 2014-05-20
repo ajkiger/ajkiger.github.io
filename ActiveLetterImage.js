@@ -258,7 +258,7 @@ ActiveLetterImage.prototype.mesh = function(){
                          );
 
 
-    gl.activeTexture(gl.TEXTURE0);
+    //gl.activeTexture(gl.TEXTURE0);
     //gl.bindTexture(gl.TEXTURE_2D, this.alphabetLetters[this.selectLetter]);
     //gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
     

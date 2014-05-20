@@ -1273,8 +1273,8 @@ function drawSquares(index){
                          );
 
 
-    //gl.uniform1i(shaderProgram.samplerUniform, 0);
-    //gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate squares
+    gl.uniform1i(shaderProgram.samplerUniform, 0);
+    gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate squares
 
 
 
@@ -1373,6 +1373,7 @@ function drawLetters(index){
 
 
 function drawMarkers(index){
+    
     
     
     vertexBufferWordSelect[index] = gl.createBuffer();

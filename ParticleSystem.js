@@ -458,7 +458,7 @@ ParticleSystem.prototype.render = function(){
     setMatrixUniforms();
     gl.drawArrays(gl.TRIANGLES, 0, this.vertexIndex);
     
-    gl.bindTexture(gl.TEXTURE_2D, null);
+    //gl.bindTexture(gl.TEXTURE_2D, null);
     
     mvPopMatrix();
     
