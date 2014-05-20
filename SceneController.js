@@ -148,7 +148,7 @@ function sceneControllerInit(){
     }
     SaveScores();
     
-    document.getElementById('xcoord').innerHTML = agent;
+    //document.getElementById('xcoord').innerHTML = agent;
 }
 
 
