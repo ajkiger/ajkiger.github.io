@@ -188,6 +188,9 @@ ActiveLetterImage.prototype.setupVertex = function(){
    
   ActiveLetterImage.prototype.render = function(){
       
+    if(this.selectLetter === 26){
+        return;
+    }
     
     mvPushMatrix();
     
@@ -257,7 +260,7 @@ ActiveLetterImage.prototype.mesh = function(){
 
     gl.activeTexture(gl.TEXTURE0);
     //gl.bindTexture(gl.TEXTURE_2D, this.alphabetLetters[this.selectLetter]);
-    gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
+    //gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
     
     
     gl.uniform1i(shaderProgram.samplerUniform, 0);
@@ -271,7 +274,7 @@ ActiveLetterImage.prototype.mesh = function(){
     gl.drawElements(gl.TRIANGLE_STRIP, this.indexBufferBS.numItems, gl.UNSIGNED_SHORT, 0);
 
 
-    gl.bindTexture(gl.TEXTURE_2D, null);
+    //gl.bindTexture(gl.TEXTURE_2D, null);
         
 };
 

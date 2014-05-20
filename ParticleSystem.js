@@ -396,6 +396,10 @@ ParticleSystem.prototype.render = function(){
       
     //document.getElementById('ycoord').innerHTML = "vertex array size: " + this.vertexes.length;
     
+    if(this.vertexIndex === 0){
+        return;
+    }
+    
     mvPushMatrix();
     
     mat4.identity(mvMatrix);
