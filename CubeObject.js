@@ -73,13 +73,13 @@ var wordSelectMarkers2 = new Array();
 var selectedCubeSquares = new Array();
 var nonSelectedCubeSquares = new Array();
 
-var textureAtlasLetters;
+//var textureAtlasLetters;
 
 
 var tileTexture = new Object();
-var tileTextureObjects = new Array();
+//var tileTextureObjects = new Array();
 var reverseTileGrid = new Object();
-var reverseTileGridObjects = new Array();
+//var reverseTileGridObjects = new Array();
 
 
 
@@ -121,8 +121,8 @@ function CubeObjectInit() {
         wordSelectMarkers2[i] = 0;
     }
     
-    tileTextureObjects.length = 0;
-    reverseTileGridObjects.length = 0;
+    //tileTextureObjects.length = 0;
+    //reverseTileGridObjects.length = 0;
     
     
 }
@@ -134,7 +134,7 @@ function CubeObjectAwake() {
     cMesh = new Object();
 
     
-    textureAtlasLetters = allLettersTexture;
+    //textureAtlasLetters = allLettersTexture;
     
     if (sceneController.cubeColorKey === "Inverse")
     {
@@ -168,7 +168,7 @@ function CubeObjectAwake() {
     
     
     for(var i = 0; i < sceneController.cubeSize; i++){
-        tileTextureObjects.push(i);
+        //tileTextureObjects.push(i);
         
         vertexBufferTexturesTileGrid[i] = tileTexture;
     }
@@ -2272,6 +2272,7 @@ function selectFinalSquare(index){
                     
                 }
                 */
+                postScoreNow = true;
                 UpdateTextAreaView(wordList);
                 
                
@@ -2595,6 +2596,7 @@ function highlightLetter(index, hideSelectionMarker){
 
     vertexBufferTexturesTileGrid[index] = reverseTileGrid;  //switch Tile Grid
     
+    /*
     for(var i = 0; i < tileTextureObjects.length; i++){
         var temp = tileTextureObjects[i];
         if (temp === index) {
@@ -2603,7 +2605,7 @@ function highlightLetter(index, hideSelectionMarker){
         }
     }
     reverseTileGridObjects.push(index);
-    
+    */
     
     if (sceneController.wordHintWords.length === 0)
     {

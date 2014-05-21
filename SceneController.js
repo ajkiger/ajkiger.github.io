@@ -34,11 +34,13 @@ var starTimer2;
 var starString;
 var numberStars = 3;
 
-var whiteSquaresTexture;
-var blackSquaresTexture;
+//var whiteSquaresTexture;
+//var blackSquaresTexture;
+//var squareAtlasTexture;
 var allLettersTexture;
-var squareAtlasTexture;
 var textureChangedX;
+
+var postScoreNow;
 
 
 function sceneControllerInit(){
@@ -64,16 +66,11 @@ function sceneControllerInit(){
     sceneController.currentGame = null;
     sceneController.todayDate = getTodaysDate();
     secondTime = " First";
-    textureChangedX = true;
-    
-    //whiteSquaresTexture = loadTexture("images/whitesquareTR65128x128.png");
-    //blackSquaresTexture = loadTexture("images/blacksquareTR65128x128.png");
-    //whiteSquaresTexture = loadTexture("images/whiteSquare1.png");
-    //blackSquaresTexture = loadTexture("images/blackSquare1.png");
-    
-    //squareAtlasTexture = loadTexture("images/squareAtlas.png");
     
     allLettersTexture = loadTexture("images/LettersTA1024x1024.png");
+    textureChangedX = true;
+    
+    postScoreNow = false;
     
     // Load weekly lists
     loadWordList("wordlists/MonthlyIput.txt");
@@ -271,18 +268,21 @@ function updateScoreStar(stars){
         switch (stars) {
             case "BlueStars":
                 numberStars = 3;
-                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
-
+                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+                document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \"></label><img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+            
                 break;
             case "RedStars":
                 numberStars = 2;
-                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \">";
-
+                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \">";
+                document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \"></label><img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \">";
+                
                 break;
             case "YellowStars":
                 numberStars = 1;
-                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \">";
-
+                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \">";
+                document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \"></label><img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \">";
+                
                 break;
         }
     
@@ -633,8 +633,9 @@ function SceneControllerUpdateModel(){
             
         }
         
-        if(sceneController.postGameWinMessage && sceneController.gameOver && particleEmitterYellow.activeParticles.length === 0 && particleEmitterRed.activeParticles.length === 0 && particleEmitterBlue.activeParticles.length === 0 && particleEmitterBlack.activeParticles.length === 0){
+        if(postScoreNow && sceneController.postGameWinMessage && sceneController.gameOver && particleEmitterYellow.activeParticles.length === 0 && particleEmitterRed.activeParticles.length === 0 && particleEmitterBlue.activeParticles.length === 0 && particleEmitterBlack.activeParticles.length === 0){
             
+            postScoreNow = false;
             PostScore();
         }
         

@@ -21,13 +21,54 @@ function cubeMeshRender(){
     tempBufferIndex = 0;
     
     gl.activeTexture(gl.TEXTURE0);
-    //gl.bindTexture(gl.TEXTURE_2D, tileTexture);
-    //gl.bindTexture(gl.TEXTURE_2D, squareAtlasTexture);
+    
     if(textureChangedX){
         textureChangedX = false;
-        gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
+        gl.bindTexture(gl.TEXTURE_2D, allLettersTexture);
     }
     
+    // Squares
+    if (visibleSides[0]){
+        for (var i = 0; i < sceneController.cubeSize*1/6; i++) {
+            setUpSquares(i);
+        }
+    }
+    if (visibleSides[1]){
+        for (var i = sceneController.cubeSize*1/6; i < sceneController.cubeSize*2/6; i++) {
+            setUpSquares(i);
+        }
+    }
+    if (visibleSides[2]){
+        for (var i = sceneController.cubeSize*2/6; i < sceneController.cubeSize*3/6; i++) {
+            setUpSquares(i);
+        }
+    }
+    if (visibleSides[3]){
+        for (var i = sceneController.cubeSize*3/6; i < sceneController.cubeSize*4/6; i++) {
+            setUpSquares(i);
+        }
+    }
+    
+    drawSquares(0);
+    tempBuffer.length = 0;
+    tempBufferIndex = 0;
+    
+    if (visibleSides[4]){
+        for (var i = sceneController.cubeSize*4/6; i < sceneController.cubeSize*5/6; i++) {
+            setUpSquares(i);
+        }
+    }
+    if (visibleSides[5]){
+        for (var i = sceneController.cubeSize*5/6; i < sceneController.cubeSize; i++) {
+            setUpSquares(i);
+        }
+    }
+          
+    drawSquares(0);
+    tempBuffer.length = 0;
+    tempBufferIndex = 0;
+    
+    /*
     // Squares
     for (var i = 0; i < tileTextureObjects.length; i++) {
         var temp = tileTextureObjects[i];
@@ -93,7 +134,6 @@ function cubeMeshRender(){
         {
             if (temp >= sceneController.cubeSize*2/6 && temp < sceneController.cubeSize*3/6) {
                 setUpSquares(temp);
-
             }
         }
         if (visibleSides[3])
@@ -115,9 +155,7 @@ function cubeMeshRender(){
             }
         }
     } // End for
-    drawSquares(0);
-    tempBuffer.length = 0;
-    tempBufferIndex = 0;
+    */
     
     
     
