@@ -22,7 +22,11 @@ function cubeMeshRender(){
     
     gl.activeTexture(gl.TEXTURE0);
     //gl.bindTexture(gl.TEXTURE_2D, tileTexture);
-    gl.bindTexture(gl.TEXTURE_2D, squareAtlasTexture);
+    //gl.bindTexture(gl.TEXTURE_2D, squareAtlasTexture);
+    if(textureChangedX){
+        textureChangedX = false;
+        gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
+    }
     
     // Squares
     for (var i = 0; i < tileTextureObjects.length; i++) {
@@ -119,7 +123,7 @@ function cubeMeshRender(){
     
     
     //Letters
-    gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
+    //gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
     // Rotate Letters
     //gl.uniform1f(shaderProgram.rAngleUniform, letterAngleZ);
     

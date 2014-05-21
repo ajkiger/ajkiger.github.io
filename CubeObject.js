@@ -139,30 +139,30 @@ function CubeObjectAwake() {
     if (sceneController.cubeColorKey === "Inverse")
     {
         //tileTexture = blackSquaresTexture;
-        tileTexture.minU = 0.125;
-        tileTexture.maxU = 0.375;
-        tileTexture.minV = 0.625;
-        tileTexture.maxV = 0.875;
+        tileTexture.minU = 864/1024;
+        tileTexture.maxU = 992/1024;
+        tileTexture.minV = 160/1024;
+        tileTexture.maxV = 288/1024;
         
         //reverseTileGrid = whiteSquaresTexture;
-        reverseTileGrid.minU = 0.625;
-        reverseTileGrid.maxU = 0.875;
-        reverseTileGrid.minV = 0.125;
-        reverseTileGrid.maxV = 0.375;
+        reverseTileGrid.minU = 864/1024;
+        reverseTileGrid.maxU = 992/1024;
+        reverseTileGrid.minV = 320/1024;
+        reverseTileGrid.maxV = 448/1024;
     }
     else
     {
         //tileTexture = whiteSquaresTexture;
-        tileTexture.minU = 0.625;
-        tileTexture.maxU = 0.875;
-        tileTexture.minV = 0.125;
-        tileTexture.maxV = 0.375;
+        tileTexture.minU = 864/1024;
+        tileTexture.maxU = 992/1024;
+        tileTexture.minV = 320/1024;
+        tileTexture.maxV = 448/1024;
         
         //reverseTileGrid = blackSquaresTexture;
-        reverseTileGrid.minU = 0.125;
-        reverseTileGrid.maxU = 0.375;
-        reverseTileGrid.minV = 0.625;
-        reverseTileGrid.maxV = 0.875;
+        reverseTileGrid.minU = 864/1024;
+        reverseTileGrid.maxU = 992/1024;
+        reverseTileGrid.minV = 160/1024;
+        reverseTileGrid.maxV = 288/1024;
     }
     
     
@@ -952,16 +952,16 @@ function CubeObjectAwake() {
     }
     
     vertexBufferTextures[sceneController.cubeSize] = new Object();
-    vertexBufferTextures[sceneController.cubeSize].minU = 0.75; //Blue Marker
-    vertexBufferTextures[sceneController.cubeSize].maxU = 0.875;
-    vertexBufferTextures[sceneController.cubeSize].minV = 0.25;
-    vertexBufferTextures[sceneController.cubeSize].maxV = 0.375;
+    vertexBufferTextures[sceneController.cubeSize].minU = 704/1024; //Blue Marker
+    vertexBufferTextures[sceneController.cubeSize].maxU = 832/1024;
+    vertexBufferTextures[sceneController.cubeSize].minV = 320/1024;
+    vertexBufferTextures[sceneController.cubeSize].maxV = 448/1024;
     
     vertexBufferTextures[sceneController.cubeSize + 1] = new Object();
-    vertexBufferTextures[sceneController.cubeSize + 1].minU = 0.75; //Red Marker
-    vertexBufferTextures[sceneController.cubeSize + 1].maxU = 0.875;
-    vertexBufferTextures[sceneController.cubeSize + 1].minV = 0.125;
-    vertexBufferTextures[sceneController.cubeSize + 1].maxV = 0.25;
+    vertexBufferTextures[sceneController.cubeSize + 1].minU = 704/1024; //Red Marker
+    vertexBufferTextures[sceneController.cubeSize + 1].maxU = 832/1024;
+    vertexBufferTextures[sceneController.cubeSize + 1].minV = 160/1024;
+    vertexBufferTextures[sceneController.cubeSize + 1].maxV = 288/1024;
     
     //vertexBufferTextures[sceneController.cubeSize] = loadTexture("images/selectSquareBlue2.png");
     //vertexBufferTextures[sceneController.cubeSize + 1] = loadTexture("images/selectSquareRed.png");

@@ -401,6 +401,8 @@ ParticleSystem.prototype.render = function(){
         return;
     }
     
+    textureChangedX = true;
+    
     mvPushMatrix();
     
     mat4.identity(mvMatrix);
