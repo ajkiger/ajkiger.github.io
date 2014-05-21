@@ -138,10 +138,10 @@ ActiveLetterImage.prototype.awakeNow = function(){
 
 ActiveLetterImage.prototype.setupVertex = function(){
        
-        var vertex0 = [1.2, -1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 0, 0, 0, 0, 1, 0, 0, 0,
-                          1.2, 1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 0, 1, 0, 0, 1, 0, 0, 0,
-                          -1.2, 1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 1, 1, 0, 0, 1, 0, 0, 0,
-                          -1.2, -1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 1, 0, 0, 0, 1, 0, 0, 0];
+        var vertex0 = [1.2, -1.2, 0.0, 0.7, 0.7, 0.7, 1.0, 0, 0, 0, 0, 1, 0, 0, 0,
+                          1.2, 1.2, 0.0, 0.7, 0.7, 0.7, 1.0, 0, 1, 0, 0, 1, 0, 0, 0,
+                          -1.2, 1.2, 0.0, 0.7, 0.7, 0.7, 1.0, 1, 1, 0, 0, 1, 0, 0, 0,
+                          -1.2, -1.2, 0.0, 0.7, 0.7, 0.7, 1.0, 1, 0, 0, 0, 1, 0, 0, 0];
       
         vertex0[7] = this.alphabetLetters[this.selectLetter].minU;
         vertex0[8] = this.alphabetLetters[this.selectLetter].minV;
@@ -264,8 +264,8 @@ ActiveLetterImage.prototype.mesh = function(){
     
     
     gl.uniform1i(shaderProgram.samplerUniform, 0);
-    gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate letter
-    gl.uniform1f(shaderProgram.alphaUniform, 0.5);
+    //gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate letter
+    gl.uniform1f(shaderProgram.alphaUniform, 0.8);
 
 
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.indexBufferBS);
