@@ -228,7 +228,7 @@ function  resetGameScore(){
         $("#starbox").effect("fade", "swing", "300", function() {
             numberStars = 3;
             //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
-            document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \"></label><img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+            document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \">0</label><img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
             
         }); 
         $("#starbox").show({
@@ -269,19 +269,19 @@ function updateScoreStar(stars){
             case "BlueStars":
                 numberStars = 3;
                 //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
-                document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \"></label><img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+                document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \">0</label><img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
             
                 break;
             case "RedStars":
                 numberStars = 2;
                 //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \">";
-                document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \"></label><img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \">";
+                document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \">0</label><img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \">";
                 
                 break;
             case "YellowStars":
                 numberStars = 1;
                 //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \">";
-                document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \"></label><img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \">";
+                document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \">0</label><img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \">";
                 
                 break;
         }
@@ -477,7 +477,7 @@ function SolveTheCube(){
     clearTimeout(starTimer2);
     numberStars = 3;
     //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
-    document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \"></label><img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+    document.getElementById('starbox').innerHTML = "<label id=\"cScale\" title=\" Browser Width \"></label><label id=\"test\" title=\" FPS \">0</label><img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
             
     
     solveCubeNow();

@@ -21,10 +21,11 @@ function cubeMeshRender(){
     tempBufferIndex = 0;
     
     gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, allLettersTexture);
     
     if(textureChangedX){
         textureChangedX = false;
-        gl.bindTexture(gl.TEXTURE_2D, allLettersTexture);
+        //gl.bindTexture(gl.TEXTURE_2D, allLettersTexture);
     }
     
     // Squares
@@ -49,9 +50,9 @@ function cubeMeshRender(){
         }
     }
     
-    drawSquares(0);
-    tempBuffer.length = 0;
-    tempBufferIndex = 0;
+    //drawSquares(0);
+    //tempBuffer.length = 0;
+    //tempBufferIndex = 0;
     
     if (visibleSides[4]){
         for (var i = sceneController.cubeSize*4/6; i < sceneController.cubeSize*5/6; i++) {
@@ -218,9 +219,9 @@ function cubeMeshRender(){
         }
     }
     
-    drawLetters(0);
-    tempBuffer.length = 0;
-    tempBufferIndex = 0;
+    //drawLetters(0);
+    //tempBuffer.length = 0;
+    //tempBufferIndex = 0;
     // Rotate Letters
     //gl.uniform1f(shaderProgram.rAngleUniform, letterAngleY);
     
