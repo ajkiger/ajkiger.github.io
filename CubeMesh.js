@@ -69,9 +69,9 @@ function cubeMeshRender(){
         }
     } // End for 
     
-    //drawSquares(0);
-    //tempBuffer.length = 0;
-    //tempBufferIndex = 0;
+    drawSquares(0);
+    tempBuffer.length = 0;
+    tempBufferIndex = 0;
     
     //gl.bindTexture(gl.TEXTURE_2D, reverseTileGrid);
     // Squares Reverse
@@ -180,9 +180,9 @@ function cubeMeshRender(){
         }
     }
     
-    //drawLetters(0);
-    //tempBuffer.length = 0;
-    //tempBufferIndex = 0;
+    drawLetters(0);
+    tempBuffer.length = 0;
+    tempBufferIndex = 0;
     // Rotate Letters
     //gl.uniform1f(shaderProgram.rAngleUniform, letterAngleY);
     
