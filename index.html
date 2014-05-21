@@ -379,13 +379,13 @@
     attribute vec4 aVertexColor;
     attribute vec3 aVertexNormal;
     attribute vec2 aTextureCoord;
-    attribute vec2 aTextureCoorduv;
+    attribute vec3 aTextureCoorduv;
     
     uniform mat4 uMVMatrix;
     uniform mat4 uPMatrix;
     uniform mat3 uNMatrix;
     
-    uniform float uRAngle;
+    //uniform float uRAngle;
     //uniform float xUmin;
     //uniform float xVmin;
 
@@ -404,7 +404,8 @@
         gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
         //vTextureCoord = vec2(((aTextureCoord.x - 0.5) * cos(uRAngle) - (aTextureCoord.y  - 0.5) * sin(uRAngle)) + 0.5, ((aTextureCoord.x - 0.5) * sin(uRAngle) + (aTextureCoord.y - 0.5) * cos(uRAngle)) + 0.5);
         //vTextureCoord = vec2(aTextureCoord.x , aTextureCoord.y);
-        vTextureCoord = vec2(((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * cos(uRAngle) - (aTextureCoord.y  - (aTextureCoorduv.y + 0.0625)) * sin(uRAngle)) + aTextureCoorduv.x + 0.0625, ((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * sin(uRAngle) + (aTextureCoord.y - (aTextureCoorduv.y + 0.0625)) * cos(uRAngle)) + aTextureCoorduv.y + 0.0625);
+        //vTextureCoord = vec2(((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * cos(uRAngle) - (aTextureCoord.y  - (aTextureCoorduv.y + 0.0625)) * sin(uRAngle)) + aTextureCoorduv.x + 0.0625, ((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * sin(uRAngle) + (aTextureCoord.y - (aTextureCoorduv.y + 0.0625)) * cos(uRAngle)) + aTextureCoorduv.y + 0.0625);
+        vTextureCoord = vec2(((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * cos(aTextureCoorduv.z) - (aTextureCoord.y  - (aTextureCoorduv.y + 0.0625)) * sin(aTextureCoorduv.z)) + aTextureCoorduv.x + 0.0625, ((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * sin(aTextureCoorduv.z) + (aTextureCoord.y - (aTextureCoorduv.y + 0.0625)) * cos(aTextureCoorduv.z)) + aTextureCoorduv.y + 0.0625);
         
         vColor = aVertexColor;
 
@@ -530,7 +531,7 @@
         shaderProgram.specularLightColorUniform = gl.getUniformLocation(shaderProgram, "uSpecularLightColor");
         
         shaderProgram.alphaUniform = gl.getUniformLocation(shaderProgram, "uAlpha");
-        shaderProgram.rAngleUniform = gl.getUniformLocation(shaderProgram, "uRAngle");
+        //shaderProgram.rAngleUniform = gl.getUniformLocation(shaderProgram, "uRAngle");
         //shaderProgram.xUminUniform = gl.getUniformLocation(shaderProgram, "xUmin");
         //shaderProgram.xVminUniform = gl.getUniformLocation(shaderProgram, "xVmin");
     }

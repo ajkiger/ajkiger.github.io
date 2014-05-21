@@ -138,26 +138,26 @@ ActiveLetterImage.prototype.awakeNow = function(){
 
 ActiveLetterImage.prototype.setupVertex = function(){
        
-        var vertex0 = [1.2, -1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 0, 0, 0, 0, 1, 0, 0,
-                          1.2, 1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 0, 1, 0, 0, 1, 0, 0,
-                          -1.2, 1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 1, 1, 0, 0, 1, 0, 0,
-                          -1.2, -1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 1, 0, 0, 0, 1, 0, 0];
+        var vertex0 = [1.2, -1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 0, 0, 0, 0, 1, 0, 0, 0,
+                          1.2, 1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 0, 1, 0, 0, 1, 0, 0, 0,
+                          -1.2, 1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 1, 1, 0, 0, 1, 0, 0, 0,
+                          -1.2, -1.2, 0.0, 0.9, 0.9, 0.9, 1.0, 1, 0, 0, 0, 1, 0, 0, 0];
       
         vertex0[7] = this.alphabetLetters[this.selectLetter].minU;
         vertex0[8] = this.alphabetLetters[this.selectLetter].minV;
-        vertex0[7 + 14] = this.alphabetLetters[this.selectLetter].minU;
-        vertex0[8 + 14] = this.alphabetLetters[this.selectLetter].maxV;
-        vertex0[7 + 2*14] = this.alphabetLetters[this.selectLetter].maxU;
-        vertex0[8 + 2*14] = this.alphabetLetters[this.selectLetter].maxV;
-        vertex0[7 + 3*14] = this.alphabetLetters[this.selectLetter].maxU;
-        vertex0[8 + 3*14] = this.alphabetLetters[this.selectLetter].minV;
+        vertex0[7 + 15] = this.alphabetLetters[this.selectLetter].minU;
+        vertex0[8 + 15] = this.alphabetLetters[this.selectLetter].maxV;
+        vertex0[7 + 2*15] = this.alphabetLetters[this.selectLetter].maxU;
+        vertex0[8 + 2*15] = this.alphabetLetters[this.selectLetter].maxV;
+        vertex0[7 + 3*15] = this.alphabetLetters[this.selectLetter].maxU;
+        vertex0[8 + 3*15] = this.alphabetLetters[this.selectLetter].minV;
         
         
         this.vertexBufferBS = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBufferBS);
         gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertex0), gl.STATIC_DRAW);
         
-        this.vertexBufferBS.stride = 14*Float32Array.BYTES_PER_ELEMENT;
+        this.vertexBufferBS.stride = 15*Float32Array.BYTES_PER_ELEMENT;
         this.vertexBufferBS.positionElementCount = 3;
         this.vertexBufferBS.positionOffset = 0;
         this.vertexBufferBS.colorElementCount = 4;
@@ -166,7 +166,7 @@ ActiveLetterImage.prototype.setupVertex = function(){
         this.vertexBufferBS.uvOffset = 7*Float32Array.BYTES_PER_ELEMENT;
         this.vertexBufferBS.normalElementCount = 3;
         this.vertexBufferBS.normalOffset = 9*Float32Array.BYTES_PER_ELEMENT;
-        this.vertexBufferBS.uvElementCountuv = 2;
+        this.vertexBufferBS.uvElementCountuv = 3;
         this.vertexBufferBS.uvOffsetuv = 12*Float32Array.BYTES_PER_ELEMENT;
         this.vertexBufferBS.numItems = 4;
 

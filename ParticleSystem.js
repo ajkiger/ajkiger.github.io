@@ -141,6 +141,7 @@ ParticleSystem.prototype.awake = function(){
         
         this.uvCoordinatesuv.push(0);
         this.uvCoordinatesuv.push(0);
+        this.uvCoordinatesuv.push(0);
     }
     
 };
@@ -430,7 +431,7 @@ ParticleSystem.prototype.render = function(){
     this.uvCoordinatesuvFB = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, this.uvCoordinatesuvFB);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(this.uvCoordinatesuv), gl.STATIC_DRAW);
-    //this.normalsFB.vertexSize = 3;
+    //this.uvCoordinatesuvFB.vertexSize = 3;
     
     
     gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexesFB);
@@ -446,13 +447,13 @@ ParticleSystem.prototype.render = function(){
     gl.vertexAttribPointer(shaderProgram.vertexNormalAttribute, 3, gl.FLOAT, false, 0, 0);
     
     gl.bindBuffer(gl.ARRAY_BUFFER, this.uvCoordinatesuvFB);
-    gl.vertexAttribPointer(shaderProgram.textureCoordAttributeuv, 2, gl.FLOAT, false, 0, 0);
+    gl.vertexAttribPointer(shaderProgram.textureCoordAttributeuv, 3, gl.FLOAT, false, 0, 0);
     
     
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, this.partText);
     gl.uniform1i(shaderProgram.samplerUniform, 0);
-    gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate letter
+    //gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate letter
     gl.uniform1f(shaderProgram.alphaUniform, 2.0);
     
     setMatrixUniforms();

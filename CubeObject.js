@@ -56,7 +56,7 @@ var sideActive = new Array();
 var cubeLetterBounds = new Array();
 
 var squareVertexPositionBuffer = new Array(); //vertexBufferSquares
-var vertexBufferTexturesTileGrid; // = new Array();
+var vertexBufferTexturesTileGrid = new Array();
 
 var vertexBufferLetters = new Array();
 var vertexBufferLettersFlipped = new Array();
@@ -76,66 +76,12 @@ var nonSelectedCubeSquares = new Array();
 var textureAtlasLetters;
 
 
-var tileTexture; // = new Object();
+var tileTexture = new Object();
 var tileTextureObjects = new Array();
-var reverseTileGrid; // = new Object();
+var reverseTileGrid = new Object();
 var reverseTileGridObjects = new Array();
 
-/*
-var letter_A_Objects = new Array();
-var letter_B_Objects = new Array();
-var letter_C_Objects = new Array();
-var letter_D_Objects = new Array();
-var letter_E_Objects = new Array();
-var letter_F_Objects = new Array();
-var letter_G_Objects = new Array();
-var letter_H_Objects = new Array();
-var letter_I_Objects = new Array();
-var letter_J_Objects = new Array();
-var letter_K_Objects = new Array();
-var letter_L_Objects = new Array();
-var letter_M_Objects = new Array();
-var letter_N_Objects = new Array();
-var letter_O_Objects = new Array();
-var letter_P_Objects = new Array();
-var letter_Q_Objects = new Array();
-var letter_R_Objects = new Array();
-var letter_S_Objects = new Array();
-var letter_T_Objects = new Array();
-var letter_U_Objects = new Array();
-var letter_V_Objects = new Array();
-var letter_W_Objects = new Array();
-var letter_X_Objects = new Array();
-var letter_Y_Objects = new Array();
-var letter_Z_Objects = new Array();
 
-var flippedLetter_A_Objects = new Array();
-var flippedLetter_B_Objects = new Array();
-var flippedLetter_C_Objects = new Array();
-var flippedLetter_D_Objects = new Array();
-var flippedLetter_E_Objects = new Array();
-var flippedLetter_F_Objects = new Array();
-var flippedLetter_G_Objects = new Array();
-var flippedLetter_H_Objects = new Array();
-var flippedLetter_I_Objects = new Array();
-var flippedLetter_J_Objects = new Array();
-var flippedLetter_K_Objects = new Array();
-var flippedLetter_L_Objects = new Array();
-var flippedLetter_M_Objects = new Array();
-var flippedLetter_N_Objects = new Array();
-var flippedLetter_O_Objects = new Array();
-var flippedLetter_P_Objects = new Array();
-var flippedLetter_Q_Objects = new Array();
-var flippedLetter_R_Objects = new Array();
-var flippedLetter_S_Objects = new Array();
-var flippedLetter_T_Objects = new Array();
-var flippedLetter_U_Objects = new Array();
-var flippedLetter_V_Objects = new Array();
-var flippedLetter_W_Objects = new Array();
-var flippedLetter_X_Objects = new Array();
-var flippedLetter_Y_Objects = new Array();
-var flippedLetter_Z_Objects = new Array();
-*/
 
 var currentSquareT;
 var startSquareT;
@@ -178,61 +124,7 @@ function CubeObjectInit() {
     tileTextureObjects.length = 0;
     reverseTileGridObjects.length = 0;
     
-    /*
-    letter_A_Objects.length = 0;
-    letter_B_Objects.length = 0;
-    letter_C_Objects.length = 0;
-    letter_D_Objects.length = 0;
-    letter_E_Objects.length = 0;
-    letter_F_Objects.length = 0;
-    letter_G_Objects.length = 0;
-    letter_H_Objects.length = 0;
-    letter_I_Objects.length = 0;
-    letter_J_Objects.length = 0;
-    letter_K_Objects.length = 0;
-    letter_L_Objects.length = 0;
-    letter_M_Objects.length = 0;
-    letter_N_Objects.length = 0;
-    letter_O_Objects.length = 0;
-    letter_P_Objects.length = 0;
-    letter_Q_Objects.length = 0;
-    letter_R_Objects.length = 0;
-    letter_S_Objects.length = 0;
-    letter_T_Objects.length = 0;
-    letter_U_Objects.length = 0;
-    letter_V_Objects.length = 0;
-    letter_W_Objects.length = 0;
-    letter_X_Objects.length = 0;
-    letter_Y_Objects.length = 0;
-    letter_Z_Objects.length = 0;
     
-    flippedLetter_A_Objects.length = 0;
-    flippedLetter_B_Objects.length = 0;
-    flippedLetter_C_Objects.length = 0;
-    flippedLetter_D_Objects.length = 0;
-    flippedLetter_E_Objects.length = 0;
-    flippedLetter_F_Objects.length = 0;
-    flippedLetter_G_Objects.length = 0;
-    flippedLetter_H_Objects.length = 0;
-    flippedLetter_I_Objects.length = 0;
-    flippedLetter_J_Objects.length = 0;
-    flippedLetter_K_Objects.length = 0;
-    flippedLetter_L_Objects.length = 0;
-    flippedLetter_M_Objects.length = 0;
-    flippedLetter_N_Objects.length = 0;
-    flippedLetter_O_Objects.length = 0;
-    flippedLetter_P_Objects.length = 0;
-    flippedLetter_Q_Objects.length = 0;
-    flippedLetter_R_Objects.length = 0;
-    flippedLetter_S_Objects.length = 0;
-    flippedLetter_T_Objects.length = 0;
-    flippedLetter_U_Objects.length = 0;
-    flippedLetter_V_Objects.length = 0;
-    flippedLetter_W_Objects.length = 0;
-    flippedLetter_X_Objects.length = 0;
-    flippedLetter_Y_Objects.length = 0;
-    flippedLetter_Z_Objects.length = 0;
-    */
 }
 
 
@@ -246,19 +138,39 @@ function CubeObjectAwake() {
     
     if (sceneController.cubeColorKey === "Inverse")
     {
-        tileTexture = blackSquaresTexture;
-        reverseTileGrid = whiteSquaresTexture;
+        //tileTexture = blackSquaresTexture;
+        tileTexture.minU = 0.125;
+        tileTexture.maxU = 0.375;
+        tileTexture.minV = 0.625;
+        tileTexture.maxV = 0.875;
+        
+        //reverseTileGrid = whiteSquaresTexture;
+        reverseTileGrid.minU = 0.625;
+        reverseTileGrid.maxU = 0.875;
+        reverseTileGrid.minV = 0.125;
+        reverseTileGrid.maxV = 0.375;
     }
     else
     {
-        tileTexture = whiteSquaresTexture;
-        reverseTileGrid = blackSquaresTexture;
+        //tileTexture = whiteSquaresTexture;
+        tileTexture.minU = 0.625;
+        tileTexture.maxU = 0.875;
+        tileTexture.minV = 0.125;
+        tileTexture.maxV = 0.375;
+        
+        //reverseTileGrid = blackSquaresTexture;
+        reverseTileGrid.minU = 0.125;
+        reverseTileGrid.maxU = 0.375;
+        reverseTileGrid.minV = 0.625;
+        reverseTileGrid.maxV = 0.875;
     }
     
-    vertexBufferTexturesTileGrid = tileTexture;
+    
     
     for(var i = 0; i < sceneController.cubeSize; i++){
         tileTextureObjects.push(i);
+        
+        vertexBufferTexturesTileGrid[i] = tileTexture;
     }
     
     

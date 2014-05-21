@@ -37,6 +37,7 @@ var numberStars = 3;
 var whiteSquaresTexture;
 var blackSquaresTexture;
 var allLettersTexture;
+var squareAtlasTexture;
 
 
 function sceneControllerInit(){
@@ -65,8 +66,10 @@ function sceneControllerInit(){
     
     //whiteSquaresTexture = loadTexture("images/whitesquareTR65128x128.png");
     //blackSquaresTexture = loadTexture("images/blacksquareTR65128x128.png");
-    whiteSquaresTexture = loadTexture("images/whiteSquare1.png");
-    blackSquaresTexture = loadTexture("images/blackSquare1.png");
+    //whiteSquaresTexture = loadTexture("images/whiteSquare1.png");
+    //blackSquaresTexture = loadTexture("images/blackSquare1.png");
+    
+    squareAtlasTexture = loadTexture("images/squareAtlas.png");
     
     allLettersTexture = loadTexture("images/LettersTA1024x1024.png");
     
