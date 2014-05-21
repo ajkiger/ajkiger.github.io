@@ -99,35 +99,6 @@ ActiveLetterImage.prototype.awakeNow = function(){
     this.alphabetLetters[24] = alphabetLettersWhite[24];
     this.alphabetLetters[25] = alphabetLettersWhite[25];
     this.alphabetLetters[26] = alphabetLettersWhite[26];
-    /*
-    this.alphabetLetters[0] = loadTexture("images/A_Letter_Gray_128.png");
-    this.alphabetLetters[1] = loadTexture("images/B_Letter_Gray_128.png");
-    this.alphabetLetters[2] = loadTexture("images/C_Letter_Gray_128.png");
-    this.alphabetLetters[3] = loadTexture("images/D_Letter_Gray_128.png");
-    this.alphabetLetters[4] = loadTexture("images/E_Letter_Gray_128.png");
-    this.alphabetLetters[5] = loadTexture("images/F_Letter_Gray_128.png");
-    this.alphabetLetters[6] = loadTexture("images/G_Letter_Gray_128.png");
-    this.alphabetLetters[7] = loadTexture("images/H_Letter_Gray_128.png");
-    this.alphabetLetters[8] = loadTexture("images/I_Letter_Gray_128.png");
-    this.alphabetLetters[9] = loadTexture("images/J_Letter_Gray_128.png");
-    this.alphabetLetters[10] = loadTexture("images/K_Letter_Gray_128.png");
-    this.alphabetLetters[11] = loadTexture("images/L_Letter_Gray_128.png");
-    this.alphabetLetters[12] = loadTexture("images/M_Letter_Gray_128.png");
-    this.alphabetLetters[13] = loadTexture("images/N_Letter_Gray_128.png");
-    this.alphabetLetters[14] = loadTexture("images/O_Letter_Gray_128.png");
-    this.alphabetLetters[15] = loadTexture("images/P_Letter_Gray_128.png");
-    this.alphabetLetters[16] = loadTexture("images/Q_Letter_Gray_128.png");
-    this.alphabetLetters[17] = loadTexture("images/R_Letter_Gray_128.png");
-    this.alphabetLetters[18] = loadTexture("images/S_Letter_Gray_128.png");
-    this.alphabetLetters[19] = loadTexture("images/T_Letter_Gray_128.png");
-    this.alphabetLetters[20] = loadTexture("images/U_Letter_Gray_128.png");
-    this.alphabetLetters[21] = loadTexture("images/V_Letter_Gray_128.png");
-    this.alphabetLetters[22] = loadTexture("images/W_Letter_Gray_128.png");
-    this.alphabetLetters[23] = loadTexture("images/X_Letter_Gray_128.png");
-    this.alphabetLetters[24] = loadTexture("images/Y_Letter_Gray_128.png");
-    this.alphabetLetters[25] = loadTexture("images/Z_Letter_Gray_128.png");
-    this.alphabetLetters[26] = loadTexture("images/Blank.png");
-    */
     
     mat4.identity(this.alMatrix);
     mat4.translate(this.alMatrix, this.alMatrix, [this.x, this.y, this.z]);
@@ -259,8 +230,7 @@ ActiveLetterImage.prototype.mesh = function(){
 
 
     gl.activeTexture(gl.TEXTURE0);
-    //gl.bindTexture(gl.TEXTURE_2D, this.alphabetLetters[this.selectLetter]);
-    //gl.bindTexture(gl.TEXTURE_2D, textureAtlasLetters);
+    gl.bindTexture(gl.TEXTURE_2D, allLettersTexture);
     
     
     gl.uniform1i(shaderProgram.samplerUniform, 0);
