@@ -34,7 +34,7 @@
     // does not!
     var //agent = navigator.userAgent.toLowerCase(),
         //isChromeDesktop = (agent.indexOf('chrome') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0),
-        isChromeDesktop = false,
+        isChromeDesktop = true,
         
         
         settings = {
