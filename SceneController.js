@@ -38,6 +38,10 @@ var numberStars = 3;
 //var blackSquaresTexture;
 //var squareAtlasTexture;
 var allLettersTexture;
+var yellowStarTexture;
+var redStarTexture;
+var blueStarTexture;
+var blackStarTexture;
 var textureChangedX;
 
 var postScoreNow;
@@ -67,6 +71,10 @@ function sceneControllerInit(){
     sceneController.todayDate = getTodaysDate();
     secondTime = " First";
     
+    yellowStarTexture = loadTexture("images/particle-yellow12-atlas.png");
+    redStarTexture = loadTexture("images/particle-red12-atlas.png");
+    blueStarTexture = loadTexture("images/particle-blue12-atlas.png");
+    blackStarTexture = loadTexture("images/particle-black12-atlas.png");
     allLettersTexture = loadTexture("images/LettersTA1024x1024.png");
     textureChangedX = true;
     
@@ -373,7 +381,7 @@ function sceneControllerLoadScene(){
     particleEmitterYellow.lifeRangeN = new BBRangeMake(2.0, 0.0);
     particleEmitterYellow.decayRangeN = new BBRangeMake(0.03, 0.05);
     particleEmitterYellow.emitPosition = new BBPointMake(0.0, 0.0, 0.0);
-    particleEmitterYellow.setParticleX(loadTexture("images/particle-yellow12-atlas.png"));
+    particleEmitterYellow.setParticleX(yellowStarTexture);
     particleEmitterYellow.emitCounter = 0;
     particleEmitterYellow.emit = false;
     particleEmitterYellow.awake();
@@ -397,7 +405,7 @@ function sceneControllerLoadScene(){
     particleEmitterRed.lifeRangeN = new BBRangeMake(2.0, 0.0);
     particleEmitterRed.decayRangeN = new BBRangeMake(0.03, 0.05);
     particleEmitterRed.emitPosition = new BBPointMake(0.0, 0.0, 0.0);
-    particleEmitterRed.setParticleX(loadTexture("images/particle-red12-atlas.png"));
+    particleEmitterRed.setParticleX(redStarTexture);
     particleEmitterRed.emitCounter = 0;
     particleEmitterRed.emit = false;
     particleEmitterRed.awake();
@@ -421,7 +429,7 @@ function sceneControllerLoadScene(){
     particleEmitterBlue.lifeRangeN = new BBRangeMake(2.0, 0.0);
     particleEmitterBlue.decayRangeN = new BBRangeMake(0.03, 0.05);
     particleEmitterBlue.emitPosition = new BBPointMake(0.0, 0.0, 0.0);
-    particleEmitterBlue.setParticleX(loadTexture("images/particle-blue12-atlas.png"));
+    particleEmitterBlue.setParticleX(blueStarTexture);
     particleEmitterBlue.emitCounter = 0;
     particleEmitterBlue.emit = false;
     particleEmitterBlue.awake();
@@ -445,7 +453,7 @@ function sceneControllerLoadScene(){
     particleEmitterBlack.lifeRangeN = new BBRangeMake(2.0, 0.0);
     particleEmitterBlack.decayRangeN = new BBRangeMake(0.03, 0.05);
     particleEmitterBlack.emitPosition = new BBPointMake(0.0, 0.0, 0.0);
-    particleEmitterBlack.setParticleX(loadTexture("images/particle-black12-atlas.png"));
+    particleEmitterBlack.setParticleX(blackStarTexture);
     particleEmitterBlack.emitCounter = 0;
     particleEmitterBlack.emit = false;
     particleEmitterBlack.awake();
