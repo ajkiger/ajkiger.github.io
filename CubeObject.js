@@ -2138,7 +2138,7 @@ function selectFinalSquare(index){
                 if (!str.wordFound && !str.hideHiddenWord)
                 {
                     // play sound file "sound5"
-
+                    PlayStars();
                 }
                 else if (!str.hideHiddenWord)
                 {
