@@ -992,10 +992,11 @@
         
         
         <div id="container">
-            <canvas id="WordCubed-canvas" style="border: none;" width="320" height="320"></canvas>
+            <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
 	</div>
         <script>
         var cWidth;
+        containerScale = true;
         if (containerScale){
             cWidth = "640";
         }
@@ -1011,6 +1012,26 @@
         var mvcontent = document.getElementById('WordCubed-canvas');
         mvcontent.setAttribute('width',cWidth);
         mvcontent.setAttribute('height',cWidth);
+        
+        
+        
+        
+        
+        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        tempScaleW = browserWidth / 640;
+        tempScaleH = browserHeight / 842;
+        if(tempScaleH < tempScaleW){
+
+            tempScale = tempScaleH;
+        }
+        else {
+            tempScale = tempScaleW;
+        }
+        tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
+        mvp = document.getElementById('viewport');
+        mvp.setAttribute('content',tempScale);
+        
     </script>
         
         
