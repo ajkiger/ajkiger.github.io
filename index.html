@@ -9,38 +9,17 @@
 <meta name="HandheldFriendly" content="True">
 <script>
     var containerScale;
-    var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-    var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    var pixelRatio = window.devicePixelRatio;
-    
+    var browserWidth;
+    var browserHeight;
+    var pixelRatio;
     var tempScale;
-    var tempScaleW = browserWidth / 640;
-    var tempScaleH = browserHeight / 842;
+    var tempScaleW;
+    var tempScaleH;
     
-    //if(browserWidth > 320){
     containerScale = true;
-    //}
-    //else {
-        //containerScale = false;
-    //}
     
-    if(tempScaleH < tempScaleW){
-        
-        tempScale = tempScaleH;
-    }
-    else {
-        tempScale = tempScaleW;
-    }
-    
-    //if (pixelRatio > 1){
-        //tempScale = tempScale / pixelRatio;
-    //}
-    
-    
-    
-    //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
-    //var mvp = document.getElementById('viewport');
-    //mvp.setAttribute('content',tempScale);
+    var mvp = document.getElementById('viewport');
+    mvp.setAttribute('content',"width=device-width, initial-scale=1.0");
     
     //var agent = navigator.userAgent.toLowerCase();
     
@@ -1004,17 +983,9 @@
             cWidth = "320";
         }
         
-        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
-        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
-        //document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
-        document.getElementById('ycoord2').innerHTML = "&nbsp&nbsp";
-        var mvcontent = document.getElementById('WordCubed-canvas');
-        mvcontent.setAttribute('width',cWidth);
-        mvcontent.setAttribute('height',cWidth);
-        
-        
-        
-        
+        //var mvcontent = document.getElementById('WordCubed-canvas');
+        //mvcontent.setAttribute('width',cWidth);
+        //mvcontent.setAttribute('height',cWidth);
         
         browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
@@ -1035,6 +1006,8 @@
         document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
         document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
         document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
+        document.getElementById('ycoord2').innerHTML = "&nbsp&nbsp";
+        
     </script>
         
         
