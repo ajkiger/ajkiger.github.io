@@ -15,6 +15,7 @@
     var tempScale;
     var tempScaleW;
     var tempScaleH;
+    var browserSet = false;
     
     containerScale = true;
     
@@ -987,9 +988,13 @@
         //mvcontent.setAttribute('width',cWidth);
         //mvcontent.setAttribute('height',cWidth);
         
-        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        pixelRatio = window.devicePixelRatio;
+        if(!browserSet){
+            browserSet = true;
+            browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+            browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+            pixelRatio = window.devicePixelRatio;
+        }
+        
         tempScaleW = browserWidth / 640;
         tempScaleH = browserHeight / 842;
         if(tempScaleH < tempScaleW){
