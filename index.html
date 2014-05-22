@@ -11,8 +11,7 @@
     var containerScale;
     var browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
     var browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-    var retina = window.devicePixelRatio > 1;
-    var pixelRatio = 0.25;
+    var pixelRatio = window.devicePixelRatio;
     
     var tempScale;
     var tempScaleW = browserWidth / 640;
@@ -33,8 +32,7 @@
         tempScale = tempScaleW;
     }
     
-    if (retina && browserWidth >= 640){
-        pixelRatio = window.devicePixelRatio;
+    if (pixelRatio > 1 && browserWidth >= 640){
         tempScale = tempScale / pixelRatio;
     }
     
@@ -605,7 +603,7 @@
                 frameCount = 0;
                 elapsedTime -= 1000;
 
-                document.getElementById('test').innerHTML = fps;
+                document.getElementById('ycoord2').innerHTML = "FPS: " + fps;
             }
 
             lastTime = new Date().getTime();
@@ -971,29 +969,23 @@
             <table id="btnTable">
                 <tr>
 
-                    <td ><button id = "btnhints" type="button"><img alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button></td>
-                    <td ><button id = "btnsettings" type="button"><img alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button></td>
-                    <td ><button id = "btngames" type="button"><img alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button></td>
-                    <td ><button id = "btninfo" type="button"><img alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button></td>
-                    <td id = "starbox"><label id="cScale" title=" Browser Width "></label><label id="test" title=" FPS "></label><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter "></td>
-                    <!--<td id="scoreratebox" title=" Score Rate "></td>-->
+                    <td ><button id = "btnhints" type="button"><img alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button>
+                    <label id="xcoord" ></label>
+                    </td>
+                    <td ><button id = "btnsettings" type="button"><img alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button>
+                    <label id="xcoord2" ></label>
+                    </td>
+                    <td ><button id = "btngames" type="button"><img alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button>
+                    <label id="ycoord" ></label>
+                    </td>
+                    <td ><button id = "btninfo" type="button"><img alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
+                    <label id="ycoord2" ></label>
+                    </td>
+                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter "></td>
                     
                     <td id = "srsbox"><label id="scoreratebox" title=" Score Rate "></label><label id="scorebox" title=" Score "></label></td>
                     
                 </tr>
-                
-                <!--
-                <tr>
-                    <td id = "menuAlign"></td>
-                    <td id = "ycoord3"></td>
-                    <td id = "mouseCoord"></td>
-                    <td id = "vMoveEvent"></td>
-                    
-                    <td></td>
-                    <td id="scorebox" title=" Score "></td>
-
-                </tr>
-                -->
                 
             </table>
 	</div><!-- /header -->
@@ -1010,8 +1002,12 @@
         else{
             cWidth = "320";
         }
-        document.getElementById('cScale').innerHTML = browserWidth;
-        document.getElementById('test').innerHTML = "&nbsp&nbsp";
+        //document.getElementById('cScale').innerHTML = pixelRatio;
+        //document.getElementById('test').innerHTML = "&nbsp&nbsp";
+        document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
+        document.getElementById('ycoord2').innerHTML = "&nbsp&nbsp";
         var mvcontent = document.getElementById('WordCubed-canvas');
         mvcontent.setAttribute('width',cWidth);
         mvcontent.setAttribute('height',cWidth);
@@ -1106,17 +1102,6 @@
         </div>
         
        
-        
-        <div id="xcoord">
-        </div>
-        <div id="ycoord">
-        </div>
-        <div id="test1">
-        </div>
-        <div id="xcoord2">
-        </div>
-        <div id="ycoord2">
-        </div>
         
     </div> <!--/WH page -->
         
