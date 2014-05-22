@@ -38,9 +38,9 @@
     
     
     
-    tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
-    var mvp = document.getElementById('viewport');
-    mvp.setAttribute('content',tempScale);
+    //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
+    //var mvp = document.getElementById('viewport');
+    //mvp.setAttribute('content',tempScale);
     
     //var agent = navigator.userAgent.toLowerCase();
     
@@ -1003,11 +1003,10 @@
         else{
             cWidth = "320";
         }
-        //document.getElementById('cScale').innerHTML = pixelRatio;
-        //document.getElementById('test').innerHTML = "&nbsp&nbsp";
-        document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
-        document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
-        document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
+        
+        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        //document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
         document.getElementById('ycoord2').innerHTML = "&nbsp&nbsp";
         var mvcontent = document.getElementById('WordCubed-canvas');
         mvcontent.setAttribute('width',cWidth);
@@ -1019,6 +1018,7 @@
         
         browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        pixelRatio = window.devicePixelRatio;
         tempScaleW = browserWidth / 640;
         tempScaleH = browserHeight / 842;
         if(tempScaleH < tempScaleW){
@@ -1032,6 +1032,9 @@
         mvp = document.getElementById('viewport');
         mvp.setAttribute('content',tempScale);
         
+        document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
     </script>
         
         
