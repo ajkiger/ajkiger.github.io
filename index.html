@@ -69,17 +69,7 @@
         overflow-y: hidden;
         -ms-touch-action: none;
         
-        /*
-        transform: scale(0.65); 
-        -webkit-transform: scale(0.65); 
-        -webkit-transform-origin: 0 0; 
-        -moz-transform: scale(0.65); 
-        -moz-transform-origin: 0 0; 
-        -o-transform: scale(0.65); 
-        -o-transform-origin: 0 0; 
-        -ms-transform: scale(0.65); 
-        -ms-transform-origin: 0 0;
-        */
+        
     }
     
     #pageWH{
@@ -902,7 +892,7 @@
     
     
     $(function(){
-        $( "#starimage" ).bind( "tap", function( event ){
+        $( "#starbox" ).bind( "tap", function( event ){
           $( event.target ).addClass( "tap" );
           
           if(validCanvas){
@@ -987,7 +977,7 @@
 
 </head>
 
-<body onload="webGLStart(); window.resizeTo(640,920)">
+<body onload="webGLStart();">
     
     <audio id="BlopSound" src="Blop-Sound.mp3" ></audio>
     <audio id="StarSound" src="Star-Sound.wav" ></audio>
