@@ -617,10 +617,9 @@
             //canvas.ondblclick = handleMouseDblClickonCanvas;
             
             lowLag.init({'urlPrefix':'sounds/'},{'audioTagTimeToLive':2000});
-            lowLag.load(["Blop-Sound.mp3"], "Blop");
-            lowLag.load(["Star-Sound.wav"], "StarSound");
+            lowLag.load(['Blop-Sound.mp3','Blop-Sound.ogg','Blop-Sound.wav'], "Blop");
+            lowLag.load(['Star-Sound.mp3','Star-Sound.ogg','Star-Sound.wav'], "StarSound");
             
-
             sceneController = new Object();
             sceneControllerInit();
             sceneControllerLoadScene();
