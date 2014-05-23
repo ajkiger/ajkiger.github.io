@@ -69,7 +69,7 @@
         overflow-y: hidden;
         -ms-touch-action: none;
         
-        
+        /*
         transform: scale(0.65); 
         -webkit-transform: scale(0.65); 
         -webkit-transform-origin: 0 0; 
@@ -79,7 +79,7 @@
         -o-transform-origin: 0 0; 
         -ms-transform: scale(0.65); 
         -ms-transform-origin: 0 0;
-        
+        */
     }
     
     #pageWH{
@@ -717,8 +717,8 @@
           
           if(validCanvas){
                 
-                $('#BlopSound').trigger("load");
-                $('#BlopSound').trigger("play");
+                //$('#BlopSound').trigger("load");
+                //$('#BlopSound').trigger("play");
                
                 
                 //$( "#popupHints" ).popup({ theme: "b" });
@@ -889,8 +889,26 @@
           
           if(validCanvas){
               
-              $('#BlopSound').trigger("load");
-              $('#BlopSound').trigger("play");
+              //$('#BlopSound').trigger("load");
+              //$('#BlopSound').trigger("play");
+              
+            document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
+            $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
+            
+          }
+          
+        });
+    });
+    
+    
+    $(function(){
+        $( "#starimage" ).bind( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          if(validCanvas){
+              
+              //$('#BlopSound').trigger("load");
+              //$('#BlopSound').trigger("play");
               
             document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
             $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
@@ -901,7 +919,7 @@
     });
     
    
-   
+    
    
    
     $(function(){
