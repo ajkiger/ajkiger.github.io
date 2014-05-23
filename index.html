@@ -70,16 +70,16 @@
         -ms-touch-action: none;
         
         
-        transform: scale(0.85); 
-        -webkit-transform: scale(0.85); 
+        transform: scale(0.65); 
+        -webkit-transform: scale(0.65); 
         -webkit-transform-origin: 0 0; 
-        -moz-transform: scale(0.85); 
+        -moz-transform: scale(0.65); 
         -moz-transform-origin: 0 0; 
-        -o-transform: scale(0.85); 
+        -o-transform: scale(0.65); 
         -o-transform-origin: 0 0; 
-        -ms-transform: scale(0.85); 
+        -ms-transform: scale(0.65); 
         -ms-transform-origin: 0 0;
-         
+        
     }
     
     #pageWH{
@@ -969,7 +969,7 @@
 
 </head>
 
-<body onload="webGLStart();">
+<body onload="webGLStart(); window.resizeTo(640,920)">
     
     <audio id="BlopSound" src="Blop-Sound.mp3" ></audio>
     <audio id="StarSound" src="Star-Sound.wav" ></audio>
