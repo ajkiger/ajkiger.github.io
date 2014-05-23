@@ -82,6 +82,7 @@ function handleMouseUponCanvas(event) {
 
 function handleMouseDblClickonCanvas(event) {
     
+    //lowLag.play("Blop");
     mouseDown = false;
     
     //document.getElementById('menuAlign').innerHTML = "DT";

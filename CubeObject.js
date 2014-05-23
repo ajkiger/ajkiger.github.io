@@ -2139,6 +2139,7 @@ function selectFinalSquare(index){
                 {
                     // play sound file "sound5"
                     //PlayStars();
+                    lowLag.play("StarSound");
                 }
                 else if (!str.hideHiddenWord)
                 {

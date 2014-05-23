@@ -20,6 +20,9 @@
     
 </script>
 
+<script src="lowLag.js"></script>
+<script src="sm2/soundmanager2-jsmin.js"></script>
+
 <script type="text/javascript" src="jquery-1.10.2.js"></script>
 
 <script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
@@ -612,7 +615,11 @@
             //canvas.onmouseup = handleMouseUponCanvas;
             //canvas.onmouseout = handleMouseOutonCanvas;
             //canvas.ondblclick = handleMouseDblClickonCanvas;
-
+            
+            lowLag.init({'urlPrefix':'sounds/'},{'audioTagTimeToLive':2000});
+            lowLag.load(["Blop-Sound.mp3"], "Blop");
+            lowLag.load(["Star-Sound.wav"], "StarSound");
+            
 
             sceneController = new Object();
             sceneControllerInit();
@@ -627,15 +634,12 @@
         
     }
     
+    
     function PlayBloop(){
-        document.getElementById('BlopSound').load();
-        document.getElementById('BlopSound').play();
+        lowLag.play("Blop");
     };
     
-    function PlayStars(){
-        document.getElementById('StarSound').load();
-        document.getElementById('StarSound').play();
-    };
+    
     
     
     $(document).ready(function(){
@@ -707,9 +711,7 @@
           
           if(validCanvas){
                 
-                //$('#BlopSound').trigger("load");
-                //$('#BlopSound').trigger("play");
-               
+                lowLag.play("Blop");
                 
                 //$( "#popupHints" ).popup({ theme: "b" });
                 $( "#popupHints" ).popup("open", { positionTo: "#topHeader",
@@ -726,7 +728,9 @@
           $( event.target ).addClass( "tap" );
           
           if(validCanvas){
-              
+                
+                lowLag.play("Blop");
+                
                 $( "#popupSettings" ).popup("open", { positionTo: "#topHeader",
                                                 transition: "pop" 
                                             
@@ -742,6 +746,8 @@
             $( event.target ).addClass( "tap" );
           
             if(validCanvas){
+                
+                lowLag.play("Blop");
                 
                 $( "#users tbody" ).empty();
                 for(var i = 0; i < weeklyWordLists.length; i++){
@@ -778,6 +784,8 @@
                             var listChanged;
                             var selectedList = $( this ).text();
                             selectedList = selectedList.substring(0, 8);
+                            
+                            lowLag.play("Blop");
 
                             //$( this ).css("background-color", "rgba(255, 255, 255, 0.0)");
                             $( this ).css("background-color", "#cccccc");
@@ -860,6 +868,8 @@
         $( "#btninfo" ).on( "tap", function( event ){
           $( event.target ).addClass( "tap" );
           
+          lowLag.play("Blop");
+          
           $("#popupTabs").show();
           $("#popupTabs").tabs();
           
@@ -879,8 +889,7 @@
           
           if(validCanvas){
               
-              //$('#BlopSound').trigger("load");
-              //$('#BlopSound').trigger("play");
+              lowLag.play("Blop");
               
             document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
             $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
@@ -897,8 +906,7 @@
           
           if(validCanvas){
               
-              //$('#BlopSound').trigger("load");
-              //$('#BlopSound').trigger("play");
+              lowLag.play("Blop");
               
             document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
             $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
@@ -978,9 +986,6 @@
 </head>
 
 <body onload="webGLStart();">
-    
-    <audio id="BlopSound" src="Blop-Sound.mp3" ></audio>
-    <audio id="StarSound" src="Star-Sound.wav" ></audio>
     
     
     
@@ -1065,7 +1070,7 @@
         
         <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:600px" data-dismissible="false">
             <p id="wordboxpopup"></p>
-            <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+            <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
         </div>
         
          
@@ -1075,7 +1080,7 @@
             </div>
             <p><a id="showHint" href="#" data-rel="back" onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
             <p><a id="solveTheCube" href="#" data-rel="back" onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
-            <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+            <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
         </div>
         
         
@@ -1086,7 +1091,7 @@
             <p><input type="checkbox" id="check1"><label id="check1id" for="check1">High Word Density</label></p>
             <p><input type="checkbox" id="check2"><label id="check2id" for="check2">Inverse Colors</label></p>
             <p><a id="buttonNewGame" href="#" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
-            <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+            <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
         </div>
         
         
@@ -1128,7 +1133,7 @@
                 
             </div>
             
-            <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+            <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
         </div>
         
         
@@ -1139,7 +1144,7 @@
                 <h1>Congratulation!</h1>
             </div>
             <p id="Winmessage" style="font-size:30px"></p>
-            <a href="#" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+            <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
             <a href="#" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Play Again</a>
         </div>
         
