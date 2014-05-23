@@ -8,7 +8,7 @@
 <meta name="MobileOptimized" content="640">
 <meta name="HandheldFriendly" content="True">
 <script>
-    var containerScale;
+    var containerScale = true;
     var browserWidth;
     var browserHeight;
     var pixelRatio;
@@ -16,7 +16,7 @@
     var tempScaleW;
     var tempScaleH;
     var mvp;
-    containerScale = true;
+    var agent = navigator.userAgent.toLowerCase();
     
 </script>
 
@@ -614,7 +614,7 @@
             //canvas.onmousemove = handleMouseMoveonCanvas;
             //canvas.onmouseup = handleMouseUponCanvas;
             //canvas.onmouseout = handleMouseOutonCanvas;
-            //canvas.ondblclick = handleMouseDblClickonCanvas;
+            canvas.ondblclick = handleMouseDblClickonCanvas;
             
             lowLag.init({'urlPrefix':'sounds/'},{'audioTagTimeToLive':2000});
             lowLag.load(['Blop-Sound.mp3','Blop-Sound.ogg','Blop-Sound.wav'], "Blop");
@@ -944,7 +944,7 @@
 
                 } else if (event.type === "doubletap") {
 
-                    handleMouseDblClickonCanvas(event);
+                    //handleMouseDblClickonCanvas(event);
 
                 }
 
@@ -1147,7 +1147,9 @@
             <a href="#" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Play Again</a>
         </div>
         
-       
+        
+        <div id="agentdisplay">
+	</div>
         
     </div> <!--/WH page -->
         
