@@ -16,7 +16,8 @@
     var tempScaleW;
     var tempScaleH;
     var mvp;
-    var agent = navigator.userAgent.toLowerCase();
+    var agent;
+    var isFireFoxDesktop;
     
 </script>
 
@@ -604,6 +605,10 @@
         validCanvas = true;
         initGL(canvas);
         
+        agent = navigator.userAgent.toLowerCase();
+        isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
+        
+        
         if(validCanvas){
             
             initShaders();
@@ -614,7 +619,10 @@
             //canvas.onmousemove = handleMouseMoveonCanvas;
             //canvas.onmouseup = handleMouseUponCanvas;
             //canvas.onmouseout = handleMouseOutonCanvas;
-            canvas.ondblclick = handleMouseDblClickonCanvas;
+            if(isFireFoxDesktop){
+                canvas.ondblclick = handleMouseDblClickonCanvas;
+            }
+            
             
             lowLag.init({'urlPrefix':'sounds/'},{'audioTagTimeToLive':2000});
             lowLag.load(['Blop-Sound.mp3','Blop-Sound.ogg','Blop-Sound.wav'], "Blop");
@@ -944,8 +952,9 @@
 
                 } else if (event.type === "doubletap") {
 
-                    //handleMouseDblClickonCanvas(event);
-
+                    if(!isFireFoxDesktop){
+                        handleMouseDblClickonCanvas(event);
+                    }
                 }
 
             }
