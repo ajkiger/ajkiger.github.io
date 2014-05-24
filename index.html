@@ -613,6 +613,10 @@
         agent = navigator.userAgent.toLowerCase();
         isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
         
+        lowLag.init({'urlPrefix':'sounds/'});
+        lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
+        lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
+        
         if(validCanvas){
             
             initShaders();
@@ -628,9 +632,7 @@
                 canvas.ondblclick = handleMouseDblClickonCanvas;
             }
             
-            lowLag.init({'urlPrefix':'sounds/'});
-            lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
-            lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
+            
             
             sceneController = new Object();
             sceneControllerInit();
