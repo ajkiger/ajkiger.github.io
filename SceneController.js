@@ -158,7 +158,7 @@ function sceneControllerInit(){
     }
     SaveScores();
     
-    document.getElementById('agentdisplay').innerHTML = agent;
+    //document.getElementById('agentdisplay').innerHTML = agent;
 }
 
 
