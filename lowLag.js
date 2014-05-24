@@ -1,14 +1,8 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 if (!window.console) console = {log: function() {}};
 
 var lowLag = new function(){
 	this.someVariable = undefined;
-	this.showNeedInit = function(){ lowLag.msg("lowLag: you must call lowLag.init() first!"); };
+	this.showNeedInit = function(){ lowLag.msg("lowLag: you must call lowLag.init() first!"); }
 
 	this.load = this.showNeedInit;
 	this.play = this.showNeedInit;
@@ -27,30 +21,30 @@ var lowLag = new function(){
 		$("#lowLag").remove();
 		$("body").append("<div id='lowLag'></div>");
 		var force = undefined;
-		if(config !== undefined){
-			if(config['force'] !== undefined){
+		if(config != undefined){
+			if(config['force'] != undefined){
 				force = config['force'];
 			} 
-			if(config['audioTagTimeToLive'] !== undefined){
+			if(config['audioTagTimeToLive'] != undefined){
 				lowLag.audioTagTimeToLive = config['audioTagTimeToLive'];
 			} 
-			if(config['sm2url'] !== undefined){
+			if(config['sm2url'] != undefined){
 				lowLag.sm2url = config['sm2url'];
 			} 
-			if(config['urlPrefix'] !== undefined){
+			if(config['urlPrefix'] != undefined){
 				lowLag.soundUrl = config['urlPrefix'];
 			} 
-			if(config['debug'] !== undefined){
+			if(config['debug'] != undefined){
 				lowLag.debug = config['debug'];
 			} 
 
 		}
 
 		var format = "sm2";
-		if(force !== undefined) format = force;
+		if(force != undefined) format = force;
 		else {
-			if(typeof(webkitAudioContext) !== "undefined") format = 'webkitAudio';
-			else if(navigator.userAgent.indexOf("Firefox")!==-1) format = 'audioTag';
+			if(typeof(webkitAudioContext) != "undefined") format = 'webkitAudio';
+			else if(navigator.userAgent.indexOf("Firefox")!=-1) format = 'audioTag';
 		}
 		switch(format){
 			case 'webkitAudio':
@@ -73,7 +67,7 @@ var lowLag = new function(){
 				this.play = this.playSoundSM2;
 				lowLag.msg("loading SM2 from "+lowLag.sm2url);
 				soundManager.setup({ url: lowLag.sm2url, useHighPerformance:true, 
-					onready:lowLag.sm2Ready , debugMode: true});
+					onready:lowLag.sm2Ready , debugMode: true})
 
 
 			break;
@@ -81,7 +75,7 @@ var lowLag = new function(){
 		}		
 
 
-	};
+	}
 	this.sm2IsReady = false;
 //sm2 has a callback that tells us when it's ready, so we may need to store
 //requests to loadsound, and then call sm2 once it has told us it is set.
@@ -93,7 +87,7 @@ var lowLag = new function(){
 		} else {
 			lowLag.sm2ToLoad.push([url,tag]);
 		}
-	};
+	}
 
 	this.loadSoundSM2ForReals = function(urls,ptag){
 		var tag = lowLag.getTagFromURL(urls,ptag);
@@ -118,13 +112,13 @@ var lowLag = new function(){
 			lowLag.loadSoundSM2ForReals(urlAndTag[0],urlAndTag[1]);
 		}
 		lowLag.sm2ToLoad = [];
-	};
+	}
 
 	this.playSoundSM2 = function(tag){
 		lowLag.msg("playSoundSM2 "+tag);
 
 		soundManager.play(tag);
-	};
+	}
 
 	
 
@@ -136,18 +130,18 @@ var lowLag = new function(){
 //we'll use the tag they hand us, or else the url as the tag if it's a single tag,
 //or the first url 
 	this.getTagFromURL = function(url,tag){
-		if(tag !== undefined) return tag;
+		if(tag != undefined) return tag;
 		return lowLag.getSingleURL(url);
-	};
+	}
 	this.getSingleURL = function(urls){
-		if(typeof(urls) === "string") return urls;
+		if(typeof(urls) == "string") return urls;
 		return urls[0];
-	};
+	}
 //coerce to be an array
 	this.getURLArray = function(urls){
-		if(typeof(urls) === "string") return [urls];
+		if(typeof(urls) == "string") return [urls];
 		return urls;
-	};
+	}
 
 
 
@@ -177,16 +171,16 @@ lowLag.msg('webkitAudio loading '+url+' as tag ' + tag);
 			}, lowLag.errorLoadWebkitAudtioFile);
 		};
 		request.send();
-	};
+	}
 
 	this.errorLoadWebkitAudtioFile = function(e){
 		lowLag.msg("Error loading webkitAudio: "+e);
-	};
+	}
 
 	this.playSoundWebkitAudio= function(tag){
 		lowLag.msg("playSoundWebkitAudio "+tag);
 		var buffer = lowLag.webkitAudioBuffers[tag];
-		if(buffer === undefined) { //possibly not loaded; put in a request to play onload
+		if(buffer == undefined) { //possibly not loaded; put in a request to play onload
 			lowLag.webkitPendingRequest[tag] = true;
 			return;
 		}
@@ -195,7 +189,7 @@ lowLag.msg('webkitAudio loading '+url+' as tag ' + tag);
 		source.buffer = buffer;                    // tell the source which sound to play
 		source.connect(context.destination);       // connect the source to the context's destination (the speakers)
 		source.noteOn(0);                          // play the source now
-	};
+	}
 
 
 
@@ -234,7 +228,7 @@ lowLag.msg('audioTag loading '+urls+' as tag ' + tag);
 		}
 		buf += '</audio>';
 		$("#lowLag").append(buf);
-	};
+	}
 
 	this.playSoundAudioTag = function(tag){
 		lowLag.msg("playSoundAudioTag "+tag);
@@ -246,33 +240,33 @@ lowLag.msg('audioTag loading '+urls+' as tag ' + tag);
 			.appendTo('#lowLag');
 		var cloneElem = document.getElementById(cloneId);
 lowLag.msg(tag);
-		if(lowLag.audioTagTimeToLive !== -1){
+		if(lowLag.audioTagTimeToLive != -1){
 			setTimeout(function(){
 					$('#'+cloneId).remove();
 				},lowLag.audioTagTimeToLive);
 		}
 		cloneElem.play();
 	    
-	};
+	}
 
 
 	this.getExtension = function(url){
 		return url.substring(url.lastIndexOf(".")+1).toLowerCase();
 
-	};
+	}
 
 
 	this.msg = function(m){
 		m = "-- lowLag "+m;
-		if(lowLag.debug === 'both' || lowLag.debug === 'console'){
+		if(lowLag.debug == 'both' || lowLag.debug == 'console'){
 			console.log(m+"<br>");
 		}
-		if(lowLag.debug === 'both' || lowLag.debug === 'screen'){
+		if(lowLag.debug == 'both' || lowLag.debug == 'screen'){
 			$('#lowLag').append(m+"<br>");
 		}
-	};
+	}
 
 
 
 
-};
+}
