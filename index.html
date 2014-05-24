@@ -621,6 +621,7 @@
             //canvas.onmousemove = handleMouseMoveonCanvas;
             //canvas.onmouseup = handleMouseUponCanvas;
             //canvas.onmouseout = handleMouseOutonCanvas;
+            
             if(isFireFoxDesktop){
                 canvas.ondblclick = handleMouseDblClickonCanvas;
             }
@@ -632,7 +633,6 @@
             sceneController = new Object();
             sceneControllerInit();
             sceneControllerLoadScene();
-
 
 
             startTimer = setTimeout(function(){GameLoop();}, 1500);
