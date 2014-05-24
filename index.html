@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Word Cubed Weekly</title>
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="MobileOptimized" content="640">
+<meta name="HandheldFriendly" content="True">
+<script>
+    var containerScale = true;
+    var browserWidth;
+    var browserHeight;
+    var pixelRatio;
+    var tempScale;
+    var tempScaleW;
+    var tempScaleH;
+    var mvp;
+    var agent;
+    var isFireFoxDesktop;
+    //var wordBoxOpen = false;
+    
+</script>
+
+<script src="lowLag.js"></script>
+<script src="sm2/js/soundmanager2-jsmin.js"></script>
+
+<script type="text/javascript" src="jquery-1.10.2.js"></script>
+
+<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+<link rel="stylesheet" href="jquery-ui-1.10.4.custom.min.css">
+
+<script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+<link rel="stylesheet" href="jquery.mobile-1.4.2.min.css">
+
+
+<script type="text/javascript" src="jquery.mobile-events.js"></script>
+<script type="text/javascript" src="gl-matrix-min.js"></script>
+<script type="text/javascript" src="webgl-utils.js"></script>
+
+
+<script type="text/javascript" src="EAGLView.js"></script>
+<script type="text/javascript" src="SceneController.js"></script>
+<script type="text/javascript" src="CubeObject.js"></script>
+<script type="text/javascript" src="CubeMesh.js"></script>
+<script type="text/javascript" src="cube4x4.js"></script>
+<script type="text/javascript" src="cube5x5.js"></script>
+<script type="text/javascript" src="cube6x6.js"></script>
+<script type="text/javascript" src="InputViewController.js"></script>
+<script type="text/javascript" src="geometryF.js"></script>
+<script type="text/javascript" src="LetterSquareObject.js"></script>
+<script type="text/javascript" src="ActiveLetterImage.js"></script>
+<script type="text/javascript" src="WordListObject.js"></script>
+<script type="text/javascript" src="ParticleSystem.js"></script>
+<script type="text/javascript" src="Particle.js"></script>
+<script type="text/javascript" src="TableRowObject.js"></script>
+
+
+<style>
+    
+    
+    
+    body, html {
+        
+        background-color: #eee;// #cccccc;
+        color: black;
+        
+        height: 100%;
+        width: 100%;
+        //overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        -ms-touch-action: none;
+        
+        
+    }
+    
+    #pageWH{
+        
+        background-color: #eee;
+        -ms-touch-action: none;
+    }
+    
+    #topHeader{
+        
+        width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color:  #eee; //#b3b3b3;
+        //margin-top: 1px;
+        //margin-bottom: 1px;
+        
+        overflow:  hidden;
+        -ms-touch-action: none;
+        
+        
+    }
+    
+    #WordCubed-canvas{
+        width: 640px;
+        height: 640px;
+        
+    }
+    
+    #container{
+        width: 640px;
+        height: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        //margin-top: 0px;
+        //margin-bottom: 5px;
+        
+        opacity:0.0;
+        filter:alpha(opacity=100); /* For IE8 and earlier */
+        background-color:  #eee; //#b3b3b3;
+        
+        overflow:  hidden;
+        -ms-touch-action: none;
+        
+        cursor:  pointer;
+    }
+    
+    
+    
+    #bottomFooter{
+        
+        width: 630px;
+        height: 85px;
+        
+        margin-left: auto;
+        margin-right: auto;
+        //margin-top: 2px;
+        //margin-bottom: 2px;
+        
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+        
+        //float: bottom;
+        //float: none;
+        //overflow-y:  auto;
+        //overflow-x: auto;
+        overflow:  hidden;
+        -ms-touch-action: none;
+        
+        //font-family: arial, Helvetica, sans-serif;
+        //font-size:  24px; 
+        //font-weight:  500;// bold;
+        background-color:  #eee; //#b3b3b3;
+        
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  32px; 
+        font-weight:  700;// bold;
+        //word-wrap:  normal;
+        //word-break:  normal
+        
+    }
+    
+    #popupHints, #popupSettings, #popupWin {
+        width: 500px;
+        font-family: arial, Helvetica, sans-serif;
+        -ms-touch-action: none;
+    }
+    
+    #popupGames, #popupTabs {
+        width: 600px;
+        font-family: arial, Helvetica, sans-serif;
+        -ms-touch-action: none;
+    }
+    
+    #showHint, #solveTheCube, #buttonNewGame, #check1id, #check2id {
+        
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  28px; 
+        font-weight:  700;// bold;
+        
+    }
+    
+    
+    #wordbox{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        cursor:  pointer;
+        
+        -ms-touch-action: none;
+    }
+    
+    
+    #popupBasic{
+        
+        //width: 600px;
+        //height: 600px;
+        
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+        
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  32px; 
+        font-weight:  700;// bold;
+        -ms-touch-action: none;
+        
+    }
+    
+    
+    
+    #btncontainer{
+        width: 640px;
+        //height: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    
+    
+    #btnhints, #btnsettings, #btngames, #btninfo {
+        width: 86px;
+        height: 86px;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        cursor:  pointer;
+        
+    }
+    
+    
+    
+    #starimage {
+        width: 50px;
+        height: 50px;
+        //margin-left: -150px;
+    }
+    
+    
+    
+    #starbox {
+        //margin-top: 2px;
+        //margin-left: 50px;
+        //vertical-align:bottom;
+    }
+    
+    #namebox{
+        width: 640px;
+        //font-family: arial, Helvetica, sans-serif;
+        //font-size:  22px; 
+        //font-weight:  500;// bold;
+        
+    }
+    
+    #srsbox{
+        vertical-align:bottom;
+        
+    }
+    
+    #scoreratebox{
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  32px; 
+        font-weight:  700;// bold;
+        //margin-left: 215px;
+        //text-align: right;
+        
+    }
+    
+    #scorebox{
+        
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  32px; 
+        font-weight:  700;// bold;
+        //margin-left : 150px;
+        //text-align: right;
+        
+    }
+    
+    #btnTable{
+        width: 100%;
+        border-collapse: collapse;
+        table-layout:fixed;
+    }
+    
+    #btnTable td{
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    div#popupGames { width: 600px; margin: 20px 0; }
+    div#popupGames table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+    div#popupGames table td, div#popupGames table th { border: 1px solid #eee; padding: .6em 10px; text-align: center; font-size: 20px; font-weight: 700;}
+    
+    
+    div#popupGames table tbody tr:hover {
+    //background-color: #cccccc;
+    cursor: pointer;
+    
+    //-webkit-transform: scale(1.05);
+    //-ms-transform: scale(1.05);
+    //transform: scale(1.05);
+    }
+    
+    
+    #tabs-1, #tabs-2, #tabs-3, #tabs-1x, #tabs-2x, #tabs-3x {
+        font-family: arial, Helvetica, sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        //overflow-y: auto;
+        //background-color: #eee;
+        
+    }
+    
+    #tabs-4 {
+        font-family: arial, Helvetica, sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        //overflow-y: auto;
+        //background-color: #eee;
+    }
+    
+    
+    
+    
+    .ui-header .ui-title {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    
+    .play{
+        
+        
+    }
+    
+    
+    
+</style>
+
+<script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec4 vColor;
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+    
+    uniform float uAlpha;
+    
+    uniform sampler2D uSampler;
+    
+    
+    void main(void) {
+        vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+        gl_FragColor = vec4(textureColor.rgb * vLightWeighting.rgb * vColor.rgb, textureColor.a * uAlpha); // * vColor.rgb
+  }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec4 aVertexColor;
+    attribute vec3 aVertexNormal;
+    attribute vec2 aTextureCoord;
+    attribute vec3 aTextureCoorduv;
+    
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+    
+    //uniform float uRAngle;
+    //uniform float xUmin;
+    //uniform float xVmin;
+
+    uniform vec3 uLightPosition;
+    uniform vec3 uAmbientLightColor;
+    uniform vec3 uDiffuseLightColor;
+    uniform vec3 uSpecularLightColor;
+
+    varying vec4 vColor;
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+    
+    const float shininess = 32.0;
+
+    void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+        //vTextureCoord = vec2(((aTextureCoord.x - 0.5) * cos(uRAngle) - (aTextureCoord.y  - 0.5) * sin(uRAngle)) + 0.5, ((aTextureCoord.x - 0.5) * sin(uRAngle) + (aTextureCoord.y - 0.5) * cos(uRAngle)) + 0.5);
+        //vTextureCoord = vec2(aTextureCoord.x , aTextureCoord.y);
+        //vTextureCoord = vec2(((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * cos(uRAngle) - (aTextureCoord.y  - (aTextureCoorduv.y + 0.0625)) * sin(uRAngle)) + aTextureCoorduv.x + 0.0625, ((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * sin(uRAngle) + (aTextureCoord.y - (aTextureCoorduv.y + 0.0625)) * cos(uRAngle)) + aTextureCoorduv.y + 0.0625);
+        vTextureCoord = vec2(((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * cos(aTextureCoorduv.z) - (aTextureCoord.y  - (aTextureCoorduv.y + 0.0625)) * sin(aTextureCoorduv.z)) + aTextureCoorduv.x + 0.0625, ((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * sin(aTextureCoorduv.z) + (aTextureCoord.y - (aTextureCoorduv.y + 0.0625)) * cos(aTextureCoorduv.z)) + aTextureCoorduv.y + 0.0625);
+        
+        vColor = aVertexColor;
+
+        vec4 vertexPositionEye4 = uMVMatrix * vec4(aVertexPosition, 1.0);
+        vec3 vertexPositionEye3 = vertexPositionEye4.xyz / vertexPositionEye4.w;
+
+        vec3 vectorToLightSource = normalize(uLightPosition - vertexPositionEye3);
+
+        vec3 normalEye = normalize(uNMatrix * aVertexNormal);
+
+        float diffuseLightWeighting = max(dot(normalEye, vectorToLightSource), 0.0);
+
+        vec3 reflectionVector = normalize(reflect(-vectorToLightSource, normalEye));
+
+        vec3 viewVectorEye = -normalize(vertexPositionEye3);
+
+        float rdotv = max(dot(reflectionVector, viewVectorEye), 0.0);
+
+        float specularLightWeighting = pow(rdotv, shininess);
+
+        vLightWeighting = uAmbientLightColor + uDiffuseLightColor * diffuseLightWeighting + uSpecularLightColor * specularLightWeighting;
+    }
+</script>
+
+
+<script type="text/javascript">
+
+    eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('7 4;7 w;6 1h(a){4=22.23(a);5(!4){$("#1i").24(25,1.0);m=r;y}m=H;4.26=a.27;4.28=a.29}6 12(a,b){7 c=o.s(b);5(!c){y 13}7 d="";7 k=c.2a;2b(k){5(k.2c===3){d+=k.2d}k=k.2e}7 e;5(c.t==="x-Q/x-2f"){e=a.1j(a.2g)}h 5(c.t==="x-Q/x-2h"){e=a.1j(a.2i)}h{y 13}a.2j(e,d);a.2k(e);5(!a.2l(e,a.2m)){1k(a.2n(e));y 13}y e}7 2;6 1l(){7 a=12(4,"Q-2o");7 b=12(4,"Q-2p");2=4.2q();4.1m(2,b);4.1m(2,a);4.2r(2);5(!4.2s(2,4.2t)){1k("2u 2v 2w 2x")}4.2y(2);2.1n=4.I(2,"2z");4.J(2.1n);2.1o=4.I(2,"2A");4.J(2.1o);2.1p=4.I(2,"2B");4.J(2.1p);2.1q=4.I(2,"2C");4.J(2.1q);2.1r=4.I(2,"2D");4.J(2.1r);2.1s=4.p(2,"2E");2.1t=4.p(2,"2F");2.1u=4.p(2,"2G");2.2H=4.p(2,"2I");2.2J=4.p(2,"2K");2.2L=4.p(2,"2M");2.2N=4.p(2,"2O");2.2P=4.p(2,"2Q");2.2R=4.p(2,"2S")}7 K=R.S();7 T=[];7 1v=R.S();6 2T(){7 a=R.S();R.2U(a,K);T.2V(a)}6 2W(){5(T.14===0){2X"2Y 2Z!";}K=T.u()}6 30(){4.1w(2.1s,r,1v);4.1w(2.1t,r,K);7 a=15.S();15.31(a);15.32(a,K);4.33(2.1u,r,a)}6 34(a){y a*35.36/37}7 U=r;7 V=0;7 W=0;7 X=Y 16().17();6 18(){38.39(18,w);5(U){U=r}h{U=H;3a();3b();7 a=Y 16().17();W++;V+=(a-X);X=a;5(V>=1x){1y=W;W=0;V-=1x;o.s(\'3c\').L="3d: "+1y}X=Y 16().17()}}7 1z;7 m;6 3e(){w=o.s("3f-w");m=H;1h(w);z=3g.3h.3i();19=(z.M(\'3j\')>-1&&((z.M(\'3k\')>-1)||(z.M(\'3l\')>-1)||(z.M(\'3m\')>-1))&&z.M(\'3n\')<0);n.3o({\'3p\':\'3q/\'});n.1A([\'l-A.1B\',\'l-A.1C\',\'l-A.1D\'],"l");n.1A([\'1a-A.1B\',\'1a-A.1C\',\'1a-A.1D\'],"3r");5(m){1l();3s();5(19){w.3t=1E}g=Y 3u();3v();3w();1z=1F(6(){18()},3x)}}6 3y(){n.q("l")};$(o).3z(6(){$("*").3A(6(e){e.1G()})});$(o).1b(\'3B\',6(e){e.1G()});$(6(){$(o).3C()});$(6(){$("#3D").B("j",6(a){$(a.C).D("j");5(m){n.q("l");$("#3E").v("E",{F:"#Z",G:"u"})}})});$(6(){$("#3F").B("j",6(a){$(a.C).D("j");5(m){n.q("l");$("#3G").v("E",{F:"#Z",G:"u"})}})});$(6(){$("#3H").B("j",6(e){$(e.C).D("j");5(m){n.q("l");$("#1c 1d").3I();1H(7 i=0;i<10.14;i++){7 f=10[i];5(f.N===g.11){$("#1c 1d").1I("<O 3J=\\"1J: #3K\\">"+"<9>"+f.N+"</9>"+"<9>"+f.P+"</9>"+"<9>"+f.1K+"</9>"+"<9>"+f.1L+"</9>"+"</O>")}h{$("#1c 1d").1I("<O>"+"<9>"+f.N+"</9>"+"<9>"+f.P+"</9>"+"<9>"+f.1K+"</9>"+"<9>"+f.1L+"</9>"+"</O>")}}$("#1M").v("E",{F:"#Z",G:"u"});$(6(){$("#3L O").B("j",6(a){7 b;7 c=$(1N).3M();c=c.3N(0,8);n.q("l");$(1N).3O("1J-3P","#3Q");5(!(g.11===c)){b=H}h{b=r}5(!(g.11===c)){1H(7 i=0;i<10.14;i++){7 d=10[i];5(d.N===c){5(d.P==="3R"){g.1e=3S}h 5(d.P==="3T"){g.1e=3U}h 5(d.P==="3V"){g.1e=3W}g.3X="3Y/"+d.3Z;g.11=d.N;40}}5($(\'#41\').1O(\'1P\')){g.1Q="42 1R 1S"}h{g.1Q="43 1R 1S"}5($(\'#44\').1O(\'1P\')){g.1T="45"}h{g.1T="46"}g.47=H}1F(6(){$("#1M").v("48")},49)})})}})});$(6(){$("#4a").B("j",6(a){$(a.C).D("j");n.q("l");$("#1f").4b();$("#1f").4c();$("#1f").v("E",{F:"#Z",G:"u"})})});$(6(){$("#1g").1b("j",6(a){$(a.C).D("j");5(m){n.q("l");o.s(\'1U\').L=o.s(\'1V\').L;$("#1W").v("E",{F:"#1g",G:"u"})}})});$(6(){$("#4d").1b("j",6(a){$(a.C).D("j");5(m){n.q("l");o.s(\'1U\').L=o.s(\'1V\').L;$("#1W").v("E",{F:"#1g",G:"u"})}})});$(6(){$("#1i").B("1X 1Y 1Z 20 21",6(a){5(m){5(a.t==="1X"){4e(a)}h 5(a.t==="1Y"){4f(a)}h 5(a.t==="1Z"){4g(a)}h 5(a.t==="20"){4h(a)}h 5(a.t==="21"){5(!19){1E(a)}}}})});',62,266,'||shaderProgram||gl|if|function|var||td|||||||sceneController|else||tap||Blop|validCanvas|lowLag|document|getUniformLocation|play|false|getElementById|type|pop|popup|canvas||return|agent|Sound|on|target|addClass|open|positionTo|transition|true|getAttribLocation|enableVertexAttribArray|mvMatrix|innerHTML|indexOf|date|tr|cubeSize|shader|mat4|create|mvMatrixStack|skipFrame|elapsedTime|frameCount|lastTime|new|topHeader|weeklyWordLists|currentGame|getShader|null|length|mat3|Date|getTime|GameLoop|isFireFoxDesktop|Star|bind|users|tbody|preCubeSize|popupTabs|bottomFooter|initGL|container|createShader|alert|initShaders|attachShader|vertexPositionAttribute|vertexColorAttribute|vertexNormalAttribute|textureCoordAttribute|textureCoordAttributeuv|pMatrixUniform|mvMatrixUniform|nMatrixUniform|pMatrix|uniformMatrix4fv|1000|fps|startTimer|load|mp3|wav|ogg|handleMouseDblClickonCanvas|setTimeout|preventDefault|for|append|background|highScore|scoreRate|popupGames|this|prop|checked|maxWordKey|Word|Density|cubeColorKey|wordboxpopup|wordbox|popupBasic|vmousedown|vmousemove|vmouseup|vmouseout|doubletap|WebGLUtils|setupWebGL|fadeTo|400|viewportWidth|width|viewportHeight|height|firstChild|while|nodeType|textContent|nextSibling|fragment|FRAGMENT_SHADER|vertex|VERTEX_SHADER|shaderSource|compileShader|getShaderParameter|COMPILE_STATUS|getShaderInfoLog|fs|vs|createProgram|linkProgram|getProgramParameter|LINK_STATUS|Could|not|initialise|shaders|useProgram|aVertexPosition|aVertexColor|aVertexNormal|aTextureCoord|aTextureCoorduv|uPMatrix|uMVMatrix|uNMatrix|samplerUniform|uSampler|lightPositionUniform|uLightPosition|ambientLightColorUniform|uAmbientLightColor|diffuseLightColorUniform|uDiffuseLightColor|specularLightColorUniform|uSpecularLightColor|alphaUniform|uAlpha|mvPushMatrix|copy|push|mvPopMatrix|throw|Invalid|popMatrix|setMatrixUniforms|identity|normalFromMat4|uniformMatrix3fv|degToRad|Math|PI|180|window|requestAnimFrame|SceneControllerUpdateModel|SceneControllerRenderScene|ycoord2|FPS|webGLStart|WordCubed|navigator|userAgent|toLowerCase|firefox|windows|macintosh|linux|mobile|init|urlPrefix|sounds|StarSound|initContext|ondblclick|Object|sceneControllerInit|sceneControllerLoadScene|1500|PlayBloop|ready|dblclick|touchmove|tooltip|btnhints|popupHints|btnsettings|popupSettings|btngames|empty|style|ffccff|usersTBody|text|substring|css|color|cccccc|4x4|96|5x5|150|6x6|216|wordListPlay|wordlists|wordList|break|check1|High|Low|check2|Inverse|Normal|endAnimationActive|close|300|btninfo|show|tabs|starbox|handleMouseDownonCanvas|handleMouseMoveonCanvas|handleMouseUponCanvas|handleMouseOutonCanvas'.split('|'),0,{}))
+   
+</script>
+
+
+
+</head>
+
+<body onload="webGLStart();">
+    
+    
+    
+    <div data-role="page" id="pageWH">
+        
+        <div data-role="header" id="topHeader">
+            <table id="btnTable">
+                <tr>
+
+                    <td ><button id = "btnhints" type="button"><img alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button>
+                    <label id="xcoord" ></label>
+                    </td>
+                    <td ><button id = "btnsettings" type="button" class="play"><img alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button>
+                    <label id="xcoord2" ></label>
+                    </td>
+                    <td ><button id = "btngames" type="button"><img alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button>
+                    <label id="ycoord" ></label>
+                    </td>
+                    <td ><button id = "btninfo" type="button"><img alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
+                    <label id="ycoord2" ></label>
+                    </td>
+                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter "></td>
+                    
+                    <td id = "srsbox"><label id="scoreratebox" title=" Score Rate "></label><label id="scorebox" title=" Score "></label></td>
+                    
+                </tr>
+                
+            </table>
+	</div><!-- /header -->
+        
+        
+        <div id="container">
+            <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
+	</div>
+        <script>
+            
+        mvp = document.getElementById('viewport');
+        mvp.setAttribute('content',"width=device-width, initial-scale=1.0");
+        var cWidth;
+        containerScale = true;
+        if (containerScale){
+            cWidth = "640";
+        }
+        else{
+            cWidth = "320";
+        }
+        
+        //var mvcontent = document.getElementById('WordCubed-canvas');
+        //mvcontent.setAttribute('width',cWidth);
+        //mvcontent.setAttribute('height',cWidth);
+        
+        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        pixelRatio = window.devicePixelRatio;
+        tempScaleW = browserWidth / 640;
+        tempScaleH = browserHeight / 842;
+        if(tempScaleH < tempScaleW){
+
+            tempScale = tempScaleH;
+        }
+        else {
+            tempScale = tempScaleW;
+        }
+        tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
+        mvp = document.getElementById('viewport');
+        mvp.setAttribute('content',tempScale);
+        
+        document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
+        document.getElementById('ycoord2').innerHTML = "&nbsp&nbsp";
+        
+    </script>
+        
+        
+        
+        
+        <div data-role="footer" id="bottomFooter" title=" Tap to see all Words ">
+            <p id="wordbox"></p>
+	</div><!-- /footer -->
+        
+        
+        <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:600px" data-dismissible="false">
+            <p id="wordboxpopup"></p>
+            <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+        </div>
+        
+         
+        <div data-role="popup" id="popupHints" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Hints</h1>
+            </div>
+            <p><a id="showHint" href="#" data-rel="back" onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
+            <p><a id="solveTheCube" href="#" data-rel="back" onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
+            <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+        </div>
+        
+        
+        <div data-role="popup" id="popupSettings" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Settings</h1>
+            </div>
+            <p><input type="checkbox" onclick="PlayBloop();" id="check1"><label id="check1id" for="check1">High Word Density</label></p>
+            <p><input type="checkbox" onclick="PlayBloop();" id="check2"><label id="check2id" for="check2">Inverse Colors</label></p>
+            <p><a id="buttonNewGame" href="#" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
+            <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+        </div>
+        
+        
+        <div data-role="popup" id="popupGames" class="ui-widget" style="max-width:600px" data-dismissible="false">
+            <table id="users" class="ui-widget ui-widget-content">
+              <thead>
+                <tr class="ui-widget-header ">
+                  <th>Puzzle</th>
+                  <th>Cube</th>
+                  <th>High Score</th>
+                  <th>Score Rate</th>
+                </tr>
+              </thead>
+              <tbody id="usersTBody"></tbody>
+            </table>
+        </div>
+        
+        
+        <div data-role="popup" id="popupTabs" class="ui-content" style="max-width:600px" data-dismissible="false">
+            <div data-role="tabs">
+                <ul>
+                  <li><a href="#tabs-1" onclick="PlayBloop();">Instructions</a></li>
+                  <li><a href="#tabs-2" onclick="PlayBloop();">Scoring</a></li>
+                  <li><a href="#tabs-3" onclick="PlayBloop();">Hints</a></li>
+                  <li><a href="#tabs-4" onclick="PlayBloop();">Credits</a></li>
+                </ul>
+
+                <div id="tabs-1">
+                  <p id="tabs-1x">Rotate the cube to find the words listed at the bottom of the screen. &nbsp; Once a word is found, maneuver the cube so the first and last letters of the word are visible, and then lightly double tap the screen to freeze the cube. &nbsp; Tap the first and last letters of the word or drag your finger from one end letter to the other. &nbsp; Selecting words will score <img src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> points. &nbsp; Lightly double tap the screen again to put the cube back in free rotate mode. &nbsp; Continue to look for and select words until all words are found. &nbsp; Then find the hidden word to win the game.<br></p>
+                </div>
+                <div id="tabs-2">
+                  <p id="tabs-2x">Each star <img src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> scores 10 points. &nbsp; First word selected will always score 3 stars per letter. &nbsp; Words selected within 30 seconds of last successful selection will score 3 stars per letter; within 60 seconds, 2 stars per letter; longer than 60 seconds, 1 star per letter. &nbsp; Taking a word hint will score minus 10 points per letter, and when the word is selected, will only score 1 star per letter. &nbsp; Once cube is cleared, any duplicate words selected will always score 3 stars per letter. &nbsp; Score Rate reflects your score against a perfect score.</p>
+                </div>
+                <div id="tabs-3">
+                  <p id="tabs-3x">1. Check word list to identify possible duplicate words. &nbsp; For example, the words <q>FLY</q> and <q>FIREFLY</q> both have the word <q>FLY</q> in them. &nbsp; Every instance of a word is scorable.<br>2. Star symbol <img src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> at top of screen indicates current stars per letter. &nbsp; To maximize points, select shorter words when Yellow star is showing, longer words when Blue star is showing.<br>3. To select words, always ensure Blue selection marker highlights an end letter before selecting other end letter.</p>
+                </div>
+                <div id="tabs-4">
+                    <img alt="Hints" src="images/wordhead.png" width="524" height="177">
+                    <p><br>Copyright &copy; 2014 JWACK APPS<br>All rights reserved<br>http://jwackapps.com<br><br>Word Cubed Weekly was created using HTML5, javascript and WebGL.<br><br>Questions, comments, and issues may be directed to wordheader@gmail.com<br><br><br></p>
+                </div>
+
+                <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+            </div>
+        </div>
+        
+        
+        
+        
+        <div data-role="popup" id="popupWin" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Congratulation!</h1>
+            </div>
+            <p id="Winmessage" style="font-size:30px"></p>
+            <a href="#" data-rel="back" onclick="PlayBloop();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+            <a href="#" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Play Again</a>
+        </div>
+        
+        
+        <div id="agentdisplay">
+	</div>
+        
+    </div> <!--/WH page -->
+        
+     
+   
+</body>
+
+</html>
