@@ -1554,12 +1554,13 @@ function solveCubeNow(){
         }
 
         sceneController.wordHintWords.push("x");
-
+        lowLag.play("StarSound");
 
         for (var j = 0 ; j < wordListNotFound.length; j++)
         {
             var str = wordListNotFound[j];
-
+            
+            
             for (var i = str.wordLength; i > 0; i=i-1)
             {
                 tempSquare = str.allSquares[i-1];
@@ -1655,6 +1656,7 @@ function showHint(){
             }
 
             //[self setGameDataObject:wordHintWords forKey:@"wordHintWordsKey"];
+            lowLag.play("StarSound");
 
             for (var i = 0; i < sceneController.wordHintWords.length; i++)
             {

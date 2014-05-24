@@ -504,6 +504,7 @@ function ButtonNewGame2(){
 
 function ButtonNewGame(){
     
+    PlayBloop();
     if($('#check1').prop('checked')){
         sceneController.maxWordKey = "High Word Density";
     }
