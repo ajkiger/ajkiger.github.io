@@ -18,13 +18,13 @@
     var mvp;
     var agent;
     var isFireFoxDesktop;
-    var isIEDesktop;
+    
     
 </script>
 
 <script src="lowLag.js"></script>
-<script src="sm2/js/soundmanager2-jsmin.js"></script>
-<script src="sm2/js/soundmanager2-nodebug-jsmin.js"></script>
+<script src="sm2/js/soundmanager2.js"></script>
+
 
 <script type="text/javascript" src="jquery-1.10.2.js"></script>
 
@@ -609,8 +609,6 @@
         
         agent = navigator.userAgent.toLowerCase();
         isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
-        isIEDesktop = (agent.indexOf('media center pc') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
-        
         
         if(validCanvas){
             
@@ -626,17 +624,9 @@
                 canvas.ondblclick = handleMouseDblClickonCanvas;
             }
             
-            if(!isIEDesktop){
-                lowLag.init({'urlPrefix':'sounds/'});
-                lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
-                lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
-            }
-            else{
-                lowLag.init({'urlPrefix':'sounds/'});
-                lowLag.load(['Blop-Sound.wav'], "Blop");
-                lowLag.load(['Star-Sound.wav'], "StarSound");
-            }
-            
+            lowLag.init({'urlPrefix':'sounds/'});
+            lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
+            lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
             
             sceneController = new Object();
             sceneControllerInit();
