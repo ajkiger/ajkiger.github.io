@@ -1,0 +1,326 @@
+{
+    "project": {},
+    "files": {
+        "html5-site-console/src/console-js/modules/ads.js": {
+            "name": "html5-site-console/src/console-js/modules/ads.js",
+            "modules": {},
+            "classes": {
+                "iConsole.ads": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "html5-site-console/src/console-js/modules/game.js": {
+            "name": "html5-site-console/src/console-js/modules/game.js",
+            "modules": {},
+            "classes": {
+                "iConsole.game": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "iConsole.ads": {
+            "name": "iConsole.ads",
+            "shortname": "iConsole.ads",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "html5-site-console/src/console-js/modules/ads.js",
+            "line": 2,
+            "type": "{iConsole.ads|*|{}}"
+        },
+        "iConsole.game": {
+            "name": "iConsole.game",
+            "shortname": "iConsole.game",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 2,
+            "type": "{iConsole.game|*|{}}"
+        }
+    },
+    "classitems": [
+        {
+            "file": "html5-site-console/src/console-js/modules/ads.js",
+            "line": 16,
+            "description": "In order to flag an advert to potentially be shown, you call this function with appropriate data blocks as\ndefined below. You should pause your game play whilst the advert is displayed, and thus you should consider\nthe advert to be displayed, until the console triggers the <code>result</code> member function of the return\nvalue.\n<br>\nIf you declare your data type to be <code>interstitial</code>, then the advert (currently) will be triggered\nalways. If you declare your data type to be <code>levelStarted</code>, then the advert may or may not fire\nbased upon the behaviour defined in the <code>game_details.json</code> file. If the advert isn't fired, the\n<code>result</code> is fired immediately. In this case, any code appearing on lines after this call will be\ncalled after the <code>result</code> callback is fired, whereas if the advert is fired, any code appearing on\nlines after this call will be called before the <code>result</code> is fired. Therefore, you should consider\npausing all game execution prior to this call, and leave this as the last call to make.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "An object which contains either\n<pre>\n{\n   type: 'interstitial'\n}\n</pre>\nto fire interstitial adverts all the time, or:\n<pre>\n{\n   type: 'levelStarted',\n   level: num\n}\n</pre>\nwhere <code>num</code> is the level number as an integer that the user is about to start playing. In this\ninstance the advert display behaviour is guided by the <code>game_details.json</code> file.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "An object that contains a member function <code>result</code> that you should call with a\ncallback function that will be fired when the advert is dismissed. The format of result function is\n<pre>result( callbackFunction );</pre>\nWhere callbackFunction is a function that will be called with a single parameter, an object that currently is\nempty, when the advert has dismissed.",
+                "type": "Object"
+            },
+            "example": [
+                "\n<pre>\niConsole.ads.show( {\n   type: 'levelStarted',\n   level: 3\n} ).result( function( resultData ) {\n   myGame.startGameTimer();\n} );\n</pre>"
+            ],
+            "itemtype": "method",
+            "name": "show",
+            "class": "iConsole.ads"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 17,
+            "description": "This is the first call you need to make in order for the game and the console to start communicating with\neach other. This call will return an object that you'll need to register a callback handler with, that will\nbe triggered after the pre-game advert has dismissed. You will need to prevent game play taking place until\nthis callback has been triggered, otherwise the game will start playing with an advert sat on top.",
+            "return": {
+                "description": "An object that contains a member function <code>result</code> that you should call with a\ncallback function that will be fired when the advert is dismissed. The format of result function is\n<pre>result( callbackFunction );</pre>\nWhere callbackFunction is a function that will be called with a single parameter, an object that contains a\nkey <code>user</code> that is an object of the user data.",
+                "type": "Object"
+            },
+            "example": [
+                "\n<pre>\niConsole.game.ready().result( function( resultData ) {\n   myGame.showHomeScreenMenu(resultData.user);\n} );\n</pre>"
+            ],
+            "itemtype": "method",
+            "name": "ready",
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 39,
+            "description": "While the game is loading all of it's assets, you should call this frequently to notify the user (via the\npre-game advert progress bar) of the game's loading progress. Typically games will pre-load the image /\naudio assets needed for the menu and first level of the game. Games may also use this time to pre-compile any\ndata blocks that may require a degree of time to complete",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "an object contains mappings to:\n<br><code>progress</code> a floating point number from 0 to 1 that indicates the progress the game is making\nin preparing the game for presentation ot the user. At 1 (i.e. 100%) the game should be in a state (once the\npre-game advert has been dismissed) where the user can play or view a menu screen with no further loading\nscreens.\n<br><code>file</code> a string containing the file asset you are loading, or it can be a debug message to\nindicate what you are processing. If debug is enabled in the javascript console, the console will log out the\ngame loading percentage and this file name/message",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "The return object is not needed."
+            },
+            "example": [
+                "\n<pre>\niConsole.game.loadProgress( {\n   progress: 0.37,\n   file: 'music/background_music.mp3'\n} );\n</pre>"
+            ],
+            "itemtype": "method",
+            "name": "loadProgress",
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 66,
+            "description": "Once the game has finished loading all of it's assets you should call this method to notify the console that\nyou have completed loading of all game assets and pre-compilation. This is in addition to making an\n<code>iConsole.game.loadProgress( { progress: 1, file: '' } );</code> call. This call to\n<code>iConsole.game.loaded</code> indicates to the console that it should allow the user to dismiss the\npre-game advert (once the minimum advert time has passed), or if the maximum advert time has passed to\nimmediately dismiss the pre-game advert. This call will ultimately result in the callback function in\n<code>iConsole.game.ready</code> to be called.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "either:\n<pre>\n{\n   success: true\n}\n</pre>\nindicating that the game has successfully loaded, or\n<pre>\n{\n   success: false,\n   item: 'The item that caused the game to fail loading',\n   text: 'Any debug information that may help understand why the game failed to load'\n}\n</pre>\nindicating that the game failed to load, where item and text are both strings that are used to identify to\nthe console and developer why the game failed to load.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "The return object is not needed.",
+                "type": "*"
+            },
+            "example": [
+                "\n<pre>\niConsole.game.loaded( {\n   success: true\n} );\n</pre>",
+                "\n<pre>\niConsole.game.loaded( {\n   success: false,\n   item: 'audio/background_music.mp3',\n   text: 'Error fetching file'\n} );\n</pre>"
+            ],
+            "itemtype": "method",
+            "name": "loaded",
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 111,
+            "description": "This call should be made prior to starting a level, to obtain any data that the game has previously stored\nfor the level about to be played. This is useful to allow a user to continue game progress where they left\noff. Examples of this can include fetching the data of a previous level (to indicate what items a user has\nin their in-game inventory). This is an asynchronous call, as the data may need to be fetched from a back-end\nserver, thus the data is passed into a callback function that you must supply to the result function in the\nreturned object.\nYou should also make a call to <code>iConsole.ads.show</code> with the type set to <code>levelStarted</code>\nas well, and wait for both callbacks to complete before continuing on with the game. Suggested order would\nbe to call <code>iConsole.ads.show</code> first, and then call <code>iConsole.game.getLevelData</code> to\nensure that the user is presented with something that is the game just waiting, and only proceed once both\nof these functions have triggered their callback functions.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "\n<pre>\n{\n   level: <integer>\n}\n</pre>\nwhere the level number is any integer from -2147483647 to 2147483647 (-2147483648 is specially reserved)",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "An object that contains a member function <code>result</code> that you should call with a\ncallback function that will be fired when the user's level data is returned. The format of result function is\n<pre>result( callbackFunction );</pre>\nWhere callbackFunction is a function that will be called with a single parameter, an object that contains a\nkey <code>data</code> that is an object of the users data. Any other data other than the <code>data</code>\nthat may be returned in this object block is deprecated and should not be relied upon.",
+                "type": "Object"
+            },
+            "itemtype": "method",
+            "name": "getLevelData",
+            "example": [
+                "\n<pre>\niConsole.game.getLevelData( { level: 23 } ).result( function ( resultData ) {\n   myGame.decipherUsersLevelInformation( resultData.data );\n} );\n</pre>"
+            ],
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 148,
+            "description": "This call should be made to store progress of a level (typically at the end of a level) via a 2k data string.\nThis is useful to allow a user to continue game progress where they left off or to restart previously failed\nlevels. Whilst this may result in a back-end call, this call can be made and no callback function required to\nhandle the result.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "\n<pre>\n{\n   level: <integer>\n   data: <string of up to 2048 characters>\n}\n</pre>\nwhere the level number is any integer from -2147483647 to 2147483647 (-2147483648 is specially reserved) and\nthe data is a string of up to 2048 characters to store, where the contents of this are freely under the\ncontrol of the game developer.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "The return object is not required",
+                "type": "*"
+            },
+            "itemtype": "method",
+            "name": "setLevelData",
+            "example": [
+                "\n<pre>\niConsole.game.setLevelData( {\n   level: 24,\n   data: \"{rockets:2,specials:['trinity','primus']}\"\n} );\n</pre>"
+            ],
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 177,
+            "description": "This call can be made prior to starting a level or prior to starting a game, to obtain any data that the game\nhas previously stored for the entire game session and any previous information (such as my best score if the\ngame wishes to display that inside its UI). This is useful to allow a user to continue game progress where\nthey left off, for example by storing the current user level. This is an asynchronous call, as the data may\nneed to be fetched from a back-end server, thus the data is passed into a callback function that you must\nsupply to the result function in the returned object.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "not used but provided in case of future API changes",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "An object that contains a member function <code>result</code> that you should call with a\ncallback function that will be fired when the user's game data is returned. The format of result function is\n<pre>result( callbackFunction );</pre>\nWhere callbackFunction is a function that will be called with a single parameter, an object that contains a\nkey <code>data</code> that is an object of the users data. Any other data other than the <code>data</code>\nthat may be returned in this object block is deprecated and should not be relied upon.",
+                "type": "Object"
+            },
+            "itemtype": "method",
+            "name": "getGameData",
+            "example": [
+                "\n<pre>\niConsole.game.getGameData().result( function ( resultData ) {\n   myGame.decipherUsersGameInformation( resultData.data );\n} );\n</pre>"
+            ],
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 203,
+            "description": "This call should be made to store progress in a game session (typically at the end of a level) via a 2k data\nstring. This is useful to allow a user to continue game progress where they left off or to restart previously\nfailed levels. Whilst this may result in a back-end call, this call can be made and no callback function\nrequired to handle the result.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "\n<pre>\n{\n   data: <string of up to 2048 characters>\n}\n</pre>\nwhere the level number is any integer from -2147483647 to 2147483647 (-2147483648 is specially reserved) and\nthe data is a string of up to 2048 characters to store, where the contents of this are freely under the\ncontrol of the game developer.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "The return object is not required",
+                "type": "*"
+            },
+            "itemtype": "method",
+            "name": "setGameData",
+            "example": [
+                "\n<pre>\niConsole.game.setGameData( {\n   data: \"{currentLevel:24}\"\n} );\n</pre>"
+            ],
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 230,
+            "description": "This call should be made whenever the game wishes to post a high score for the global leaderboards for the\nuser. In the future, the console may cause a dialog to appear to congratulate the user on their achievement\nand so the game should pause execution until the callback function that should be supplied to the\n<code>result</code> member function of the returned object has been called. Currently, this will be called\nimmediately.",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "\n<pre>\n{\n   score: <integer>\n}\n</pre>\nwhere the score is an integer of the users high score they achieved.",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "An object that contains a member function <code>result</code> that you should call with a\ncallback function that will be fired when the high score has been posted and any console interaction\nresulting from this has completed. The format of result function is <pre>result( callbackFunction );</pre>\nWhere callbackFunction is a function that will be called with a single parameter, an object that currently\ncontains no data.",
+                "type": "Object"
+            },
+            "itemtype": "method",
+            "name": "postHighScore",
+            "example": [
+                "\n<pre>\niConsole.game.postHighScore( {\n   score: 945672\n} ).result( {\n   myGame.changeState(myGame.RESTART_GAME);\n} );\n</pre>"
+            ],
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 262,
+            "itemtype": "method",
+            "name": "levelStarted",
+            "deprecated": true,
+            "params": [
+                {
+                    "name": "info",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "}",
+                "type": "Result: result, trigger: trigger"
+            },
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 301,
+            "itemtype": "method",
+            "name": "levelFinished",
+            "deprecated": true,
+            "params": [
+                {
+                    "name": "info",
+                    "description": ""
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "*"
+            },
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 314,
+            "description": "The user may generate keydown events when they are typing either in the game or in the console. Where the\nuser is typing into their chat window, keydown events are going to be triggered that games will erroneously\ncatch and handle. Therefore, instead of registering keydown handlers inside the game, you should add a\nhandler to the iConsole instead, which will bubble the keydown events except for when the user is typing into\nfields that shouldn't trigger game interaction, such as the chat window.\nSee iConsole.game.offEvent",
+            "itemtype": "method",
+            "name": "onEvent",
+            "params": [
+                {
+                    "name": "eventType",
+                    "description": "currently, the only supported event type is <code>keydown</code>",
+                    "type": "String"
+                },
+                {
+                    "name": "callbackFunction",
+                    "description": "a callback function that will be called every time the console determines\na keydown event that should be passed to the game. It will be supplied with a cut down event object, that\ncontains two member variables <code>which</code> and <code>keyCode</code> and a function\n<code>stopPropagation</code> that can be used to prevent bubbling of the event within the game (if your game\nregisters multiple handlers to the console).",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                "\n<pre>\niConsole.game.onEvent( 'keydown', myGame.keydownHandler );\n</pre>"
+            ],
+            "class": "iConsole.game"
+        },
+        {
+            "file": "html5-site-console/src/console-js/modules/game.js",
+            "line": 343,
+            "description": "The user may generate keydown events when they are typing either in the game or in the console. Where the\nuser is typing into their chat window, keydown events are going to be triggered that games will erroneously\ncatch and handle. Therefore, instead of registering keydown handlers inside the game, you should add a\nhandler to the iConsole instead, which will bubble the keydown events except for when the user is typing into\nfields that shouldn't trigger game interaction, such as the chat window. This call will be used to\nde-register the keydown handler.\nSee iConsole.game.onEvent",
+            "itemtype": "method",
+            "name": "offEvent",
+            "params": [
+                {
+                    "name": "eventType",
+                    "description": "currently, the only supported event type is <code>keydown</code>",
+                    "type": "String"
+                },
+                {
+                    "name": "callbackFunction",
+                    "description": "the callback function that was previously registered with\n<code>iConsole.game.onEvent</code>",
+                    "type": "Function"
+                }
+            ],
+            "example": [
+                "\n<pre>\niConsole.game.offEvent( 'keydown', myGame.keydownHandler );\n</pre>"
+            ],
+            "class": "iConsole.game"
+        }
+    ],
+    "warnings": []
+}

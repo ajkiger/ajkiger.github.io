@@ -1,0 +1,56 @@
+apple
+apricot
+avocado
+banana
+berry
+blackberry
+blood orange
+blueberry
+boysenberry
+breadfruit
+cantaloupe
+cherry
+citron
+citrus
+coconut
+crabapple
+cranberry
+currant
+date
+dragon fruit
+durian
+elderberry
+fig
+grapefruit
+grapes
+guava
+honeydew
+jackfruit
+kiwi
+kumquat
+lemon
+lime
+loquat
+mandarin orange
+mango
+melon
+mulberry
+nectarine
+orange
+papaya
+passion fruit
+peach
+pear
+persimmon
+pineapple
+plum
+pomegranate
+prune
+quince
+raisin
+raspberry
+star fruit
+strawberry
+tangelo
+tangerine
+watermelon
