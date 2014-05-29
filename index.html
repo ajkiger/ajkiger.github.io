@@ -700,18 +700,32 @@ ajkiger@gmail.com
         
     }
     
-    
-    function ClosePopups(){
-        
+    function ClosePopupHints(){
         $( "#popupHints" ).popup("close");
-        $( "#popupSettings" ).popup("close");
-        $( "#popupTabs" ).popup("close");
-        $( "#popupBasic" ).popup("close");
-
         PlayBloop();
     }
-
-
+    
+    function ClosePopupSettings(){
+        $( "#popupSettings" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupTabs(){
+        $( "#popupTabs" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupBasic(){
+        $( "#popupBasic" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupWin(){
+        $( "#popupWin" ).popup("close");
+        PlayBloop();
+    }
+    
+    
     function PlayBloop(){
 
         if(soundEffects){
@@ -1249,7 +1263,7 @@ ajkiger@gmail.com
         
         <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:600px" data-dismissible="false">
             <p id="wordboxpopup"></p>
-            <a href="#" data-rel="back" onclick="ClosePopups()" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+            <a href="#"  onclick="ClosePopupBasic()" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
         </div>
         
          
@@ -1259,7 +1273,7 @@ ajkiger@gmail.com
             </div>
             <p><a id="showHint" href="#" data-rel="back" onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
             <p><a id="solveTheCube" href="#" data-rel="back" onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
-            <a href="#" data-rel="back" onclick="ClosePopups();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+            <a href="#"  onclick="ClosePopupHints();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
         </div>
         
         
@@ -1272,7 +1286,7 @@ ajkiger@gmail.com
             <p id="placeCheck1" class="ui-btn ui-shadow ui-corner-all" ><input id="check1" type="checkbox" onclick="ToggleDensity();"><label id="check1id" for="check1">High Word Density</label></p>
             <p id="placeCheck2" class="ui-btn ui-shadow ui-corner-all" ><input id="check2" type="checkbox" onclick="ToggleInverse();"><label id="check2id" for="check2">Inverse Colors</label></p>
             <p><a id="buttonNewGame" href="#" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
-            <a href="#" data-rel="back" onclick="ClosePopups();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+            <a href="#"  onclick="ClosePopupSettings();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
         </div>
         
         
@@ -1314,7 +1328,7 @@ ajkiger@gmail.com
                     <p><br>Copyright &copy; 2014 JWACK APPS<br>All rights reserved<br>http://jwackapps.com<br><br>Word Cubed Weekly was created using HTML5, javascript and WebGL.<br><br>Questions, comments, and issues may be directed to wordheader@gmail.com<br><br><br></p>
                 </div>
 
-                <a href="#" data-rel="back" onclick="ClosePopups();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+                <a href="#"  onclick="ClosePopupTabs();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
             </div>
         </div>
         
@@ -1326,7 +1340,7 @@ ajkiger@gmail.com
                 <h1>Congratulation!</h1>
             </div>
             <p id="Winmessage" style="font-size:30px"></p>
-            <a href="#" data-rel="back" onclick="ClosePopups();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+            <a href="#" data-rel="back" onclick="ClosePopupWin();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
             <a href="#" data-rel="back" onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Play Again</a>
         </div>
         
