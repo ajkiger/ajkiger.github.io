@@ -2285,7 +2285,10 @@ function selectFinalSquare(index){
                 }
                 */
                 postScoreNow = true;
-                UpdateTextAreaView(wordList);
+                if (turnLetters){
+                    UpdateTextAreaView(wordList);
+                }
+                
                 
                
                 break;

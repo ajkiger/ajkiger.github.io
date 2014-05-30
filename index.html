@@ -671,11 +671,7 @@ ajkiger@gmail.com
             }
             
             
-            if(iWinConsole){
-                // Need to do this to initialize pop ups
-                $( "#popupHints" ).popup("open", { positionTo: "#btngames", transition: "none"});
-                $( "#popupHints" ).popup("close");
-            }
+            
             
             startTimer = setTimeout(function(){GameLoop();}, 1500);
             
@@ -738,6 +734,12 @@ ajkiger@gmail.com
     
     var preload;
     function loadAssets(){
+        
+        if(iWinConsole){
+            // Need to do this to initialize pop ups
+            $( "#popupHints" ).popup("open", { positionTo: "#btngames", transition: "none"});
+            $( "#popupHints" ).popup("close");
+        }
         
         var manifest = [
             {src:"LettersTA1024x1024.png", id:"image0"},
