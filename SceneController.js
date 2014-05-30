@@ -605,7 +605,8 @@ function ToggleSound(){
 
 
 function ButtonNewGame(){
-    ClosePopups();
+    ClosePopupWin();
+    ClosePopupSettings();
     if($('#check1').prop('checked')){
         sceneController.maxWordKey = "High Word Density";
     }
