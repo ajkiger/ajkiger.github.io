@@ -680,10 +680,10 @@ function LoadScores(){
         
         soundTrack = localStorage.getItem("tMusic");
         if(soundTrack === "false"){
-            
+            soundTrack = false;
         }
         else{
-            
+            soundTrack = true;
         }
         
        

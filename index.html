@@ -624,7 +624,7 @@ ajkiger@gmail.com
     
     function webGLStart() {
         
-        soundTrack = true;
+        //soundTrack = true;
         
         canvas = document.getElementById("WordCubed-canvas");
         validCanvas = true;
@@ -640,7 +640,7 @@ ajkiger@gmail.com
         
         if(validCanvas){
             
-            initBackGroundMusic();
+            //initBackGroundMusic();
            
            
             initShaders();
@@ -761,7 +761,7 @@ ajkiger@gmail.com
     };
     
     function handleComplete(event) {
-        webGLStart();
+        initBackGroundMusic();
     }
     
     
@@ -801,6 +801,7 @@ ajkiger@gmail.com
             
         }
         
+        webGLStart();
     }
     
     
