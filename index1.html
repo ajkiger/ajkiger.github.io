@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>iWin Games Console Test Bed</title>
+    <script src="../iconsole.js" type="text/javascript"></script>
+    <script>
+        var addDebug = function (message) {
+            document.getElementById('output').value = document.getElementById('output').value + '\n' + message;
+            console.log(message);
+        }
+        iConsole.game.ready().result( function() {
+            addDebug('iConsole.game.ready().result( function() {\n   // The function passed to the result function will be called when the ready call has returned from the console\n});');
+        });
+
+        iConsole.game.onEvent('keydown', function(event) {
+            // Only cloning the event to cut down on the noise in the small debug window
+            var cloneEvent = {}; for (var i in event) { cloneEvent[i] = event[i];} delete cloneEvent.stopPropagationSet;
+            addDebug('Received a keydown event: event=' + JSON.stringify(cloneEvent));
+        });
+
+        // Whilst you are loading all of the assets to your game, you should call (window.)iConsole.game.loadProgress with a 0-1 percentage of progress
+        // and the name of the file you are loading (to assist in debugging any failures in game launch)
+        var progress = 0;
+        var progressInterval = setInterval( function() {
+            iConsole.game.loadProgress ({
+                progress: progress / 100,
+                file: "file loaded" + progress + ".js"
+            });
+            addDebug('iConsole.game.loadProgress ({progress:' + progress / 100 + ',file: "file loaded' + progress + '.js"});');
+            progress += 2;
+            if (progress > 100) {
+                clearInterval(progressInterval);
+                // Once the game has loaded you should call (window.)iConsole.game.loaded with a success of true (if the game fails, you should set this
+                // to false, and include the item and text as to why it failed (to assist in debugging any failures in game launch)
+                iConsole.game.loaded({
+                    success : true
+                    // success: false,
+                    // item: e.item.src,
+                    // text: e.text
+                }).result( function() {
+                    addDebug('iConsole.game.loaded({success:true}).result( function() {\n   // The function passed to the result function will be called when the game loaded call has returned from the console\n});');
+                });
+            }
+        }, 200);
+        window.level = 1;
+        window.nextLevel = function () {
+            level++;
+            addDebug('changed level to ' + level);
+        };
+        window.getLevelData = function() {
+            // When the user starts a level, you should call (window.)iConsole.game.getLevelData with a single parameter of
+            // the level you are about to play
+            iConsole.game.getLevelData({
+                level: level
+            }).result( function(levelData) {
+                addDebug('iConsole.game.getLevelData({level:' + level + '}).result( function(levelData) {\n   // The function passed to the result function will be called when the get level data call has returned from the console. This may delay due to making a backend request\n});');
+                addDebug('levelData=' + JSON.stringify(levelData));
+            });
+        };
+        window.setLevelData = function() {
+            var data = {
+                level: level,
+                data: '{"some":"data","to":"store"}'
+            };
+            // When the user completes a level (if they succeeded or failed), you should call (window.)iConsole.game.setLevelData with parameters
+            // indicating the level and up to 2k of data to store regarding that users progress in that level
+            iConsole.game.setLevelData({
+                level: data.level,
+                data: data.data
+            }).result( function() {
+                addDebug('iConsole.game.setLevelData({level:' + level + ',data:\'' + data.data + '\'});.result( function() {\n   // The function passed to the result function will be called when the level finished call has returned from the console\n});');
+            });
+
+        };
+        window.getGameData = function() {
+            iConsole.game.getGameData().result( function(gameData) {
+                addDebug('iConsole.game.getGameData().result( function(gameData) {\n   // The function passed to the result function will be called when the get game data call has returned from the console. This may delay due to making a backend request\n});');
+                addDebug('gameData=' + JSON.stringify(gameData));
+            });
+        };
+        window.setGameData = function() {
+            var data = {
+                data: '{currentLevel:23}'
+            };
+            iConsole.game.setGameData({
+                data: data.data
+            }).result( function() {
+                addDebug('iConsole.game.setGameData({data:\'' + data.data + '\'});.result( function() {\n   // The function passed to the result function will be called when the level finished call has returned from the console\n});');
+            });
+
+        };
+        window.showLevelStartedAd = function() {
+            // When the user starts a level, you should call (window.)iConsole.ads.show with a two parameters of the type 'levelStarted' and the level you are playing
+            iConsole.ads.show({
+                type: 'levelStarted',
+                level: level
+            }).result( function() {
+                addDebug('iConsole.game.showAd({type:\'levelStarted\',level:' + level + '}).result( function() {\n   // The function passed to the result function will be called when the advert has dismissed\n});');
+            });
+        };
+        window.showInterstitialAd = function() {
+            // When the game requires an advert to be displayed, you should call (window.)iConsole.ads.show with one parameter of type 'interstitial'
+            iConsole.ads.show({
+                type: 'interstitial'
+            }).result( function() {
+                addDebug('iConsole.game.showAd({type:\'interstitial\'}).result( function() {\n   // The function passed to the result function will be called when the advert has dismissed\n});');
+            });
+        };
+        window.postHighScore = function() {
+            // When the game needs to post a high score for the leaderboards, you should call (window.)iConsole.game.postHighScore with one parameter, score
+            var data = {
+                score: Math.floor(Math.random() * 10000)
+            }
+            iConsole.game.postHighScore({
+                score: data.score
+            }).result( function () {
+                addDebug('iConsole.game.postHighScore({score:' + data.score + '}).result( function () {\n   // The function passed to the result function will be called when any console UI behaviour on posting scores has completed\n});')
+            });
+        }
+    </script>
+</head>
+<body>
+    <div><a href="docs/js/index.html" target="_blank">View the Javascript documentation</a></div>
+    <div><a href="docs/console.ppt" target="_blank">Download the PowerPoint API document</a></div>
+    <div>Output log</div>
+    <textarea id="output" style="height:400px;width:400px;"></textarea>
+    <div>Once you see this screen, the game will be ready to play</div>
+    <button onclick="nextLevel()">Next Level</button>
+    <button onclick="getLevelData()">Get Level Data</button>
+    <button onclick="showLevelStartedAd()">Show Level Started Advert</button>
+    <button onclick="setLevelData()">Set Level Data</button>
+    <button onclick="getGameData()">Get Game Data</button>
+    <button onclick="setGameData()">Set Game Data</button>
+    <button onclick="showInterstitialAd()">Show Interstitial Advert</button>
+    <button onclick="postHighScore()">Post High Score</button>
+</body>
+</html>
