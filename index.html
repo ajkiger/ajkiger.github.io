@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<!-- 
+Copyright 2014 JWACK APPS
+All rights reserved
+jwackapps.com
+Created by Andrew B. Kiger
+ajkiger@gmail.com
+-->
+
+<html>
+
+<head>
+<title>Word Cubed Weekly</title>
+
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="MobileOptimized" content="640">
+<meta name="HandheldFriendly" content="True">
+<script>
+    var containerScale = true;
+    var browserWidth;
+    var browserHeight;
+    var pixelRatio;
+    var tempScale;
+    var tempScaleW;
+    var tempScaleH;
+    var mvp;
+    var agent;
+    var isFireFoxDesktop;
+    var iWinConsole = false;
+    
+</script>
+
+<script src="../iconsole.js" type="text/javascript"></script>
+
+<script  type="text/javascript" src="lowLag.js"></script>
+<script  type="text/javascript" src="sm2/js/soundmanager2-jsmin.js"></script>
+
+<script  type="text/javascript" src="soundjs-0.5.2.min.js"></script>
+<script  type="text/javascript" src="preloadjs-0.4.1.min.js"></script>
+
+<script type="text/javascript" src="jquery-1.10.2.js"></script>
+
+<script type="text/javascript" src="jquery-ui-1.10.4.custom.min.js"></script>
+<link rel="stylesheet" href="jquery-ui-1.10.4.custom.min.css">
+
+<script type="text/javascript" src="jquery.mobile-1.4.2.min.js"></script>
+<link rel="stylesheet" href="jquery.mobile-1.4.2.min.css">
+
+
+<script type="text/javascript" src="jquery.mobile-events.js"></script>
+<script type="text/javascript" src="gl-matrix-min.js"></script>
+<script type="text/javascript" src="webgl-utils.js"></script>
+
+
+<script type="text/javascript" src="EAGLView.js"></script>
+<script type="text/javascript" src="SceneController.js"></script>
+<script type="text/javascript" src="CubeObject.js"></script>
+<script type="text/javascript" src="CubeMesh.js"></script>
+<script type="text/javascript" src="cube4x4.js"></script>
+<script type="text/javascript" src="cube5x5.js"></script>
+<script type="text/javascript" src="cube6x6.js"></script>
+<script type="text/javascript" src="InputViewController.js"></script>
+<script type="text/javascript" src="geometryF.js"></script>
+<script type="text/javascript" src="LetterSquareObject.js"></script>
+<script type="text/javascript" src="ActiveLetterImage.js"></script>
+<script type="text/javascript" src="WordListObject.js"></script>
+<script type="text/javascript" src="ParticleSystem.js"></script>
+<script type="text/javascript" src="Particle.js"></script>
+<script type="text/javascript" src="TableRowObject.js"></script>
+
+
+<style>
+    
+    
+    
+    body, html {
+        
+        background-color: #eee;// #cccccc;
+        color: black;
+        
+        height: 100%;
+        width: 100%;
+        //overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        -ms-touch-action: none;
+        
+        
+    }
+    
+    #pageWH{
+        
+        background-color: #cccccc;
+        -ms-touch-action: none;
+    }
+    
+    #topHeader{
+        
+        width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #eee; //#b3b3b3;
+        //margin-top: 1px;
+        //margin-bottom: 1px;
+        
+        overflow:  hidden;
+        -ms-touch-action: none;
+        
+        
+    }
+    
+    #WordCubed-canvas{
+        width: 640px;
+        height: 640px;
+        
+    }
+    
+    #container{
+        width: 640px;
+        height: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        //margin-top: 0px;
+        //margin-bottom: 5px;
+        
+        opacity:0.0;
+        filter:alpha(opacity=100); /* For IE8 and earlier */
+        background-color:  #eee; //#b3b3b3;
+        
+        overflow:  hidden;
+        -ms-touch-action: none;
+        
+        cursor:  pointer;
+    }
+    
+    
+    
+    #bottomFooter{
+        
+        width: 630px;
+        height: 85px;
+        
+        margin-left: auto;
+        margin-right: auto;
+        //margin-top: 2px;
+        //margin-bottom: 2px;
+        
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 5px;
+        padding-right: 5px;
+        
+        //float: bottom;
+        //float: none;
+        //overflow-y:  auto;
+        //overflow-x: auto;
+        overflow:  hidden;
+        -ms-touch-action: none;
+        
+        //font-family: arial, Helvetica, sans-serif;
+        //font-size:  24px; 
+        //font-weight:  500;// bold;
+        background-color:  #eee; //#b3b3b3;
+        
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  32px; 
+        font-weight:  700;// bold;
+        //word-wrap:  normal;
+        //word-break:  normal
+        
+    }
+    
+    #popupHints, #popupSettings, #popupWin {
+        width: 500px;
+        font-family: arial, Helvetica, sans-serif;
+        -ms-touch-action: none;
+    }
+    
+    #popupGames, #popupTabs {
+        width: 600px;
+        font-family: arial, Helvetica, sans-serif;
+        -ms-touch-action: none;
+    }
+    
+    #showHint, #solveTheCube, #buttonNewGame, #check1id, #check2id, #check3id, #check4id {
+        
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  28px; 
+        font-weight:  700;// bold;
+        text-align: center;
+    }
+    
+    #placeCheck1, #placeCheck2, #placeCheck3, #placeCheck4 {
+        text-align: left;
+    }
+    
+    
+    
+    #wordbox{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        cursor:  pointer;
+        
+        -ms-touch-action: none;
+    }
+    
+    
+    #popupBasic{
+        
+        //width: 600px;
+        //height: 600px;
+        
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 5px;
+        padding-right: 5px;
+        
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  32px; 
+        font-weight:  700;// bold;
+        -ms-touch-action: none;
+        
+    }
+    
+    
+    
+    #btncontainer{
+        width: 640px;
+        //height: 35px;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+    
+    
+    #btnhints, #btnsettings, #btngames, #btninfo {
+        width: 86px;
+        height: 86px;
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        cursor:  pointer;
+        
+    }
+    
+    
+    
+    #starimage {
+        width: 50px;
+        height: 50px;
+        //margin-left: -150px;
+    }
+    
+    
+    
+    #starbox {
+        //margin-top: 2px;
+        //margin-left: 50px;
+        //vertical-align:bottom;
+    }
+    
+    #namebox{
+        width: 640px;
+        //font-family: arial, Helvetica, sans-serif;
+        //font-size:  22px; 
+        //font-weight:  500;// bold;
+        
+    }
+    
+    #srsbox{
+        vertical-align:bottom;
+        
+    }
+    
+    #scoreratebox{
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  32px; 
+        font-weight:  700;// bold;
+        //margin-left: 215px;
+        //text-align: right;
+        
+    }
+    
+    #scorebox{
+        
+        font-family: arial, Helvetica, sans-serif;
+        font-size:  32px; 
+        font-weight:  700;// bold;
+        //margin-left : 150px;
+        //text-align: right;
+        
+    }
+    
+    #btnTable{
+        width: 100%;
+        border-collapse: collapse;
+        table-layout:fixed;
+    }
+    
+    #btnTable td{
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    div#popupGames { width: 600px; margin: 20px 0; }
+    div#popupGames table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+    div#popupGames table td, div#popupGames table th { border: 1px solid #eee; padding: .6em 10px; text-align: center; font-size: 20px; font-weight: 700;}
+    
+    
+    div#popupGames table tbody tr:hover {
+    //background-color: #cccccc;
+    cursor: pointer;
+    
+    //-webkit-transform: scale(1.05);
+    //-ms-transform: scale(1.05);
+    //transform: scale(1.05);
+    }
+    
+    
+    #tabs-1, #tabs-2, #tabs-3, #tabs-1x, #tabs-2x, #tabs-3x {
+        font-family: arial, Helvetica, sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        //overflow-y: auto;
+        //background-color: #eee;
+        
+    }
+    
+    #tabs-4 {
+        font-family: arial, Helvetica, sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        //overflow-y: auto;
+        //background-color: #eee;
+    }
+    
+    
+    
+    
+    .ui-header .ui-title {
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+    
+    
+    
+    
+    
+</style>
+
+<script id="shader-fs" type="x-shader/x-fragment">
+    precision mediump float;
+
+    varying vec4 vColor;
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+    
+    uniform float uAlpha;
+    
+    uniform sampler2D uSampler;
+    
+    
+    void main(void) {
+        vec4 textureColor = texture2D(uSampler, vec2(vTextureCoord.s, vTextureCoord.t));
+        gl_FragColor = vec4(textureColor.rgb * vLightWeighting.rgb * vColor.rgb, textureColor.a * uAlpha); // * vColor.rgb
+  }
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+    attribute vec3 aVertexPosition;
+    attribute vec4 aVertexColor;
+    attribute vec3 aVertexNormal;
+    attribute vec2 aTextureCoord;
+    attribute vec3 aTextureCoorduv;
+    
+    uniform mat4 uMVMatrix;
+    uniform mat4 uPMatrix;
+    uniform mat3 uNMatrix;
+    
+    //uniform float uRAngle;
+    //uniform float xUmin;
+    //uniform float xVmin;
+
+    uniform vec3 uLightPosition;
+    uniform vec3 uAmbientLightColor;
+    uniform vec3 uDiffuseLightColor;
+    uniform vec3 uSpecularLightColor;
+
+    varying vec4 vColor;
+    varying vec2 vTextureCoord;
+    varying vec3 vLightWeighting;
+    
+    const float shininess = 32.0;
+
+    void main(void) {
+        gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+        //vTextureCoord = vec2(((aTextureCoord.x - 0.5) * cos(uRAngle) - (aTextureCoord.y  - 0.5) * sin(uRAngle)) + 0.5, ((aTextureCoord.x - 0.5) * sin(uRAngle) + (aTextureCoord.y - 0.5) * cos(uRAngle)) + 0.5);
+        //vTextureCoord = vec2(aTextureCoord.x , aTextureCoord.y);
+        //vTextureCoord = vec2(((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * cos(uRAngle) - (aTextureCoord.y  - (aTextureCoorduv.y + 0.0625)) * sin(uRAngle)) + aTextureCoorduv.x + 0.0625, ((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * sin(uRAngle) + (aTextureCoord.y - (aTextureCoorduv.y + 0.0625)) * cos(uRAngle)) + aTextureCoorduv.y + 0.0625);
+        vTextureCoord = vec2(((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * cos(aTextureCoorduv.z) - (aTextureCoord.y  - (aTextureCoorduv.y + 0.0625)) * sin(aTextureCoorduv.z)) + aTextureCoorduv.x + 0.0625, ((aTextureCoord.x - (aTextureCoorduv.x + 0.0625)) * sin(aTextureCoorduv.z) + (aTextureCoord.y - (aTextureCoorduv.y + 0.0625)) * cos(aTextureCoorduv.z)) + aTextureCoorduv.y + 0.0625);
+        
+        vColor = aVertexColor;
+
+        vec4 vertexPositionEye4 = uMVMatrix * vec4(aVertexPosition, 1.0);
+        vec3 vertexPositionEye3 = vertexPositionEye4.xyz / vertexPositionEye4.w;
+
+        vec3 vectorToLightSource = normalize(uLightPosition - vertexPositionEye3);
+
+        vec3 normalEye = normalize(uNMatrix * aVertexNormal);
+
+        float diffuseLightWeighting = max(dot(normalEye, vectorToLightSource), 0.0);
+
+        vec3 reflectionVector = normalize(reflect(-vectorToLightSource, normalEye));
+
+        vec3 viewVectorEye = -normalize(vertexPositionEye3);
+
+        float rdotv = max(dot(reflectionVector, viewVectorEye), 0.0);
+
+        float specularLightWeighting = pow(rdotv, shininess);
+
+        vLightWeighting = uAmbientLightColor + uDiffuseLightColor * diffuseLightWeighting + uSpecularLightColor * specularLightWeighting;
+    }
+</script>
+
+
+<script type="text/javascript">
+
+    
+    var gl;
+    var canvas;
+
+    function initGL(canvas) {
+        
+        gl = WebGLUtils.setupWebGL(canvas);
+        if (!gl) {
+            //alert("Could not initialise WebGL, sorry :-(");
+            $( "#container" ).fadeTo(400, 1.0);
+            validCanvas = false;
+            return;
+        }
+        validCanvas = true;
+        gl.viewportWidth = canvas.width;
+        gl.viewportHeight = canvas.height;
+        
+    }
+
+
+    function getShader(gl, id) {
+        var shaderScript = document.getElementById(id);
+        if (!shaderScript) {
+            return null;
+        }
+
+        var str = "";
+        var k = shaderScript.firstChild;
+        while (k) {
+            if (k.nodeType === 3) {
+                str += k.textContent;
+            }
+            k = k.nextSibling;
+        }
+
+        var shader;
+        if (shaderScript.type === "x-shader/x-fragment") {
+            shader = gl.createShader(gl.FRAGMENT_SHADER);
+        } else if (shaderScript.type === "x-shader/x-vertex") {
+            shader = gl.createShader(gl.VERTEX_SHADER);
+        } else {
+            return null;
+        }
+
+        gl.shaderSource(shader, str);
+        gl.compileShader(shader);
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+            alert(gl.getShaderInfoLog(shader));
+            return null;
+        }
+
+        return shader;
+    }
+
+
+    var shaderProgram;
+
+    function initShaders() {
+        var fragmentShader = getShader(gl, "shader-fs");
+        var vertexShader = getShader(gl, "shader-vs");
+
+        shaderProgram = gl.createProgram();
+        gl.attachShader(shaderProgram, vertexShader);
+        gl.attachShader(shaderProgram, fragmentShader);
+        gl.linkProgram(shaderProgram);
+
+        if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+            alert("Could not initialise shaders");
+        }
+
+        gl.useProgram(shaderProgram);
+
+        shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+        gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+        shaderProgram.vertexColorAttribute = gl.getAttribLocation(shaderProgram, "aVertexColor");
+        gl.enableVertexAttribArray(shaderProgram.vertexColorAttribute);
+        
+        shaderProgram.vertexNormalAttribute = gl.getAttribLocation(shaderProgram, "aVertexNormal");
+        gl.enableVertexAttribArray(shaderProgram.vertexNormalAttribute);
+        
+        shaderProgram.textureCoordAttribute = gl.getAttribLocation(shaderProgram, "aTextureCoord");
+        gl.enableVertexAttribArray(shaderProgram.textureCoordAttribute);
+        
+        shaderProgram.textureCoordAttributeuv = gl.getAttribLocation(shaderProgram, "aTextureCoorduv");
+        gl.enableVertexAttribArray(shaderProgram.textureCoordAttributeuv);
+        
+        shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+        shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
+        shaderProgram.nMatrixUniform = gl.getUniformLocation(shaderProgram, "uNMatrix");
+        shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
+        
+        shaderProgram.lightPositionUniform = gl.getUniformLocation(shaderProgram, "uLightPosition");
+        shaderProgram.ambientLightColorUniform = gl.getUniformLocation(shaderProgram, "uAmbientLightColor");
+        shaderProgram.diffuseLightColorUniform = gl.getUniformLocation(shaderProgram, "uDiffuseLightColor");
+        shaderProgram.specularLightColorUniform = gl.getUniformLocation(shaderProgram, "uSpecularLightColor");
+        
+        shaderProgram.alphaUniform = gl.getUniformLocation(shaderProgram, "uAlpha");
+        //shaderProgram.rAngleUniform = gl.getUniformLocation(shaderProgram, "uRAngle");
+        //shaderProgram.xUminUniform = gl.getUniformLocation(shaderProgram, "xUmin");
+        //shaderProgram.xVminUniform = gl.getUniformLocation(shaderProgram, "xVmin");
+    }
+
+
+
+
+    var mvMatrix = mat4.create();
+    var mvMatrixStack = [];
+    var pMatrix = mat4.create();
+    
+
+    function mvPushMatrix() {
+        var copyM = mat4.create();
+        mat4.copy(copyM, mvMatrix);
+        mvMatrixStack.push(copyM);
+    }
+
+    function mvPopMatrix() {
+        if (mvMatrixStack.length === 0) {
+            throw "Invalid popMatrix!";
+        }
+        mvMatrix = mvMatrixStack.pop();
+    }
+
+
+    function setMatrixUniforms() {
+        gl.uniformMatrix4fv(shaderProgram.pMatrixUniform, false, pMatrix);
+        gl.uniformMatrix4fv(shaderProgram.mvMatrixUniform, false, mvMatrix);
+        
+        var normalMatrix = mat3.create();
+        mat3.identity(normalMatrix);
+        mat3.normalFromMat4(normalMatrix, mvMatrix);
+        gl.uniformMatrix3fv(shaderProgram.nMatrixUniform, false, normalMatrix);
+    }
+
+
+    function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+
+    var skipFrame = false;
+    var elapsedTime = 0;
+    var frameCount = 0;
+    var lastTime = new Date().getTime();
+    
+    function GameLoop() {  //Game Loop
+        window.requestAnimFrame(GameLoop, canvas);
+        
+        if (skipFrame){
+            skipFrame = false;
+            
+        }
+        else{
+            skipFrame = true;
+            
+            SceneControllerUpdateModel();
+            
+            SceneControllerRenderScene();
+
+            var now = new Date().getTime();
+
+            frameCount++;
+            elapsedTime += (now - lastTime);
+
+            lastTime = now;
+
+            if(elapsedTime >= 1000) {
+                fps = frameCount;
+                frameCount = 0;
+                elapsedTime -= 1000;
+
+                //document.getElementById('ycoord2').innerHTML = "FPS: " + fps;
+            }
+
+            lastTime = new Date().getTime();
+            
+        }
+        
+        
+    }
+
+    var startTimer;
+    var validCanvas;
+    var soundTrack;
+    var soundEffects;
+    var SoundInstanceBM;
+    
+    
+    function webGLStart() {
+        
+        //soundTrack = true;
+        
+        canvas = document.getElementById("WordCubed-canvas");
+        validCanvas = true;
+        initGL(canvas);
+        
+        agent = navigator.userAgent.toLowerCase();
+        isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
+        
+        lowLag.init({'urlPrefix':'sounds/'});
+        lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
+        lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
+        
+        
+        if(validCanvas){
+            
+            //initBackGroundMusic();
+           
+           
+            initShaders();
+            initContext();
+            //$( "#container" ).fadeTo(400, 1.0);
+
+            //canvas.onmousedown = handleMouseDownonCanvas;
+            //canvas.onmousemove = handleMouseMoveonCanvas;
+            //canvas.onmouseup = handleMouseUponCanvas;
+            //canvas.onmouseout = handleMouseOutonCanvas;
+            
+            if(isFireFoxDesktop){
+                canvas.ondblclick = handleMouseDblClickonCanvas;
+            }
+            
+            
+            
+            sceneController = new Object();
+            sceneControllerInit();
+            
+            if(iWinConsole){
+                iConsole.game.ready().result( function( resultData ) {
+                    
+                //document.getElementById('agentdisplay').innerHTML = resultData.user;
+                
+                SoundInstanceBM.play({loop:-1});
+        
+                if(typeof(Storage)!=="undefined")
+                {
+                    soundTrack = localStorage.getItem("tMusic");
+                    if(soundTrack === "false"){
+                        soundTrack = false;
+                        SoundInstanceBM.pause();
+                    }
+                    else{
+                        soundTrack = true;
+
+                    }
+
+                }
+                sceneControllerLoadScene();
+                 } );
+            }
+            else{
+                
+                SoundInstanceBM.play({loop:-1});
+        
+                if(typeof(Storage)!=="undefined")
+                {
+                    soundTrack = localStorage.getItem("tMusic");
+                    if(soundTrack === "false"){
+                        soundTrack = false;
+                        SoundInstanceBM.pause();
+                    }
+                    else{
+                        soundTrack = true;
+
+                    }
+
+                }
+                
+                sceneControllerLoadScene();
+            }
+            
+            
+            
+            
+            startTimer = setTimeout(function(){GameLoop();}, 1500);
+            
+        }
+        else{
+            
+            if(iWinConsole){
+                
+                iConsole.game.ready().result( function( resultData ) {
+               
+                } );
+
+                iConsole.game.loadProgress( { progress: 1, file: '' } );
+
+                iConsole.game.loaded( {
+                   success: true
+                } );
+                
+            }
+            
+            
+        }
+        
+        
+    }
+    
+    function ClosePopupHints(){
+        $( "#popupHints" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupSettings(){
+        $( "#popupSettings" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupTabs(){
+        $( "#popupTabs" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupBasic(){
+        $( "#popupBasic" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupWin(){
+        $( "#popupWin" ).popup("close");
+        PlayBloop();
+    }
+    
+    
+    function PlayBloop(){
+
+        if(soundEffects){
+            lowLag.play("Blop");
+        }
+
+    };
+    
+    var preload;
+    function loadAssets(){
+        
+        if(iWinConsole){
+            // Need to do this to initialize pop ups
+            $( "#popupHints" ).popup("open", { positionTo: "#btngames", transition: "none"});
+            $( "#popupHints" ).popup("close");
+        }
+        
+        var manifest = [
+            {src:"LettersTA1024x1024.png", id:"image0"},
+            {src:"particle-yellow12-atlas.png", id:"image1"},
+            {src:"particle-blue12-atlas.png", id:"image2"},
+            {src:"particle-black12-atlas.png", id:"image3"},
+            {src:"particle-red12-atlas.png", id:"image4"}
+        ];
+
+        preload = new createjs.LoadQueue(true, "images/");
+
+        // Use this instead to use tag loading
+        //preload = new createjs.PreloadJS(false);
+
+        //preload.on("progress", handleProgress);
+        preload.on("complete", handleComplete);
+        //preload.on("fileload", handleFileLoad);
+        preload.loadManifest(manifest);
+        
+        
+    };
+    
+    function handleComplete(event) {
+        initBackGroundMusic();
+    }
+    
+    
+    function initBackGroundMusic(){
+        
+        // if initializeDefaultPlugins returns false, we cannot play sound in this browser
+        if (!createjs.Sound.initializeDefaultPlugins()) {return;}
+
+        var audioPath = "sounds/";
+        var manifest = [
+            {id:"BackGroundMusic", src:"WordCubedMelody.ogg"}
+        ];
+
+        createjs.Sound.alternateExtensions = ["mp3"];
+        createjs.Sound.addEventListener("fileload", handleLoad);
+        createjs.Sound.registerManifest(manifest, audioPath);
+        
+    };
+    
+    
+    function handleLoad(event) {
+        
+        SoundInstanceBM = createjs.Sound.createInstance("BackGroundMusic");
+        
+        
+        webGLStart();
+    }
+    
+    
+    
+    
+    $(document).ready(function(){
+        $("*").dblclick(function(e){
+            e.preventDefault();
+        });
+    });
+
+    
+    $(document).bind(
+        'touchmove', function(e) {
+            e.preventDefault();
+        }
+    );
+    
+    
+    /*
+    $(document).on(
+        "touchmove", function(e){ e.preventDefault();
+    
+    });
+    */
+   
+   /*
+    $(function() {
+        $( "#container" ).on({
+            "touchmove" : function(e){ 
+                e.preventDefault(); 
+                $(document).bind(
+                    'touchmove', function(e) {
+                        e.preventDefault();
+                    }
+                );
+            }
+        });
+    });
+    
+    $(function() {
+        $( "#container" ).on({
+            "touchend" : function(e){ 
+                e.preventDefault(); 
+                $(document).unbind(
+                    'touchmove'
+                );
+            }
+        });
+    });
+    */
+    /*
+    $(function() {
+        $( "#container" ).dblclick(function(e) {
+                e.preventDefault();
+            });
+    });
+    */
+    
+    
+    $(function() {
+        $( document ).tooltip();
+    });
+    
+    
+    
+    
+    
+    $(function(){
+        $( "#btnhints" ).on( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          if(validCanvas){
+                
+                PlayBloop();
+                
+                
+                //$( "#popupHints" ).popup({ theme: "b" });
+                $( "#popupHints" ).popup("open", { positionTo: "#topHeader",
+                                                   transition: "pop"
+
+                });
+          }
+          
+        });
+    });
+    
+    $(function(){
+        $( "#btnsettings" ).on( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          if(validCanvas){
+                
+                PlayBloop();
+                
+                $( "#placeCheck1" ).empty();
+                $( "#placeCheck2" ).empty();
+                $( "#placeCheck3" ).empty();
+                $( "#placeCheck4" ).empty();
+                
+                if(sceneController.maxWordKey === "High Word Density"){
+                    //document.getElementById('placeCheck1').innerHTML = "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\" checked><label id=\"check1id\" for=\"check1\">High Word Density</label>";
+                    $( "#placeCheck1" ).append( "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\" checked><label id=\"check1id\" for=\"check1\">High Word Density</label>" );
+                }
+                else{
+                    //document.getElementById('placeCheck1').innerHTML = "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\"><label id=\"check1id\" for=\"check1\">High Word Density</label>";
+                    $( "#placeCheck1" ).append( "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\"><label id=\"check1id\" for=\"check1\">High Word Density</label>" );
+                }
+                
+                if(sceneController.cubeColorKey === "Inverse"){
+                    $( "#placeCheck2" ).append( "<input type=\"checkbox\" onclick=\"ToggleInverse();\" id=\"check2\" checked><label id=\"check2id\" for=\"check2\">Inverse Colors</label>" );
+                }
+                else{
+                    $( "#placeCheck2" ).append( "<input type=\"checkbox\" onclick=\"ToggleInverse();\" id=\"check2\"><label id=\"check2id\" for=\"check2\">Inverse Colors</label>" );
+                }
+                
+                if(soundTrack === true){
+                    $( "#placeCheck3" ).append( "<input type=\"checkbox\" onclick=\"ToggleMusic();\" id=\"check3\" checked><label id=\"check3id\" for=\"check3\">Background Music</label>" );
+                }
+                else{
+                    $( "#placeCheck3" ).append( "<input type=\"checkbox\" onclick=\"ToggleMusic();\" id=\"check3\"><label id=\"check3id\" for=\"check3\">Background Music</label>" );
+                }
+                
+                if(soundEffects === true){
+                    $( "#placeCheck4" ).append( "<input type=\"checkbox\" onclick=\"ToggleSound();\" id=\"check4\" checked><label id=\"check4id\" for=\"check4\">Sounds</label>" );
+                }
+                else{
+                    $( "#placeCheck4" ).append( "<input type=\"checkbox\" onclick=\"ToggleSound();\" id=\"check4\"><label id=\"check4id\" for=\"check4\">Sounds</label>" );
+                }
+                
+                
+                $( "#popupSettings" ).popup("open", { positionTo: "#topHeader",
+                                                transition: "pop" 
+                                            
+                });
+          }
+          
+        });
+    });
+    
+    
+    $(function(){
+        $( "#btngames" ).on( "tap", function( event ){
+            $( event.target ).addClass( "tap" );
+          
+            if(validCanvas){
+                
+                PlayBloop();
+                
+                $( "#users tbody" ).empty();
+                for(var i = 0; i < weeklyWordLists.length; i++){
+                    var tElement = weeklyWordLists[i];
+                    if(tElement.date === sceneController.currentGame){
+                       $( "#users tbody" ).append( "<tr style=\"background: #ffccff\">" +
+                        "<td>" + tElement.date + "</td>" +
+                        "<td>" + tElement.cubeSize + "</td>" +
+                        "<td>" + tElement.highScore + "</td>" +
+                        "<td>" + tElement.scoreRate + "</td>" +
+                        "</tr>" );
+                    }
+                    else{
+                        $( "#users tbody" ).append( "<tr>" +
+                        "<td>" + tElement.date + "</td>" +
+                        "<td>" + tElement.cubeSize + "</td>" +
+                        "<td>" + tElement.highScore + "</td>" +
+                        "<td>" + tElement.scoreRate + "</td>" +
+                        "</tr>" );
+                    }
+
+                }
+
+
+                $( "#popupGames" ).popup("open", { positionTo: "#topHeader",
+                                                      transition: "pop" 
+
+                });
+
+
+                $(function(){
+                    $("#usersTBody tr").on( "tap", function( event ){
+                      //$( event.target ).addClass( "tap" );
+                            var listChanged;
+                            var selectedList = $( this ).text();
+                            selectedList = selectedList.substring(0, 8);
+                            
+                            PlayBloop();
+
+                            //$( this ).css("background-color", "rgba(255, 255, 255, 0.0)");
+                            $( this ).css("background-color", "#cccccc");
+
+                            //$( this ).css("transform", "scale(1.05)");
+
+                            if(!(sceneController.currentGame === selectedList)){
+                                listChanged = true;
+                                //$( this ).addClass( "wobble-horizontal" );
+                            }
+                            else {
+                                //$( this ).addClass( "wobble-horizontal" );
+                                listChanged = false;
+                            }
+
+
+
+                            if(!(sceneController.currentGame === selectedList)){
+                                for(var i = 0; i < weeklyWordLists.length; i++){
+                                    var tElement = weeklyWordLists[i];
+                                    if(tElement.date === selectedList){
+
+                                        if (tElement.cubeSize === "4x4"){
+                                            sceneController.preCubeSize = 96;
+                                        }
+                                        else if (tElement.cubeSize === "5x5"){
+                                            sceneController.preCubeSize = 150;
+                                        }
+                                        else if (tElement.cubeSize === "6x6"){
+                                            sceneController.preCubeSize = 216;
+                                        }
+                                        sceneController.wordListPlay = "wordlists/" + tElement.wordList;
+                                        sceneController.currentGame = tElement.date;
+                                        break;
+                                    }
+                                }
+
+                                if($('#check1').prop('checked')){
+                                    sceneController.maxWordKey = "High Word Density";
+                                }
+                                else
+                                {
+                                    sceneController.maxWordKey = "Low Word Density";
+                                }
+                                if($('#check2').prop('checked')){
+                                    sceneController.cubeColorKey = "Inverse";
+                                }
+                                else
+                                {
+                                    sceneController.cubeColorKey = "Normal";
+                                }
+                                
+                                
+                                //sceneController.endAnimationActive = true;
+                                setTimeout(function(){
+                                    
+                                    $( "#popupGames" ).popup( "close" );
+                                    
+                                    if(iWinConsole){
+                                        
+                                        iConsole.ads.show( {
+                                            type: 'interstitial'
+                                        } ).result( function( resultData ) {
+                                            sceneController.endAnimationActive = true;
+                                        } );
+                                    
+                                    }
+                                    else{
+                                        sceneController.endAnimationActive = true;
+                                    }
+                                    
+                                }, 300);
+                                
+                            }
+                            else{
+                                setTimeout(function(){$( "#popupGames" ).popup( "close" );}, 300);
+                            }
+
+                            
+
+
+                      });
+
+                });
+                
+                
+            }
+          
+            
+        });
+        
+    });
+    
+    
+    
+    $(function(){
+        $( "#btninfo" ).on( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          PlayBloop();
+          
+          $("#popupTabs").show();
+          $("#popupTabs").tabs();
+          
+          $( "#popupTabs" ).popup("open", { positionTo: "#topHeader",
+                                                transition: "pop" 
+                                            
+          });
+          
+        });
+    });
+    
+    
+    
+    $(function(){
+        $( "#bottomFooter" ).bind( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          if(validCanvas){
+              
+            PlayBloop();
+              
+            document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
+            $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
+            
+          }
+          
+        });
+    });
+    
+    
+    $(function(){
+        $( "#starbox" ).bind( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          if(validCanvas){
+            
+            PlayBloop();
+            
+            document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
+            $( "#popupBasic" ).popup("open", { positionTo: "#bottomFooter", transition: "pop" });
+            
+          }
+          
+        });
+    });
+    
+   
+    
+   
+   
+    $(function(){
+        
+        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
+       
+            if(validCanvas){
+
+
+                if (event.type === "vmousedown") {  //"vmousedown"
+
+                    handleMouseDownonCanvas(event);
+
+                } else if (event.type === "vmousemove") {  //"vmousemove"
+
+                    handleMouseMoveonCanvas(event);
+
+                } else if (event.type === "vmouseup") {  //"vmouseup"
+
+                    handleMouseUponCanvas(event);
+
+                } else if (event.type === "vmouseout") {
+
+                    handleMouseOutonCanvas(event);
+
+                } else if (event.type === "doubletap") {
+
+                    if(!isFireFoxDesktop){
+                        handleMouseDblClickonCanvas(event);
+                    }
+                }
+
+            }
+        
+        });
+        
+        
+    });
+    
+    
+    /*
+    $(function(){
+
+        $( "#container" ).on( "doubletap", function( event ){  
+
+            if(validCanvas){
+                
+                if (event.type === "doubletap") {
+
+                    handleMouseDblClickonCanvas(event);
+
+                }
+                
+            }
+
+        });
+
+    });
+    */
+    
+    
+    
+    
+</script>
+
+
+
+</head>
+
+<body onload="loadAssets();">
+    
+    
+    
+    
+    <div data-role="page" id="pageWH">
+        
+        <div data-role="header" id="topHeader">
+            <table id="btnTable">
+                <tr>
+
+                    <td ><button id = "btnhints" type="button"><img alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button>
+                    <label id="xcoord" ></label>
+                    </td>
+                    <td ><button id = "btnsettings" type="button"><img alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button>
+                    <label id="xcoord2" ></label>
+                    </td>
+                    <td ><button id = "btngames" type="button"><img alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button>
+                    <label id="ycoord" ></label>
+                    </td>
+                    <td ><button id = "btninfo" type="button"><img alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
+                    <label id="ycoord2" ></label>
+                    </td>
+                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter "></td>
+                    
+                    <td id = "srsbox"><label id="scoreratebox" title=" Score Rate "></label><label id="scorebox" title=" Score "></label></td>
+                    
+                </tr>
+                
+            </table>
+	</div><!-- /header -->
+        
+        
+        <div id="container">
+            <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
+	</div>
+        <script>
+            
+        mvp = document.getElementById('viewport');
+        mvp.setAttribute('content',"width=device-width, initial-scale=1.0");
+        var cWidth;
+        containerScale = true;
+        if (containerScale){
+            cWidth = "640";
+        }
+        else{
+            cWidth = "320";
+        }
+        
+        //var mvcontent = document.getElementById('WordCubed-canvas');
+        //mvcontent.setAttribute('width',cWidth);
+        //mvcontent.setAttribute('height',cWidth);
+        
+        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        pixelRatio = window.devicePixelRatio;
+        tempScaleW = browserWidth / 640;
+        tempScaleH = browserHeight / 842;
+        if(tempScaleH < tempScaleW){
+
+            tempScale = tempScaleH;
+        }
+        else {
+            tempScale = tempScaleW;
+        }
+        tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
+        mvp = document.getElementById('viewport');
+        mvp.setAttribute('content',tempScale);
+        
+        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        //document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
+        //document.getElementById('ycoord2').innerHTML = "&nbsp&nbsp";
+        document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+        document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+        
+    </script>
+        
+        
+        
+        
+        <div data-role="footer" id="bottomFooter" title=" Tap to see all Words ">
+            <p id="wordbox"></p>
+	</div><!-- /footer -->
+        
+        
+        <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:600px" data-dismissible="false">
+            <p id="wordboxpopup"></p>
+            <a href="#"  onclick="ClosePopupBasic()" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+        </div>
+        
+         
+        <div data-role="popup" id="popupHints" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Hints</h1>
+            </div>
+            <p><a id="showHint" href="#"  onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
+            <p><a id="solveTheCube" href="#"  onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
+            <a href="#"  onclick="ClosePopupHints();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+        </div>
+        
+        
+        <div data-role="popup" id="popupSettings" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Settings</h1>
+            </div>
+            <p id="placeCheck3" class="ui-btn ui-shadow ui-corner-all" ><input id="check3" type="checkbox" onclick="ToggleMusic();"><label id="check3id" for="check3">Background Music</label></p>
+            <p id="placeCheck4" class="ui-btn ui-shadow ui-corner-all" ><input id="check4" type="checkbox" onclick="ToggleSound();"><label id="check4id" for="check4">Sounds</label></p>
+            <p id="placeCheck1" class="ui-btn ui-shadow ui-corner-all" ><input id="check1" type="checkbox" onclick="ToggleDensity();"><label id="check1id" for="check1">High Word Density</label></p>
+            <p id="placeCheck2" class="ui-btn ui-shadow ui-corner-all" ><input id="check2" type="checkbox" onclick="ToggleInverse();"><label id="check2id" for="check2">Inverse Colors</label></p>
+            <p><a id="buttonNewGame" href="#"  onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
+            <a href="#"  onclick="ClosePopupSettings();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+        </div>
+        
+        
+        <div data-role="popup" id="popupGames" class="ui-widget" style="max-width:600px" data-dismissible="false">
+            <table id="users" class="ui-widget ui-widget-content">
+              <thead>
+                <tr class="ui-widget-header ">
+                  <th>Puzzle</th>
+                  <th>Cube</th>
+                  <th>High Score</th>
+                  <th>Score Rate</th>
+                </tr>
+              </thead>
+              <tbody id="usersTBody"></tbody>
+            </table>
+        </div>
+        
+        
+        <div data-role="popup" id="popupTabs" class="ui-content" style="max-width:600px" data-dismissible="false">
+            <div data-role="tabs">
+                <ul>
+                  <li><a href="#tabs-1" onclick="PlayBloop();">Instructions</a></li>
+                  <li><a href="#tabs-2" onclick="PlayBloop();">Scoring</a></li>
+                  <li><a href="#tabs-3" onclick="PlayBloop();">Hints</a></li>
+                  <li><a href="#tabs-4" onclick="PlayBloop();">Credits</a></li>
+                </ul>
+
+                <div id="tabs-1">
+                  <p id="tabs-1x">Rotate the cube to find the words listed at the bottom of the screen. &nbsp; Once a word is found, maneuver the cube so the first and last letters of the word are visible, and then lightly double tap the screen to freeze the cube. &nbsp; Tap the first and last letters of the word or drag your finger from one end letter to the other. &nbsp; Selecting words will score <img src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> points. &nbsp; Lightly double tap the screen again to put the cube back in free rotate mode. &nbsp; Continue to look for and select words until all words are found. &nbsp; Then find the hidden word to win the game.<br></p>
+                </div>
+                <div id="tabs-2">
+                  <p id="tabs-2x">Each star <img src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> scores 10 points. &nbsp; First word selected will always score 3 stars per letter. &nbsp; Words selected within 30 seconds of last successful selection will score 3 stars per letter; within 60 seconds, 2 stars per letter; longer than 60 seconds, 1 star per letter. &nbsp; Taking a word hint will score minus 10 points per letter, and when the word is selected, will only score 1 star per letter. &nbsp; Once cube is cleared, any duplicate words selected will always score 3 stars per letter. &nbsp; Score Rate reflects your score against a perfect score.</p>
+                </div>
+                <div id="tabs-3">
+                  <p id="tabs-3x">1. Check word list to identify possible duplicate words. &nbsp; For example, the words <q>FLY</q> and <q>FIREFLY</q> both have the word <q>FLY</q> in them. &nbsp; Every instance of a word is scorable.<br>2. Star symbol <img src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> at top of screen indicates current stars per letter. &nbsp; To maximize points, select shorter words when Yellow star is showing, longer words when Blue star is showing.<br>3. To select words, always ensure Blue selection marker highlights an end letter before selecting other end letter.</p>
+                </div>
+                <div id="tabs-4">
+                    <!--<img alt="Hints" src="images/wordhead.png" width="524" height="177">-->
+                    <div>
+                    <p>Copyright &copy; 2014 JWACK APPS<br>All rights reserved<br>http://jwackapps.com<br><br>Word Cubed Weekly was created using HTML5, javascript and WebGL.<br><br>Questions, comments, and issues may be directed to wordheader@gmail.com<br><br>
+                        3D Word Games available on the App Store<br></p>
+                    </div>
+                    <div>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td align="center">
+                                <img alt="Hints" src="images/WCIcon152x152.png" width="120" height="120">
+                            </td>
+                            <td align="center">
+                                <img alt="Hints" src="images/icon03-152x152.png" width="120" height="120">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                Word Cubed
+                            </td>
+                            <td align="center">
+                                Word Head
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td align="center">
+                                <img alt="Hints" src="images/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="135" height="40">
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                </div>
+
+                <a href="#"  onclick="ClosePopupTabs();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+            </div>
+        </div>
+        
+        
+        
+        <div data-role="popup" id="popupWin" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Congratulation!</h1>
+            </div>
+            <p id="Winmessage" style="font-size:30px"></p>
+            <a href="#"  onclick="ClosePopupWin();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+            <a href="#"  onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Play Again</a>
+        </div>
+        
+        
+        <div id="agentdisplay">
+	</div>
+        <div id="agentdisplay2">
+	</div>
+        
+    </div> <!--/WH page -->
+        
+     
+   
+</body>
+
+</html>
