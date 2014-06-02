@@ -24,5 +24,196 @@
  * THE SOFTWARE.
  * 
  */
+(function ($) {
+    $.attrFn = $.attrFn || {};
 
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('(l($){$.L=$.L||{};m k=n,2={1f:5,1g:11,1h:11,1i:1j,M:1k,8:(\'A\'B C.D&&!k),E:(\'A\'B C.D&&!k)?\'1l\':\'1m\',F:(\'A\'B C.D&&!k)?\'1n\':\'1o\',12:(\'A\'B C.D&&!k)?\'1p\':\'1q\',1r:13,1s:13};$.1t=l(){o 2.8};$.1u=l(){o 2.E};$.1v=l(){o 2.F};$.1w=l(){o 2.12};$.1x([\'N\'],l(i,b){$.1y[b]=l(a){o a?3.O(b,a):3.1z(b)};$.L[b]=u});$.14.1A.N={1B:l(){m j=3,$3=$(j),P,r,p,4;$3.O(2.E,l(e){m a=$3.7(\'v\')||n;G(a){o n}Q{$3.7(\'v\',u);$3.7(\'15\',n);P=e.9;$3.7(\'16\',17.18);4=e.1C;p={\'R\':{\'x\':(2.8)?4.6[0].s:e.s,\'y\':(2.8)?4.6[0].t:e.t},\'q\':{\'x\':(2.8)?4.6[0].S-4.6[0].9.T:e.U,\'y\':(2.8)?4.6[0].V-4.6[0].9.W:e.X},\'w\':H I().J(),\'9\':e.9};o u}}).O(2.F,l(e){m a=H I().J();m b=$3.7(\'Y\');m c=$3.7(\'19\')||a+1;G(b){c=a+1;$3.7(\'Y\',n)}m d=a-c;m f;z.K(r);$3.7(\'1a\',17.18);G(d<2.M&&d>0&&(e.9===P)&&d>1D){$3.7(\'v\',n);$3.7(\'15\',u);z.K(r);f={\'R\':{\'x\':(2.8)?4.6[0].s:e.s,\'y\':(2.8)?4.6[0].t:e.t},\'q\':{\'x\':(2.8)?4.6[0].S-4.6[0].9.T:e.U,\'y\':(2.8)?4.6[0].V-4.6[0].9.W:e.X},\'w\':H I().J(),\'9\':e.9};m g={\'p\':p,\'1E\':f,\'1F\':f.w-p.w};1b(j,\'N\',e,g)}Q{f={\'R\':{\'x\':(2.8)?4.6[0].s:e.s,\'y\':(2.8)?4.6[0].t:e.t},\'q\':{\'x\':(2.8)?4.6[0].S-4.6[0].9.T:e.U,\'y\':(2.8)?4.6[0].V-4.6[0].9.W:e.X},\'w\':H I().J(),\'9\':e.9};m h=1c.1d(f.q.x*1.0-p.q.x*1.0);m i=1c.1d(f.q.y*1.0-p.q.y*1.0);G(h<=10&&i<=10){r=z.1G(l(e){z.K(r);$3.7(\'v\',n)},2.M,[e])}Q{z.K(r);$3.7(\'v\',n);$3.7(\'Y\',u);o}}$3.7(\'19\',a)})},1H:l(){$(3).1e(2.E,$(3).7.16).1e(2.F,$(3).7.1a)}};l 1b(a,b,c,d){m e=c.Z;c.Z=b;$.14.1I.1J(a,c,d);c.Z=e}})(1K);',62,109,'||settings|this|origEvent||touches|data|touch_capable|target||||||||||||function|var|false|return|firstTap|offset|action|screenX|screenY|true|firsttime|time|||window|ontouchstart|in|document|documentElement|startevent|endevent|if|new|Date|getTime|clearTimeout|attrFn|doubletap_int|doubletap|on|origTarget|else|position|pageX|offsetLeft|offsetX|pageY|offsetTop|offsetY|doubletappcancelled|type||50|moveevent|null|event|doubletapped|callee1|arguments|callee|lastTouch|callee2|triggerCustomEvent|Math|abs|off|tap_pixel_range|swipe_h_threshold|swipe_v_threshold|taphold_threshold|750|300|touchstart|mousedown|touchend|mouseup|touchmove|mousemove|hold_timer|tap_timer|isTouchCapable|getStartEvent|getEndEvent|getMoveEvent|each|fn|trigger|special|setup|originalEvent|100|secondTap|interval|setTimeout|remove|dispatch|call|jQuery'.split('|'),0,{}))
+    // navigator.userAgent.toLowerCase() isn't reliable for Chrome installs
+    // on mobile devices. As such, we will create a boolean isChromeDesktop
+    // The reason that we need to do this is because Chrome annoyingly
+    // purports support for touch events even if the underlying hardware
+    // does not!
+    var //agent = navigator.userAgent.toLowerCase(),
+        //isChromeDesktop = (agent.indexOf('chrome') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0),
+        isChromeDesktop = false,
+        
+        
+        settings = {
+            tap_pixel_range: 5,
+            swipe_h_threshold: 50,
+            swipe_v_threshold: 50,
+            taphold_threshold: 750,
+            doubletap_int: 300,
+
+            touch_capable: ('ontouchstart' in document.documentElement && !isChromeDesktop),
+            //orientation_support: ('orientation' in window && 'onorientationchange' in window),
+
+            startevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'touchstart' : 'mousedown',
+            endevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'touchend' : 'mouseup',
+            moveevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'touchmove' : 'mousemove',
+            //tapevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'tap' : 'click',
+            //scrollevent: ('ontouchstart' in document.documentElement && !isChromeDesktop) ? 'touchmove' : 'scroll',
+
+            hold_timer: null,
+            tap_timer: null
+        };
+        
+    
+    // Convenience functions:
+    $.isTouchCapable = function() { return settings.touch_capable; };
+    $.getStartEvent = function() { return settings.startevent; };
+    $.getEndEvent = function() { return settings.endevent; };
+    $.getMoveEvent = function() { return settings.moveevent; };
+    //$.getTapEvent = function() { return settings.tapevent; };
+    //$.getScrollEvent = function() { return settings.scrollevent; };
+    
+    // Add Event shortcuts:
+    //$.each(['tapstart', 'tapend', 'tap', 'singletap', 'doubletap', 'taphold', 'swipe', 'swipeup', 'swiperight', 'swipedown', 'swipeleft', 'swipeend', 'scrollstart', 'scrollend', 'orientationchange'], function (i, name) {
+    $.each(['doubletap'], function (i, name) {
+        $.fn[name] = function (fn) {
+            return fn ? this.on(name, fn) : this.trigger(name);
+        };
+
+        $.attrFn[name] = true;
+    });
+
+    
+
+    // doubletap Event:
+    $.event.special.doubletap = {
+        setup: function () {
+            var thisObject = this,
+                $this = $(thisObject),
+                origTarget,
+                action,
+                firstTap,
+                origEvent;
+
+            $this.on(settings.startevent, function (e) {
+                var firsttime = $this.data('firsttime') || false;
+                if (firsttime) {
+                    return false;
+                } else {
+                    $this.data('firsttime', true);
+                    $this.data('doubletapped', false);
+                    
+                    origTarget = e.target;
+                    $this.data('callee1', arguments.callee);
+
+                    origEvent = e.originalEvent;
+                    firstTap = {
+                        'position': {
+                            'x': (settings.touch_capable) ? origEvent.touches[0].screenX : e.screenX,
+                            'y': (settings.touch_capable) ? origEvent.touches[0].screenY : e.screenY
+                        },
+                        'offset': {
+                            'x': (settings.touch_capable) ? origEvent.touches[0].pageX - origEvent.touches[0].target.offsetLeft : e.offsetX,
+                            'y': (settings.touch_capable) ? origEvent.touches[0].pageY - origEvent.touches[0].target.offsetTop : e.offsetY
+                        },
+                        'time': new Date().getTime(),
+                        'target': e.target
+                    };
+
+                    return true;
+                }
+            }).on(settings.endevent, function (e) {
+                var now = new Date().getTime();
+                var doubletappcancelled = $this.data('doubletappcancelled');
+                var lastTouch = $this.data('lastTouch') || now + 1;
+                if(doubletappcancelled){
+                    lastTouch = now + 1;
+                    $this.data('doubletappcancelled', false);
+                }
+                var delta = now - lastTouch;
+                var lastTap;
+                
+                window.clearTimeout(action);
+                $this.data('callee2', arguments.callee);
+
+                if (delta < settings.doubletap_int && delta > 0 && (e.target === origTarget) && delta > 100) {
+                    $this.data('firsttime', false);
+                    $this.data('doubletapped', true);
+                    window.clearTimeout(action);
+                    //window.clearTimeout(settings.tap_timer);
+
+                    // Now get the current event:
+                    lastTap = {
+                        'position': {
+                            'x': (settings.touch_capable) ? origEvent.touches[0].screenX : e.screenX,
+                            'y': (settings.touch_capable) ? origEvent.touches[0].screenY : e.screenY
+                        },
+                        'offset': {
+                            'x': (settings.touch_capable) ? origEvent.touches[0].pageX - origEvent.touches[0].target.offsetLeft : e.offsetX,
+                            'y': (settings.touch_capable) ? origEvent.touches[0].pageY - origEvent.touches[0].target.offsetTop : e.offsetY
+                        },
+                        'time': new Date().getTime(),
+                        'target': e.target
+                    };
+
+                    var touchData = {
+                        'firstTap': firstTap,
+                        'secondTap': lastTap,
+                        'interval': lastTap.time - firstTap.time
+                    };
+
+                    triggerCustomEvent(thisObject, 'doubletap', e, touchData);
+                } else {
+                    //$this.data('lastTouch', now);
+                    
+                    lastTap = {
+                        'position': {
+                            'x': (settings.touch_capable) ? origEvent.touches[0].screenX : e.screenX,
+                            'y': (settings.touch_capable) ? origEvent.touches[0].screenY : e.screenY
+                        },
+                        'offset': {
+                            'x': (settings.touch_capable) ? origEvent.touches[0].pageX - origEvent.touches[0].target.offsetLeft : e.offsetX,
+                            'y': (settings.touch_capable) ? origEvent.touches[0].pageY - origEvent.touches[0].target.offsetTop : e.offsetY
+                        },
+                        'time': new Date().getTime(),
+                        'target': e.target
+                    };
+                    
+                    var deltaX = Math.abs(lastTap.offset.x * 1.0 - firstTap.offset.x * 1.0);
+                    var deltaY = Math.abs(lastTap.offset.y * 1.0 - firstTap.offset.y * 1.0);
+                    if( deltaX <= 10 && deltaY <= 10 ){
+                        
+                        action = window.setTimeout(function (e) {
+                            window.clearTimeout(action);
+                            //window.clearTimeout(settings.tap_timer);
+                            $this.data('firsttime', false);
+                        }, settings.doubletap_int, [e]);
+                    }
+                    else
+                    {
+                        window.clearTimeout(action);
+                        //window.clearTimeout(settings.tap_timer);
+                        $this.data('firsttime', false);
+                        $this.data('doubletappcancelled', true);
+                        return;
+                    }
+                    
+                }
+                $this.data('lastTouch', now);
+                
+            });
+        },
+        
+        remove: function () {
+            $(this).off(settings.startevent, $(this).data.callee1).off(settings.endevent, $(this).data.callee2);
+        }
+    };
+
+    
+
+    // Trigger a custom event:
+
+    function triggerCustomEvent(obj, eventType, event, touchData) {
+        var originalType = event.type;
+        event.type = eventType;
+
+        $.event.dispatch.call(obj, event, touchData);
+        event.type = originalType;
+    }
+
+    
+
+})(jQuery);

@@ -7,4 +7,71 @@ ajkiger@gmail.com
 */
 
 
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('5 f(){3.g(6/7,6/7,6/7,1.0);3.c(3.d)}5 h(){3.i(0,0,3.8,3.9);3.j(3.k|3.l);e.m(a,-3.8/2.0,3.8/2.0,-3.9/2.0,3.9/2.0,0.1,n.0);e.o(a,a,[0.0,0.0,-p.0]);3.q(3.r,3.s);3.c(3.t);3.u(3.d);3.v(4.w,1.0);3.x(4.y,z);3.b(4.A,[0,0,B]);3.b(4.C,[0.2,0.2,0.2]);3.b(4.D,[1.0,1.0,1.0])}5 E(){}',41,41,'|||gl|shaderProgram|function|238|255|viewportWidth|viewportHeight|pMatrix|uniform3fv|enable|DEPTH_TEST|mat4|initContext|clearColor|EAGLViewBeginDraw|viewport|clear|COLOR_BUFFER_BIT|DEPTH_BUFFER_BIT|ortho|1000|translate|500|blendFunc|SRC_ALPHA|ONE_MINUS_SRC_ALPHA|BLEND|disable|uniform1f|alphaUniform|uniform1i|useLightingUniform|true|lightPositionUniform|800|ambientLightColorUniform|diffuseLightColorUniform|EAGLViewFinishDraw'.split('|'),0,{}))
+function initContext(){
+    
+    
+    gl.clearColor(238/255, 238/255, 238/255, 1.0);
+    gl.enable(gl.DEPTH_TEST);
+    
+    
+    
+}
+
+
+function EAGLViewBeginDraw(){
+    
+    
+    gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+    
+    mat4.ortho(pMatrix, -gl.viewportWidth/2.0, gl.viewportWidth/2.0, -gl.viewportHeight/2.0, gl.viewportHeight/2.0, 0.1, 1000.0);
+    mat4.translate(pMatrix, pMatrix, [0.0, 0.0, -500.0]);
+    
+    
+    
+    
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); //gl.ONE_MINUS_SRC_ALPHA
+    gl.enable(gl.BLEND);
+    gl.disable(gl.DEPTH_TEST);
+    gl.uniform1f(shaderProgram.alphaUniform, 1.0);
+    
+    
+    gl.uniform1i(shaderProgram.useLightingUniform, true);
+    gl.uniform3fv(shaderProgram.lightPositionUniform, [0, 0, 800]);
+    
+    gl.uniform3fv(shaderProgram.ambientLightColorUniform, [0.2, 0.2, 0.2]);
+    gl.uniform3fv(shaderProgram.diffuseLightColorUniform, [1.0, 1.0, 1.0]); //1.3
+    //gl.uniform3fv(shaderProgram.specularLightColorUniform, [1.0, 1.0, 1.0]);
+      
+    
+    
+    
+    //glEnable(GL_TEXTURE_2D);
+    //glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); //GL11.GL_ONE, GL11.GL_ONE_MINUS_SRC_ALPHA
+    //glEnable(GL_BLEND);
+
+    //glEnable(GL_LIGHTING);
+    //glEnable(GL_LIGHT0);
+
+    //glEnable(GL_COLOR_MATERIAL);
+
+    //glEnable(GL_CULL_FACE);
+    //glCullFace(GL_FRONT);
+    //glFrontFace(GL_CCW);
+
+
+    // set a clean transform
+    
+    //glLoadIdentity();
+    
+}
+
+
+
+function EAGLViewFinishDraw(){
+    
+    
+    
+    
+}
