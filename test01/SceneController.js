@@ -1970,7 +1970,7 @@ function selectWords(wordArrayBig){
         if (maxWords)
             numberWords = 50; // 50
         else
-            numberWords = 2; // 8
+            numberWords = 8; // 8
 
         for (var i = 0; i < numberWords; i++){
             rArray = Math.floor(Math.random() * 4);
