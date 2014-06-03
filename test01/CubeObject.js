@@ -1264,6 +1264,7 @@ function cObjectUpdate() {
 
 function cObjectRender() {
 
+    /*
     if (active){
         //gl.clearColor(238/255, 130/255, 238/255, 1.0); // purple
         
@@ -1277,7 +1278,8 @@ function cObjectRender() {
         $('#topHeader').css({"background-color":"#eeaaee"});
         
     }
-    
+    */
+   
     var currentSide;
     for (var i = 0; i < 6; i++)
     {
