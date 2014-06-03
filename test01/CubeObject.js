@@ -1126,7 +1126,7 @@ function cObjectUpdate() {
         {
             //zoomSizeMin = 65.0;
             if (containerScale){
-                zoomSizeMax = 65.0;
+                zoomSizeMax = 75.0; //65
                 growSpeed = 0.90;
             }
             else{
