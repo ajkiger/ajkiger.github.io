@@ -1265,14 +1265,17 @@ function cObjectUpdate() {
 function cObjectRender() {
 
     if (active){
-        //gl.clearColor(238/255, 238/255, 238/255, 1.0);
+        //gl.clearColor(238/255, 130/255, 238/255, 1.0); // purple
         
         $('#bottomFooter').css({"background-color":"#eee"});
+        $('#topHeader').css({"background-color":"#eee"});
     }
     else{
         //gl.clearColor(204/255, 204/255, 204/255, 1.0);
         
-        $('#bottomFooter').css({"background-color":"#cccccc"});
+        $('#bottomFooter').css({"background-color":"#eeaaee"});
+        $('#topHeader').css({"background-color":"#eeaaee"});
+        
     }
     
     var currentSide;
