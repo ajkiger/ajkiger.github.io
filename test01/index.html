@@ -690,14 +690,14 @@ ajkiger@gmail.com
             }
             else{
                 
-                SoundInstanceBM.play({loop:-1});
+                //SoundInstanceBM.play({loop:-1});
         
                 if(typeof(Storage)!=="undefined")
                 {
                     soundTrack = localStorage.getItem("tMusic");
                     if(soundTrack === "false"){
                         soundTrack = false;
-                        SoundInstanceBM.pause();
+                        //SoundInstanceBM.pause();
                     }
                     else{
                         soundTrack = true;
@@ -807,8 +807,8 @@ ajkiger@gmail.com
     };
     
     function handleComplete(event) {
-        initBackGroundMusic();
-        
+        //initBackGroundMusic();
+        webGLStart();
     }
     
     
@@ -819,7 +819,7 @@ ajkiger@gmail.com
 
         var audioPath = "sounds/";
         var manifest = [
-            {id:"BackGroundMusic", src:"WordCubedMelody.mp3"}
+            {id:"BackGroundMusic", src:"WordCubedMelody.ogg"}
         ];
 
         createjs.Sound.alternateExtensions = ["mp3"];
