@@ -822,17 +822,14 @@ ajkiger@gmail.com
         createjs.Sound.addEventListener("fileload", handleLoad);
         createjs.Sound.registerManifest(manifest, audioPath);
         
-        
-        agent = navigator.userAgent.toLowerCase();
-        isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
-        
-        document.getElementById('agentdisplay').innerHTML = agent;
     };
     
     
     function handleLoad(event) {
         
-        SoundInstanceBM = createjs.Sound.createInstance("BackGroundMusic");
+        
+        
+        //SoundInstanceBM = createjs.Sound.createInstance("BackGroundMusic");
         
         
         webGLStart();
