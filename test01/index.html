@@ -30,16 +30,6 @@ ajkiger@gmail.com
     var isWindowsPhone;
     var iWinConsole = false;
     
-    agent = navigator.userAgent.toLowerCase();
-    isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
-        
-    if(isWindowsPhone){
-        tempScale = "width=640";
-    
-        mvp = document.getElementById('viewport');
-        mvp.setAttribute('content',tempScale);
-    }
-    
 </script>
 
 <script src="../iconsole.js" type="text/javascript"></script>
@@ -646,7 +636,7 @@ ajkiger@gmail.com
         agent = navigator.userAgent.toLowerCase();
         isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
         
-        document.getElementById('agentdisplay').innerHTML = agent;
+        //document.getElementById('agentdisplay').innerHTML = agent;
         
         lowLag.init({'urlPrefix':'sounds/'});
         lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
@@ -701,14 +691,14 @@ ajkiger@gmail.com
             }
             else{
                 
-                //SoundInstanceBM.play({loop:-1});
+                SoundInstanceBM.play({loop:-1});
         
                 if(typeof(Storage)!=="undefined")
                 {
                     soundTrack = localStorage.getItem("tMusic");
                     if(soundTrack === "false"){
                         soundTrack = false;
-                        //SoundInstanceBM.pause();
+                        SoundInstanceBM.pause();
                     }
                     else{
                         soundTrack = true;
@@ -818,8 +808,8 @@ ajkiger@gmail.com
     };
     
     function handleComplete(event) {
-        //initBackGroundMusic();
-        webGLStart();
+        initBackGroundMusic();
+        //webGLStart();
     }
     
     
@@ -1321,20 +1311,15 @@ ajkiger@gmail.com
             tempScale = tempScaleW;
         }
         
-        if(isWindowsPhone){
-            //tempScale = "width=640";
-        }
-        else{
-            tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
-            mvp = document.getElementById('viewport');
-            mvp.setAttribute('content',tempScale);
-        }
+        tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
+        mvp = document.getElementById('viewport');
+        mvp.setAttribute('content',tempScale);
         
         
-        document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
-        document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
-        document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
-        document.getElementById('ycoord2').innerHTML = "&nbsp&nbsp";
+        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        //document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
+        //document.getElementById('ycoord2').innerHTML = "&nbsp&nbsp";
         
         document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
         document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
