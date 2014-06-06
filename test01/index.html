@@ -625,6 +625,11 @@ ajkiger@gmail.com
     
     
     function webGLStart() {
+        agent = navigator.userAgent.toLowerCase();
+        isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
+        
+        document.getElementById('agentdisplay').innerHTML = agent;
+        
         
         //soundTrack = true;
         
@@ -632,10 +637,7 @@ ajkiger@gmail.com
         validCanvas = true;
         initGL(canvas);
         
-        agent = navigator.userAgent.toLowerCase();
-        isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
         
-        document.getElementById('agentdisplay').innerHTML = agent;
         
         lowLag.init({'urlPrefix':'sounds/'});
         lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
