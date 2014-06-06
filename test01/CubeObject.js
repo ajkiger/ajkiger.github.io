@@ -94,15 +94,13 @@ var rDirection;
 
 
 
+
 function CubeObjectInit() {
 
     cObject.x = 0.0;
     cObject.y = 0.0;
     cObject.z = 0.0;
 
-    //cObject.xScale = 50;
-    //cObject.yScale = 50;
-    //cObject.zScale = 50;
     cObject.xScale = 0.0050;
     cObject.yScale = 0.0050;
     cObject.zScale = 0.0050;

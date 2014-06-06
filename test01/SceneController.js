@@ -47,12 +47,16 @@ var blackStarTexture;
 var textureChangedX;
 
 var postScoreNow;
+var priorScore;
 
 var totalPoints;
 var levelHighScore;
 
+var sceneController;
+
 
 function sceneControllerInit(){
+    sceneController = new Object();
     
     sceneController.totalLetteronCube = 0;
     sceneController.iGameScore = 0;
@@ -381,6 +385,7 @@ function endOldStartNewGame(){
 function sceneControllerLoadScene(){
     
     lastParticle = false;
+    priorScore = 0;
     sceneController.postGameWinMessage = false;
     sceneController.cubeSize = sceneController.preCubeSize;
     document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
@@ -501,38 +506,133 @@ function sceneControllerLoadScene(){
     
     
     if(iWinConsole){
+        
+        
         var tempPoints;
-        iConsole.game.getGameData().result( function(gameData) {
-            tempPoints = gameData.data;
-            document.getElementById('agentdisplay2').innerHTML = "st: " + tempPoints;
+        /*
+        iConsole.game.getGameData(null).result( function ( resultData ) {
+           tempPoints = resultData;
+           var tttppp;
+           if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
+                tttppp = 0.0;
+                document.getElementById('agentdisplay').innerHTML = "Score1: " + tttppp;
+            }
+            else{
+                tttppp = parseInt(tempPoints);
+                document.getElementById('agentdisplay').innerHTML = "Score2: " + tttppp;
+            }
+           
+        } );
+        */
+       
+        iConsole.game.getLevelData( { level: 4 } ).result( function ( resultData ) {
+            tempPoints = resultData.data;
+            tempPoints = tempPoints.replace(/"/g, ""); //remove all quotes
+            
+            //tempPoints = "06/05/14;2000;100%;06/04/14;1500;95%;06/03/14;180;55%;06/02/14; ; ;06/01/14; ; ;05/31/14;150;45%;05/30/14; ; ;05/29/14; ; ;05/28/14;240;62%;05/27/14; ; ;05/26/14; ; ;05/25/14; ; ;";
+            //document.getElementById('agentdisplay2').innerHTML = "st: " + tempPoints;
+            
             if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0){
+                
+            }
+            else{
+                
+                var tempPointsArray = tempPoints.split(";");
+                
+                var tempArray = new Array();
+                for (var i = 0; i < tempPointsArray.length; i = i + 3){
+                    var newElement = {
+                        date: tempPointsArray[i],
+                        highScore: tempPointsArray[i + 1],
+                        scoreRate: tempPointsArray[i + 2]
+                    };
+                    tempArray.push(newElement);
+                }
+                
+               
+                for (var i = 0; i < weeklyWordLists.length; i++){
+                    var tElement = weeklyWordLists[i];
+                    
+                    for (var j = 0; j < tempArray.length; j++){
+                        var jElement = tempArray[j];
+                        
+                        if(tElement.date === jElement.date){
+                            if(jElement.highScore !== null && tElement.highScore !== null){
+                                if(jElement.highScore > tElement.highScore){
+                                    tElement.highScore = jElement.highScore;
+                                    tElement.scoreRate = jElement.scoreRate;
+                                }
+                            }
+                            else if(jElement.highScore !== null && tElement.highScore === null){
+                                tElement.highScore = jElement.highScore;
+                                tElement.scoreRate = jElement.scoreRate;
+                            }
+                            break;
+                        }
+                        
+                    }
+
+                }
+
+                
+                
+            }
+        });
+       
+        iConsole.game.getLevelData( { level: 0 } ).result( function ( resultData ) {
+            tempPoints = resultData.data;
+            //document.getElementById('agentdisplay2').innerHTML = "st: " + tempPoints;
+            if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
                 totalPoints = 0.0;
-                document.getElementById('agentdisplay').innerHTML = "1: " + totalPoints;
+                //document.getElementById('agentdisplay').innerHTML = "1: " + totalPoints;
             }
             else{
                 totalPoints = parseInt(tempPoints);
-                document.getElementById('agentdisplay').innerHTML = "2: " + totalPoints;
+                //document.getElementById('agentdisplay').innerHTML = "2: " + totalPoints;
             }
         });
         
-        
-        
         if (sceneController.cubeSize === 96)
         {
-            iConsole.game.getLevelData( { level: 1 } ).result( function (resultData) {
-                levelHighScore =  resultData.data * 1.0;
+            iConsole.game.getLevelData( { level: 1 } ).result( function ( resultData ) {
+                tempPoints = resultData.data;
+                if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
+                    levelHighScore = 0.0;
+                    //document.getElementById('agentdisplay').innerHTML = "4x4 B: " + levelHighScore;
+                }
+                else{
+                    levelHighScore = parseInt(tempPoints);
+                    //document.getElementById('agentdisplay2').innerHTML = "4x4 L: " + levelHighScore;
+                }
             } );
         }
         else if (sceneController.cubeSize === 150)
         {
-            iConsole.game.getLevelData( { level: 2 } ).result( function (resultData) {
-                levelHighScore =  resultData.data * 1.0;
+            iConsole.game.getLevelData( { level: 2 } ).result( function ( resultData ) {
+                tempPoints = resultData.data;
+                if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
+                
+                    levelHighScore = 0.0;
+                    //document.getElementById('agentdisplay').innerHTML = "5x5 B: " + levelHighScore;
+                }
+                else{
+                    levelHighScore = parseInt(tempPoints);
+                    //document.getElementById('agentdisplay2').innerHTML = "5x5 L: " + levelHighScore;
+                }
             } );
         }
         else if (sceneController.cubeSize === 216)
         {
-            iConsole.game.getLevelData( { level: 3 } ).result( function (resultData) {
-                levelHighScore =  resultData.data * 1.0;
+            iConsole.game.getLevelData( { level: 3 } ).result( function ( resultData ) {
+                tempPoints = resultData.data;
+                if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
+                    levelHighScore = 0.0;
+                    //document.getElementById('agentdisplay').innerHTML = "6x6 B: " + levelHighScore;
+                }
+                else{
+                    levelHighScore = parseInt(tempPoints);
+                    //document.getElementById('agentdisplay2').innerHTML = "6x6 L: " + levelHighScore;
+                }
             } );
         }
         
@@ -834,35 +934,69 @@ function postTotalPointsiWin(){
     
     if(iWinConsole){
         var cScore = parseInt(document.getElementById('scorebox').innerHTML);
+        var aScore = cScore - priorScore;
+        priorScore = cScore;
         
-        document.getElementById('agentdisplay').innerHTML = "3: " + totalPoints;
-        totalPoints = totalPoints + cScore;
-        document.getElementById('agentdisplay2').innerHTML = "4: " + totalPoints;
+        totalPoints = totalPoints + aScore;
         
-        iConsole.game.setGameData( {
+        //iConsole.game.setGameData( 
+            //123456
+         //);
+        
+        iConsole.game.postHighScore( {
+            score: totalPoints
+        } ).result( function () {
+            //document.getElementById('agentdisplay').innerHTML = "Total Points: " + totalPoints;
+        } );
+        
+        
+        iConsole.game.setLevelData( {
+            level: 0,
             data: totalPoints
         } );
         
-        /*
+        if(cScore > levelHighScore){
+            levelHighScore = cScore;
+        }
+        
         if (sceneController.cubeSize === 96)
         {
-            iConsole.game.getLevelData( { level: 1 } ).result( function (resultData) {
-                levelHighScore =  resultData.data * 1.0;
+            iConsole.game.setLevelData( {
+                level: 1,
+                data: levelHighScore
             } );
+            //document.getElementById('agentdisplay').innerHTML = "4x4 S: " + levelHighScore;
         }
         else if (sceneController.cubeSize === 150)
         {
-            iConsole.game.getLevelData( { level: 2 } ).result( function (resultData) {
-                levelHighScore =  resultData.data * 1.0;
+            iConsole.game.setLevelData( {
+                level: 2,
+                data: levelHighScore
             } );
+            //document.getElementById('agentdisplay').innerHTML = "5x5 S: " + levelHighScore;
         }
         else if (sceneController.cubeSize === 216)
         {
-            iConsole.game.getLevelData( { level: 3 } ).result( function (resultData) {
-                levelHighScore =  resultData.data * 1.0;
+            iConsole.game.setLevelData( {
+                level: 3,
+                data: levelHighScore
             } );
+            //document.getElementById('agentdisplay').innerHTML = "6x6 S: " + levelHighScore;
         }
-        */
+        
+        
+        var data0 = "";
+        for(var i = 0; i < weeklyWordLists.length; i++){
+            var tElement = weeklyWordLists[i];
+            
+            data0 = data0 + tElement.date + ";" + tElement.highScore + ";" + tElement.scoreRate + ";";
+        }
+        iConsole.game.setLevelData( {
+            level: 4,
+            data: data0
+        } );
+        
+        
     }
     
 }
