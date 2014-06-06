@@ -12,8 +12,8 @@ ajkiger@gmail.com
 <head>
 <title>Word Cubed Weekly</title>
 
-<!--<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">-->
-<meta id="viewport" name="viewport" content="width=640, initial-scale=1.0">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<meta id="viewport" name="viewport" content="width=640, initial-scale=1.0">-->
 <meta name="MobileOptimized" content="640">
 <meta name="HandheldFriendly" content="True">
 <script>
@@ -27,6 +27,7 @@ ajkiger@gmail.com
     var mvp;
     var agent;
     var isFireFoxDesktop;
+    var isWindowsPhone;
     var iWinConsole = false;
     
 </script>
@@ -1278,9 +1279,12 @@ ajkiger@gmail.com
             <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
 	</div>
         <script>
-        /*
-        mvp = document.getElementById('viewport');
-        mvp.setAttribute('content',"width=device-width, initial-scale=1.0");
+        
+        agent = navigator.userAgent.toLowerCase();
+        isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
+        
+        //mvp = document.getElementById('viewport');
+        //mvp.setAttribute('content',"width=device-width, initial-scale=1.0");
         var cWidth;
         containerScale = true;
         if (containerScale){
@@ -1307,7 +1311,12 @@ ajkiger@gmail.com
             tempScale = tempScaleW;
         }
         
-        tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
+        if(isWindowsPhone){
+            tempScale = "width=640, initial-scale=1.0";
+        }
+        else{
+            tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale; // + ", user-scalable=no";
+        }
         mvp = document.getElementById('viewport');
         mvp.setAttribute('content',tempScale);
         
@@ -1318,7 +1327,7 @@ ajkiger@gmail.com
         
         document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
         document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
-        */
+        
         
         
     </script>
