@@ -789,8 +789,11 @@ ajkiger@gmail.com
             {src:"particle-black12-atlas.png", id:"image3"},
             {src:"particle-red12-atlas.png", id:"image4"}
         ];
-
+        
+        
         preload = new createjs.LoadQueue(true, "images/");
+        
+        
 
         // Use this instead to use tag loading
         //preload = new createjs.PreloadJS(false);
@@ -816,7 +819,7 @@ ajkiger@gmail.com
 
         var audioPath = "sounds/";
         var manifest = [
-            {id:"BackGroundMusic", src:"WordCubedMelody.ogg"}
+            {id:"BackGroundMusic", src:"WordCubedMelody.mp3"}
         ];
 
         createjs.Sound.alternateExtensions = ["mp3"];
@@ -828,14 +831,7 @@ ajkiger@gmail.com
     
     function handleLoad(event) {
         
-        agent = navigator.userAgent.toLowerCase();
-        isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
-        
-        document.getElementById('agentdisplay').innerHTML = agent;
-        
         SoundInstanceBM = createjs.Sound.createInstance("BackGroundMusic");
-        
-        
         webGLStart();
     }
     
