@@ -130,8 +130,8 @@ function sceneControllerInit(){
             weeklyWordLists.pop();
         }
     }
-    if(weeklyWordLists.length > 14){
-        var rCount = weeklyWordLists.length - 14;
+    if(weeklyWordLists.length > 13){
+        var rCount = weeklyWordLists.length - 13;
         for(var i = 0; i < rCount; i++){
             weeklyWordLists.splice(0,1);
         }
