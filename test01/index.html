@@ -264,7 +264,7 @@ ajkiger@gmail.com
     #starbox {
         //margin-top: 2px;
         //margin-left: 50px;
-        //vertical-align:bottom;
+        vertical-align:bottom;
     }
     
     #namebox{
@@ -613,6 +613,9 @@ ajkiger@gmail.com
 
             lastTime = new Date().getTime();
             
+            
+            
+            
         }
         
         
@@ -711,7 +714,21 @@ ajkiger@gmail.com
             }
             
             
+            canvas.addEventListener(
+                "webglcontextlost", function (event) {
+
+              // inform WebGL that we handle context restoration
+              //event.preventDefault();
+
+              // Stop rendering
+              //window.cancelAnimationFrame(requestId);
+              
+              document.getElementById('contextStatus').innerHTML = "CL";
+              
+              
+            }, false);
             
+            document.getElementById('contextStatus').innerHTML = "&nbsp&nbsp";
             
             startTimer = setTimeout(function(){GameLoop();}, 1500);
             
@@ -1265,7 +1282,9 @@ ajkiger@gmail.com
                     <td ><button id = "btninfo" type="button"><img alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
                     <label id="ycoord2" ></label>
                     </td>
-                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter "></td>
+                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter ">
+                    <label id="contextStatus" >&nbsp;</label>
+                    </td>
                     
                     <td id = "srsbox"><label id="scoreratebox" title=" Score Rate "></label><label id="scorebox" title=" Score "></label></td>
                     
