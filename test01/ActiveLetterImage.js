@@ -6,4 +6,340 @@ Created by Andrew B. Kiger
 ajkiger@gmail.com
 */
 
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('p l(){c.x=k;c.y=k;c.z=k;c.v=k;c.w=k;c.1a=k;c.n=k;c.g=k;c.o=k;c.e=k;c.d=k;c.1e=k};l.m.x=k;l.m.y=k;l.m.z=k;l.m.v=k;l.m.w=k;l.m.1a=k;l.m.n=k;l.m.g=k;l.m.o=k;l.m.e=k;l.m.d=k;l.m.1e=k;l.m.1L=p(){1g(1M){c.x=0.0;c.y=f.1o/2-1N;c.z=1p.0;c.v=1h.0;c.w=1h.0;c.1a=1h.0}1O{c.x=0.0;c.y=f.1o/2-1P;c.z=1p.0;c.v=1i.0;c.w=1i.0;c.1a=1i.0}c.n=r.1Q();c.g=k;c.o=k;c.e=1j 1R();c.d=26;c.1e=s;c.e[0]=h[0];c.e[1]=h[1];c.e[2]=h[2];c.e[3]=h[3];c.e[4]=h[4];c.e[5]=h[5];c.e[6]=h[6];c.e[7]=h[7];c.e[8]=h[8];c.e[9]=h[9];c.e[10]=h[10];c.e[11]=h[11];c.e[12]=h[12];c.e[13]=h[13];c.e[14]=h[14];c.e[15]=h[15];c.e[16]=h[16];c.e[17]=h[17];c.e[18]=h[18];c.e[19]=h[19];c.e[20]=h[20];c.e[21]=h[21];c.e[22]=h[22];c.e[23]=h[23];c.e[24]=h[24];c.e[25]=h[25];c.e[26]=h[26];r.1q(c.n);r.1S(c.n,c.n,[c.x,c.y,c.z]);r.1T(c.n,c.n,[c.v,c.w,c.1a])};l.m.1r=p(){1s a=[1.2,-1.2,0.0,0.7,0.7,0.7,1.0,0,0,0,0,1,0,0,0,1.2,1.2,0.0,0.7,0.7,0.7,1.0,0,1,0,0,1,0,0,0,-1.2,1.2,0.0,0.7,0.7,0.7,1.0,1,1,0,0,1,0,0,0,-1.2,-1.2,0.0,0.7,0.7,0.7,1.0,1,0,0,0,1,0,0,0];a[7]=c.e[c.d].1t;a[8]=c.e[c.d].1u;a[7+15]=c.e[c.d].1t;a[8+15]=c.e[c.d].1v;a[7+2*15]=c.e[c.d].1w;a[8+2*15]=c.e[c.d].1v;a[7+3*15]=c.e[c.d].1w;a[8+3*15]=c.e[c.d].1u;c.g=f.1x();f.1f(f.1k,c.g);f.1y(f.1k,1j t(a),f.1z);c.g.u=15*t.1b;c.g.1A=3;c.g.1B=0;c.g.1C=4;c.g.1D=3*t.1b;c.g.1E=2;c.g.1F=7*t.1b;c.g.1G=3;c.g.1H=9*t.1b;c.g.1I=3;c.g.1J=12*t.1b;c.g.1l=4;c.o=f.1x();f.1f(f.1m,c.o);1s b=[1,0,2,3];f.1y(f.1m,1j 1U(b),f.1z);c.o.1V=1;c.o.1l=4};l.m.1W=p(){};l.m.1X=p(){1g(c.d===26){1Y}1Z();r.1q(1n);r.27(1n,1n,c.n);1g(c.1e){c.1K()}28()};l.m.1K=p(){c.1r();f.1f(f.1k,c.g);f.1c(q.29,c.g.1A,f.1d,s,c.g.u,c.g.1B);f.1c(q.2a,c.g.1C,f.1d,s,c.g.u,c.g.1D);f.1c(q.2b,c.g.1E,f.1d,s,c.g.u,c.g.1F);f.1c(q.2c,c.g.1G,f.1d,s,c.g.u,c.g.1H);f.1c(q.2d,c.g.1I,f.1d,s,c.g.u,c.g.1J);f.2e(f.2f);f.2g(f.2h,2i);f.2j(q.2k,0);f.2l(q.2m,0.8);f.1f(f.1m,c.o);2n();f.2o(f.2p,c.o.1l,f.2q,0)};l.m.2r=p(a){2s(a){i"A":c.d=0;j;i"B":c.d=1;j;i"C":c.d=2;j;i"D":c.d=3;j;i"E":c.d=4;j;i"F":c.d=5;j;i"G":c.d=6;j;i"H":c.d=7;j;i"I":c.d=8;j;i"J":c.d=9;j;i"K":c.d=10;j;i"L":c.d=11;j;i"M":c.d=12;j;i"N":c.d=13;j;i"O":c.d=14;j;i"P":c.d=15;j;i"Q":c.d=16;j;i"R":c.d=17;j;i"S":c.d=18;j;i"T":c.d=19;j;i"U":c.d=20;j;i"V":c.d=21;j;i"W":c.d=22;j;i"X":c.d=23;j;i"Y":c.d=24;j;i"Z":c.d=25;j;i"2t":c.d=26;j}};',62,154,'||||||||||||this|selectLetter|alphabetLetters|gl|vertexBufferBS|alphabetLettersWhite|case|break|null|ActiveLetterImage|prototype|alMatrix|indexBufferBS|function|shaderProgram|mat4|false|Float32Array|stride|xScale|yScale||||||||||||||||||||||||||||||||||||||||zScale|BYTES_PER_ELEMENT|vertexAttribPointer|FLOAT|makeVisible|bindBuffer|if|100|50|new|ARRAY_BUFFER|numItems|ELEMENT_ARRAY_BUFFER|mvMatrix|viewportHeight|499|identity|setupVertex|var|minU|minV|maxV|maxU|createBuffer|bufferData|STATIC_DRAW|positionElementCount|positionOffset|colorElementCount|colorOffset|uvElementCount|uvOffset|normalElementCount|normalOffset|uvElementCountuv|uvOffsetuv|mesh|awakeNow|containerScale|75|else|37|create|Array|translate|scale|Uint16Array|itemSize|update|render|return|mvPushMatrix||||||||multiply|mvPopMatrix|vertexPositionAttribute|vertexColorAttribute|textureCoordAttribute|vertexNormalAttribute|textureCoordAttributeuv|activeTexture|TEXTURE0|bindTexture|TEXTURE_2D|allLettersTexture|uniform1i|samplerUniform|uniform1f|alphaUniform|setMatrixUniforms|drawElements|TRIANGLE_STRIP|UNSIGNED_SHORT|updateLetter|switch|blank'.split('|'),0,{}))
+
+function ActiveLetterImage(){
+    
+    this.x = null;
+    this.y = null;
+    this.z = null;
+    this.xScale = null;
+    this.yScale = null;
+    this.zScale = null;
+    this.alMatrix = null;
+    //this.active = null;
+    this.vertexBufferBS = null;
+    this.indexBufferBS = null;
+    //this.BSTexture = null;
+    //this.BSTexture2 = null;
+    this.alphabetLetters = null;
+    this.selectLetter = null;
+    this.makeVisible = null;
+};
+ActiveLetterImage.prototype.x = null;
+ActiveLetterImage.prototype.y = null;
+ActiveLetterImage.prototype.z = null;
+ActiveLetterImage.prototype.xScale = null;
+ActiveLetterImage.prototype.yScale = null;
+ActiveLetterImage.prototype.zScale = null;
+ActiveLetterImage.prototype.alMatrix = null;
+//ActiveLetterImage.prototype.active = null;
+ActiveLetterImage.prototype.vertexBufferBS = null;
+ActiveLetterImage.prototype.indexBufferBS = null;
+//ActiveLetterImage.prototype.BSTexture = null;
+//ActiveLetterImage.prototype.BSTexture2 = null;
+ActiveLetterImage.prototype.alphabetLetters = null;
+ActiveLetterImage.prototype.selectLetter = null;
+ActiveLetterImage.prototype.makeVisible = null;
+
+
+
+ActiveLetterImage.prototype.awakeNow = function(){
+
+    
+    if (containerScale){
+        this.x = 0.0;
+        this.y = gl.viewportHeight/2 - 75;
+        this.z = 499.0;
+        this.xScale = 100.0;
+        this.yScale = 100.0;
+        this.zScale = 100.0;
+    }
+    else{
+        this.x = 0.0;
+        this.y = gl.viewportHeight/2 - 37;
+        this.z = 499.0;
+        this.xScale = 50.0;
+        this.yScale = 50.0;
+        this.zScale = 50.0;
+    }
+    
+    this.alMatrix = mat4.create();
+    //this.active = true;
+    this.vertexBufferBS = null;
+    this.indexBufferBS = null;
+    //this.BSTexture = null;
+    //this.BSTexture2 = null;
+    this.alphabetLetters = new Array();
+    this.selectLetter = 26;
+    this.makeVisible = false;
+    
+    
+    this.alphabetLetters[0] = alphabetLettersWhite[0];
+    this.alphabetLetters[1] = alphabetLettersWhite[1];
+    this.alphabetLetters[2] = alphabetLettersWhite[2];
+    this.alphabetLetters[3] = alphabetLettersWhite[3];
+    this.alphabetLetters[4] = alphabetLettersWhite[4];
+    this.alphabetLetters[5] = alphabetLettersWhite[5];
+    this.alphabetLetters[6] = alphabetLettersWhite[6];
+    this.alphabetLetters[7] = alphabetLettersWhite[7];
+    this.alphabetLetters[8] = alphabetLettersWhite[8];
+    this.alphabetLetters[9] = alphabetLettersWhite[9];
+    this.alphabetLetters[10] = alphabetLettersWhite[10];
+    this.alphabetLetters[11] = alphabetLettersWhite[11];
+    this.alphabetLetters[12] = alphabetLettersWhite[12];
+    this.alphabetLetters[13] = alphabetLettersWhite[13];
+    this.alphabetLetters[14] = alphabetLettersWhite[14];
+    this.alphabetLetters[15] = alphabetLettersWhite[15];
+    this.alphabetLetters[16] = alphabetLettersWhite[16];
+    this.alphabetLetters[17] = alphabetLettersWhite[17];
+    this.alphabetLetters[18] = alphabetLettersWhite[18];
+    this.alphabetLetters[19] = alphabetLettersWhite[19];
+    this.alphabetLetters[20] = alphabetLettersWhite[20];
+    this.alphabetLetters[21] = alphabetLettersWhite[21];
+    this.alphabetLetters[22] = alphabetLettersWhite[22];
+    this.alphabetLetters[23] = alphabetLettersWhite[23];
+    this.alphabetLetters[24] = alphabetLettersWhite[24];
+    this.alphabetLetters[25] = alphabetLettersWhite[25];
+    this.alphabetLetters[26] = alphabetLettersWhite[26];
+    
+    mat4.identity(this.alMatrix);
+    mat4.translate(this.alMatrix, this.alMatrix, [this.x, this.y, this.z]);
+    mat4.scale(this.alMatrix, this.alMatrix, [this.xScale, this.yScale, this.zScale]);
+ 
+};
+
+
+ActiveLetterImage.prototype.setupVertex = function(){
+       
+        var vertex0 = [1.2, -1.2, 0.0, 0.7, 0.7, 0.7, 1.0, 0, 0, 0, 0, 1, 0, 0, 0,
+                          1.2, 1.2, 0.0, 0.7, 0.7, 0.7, 1.0, 0, 1, 0, 0, 1, 0, 0, 0,
+                          -1.2, 1.2, 0.0, 0.7, 0.7, 0.7, 1.0, 1, 1, 0, 0, 1, 0, 0, 0,
+                          -1.2, -1.2, 0.0, 0.7, 0.7, 0.7, 1.0, 1, 0, 0, 0, 1, 0, 0, 0];
+      
+        vertex0[7] = this.alphabetLetters[this.selectLetter].minU;
+        vertex0[8] = this.alphabetLetters[this.selectLetter].minV;
+        vertex0[7 + 15] = this.alphabetLetters[this.selectLetter].minU;
+        vertex0[8 + 15] = this.alphabetLetters[this.selectLetter].maxV;
+        vertex0[7 + 2*15] = this.alphabetLetters[this.selectLetter].maxU;
+        vertex0[8 + 2*15] = this.alphabetLetters[this.selectLetter].maxV;
+        vertex0[7 + 3*15] = this.alphabetLetters[this.selectLetter].maxU;
+        vertex0[8 + 3*15] = this.alphabetLetters[this.selectLetter].minV;
+        
+        
+        this.vertexBufferBS = gl.createBuffer();
+        gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBufferBS);
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertex0), gl.STATIC_DRAW);
+        
+        this.vertexBufferBS.stride = 15*Float32Array.BYTES_PER_ELEMENT;
+        this.vertexBufferBS.positionElementCount = 3;
+        this.vertexBufferBS.positionOffset = 0;
+        this.vertexBufferBS.colorElementCount = 4;
+        this.vertexBufferBS.colorOffset = 3*Float32Array.BYTES_PER_ELEMENT;
+        this.vertexBufferBS.uvElementCount = 2;
+        this.vertexBufferBS.uvOffset = 7*Float32Array.BYTES_PER_ELEMENT;
+        this.vertexBufferBS.normalElementCount = 3;
+        this.vertexBufferBS.normalOffset = 9*Float32Array.BYTES_PER_ELEMENT;
+        this.vertexBufferBS.uvElementCountuv = 3;
+        this.vertexBufferBS.uvOffsetuv = 12*Float32Array.BYTES_PER_ELEMENT;
+        this.vertexBufferBS.numItems = 4;
+
+
+        this.indexBufferBS = gl.createBuffer();
+        gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.indexBufferBS);
+        var cubeVertexIndices = [1, 0, 2, 3];
+        gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint16Array(cubeVertexIndices), gl.STATIC_DRAW);
+        this.indexBufferBS.itemSize = 1;
+        this.indexBufferBS.numItems = 4;
+        
+   };
+   
+   
+   ActiveLetterImage.prototype.update = function(){
+       
+   };
+   
+   
+  ActiveLetterImage.prototype.render = function(){
+      
+    if(this.selectLetter === 26){
+        return;
+    }
+    
+    mvPushMatrix();
+    
+    mat4.identity(mvMatrix);
+    mat4.multiply(mvMatrix, mvMatrix, this.alMatrix);
+    
+    if (this.makeVisible)
+    {
+        this.mesh();
+    }
+    
+    mvPopMatrix();
+        
+};
+
+
+ActiveLetterImage.prototype.mesh = function(){
+    
+    this.setupVertex();
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.vertexBufferBS);
+
+    gl.vertexAttribPointer(
+                         shaderProgram.vertexPositionAttribute,
+                         this.vertexBufferBS.positionElementCount, 
+                         gl.FLOAT, 
+                         false, 
+                         this.vertexBufferBS.stride, 
+                         this.vertexBufferBS.positionOffset
+                         );
+
+    gl.vertexAttribPointer(
+                         shaderProgram.vertexColorAttribute, 
+                         this.vertexBufferBS.colorElementCount, 
+                         gl.FLOAT, 
+                         false, 
+                         this.vertexBufferBS.stride, 
+                         this.vertexBufferBS.colorOffset 
+                         );
+
+    gl.vertexAttribPointer(
+                         shaderProgram.textureCoordAttribute,
+                         this.vertexBufferBS.uvElementCount,
+                         gl.FLOAT,
+                         false,
+                         this.vertexBufferBS.stride,
+                         this.vertexBufferBS.uvOffset
+                         );
+
+    gl.vertexAttribPointer(
+                         shaderProgram.vertexNormalAttribute,
+                         this.vertexBufferBS.normalElementCount,
+                         gl.FLOAT,
+                         false,
+                         this.vertexBufferBS.stride,
+                         this.vertexBufferBS.normalOffset
+                         );
+                 
+    gl.vertexAttribPointer(
+                         shaderProgram.textureCoordAttributeuv,
+                         this.vertexBufferBS.uvElementCountuv,
+                         gl.FLOAT,
+                         false,
+                         this.vertexBufferBS.stride,
+                         this.vertexBufferBS.uvOffsetuv
+                         );
+
+
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, allLettersTexture);
+    
+    
+    gl.uniform1i(shaderProgram.samplerUniform, 0);
+    //gl.uniform1f(shaderProgram.rAngleUniform, 0);  // Do not rotate letter
+    gl.uniform1f(shaderProgram.alphaUniform, 0.8);
+
+
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.indexBufferBS);
+
+    setMatrixUniforms();
+    gl.drawElements(gl.TRIANGLE_STRIP, this.indexBufferBS.numItems, gl.UNSIGNED_SHORT, 0);
+
+
+    //gl.bindTexture(gl.TEXTURE_2D, null);
+        
+};
+
+
+
+ActiveLetterImage.prototype.updateLetter = function(letter){
+       
+      switch (letter) {
+        case "A":
+            this.selectLetter = 0;
+            break;
+        case "B":
+            this.selectLetter = 1;
+            break;
+        case "C":
+            this.selectLetter = 2;
+            break;
+        case "D":
+            this.selectLetter = 3;
+            break;
+        case "E":
+            this.selectLetter = 4;
+            break;
+        case "F":
+            this.selectLetter = 5;
+            break;
+        case "G":
+            this.selectLetter = 6;
+            break;
+        case "H":
+            this.selectLetter = 7;
+            break;
+        case "I":
+            this.selectLetter = 8;
+            break;
+        case "J":
+            this.selectLetter = 9;
+            break;
+        case "K":
+            this.selectLetter = 10;
+            break;
+        case "L":
+            this.selectLetter = 11;
+            break;
+        case "M":
+            this.selectLetter = 12;
+            break;
+        case "N":
+            this.selectLetter = 13;
+            break;
+        case "O":
+            this.selectLetter = 14;
+            break;
+        case "P":
+            this.selectLetter = 15;
+            break;
+        case "Q":
+            this.selectLetter = 16;
+            break;
+        case "R":
+            this.selectLetter = 17;
+            break;
+        case "S":
+            this.selectLetter = 18;
+            break;
+        case "T":
+            this.selectLetter = 19;
+            break;
+        case "U":
+            this.selectLetter = 20;
+            break;
+        case "V":
+            this.selectLetter = 21;
+            break;
+        case "W":
+            this.selectLetter = 22;
+            break;
+        case "X":
+            this.selectLetter = 23;
+            break;
+        case "Y":
+            this.selectLetter = 24;
+            break;
+        case "Z":
+            this.selectLetter = 25;
+            break;
+        case "blank":
+            this.selectLetter = 26;
+            break;
+    } 
+      
+       
+};
+   
+   
+  

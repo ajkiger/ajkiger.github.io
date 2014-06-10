@@ -6,4 +6,2532 @@ Created by Andrew B. Kiger
 ajkiger@gmail.com
 */
 
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('14 3M;14 1P;14 2s;14 37;14 1C=1a 1l();14 1F=1a 1l();14 4X;14 1H;14 1U;14 2t;14 2b;14 1n;14 1o;14 1p;14 1q;14 3N;14 2u;14 1r=1a 1l();14 2A;14 38;14 39;14 4Y;14 2c=3;14 3O;14 2B;14 2C;14 2D;14 2E;14 4a;14 3a;14 3b;14 2l;14 1I;14 18;1c 4Z(){18=1a 4b();18.2F=0;18.1J=0;18.4c=1d;18.2G=1d;18.4d=1a 1l();18.2H=1d;18.2v=1d;18.2I=1d;18.3c=1d;18.2v=1d;18.1j=1m;18.2w=1m;18.51=1;18.2d="3d";18.20="3e 21 22";18.3f=1m;18.3g=1m;18.3P=4e();3N=" 52";14 a=1V.1W("4f");2B=1Q(a);14 b=1V.1W("4g");2D=1Q(b);14 c=1V.1W("4h");2E=1Q(c);14 d=1V.1W("4i");2C=1Q(d);14 e=1V.1W("4j");3O=1Q(e);4a=1h;3a=1d;3Q("3R/53.4k");2u=37.3h("\\n");1b(14 i=0;i<2u.17;i=i+3){14 f=1a 54();f.2m();f.1R=2u[i];f.1j=2u[i+1];f.1F=2u[i+2];1r.1g(f)}1b(14 i=1r.17-1;i>=0;i=i-1){14 g=1r[i];16(g.1R===18.3P){1f}19{1r.3S()}}16(1r.17>13){14 h=1r.17-13;1b(14 i=0;i<h;i++){1r.1y(0,1)}}14 j=1a 1l();14 k=1r.17;1b(14 i=0;i<k;i++){14 l=1r.3S();j.1g(l)}1r=j;14 m=1m;16(!(1r.17===0)){m=1r[0]}16(m!==1m&&m.1R===18.3P){18.3g=m.1R;18.3f="3R/"+m.1F;16(m.1j==="55"){18.1j=23;18.2w=23}19 16(m.1j==="56"){18.1j=2n;18.2w=2n}19 16(m.1j==="57"){18.1j=2o;18.2w=2o}}19{18.3g=1m;18.3f="3R/59.4k";18.1j=23;18.2w=23}4l();16(2p(2q)!=="1K"){1A.5a()}3T()}1c 4e(){14 a=1a 5b();14 b=a.5c();14 c=a.5d()+1;14 d=a.5e();16(b<10){b=\'0\'+b}16(c<10){c=\'0\'+c}d=\'/\'+d;d=d.5f(3,2);a=c+\'/\'+b+\'/\'+d;1L a}1c 5g(a){16(!18.2I){18.1J=18.1J+a;1v.1w(\'1X\').1x=18.1J;14 b=18.2F;14 c=18.1J/(b*30)*2x;c=4m(1e.4n(c*2x)/2x).4o(0);16(18.1J>0){1v.1w(\'24\').1x=c+"%"}}19{18.1J=18.1J-a;14 b=18.2F;14 c=18.1J/(b*30)*2x;c=4m(1e.4n(c*2x)/2x).4o(0);16(18.1J<=0){1v.1w(\'1X\').1x="&1M&1M";1v.1w(\'24\').1x="&1M&1M"}19{1v.1w(\'1X\').1x=18.1J;1v.1w(\'24\').1x=c+"%"}}}1c 4p(){3i(38);3i(39);16(!(2c===3)){$("#2e").2f("2g","3j","25",1c(){2c=3;1v.1w(\'2e\').1x="<2J 2K=\\"2L\\" 2M=\\"2N/3U.2O\\" 2P=\\"50\\" 2Q=\\"50\\" 2R=\\"3V\\" 2S=\\" 3 3k/2T \\">"});$("#2e").2U({2f:"2g",3l:25})}$("#1X").2f("2g","3j","25",1c(){1v.1w(\'1X\').1x="&1M&1M"});$("#24").2f("2g","3j","25",1c(){1v.1w(\'24\').1x="&1M&1M"});$("#1X").2U({2f:"2g",3l:25});$("#24").2U({2f:"2g",3l:25})}1c 3m(a){14 b=$("#2e");b.2f("2g","3j","25",1c(){3n(a){1B"4q":2c=3;1v.1w(\'2e\').1x="<2J 2K=\\"2L\\" 2M=\\"2N/3U.2O\\" 2P=\\"50\\" 2Q=\\"50\\" 2R=\\"3V\\" 2S=\\" 3 3k/2T \\">";1f;1B"4r":2c=2;1v.1w(\'2e\').1x="<2J 2K=\\"2L\\" 2M=\\"2N/5h.2O\\" 2P=\\"50\\" 2Q=\\"50\\" 2R=\\"5i\\" 2S=\\" 2 3k/2T \\">";1f;1B"4s":2c=1;1v.1w(\'2e\').1x="<2J 2K=\\"2L\\" 2M=\\"2N/5j.2O\\" 2P=\\"50\\" 2Q=\\"50\\" 2R=\\"5k\\" 2S=\\" 1 5l/2T \\">";1f}});b.2U({2f:"2g",3l:25})}1c 4t(){3M=1m;2s=1m;1n=1m;1o=1m;1p=1m;1q=1m;1P.17=0;1F.17=0;1C.17=0;18.2F=0;18.1J=0;18.4c=1d;18.2G=1d;4p();18.4d.17=0;18.2I=1d;3N=" 5m";4u()}1c 4u(){2A=1d;3b=0;18.2H=1d;18.1j=18.2w;1v.1w(\'1X\').1x="&1M&1M";1v.1w(\'24\').1x="&1M&1M";1P=1a 1l();4v();3M=1a 4b();5n();5o();2s=1a 5p();2s.5q();1n=1a 3o();1n.2m();1n.3p=1a 1i(1.0,0.0);16(3q){1n.2h=1a 1i(30.0,0.0)}19{1n.2h=1a 1i(15.0,0.0)}1n.3r=1a 1i(-1.0,2.0);1n.3s=1a 1i(-1.0,2.0);1n.3t=1a 1i(-1.0,2.0);1n.3u=1a 1i(-0.8,0.5);1n.3v=0;1n.3w=1a 1i(2.0,0.0);1n.3x=1a 1i(0.3y,0.3z);1n.3A=1a 3B(0.0,0.0,0.0);1n.2i(2B);1n.3C=0;1n.3D=1d;1n.3E();1o=1a 3o();1o.2m();1o.3p=1a 1i(1.0,0.0);16(3q){1o.2h=1a 1i(30.0,0.0)}19{1o.2h=1a 1i(15.0,0.0)}1o.3r=1a 1i(-1.0,2.0);1o.3s=1a 1i(-1.0,2.0);1o.3t=1a 1i(-1.0,2.0);1o.3u=1a 1i(-0.8,0.5);1o.3v=0;1o.3w=1a 1i(2.0,0.0);1o.3x=1a 1i(0.3y,0.3z);1o.3A=1a 3B(0.0,0.0,0.0);1o.2i(2C);1o.3C=0;1o.3D=1d;1o.3E();1p=1a 3o();1p.2m();1p.3p=1a 1i(1.0,0.0);16(3q){1p.2h=1a 1i(30.0,0.0)}19{1p.2h=1a 1i(15.0,0.0)}1p.3r=1a 1i(-1.0,2.0);1p.3s=1a 1i(-1.0,2.0);1p.3t=1a 1i(-1.0,2.0);1p.3u=1a 1i(-0.8,0.5);1p.3v=0;1p.3w=1a 1i(2.0,0.0);1p.3x=1a 1i(0.3y,0.3z);1p.3A=1a 3B(0.0,0.0,0.0);1p.2i(2D);1p.3C=0;1p.3D=1d;1p.3E();1q=1a 3o();1q.2m();1q.3p=1a 1i(1.0,0.0);16(3q){1q.2h=1a 1i(30.0,0.0)}19{1q.2h=1a 1i(15.0,0.0)}1q.3r=1a 1i(-1.0,2.0);1q.3s=1a 1i(-1.0,2.0);1q.3t=1a 1i(-1.0,2.0);1q.3u=1a 1i(-0.8,0.5);1q.3v=4;1q.3w=1a 1i(2.0,0.0);1q.3x=1a 1i(0.3y,0.3z);1q.3A=1a 3B(0.0,0.0,0.0);1q.2i(2E);1q.3C=0;1q.3D=1d;1q.3E();18.3c=1d;18.2v=1d;$("#5r").5s(5t,1.0);16(3W){14 g;1N.1S.2V({1Y:4}).2r(1c(a){g=a.1Z;g=g.2y(/"/g,"");16(g===1m||g===1K||g.17===0){}19{14 b=g.3h(";");14 c=1a 1l();1b(14 i=0;i<b.17;i=i+3){14 d={1R:b[i],1z:b[i+1],26:b[i+2]};c.1g(d)}1b(14 i=0;i<1r.17;i++){14 e=1r[i];1b(14 j=0;j<c.17;j++){14 f=c[j];16(e.1R===f.1R){16(f.1z!==1m&&e.1z!==1m){16(f.1z>e.1z){e.1z=f.1z;e.26=f.26}}19 16(f.1z!==1m&&e.1z===1m){e.1z=f.1z;e.26=f.26}1f}}}}});1N.1S.2V({1Y:0}).2r(1c(a){g=a.1Z;16(g===1m||g===1K||g.17===0||3F(g)){2l=0.0}19{2l=2W(g)}});16(18.1j===23){1N.1S.2V({1Y:1}).2r(1c(a){g=a.1Z;16(g===1m||g===1K||g.17===0||3F(g)){1I=0.0}19{1I=2W(g)}})}19 16(18.1j===2n){1N.1S.2V({1Y:2}).2r(1c(a){g=a.1Z;16(g===1m||g===1K||g.17===0||3F(g)){1I=0.0}19{1I=2W(g)}})}19 16(18.1j===2o){1N.1S.2V({1Y:3}).2r(1c(a){g=a.1Z;16(g===1m||g===1K||g.17===0||3F(g)){1I=0.0}19{1I=2W(g)}})}}}1c 5u(){18.2v=1h}1c 5v(){4w("4x")}1c 4x(){$("#5w").4y("5x");18.2I=1h;3i(38);3i(39);2c=3;1v.1w(\'2e\').1x="<2J 2K=\\"2L\\" 2M=\\"2N/3U.2O\\" 2P=\\"50\\" 2Q=\\"50\\" 2R=\\"3V\\" 2S=\\" 3 3k/2T \\">";5y()}1c 5z(){3G();14 a;16($(\'#4z\').3H(\'3I\')){a="3J"}19{a="3d"}16(2p(2q)!=="1K"){14 b="3X";1A.27(b,a)}}1c 5A(){3G();14 a;16($(\'#4A\').3H(\'3I\')){a="2X 21 22"}19{a="3e 21 22"}16(2p(2q)!=="1K"){14 b="3Y";1A.27(b,a)}}1c 5B(){3G();14 a;16(!2j){2j=1h;a=1h;4B.5C()}19{2j=1d;a=1d;4B.5D()}16(2p(2q)!=="1K"){14 b="3Z";1A.27(b,a)}}1c 5E(){3G();16(28){28=1d}19{28=1h}16(2p(2q)!=="1K"){14 a=28;14 b="40";1A.27(b,a)}}1c 5F(){5G();5H();16($(\'#4A\').3H(\'3I\')){18.20="2X 21 22"}19{18.20="3e 21 22"}16($(\'#4z\').3H(\'3I\')){18.2d="3J"}19{18.2d="3d"}16(3W){1N.5I.2U({5J:\'5K\'}).2r(1c(a){18.3c=1h})}19{18.3c=1h}}1c 4l(){16(2p(2q)!=="1K"){1b(14 i=0;i<1r.17;i++){14 a=1r[i];14 b=a.1R;14 c=1A.2Y(b);16(c!==1m){14 d=c.3h(";");a.1z=d[0];a.26=d[1]}}2j=1A.2Y("3Z");16(2j==="1d"){2j=1d}19{2j=1h}28=1A.2Y("40");16(28==="1d"){28=1d}19{28=1h}18.20=1A.2Y("3Y");16(18.20==="2X 21 22"){18.20="2X 21 22"}19{18.20="3e 21 22"}18.2d=1A.2Y("3X");16(18.2d==="3J"){18.2d="3J"}19{18.2d="3d"}}}1c 3T(){16(2p(2q)!=="1K"){1b(14 i=0;i<1r.17;i++){14 a=1r[i];14 b=a.1R;14 c=a.1z+";"+a.26;1A.27(b,c)}14 d=28;14 e="40";1A.27(e,d);14 f=2j;14 g="3Z";1A.27(g,f);14 h=18.20;14 j="3Y";1A.27(j,h);14 k=18.2d;14 l="3X";1A.27(l,k)}}1c 4C(){14 a=1v.1w(\'1X\').1x*1.0;14 b=1v.1w(\'24\').1x;1b(14 i=0;i<1r.17;i++){14 c=1r[i];16(c.1R===18.3g){16(c.1z<a){c.1z=a;c.26=b}1f}}3T();4D()}1c 4D(){16(3W){14 a=2W(1v.1w(\'1X\').1x);14 b=a-3b;3b=a;2l=2l+b;1N.1S.5L({5M:2l}).2r(1c(){});1N.1S.2Z({1Y:0,1Z:2l});16(a>1I){1I=a}16(18.1j===23){1N.1S.2Z({1Y:1,1Z:1I})}19 16(18.1j===2n){1N.1S.2Z({1Y:2,1Z:1I})}19 16(18.1j===2o){1N.1S.2Z({1Y:3,1Z:1I})}14 c="";1b(14 i=0;i<1r.17;i++){14 d=1r[i];c=c+d.1R+";"+d.1z+";"+d.26+";"}1N.1S.2Z({1Y:4,1Z:c})}}1c 5N(){16(18.2v){4t()}19{5O();2s.31();1n.31();1o.31();1p.31();1q.31();16(!18.2H&&18.2G&&1n.1T.17===0&&1o.1T.17===0&&1p.1T.17===0&&1q.1T.17===0){18.2H=1h;14 a=1v.1w(\'1X\').1x;14 b=1v.1w(\'24\').1x;1v.1w(\'5P\').1x="5Q 5R!<41><41>4E: "+a+"<41>"+"4E 5S: "+b;$("#5T").4y("4F",{5U:"#5V",5W:"3S"})}16(3a&&18.2H&&18.2G&&1n.1T.17===0&&1o.1T.17===0&&1p.1T.17===0&&1q.1T.17===0){3a=1d;4C()}16(1n.1T.17>0||1o.1T.17>0||1p.1T.17>0){2A=1h}19 16(2A){2A=1d;16(!(2c===3)){3m("4q")}16(!18.2G&&!18.2I){38=4G(1c(){3m("4r")},5X);39=4G(1c(){3m("4s")},5Y)}}}}1c 5Z(){60();16(!18.2v){61();2s.32();1n.32();1o.32();1p.32();1q.32()}62()}1c 3Q(a){14 b=1a 63();b.64=1c(){16(b.65===4){16((b.42>=66&&b.42<25)||b.42===67){37=b.68}19{4w("69 6a 6b 6c 6d")}}};b.4F("6e",a,1d);b.6f(1m)}1c 4H(a,b){16(a.17>b.17){1L-1}19 16(a.17<b.17){1L 1}19{1L 0}}1c 4v(){16(18.1j===23){1b(14 i=0;i<23;i++){14 a=1a 43();a.6g(i);1P[i]=a}}19 16(18.1j===2n){1b(14 i=0;i<2n;i++){14 a=1a 43();a.6h(i);1P[i]=a}}19 16(18.1j===2o){1b(14 i=0;i<2o;i++){14 a=1a 43();a.6i(i);1P[i]=a}}3Q(18.3f);14 b=37.3h("\\n");14 c=4I(b);14 d=1a 1l();c.4J(4H);1b(14 i=0;i<c.17;i++){14 e=c[i];14 f=e.2y(/[^A-33-z]/g,"");14 g=1d;16(d.1D(f)===-1){d.1g(f)}19{g=1h}16(!g){14 h=1a 4K();h.2m();h.1E=f;h.4L=e;h.1G=f.17;14 j=1a 1l();1b(14 k=0;k<f.17;k++){14 l=f.44(k,k+1);j.1g(l)}h.29=j;1C.1g(h)}}14 m=1a 1l();c.4J();1b(14 i=0;i<c.17;i++){14 n=c[i];14 o=n.2y(/[^A-33-z]/g,"");14 p=1d;16(m.1D(o)===-1){m.1g(o)}19{p=1h}16(!p){14 q=1a 4K();q.2m();q.1E=o;q.4L=n;q.1G=o.17;14 r=1a 1l();1b(14 s=0;s<o.17;s++){14 t=o.44(s,s+1);r.1g(t)}q.29=r;1F.1g(q)}}4M()}1c 4M(){14 a;14 b;14 c;14 d=1a 1l();14 e=1d;14 f;14 g;14 h=0;14 l=1e.1s(1e.1t()*18.1j);14 n=1e.1s(1e.1t()*8);1b(14 i=0;i<1C.17;i++){14 o=1a 1l();1H=1d;14 p=1C[i];a=1d;14 q=l+(18.1j/6)+1;1b(14 r=0;r<q;r++){l++;16(l===18.1j)l=0}14 s=-1;45(!a&&s<18.1j){s++;14 t=l+(1e.1s(1e.1t()*18.1j/6)*2);1b(14 r=0;r<t;r++){l++;16(l===18.1j)l=0}16(1H){l=2t}b=1P[l];f=p.29[0];16(!3K(b,f)){14 u=-1;45(!a&&u<0){u++;1b(14 r=0;r<1;r++){n++;16(n===8)n=0;1U=n}16(1H){n=2b;1U=n}16(3L(1U,b)>=p.1G){c=b;o.1g(b);1b(14 j=1;j<p.1G;j++){g=p.29[j];c=46(1U,c);16(3K(c,g)){e=1d;1f}19{o.1g(c);e=1h}}16(!e){o.17=0;a=1d;1b(14 k=0;k<p.1G;k++){14 v=p.29[k];16(34(c,v)){16(35(c,p.1E,k,n)){1H=1h;b=1P[2t];1f}}}16(!1H){14 w=47(c);14 x=1a 1l();1b(14 k=0;k<w.1G;k++)x.1g(k);14 y;1b(14 m=0;m<w.1G;m++){14 z=1e.1s(1e.1t()*x.17);y=x[z];x.1y(z,1);14 A=w.2k[y];16(!(c.2a===A.2a)){1b(14 j=0;j<p.1G;j++){v=p.29[j];16(34(A,v)){16(35(A,p.1E,j,n)){1H=1h;b=1P[2t];1f}}}}16(1H)1f}}}19{p.48=b.2a;p.6j=c.2a;p.2k=o;1b(14 j=0;j<p.1G;j++){14 B=p.2k[j];14 v=p.29[j];B.1k=v;16(B.36){h++}B.36=1h}a=1h;1f}}19{a=1d}}}19{1b(14 j=0;j<p.1G;j++){14 v=p.29[j];16(34(b,v)){16(35(b,p.1E,j,n)){1H=1h;1f}19{}}}16(!1H){w=47(b);x=1a 1l();1b(14 k=0;k<w.1G;k++)x.1g(k);1b(14 m=0;m<w.1G;m++){z=1e.1s(1e.1t()*x.17);y=x[z];x.1y(z,1);A=w.2k[y];16(!(b.2a===A.2a)){1b(14 j=0;j<p.1G;j++){v=p.29[j];16(34(A,v)){16(35(A,p.1E,j,n)){1H=1h;b=1P[2t];1f}}}}16(1H)1f}}a=1d}}16(!a&&s>=18.1j){d.1g(p)}}1b(14 i=0;i<d.17;i++){14 C=d[i];1b(14 j=0;j<1C.17;j++){14 D=1C[j];16(C.1E===D.1E){1C.1y(j,1);1f}}}1b(14 i=0;i<d.17;i++){14 C=d[i];1b(14 j=0;j<1F.17;j++){14 D=1F[j];16(C.1E===D.1E){1F.1y(j,1);1f}}}1b(14 i=0;i<1C.17;i++){14 E=1C[i];1b(14 j=0;j<1F.17;j++){14 F=1F[j];16(E.1E===F.1E){F.48=E.48;1f}}}18.2F=0;d.17=0;14 G=1e.1s(1e.1t()*1C.17);14 H=1C[G];H.4N=1h;H.4O=1h;H.4P=1h;H.4Q=1h;1b(14 i=0;i<1F.17;i++){14 I=1F[i];16(I.1E===H.1E){I.4N=1h;I.4O=1h;I.4P=1h;I.4Q=1h;1f}}6k(1F);4R()}1c 47(a){14 b=1m;14 c=1d;1b(14 i=0;i<1C.17;i++){14 d=1C[i];16(d.2k===1m){}19{16(!(d.2k.17===0)){1b(14 j=0;j<d.2k.17;j++){14 e=d.2k[j];16(e.2a===a.2a){b=d;c=1h;1f}}}16(c){1f}}}1L b}1c 34(a,b){1L(a.1k===b)}1c 35(a,b,c,d){14 e;14 f;14 g=1d;14 h=0;14 k=d;1b(14 i=0;i<4;i++){k++;16(k===8)k=0}45(!g&&h<1){e=a;1U=k;16(3L(d,a)>=(b.17-c)&&3L(k,a)>=(c+1)){1b(14 i=0;i<c;i++){e=46(1U,e)}2t=e.2a;2b=1U;1b(14 i=0;i<4;i++){2b++;16(2b===8)2b=0}1U=2b;16(3L(2b,e)>=b.17){1b(14 j=0;j<b.17;j++){f=b.44(j,j+1);16(!3K(e,f)){16(!(j===b.17-1)){e=46(1U,e)}g=1h}19{g=1d;1f}}}19{g=1d}16(g){1L 1h}}h++}1L 1d}1c 3K(a,b){16(!a.36){1L 1d}19{1L!(a.1k===b)}}1c 4R(){14 a;1b(14 i=0;i<18.1j;i++){a=1P[i];16(!a.36){a.36=1h;14 b=1e.1s(1e.1t()*6l);16(b>=0&&b<=6m)a.1k="A";19 16(b>=6n&&b<=6o)a.1k="B";19 16(b>=6p&&b<=6q)a.1k="C";19 16(b>=6r&&b<=6s)a.1k="D";19 16(b>=6t&&b<=6u)a.1k="E";19 16(b>=6v&&b<=6w)a.1k="F";19 16(b>=6x&&b<=6y)a.1k="G";19 16(b>=6z&&b<=6A)a.1k="H";19 16(b>=6B&&b<=6C)a.1k="I";19 16(b>=6D&&b<=6E)a.1k="J";19 16(b>=6F&&b<=6G)a.1k="K";19 16(b>=6H&&b<=6I)a.1k="L";19 16(b>=6J&&b<=6K)a.1k="M";19 16(b>=6L&&b<=6M)a.1k="N";19 16(b>=6N&&b<=6O)a.1k="O";19 16(b>=6P&&b<=6Q)a.1k="P";19 16(b>=6R&&b<=6S)a.1k="Q";19 16(b>=6T&&b<=6U)a.1k="R";19 16(b>=6V&&b<=6W)a.1k="S";19 16(b>=6X&&b<=6Y)a.1k="T";19 16(b>=6Z&&b<=70)a.1k="U";19 16(b>=71&&b<=72)a.1k="V";19 16(b>=73&&b<=74)a.1k="W";19 16(b>=75&&b<=76)a.1k="X";19 16(b>=77&&b<=78)a.1k="Y";19 16(b>=79&&b<=7a)a.1k="Z";19{}}}}1c 4I(a){14 b=1a 1l();14 c;14 d;14 e;14 f=1d;16(a.17>58){f=1h}14 g;14 h=1d;16(18.20==="2X 21 22"){h=1h}16(18.1j===23){14 j=1a 1l();14 k=1a 1l();14 l=1a 1l();14 m=1a 1l();14 n=0;14 o=0;14 p=0;14 q=0;1b(14 i=0;i<a.17;i++){14 r=a[i];14 s=r.2y(/[^A-33-z]/g,"");16(s.17<=5){j.1g(r)}19 16(s.17===6){k.1g(r)}19 16(s.17===7){l.1g(r)}19 16(s.17===8){m.1g(r)}}16(h)g=50;19 g=8;1b(14 i=0;i<g;i++){e=1e.1s(1e.1t()*4);16(n>=1||o>=1)e=e-1;16((n+o)>=2)e=e-1;16((n+o+p)>=4)e=e-1;16(e<0)e=0;3n(e){1B 0:16(!(j.17===0)){d=1e.1s(1e.1t()*j.17);c=j[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}j.1y(d,1)}19{i=i-1;q=q+1}1f;1B 1:16((!(k.17<=10)&&f)||(!(k.17<=0)&&(!f||p===0))){d=1e.1s(1e.1t()*k.17);c=k[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}k.1y(d,1);p++}19{i=i-1;p++;q=q+1}1f;1B 2:16((!(l.17<=10)&&f)||(!(l.17<=0)&&(!f||o===0))){d=1e.1s(1e.1t()*l.17);c=l[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}l.1y(d,1);o++}19{i=i-1;o++;q=q+1}1f;1B 3:16((!(m.17<=10)&&f)||(!(m.17<=0)&&(!f||n===0))){d=1e.1s(1e.1t()*m.17);c=m[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}m.1y(d,1);n++}19{i=i-1;n++;q=q+1}1f;49:1f}16(j.17===0&&k.17===0&&l.17<=0&&m.17<=0)1f;16(q>=8&&(j.17===0))1f}}19 16(18.1j===2n){14 u=1a 1l();14 m=1a 1l();14 v=1a 1l();14 w=1a 1l();14 x=0;14 y=0;14 n=0;14 q=0;1b(14 i=0;i<a.17;i++){14 r=a[i];14 s=r.2y(/[^A-33-z]/g,"");16(s.17<=7){u.1g(r)}19 16(s.17===8){m.1g(r)}19 16(s.17===9){v.1g(r)}19 16(s.17===10){w.1g(r)}}16(h)g=50;19 g=10;1b(14 i=0;i<g;i++){e=1e.1s(1e.1t()*4);16(x>=1||y>=1)e=e-1;16((x+y)>=2)e=e-1;16((x+y+n)>=4)e=e-1;16(e<0)e=0;3n(e){1B 0:16(!(u.17===0)){d=1e.1s(1e.1t()*u.17);c=u[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}u.1y(d,1)}19{i=i-1;q=q+1}1f;1B 1:16((!(m.17<=10)&&f)||(!(m.17<=0)&&(!f||n===0))){d=1e.1s(1e.1t()*m.17);c=m[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}m.1y(d,1);n++}19{i=i-1;n++;q=q+1}1f;1B 2:16((!(v.17<=10)&&f)||(!(v.17<=0)&&(!f||y===0))){d=1e.1s(1e.1t()*v.17);c=v[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}v.1y(d,1);y++}19{i=i-1;y++;q=q+1}1f;1B 3:16((!(w.17<=10)&&f)||(!(w.17<=0)&&(!f||x===0))){d=1e.1s(1e.1t()*w.17);c=w[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}w.1y(d,1);x++}19{i=i-1;x++;q=q+1}1f;49:1f}16(u.17===0&&m.17===0&&v.17<=0&&w.17<=0)1f;16(q>=10&&(u.17===0))1f}}19 16(18.1j===2o){14 z=1a 1l();14 w=1a 1l();14 A=1a 1l();14 B=1a 1l();14 C=0;14 D=0;14 x=0;14 q=0;1b(14 i=0;i<a.17;i++){14 r=a[i];14 s=r.2y(/[^A-33-z]/g,"");16(s.17<=9){z.1g(r)}19 16(s.17===10){w.1g(r)}19 16(s.17===11){A.1g(r)}19 16(s.17===12){B.1g(r)}}16(h)g=50;19 g=12;1b(14 i=0;i<g;i++){e=1e.1s(1e.1t()*4);16(C>=1||D>=1)e=e-1;16((C+D)>=2)e=e-1;16((C+D+x)>=4)e=e-1;16(e<0)e=0;3n(e){1B 0:16(!(z.17===0)){d=1e.1s(1e.1t()*z.17);c=z[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}z.1y(d,1)}19{i=i-1;q=q+1}1f;1B 1:16((!(w.17<=10)&&f)||(!(w.17<=0)&&(!f||x===0))){d=1e.1s(1e.1t()*w.17);c=w[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}w.1y(d,1);x++}19{i=i-1;x++;q=q+1}1f;1B 2:16((!(A.17<=10)&&f)||(!(A.17<=0)&&(!f||D===0))){d=1e.1s(1e.1t()*A.17);c=A[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}A.1y(d,1);D++}19{i=i-1;D++;q=q+1}1f;1B 3:16((!(B.17<=10)&&f)||(!(B.17<=0)&&(!f||C===0))){d=1e.1s(1e.1t()*B.17);c=B[d];14 t=c.1O();16(b.1D(t)===-1){b.1g(t)}B.1y(d,1);C++}19{i=i-1;C++;q=q+1}1f;49:1f}16(z.17===0&&w.17===0&&A.17<=0&&B.17<=0)1f;16(q>=10&&(z.17===0))1f}}1L b}1c 1Q(a){14 b=1u.7b();b.4S=a;4T(b);1L b}1c 4T(a){1u.4U(1u.2z,a);1u.7c(1u.7d,1h);1u.7e(1u.2z,0,1u.4V,1u.4V,1u.7f,a.4S);1u.4W(1u.2z,1u.7g,1u.7h);1u.4W(1u.2z,1u.7i,1u.7j);1u.7k(1u.2z);1u.4U(1u.2z,1m)}1c 7l(){14 a=1V.1W("4f");2B=1Q(a);14 b=1V.1W("4g");2D=1Q(b);14 c=1V.1W("4h");2E=1Q(c);14 d=1V.1W("4i");2C=1Q(d);14 e=1V.1W("4j");3O=1Q(e);1n.2i(2B);1o.2i(2C);1p.2i(2D);1q.2i(2E)}',62,456,'||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||var||if|length|sceneController|else|new|for|function|false|Math|break|push|true|BBRangeMake|cubeSize|squareLetter|Array|null|particleEmitterYellow|particleEmitterRed|particleEmitterBlue|particleEmitterBlack|weeklyWordLists|floor|random|gl|document|getElementById|innerHTML|splice|highScore|localStorage|case|wordListSortedByLength|indexOf|wordName|wordList|wordLength|wordFit|levelHighScore|iGameScore|undefined|return|nbsp|iConsole|toUpperCase|cubeBoard|loadTexture|date|game|activeParticles|rDirection|preload|getResult|scorebox|level|data|maxWordKey|Word|Density|96|scoreratebox|300|scoreRate|setItem|soundEffects|allLetters|currentPosition|wordFitDirection|numberStars|cubeColorKey|starbox|effect|fade|sizeRangeN|setParticleX|soundTrack|allSquares|totalPoints|init|150|216|typeof|Storage|result|cLImage|wordFitSquare|weeklyLists|stopCubeSceneObject|preCubeSize|100|replace|TEXTURE_2D|lastParticle|yellowStarTexture|redStarTexture|blueStarTexture|blackStarTexture|totalLetteronCube|gameOver|postGameWinMessage|solveCube|img|id|starimage|src|images|png|width|height|alt|title|Letter|show|getLevelData|parseInt|High|getItem|setLevelData||update|render|Za|checkCommonLetters|checkWordFit2|positionOccupied|wordListString|starTimer1|starTimer2|postScoreNow|priorScore|endAnimationActive|Normal|Low|wordListPlay|currentGame|split|clearTimeout|swing|Stars|duration|updateScoreStar|switch|ParticleSystem|emissionRangeN|containerScale|xVelocityRangeN|yVelocityRangeN|zVelocityRangeN|growRangeN|pType|lifeRangeN|decayRangeN|03|05|emitPosition|BBPointMake|emitCounter|emit|awake|isNaN|PlayBloop|prop|checked|Inverse|checkSquare|convertToLength|cObject|secondTime|allLettersTexture|todayDate|loadWordList|wordlists|pop|SaveScores|blueStar40x40|Blue|iWinConsole|tInverse|tDensity|tMusic|tSound|br|status|LetterSquareObject|substring|while|moveToNextSquare|findCrossWord|firstLetterSquare|default|textureChangedX|Object|giveUpOnHiddenWord|wordHintWords|getTodaysDate|image1|image2|image3|image4|image0|txt|LoadScores|parseFloat|round|toFixed|resetGameScore|BlueStars|RedStars|YellowStars|endOldStartNewGame|sceneControllerLoadScene|setupCube|alert|SolveTheCube|popup|check2|check1|SoundInstanceBM|PostScore|postTotalPointsiWin|Score|open|setTimeout|sortByLength|selectWords|sort|WordListObject|wordDisplayName|placeWordsonCube|alphabetQuestHiddenWord|hideHiddenWord|wordPlacedScrollView|wordStrikedScrollView|randomLettersEnglish|image|handleLoadedTexture|bindTexture|RGBA|texParameteri|badCube|starString|sceneControllerInit||cubeSizeCount|First|MonthlyIput|TableRowObject|4x4|5x5|6x6||Fruit|clear|Date|getDate|getMonth|getFullYear|substr|updateGameScore|redStar40x40|Red|yellowStar40x40|Yellow|Star|Second|CubeObjectInit|CubeObjectAwake|ActiveLetterImage|awakeNow|container|fadeTo|3000|sceneControllerUnloadScene|SolveTheCube2|popupHints|close|solveCubeNow|ToggleInverse|ToggleDensity|ToggleMusic|resume|pause|ToggleSound|ButtonNewGame|ClosePopupWin|ClosePopupSettings|ads|type|interstitial|postHighScore|score|SceneControllerUpdateModel|cObjectUpdate|Winmessage|Cube|Cleared|Rate|popupWin|positionTo|topHeader|transition|30000|60000|SceneControllerRenderScene|EAGLViewBeginDraw|cObjectRender|EAGLViewFinishDraw|XMLHttpRequest|onreadystatechange|readyState|200|304|responseText|Load|word|list|was|unsuccessful|get|send|setUp4x4|setUp5x5|setUp6x6|lastLetterSquare|UpdateTextAreaView|10000|850|851|1057|1058|1511|1512|1849|1850|2965|2966|3146|3147|3393|3394|3693|3694|4448|4449|4468|4469|4578|4579|5127|5128|5428|5429|6093|6094|6809|6810|7126|7127|7146|7147|7904|7905|8478|8479|9173|9174|9536|9537|9637|9638|9766|9767|9795|9796|9973|9974|9999|createTexture|pixelStorei|UNPACK_FLIP_Y_WEBGL|texImage2D|UNSIGNED_BYTE|TEXTURE_MAG_FILTER|LINEAR|TEXTURE_MIN_FILTER|LINEAR_MIPMAP_NEAREST|generateMipmap|reloadTexturesContext'.split('|'),0,{}))
+
+var cObject;
+var cubeBoard;
+var cLImage;
+var wordListString;
+var wordListSortedByLength = new Array();
+var wordList = new Array();
+
+var badCube;
+var wordFit;
+var rDirection;
+var wordFitSquare;
+var wordFitDirection;
+
+var particleEmitterYellow;
+var particleEmitterRed;
+var particleEmitterBlue;
+var particleEmitterBlack;
+
+var secondTime;
+
+var weeklyLists;
+var weeklyWordLists = new Array();
+var lastParticle;
+
+var starTimer1;
+var starTimer2;
+var starString;
+var numberStars = 3;
+
+//var whiteSquaresTexture;
+//var blackSquaresTexture;
+//var squareAtlasTexture;
+var allLettersTexture;
+var yellowStarTexture;
+var redStarTexture;
+var blueStarTexture;
+var blackStarTexture;
+var textureChangedX;
+
+var postScoreNow;
+var priorScore;
+
+var totalPoints;
+var levelHighScore;
+
+var sceneController;
+
+
+function sceneControllerInit(){
+    sceneController = new Object();
+    
+    sceneController.totalLetteronCube = 0;
+    sceneController.iGameScore = 0;
+    sceneController.giveUpOnHiddenWord = false;
+    sceneController.gameOver = false;
+    sceneController.wordHintWords = new Array();
+    sceneController.postGameWinMessage = false;
+
+    sceneController.stopCubeSceneObject = false;
+    sceneController.solveCube = false;
+    sceneController.endAnimationActive = false;
+    sceneController.stopCubeSceneObject = false;
+    
+    sceneController.cubeSize = null;
+    sceneController.preCubeSize = null;
+    sceneController.cubeSizeCount = 1;
+    sceneController.cubeColorKey = "Normal";  // "Normal"  "Inverse"
+    sceneController.maxWordKey = "Low Word Density";  // "Low Word Density"  "High Word Density"
+    sceneController.wordListPlay = null;
+    sceneController.currentGame = null;
+    sceneController.todayDate = getTodaysDate();
+    secondTime = " First";
+    
+    //yellowStarTexture = loadTexture("images/particle-yellow12-atlas.png");
+    //redStarTexture = loadTexture("images/particle-red12-atlas.png");
+    //blueStarTexture = loadTexture("images/particle-blue12-atlas.png");
+    //blackStarTexture = loadTexture("images/particle-black12-atlas.png");
+    //allLettersTexture = loadTexture("images/LettersTA1024x1024.png");
+    
+    var tImage1 = preload.getResult("image1");
+    yellowStarTexture = loadTexture(tImage1);
+    
+    var tImage2 = preload.getResult("image2");
+    blueStarTexture = loadTexture(tImage2);
+    
+    var tImage3 = preload.getResult("image3");
+    blackStarTexture = loadTexture(tImage3);
+    
+    var tImage4 = preload.getResult("image4");
+    redStarTexture = loadTexture(tImage4);
+    
+    var tImage0 = preload.getResult("image0");
+    allLettersTexture = loadTexture(tImage0);
+    
+    textureChangedX = true;
+    
+    postScoreNow = false;
+    
+    // Load weekly lists
+    loadWordList("wordlists/MonthlyIput.txt");
+    weeklyLists = wordListString.split("\n");
+    
+    for(var i = 0; i < weeklyLists.length; i=i+3){
+        var tableElement = new TableRowObject();
+        tableElement.init();
+        tableElement.date = weeklyLists[i];
+        tableElement.cubeSize = weeklyLists[i+1];
+        tableElement.wordList = weeklyLists[i+2];
+        weeklyWordLists.push(tableElement);
+    }
+    
+    // get current date plus last 14 days of puzzles
+    for(var i = weeklyWordLists.length - 1; i >= 0; i=i-1){
+        var checkGame = weeklyWordLists[i];
+        if(checkGame.date === sceneController.todayDate){
+            
+            break;
+        }
+        else
+        {
+            weeklyWordLists.pop();
+        }
+    }
+    if(weeklyWordLists.length > 13){
+        var rCount = weeklyWordLists.length - 13;
+        for(var i = 0; i < rCount; i++){
+            weeklyWordLists.splice(0,1);
+        }
+    }
+    var tempRowArray = new Array();
+    var tLength = weeklyWordLists.length;
+    for(var i = 0; i < tLength; i++){
+        var tempE = weeklyWordLists.pop();
+        tempRowArray.push(tempE);
+    }
+    weeklyWordLists = tempRowArray;
+    
+    var firstGame = null;
+    if(!(weeklyWordLists.length === 0)){
+        firstGame = weeklyWordLists[0];
+    }
+    
+    if(firstGame !== null && firstGame.date === sceneController.todayDate){
+
+        sceneController.currentGame = firstGame.date;
+        sceneController.wordListPlay = "wordlists/" + firstGame.wordList;
+        if (firstGame.cubeSize === "4x4"){
+            sceneController.cubeSize = 96;
+            sceneController.preCubeSize = 96;
+        }
+        else if (firstGame.cubeSize === "5x5"){
+            sceneController.cubeSize = 150;
+            sceneController.preCubeSize = 150;
+        }
+        else if (firstGame.cubeSize === "6x6"){
+            sceneController.cubeSize = 216;
+            sceneController.preCubeSize = 216;
+        }
+
+    }
+    else // default game
+    {
+        sceneController.currentGame = null;
+        sceneController.wordListPlay = "wordlists/Fruit.txt";
+        sceneController.cubeSize = 96;
+        sceneController.preCubeSize = 96;
+    }
+    
+    
+    // Retrieve local storage
+    LoadScores();
+    if(typeof(Storage)!=="undefined"){
+        localStorage.clear();
+    }
+    SaveScores();
+    
+    //document.getElementById('agentdisplay').innerHTML = agent;
+    
+    
+    
+    /*
+    if(iWinConsole){
+        iConsole.game.loadProgress( { progress: 1, file: '' } );
+
+        iConsole.game.loaded( {
+           success: true
+        } );
+        
+        
+    }
+    */
+    
+}
+
+
+function getTodaysDate(){
+    
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth()+1; //January is 0!
+    var yyyy = today.getFullYear();
+
+    if(dd<10) {
+        dd='0'+dd;
+    } 
+
+    if(mm<10) {
+        mm='0'+mm;
+    } 
+    
+    yyyy = '/'+yyyy;
+    yyyy = yyyy.substr(3,2);
+    
+    today = mm+'/'+dd+'/'+yyyy;
+    
+    return today;
+}
+        
+
+function updateGameScore(score){
+    
+    if (!sceneController.solveCube) {
+
+        sceneController.iGameScore = sceneController.iGameScore + score;
+        document.getElementById('scorebox').innerHTML = sceneController.iGameScore;
+
+        
+        var totalLetters = sceneController.totalLetteronCube;
+        var gamePercentage = sceneController.iGameScore / (totalLetters * 30) * 100;
+
+        gamePercentage = parseFloat(Math.round(gamePercentage * 100) / 100).toFixed(0);
+        if (sceneController.iGameScore > 0) {
+            document.getElementById('scoreratebox').innerHTML = gamePercentage + "%";
+        }
+        
+    }
+    else
+    {
+        sceneController.iGameScore = sceneController.iGameScore - score;
+
+        var totalLetters = sceneController.totalLetteronCube;
+        var gamePercentage = sceneController.iGameScore / (totalLetters * 30) * 100;
+
+        gamePercentage = parseFloat(Math.round(gamePercentage * 100) / 100).toFixed(0);
+        if (sceneController.iGameScore <= 0) {
+            document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+            document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+        }
+        else
+        {
+            document.getElementById('scorebox').innerHTML = sceneController.iGameScore;
+            document.getElementById('scoreratebox').innerHTML = gamePercentage + "%";
+        }
+
+    }
+
+}
+
+
+
+function  resetGameScore(){
+    
+    clearTimeout(starTimer1);
+    clearTimeout(starTimer2);
+    
+    if(!(numberStars === 3)){
+        $("#starbox").effect("fade", "swing", "300", function() {
+            numberStars = 3;
+            document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+            //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
+            
+        }); 
+        $("#starbox").show({
+          effect: "fade",
+          duration: 300
+        });
+    }
+    
+    $("#scorebox").effect("fade", "swing", "300", function() {
+        
+        document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+        //document.getElementById('scorebox').innerHTML = "Temp";
+    });
+    $("#scoreratebox").effect("fade", "swing", "300", function() {
+        
+        document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+        //document.getElementById('scoreratebox').innerHTML = "Temp";
+    });
+    
+    $("#scorebox").show({
+      effect: "fade",
+      duration: 300
+    });
+    $("#scoreratebox").show({
+      effect: "fade",
+      duration: 300
+    });
+}
+    
+ 
+   
+function updateScoreStar(stars){
+    
+    var tempStar = $("#starbox");
+    tempStar.effect("fade", "swing", "300", function() {
+ 
+        switch (stars) {
+            case "BlueStars":
+                numberStars = 3;
+                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
+                break;
+            case "RedStars":
+                numberStars = 2;
+                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \">";
+                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
+                
+                break;
+            case "YellowStars":
+                numberStars = 1;
+                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \">";
+                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
+                
+                break;
+        }
+    
+    }); 
+    
+    tempStar.show({
+            effect: "fade",
+            duration: 300
+          });
+          
+}
+
+
+
+
+function endOldStartNewGame(){
+     
+    //cObject.tearDownCube();
+    //cLImage.tearDownLetterImage();
+
+    cObject = null;
+    cLImage = null;
+    particleEmitterYellow = null;
+    particleEmitterRed = null;
+    particleEmitterBlue = null;
+    particleEmitterBlack = null;
+
+    cubeBoard.length = 0;
+    wordList.length = 0;
+    wordListSortedByLength.length = 0;
+
+    sceneController.totalLetteronCube = 0;
+    sceneController.iGameScore = 0;
+    sceneController.giveUpOnHiddenWord = false;
+    sceneController.gameOver = false;
+
+    resetGameScore();
+
+    sceneController.wordHintWords.length = 0;
+    sceneController.solveCube = false;
+    
+    secondTime = " Second";
+    sceneControllerLoadScene();
+    
+    
+    
+    
+}
+
+
+
+function sceneControllerLoadScene(){
+    
+    lastParticle = false;
+    priorScore = 0;
+    sceneController.postGameWinMessage = false;
+    sceneController.cubeSize = sceneController.preCubeSize;
+    document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+    document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+    //document.getElementById('scorebox').innerHTML = "99999";
+    //document.getElementById('scoreratebox').innerHTML = "100%";
+    
+    cubeBoard = new Array();
+    setupCube();
+    
+    cObject = new Object();
+    CubeObjectInit();
+    CubeObjectAwake();
+    
+    cLImage = new ActiveLetterImage();
+    cLImage.awakeNow();
+    
+    particleEmitterYellow = new ParticleSystem();
+    particleEmitterYellow.init();
+    particleEmitterYellow.emissionRangeN = new BBRangeMake(1.0, 0.0);
+    
+    if (containerScale){
+        particleEmitterYellow.sizeRangeN = new BBRangeMake(30.0, 0.0);
+    }
+    else{
+        particleEmitterYellow.sizeRangeN = new BBRangeMake(15.0, 0.0);
+    }
+    
+    particleEmitterYellow.xVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterYellow.yVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterYellow.zVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterYellow.growRangeN = new BBRangeMake(-0.8, 0.5);
+    particleEmitterYellow.pType = 0;
+    particleEmitterYellow.lifeRangeN = new BBRangeMake(2.0, 0.0);
+    particleEmitterYellow.decayRangeN = new BBRangeMake(0.03, 0.05);
+    particleEmitterYellow.emitPosition = new BBPointMake(0.0, 0.0, 0.0);
+    particleEmitterYellow.setParticleX(yellowStarTexture);
+    particleEmitterYellow.emitCounter = 0;
+    particleEmitterYellow.emit = false;
+    particleEmitterYellow.awake();
+    
+    particleEmitterRed = new ParticleSystem();
+    particleEmitterRed.init();
+    particleEmitterRed.emissionRangeN = new BBRangeMake(1.0, 0.0);
+    
+    if (containerScale){
+        particleEmitterRed.sizeRangeN = new BBRangeMake(30.0, 0.0);
+    }
+    else{
+        particleEmitterRed.sizeRangeN = new BBRangeMake(15.0, 0.0);
+    }
+    
+    particleEmitterRed.xVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterRed.yVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterRed.zVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterRed.growRangeN = new BBRangeMake(-0.8, 0.5);
+    particleEmitterRed.pType = 0;
+    particleEmitterRed.lifeRangeN = new BBRangeMake(2.0, 0.0);
+    particleEmitterRed.decayRangeN = new BBRangeMake(0.03, 0.05);
+    particleEmitterRed.emitPosition = new BBPointMake(0.0, 0.0, 0.0);
+    particleEmitterRed.setParticleX(redStarTexture);
+    particleEmitterRed.emitCounter = 0;
+    particleEmitterRed.emit = false;
+    particleEmitterRed.awake();
+    
+    particleEmitterBlue = new ParticleSystem();
+    particleEmitterBlue.init();
+    particleEmitterBlue.emissionRangeN = new BBRangeMake(1.0, 0.0);
+    
+    if (containerScale){
+        particleEmitterBlue.sizeRangeN = new BBRangeMake(30.0, 0.0);
+    }
+    else{
+        particleEmitterBlue.sizeRangeN = new BBRangeMake(15.0, 0.0);
+    }
+    
+    particleEmitterBlue.xVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterBlue.yVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterBlue.zVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterBlue.growRangeN = new BBRangeMake(-0.8, 0.5);
+    particleEmitterBlue.pType = 0;
+    particleEmitterBlue.lifeRangeN = new BBRangeMake(2.0, 0.0);
+    particleEmitterBlue.decayRangeN = new BBRangeMake(0.03, 0.05);
+    particleEmitterBlue.emitPosition = new BBPointMake(0.0, 0.0, 0.0);
+    particleEmitterBlue.setParticleX(blueStarTexture);
+    particleEmitterBlue.emitCounter = 0;
+    particleEmitterBlue.emit = false;
+    particleEmitterBlue.awake();
+    
+    particleEmitterBlack = new ParticleSystem();
+    particleEmitterBlack.init();
+    particleEmitterBlack.emissionRangeN = new BBRangeMake(1.0, 0.0);
+    
+    if (containerScale){
+        particleEmitterBlack.sizeRangeN = new BBRangeMake(30.0, 0.0);
+    }
+    else{
+        particleEmitterBlack.sizeRangeN = new BBRangeMake(15.0, 0.0);
+    }
+    
+    particleEmitterBlack.xVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterBlack.yVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterBlack.zVelocityRangeN = new BBRangeMake(-1.0, 2.0);
+    particleEmitterBlack.growRangeN = new BBRangeMake(-0.8, 0.5);
+    particleEmitterBlack.pType = 4;
+    particleEmitterBlack.lifeRangeN = new BBRangeMake(2.0, 0.0);
+    particleEmitterBlack.decayRangeN = new BBRangeMake(0.03, 0.05);
+    particleEmitterBlack.emitPosition = new BBPointMake(0.0, 0.0, 0.0);
+    particleEmitterBlack.setParticleX(blackStarTexture);
+    particleEmitterBlack.emitCounter = 0;
+    particleEmitterBlack.emit = false;
+    particleEmitterBlack.awake();
+    
+    sceneController.endAnimationActive = false;
+    sceneController.stopCubeSceneObject = false;
+    
+    $( "#container" ).fadeTo(3000, 1.0);
+    
+    
+    if(iWinConsole){
+        
+        
+        var tempPoints;
+        /*
+        iConsole.game.getGameData(null).result( function ( resultData ) {
+           tempPoints = resultData;
+           var tttppp;
+           if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
+                tttppp = 0.0;
+                document.getElementById('agentdisplay').innerHTML = "Score1: " + tttppp;
+            }
+            else{
+                tttppp = parseInt(tempPoints);
+                document.getElementById('agentdisplay').innerHTML = "Score2: " + tttppp;
+            }
+           
+        } );
+        */
+       
+        iConsole.game.getLevelData( { level: 4 } ).result( function ( resultData ) {
+            tempPoints = resultData.data;
+            tempPoints = tempPoints.replace(/"/g, ""); //remove all quotes
+            
+            //tempPoints = "06/05/14;2000;100%;06/04/14;1500;95%;06/03/14;180;55%;06/02/14; ; ;06/01/14; ; ;05/31/14;150;45%;05/30/14; ; ;05/29/14; ; ;05/28/14;240;62%;05/27/14; ; ;05/26/14; ; ;05/25/14; ; ;";
+            //document.getElementById('agentdisplay2').innerHTML = "st: " + tempPoints;
+            
+            if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0){
+                
+            }
+            else{
+                
+                var tempPointsArray = tempPoints.split(";");
+                
+                var tempArray = new Array();
+                for (var i = 0; i < tempPointsArray.length; i = i + 3){
+                    var newElement = {
+                        date: tempPointsArray[i],
+                        highScore: tempPointsArray[i + 1],
+                        scoreRate: tempPointsArray[i + 2]
+                    };
+                    tempArray.push(newElement);
+                }
+                
+               
+                for (var i = 0; i < weeklyWordLists.length; i++){
+                    var tElement = weeklyWordLists[i];
+                    
+                    for (var j = 0; j < tempArray.length; j++){
+                        var jElement = tempArray[j];
+                        
+                        if(tElement.date === jElement.date){
+                            if(jElement.highScore !== null && tElement.highScore !== null){
+                                if(jElement.highScore > tElement.highScore){
+                                    tElement.highScore = jElement.highScore;
+                                    tElement.scoreRate = jElement.scoreRate;
+                                }
+                            }
+                            else if(jElement.highScore !== null && tElement.highScore === null){
+                                tElement.highScore = jElement.highScore;
+                                tElement.scoreRate = jElement.scoreRate;
+                            }
+                            break;
+                        }
+                        
+                    }
+
+                }
+
+                
+                
+            }
+        });
+       
+        iConsole.game.getLevelData( { level: 0 } ).result( function ( resultData ) {
+            tempPoints = resultData.data;
+            //document.getElementById('agentdisplay2').innerHTML = "st: " + tempPoints;
+            if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
+                totalPoints = 0.0;
+                //document.getElementById('agentdisplay').innerHTML = "1: " + totalPoints;
+            }
+            else{
+                totalPoints = parseInt(tempPoints);
+                //document.getElementById('agentdisplay').innerHTML = "2: " + totalPoints;
+            }
+        });
+        
+        if (sceneController.cubeSize === 96)
+        {
+            iConsole.game.getLevelData( { level: 1 } ).result( function ( resultData ) {
+                tempPoints = resultData.data;
+                if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
+                    levelHighScore = 0.0;
+                    //document.getElementById('agentdisplay').innerHTML = "4x4 B: " + levelHighScore;
+                }
+                else{
+                    levelHighScore = parseInt(tempPoints);
+                    //document.getElementById('agentdisplay2').innerHTML = "4x4 L: " + levelHighScore;
+                }
+            } );
+        }
+        else if (sceneController.cubeSize === 150)
+        {
+            iConsole.game.getLevelData( { level: 2 } ).result( function ( resultData ) {
+                tempPoints = resultData.data;
+                if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
+                
+                    levelHighScore = 0.0;
+                    //document.getElementById('agentdisplay').innerHTML = "5x5 B: " + levelHighScore;
+                }
+                else{
+                    levelHighScore = parseInt(tempPoints);
+                    //document.getElementById('agentdisplay2').innerHTML = "5x5 L: " + levelHighScore;
+                }
+            } );
+        }
+        else if (sceneController.cubeSize === 216)
+        {
+            iConsole.game.getLevelData( { level: 3 } ).result( function ( resultData ) {
+                tempPoints = resultData.data;
+                if(tempPoints === null || tempPoints === undefined || tempPoints.length === 0 || isNaN(tempPoints)){
+                    levelHighScore = 0.0;
+                    //document.getElementById('agentdisplay').innerHTML = "6x6 B: " + levelHighScore;
+                }
+                else{
+                    levelHighScore = parseInt(tempPoints);
+                    //document.getElementById('agentdisplay2').innerHTML = "6x6 L: " + levelHighScore;
+                }
+            } );
+        }
+        
+    }
+    
+}
+
+
+
+function sceneControllerUnloadScene(){
+    
+    sceneController.stopCubeSceneObject = true;
+    
+}
+
+function SolveTheCube2(){
+    alert("SolveTheCube");
+}
+
+function SolveTheCube(){
+    $( "#popupHints" ).popup("close");
+    sceneController.solveCube = true;
+    //sceneController.gameOver = true;
+    clearTimeout(starTimer1);
+    clearTimeout(starTimer2);
+    numberStars = 3;
+    document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+    //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
+        
+    solveCubeNow();
+    
+}
+
+
+
+function ToggleInverse(){
+    
+    PlayBloop();
+    
+    var lStore;
+    if($('#check2').prop('checked')){
+        lStore = "Inverse";
+    }
+    else{
+        lStore = "Normal";
+    }
+    
+    if(typeof(Storage)!=="undefined")
+    {    
+        
+        var lKey = "tInverse";
+        localStorage.setItem(lKey, lStore);
+    }
+    
+}
+
+
+
+function ToggleDensity(){
+    
+    PlayBloop();
+    
+    var lStore;
+    if($('#check1').prop('checked')){
+        lStore = "High Word Density";
+    }
+    else{
+        lStore = "Low Word Density";
+    }
+    
+    if(typeof(Storage)!=="undefined")
+    {    
+        
+        var lKey = "tDensity";
+        localStorage.setItem(lKey, lStore);
+    }
+    
+}
+
+
+
+function ToggleMusic(){
+    
+    PlayBloop();
+    var lStore;
+    if(!soundTrack){
+        //document.getElementById('agentdisplay').innerHTML = "Play Now";
+        soundTrack = true;
+        lStore = true;
+        //soundTrack.play();
+        SoundInstanceBM.resume();
+    }
+    else{
+        //document.getElementById('agentdisplay').innerHTML = "Pause Now";
+        soundTrack = false;
+        lStore = false;
+        //soundTrack.pause();
+        SoundInstanceBM.pause();
+        
+    }
+    
+    if(typeof(Storage)!=="undefined")
+    {    
+        var lKey = "tMusic";
+        localStorage.setItem(lKey, lStore);
+    }
+    
+}
+
+
+function ToggleSound(){
+    
+    PlayBloop();
+    if(soundEffects){
+        soundEffects = false;
+    }
+    else{
+        soundEffects = true;
+    }
+    
+    if(typeof(Storage)!=="undefined")
+    {    
+        var lStore = soundEffects;
+        var lKey = "tSound";
+        localStorage.setItem(lKey, lStore);
+    }
+    
+}
+
+
+function ButtonNewGame(){
+    
+    /*
+    if(!sceneController.postGameWinMessage && sceneController.gameOver && particleEmitterYellow.activeParticles.length === 0 && particleEmitterRed.activeParticles.length === 0 && particleEmitterBlue.activeParticles.length === 0 && particleEmitterBlack.activeParticles.length === 0){
+          
+        if(iWinConsole){
+            
+            postTotalPointsiWin();
+            
+        }
+          
+    }
+    */
+    
+    
+    ClosePopupWin();
+    ClosePopupSettings();
+    if($('#check1').prop('checked')){
+        sceneController.maxWordKey = "High Word Density";
+    }
+    else
+    {
+        sceneController.maxWordKey = "Low Word Density";
+    }
+    if($('#check2').prop('checked')){
+        sceneController.cubeColorKey = "Inverse";
+    }
+    else
+    {
+        sceneController.cubeColorKey = "Normal";
+    }
+    
+    if(iWinConsole){
+        
+        iConsole.ads.show( {
+            type: 'interstitial'
+        } ).result( function( resultData ) {
+            sceneController.endAnimationActive = true;
+        } );
+        
+    }
+    else{
+        sceneController.endAnimationActive = true;
+    }
+    
+}
+
+
+
+function LoadScores(){
+    
+    if(typeof(Storage)!=="undefined")
+    {
+        
+        for(var i = 0; i < weeklyWordLists.length; i++){
+            var tElement = weeklyWordLists[i];
+            
+            var lKey = tElement.date;
+            var lStore = localStorage.getItem(lKey);
+            if(lStore !== null){
+                
+                var lStoreArray = lStore.split(";");
+                tElement.highScore = lStoreArray[0];
+                tElement.scoreRate = lStoreArray[1];
+            }
+            
+        }
+        
+        
+        //load Music Sound status
+        
+        soundTrack = localStorage.getItem("tMusic");
+        if(soundTrack === "false"){
+            soundTrack = false;
+        }
+        else{
+            soundTrack = true;
+        }
+        
+       
+        soundEffects = localStorage.getItem("tSound");
+        if(soundEffects === "false"){
+            soundEffects = false;
+        }
+        else{
+            soundEffects = true;
+        }
+        
+        sceneController.maxWordKey = localStorage.getItem("tDensity");
+        if(sceneController.maxWordKey === "High Word Density"){
+            sceneController.maxWordKey = "High Word Density";
+        }
+        else{
+            sceneController.maxWordKey = "Low Word Density";
+        }
+        
+        sceneController.cubeColorKey = localStorage.getItem("tInverse");
+        if(sceneController.cubeColorKey === "Inverse"){
+            sceneController.cubeColorKey = "Inverse";
+        }
+        else{
+            sceneController.cubeColorKey = "Normal";
+        }
+        
+    }
+}
+
+
+function SaveScores(){
+    
+    if(typeof(Storage)!=="undefined")
+    {
+        
+        for(var i = 0; i < weeklyWordLists.length; i++){
+            var tElement = weeklyWordLists[i];
+            
+            var lKey = tElement.date;
+            var lStore = tElement.highScore + ";" + tElement.scoreRate;
+            localStorage.setItem(lKey, lStore);
+        }
+        
+        var lStore2 = soundEffects;
+        var lKey2 = "tSound";
+        localStorage.setItem(lKey2, lStore2);
+        
+        var lStore3 = soundTrack;
+        var lKey3 = "tMusic";
+        localStorage.setItem(lKey3, lStore3);
+        
+        var lStore4 = sceneController.maxWordKey;
+        var lKey4 = "tDensity";
+        localStorage.setItem(lKey4, lStore4);
+        
+        var lStore5 = sceneController.cubeColorKey;
+        var lKey5 = "tInverse";
+        localStorage.setItem(lKey5, lStore5);
+        
+    }
+    
+}
+
+
+function PostScore(){
+    
+    var cScore = document.getElementById('scorebox').innerHTML * 1.0;
+    var cScoreRate = document.getElementById('scoreratebox').innerHTML;
+    
+    for(var i = 0; i < weeklyWordLists.length; i++){
+        var tElement = weeklyWordLists[i];
+        if(tElement.date === sceneController.currentGame){
+            
+            if(tElement.highScore < cScore){
+                tElement.highScore = cScore;
+                tElement.scoreRate = cScoreRate;
+            }
+            
+            break;
+        }
+    }
+    // Store local storage
+    SaveScores();
+    
+    postTotalPointsiWin();
+}
+
+
+function postTotalPointsiWin(){
+    
+    if(iWinConsole){
+        var cScore = parseInt(document.getElementById('scorebox').innerHTML);
+        var aScore = cScore - priorScore;
+        priorScore = cScore;
+        
+        totalPoints = totalPoints + aScore;
+        
+        //iConsole.game.setGameData( 
+            //123456
+         //);
+        
+        iConsole.game.postHighScore( {
+            score: totalPoints
+        } ).result( function () {
+            //document.getElementById('agentdisplay').innerHTML = "Total Points: " + totalPoints;
+        } );
+        
+        
+        iConsole.game.setLevelData( {
+            level: 0,
+            data: totalPoints
+        } );
+        
+        if(cScore > levelHighScore){
+            levelHighScore = cScore;
+        }
+        
+        if (sceneController.cubeSize === 96)
+        {
+            iConsole.game.setLevelData( {
+                level: 1,
+                data: levelHighScore
+            } );
+            //document.getElementById('agentdisplay').innerHTML = "4x4 S: " + levelHighScore;
+        }
+        else if (sceneController.cubeSize === 150)
+        {
+            iConsole.game.setLevelData( {
+                level: 2,
+                data: levelHighScore
+            } );
+            //document.getElementById('agentdisplay').innerHTML = "5x5 S: " + levelHighScore;
+        }
+        else if (sceneController.cubeSize === 216)
+        {
+            iConsole.game.setLevelData( {
+                level: 3,
+                data: levelHighScore
+            } );
+            //document.getElementById('agentdisplay').innerHTML = "6x6 S: " + levelHighScore;
+        }
+        
+        
+        var data0 = "";
+        for(var i = 0; i < weeklyWordLists.length; i++){
+            var tElement = weeklyWordLists[i];
+            
+            data0 = data0 + tElement.date + ";" + tElement.highScore + ";" + tElement.scoreRate + ";";
+        }
+        iConsole.game.setLevelData( {
+            level: 4,
+            data: data0
+        } );
+        
+        
+    }
+    
+}
+
+        
+function SceneControllerUpdateModel(){
+    
+    if(sceneController.stopCubeSceneObject)
+    {
+        endOldStartNewGame();
+    }
+    else
+    {
+        cObjectUpdate();
+        cLImage.update();
+        particleEmitterYellow.update();
+        particleEmitterRed.update();
+        particleEmitterBlue.update();
+        particleEmitterBlack.update();
+        
+        
+        
+        if(!sceneController.postGameWinMessage && sceneController.gameOver && particleEmitterYellow.activeParticles.length === 0 && particleEmitterRed.activeParticles.length === 0 && particleEmitterBlue.activeParticles.length === 0 && particleEmitterBlack.activeParticles.length === 0){
+            
+            sceneController.postGameWinMessage = true;
+            
+            var cScore = document.getElementById('scorebox').innerHTML;
+            var cScoreRate = document.getElementById('scoreratebox').innerHTML;
+
+            //var cMessage = "<p>" + "Cube Cleared!<br><br>Score: " + cScore + "<br>" + "Score Rate: " + cScoreRate + "</p>";
+
+            //PostScore();
+            
+            //$( "#dialogWin" ).empty();
+            //$( "#dialogWin" ).append( cMessage );
+            //$( "#dialogWin" ).dialog( "open" );
+            
+            
+            document.getElementById('Winmessage').innerHTML = "Cube Cleared!<br><br>Score: " + cScore + "<br>" + "Score Rate: " + cScoreRate;
+            $( "#popupWin" ).popup("open", { positionTo: "#topHeader",
+                                                transition: "pop" 
+                                            
+            });
+            
+        }
+        
+        if(postScoreNow && sceneController.postGameWinMessage && sceneController.gameOver && particleEmitterYellow.activeParticles.length === 0 && particleEmitterRed.activeParticles.length === 0 && particleEmitterBlue.activeParticles.length === 0 && particleEmitterBlack.activeParticles.length === 0){
+            
+            postScoreNow = false;
+            PostScore();
+        }
+        
+        if(particleEmitterYellow.activeParticles.length > 0 || particleEmitterRed.activeParticles.length > 0 || particleEmitterBlue.activeParticles.length > 0){
+            lastParticle = true;
+            //document.getElementById('mouseCoord').innerHTML = "Particles";
+            //document.getElementById('vMoveEvent').innerHTML = "";
+        }
+        else if (lastParticle){
+            lastParticle = false;
+            //document.getElementById('mouseCoord').innerHTML = "";
+            //document.getElementById('vMoveEvent').innerHTML = "No Particles";
+            
+            if(!(numberStars === 3)){
+                updateScoreStar("BlueStars");
+            }
+            
+            if(!sceneController.gameOver && !sceneController.solveCube){
+                starTimer1 = setTimeout(function(){updateScoreStar("RedStars");}, 30000);
+                starTimer2 = setTimeout(function(){updateScoreStar("YellowStars");}, 60000);
+            }
+            
+        }
+        
+        
+        
+    }
+    
+}
+
+
+
+function SceneControllerRenderScene(){
+    
+    
+    
+    EAGLViewBeginDraw();
+       
+    if(!sceneController.stopCubeSceneObject)
+    {
+        cObjectRender();
+        cLImage.render();
+        particleEmitterYellow.render();
+        particleEmitterRed.render();
+        particleEmitterBlue.render();
+        particleEmitterBlack.render();
+    }
+
+    EAGLViewFinishDraw();
+    
+}
+
+
+
+function loadWordList(str) {
+    
+    var client = new XMLHttpRequest();
+    client.onreadystatechange = function() {
+      if (client.readyState === 4) {
+          if ((client.status >= 200 && client.status < 300) || client.status === 304) {
+              wordListString = client.responseText;
+          }
+          else {
+              alert("Load word list was unsuccessful");
+          }
+      }
+      
+    };
+    client.open("get", str, false);
+    client.send(null);
+    
+}
+
+
+function sortByLength(v1, v2){
+    if(v1.length > v2.length) {
+        return -1;
+    } else if (v1.length < v2.length){
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+
+
+
+function setupCube(){
+        
+    
+    if (sceneController.cubeSize === 96)
+    {
+        for (var i = 0; i < 96; i++) 
+        {
+            var LSobject = new LetterSquareObject();
+            LSobject.setUp4x4(i);
+            cubeBoard[i] = LSobject;
+        }
+    }
+    else if (sceneController.cubeSize === 150)
+    {
+        for (var i = 0; i < 150; i++) 
+        {
+            var LSobject = new LetterSquareObject();
+            LSobject.setUp5x5(i);
+            cubeBoard[i] = LSobject;
+        }
+    }
+    else if (sceneController.cubeSize === 216)
+    {
+        for (var i = 0; i < 216; i++) 
+        {
+            var LSobject = new LetterSquareObject();
+            LSobject.setUp6x6(i);
+            cubeBoard[i] = LSobject;
+        }
+    }
+
+    
+    // Load Word List
+    loadWordList(sceneController.wordListPlay);
+    var WordArray = wordListString.split("\n");
+    //WordArray.pop(); // remove last element because not a word.
+    
+    
+    
+    /*
+    var tempWordString = " - ";
+    for (var i = 0; i < WordArray.length; i++)
+    {
+        tempWordString = tempWordString + WordArray[i] + " - ";
+    }
+    document.getElementById('ycoord').innerHTML = "Pre: " + tempWordString;
+    */
+    
+    
+    // Select Words to use on cube
+    var selectedWordArray = selectWords(WordArray);
+    
+
+    //badCube = selectedWordArray.isEmpty();
+
+    var wordListSortedByLengthTemp = new Array();
+    
+    // Sort Word List by length
+    selectedWordArray.sort(sortByLength);
+    
+    for (var i = 0; i < selectedWordArray.length; i++)
+    {
+        
+        var currentWord = selectedWordArray[i];
+        var currentWordS = currentWord.replace(/[^A-Za-z]/g, ""); //remove all spaces and punctuation
+        
+        var duplicateWord = false;
+        if(wordListSortedByLengthTemp.indexOf(currentWordS) === -1){
+            wordListSortedByLengthTemp.push(currentWordS);
+        }
+        else{
+            duplicateWord = true;
+        }
+
+        if (!duplicateWord)
+        {
+            
+            var tempWord = new WordListObject();
+            tempWord.init();
+            
+            tempWord.wordName = currentWordS; // without Spaces
+            tempWord.wordDisplayName = currentWord; // with Spaces
+            tempWord.wordLength = currentWordS.length; // without Spaces
+
+            var letterArray = new Array();
+            for (var letterIndex = 0; letterIndex < currentWordS.length; letterIndex++)
+            {
+                var currentLetter = currentWordS.substring(letterIndex, letterIndex + 1);
+                letterArray.push(currentLetter);
+
+            }
+
+            tempWord.allLetters = letterArray;
+            
+            wordListSortedByLength.push(tempWord);
+        }
+        
+    }
+    
+    //UpdateTextAreaViewY(wordListSortedByLength);
+    
+    
+    
+    
+    var wordListTemp = new Array();
+    // Sort Word List by alphabet
+    selectedWordArray.sort();
+    
+    for (var i = 0; i < selectedWordArray.length; i++)
+    {
+        var currentWord2 = selectedWordArray[i];
+        var currentWordS2 = currentWord2.replace(/[^A-Za-z]/g, ""); //remove all spaces and punctuation
+        
+        var duplicateWord2 = false;
+        if(wordListTemp.indexOf(currentWordS2) === -1){
+            wordListTemp.push(currentWordS2);
+        }
+        else{
+            duplicateWord2 = true;
+        }
+
+        if (!duplicateWord2)
+        {
+            var tempWord2 = new WordListObject();
+            tempWord2.init();
+            
+            tempWord2.wordName = currentWordS2; // without Spaces
+            tempWord2.wordDisplayName = currentWord2; // with Spaces
+            tempWord2.wordLength = currentWordS2.length; // without Spaces
+
+            var letterArray2 = new Array();
+            for (var letterIndex2 = 0; letterIndex2 < currentWordS2.length; letterIndex2++)
+            {
+                var currentLetter2 = currentWordS2.substring(letterIndex2, letterIndex2 + 1);
+                letterArray2.push(currentLetter2);
+
+            }
+
+            tempWord2.allLetters = letterArray2;
+            
+            wordList.push(tempWord2);
+
+        }
+
+    }
+    
+    //document.getElementById('ycoord').innerHTML = "Sort by Alphabet:  " + wordListTemp;
+    
+
+    //if (!badCube)
+    //{
+        placeWordsonCube();
+
+    //}
+
+
+}
+
+
+
+function placeWordsonCube(){
+    
+    var filled;
+    var startSquare;
+    var currentSquare;
+    var removeWordListObjects = new Array();
+    var tempArrayFilled = false;
+
+    var firstLetter;
+    var nextLetter;
+
+    var letterCount = 0;
+    var rSquare = Math.floor(Math.random() * sceneController.cubeSize); //randum number from 0 to cubeSize - 1
+    var rDirect = Math.floor(Math.random() * 8); //randum number from 0 to 7
+    
+    for (var i = 0; i < wordListSortedByLength.length; i++) 
+    {
+        var tempLetterArray = new Array();
+        wordFit = false;
+        var currentWord = wordListSortedByLength[i];
+        filled = false;
+
+        var incRandom = rSquare + (sceneController.cubeSize / 6) +1;
+        for (var r = 0; r < incRandom; r++)
+        {
+            rSquare++;
+            if (rSquare === sceneController.cubeSize)
+                rSquare = 0;
+        }
+
+
+        var squareCount = -1;
+        while (!filled && squareCount < sceneController.cubeSize)
+        {
+            squareCount++;
+
+            //var incRandom2 = rSquare + (random(cubeSize/6) * 2); //((random() % (cubeSize/6)) * 2);
+            var incRandom2 = rSquare + (Math.floor(Math.random() * sceneController.cubeSize/6) * 2);
+            for (var r = 0; r < incRandom2; r++)
+            {
+                rSquare++;
+                if (rSquare === sceneController.cubeSize)
+                    rSquare = 0;
+            }
+
+            if (wordFit)
+            {
+                rSquare = wordFitSquare;
+            }
+
+            startSquare = cubeBoard[rSquare];
+
+            firstLetter = currentWord.allLetters[0];
+
+            if (!checkSquare(startSquare, firstLetter))
+            {
+
+                var directionCount = -1;
+                while (!filled && directionCount < 0)
+                {
+                    directionCount++;
+
+                    for (var r = 0; r < 1; r++)
+                    {
+                        rDirect++;
+                        if (rDirect === 8)
+                            rDirect = 0;
+                        rDirection = rDirect;
+                    }
+
+                    if (wordFit)
+                    {
+                        rDirect = wordFitDirection;
+                        rDirection = rDirect;
+
+                    }
+
+
+                    if (convertToLength(rDirection, startSquare) >= currentWord.wordLength) 
+                    {
+                        // check all letters
+                        currentSquare = startSquare;
+                        tempLetterArray.push(startSquare);
+
+                        for (var j = 1; j < currentWord.wordLength; j++) 
+                        {
+                            nextLetter = currentWord.allLetters[j];
+                            currentSquare = moveToNextSquare(rDirection, currentSquare);
+
+                            if (checkSquare(currentSquare, nextLetter)) // Check to see if square is empty or has same letter
+                            {
+                                //filled = NO;
+                                tempArrayFilled = false;
+                                break;
+                            }
+                            else
+                            {
+                                tempLetterArray.push(currentSquare);
+                                tempArrayFilled = true;
+                            }
+                        }
+
+                        if (!tempArrayFilled)
+                        {
+                            tempLetterArray.length = 0;
+                            filled = false;
+
+
+                            // check for common letters
+                            for (var k = 0; k < currentWord.wordLength; k++)
+                            {
+                                var temper = currentWord.allLetters[k];
+                                if (checkCommonLetters(currentSquare, temper))
+                                {
+                                    if (checkWordFit2(currentSquare, currentWord.wordName, k, rDirect))
+                                    {
+                                        wordFit = true;
+                                        startSquare = cubeBoard[wordFitSquare];
+
+                                        break;
+                                    }
+                                }
+
+                            }
+
+
+                            // check cross word common letters
+                            if (!wordFit)
+                            {
+                                //find cross word
+                                //System.out.println("find cross word - Current Square");
+                                var crossWord = findCrossWord(currentSquare);
+                                var randomIndex = new Array();
+                                for (var k = 0; k < crossWord.wordLength; k++)
+                                    randomIndex.push(k);
+
+                                var index;
+                                for (var m = 0; m < crossWord.wordLength; m++)
+                                {
+                                    var tI = Math.floor(Math.random() * randomIndex.length);
+                                    index = randomIndex[tI];
+                                    randomIndex.splice(tI, 1);
+
+                                    var currentSquare2 = crossWord.allSquares[index];
+                                    if (!(currentSquare.currentPosition === currentSquare2.currentPosition))
+                                    {
+
+                                        for (var j = 0; j < currentWord.wordLength; j++)
+                                        {
+                                            temper = currentWord.allLetters[j];
+                                            if (checkCommonLetters(currentSquare2, temper))
+                                            {
+
+                                                if (checkWordFit2(currentSquare2, currentWord.wordName, j, rDirect))
+                                                {
+                                                    wordFit = true;
+                                                    startSquare = cubeBoard[wordFitSquare];
+
+                                                    break;
+                                                }
+
+                                            }
+
+                                        }
+
+                                    }
+
+                                    if (wordFit)
+                                        break;
+
+                                }
+
+                            }
+
+
+                            //continue; // Check next direction
+                        }
+                        else
+                        {
+
+                            // location good - place word
+                            currentWord.firstLetterSquare = startSquare.currentPosition;
+                            currentWord.lastLetterSquare = currentSquare.currentPosition;
+                            currentWord.allSquares = tempLetterArray;
+
+                            for (var j = 0; j < currentWord.wordLength; j++)
+                            {
+                                var tempSquare = currentWord.allSquares[j];
+
+                                var temper = currentWord.allLetters[j];
+                                tempSquare.squareLetter = temper;
+                                if (tempSquare.positionOccupied)
+                                {
+                                    letterCount++;
+                                }
+                                tempSquare.positionOccupied = true;
+
+                            }
+
+                            //tempLetterArray.clear();
+                            //System.out.println("Word Placed: " + currentWord.getWordDisplayName());
+                            filled = true;
+                            break;
+                        } // if
+
+                    } // if
+                    else
+                    {
+                        filled = false;
+                        //continue;
+                    }
+                } // while - Check next Direction
+            } // if
+            else
+            {
+
+                // check for common letters
+                for (var j = 0; j < currentWord.wordLength; j++)
+                {
+                    var temper = currentWord.allLetters[j];
+                    if (checkCommonLetters(startSquare, temper))
+                    {
+                        if (checkWordFit2(startSquare, currentWord.wordName, j, rDirect))
+                        {
+                            wordFit = true;
+                            break;
+                        }
+                        else
+                        {
+
+                        }
+                    }
+
+                }
+
+
+                // check cross word common letters
+                if (!wordFit)
+                {
+                    //find cross word
+                    
+                    crossWord = findCrossWord(startSquare);
+                    randomIndex = new Array();
+                    for (var k = 0; k < crossWord.wordLength; k++)
+                        randomIndex.push(k);
+
+                    
+                    for (var m = 0; m < crossWord.wordLength; m++)
+                    {
+                        tI = Math.floor(Math.random() * randomIndex.length);
+                        index = randomIndex[tI];
+                        randomIndex.splice(tI, 1);
+
+                        currentSquare2 = crossWord.allSquares[index];
+                        if (!(startSquare.currentPosition === currentSquare2.currentPosition))
+                        {
+
+                            for (var j = 0; j < currentWord.wordLength; j++)
+                            {
+                                temper = currentWord.allLetters[j];
+                                if (checkCommonLetters(currentSquare2, temper))
+                                {
+
+                                    if (checkWordFit2(currentSquare2, currentWord.wordName, j, rDirect))
+                                    {
+                                        wordFit = true;
+                                        startSquare = cubeBoard[wordFitSquare];
+
+                                        break;
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        if (wordFit)
+                            break;
+
+                    }
+
+                }
+
+
+                filled = false;
+                //continue;
+            } // if
+
+        } // while - Check next Square
+
+
+        if (!filled && squareCount >= sceneController.cubeSize)  // could not place word on cube
+        {
+            
+            removeWordListObjects.push(currentWord);
+        }
+
+    } // for - go to Next Word
+
+    
+
+    for (var i = 0; i < removeWordListObjects.length; i++)
+    {
+        var tempWW = removeWordListObjects[i];
+        for (var j = 0; j < wordListSortedByLength.length; j++)
+        {
+            var tempRM = wordListSortedByLength[j];
+            if (tempWW.wordName === tempRM.wordName)
+            {
+                wordListSortedByLength.splice(j, 1);
+                break;
+            }
+        }
+    }
+
+//UpdateTextAreaViewX(wordListSortedByLength);
+
+    for (var i = 0; i < removeWordListObjects.length; i++)
+    {
+        var tempWW = removeWordListObjects[i];
+        for (var j = 0; j < wordList.length; j++)
+        {
+            var tempRM = wordList[j];
+            if (tempWW.wordName === tempRM.wordName)
+            {
+                wordList.splice(j, 1);
+                break;
+            }
+        }
+    }
+
+    
+    // Need to copy WordListObjects from wordListSortedByLength to wordList
+    for (var i = 0; i < wordListSortedByLength.length; i++)
+    {
+        var tempWLO1 = wordListSortedByLength[i];
+        for (var j = 0; j < wordList.length; j++)
+        {
+            var tempWLO2 = wordList[j];
+            
+            if(tempWLO1.wordName === tempWLO2.wordName){
+                
+                tempWLO2.firstLetterSquare = tempWLO1.firstLetterSquare;
+                //tempWLO2.lastLetterSquare = tempWLO1.lastLetterSquare;
+                //tempWLO2.allLetters = tempWLO1.allLetters;
+                //tempWLO2.allSquares = tempWLO1.allSquares;
+                
+                break;
+            }
+            
+        }
+        
+    }
+    
+
+    sceneController.totalLetteronCube = 0;
+    
+    removeWordListObjects.length = 0;
+
+    //Determine Hidden Word for Alphabet Quest
+    var rHiddenWord = Math.floor(Math.random() * wordListSortedByLength.length);
+    var hiddenWord = wordListSortedByLength[rHiddenWord];
+    hiddenWord.alphabetQuestHiddenWord = true;
+    hiddenWord.hideHiddenWord = true;
+    hiddenWord.wordPlacedScrollView = true;
+    hiddenWord.wordStrikedScrollView = true;
+
+    for (var i = 0; i < wordList.length; i++)
+    {
+        var hiddenWord2 = wordList[i];
+        if (hiddenWord2.wordName === hiddenWord.wordName)
+        {
+            hiddenWord2.alphabetQuestHiddenWord = true;
+            hiddenWord2.hideHiddenWord = true;
+            hiddenWord2.wordPlacedScrollView = true;
+            hiddenWord2.wordStrikedScrollView = true;
+            break;
+        }
+    }
+
+    UpdateTextAreaView(wordList);
+    
+    randomLettersEnglish();
+    
+}
+
+
+function findCrossWord(square){
+        
+    var returnCrossWord = null;
+    var crossWordFound = false;
+
+    for (var i = 0; i < wordListSortedByLength.length; i++)
+    {
+        var cWord = wordListSortedByLength[i];
+        if(cWord.allSquares === null)
+        {
+            
+        }
+        else
+        {
+            
+            if (!(cWord.allSquares.length === 0))
+            {
+                for (var j = 0; j < cWord.allSquares.length; j++)
+                {
+                    var cLetter = cWord.allSquares[j];
+                    if (cLetter.currentPosition === square.currentPosition)
+                    {
+                        returnCrossWord = cWord;
+                        crossWordFound = true;
+                        break;
+                    }
+
+                }
+            }
+
+            if (crossWordFound)
+            {
+                break;
+            }
+            
+        }
+
+    }
+
+    return returnCrossWord;
+
+}
+
+
+
+function checkCommonLetters(square, letter){
+
+    return (square.squareLetter === letter);
+
+}
+
+
+
+function checkWordFit2(square, word, index, wordFitDirForward){
+
+    var workingSquare;
+    var currentLetter;
+    var sWordFit = false;
+    var loopCount = 0;
+
+    var wordFitDirReverse = wordFitDirForward;
+    for (var i = 0; i < 4; i++)
+    {
+        wordFitDirReverse++;
+        if (wordFitDirReverse === 8)
+            wordFitDirReverse = 0;
+    }
+
+    while (!sWordFit && loopCount < 1)
+    {
+        workingSquare = square;
+        rDirection = wordFitDirReverse;
+        if (convertToLength(wordFitDirForward, square) >= (word.length - index) && convertToLength(wordFitDirReverse, square) >= (index +1)) 
+        {
+            for (var i = 0; i < index; i++)
+            {
+                workingSquare = moveToNextSquare(rDirection, workingSquare);
+            }
+            wordFitSquare = workingSquare.currentPosition;
+
+            wordFitDirection = rDirection;
+            for (var i = 0; i < 4; i++)
+            {
+                wordFitDirection++;
+                if (wordFitDirection === 8)
+                    wordFitDirection = 0;
+            }
+            rDirection = wordFitDirection;
+
+            if (convertToLength(wordFitDirection, workingSquare) >= word.length)
+            {
+
+                for (var j = 0; j < word.length; j++) 
+                {
+                    //currentLetter = [word substringWithRange:NSMakeRange(j, 1)];
+                    currentLetter = word.substring(j, j + 1);
+                    
+                    if (!checkSquare(workingSquare, currentLetter))
+                    {
+                        if (!(j === word.length - 1))
+                        {
+                            workingSquare = moveToNextSquare(rDirection, workingSquare);
+                        }
+
+                        sWordFit = true;
+                    }
+                    else
+                    {
+                        sWordFit = false;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                sWordFit = false;
+
+            }
+
+            if (sWordFit)
+            {
+                return true;
+            }
+
+
+        } // if 
+
+        loopCount++;
+
+
+    }  // while - check next direction
+
+    return false;
+
+}
+
+
+/*
+function moveToNextSquare(direction, square){
+
+    var NewSquare;
+
+    switch (direction)
+    {
+        case 0:
+            NewSquare = cubeBoard[square.topPosition];
+            break;
+        case 1:
+            NewSquare = cubeBoard[square.topRightPosition];
+            break;
+        case 2:
+            NewSquare = cubeBoard[square.rightPosition];
+            break;
+        case 3:
+            NewSquare = cubeBoard[square.bottomRightPosition];
+            break;
+        case 4:
+            NewSquare = cubeBoard[square.bottomPosition];
+            break;
+        case 5:
+            NewSquare = cubeBoard[square.bottomLeftPosition];
+            break;
+        case 6:
+            NewSquare = cubeBoard[square.leftPosition];
+            break;
+        case 7:
+            NewSquare = cubeBoard[square.topLeftPosition];
+            break;
+        default:
+            
+            break;
+    }
+
+
+    // +/- 180
+    if ((square.currentPosition() >= cubeSize*1/6 && square.currentPosition() < cubeSize*2/6 && NewSquare.currentPosition() >= cubeSize*5/6 && NewSquare.currentPosition() < cubeSize) || // back - bottom
+        (square.currentPosition() >= cubeSize*5/6 && square.currentPosition() < cubeSize && NewSquare.currentPosition() >= cubeSize*1/6 && NewSquare.currentPosition() < cubeSize*2/6) || // bottom - back
+        (square.currentPosition() >= cubeSize*4/6 && square.currentPosition() < cubeSize*5/6 && NewSquare.currentPosition() >= cubeSize*1/6 && NewSquare.currentPosition() < cubeSize*2/6) || // top - back
+        (square.currentPosition() >= cubeSize*1/6 && square.currentPosition() < cubeSize*2/6 && NewSquare.currentPosition() >= cubeSize*4/6 && NewSquare.currentPosition() < cubeSize*5/6))   // back - top
+    {
+        for (int i = 0; i < 4; i++) 
+        {
+            rDirection++;
+            if (rDirection == 8)
+                rDirection = 0;
+        }
+    }
+    // + 90
+    else if ((square.currentPosition() >= cubeSize*3/6 && square.currentPosition() < cubeSize*4/6 && NewSquare.currentPosition() >= cubeSize*5/6 && NewSquare.currentPosition() < cubeSize) || // right - bottom
+             (square.currentPosition() >= cubeSize*2/6 && square.currentPosition() < cubeSize*3/6 && NewSquare.currentPosition() >= cubeSize*4/6 && NewSquare.currentPosition() < cubeSize*5/6) || // left - top
+             (square.currentPosition() >= cubeSize*5/6 && square.currentPosition() < cubeSize && NewSquare.currentPosition() >= cubeSize*2/6 && NewSquare.currentPosition() < cubeSize*3/6) || // bottom - left
+             (square.currentPosition() >= cubeSize*4/6 && square.currentPosition() < cubeSize*5/6 && NewSquare.currentPosition() >= cubeSize*3/6 && NewSquare.currentPosition() < cubeSize*4/6))   // top - right
+    {
+        for (int i = 0; i < 2; i++) 
+        {
+            rDirection++;
+            if (rDirection == 8)
+                rDirection = 0;
+        }
+    }
+    // - 90
+    else if ((square.currentPosition() >= cubeSize*5/6 && square.currentPosition() < cubeSize && NewSquare.currentPosition() >= cubeSize*3/6 && NewSquare.currentPosition() < cubeSize*4/6) || // bottom - right
+             (square.currentPosition() >= cubeSize*4/6 && square.currentPosition() < cubeSize*5/6 && NewSquare.currentPosition() >= cubeSize*2/6 && NewSquare.currentPosition() < cubeSize*3/6) || // top - left
+             (square.currentPosition() >= cubeSize*2/6 && square.currentPosition() < cubeSize*3/6 && NewSquare.currentPosition() >= cubeSize*5/6 && NewSquare.currentPosition() < cubeSize) || // left - bottom
+             (square.currentPosition() >= cubeSize*3/6 && square.currentPosition() < cubeSize*4/6 && NewSquare.currentPosition() >= cubeSize*4/6 && NewSquare.currentPosition() < cubeSize*5/6))   // right - top
+    {
+        for (int i = 0; i < 2; i++) 
+        {
+            rDirection = rDirection - 1;
+            if (rDirection == -1)
+                rDirection = 7;
+        }
+    }
+
+    switch (direction)
+    {
+        case 0:
+            return (LetterSquareObject) cubeBoard.get(square.topPosition());
+        case 1:
+            return (LetterSquareObject) cubeBoard.get(square.topRightPosition());
+        case 2:
+            return (LetterSquareObject) cubeBoard.get(square.rightPosition());
+        case 3:
+            return (LetterSquareObject) cubeBoard.get(square.bottomRightPosition());
+        case 4:
+            return (LetterSquareObject) cubeBoard.get(square.bottomPosition());
+        case 5:
+            return (LetterSquareObject) cubeBoard.get(square.bottomLeftPosition());
+        case 6:
+            return (LetterSquareObject) cubeBoard.get(square.leftPosition());                
+        case 7:
+            return (LetterSquareObject) cubeBoard.get(square.topLeftPosition());                
+        default:
+            return square;
+    }
+
+}
+*/
+
+
+function checkSquare(square, letter){
+
+    if (!square.positionOccupied)
+    {
+        return false;
+    }
+    else 
+    {
+        return !(square.squareLetter === letter);
+    }
+
+}
+
+
+/*
+function convertToLength(direction, square){
+
+    switch (direction)
+    {
+        case 0:
+            return square.lengthTopPosition();
+
+        case 1:
+            return square.lengthTopRightPosition();
+
+        case 2:
+            return square.lengthRightPosition();
+
+        case 3:
+            return square.lengthBottomRightPosition();
+
+        case 4:
+            return square.lengthBottomPosition();
+
+        case 5:
+            return square.lengthBottomLeftPosition();
+
+        case 6:
+            return square.lengthLeftPosition();
+
+        case 7:
+            return square.lengthTopLeftPosition();
+
+        default:
+            return 0;
+
+    }
+
+}
+*/
+
+
+function randomLettersEnglish(){
+        
+    var randomSquare;
+
+    for (var i = 0; i < sceneController.cubeSize; i++) 
+    {
+        randomSquare = cubeBoard[i];
+        if (!randomSquare.positionOccupied)
+        {
+
+            randomSquare.positionOccupied = true;
+            
+            var rLetter = Math.floor(Math.random() * 10000);
+
+            if (rLetter >= 0 && rLetter <= 850) 
+                randomSquare.squareLetter = "A";
+            else if (rLetter >= 851 && rLetter <= 1057)
+                randomSquare.squareLetter = "B";
+            else if (rLetter >= 1058 && rLetter <= 1511)
+                randomSquare.squareLetter = "C";
+            else if (rLetter >= 1512 && rLetter <= 1849)
+                randomSquare.squareLetter = "D";
+            else if (rLetter >= 1850 && rLetter <= 2965)
+                randomSquare.squareLetter = "E";
+            else if (rLetter >= 2966 && rLetter <= 3146)
+                randomSquare.squareLetter = "F";
+            else if (rLetter >= 3147 && rLetter <= 3393)
+                randomSquare.squareLetter = "G";
+            else if (rLetter >= 3394 && rLetter <= 3693)
+                randomSquare.squareLetter = "H";
+            else if (rLetter >= 3694 && rLetter <= 4448)
+                randomSquare.squareLetter = "I";
+            else if (rLetter >= 4449 && rLetter <= 4468)
+                randomSquare.squareLetter = "J";
+            else if (rLetter >= 4469 && rLetter <= 4578)
+                randomSquare.squareLetter = "K";
+            else if (rLetter >= 4579 && rLetter <= 5127)
+                randomSquare.squareLetter = "L";
+            else if (rLetter >= 5128 && rLetter <= 5428)
+                randomSquare.squareLetter = "M";
+            else if (rLetter >= 5429 && rLetter <= 6093)
+                randomSquare.squareLetter = "N";
+            else if (rLetter >= 6094 && rLetter <= 6809)
+                randomSquare.squareLetter = "O";
+            else if (rLetter >= 6810 && rLetter <= 7126)
+                randomSquare.squareLetter = "P";
+            else if (rLetter >= 7127 && rLetter <= 7146)
+                randomSquare.squareLetter = "Q";
+            else if (rLetter >= 7147 && rLetter <= 7904)
+                randomSquare.squareLetter = "R";
+            else if (rLetter >= 7905 && rLetter <= 8478)
+                randomSquare.squareLetter = "S";
+            else if (rLetter >= 8479 && rLetter <= 9173)
+                randomSquare.squareLetter = "T";
+            else if (rLetter >= 9174 && rLetter <= 9536)
+                randomSquare.squareLetter = "U";
+            else if (rLetter >= 9537 && rLetter <= 9637)
+                randomSquare.squareLetter = "V";
+            else if (rLetter >= 9638 && rLetter <= 9766)
+                randomSquare.squareLetter = "W";
+            else if (rLetter >= 9767 && rLetter <= 9795)
+                randomSquare.squareLetter = "X";
+            else if (rLetter >= 9796 && rLetter <= 9973)
+                randomSquare.squareLetter = "Y";
+            else if (rLetter >= 9974 && rLetter <= 9999)
+                randomSquare.squareLetter = "Z";
+            else
+            {
+
+            }
+        }
+
+    }
+     
+    //document.getElementById('xcoord2').innerHTML = cubeBoard[4].toString();
+}
+
+
+function selectWords(wordArrayBig){
+        
+    // Select Words from word list to put on cube
+    var tempArray = new Array();
+    var currentWord;
+    var rWord;
+    var rArray;
+    var words100 = false;
+    if (wordArrayBig.length > 58){
+        words100 = true;
+    }
+    
+    var numberWords;
+    var maxWords = false;
+    if (sceneController.maxWordKey === "High Word Density"){
+        maxWords = true;
+    }
+
+    if (sceneController.cubeSize === 96)
+    {
+
+        var wordArray15 = new Array();
+        var wordArray6 = new Array();
+        var wordArray7 = new Array();
+        var wordArray8 = new Array();
+        var word8 = 0;
+        var word7 = 0;
+        var word6 = 0;
+        var totalMinus = 0;
+
+        for (var i = 0; i < wordArrayBig.length; i++){
+
+            var currentWordx = wordArrayBig[i];
+            var currentWordS = currentWordx.replace(/[^A-Za-z]/g, ""); //remove all spaces and punctuation
+
+            if (currentWordS.length <= 5){
+                wordArray15.push(currentWordx);
+            }
+            else if (currentWordS.length === 6){
+                wordArray6.push(currentWordx);
+            }
+            else if (currentWordS.length === 7){
+                wordArray7.push(currentWordx);
+            }
+            else if (currentWordS.length === 8){
+                wordArray8.push(currentWordx);
+            }
+
+        }
+
+        if (maxWords)
+            numberWords = 50; // 50
+        else
+            numberWords = 8; // 8
+
+        for (var i = 0; i < numberWords; i++){
+            rArray = Math.floor(Math.random() * 4);
+
+            if (word8 >= 1 || word7 >= 1)
+                rArray = rArray - 1;
+            if ((word8 + word7) >= 2)
+                rArray = rArray - 1;
+            if ((word8 + word7 + word6) >= 4)
+                rArray = rArray - 1;
+            if (rArray < 0)
+                rArray = 0;
+
+            switch (rArray){
+                case 0:
+                    if (!(wordArray15.length === 0)){
+                        rWord = Math.floor(Math.random() * wordArray15.length);
+                        currentWord = wordArray15[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray15.splice(rWord, 1);
+                    }
+                    else{
+                        i = i - 1;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+                case 1:
+                    if ((!(wordArray6.length <= 10) && words100) || (!(wordArray6.length <= 0) && (!words100 || word6 === 0))){
+                        rWord = Math.floor(Math.random() * wordArray6.length);
+                        currentWord = wordArray6[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray6.splice(rWord, 1);
+                        word6++;
+                    }
+                    else{
+                        i = i - 1;
+                        word6++;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+                case 2:
+                    if ((!(wordArray7.length <= 10) && words100) || (!(wordArray7.length <= 0) && (!words100 || word7 === 0))){
+                        rWord = Math.floor(Math.random() * wordArray7.length);
+                        currentWord = wordArray7[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray7.splice(rWord, 1);
+                        word7++;
+                    }
+                    else{
+                        i = i - 1;
+                        word7++;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+                case 3:
+                    if ((!(wordArray8.length <= 10) && words100) || (!(wordArray8.length <= 0) && (!words100 || word8 === 0))){
+                        rWord = Math.floor(Math.random() * wordArray8.length);
+                        currentWord = wordArray8[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray8.splice(rWord, 1);
+                        word8++;
+                    }
+                    else{
+                        i = i - 1;
+                        word8++;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+
+            if (wordArray15.length === 0 && wordArray6.length === 0 && wordArray7.length <= 0 && wordArray8.length <= 0)
+                break;
+
+            if (totalMinus >= 8 && (wordArray15.length === 0))
+                break;
+
+        }
+
+
+    }
+    
+    else if (sceneController.cubeSize === 150){
+        
+        var wordArray17 = new Array();
+        var wordArray8 = new Array();
+        var wordArray9 = new Array();
+        var wordArray10 = new Array();
+        var word10 = 0;
+        var word9 = 0;
+        var word8 = 0;
+        var totalMinus = 0;
+
+        for (var i = 0; i < wordArrayBig.length; i++){
+            
+            var currentWordx = wordArrayBig[i];
+            var currentWordS = currentWordx.replace(/[^A-Za-z]/g, ""); //remove all spaces and punctuation
+
+            if (currentWordS.length <= 7){
+                wordArray17.push(currentWordx);
+            }
+            else if (currentWordS.length === 8){
+                wordArray8.push(currentWordx);
+            }
+            else if (currentWordS.length === 9){
+                wordArray9.push(currentWordx);
+            }
+            else if (currentWordS.length === 10){
+                wordArray10.push(currentWordx);
+            }
+
+        }
+
+        if (maxWords)
+            numberWords = 50; // 50
+        else
+            numberWords = 10; // 10
+
+        for (var i = 0; i < numberWords; i++){
+            
+            rArray = Math.floor(Math.random() * 4);
+
+            if (word10 >= 1 || word9 >= 1)
+                rArray = rArray - 1;
+            if ((word10 + word9) >= 2)
+                rArray = rArray - 1;
+            if ((word10 + word9 + word8) >= 4)
+                rArray = rArray - 1;
+            if (rArray < 0)
+                rArray = 0;
+
+
+
+            switch (rArray){
+                case 0:
+                    if (!(wordArray17.length === 0)){
+                        rWord = Math.floor(Math.random() * wordArray17.length);
+                        currentWord = wordArray17[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray17.splice(rWord, 1);
+                    }
+                    else{
+                        i = i - 1;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+                case 1:
+                    if ((!(wordArray8.length <= 10) && words100) || (!(wordArray8.length <= 0) && (!words100 || word8 === 0))){
+                        rWord = Math.floor(Math.random() * wordArray8.length);
+                        currentWord = wordArray8[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray8.splice(rWord, 1);
+                        word8++;
+                    }
+                    else{
+                        i = i - 1;
+                        word8++;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+                case 2:
+                    if ((!(wordArray9.length <= 10) && words100) || (!(wordArray9.length <= 0) && (!words100 || word9 === 0))){
+                        rWord = Math.floor(Math.random() * wordArray9.length);
+                        currentWord = wordArray9[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray9.splice(rWord, 1);
+                        word9++;
+                    }
+                    else{
+                        i = i - 1;
+                        word9++;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+                case 3:
+                    if ((!(wordArray10.length <= 10) && words100) || (!(wordArray10.length <= 0) && (!words100 || word10 === 0))){
+                        rWord = Math.floor(Math.random() * wordArray10.length);
+                        currentWord = wordArray10[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray10.splice(rWord, 1);
+                        word10++;
+                    }
+                    else{
+                        i = i - 1;
+                        word10++;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+
+            if (wordArray17.length === 0 && wordArray8.length === 0 && wordArray9.length <= 0 && wordArray10.length <= 0)
+                break;
+
+            if (totalMinus >= 10 && (wordArray17.length === 0))
+                break; 
+
+        }
+
+    }
+    else if (sceneController.cubeSize === 216)
+    {
+
+        // Test
+        //currentWord = @"SWEETPOTATOS";
+        //[tempArray addObject:currentWord];
+        //currentWord = @"SLEIGHBELLS";
+        //[tempArray addObject:currentWord];
+        //currentWord = @"SCROOGES";
+        //[tempArray addObject:currentWord];
+        // Test
+
+        var wordArray19 = new Array();
+        var wordArray10 = new Array();
+        var wordArray11 = new Array();
+        var wordArray12 = new Array();
+        var word12 = 0;
+        var word11 = 0;
+        var word10 = 0;
+        var totalMinus = 0;
+
+        for (var i = 0; i < wordArrayBig.length; i++){
+            
+            var currentWordx = wordArrayBig[i];
+            var currentWordS = currentWordx.replace(/[^A-Za-z]/g, ""); //remove all spaces and punctuation
+
+            if (currentWordS.length <= 9){
+                wordArray19.push(currentWordx);
+            }
+            else if (currentWordS.length === 10){
+                wordArray10.push(currentWordx);
+            }
+            else if (currentWordS.length === 11){
+                wordArray11.push(currentWordx);
+            }
+            else if (currentWordS.length === 12){
+                wordArray12.push(currentWordx);
+            }
+
+        }
+
+
+        if (maxWords)
+            numberWords = 50; // 50
+        else
+            numberWords = 12; // 12
+
+        for (var i = 0; i < numberWords; i++){
+            
+            rArray = Math.floor(Math.random() * 4);
+
+            if (word12 >= 1 || word11 >= 1)
+                rArray = rArray - 1;
+            if ((word12 + word11) >= 2)
+                rArray = rArray - 1;
+            if ((word12 + word11 + word10) >= 4)
+                rArray = rArray - 1;
+            if (rArray < 0)
+                rArray = 0;
+
+
+
+            switch (rArray){
+                case 0:
+                    if (!(wordArray19.length === 0)){
+                        rWord = Math.floor(Math.random() * wordArray19.length);
+                        currentWord = wordArray19[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray19.splice(rWord, 1);
+                    }
+                    else{
+                        i = i - 1;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+                case 1:
+                    if ((!(wordArray10.length <= 10) && words100) || (!(wordArray10.length <= 0) && (!words100 || word10 === 0))){
+                        rWord = Math.floor(Math.random() * wordArray10.length);
+                        currentWord = wordArray10[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray10.splice(rWord, 1);
+                        word10++;
+                    }
+                    else{
+                        i = i - 1;
+                        word10++;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+                case 2:
+                    if ((!(wordArray11.length <= 10) && words100) || (!(wordArray11.length <= 0) && (!words100 || word11 === 0))){
+                        rWord = Math.floor(Math.random() * wordArray11.length);
+                        currentWord = wordArray11[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray11.splice(rWord, 1);
+                        word11++;
+                    }
+                    else{
+                        i = i - 1;
+                        word11++;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+                case 3:
+                    if ((!(wordArray12.length <= 10) && words100) || (!(wordArray12.length <= 0) && (!words100 || word12 === 0))){
+                        rWord = Math.floor(Math.random() * wordArray12.length);
+                        currentWord = wordArray12[rWord];
+                        var currentWordUC = currentWord.toUpperCase(); //uppercaseString
+                        if(tempArray.indexOf(currentWordUC) === -1){
+                            tempArray.push(currentWordUC);
+                        }
+                        wordArray12.splice(rWord, 1);
+                        word12++;
+                    }
+                    else{
+                        i = i - 1;
+                        word12++;
+                        totalMinus = totalMinus + 1;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+
+            if (wordArray19.length === 0 && wordArray10.length === 0 && wordArray11.length <= 0 && wordArray12.length <= 0)
+                break;
+
+            if (totalMinus >= 10 && (wordArray19.length === 0))
+                break;
+
+        }
+
+
+    }
+    
+    return tempArray;
+
+}
+
+
+function loadTexture(str) {
+
+    var newTexture = gl.createTexture();
+    //newTexture.image = new Image();
+    newTexture.image = str;
+
+    //newTexture.image.onload = function() {
+        handleLoadedTexture(newTexture);
+    //};
+
+    //newTexture.image.src = str;
+    
+    return newTexture;
+}
+
+
+function handleLoadedTexture(texture) {
+
+
+    gl.bindTexture(gl.TEXTURE_2D, texture);
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+    gl.generateMipmap(gl.TEXTURE_2D);
+
+    gl.bindTexture(gl.TEXTURE_2D, null);
+
+}
+
+
+
+function reloadTexturesContext(){
+    
+    var tImage1 = preload.getResult("image1");
+    yellowStarTexture = loadTexture(tImage1);
+    
+    var tImage2 = preload.getResult("image2");
+    blueStarTexture = loadTexture(tImage2);
+    
+    var tImage3 = preload.getResult("image3");
+    blackStarTexture = loadTexture(tImage3);
+    
+    var tImage4 = preload.getResult("image4");
+    redStarTexture = loadTexture(tImage4);
+    
+    var tImage0 = preload.getResult("image0");
+    allLettersTexture = loadTexture(tImage0);
+    
+    particleEmitterYellow.setParticleX(yellowStarTexture);
+    particleEmitterRed.setParticleX(redStarTexture);
+    particleEmitterBlue.setParticleX(blueStarTexture);
+    particleEmitterBlack.setParticleX(blackStarTexture);
+}

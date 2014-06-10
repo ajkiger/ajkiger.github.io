@@ -6,4 +6,195 @@ Created by Andrew B. Kiger
 ajkiger@gmail.com
 */
 
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('l 6(){3.p=2;3.m=2;3.v=2;3.G=2;3.H=2;3.w=2;3.x=2;3.q=2;3.r=2;3.s=2;3.y=2;3.z=2;3.8=2;3.A=2};6.7.p=2;6.7.m=2;6.7.v=2;6.7.G=2;6.7.H=2;6.7.w=2;6.7.x=2;6.7.q=2;6.7.r=2;6.7.s=2;6.7.y=2;6.7.z=2;6.7.8=2;6.7.A=2;6.7.S=l(){3.w=I J();3.x=I J();3.q=k;3.r=k;3.s=k;3.y=k;3.z=k;3.8=k;3.A=k};l T(a){5 b=" - ";n(5 i=0;i<a.o;i++){5 c=a[i];9(!c.8){b=b+c.p+" - "}}B.C(\'U\').D="V: "+b}l W(a){5 b=" - ";n(5 i=0;i<a.o;i++){5 c=a[i];9(!c.8){b=b+c.p+" - "}}B.C(\'X\').D="Y: "+b}l Z(f){5 g=" ";5 h;5 j=$("#K");j.L("M","10","N",l(){9(!t.O){n(5 i=0;i<f.o;i++){h=f[i];9(!h.r&&!h.8){h.r=u;g=g+h.m+" &4&4&4&4&4 "}P 9(h.q&&!h.s&&!h.8){h.s=u}P 9(!h.q&&!h.8){g=g+h.m+" &4&4&4&4&4 "}}9(g===" "){5 a=" &4&4 ";n(5 i=0;i<f.o;i++){h=f[i];9(!h.8){a=a+h.m+" &4&4&4&4&4 "}}5 b=k;n(5 i=0;i<f.o;i++){h=f[i];9(h.8){h.8=k;b=u;5 c=h.p.11(0,1);5 d=h.v;g="12 13 14 15 E 16 "+" \\""+c+"\\""+"<F>"+"17 18 "+d+" 19 1a."+"<F>"+"1b 1c 1d E 1e 1f E 1g 1h:"+"<F>"+a;1i}}9(!b){t.Q=u;R(1j);R(1k)}}}9(t.Q||t.1l||t.O){g=g=" ";n(5 i=0;i<f.o;i++){5 e=f[i];g=g+e.m+" &4&4&4&4&4 "}}B.C(\'K\').D=g});j.1m({L:"M",1n:N})}',62,86,'||null|this|nbsp|var|WordListObject|prototype|alphabetQuestHiddenWord|if|||||||||||false|function|wordDisplayName|for|length|wordName|wordFound|wordPlacedScrollView|wordStrikedScrollView|sceneController|true|wordLength|allLetters|allSquares|wordHint|messageDisplayed|hideHiddenWord|document|getElementById|innerHTML|the|br|firstLetterSquare|lastLetterSquare|new|Array|wordbox|effect|fade|300|solveCube|else|gameOver|clearTimeout|init|UpdateTextAreaViewX|xcoord|Post|UpdateTextAreaViewY|ycoord|Pre|UpdateTextAreaView|swing|substring|Hidden|word|begins|with|letter|and|is|letters|long|It|will|match|theme|of|following|words|break|starTimer1|starTimer2|giveUpOnHiddenWord|show|duration'.split('|'),0,{}))
+
+
+function WordListObject(){
+    
+    this.wordName = null;
+    this.wordDisplayName = null;
+    this.wordLength = null;
+    this.firstLetterSquare = null;
+    this.lastLetterSquare = null;
+    this.allLetters = null; // Strings
+    this.allSquares = null; // LetterSquareObjects
+    this.wordFound = null;
+    this.wordPlacedScrollView = null;
+    this.wordStrikedScrollView = null;
+    this.wordHint = null;
+    this.messageDisplayed = null;
+    this.alphabetQuestHiddenWord = null;
+    this.hideHiddenWord = null;
+    
+};
+
+WordListObject.prototype.wordName = null;
+WordListObject.prototype.wordDisplayName = null;
+WordListObject.prototype.wordLength = null;
+WordListObject.prototype.firstLetterSquare = null;
+WordListObject.prototype.lastLetterSquare = null;
+WordListObject.prototype.allLetters = null; // Strings
+WordListObject.prototype.allSquares = null; // LetterSquareObjects
+WordListObject.prototype.wordFound = null;
+WordListObject.prototype.wordPlacedScrollView = null;
+WordListObject.prototype.wordStrikedScrollView = null;
+WordListObject.prototype.wordHint = null;
+WordListObject.prototype.messageDisplayed = null;
+WordListObject.prototype.alphabetQuestHiddenWord = null;
+WordListObject.prototype.hideHiddenWord = null;
+
+WordListObject.prototype.init = function(){
+    
+    this.allLetters = new Array(); // Strings
+    this.allSquares = new Array(); // LetterSquareObjects
+    this.wordFound = false;
+    this.wordPlacedScrollView = false;
+    this.wordStrikedScrollView = false;
+    this.wordHint = false;
+    this.messageDisplayed = false;
+    this.alphabetQuestHiddenWord = false;
+    this.hideHiddenWord = false;
+    
+};
+
+
+function UpdateTextAreaViewX(aList){
+    
+    var returnString = " - ";
+    
+    for (var i = 0; i < aList.length; i++)
+    {
+        var tempWW = aList[i];
+        if(!tempWW.alphabetQuestHiddenWord){
+            
+            returnString = returnString + tempWW.wordName + " - ";
+        }
+        
+    }
+    
+    document.getElementById('xcoord').innerHTML = "Post: " + returnString;
+}
+
+function UpdateTextAreaViewY(aList){
+    
+    var returnString = " - ";
+    
+    for (var i = 0; i < aList.length; i++)
+    {
+        var tempWW = aList[i];
+        if(!tempWW.alphabetQuestHiddenWord){
+            
+            returnString = returnString + tempWW.wordName + " - ";
+        }
+        
+    }
+    
+    document.getElementById('ycoord').innerHTML = "Pre: " + returnString;
+}
+
+
+function UpdateTextAreaView(wordList){
+        
+    var displayText = " ";
+    var tempWord;
+    var tempWd = $("#wordbox");
+    tempWd.effect("fade", "swing", "300", function() {
+ 
+        if (!sceneController.solveCube) {
+
+        for (var i = 0; i < wordList.length; i++)
+        {
+            tempWord = wordList[i];
+
+            if (!tempWord.wordPlacedScrollView && !tempWord.alphabetQuestHiddenWord) // First time placed on list
+            {
+                // Place on text view first time (All Non Hidden Words)
+                tempWord.wordPlacedScrollView = true;
+                displayText = displayText + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp "; //" &nbsp&nbsp&nbsp&nbsp&nbsp "
+            }
+            else if (tempWord.wordFound && !tempWord.wordStrikedScrollView  && !tempWord.alphabetQuestHiddenWord)  // Word Just Found (Not Hidden Word)
+            {
+                // Don't place on text view
+                tempWord.wordStrikedScrollView = true;
+            }
+            else if (!tempWord.wordFound && !tempWord.alphabetQuestHiddenWord) // Not hidden word
+            {
+                // Replace Words not found and not Hidden Word
+                displayText = displayText + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
+            }
+
+        }
+        
+        
+        if (displayText === " ") // All Words found - need to look for hidden word
+        {
+            var displayText2 = " &nbsp&nbsp ";
+            for (var i = 0; i < wordList.length; i++)
+            {
+                tempWord = wordList[i];
+                if (!tempWord.alphabetQuestHiddenWord) // Not hidden word
+                {
+                    displayText2 = displayText2 + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
+                }
+            }
+            
+            
+            var hiddenWordFound = false;
+            for (var i = 0; i < wordList.length; i++)
+            {
+                tempWord = wordList[i];
+                if (tempWord.alphabetQuestHiddenWord)
+                {
+                    tempWord.alphabetQuestHiddenWord = false;
+                    hiddenWordFound = true;
+                    var FirstLetterHW = tempWord.wordName.substring(0, 1);
+                    var LengthHW = tempWord.wordLength;
+
+                    displayText = "Hidden word begins with the letter " + " \"" + FirstLetterHW + "\"" + "<br>" + "and is " +
+                            LengthHW + " letters long." + "<br>" + "It will match the theme of the following words:" + "<br>" + displayText2;
+                    
+                    //displayText = "HIDDEN WORD BEGINS WITH THE LETTER " + " \"" + FirstLetterHW + "\"" + "<br>" + "AND IS " +
+                            //LengthHW + " LETTERS LONG." + "<br>" + "IT WILL MATCH THEME OF FOLLOWING WORDS:" + "<br>" + displayText2;
+                    
+                    break;
+                }
+
+            }
+
+            if (!hiddenWordFound)  // Won Game
+            {
+                sceneController.gameOver = true;
+                clearTimeout(starTimer1);
+                clearTimeout(starTimer2);
+                
+                
+                
+                
+            }
+
+        }
+
+    }
+
+    if (sceneController.gameOver || sceneController.giveUpOnHiddenWord || sceneController.solveCube)
+    {
+        // Add all Words back to text view
+        displayText = displayText = " ";
+        for (var i = 0; i < wordList.length; i++) 
+        {
+            var tempWord2 = wordList[i];
+            displayText = displayText + tempWord2.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
+        }
+
+    }
+
+    document.getElementById('wordbox').innerHTML = displayText;
+        
+    
+    }); 
+    
+    tempWd.show({
+            effect: "fade",
+            duration: 300
+          });
+    
+}
