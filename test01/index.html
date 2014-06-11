@@ -17,7 +17,7 @@ ajkiger@gmail.com
 <meta name="MobileOptimized" content="640">
 <meta name="HandheldFriendly" content="True">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <script>
     var containerScale = true;
     var browserWidth;
@@ -446,6 +446,11 @@ ajkiger@gmail.com
     
     var gl;
     var canvas;
+    var allLettersTexture;
+    var yellowStarTexture;
+    var redStarTexture;
+    var blueStarTexture;
+    var blackStarTexture;
 
     function initGL(canvas) {
         
@@ -601,14 +606,14 @@ ajkiger@gmail.com
         else{
             skipFrame = true;
             
-            //handleKeys();
+            //handleKeys(); //Remove
             
             SceneControllerUpdateModel();
             
             SceneControllerRenderScene();
             
             
-            
+            /*
             var now = new Date().getTime();
 
             frameCount++;
@@ -621,11 +626,11 @@ ajkiger@gmail.com
                 frameCount = 0;
                 elapsedTime -= 1000;
 
-                //document.getElementById('ycoord2').innerHTML = "FPS: " + fps;
+                document.getElementById('ycoord2').innerHTML = "FPS: " + fps;
             }
 
             lastTime = new Date().getTime();
-            
+            */
             
             
             
@@ -639,17 +644,20 @@ ajkiger@gmail.com
     var soundTrack;
     var soundEffects;
     var SoundInstanceBM;
-    
+    //var testContext = true;
     
     function webGLStart() {
         
         //soundTrack = true;
-        
-        canvas = document.getElementById("WordCubed-canvas");
         validCanvas = true;
+        canvas = document.getElementById("WordCubed-canvas");
+        //canvas = WebGLDebugUtils.makeLostContextSimulatingCanvas(canvas); //Remove
         
-        //canvas = WebGLDebugUtils.makeLostContextSimulatingCanvas(canvas);
-        
+        canvas.addEventListener(
+            "webglcontextlost", handleContextLost, false);
+        canvas.addEventListener(
+            "webglcontextrestored", handleContextRestored, false);
+    
         initGL(canvas);
         
         agent = navigator.userAgent.toLowerCase();
@@ -666,7 +674,6 @@ ajkiger@gmail.com
             
             //initBackGroundMusic();
            
-           
             initShaders();
             initContext();
             //$( "#container" ).fadeTo(400, 1.0);
@@ -676,17 +683,26 @@ ajkiger@gmail.com
             //canvas.onmouseup = handleMouseUponCanvas;
             //canvas.onmouseout = handleMouseOutonCanvas;
             
-            //document.onkeydown = handleKeyDown;
-            //document.onkeyup = handleKeyUp;
-            
+            //document.onkeydown = handleKeyDown; //Remove
+            //document.onkeyup = handleKeyUp; //Remove
             
             if(isFireFoxDesktop){
                 canvas.ondblclick = handleMouseDblClickonCanvas;
             }
             
-            
-            
             //sceneController = new Object();
+            var tImage1 = preload.getResult("image1");
+            yellowStarTexture = loadTexture(tImage1);
+            var tImage2 = preload.getResult("image2");
+            blueStarTexture = loadTexture(tImage2);
+            var tImage3 = preload.getResult("image3");
+            blackStarTexture = loadTexture(tImage3);
+            var tImage4 = preload.getResult("image4");
+            redStarTexture = loadTexture(tImage4);
+            var tImage0 = preload.getResult("image0");
+            allLettersTexture = loadTexture(tImage0);
+            
+            
             sceneControllerInit();
             
             if(iWinConsole){
@@ -738,17 +754,13 @@ ajkiger@gmail.com
 
                 }
                 
+                
                 sceneControllerLoadScene();
             }
             
-            
-            canvas.addEventListener(
-                "webglcontextlost", handleContextLost, false);
-            canvas.addEventListener(
-                "webglcontextrestored", handleContextRestored, false);
-            
-            
             //document.getElementById('contextStatus').innerHTML = "&nbsp&nbsp";
+            
+            
             
             startTimer = setTimeout(function(){GameLoop();}, 1500);
             
@@ -1279,12 +1291,17 @@ ajkiger@gmail.com
         //document.getElementById('contextStatus').innerHTML = "Context";
         
         event.preventDefault();
-        cancelRequestAnimationFrame(requestId);
+        
+        if(requestId){
+            cancelRequestAnimationFrame(requestId);
+        }
         
     }
 
     
     function handleContextRestored(event) {
+        
+        //document.getElementById('contextStatus').innerHTML = "Restore";
         
         if(validCanvas){
             
@@ -1298,14 +1315,68 @@ ajkiger@gmail.com
                 canvas.ondblclick = handleMouseDblClickonCanvas;
             }
             
-            reloadTexturesContext();
+            var tImage1 = preload.getResult("image1");
+            yellowStarTexture = loadTexture(tImage1);
+
+            var tImage2 = preload.getResult("image2");
+            blueStarTexture = loadTexture(tImage2);
+
+            var tImage3 = preload.getResult("image3");
+            blackStarTexture = loadTexture(tImage3);
+
+            var tImage4 = preload.getResult("image4");
+            redStarTexture = loadTexture(tImage4);
+
+            var tImage0 = preload.getResult("image0");
+            allLettersTexture = loadTexture(tImage0);
             
+            if (particleEmitterYellow){
+                particleEmitterYellow.setParticleX(yellowStarTexture);
+                particleEmitterRed.setParticleX(redStarTexture);
+                particleEmitterBlue.setParticleX(blueStarTexture);
+                particleEmitterBlack.setParticleX(blackStarTexture);
+            }
+            else{
+                
+                webGLStart();
+            }
             
         }
         
     }
     
+    function loadTexture(str) {
+
+        var newTexture = gl.createTexture();
+        //newTexture.image = new Image();
+        newTexture.image = str;
+
+        //newTexture.image.onload = function() {
+            handleLoadedTexture(newTexture);
+        //};
+
+        //newTexture.image.src = str;
+
+        return newTexture;
+    }
+
+
+    function handleLoadedTexture(texture) {
+
+
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+        gl.generateMipmap(gl.TEXTURE_2D);
+
+        gl.bindTexture(gl.TEXTURE_2D, null);
+
+    }
+    
     /*
+    // Remove
     function handleKeys() {
         if (currentlyPressedKeys[33]) {
           // Page Up
@@ -1315,7 +1386,7 @@ ajkiger@gmail.com
         }
         if (currentlyPressedKeys[34]) {
           // Page Down
-          document.getElementById('contextStatus').innerHTML = "&nbsp&nbsp";
+          //document.getElementById('contextStatus').innerHTML = "&nbsp&nbsp";
           canvas.restoreContext();
         }
         

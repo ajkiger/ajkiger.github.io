@@ -113,7 +113,7 @@ function handleMouseOutonCanvas(event){
 }
 
 
-
+/*
 var currentlyPressedKeys = {};
 
 function handleKeyDown(event) {
@@ -124,3 +124,4 @@ function handleKeyDown(event) {
 function handleKeyUp(event) {
   currentlyPressedKeys[event.keyCode] = false;
 }
+*/

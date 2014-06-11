@@ -36,14 +36,7 @@ var starTimer2;
 var starString;
 var numberStars = 3;
 
-//var whiteSquaresTexture;
-//var blackSquaresTexture;
-//var squareAtlasTexture;
-var allLettersTexture;
-var yellowStarTexture;
-var redStarTexture;
-var blueStarTexture;
-var blackStarTexture;
+
 var textureChangedX;
 
 var postScoreNow;
@@ -86,20 +79,6 @@ function sceneControllerInit(){
     //blackStarTexture = loadTexture("images/particle-black12-atlas.png");
     //allLettersTexture = loadTexture("images/LettersTA1024x1024.png");
     
-    var tImage1 = preload.getResult("image1");
-    yellowStarTexture = loadTexture(tImage1);
-    
-    var tImage2 = preload.getResult("image2");
-    blueStarTexture = loadTexture(tImage2);
-    
-    var tImage3 = preload.getResult("image3");
-    blackStarTexture = loadTexture(tImage3);
-    
-    var tImage4 = preload.getResult("image4");
-    redStarTexture = loadTexture(tImage4);
-    
-    var tImage0 = preload.getResult("image0");
-    allLettersTexture = loadTexture(tImage0);
     
     textureChangedX = true;
     
@@ -2478,60 +2457,4 @@ function selectWords(wordArrayBig){
     
     return tempArray;
 
-}
-
-
-function loadTexture(str) {
-
-    var newTexture = gl.createTexture();
-    //newTexture.image = new Image();
-    newTexture.image = str;
-
-    //newTexture.image.onload = function() {
-        handleLoadedTexture(newTexture);
-    //};
-
-    //newTexture.image.src = str;
-    
-    return newTexture;
-}
-
-
-function handleLoadedTexture(texture) {
-
-
-    gl.bindTexture(gl.TEXTURE_2D, texture);
-    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
-    gl.generateMipmap(gl.TEXTURE_2D);
-
-    gl.bindTexture(gl.TEXTURE_2D, null);
-
-}
-
-
-
-function reloadTexturesContext(){
-    
-    var tImage1 = preload.getResult("image1");
-    yellowStarTexture = loadTexture(tImage1);
-    
-    var tImage2 = preload.getResult("image2");
-    blueStarTexture = loadTexture(tImage2);
-    
-    var tImage3 = preload.getResult("image3");
-    blackStarTexture = loadTexture(tImage3);
-    
-    var tImage4 = preload.getResult("image4");
-    redStarTexture = loadTexture(tImage4);
-    
-    var tImage0 = preload.getResult("image0");
-    allLettersTexture = loadTexture(tImage0);
-    
-    particleEmitterYellow.setParticleX(yellowStarTexture);
-    particleEmitterRed.setParticleX(redStarTexture);
-    particleEmitterBlue.setParticleX(blueStarTexture);
-    particleEmitterBlack.setParticleX(blackStarTexture);
 }
