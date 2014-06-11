@@ -28,7 +28,7 @@ and (max-width : 640px) {
     body, html {
         
         width: 640px;
-        
+        transform: scale(0.5);
     }
 
 }
@@ -43,7 +43,7 @@ and (max-width : 1536px) {
     body, html {
         
         width: 768px;
-        
+        transform: scale(1.1);
     }
 
 }
