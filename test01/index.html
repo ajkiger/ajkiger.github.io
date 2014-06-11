@@ -86,9 +86,6 @@ ajkiger@gmail.com
 <style>
     
     
-    
-    
-    /*
     body, html {
         
         background-color: #eee;// #cccccc;
@@ -96,6 +93,8 @@ ajkiger@gmail.com
         
         height: 100%;
         width: 100%;
+        margin: 0;
+        padding: 0;
         //overflow: hidden;
         overflow-x: hidden;
         overflow-y: hidden;
@@ -104,7 +103,19 @@ ajkiger@gmail.com
         //transform: scale(0.5);
         //transform-origin: 10% 10%;
     }
-    */
+    
+    #mainBody{
+        
+        width: inherit;
+        height: inherit;
+        margin: 0;
+        padding: 0;
+        background-color: pink;
+        
+        
+        
+    }
+    
     
     
     #pageWH{
@@ -374,7 +385,7 @@ ajkiger@gmail.com
     
 </style>
 
-<link rel="stylesheet" type="text/css" href="WCCSS.css">
+<!--<link rel="stylesheet" type="text/css" href="WCCSS.css">-->
 
 <script id="shader-fs" type="x-shader/x-fragment">
     precision mediump float;
@@ -1412,7 +1423,7 @@ ajkiger@gmail.com
 
 <body onload="loadAssets();">
     
-    
+    <div id="mainBody">
     
     
     <div data-role="page" id="pageWH">
@@ -1626,7 +1637,7 @@ ajkiger@gmail.com
         
     </div> <!--/WH page -->
         
-     
+    </div>
    
 </body>
 
