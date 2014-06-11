@@ -25,6 +25,11 @@ and open the template in the editor.
 and (min-width : 320px)
 and (max-width : 640px) {
 
+    body, html {
+        
+        width: 640px;
+        
+    }
 
 }
 
@@ -34,7 +39,12 @@ and (max-width : 640px) {
 @media only screen
 and (min-width : 768px)
 and (max-width : 1536px) {
-
+    
+    body, html {
+        
+        width: 768px;
+        
+    }
 
 }
 
