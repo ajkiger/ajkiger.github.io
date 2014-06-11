@@ -12,10 +12,11 @@ ajkiger@gmail.com
 <head>
 <title>WC-Weekly</title>
 
-<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+<!--<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">-->
 <!--<meta id="viewport" name="viewport" content="width=640, initial-scale=1.0">-->
-<meta name="MobileOptimized" content="640">
-<meta name="HandheldFriendly" content="True">
+<!--<meta name="MobileOptimized" content="640">-->
+<!--<meta name="HandheldFriendly" content="True">-->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <script>
@@ -1443,8 +1444,7 @@ ajkiger@gmail.com
         agent = navigator.userAgent.toLowerCase();
         isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
         
-        //mvp = document.getElementById('viewport');
-        //mvp.setAttribute('content',"width=device-width, initial-scale=1.0");
+        /*
         var cWidth;
         containerScale = true;
         if (containerScale){
@@ -1457,7 +1457,8 @@ ajkiger@gmail.com
         //var mvcontent = document.getElementById('WordCubed-canvas');
         //mvcontent.setAttribute('width',cWidth);
         //mvcontent.setAttribute('height',cWidth);
-        
+        */
+       
         browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
         pixelRatio = window.devicePixelRatio;
@@ -1471,9 +1472,9 @@ ajkiger@gmail.com
             tempScale = tempScaleW;
         }
         
-        tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
-        mvp = document.getElementById('viewport');
-        mvp.setAttribute('content',tempScale);
+        //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
+        //mvp = document.getElementById('viewport');
+        //mvp.setAttribute('content',tempScale);
         
         
         //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
