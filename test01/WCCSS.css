@@ -27,7 +27,7 @@ and (max-width : 640px) {
 
     body, html {
         
-        width: 640px;
+        width: 320px;
         transform: scale(0.5);
     }
 
