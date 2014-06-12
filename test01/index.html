@@ -336,6 +336,12 @@ ajkiger@gmail.com
     }
     
     
+    div#popupTabs table td{
+        text-align: center;
+    }
+    
+    
+    
     #tabs-1, #tabs-2, #tabs-3, #tabs-1x, #tabs-2x, #tabs-3x {
         font-family: arial, Helvetica, sans-serif;
         font-size: 28px;
@@ -1019,6 +1025,14 @@ ajkiger@gmail.com
                     $( "#placeCheck4" ).append( "<input type=\"checkbox\" onclick=\"ToggleSound();\" id=\"check4\"><label id=\"check4id\" for=\"check4\">Sounds</label>" );
                 }
                 
+                gPopup = document.getElementById('check3id');
+                gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+                gPopup = document.getElementById('check4id');
+                gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+                gPopup = document.getElementById('check1id');
+                gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+                gPopup = document.getElementById('check2id');
+                gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
                 
                 $( "#popupSettings" ).popup("open", { positionTo: "#topHeader",
                                                 transition: "pop" 
@@ -1038,28 +1052,31 @@ ajkiger@gmail.com
                 
                 PlayBloop();
                 
+                var tFontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+                
                 $( "#users tbody" ).empty();
                 for(var i = 0; i < weeklyWordLists.length; i++){
                     var tElement = weeklyWordLists[i];
                     if(tElement.date === sceneController.currentGame){
                        $( "#users tbody" ).append( "<tr style=\"background: #ffccff\">" +
-                        "<td>" + tElement.date + "</td>" +
-                        "<td>" + tElement.cubeSize + "</td>" +
-                        "<td>" + tElement.highScore + "</td>" +
-                        "<td>" + tElement.scoreRate + "</td>" +
+                        "<td style=\"font-size:" + tFontSize + "\">" + tElement.date + "</td>" +
+                        "<td style=\"font-size:" + tFontSize + "\">" + tElement.cubeSize + "</td>" +
+                        "<td style=\"font-size:" + tFontSize + "\">" + tElement.highScore + "</td>" +
+                        "<td style=\"font-size:" + tFontSize + "\">" + tElement.scoreRate + "</td>" +
                         "</tr>" );
                     }
                     else{
                         $( "#users tbody" ).append( "<tr>" +
-                        "<td>" + tElement.date + "</td>" +
-                        "<td>" + tElement.cubeSize + "</td>" +
-                        "<td>" + tElement.highScore + "</td>" +
-                        "<td>" + tElement.scoreRate + "</td>" +
+                        "<td style=\"font-size:" + tFontSize + "\">" + tElement.date + "</td>" +
+                        "<td style=\"font-size:" + tFontSize + "\">" + tElement.cubeSize + "</td>" +
+                        "<td style=\"font-size:" + tFontSize + "\">" + tElement.highScore + "</td>" +
+                        "<td style=\"font-size:" + tFontSize + "\">" + tElement.scoreRate + "</td>" +
                         "</tr>" );
                     }
 
                 }
-
+                
+                
 
                 $( "#popupGames" ).popup("open", { positionTo: "#topHeader",
                                                       transition: "pop" 
@@ -1494,22 +1511,22 @@ ajkiger@gmail.com
         
         <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:600px" data-dismissible="false">
             <p id="wordboxpopup"></p>
-            <a href="#"  onclick="ClosePopupBasic()" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+            <a id="closepopup1" href="#"  onclick="ClosePopupBasic()" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
         </div>
         
          
         <div data-role="popup" id="popupHints" class="ui-content" style="max-width:500px" data-dismissible="false">
-            <div data-role="header" data-theme="b" style="font-size:32px">
+            <div id="popupHeader2" data-role="header" data-theme="b" style="font-size:32px">
                 <h1>Hints</h1>
             </div>
             <p><a id="showHint" href="#"  onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
             <p><a id="solveTheCube" href="#"  onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
-            <a href="#"  onclick="ClosePopupHints();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
+            <a id="closepopup2" href="#"  onclick="ClosePopupHints();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon " style="font-size:22px">Close</a>
         </div>
         
         
         <div data-role="popup" id="popupSettings" class="ui-content" style="max-width:500px" data-dismissible="false">
-            <div data-role="header" data-theme="b" style="font-size:32px">
+            <div id="popupHeader3" data-role="header" data-theme="b" style="font-size:32px">
                 <h1>Settings</h1>
             </div>
             <p id="placeCheck3" class="ui-btn ui-shadow ui-corner-all" ><input id="check3" type="checkbox" onclick="ToggleMusic();"><label id="check3id" for="check3">Background Music</label></p>
@@ -1517,7 +1534,7 @@ ajkiger@gmail.com
             <p id="placeCheck1" class="ui-btn ui-shadow ui-corner-all" ><input id="check1" type="checkbox" onclick="ToggleDensity();"><label id="check1id" for="check1">High Word Density</label></p>
             <p id="placeCheck2" class="ui-btn ui-shadow ui-corner-all" ><input id="check2" type="checkbox" onclick="ToggleInverse();"><label id="check2id" for="check2">Inverse Colors</label></p>
             <p><a id="buttonNewGame" href="#"  onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
-            <a href="#"  onclick="ClosePopupSettings();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+            <a id="closepopup3" href="#"  onclick="ClosePopupSettings();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
         </div>
         
         
@@ -1525,10 +1542,10 @@ ajkiger@gmail.com
             <table id="users" class="ui-widget ui-widget-content">
               <thead>
                 <tr class="ui-widget-header ">
-                  <th>Puzzle</th>
-                  <th>Cube</th>
-                  <th>High Score</th>
-                  <th>Score Rate</th>
+                  <th id="popupHeader41">Puzzle</th>
+                  <th id="popupHeader42">Cube</th>
+                  <th id="popupHeader43">High Score</th>
+                  <th id="popupHeader44">Score Rate</th>
                 </tr>
               </thead>
               <tbody id="usersTBody"></tbody>
@@ -1537,59 +1554,59 @@ ajkiger@gmail.com
         
         
         <div data-role="popup" id="popupTabs" class="ui-content" style="max-width:600px" data-dismissible="false">
-            <div data-role="tabs">
+            <div id="popupHeader50" data-role="tabs">
                 <ul>
-                  <li><a href="#tabs-1" onclick="PlayBloop();">Instructions</a></li>
-                  <li><a href="#tabs-2" onclick="PlayBloop();">Scoring</a></li>
-                  <li><a href="#tabs-3" onclick="PlayBloop();">Hints</a></li>
-                  <li><a href="#tabs-4" onclick="PlayBloop();">Credits</a></li>
+                  <li><a id="popupHeader51" href="#tabs-1" onclick="PlayBloop();">Instructions</a></li>
+                  <li><a id="popupHeader52" href="#tabs-2" onclick="PlayBloop();">Scoring</a></li>
+                  <li><a id="popupHeader53" href="#tabs-3" onclick="PlayBloop();">Hints</a></li>
+                  <li><a id="popupHeader54" href="#tabs-4" onclick="PlayBloop();">Credits</a></li>
                 </ul>
 
                 <div id="tabs-1">
-                  <p id="tabs-1x">Rotate the cube to find the words listed at the bottom of the screen. &nbsp; Once a word is found, maneuver the cube so the first and last letters of the word are visible, and then lightly double tap the screen to freeze the cube. &nbsp; Tap the first and last letters of the word or drag your finger from one end letter to the other. &nbsp; Selecting words will score <img src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> points. &nbsp; Lightly double tap the screen again to put the cube back in free rotate mode. &nbsp; Continue to look for and select words until all words are found. &nbsp; Then find the hidden word to win the game.<br></p>
+                  <p id="tabs-1x">Rotate the cube to find the words listed at the bottom of the screen. &nbsp; Once a word is found, maneuver the cube so the first and last letters of the word are visible, and then lightly double tap the screen to freeze the cube. &nbsp; Tap the first and last letters of the word or drag your finger from one end letter to the other. &nbsp; Selecting words will score <img id="image54" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image55" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image56" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> points. &nbsp; Lightly double tap the screen again to put the cube back in free rotate mode. &nbsp; Continue to look for and select words until all words are found. &nbsp; Then find the hidden word to win the game.<br></p>
                 </div>
                 <div id="tabs-2">
-                  <p id="tabs-2x">Each star <img src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> scores 10 points. &nbsp; First word selected will always score 3 stars per letter. &nbsp; Words selected within 30 seconds of last successful selection will score 3 stars per letter; within 60 seconds, 2 stars per letter; longer than 60 seconds, 1 star per letter. &nbsp; Taking a word hint will score minus 10 points per letter, and when the word is selected, will only score 1 star per letter. &nbsp; Once cube is cleared, any duplicate words selected will always score 3 stars per letter. &nbsp; Score Rate reflects your score against a perfect score.</p>
+                  <p id="tabs-2x">Each star <img id="image51" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image52" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image53" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> scores 10 points. &nbsp; First word selected will always score 3 stars per letter. &nbsp; Words selected within 30 seconds of last successful selection will score 3 stars per letter; within 60 seconds, 2 stars per letter; longer than 60 seconds, 1 star per letter. &nbsp; Taking a word hint will score minus 10 points per letter, and when the word is selected, will only score 1 star per letter. &nbsp; Once cube is cleared, any duplicate words selected will always score 3 stars per letter. &nbsp; Score Rate reflects your score against a perfect score.</p>
                 </div>
                 <div id="tabs-3">
-                  <p id="tabs-3x">1. Check word list to identify possible duplicate words. &nbsp; For example, the words <q>FLY</q> and <q>FIREFLY</q> both have the word <q>FLY</q> in them. &nbsp; Every instance of a word is scorable.<br>2. Star symbol <img src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> at top of screen indicates current stars per letter. &nbsp; To maximize points, select shorter words when Yellow star is showing, longer words when Blue star is showing.<br>3. To select words, always ensure Blue selection marker highlights an end letter before selecting other end letter.</p>
+                  <p id="tabs-3x">1. Check word list to identify possible duplicate words. &nbsp; For example, the words <q>FLY</q> and <q>FIREFLY</q> both have the word <q>FLY</q> in them. &nbsp; Every instance of a word is scorable.<br>2. Star symbol <img id="image57" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image58" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image59" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> at top of screen indicates current stars per letter. &nbsp; To maximize points, select shorter words when Yellow star is showing, longer words when Blue star is showing.<br>3. To select words, always ensure Blue selection marker highlights an end letter before selecting other end letter.</p>
                 </div>
                 <div id="tabs-4">
-                    <!--<img alt="Hints" src="images/wordhead.png" width="524" height="177">-->
+                    
                     <div>
-                    <p>Copyright &copy; 2014 JWACK APPS<br>All rights reserved<br>http://jwackapps.com<br><br>Word Cubed Weekly was created using HTML5, javascript and WebGL.<br><br>Questions, comments, and issues may be directed to wordheader@gmail.com<br><br>
+                    <p id="tabs-1w">Copyright &copy; 2014 JWACK APPS<br>All rights reserved<br>http://jwackapps.com<br><br>Word Cubed Weekly was created using HTML5, javascript and WebGL.<br><br>Questions, comments, and issues may be directed to wordheader@gmail.com<br><br>
                         3D Word Games available on the App Store<br></p>
                     </div>
                     <div>
                     <table style="width: 100%;">
                         <tr>
-                            <td align="center">
-                                <img alt="Hints" src="images/WCIcon152x152.png" width="120" height="120">
+                            <td>
+                                <img id="image60" alt="Hints" src="images/WCIcon152x152.png" width="120" height="120">
                             </td>
-                            <td align="center">
-                                <img alt="Hints" src="images/icon03-152x152.png" width="120" height="120">
+                            <td>
+                                <img id="image61" alt="Hints" src="images/icon03-152x152.png" width="120" height="120">
                             </td>
                         </tr>
-                        <tr>
-                            <td align="center">
+                        <tr id="tabs-2w">
+                            <td>
                                 Word Cubed
                             </td>
-                            <td align="center">
+                            <td>
                                 Word Head
                             </td>
                         </tr>
                     </table>
                     <table style="width: 100%;">
                         <tr>
-                            <td align="center">
-                                <img alt="Hints" src="images/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="135" height="40">
+                            <td>
+                                <img id="image62" alt="Hints" src="images/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="135" height="40">
                             </td>
                         </tr>
                     </table>
                     </div>
                 </div>
 
-                <a href="#"  onclick="ClosePopupTabs();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
+                <a href="#" id="closepopup5" onclick="ClosePopupTabs();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-icon-delete ui-btn-icon-left ui-btn-inline ui-nodisc-icon" style="font-size:22px">Close</a>
             </div>
         </div>
         
@@ -1660,6 +1677,138 @@ ajkiger@gmail.com
         
         gButton = document.getElementById('scorebox');
         gButton.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        var gPopup = document.getElementById('popupBasic');
+        gPopup.style.maxWidth = (600 * tempScale) + "px";
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('closepopup1');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        gPopup = document.getElementById('popupHints');
+        gPopup.style.maxWidth = (500 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup = document.getElementById('closepopup2');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader2');
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('showHint');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('solveTheCube');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        gPopup = document.getElementById('popupSettings');
+        gPopup.style.maxWidth = (500 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup = document.getElementById('closepopup3');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader3');
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check3id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check4id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check1id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check2id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('buttonNewGame');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        gPopup = document.getElementById('popupGames');
+        gPopup.style.maxWidth = (600 * tempScale) + "px";
+        gPopup.style.width = (600 * tempScale) + "px";
+        gPopup = document.getElementById('popupHeader41');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader42');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader43');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader44');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        gPopup = document.getElementById('popupTabs');
+        gPopup.style.maxWidth = (600 * tempScale) + "px";
+        gPopup.style.width = (600 * tempScale) + "px";
+        gPopup = document.getElementById('tabs-1');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-1x');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-2');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-2x');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-3');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-3x');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('closepopup5');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-1w');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-2w');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('image51');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image52');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image53');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image54');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image55');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image56');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image57');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image58');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image59');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image60');
+        gPopup.style.width = (120 * tempScale) + "px";
+        gPopup.style.height = (120 * tempScale) + "px";
+        gPopup = document.getElementById('image61');
+        gPopup.style.width = (120 * tempScale) + "px";
+        gPopup.style.height = (120 * tempScale) + "px";
+        gPopup = document.getElementById('image62');
+        gPopup.style.width = (135 * tempScale) + "px";
+        gPopup.style.height = (40 * tempScale) + "px";
+        
+        
+        
+        
+        
+        
+        
+        gPopup = document.getElementById('popupHeader50');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader51');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader52');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader53');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader54');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
         
     </script>
    
