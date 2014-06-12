@@ -30,6 +30,7 @@ ajkiger@gmail.com
     var agent;
     var isFireFoxDesktop;
     var isWindowsPhone;
+    var cWidth;
     var iWinConsole = false;
     
 </script>
@@ -1402,7 +1403,26 @@ ajkiger@gmail.com
 
 <body onload="loadAssets();">
     
-    
+    <script>
+        
+        agent = navigator.userAgent.toLowerCase();
+        isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
+        
+        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        
+        tempScaleW = browserWidth / 640;
+        tempScaleH = browserHeight / 842;
+        if(tempScaleH < tempScaleW){
+            tempScale = tempScaleH;
+        }
+        else {
+            tempScale = tempScaleW;
+        }
+        cWidth = 640 * tempScale;
+        cWidth = parseFloat(Math.round(cWidth * 100) / 100).toFixed(0);
+        
+    </script>
     
     
     <div data-role="page" id="pageWH">
@@ -1411,16 +1431,16 @@ ajkiger@gmail.com
             <table id="btnTable">
                 <tr>
 
-                    <td ><button id = "btnhints" type="button"><img alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button>
+                    <td ><button id = "btnhints" type="button"><img id = "imghints" alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button>
                     <label id="xcoord" ></label>
                     </td>
-                    <td ><button id = "btnsettings" type="button"><img alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button>
+                    <td ><button id = "btnsettings" type="button"><img id = "imgsettings" alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button>
                     <label id="xcoord2" ></label>
                     </td>
-                    <td ><button id = "btngames" type="button"><img alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button>
+                    <td ><button id = "btngames" type="button"><img id = "imggames" alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button>
                     <label id="ycoord" ></label>
                     </td>
-                    <td ><button id = "btninfo" type="button"><img alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
+                    <td ><button id = "btninfo" type="button"><img id = "imginfo" alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
                     <label id="ycoord2" ></label>
                     </td>
                     <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter ">
@@ -1432,6 +1452,12 @@ ajkiger@gmail.com
                 </tr>
                 
             </table>
+            
+                <script>
+        
+                    
+
+                </script>
 	</div><!-- /header -->
         
         
@@ -1440,69 +1466,28 @@ ajkiger@gmail.com
 	</div>
         <script>
         
-        agent = navigator.userAgent.toLowerCase();
-        isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
-        
-        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        
-        
-        var cWidth;
-        /*
-        containerScale = true;
-        if (containerScale){
-            cWidth = "640";
-        }
-        else{
-            cWidth = "320";
-        }
-        */
-       
-        pixelRatio = window.devicePixelRatio;
-        tempScaleW = browserWidth / 640;
-        tempScaleH = browserHeight / 842;
-        if(tempScaleH < tempScaleW){
+            var mvcontent = document.getElementById('WordCubed-canvas');
+            mvcontent.setAttribute('width',cWidth);
+            mvcontent.setAttribute('height',cWidth);
+            mvcontent.style.width = cWidth + "px";
+            mvcontent.style.height = cWidth + "px";
 
-            tempScale = tempScaleH;
-            cWidth = 842 * tempScale;
-        }
-        else {
-            tempScale = tempScaleW;
-            cWidth = 640 * tempScale;
-        }
-        
-        var mvcontent = document.getElementById('WordCubed-canvas');
-        mvcontent.setAttribute('width',cWidth);
-        mvcontent.setAttribute('height',cWidth);
-        mvcontent.style.width = cWidth + "px";
-        mvcontent.style.height = cWidth + "px";
-        
-        
-        //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
-        //mvp = document.getElementById('viewport');
-        //mvp.setAttribute('content',tempScale);
-        
-        
-        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
-        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
-        //document.getElementById('ycoord').innerHTML = "P/R: " + pixelRatio;
-        //document.getElementById('ycoord2').innerHTML = "&nbsp&nbsp";
-        
-        document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
-        document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
-        
-        
-        
-        var gTopHeader = document.getElementById('topHeader');
-        gTopHeader.style.width = cWidth + "px";
-        var gContainer = document.getElementById('container');
-        gContainer.style.width = cWidth + "px";
-        gContainer.style.height = cWidth + "px";
-        var gBottomFooter = document.getElementById('bottomFooter');
-        gBottomFooter.style.width = cWidth - 10 + "px";
-        gBottomFooter.style.height = "auto";
-        
-    </script>
+
+            //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
+            //mvp = document.getElementById('viewport');
+            //mvp.setAttribute('content',tempScale);
+
+
+            document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+            document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+            document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
+            document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
+
+            document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+            document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+
+
+        </script>
         
         
         
@@ -1632,7 +1617,48 @@ ajkiger@gmail.com
         
     </div> <!--/WH page -->
         
-     
+    <script>
+        
+        
+        var gTopHeader = document.getElementById('topHeader');
+        gTopHeader.style.width = cWidth + "px";
+        var gContainer = document.getElementById('container');
+        gContainer.style.width = cWidth + "px";
+        gContainer.style.height = cWidth + "px";
+        var gBottomFooter = document.getElementById('bottomFooter');
+        gBottomFooter.style.width = (cWidth - 10) + "px";
+        gBottomFooter.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gBottomFooter.style.height = (85 * tempScale) + "px";
+        
+        var gButton = document.getElementById('btnhints');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton = document.getElementById('imghints');
+        gButton.setAttribute('width',(60 * tempScale));
+        gButton.setAttribute('height',(60 * tempScale));
+        gButton = document.getElementById('btnsettings');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton = document.getElementById('imgsettings');
+        gButton.setAttribute('width',(60 * tempScale));
+        gButton.setAttribute('height',(60 * tempScale));
+        gButton = document.getElementById('btngames');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton = document.getElementById('imggames');
+        gButton.setAttribute('width',(60 * tempScale));
+        gButton.setAttribute('height',(60 * tempScale));
+        gButton = document.getElementById('btninfo');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton = document.getElementById('imginfo');
+        gButton.setAttribute('width',(60 * tempScale));
+        gButton.setAttribute('height',(60 * tempScale));
+        
+        
+        
+        
+    </script>
    
 </body>
 
