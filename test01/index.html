@@ -1443,7 +1443,7 @@ ajkiger@gmail.com
                     <td ><button id = "btninfo" type="button"><img id = "imginfo" alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
                     <label id="ycoord2" ></label>
                     </td>
-                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" width="50" height="50" alt="Blue" title=" 3 Stars/Letter ">
+                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" alt="Blue" title=" 3 Stars/Letter ">
                     <!--<label id="contextStatus" >&nbsp;</label>-->
                     </td>
                     
@@ -1452,12 +1452,7 @@ ajkiger@gmail.com
                 </tr>
                 
             </table>
-            
-                <script>
-        
-                    
-
-                </script>
+             
 	</div><!-- /header -->
         
         
@@ -1478,10 +1473,10 @@ ajkiger@gmail.com
             //mvp.setAttribute('content',tempScale);
 
 
-            document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
-            document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
-            document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
-            document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
+            //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+            //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+            //document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
+            //document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
 
             document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
             document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
@@ -1628,7 +1623,7 @@ ajkiger@gmail.com
         var gBottomFooter = document.getElementById('bottomFooter');
         gBottomFooter.style.width = (cWidth - 10) + "px";
         gBottomFooter.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
-        gBottomFooter.style.height = (85 * tempScale) + "px";
+        gBottomFooter.style.height = "auto"; //(85 * tempScale) + "px";
         
         var gButton = document.getElementById('btnhints');
         gButton.style.width = (86 * tempScale) + "px";
@@ -1656,7 +1651,15 @@ ajkiger@gmail.com
         gButton.setAttribute('height',(60 * tempScale));
         
         
+        gButton = document.getElementById('starimage');
+        gButton.style.width = (50 * tempScale) + "px";
+        gButton.style.height = (50 * tempScale) + "px";
         
+        gButton = document.getElementById('scoreratebox');
+        gButton.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        gButton = document.getElementById('scorebox');
+        gButton.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
         
     </script>
    
