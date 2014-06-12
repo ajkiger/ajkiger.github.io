@@ -12,11 +12,10 @@ ajkiger@gmail.com
 <head>
 <title>WC-Weekly</title>
 
-<!--<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">-->
 <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
 <!--<meta id="viewport" name="viewport" content="width=640, initial-scale=1.0">-->
-<!--<meta name="MobileOptimized" content="640">-->
-<!--<meta name="HandheldFriendly" content="True">-->
+<meta name="MobileOptimized" content="640">
+<meta name="HandheldFriendly" content="True">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <script>
@@ -81,9 +80,8 @@ ajkiger@gmail.com
 
 <script type='application/javascript' src='fastclick.js'></script>
 
-
-
 <style>
+    
     
     
     body, html {
@@ -93,8 +91,6 @@ ajkiger@gmail.com
         
         height: 100%;
         width: 100%;
-        margin: 0;
-        padding: 0;
         //overflow: hidden;
         overflow-x: hidden;
         overflow-y: hidden;
@@ -102,20 +98,6 @@ ajkiger@gmail.com
         
         
     }
-    
-    #mainBody{
-        
-        width: 640px;
-        height: inherit;
-        margin: 0;
-        padding: 0;
-        background-color: pink;
-        
-       
-        
-    }
-    
-    
     
     #pageWH{
         
@@ -383,8 +365,6 @@ ajkiger@gmail.com
     
     
 </style>
-
-<!--<link rel="stylesheet" type="text/css" href="WCCSS.css">-->
 
 <script id="shader-fs" type="x-shader/x-fragment">
     precision mediump float;
@@ -1422,7 +1402,7 @@ ajkiger@gmail.com
 
 <body onload="loadAssets();">
     
-    <div id="mainBody">
+    
     
     
     <div data-role="page" id="pageWH">
@@ -1463,8 +1443,12 @@ ajkiger@gmail.com
         agent = navigator.userAgent.toLowerCase();
         isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
         
-        /*
+        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        
+        
         var cWidth;
+        /*
         containerScale = true;
         if (containerScale){
             cWidth = "640";
@@ -1472,28 +1456,31 @@ ajkiger@gmail.com
         else{
             cWidth = "320";
         }
-        
-        //var mvcontent = document.getElementById('WordCubed-canvas');
-        //mvcontent.setAttribute('width',cWidth);
-        //mvcontent.setAttribute('height',cWidth);
         */
        
-        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
         pixelRatio = window.devicePixelRatio;
         tempScaleW = browserWidth / 640;
         tempScaleH = browserHeight / 842;
         if(tempScaleH < tempScaleW){
 
             tempScale = tempScaleH;
+            cWidth = 842 * tempScale;
         }
         else {
             tempScale = tempScaleW;
+            cWidth = 640 * tempScale;
         }
         
-        tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
-        mvp = document.getElementById('viewport');
-        mvp.setAttribute('content',tempScale);
+        var mvcontent = document.getElementById('WordCubed-canvas');
+        mvcontent.setAttribute('width',cWidth);
+        mvcontent.setAttribute('height',cWidth);
+        mvcontent.style.width = cWidth + "px";
+        mvcontent.style.height = cWidth + "px";
+        
+        
+        //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
+        //mvp = document.getElementById('viewport');
+        //mvp.setAttribute('content',tempScale);
         
         
         //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
@@ -1505,6 +1492,15 @@ ajkiger@gmail.com
         document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
         
         
+        
+        var gTopHeader = document.getElementById('topHeader');
+        gTopHeader.style.width = cWidth + "px";
+        var gContainer = document.getElementById('container');
+        gContainer.style.width = cWidth + "px";
+        gContainer.style.height = cWidth + "px";
+        var gBottomFooter = document.getElementById('bottomFooter');
+        gBottomFooter.style.width = cWidth - 10 + "px";
+        gBottomFooter.style.height = "auto";
         
     </script>
         
@@ -1636,7 +1632,7 @@ ajkiger@gmail.com
         
     </div> <!--/WH page -->
         
-    </div>
+     
    
 </body>
 
