@@ -1006,7 +1006,7 @@ ajkiger@gmail.com
                 
                 
                 
-                /*
+                
                 $( "#placeCheck1" ).empty();
                 $( "#placeCheck2" ).empty();
                 $( "#placeCheck3" ).empty();
@@ -1041,7 +1041,7 @@ ajkiger@gmail.com
                 else{
                     $( "#placeCheck4" ).append( "<input type=\"checkbox\" onclick=\"ToggleSound();\" id=\"check4\"><label id=\"check4id\" for=\"check4\">Sounds</label>" );
                 }
-                */
+                
                 gPopup = document.getElementById('check3id');
                 gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
                 gPopup = document.getElementById('check4id');
@@ -1546,10 +1546,10 @@ ajkiger@gmail.com
             <div id="popupHeader3" data-role="header" data-theme="b" style="font-size:32px">
                 <h1>Settings</h1>
             </div>
-            <p id="placeCheck3" class="ui-btn ui-shadow ui-corner-all" ><input id="check3" type="checkbox" onclick="ToggleMusic();"><label id="check3id" for="check3">Background Music</label></p>
-            <p id="placeCheck4" class="ui-btn ui-shadow ui-corner-all" ><input id="check4" type="checkbox" onclick="ToggleSound();"><label id="check4id" for="check4">Sounds</label></p>
-            <p id="placeCheck1" class="ui-btn ui-shadow ui-corner-all" ><input id="check1" type="checkbox" onclick="ToggleDensity();"><label id="check1id" for="check1">High Word Density</label></p>
-            <p id="placeCheck2" class="ui-btn ui-shadow ui-corner-all" ><input id="check2" type="checkbox" onclick="ToggleInverse();"><label id="check2id" for="check2">Inverse Colors</label></p>
+            <p id="placeCheck3" class="ui-shadow ui-corner-all" ><input id="check3" type="checkbox" onclick="ToggleMusic();"><label id="check3id" for="check3">Background Music</label></p>
+            <p id="placeCheck4" class="ui-shadow ui-corner-all" ><input id="check4" type="checkbox" onclick="ToggleSound();"><label id="check4id" for="check4">Sounds</label></p>
+            <p id="placeCheck1" class="ui-shadow ui-corner-all" ><input id="check1" type="checkbox" onclick="ToggleDensity();"><label id="check1id" for="check1">High Word Density</label></p>
+            <p id="placeCheck2" class="ui-shadow ui-corner-all" ><input id="check2" type="checkbox" onclick="ToggleInverse();"><label id="check2id" for="check2">Inverse Colors</label></p>
             <p><a id="buttonNewGame" href="#"  onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
             <a id="closepopup3" href="#"  onclick="ClosePopupSettings();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
         </div>
