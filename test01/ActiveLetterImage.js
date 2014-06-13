@@ -47,11 +47,12 @@ ActiveLetterImage.prototype.awakeNow = function(){
 
     containerScale = true;
     this.x = 0.0;
-    this.y = gl.viewportHeight/2 - (75 * tempScale);
+    //this.y = gl.viewportHeight/2 - (75 * tempScale);
+    this.y = gl.viewportHeight/2 - 75;
     this.z = 499.0;
-    this.xScale = 100.0 * tempScale;
-    this.yScale = 100.0 * tempScale;
-    this.zScale = 100.0 * tempScale;
+    this.xScale = 100.0;// * tempScale;
+    this.yScale = 100.0;// * tempScale;
+    this.zScale = 100.0;// * tempScale;
     
     this.alMatrix = mat4.create();
     //this.active = true;

@@ -1318,52 +1318,52 @@ function emitStar(index, particleEmitter, oindex){
                     break;
                 case -2:
                     containerScale = true;
-                    tempPoint2.emitPoint = new BBPointMake(-30.0 * tempScale, 45.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(-30.0, 45.0, 0.0);
                     break;
                 case -3:
-                    tempPoint2.emitPoint = new BBPointMake(30.0 * tempScale, -45.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(30.0, -45.0, 0.0);
                     break;
                 case -4:
-                    tempPoint2.emitPoint = new BBPointMake(-60.0 * tempScale, 90.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(-60.0, 90.0, 0.0);
                     break;
                 case -5:
-                    tempPoint2.emitPoint = new BBPointMake(60.0 * tempScale, -90.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(60.0, -90.0, 0.0);
                     break;
                 case -6:
-                    tempPoint2.emitPoint = new BBPointMake(-90.0 * tempScale, 135.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(-90.0, 135.0, 0.0);
                     break;
                 case -7:
-                    tempPoint2.emitPoint = new BBPointMake(90.0 * tempScale, -135.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(90.0, -135.0, 0.0);
                     break;
                 case -8:
-                    tempPoint2.emitPoint = new BBPointMake(-120.0 * tempScale, 180.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(-120.0, 180.0, 0.0);
                     break;
                 case -9:
-                    tempPoint2.emitPoint = new BBPointMake(120.0 * tempScale, -180.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(120.0, -180.0, 0.0);
                     break;
                 case -10:
-                    tempPoint2.emitPoint = new BBPointMake(-150.0 * tempScale, 225.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(-150.0, 225.0, 0.0);
                     break;
                 case -11:
-                    tempPoint2.emitPoint = new BBPointMake(150.0 * tempScale, -225.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(150.0, -225.0, 0.0);
                     break;
                 case -12:
-                    tempPoint2.emitPoint = new BBPointMake(-180.0 * tempScale, 270.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(-180.0, 270.0, 0.0);
                     break;
                 case -13:
-                    tempPoint2.emitPoint = new BBPointMake(180.0 * tempScale, -270.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(180.0, -270.0, 0.0);
                     break;
                 case -14:
-                    tempPoint2.emitPoint = new BBPointMake(-210.0 * tempScale, 315.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(-210.0, 315.0, 0.0);
                     break;
                 case -15:
-                    tempPoint2.emitPoint = new BBPointMake(210.0 * tempScale, -315.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(210.0, -315.0, 0.0);
                     break;
                 case -16:
-                    tempPoint2.emitPoint = new BBPointMake(-240.0 * tempScale, 360.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(-240.0, 360.0, 0.0);
                     break;
                 default:
-                    tempPoint2.emitPoint = new BBPointMake(320.0 * tempScale, 480.0 * tempScale, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(320.0, 480.0, 0.0);
                     tempPoint2.index = -2;
                     break;
             }
@@ -1702,8 +1702,8 @@ function touchesBegan(event) {
     relY = (event.pageY - parentOffset.top) / tempScale;
     var currentPoint = new Point(relX, relY);
     
-    document.getElementById('xcoord').innerHTML = parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
-    document.getElementById('xcoord2').innerHTML = parseFloat(Math.round(currentPoint.y * 100) / 100).toFixed(0);
+    //document.getElementById('xcoord').innerHTML = parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
+    //document.getElementById('xcoord2').innerHTML = parseFloat(Math.round(currentPoint.y * 100) / 100).toFixed(0);
     
     startTime = new Date().getTime() / 1000;  // seconds
 
@@ -1747,8 +1747,8 @@ function touchesMoved(event) {
     relY = (event.pageY - parentOffset.top) / tempScale;
     var currentPoint = new Point(relX, relY);
     
-    document.getElementById('xcoord').innerHTML = parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
-    document.getElementById('xcoord2').innerHTML = parseFloat(Math.round(currentPoint.y * 100) / 100).toFixed(0);
+    //document.getElementById('xcoord').innerHTML = parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
+    //document.getElementById('xcoord2').innerHTML = parseFloat(Math.round(currentPoint.y * 100) / 100).toFixed(0);
     
     parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
     

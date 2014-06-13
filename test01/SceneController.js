@@ -393,7 +393,7 @@ function sceneControllerLoadScene(){
     particleEmitterYellow.init();
     particleEmitterYellow.emissionRangeN = new BBRangeMake(1.0, 0.0);
     containerScale = true;
-    var starScale = 30.0 * tempScale;
+    var starScale = 30.0;// * tempScale;
     particleEmitterYellow.sizeRangeN = new BBRangeMake(starScale, 0.0);
     particleEmitterYellow.xVelocityRangeN = new BBRangeMake(-1.0, 2.0);
     particleEmitterYellow.yVelocityRangeN = new BBRangeMake(-1.0, 2.0);

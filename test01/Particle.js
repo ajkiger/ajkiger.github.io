@@ -183,14 +183,16 @@ Particle.prototype.update = function(){
             if (this.position.x < this.endLocation.x)
             {
                 containerScale = true;
-                this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                //this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5, 2));
                 this.velocity.x = ((gl.viewportWidth * 5 - this.position.x) / (gl.viewportWidth * 5)) * this.velocity.x * 0.98;
                 
             }
 
             if (this.position.y < this.endLocation.y)
             {
-                this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                //this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5, 2));
                 this.velocity.y = ((gl.viewportHeight * 5 - this.position.y) / (gl.viewportHeight * 5)) * this.velocity.y * 0.98;
                 
             }
@@ -225,13 +227,15 @@ Particle.prototype.update = function(){
             if (this.position.x < this.endLocation.x)
             {
                 containerScale = true;
-                this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                //this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5, 2));
                 this.velocity.x = ((gl.viewportWidth * 5 - this.position.x) / (gl.viewportWidth * 5)) * this.velocity.x * 0.98;
             }
 
             if (this.position.y < this.endLocation.y)
             {
-                this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                //this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5, 2));
                 this.velocity.y = ((gl.viewportHeight * 5 - this.position.y) / (gl.viewportHeight * 5)) * this.velocity.y * 0.98;
             }
 
