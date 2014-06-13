@@ -1697,14 +1697,9 @@ function touchesBegan(event) {
     var parentOffset = $("#container").offset();
     var relX;
     var relY;
-    if (containerScale){
-        relX = (event.pageX - parentOffset.left);
-        relY = (event.pageY - parentOffset.top);
-    }
-    else{
-        relX = (event.pageX - parentOffset.left)/2;
-        relY = (event.pageY - parentOffset.top)/2;
-    }
+    containerScale = true;
+    relX = (event.pageX - parentOffset.left) * tempScale;
+    relY = (event.pageY - parentOffset.top) * tempScale;
     var currentPoint = new Point(relX, relY);
     
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
@@ -1747,14 +1742,9 @@ function touchesMoved(event) {
     var parentOffset = $("#container").offset();
     var relX;
     var relY;
-    if (containerScale){
-        relX = (event.pageX - parentOffset.left);
-        relY = (event.pageY - parentOffset.top);
-    }
-    else{
-        relX = (event.pageX - parentOffset.left)/2;
-        relY = (event.pageY - parentOffset.top)/2;
-    }
+    containerScale = true;
+    relX = (event.pageX - parentOffset.left) * tempScale;
+    relY = (event.pageY - parentOffset.top) * tempScale;
     var currentPoint = new Point(relX, relY);
     
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
@@ -1838,12 +1828,8 @@ function touchesEnd() {
 
     if (!wordSelect)
     {
-        if (containerScale){
-            fingerSpeed = Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime;
-        }
-        else{
-            fingerSpeed = (Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime) * 2;
-        }
+        containerScale = true;
+        fingerSpeed = (Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime) * 1/tempScale;
 
         xVector = deltaX * fingerSpeed / 50;
         yVector = deltaY * fingerSpeed / 50;

@@ -1496,10 +1496,14 @@ ajkiger@gmail.com
         <script>
         
             var mvcontent = document.getElementById('WordCubed-canvas');
-            mvcontent.setAttribute('width',cWidth);
-            mvcontent.setAttribute('height',cWidth);
+            //mvcontent.setAttribute('width',cWidth);
+            //mvcontent.setAttribute('height',cWidth);
             mvcontent.style.width = cWidth + "px";
             mvcontent.style.height = cWidth + "px";
+            
+            var gContainer = document.getElementById('container');
+            gContainer.style.width = cWidth + "px";
+            gContainer.style.height = cWidth + "px";
 
 
             //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
@@ -1652,9 +1656,7 @@ ajkiger@gmail.com
         var gTopHeader = document.getElementById('topHeader');
         gTopHeader.style.width = cWidth + "px";
         
-        var gContainer = document.getElementById('container');
-        gContainer.style.width = cWidth + "px";
-        gContainer.style.height = cWidth + "px";
+        
         
         var gButton = document.getElementById('btnhints');
         gButton.style.width = (86 * tempScale) + "px";
