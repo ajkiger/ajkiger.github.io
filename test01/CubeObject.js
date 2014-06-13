@@ -1111,38 +1111,22 @@ function cObjectUpdate() {
         if (sceneController.cubeSize === 96)
         {
             //zoomSizeMin = 90.0;
-            if (containerScale){
-                zoomSizeMax = 90.0;
-                growSpeed = 1.25;
-            }
-            else{
-                zoomSizeMax = 45.0;
-                growSpeed = 1.25/2;
-            }
+            containerScale = true;
+            zoomSizeMax = 90.0 * tempScale;
+            growSpeed = 1.25 * tempScale;
+            
         }
         else if (sceneController.cubeSize === 216)
         {
             //zoomSizeMin = 65.0;
-            if (containerScale){
-                zoomSizeMax = 65.0; //65
-                growSpeed = 0.90;
-            }
-            else{
-                zoomSizeMax = 32.0;
-                growSpeed = 0.90/2;
-            }
+            zoomSizeMax = 65.0 * tempScale;
+            growSpeed = 0.90 * tempScale;
         }
         else if (sceneController.cubeSize === 150)
         {
             //zoomSizeMin = 75.0;
-            if (containerScale){
-                zoomSizeMax = 75.0;
-                growSpeed = 1.0;
-            }
-            else{
-                zoomSizeMax = 38.0;
-                growSpeed = 1.0/2;
-            }
+            zoomSizeMax = 75.0 * tempScale;
+            growSpeed = 1.0 * tempScale;
             
         }
 
@@ -1333,127 +1317,53 @@ function emitStar(index, particleEmitter, oindex){
                     tempPoint2.emitPoint = new BBPointMake(0.0, 0.0, 0.0);
                     break;
                 case -2:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(-30.0, 45.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(-30.0/2, 45.0/2, 0.0);
-                    }
+                    containerScale = true;
+                    tempPoint2.emitPoint = new BBPointMake(-30.0 * tempScale, 45.0 * tempScale, 0.0);
                     break;
                 case -3:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(30.0, -45.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(30.0/2, -45.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(30.0 * tempScale, -45.0 * tempScale, 0.0);
                     break;
                 case -4:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(-60.0, 90.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(-60.0/2, 90.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(-60.0 * tempScale, 90.0 * tempScale, 0.0);
                     break;
                 case -5:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(60.0, -90.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(60.0/2, -90.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(60.0 * tempScale, -90.0 * tempScale, 0.0);
                     break;
                 case -6:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(-90.0, 135.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(-90.0/2, 135.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(-90.0 * tempScale, 135.0 * tempScale, 0.0);
                     break;
                 case -7:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(90.0, -135.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(90.0/2, -135.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(90.0 * tempScale, -135.0 * tempScale, 0.0);
                     break;
                 case -8:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(-120.0, 180.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(-120.0/2, 180.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(-120.0 * tempScale, 180.0 * tempScale, 0.0);
                     break;
                 case -9:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(120.0, -180.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(120.0/2, -180.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(120.0 * tempScale, -180.0 * tempScale, 0.0);
                     break;
                 case -10:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(-150.0, 225.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(-150.0/2, 225.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(-150.0 * tempScale, 225.0 * tempScale, 0.0);
                     break;
                 case -11:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(150.0, -225.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(150.0/2, -225.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(150.0 * tempScale, -225.0 * tempScale, 0.0);
                     break;
                 case -12:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(-180.0, 270.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(-180.0/2, 270.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(-180.0 * tempScale, 270.0 * tempScale, 0.0);
                     break;
                 case -13:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(180.0, -270.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(180.0/2, -270.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(180.0 * tempScale, -270.0 * tempScale, 0.0);
                     break;
                 case -14:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(-210.0, 315.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(-210.0/2, 315.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(-210.0 * tempScale, 315.0 * tempScale, 0.0);
                     break;
                 case -15:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(210.0, -315.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(210.0/2, -315.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(210.0 * tempScale, -315.0 * tempScale, 0.0);
                     break;
                 case -16:
-                    if (containerScale){
-                        tempPoint2.emitPoint = new BBPointMake(-240.0, 360.0, 0.0);
-                    }
-                    else{
-                        tempPoint2.emitPoint = new BBPointMake(-240.0/2, 360.0/2, 0.0);
-                    }
+                    tempPoint2.emitPoint = new BBPointMake(-240.0 * tempScale, 360.0 * tempScale, 0.0);
                     break;
                 default:
-                    tempPoint2.emitPoint = new BBPointMake(320.0, 480.0, 0.0);
+                    tempPoint2.emitPoint = new BBPointMake(320.0 * tempScale, 480.0 * tempScale, 0.0);
                     tempPoint2.index = -2;
                     break;
             }

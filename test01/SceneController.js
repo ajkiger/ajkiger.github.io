@@ -392,14 +392,9 @@ function sceneControllerLoadScene(){
     particleEmitterYellow = new ParticleSystem();
     particleEmitterYellow.init();
     particleEmitterYellow.emissionRangeN = new BBRangeMake(1.0, 0.0);
-    
-    if (containerScale){
-        particleEmitterYellow.sizeRangeN = new BBRangeMake(30.0, 0.0);
-    }
-    else{
-        particleEmitterYellow.sizeRangeN = new BBRangeMake(15.0, 0.0);
-    }
-    
+    containerScale = true;
+    var starScale = 30.0 * tempScale;
+    particleEmitterYellow.sizeRangeN = new BBRangeMake(starScale, 0.0);
     particleEmitterYellow.xVelocityRangeN = new BBRangeMake(-1.0, 2.0);
     particleEmitterYellow.yVelocityRangeN = new BBRangeMake(-1.0, 2.0);
     particleEmitterYellow.zVelocityRangeN = new BBRangeMake(-1.0, 2.0);
@@ -416,14 +411,7 @@ function sceneControllerLoadScene(){
     particleEmitterRed = new ParticleSystem();
     particleEmitterRed.init();
     particleEmitterRed.emissionRangeN = new BBRangeMake(1.0, 0.0);
-    
-    if (containerScale){
-        particleEmitterRed.sizeRangeN = new BBRangeMake(30.0, 0.0);
-    }
-    else{
-        particleEmitterRed.sizeRangeN = new BBRangeMake(15.0, 0.0);
-    }
-    
+    particleEmitterRed.sizeRangeN = new BBRangeMake(starScale, 0.0);
     particleEmitterRed.xVelocityRangeN = new BBRangeMake(-1.0, 2.0);
     particleEmitterRed.yVelocityRangeN = new BBRangeMake(-1.0, 2.0);
     particleEmitterRed.zVelocityRangeN = new BBRangeMake(-1.0, 2.0);
@@ -440,14 +428,7 @@ function sceneControllerLoadScene(){
     particleEmitterBlue = new ParticleSystem();
     particleEmitterBlue.init();
     particleEmitterBlue.emissionRangeN = new BBRangeMake(1.0, 0.0);
-    
-    if (containerScale){
-        particleEmitterBlue.sizeRangeN = new BBRangeMake(30.0, 0.0);
-    }
-    else{
-        particleEmitterBlue.sizeRangeN = new BBRangeMake(15.0, 0.0);
-    }
-    
+    particleEmitterBlue.sizeRangeN = new BBRangeMake(starScale, 0.0);
     particleEmitterBlue.xVelocityRangeN = new BBRangeMake(-1.0, 2.0);
     particleEmitterBlue.yVelocityRangeN = new BBRangeMake(-1.0, 2.0);
     particleEmitterBlue.zVelocityRangeN = new BBRangeMake(-1.0, 2.0);
@@ -464,14 +445,7 @@ function sceneControllerLoadScene(){
     particleEmitterBlack = new ParticleSystem();
     particleEmitterBlack.init();
     particleEmitterBlack.emissionRangeN = new BBRangeMake(1.0, 0.0);
-    
-    if (containerScale){
-        particleEmitterBlack.sizeRangeN = new BBRangeMake(30.0, 0.0);
-    }
-    else{
-        particleEmitterBlack.sizeRangeN = new BBRangeMake(15.0, 0.0);
-    }
-    
+    particleEmitterBlack.sizeRangeN = new BBRangeMake(starScale, 0.0);
     particleEmitterBlack.xVelocityRangeN = new BBRangeMake(-1.0, 2.0);
     particleEmitterBlack.yVelocityRangeN = new BBRangeMake(-1.0, 2.0);
     particleEmitterBlack.zVelocityRangeN = new BBRangeMake(-1.0, 2.0);
