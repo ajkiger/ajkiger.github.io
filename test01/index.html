@@ -12,7 +12,7 @@ ajkiger@gmail.com
 <head>
 <title>WC-Weekly</title>
 
-<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 <!--<meta id="viewport" name="viewport" content="width=640, initial-scale=1.0">-->
 <meta name="MobileOptimized" content="640">
 <meta name="HandheldFriendly" content="True">
@@ -920,13 +920,13 @@ ajkiger@gmail.com
     });
 
     
-    /*
+    
     $(document).bind(
         'touchmove', function(e) {
             e.preventDefault();
         }
     );
-    */
+    
     
     /*
     $(document).on(
@@ -1654,10 +1654,6 @@ ajkiger@gmail.com
         var gContainer = document.getElementById('container');
         gContainer.style.width = cWidth + "px";
         gContainer.style.height = cWidth + "px";
-        var gBottomFooter = document.getElementById('bottomFooter');
-        gBottomFooter.style.width = (cWidth - 10) + "px";
-        gBottomFooter.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
-        gBottomFooter.style.height = "auto"; //(85 * tempScale) + "px";
         
         var gButton = document.getElementById('btnhints');
         gButton.style.width = (86 * tempScale) + "px";
@@ -1684,7 +1680,6 @@ ajkiger@gmail.com
         gButton.setAttribute('width',(60 * tempScale));
         gButton.setAttribute('height',(60 * tempScale));
         
-        
         gButton = document.getElementById('starimage');
         gButton.style.width = (50 * tempScale) + "px";
         gButton.style.height = (50 * tempScale) + "px";
@@ -1694,6 +1689,13 @@ ajkiger@gmail.com
         
         gButton = document.getElementById('scorebox');
         gButton.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        var theightLeft = browserHeight - (86 * tempScale) - cWidth - parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0);
+        var gBottomFooter = document.getElementById('bottomFooter');
+        gBottomFooter.style.width = (cWidth - 10) + "px";
+        gBottomFooter.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gBottomFooter.style.height = theightLeft + "px"; //"auto"; //(85 * tempScale) + "px";
+        
         
         
         var gPopup = document.getElementById('popupBasic');
