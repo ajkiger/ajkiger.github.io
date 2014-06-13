@@ -1723,8 +1723,8 @@ function touchesBegan(event) {
     relY = parseFloat(Math.round(relY * 100) / 100).toFixed(0);
     var currentPoint = new Point(relX, relY);
     
-    document.getElementById('xcoord').innerHTML = currentPoint.x;
-    document.getElementById('xcoord2').innerHTML = currentPoint.y;
+    document.getElementById('xcoord').innerHTML = "X: " + currentPoint.x;
+    document.getElementById('xcoord2').innerHTML = "Y: " + currentPoint.y;
     
     startTime = new Date().getTime() / 1000;  // seconds
 
@@ -1776,8 +1776,8 @@ function touchesMoved(event) {
     relY = parseFloat(Math.round(relY * 100) / 100).toFixed(0);
     var currentPoint = new Point(relX, relY);
     
-    document.getElementById('xcoord').innerHTML = currentPoint.x;
-    document.getElementById('xcoord2').innerHTML = currentPoint.y;
+    document.getElementById('xcoord').innerHTML = "X: " + currentPoint.x;
+    document.getElementById('xcoord2').innerHTML = "Y: " + currentPoint.y;
     
     parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
     
