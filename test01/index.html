@@ -1496,8 +1496,10 @@ ajkiger@gmail.com
         <script>
         
             var mvcontent = document.getElementById('WordCubed-canvas');
-            //mvcontent.setAttribute('width',cWidth);
-            //mvcontent.setAttribute('height',cWidth);
+            if(tempScale > 1){
+                mvcontent.setAttribute('width',cWidth);
+                mvcontent.setAttribute('height',cWidth);
+            }
             mvcontent.style.width = cWidth + "px";
             mvcontent.style.height = cWidth + "px";
             
