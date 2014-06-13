@@ -149,7 +149,7 @@ function UpdateTextAreaView(wordList){
                     var FirstLetterHW = tempWord.wordName.substring(0, 1);
                     var LengthHW = tempWord.wordLength;
 
-                    displayText = "Hidden word begins with the letter " + " \"" + FirstLetterHW + "\"" + "<br>" + "and is " +
+                    displayText = "Hidden word begins with the letter" + "<br>" + " \"" + FirstLetterHW + "\"" + " and is " +
                             LengthHW + " letters long." + "<br>" + "It will match the theme of the following words:" + "<br>" + displayText2;
                     
                     //displayText = "HIDDEN WORD BEGINS WITH THE LETTER " + " \"" + FirstLetterHW + "\"" + "<br>" + "AND IS " +

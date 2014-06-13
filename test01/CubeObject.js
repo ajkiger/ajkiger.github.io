@@ -1110,24 +1110,37 @@ function cObjectUpdate() {
         
         if (sceneController.cubeSize === 96)
         {
-            //zoomSizeMin = 90.0;
             containerScale = true;
-            zoomSizeMax = 90.0;// * tempScale;
-            growSpeed = 1.25;// * tempScale;
-            
+            if(tempScale > 1){
+                zoomSizeMax = 90.0 * tempScale;
+                growSpeed = 1.25 * tempScale;
+            }
+            else{
+                zoomSizeMax = 90.0;// * tempScale;
+                growSpeed = 1.25;// * tempScale;
+            }
         }
         else if (sceneController.cubeSize === 216)
         {
-            //zoomSizeMin = 65.0;
-            zoomSizeMax = 65.0;// * tempScale;
-            growSpeed = 0.90;// * tempScale;
+            if(tempScale > 1){
+                zoomSizeMax = 65.0 * tempScale;
+                growSpeed = 0.90 * tempScale;
+            }
+            else{
+                zoomSizeMax = 65.0;// * tempScale;
+                growSpeed = 0.90;// * tempScale;
+            }
         }
         else if (sceneController.cubeSize === 150)
         {
-            //zoomSizeMin = 75.0;
-            zoomSizeMax = 75.0;// * tempScale;
-            growSpeed = 1.0;// * tempScale;
-            
+            if(tempScale > 1){
+                zoomSizeMax = 75.0 * tempScale;
+                growSpeed = 1.0 * tempScale;
+            }
+            else{
+                zoomSizeMax = 75.0;// * tempScale;
+                growSpeed = 1.0;// * tempScale;
+            }
         }
 
 
@@ -1698,12 +1711,20 @@ function touchesBegan(event) {
     var relX;
     var relY;
     containerScale = true;
-    relX = (event.pageX - parentOffset.left) / tempScale;
-    relY = (event.pageY - parentOffset.top) / tempScale;
+    if(tempScale > 1){
+        relX = (event.pageX - parentOffset.left);// / tempScale;
+        relY = (event.pageY - parentOffset.top);// / tempScale;
+    }
+    else{
+        relX = (event.pageX - parentOffset.left) / tempScale;
+        relY = (event.pageY - parentOffset.top) / tempScale;
+    }
+    relX = parseFloat(Math.round(relX * 100) / 100).toFixed(0);
+    relY = parseFloat(Math.round(relY * 100) / 100).toFixed(0);
     var currentPoint = new Point(relX, relY);
     
-    //document.getElementById('xcoord').innerHTML = parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
-    //document.getElementById('xcoord2').innerHTML = parseFloat(Math.round(currentPoint.y * 100) / 100).toFixed(0);
+    //document.getElementById('xcoord').innerHTML = currentPoint.x;
+    //document.getElementById('xcoord2').innerHTML = currentPoint.y;
     
     startTime = new Date().getTime() / 1000;  // seconds
 
@@ -1743,12 +1764,20 @@ function touchesMoved(event) {
     var relX;
     var relY;
     containerScale = true;
-    relX = (event.pageX - parentOffset.left) / tempScale;
-    relY = (event.pageY - parentOffset.top) / tempScale;
+    if(tempScale > 1){
+        relX = (event.pageX - parentOffset.left);// / tempScale;
+        relY = (event.pageY - parentOffset.top);// / tempScale;
+    }
+    else{
+        relX = (event.pageX - parentOffset.left) / tempScale;
+        relY = (event.pageY - parentOffset.top) / tempScale;
+    }
+    relX = parseFloat(Math.round(relX * 100) / 100).toFixed(0);
+    relY = parseFloat(Math.round(relY * 100) / 100).toFixed(0);
     var currentPoint = new Point(relX, relY);
     
-    //document.getElementById('xcoord').innerHTML = parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
-    //document.getElementById('xcoord2').innerHTML = parseFloat(Math.round(currentPoint.y * 100) / 100).toFixed(0);
+    //document.getElementById('xcoord').innerHTML = currentPoint.x;
+    //document.getElementById('xcoord2').innerHTML = currentPoint.y;
     
     parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
     
@@ -1831,7 +1860,12 @@ function touchesEnd() {
     if (!wordSelect)
     {
         containerScale = true;
-        fingerSpeed = (Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime);// * 1/tempScale;
+        if(tempScale > 1){
+            fingerSpeed = (Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime) * 1/tempScale;
+        }
+        else{
+            fingerSpeed = (Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime);// * 1/tempScale;
+        }
 
         xVector = deltaX * fingerSpeed / 50;
         yVector = deltaY * fingerSpeed / 50;
