@@ -1698,12 +1698,12 @@ function touchesBegan(event) {
     var relX;
     var relY;
     containerScale = true;
-    relX = (event.pageX - parentOffset.left);// * tempScale;
-    relY = (event.pageY - parentOffset.top);// * tempScale;
+    relX = (event.pageX - parentOffset.left) / tempScale;
+    relY = (event.pageY - parentOffset.top) / tempScale;
     var currentPoint = new Point(relX, relY);
     
-    //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
-    //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
+    document.getElementById('xcoord').innerHTML = parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
+    document.getElementById('xcoord2').innerHTML = parseFloat(Math.round(currentPoint.y * 100) / 100).toFixed(0);
     
     startTime = new Date().getTime() / 1000;  // seconds
 
@@ -1743,12 +1743,14 @@ function touchesMoved(event) {
     var relX;
     var relY;
     containerScale = true;
-    relX = (event.pageX - parentOffset.left);// * tempScale;
-    relY = (event.pageY - parentOffset.top);// * tempScale;
+    relX = (event.pageX - parentOffset.left) / tempScale;
+    relY = (event.pageY - parentOffset.top) / tempScale;
     var currentPoint = new Point(relX, relY);
     
-    //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
-    //document.getElementById('ycoord2').innerHTML = "Mouse y:  " + currentPoint.y;
+    document.getElementById('xcoord').innerHTML = parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
+    document.getElementById('xcoord2').innerHTML = parseFloat(Math.round(currentPoint.y * 100) / 100).toFixed(0);
+    
+    parseFloat(Math.round(currentPoint.x * 100) / 100).toFixed(0);
     
     currentPosition = currentPoint;
     
