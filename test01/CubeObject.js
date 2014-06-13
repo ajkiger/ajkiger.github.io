@@ -1112,21 +1112,21 @@ function cObjectUpdate() {
         {
             //zoomSizeMin = 90.0;
             containerScale = true;
-            zoomSizeMax = 90.0 * tempScale;
-            growSpeed = 1.25 * tempScale;
+            zoomSizeMax = 90.0;// * tempScale;
+            growSpeed = 1.25;// * tempScale;
             
         }
         else if (sceneController.cubeSize === 216)
         {
             //zoomSizeMin = 65.0;
-            zoomSizeMax = 65.0 * tempScale;
-            growSpeed = 0.90 * tempScale;
+            zoomSizeMax = 65.0;// * tempScale;
+            growSpeed = 0.90;// * tempScale;
         }
         else if (sceneController.cubeSize === 150)
         {
             //zoomSizeMin = 75.0;
-            zoomSizeMax = 75.0 * tempScale;
-            growSpeed = 1.0 * tempScale;
+            zoomSizeMax = 75.0;// * tempScale;
+            growSpeed = 1.0;// * tempScale;
             
         }
 
@@ -1698,8 +1698,8 @@ function touchesBegan(event) {
     var relX;
     var relY;
     containerScale = true;
-    relX = (event.pageX - parentOffset.left) * tempScale;
-    relY = (event.pageY - parentOffset.top) * tempScale;
+    relX = (event.pageX - parentOffset.left);// * tempScale;
+    relY = (event.pageY - parentOffset.top);// * tempScale;
     var currentPoint = new Point(relX, relY);
     
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
@@ -1743,8 +1743,8 @@ function touchesMoved(event) {
     var relX;
     var relY;
     containerScale = true;
-    relX = (event.pageX - parentOffset.left) * tempScale;
-    relY = (event.pageY - parentOffset.top) * tempScale;
+    relX = (event.pageX - parentOffset.left);// * tempScale;
+    relY = (event.pageY - parentOffset.top);// * tempScale;
     var currentPoint = new Point(relX, relY);
     
     //document.getElementById('xcoord2').innerHTML = "Mouse x:  " + currentPoint.x;
@@ -1829,7 +1829,7 @@ function touchesEnd() {
     if (!wordSelect)
     {
         containerScale = true;
-        fingerSpeed = (Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime) * 1/tempScale;
+        fingerSpeed = (Math.sqrt(deltaX * deltaX + deltaY * deltaY) / guestureTime);// * 1/tempScale;
 
         xVector = deltaX * fingerSpeed / 50;
         yVector = deltaY * fingerSpeed / 50;
