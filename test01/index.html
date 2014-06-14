@@ -13,27 +13,12 @@ ajkiger@gmail.com
 <title>WC-Weekly</title>
 
 <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-<!--<meta id="viewport" name="viewport" content="width=640, initial-scale=1.0">-->
 <meta name="MobileOptimized" content="640">
 <meta name="HandheldFriendly" content="True">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<script>
-    var containerScale = true;
-    var browserWidth;
-    var browserHeight;
-    var pixelRatio;
-    var tempScale;
-    var tempScaleW;
-    var tempScaleH;
-    var mvp;
-    var agent;
-    var isFireFoxDesktop;
-    var isWindowsPhone;
-    var cWidth;
-    var iWinConsole = false;
-    
-</script>
+
+
 
 <!--<script src="webgl-debug.js"></script>-->
 <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon.png">
@@ -285,7 +270,7 @@ ajkiger@gmail.com
     }
     
     #srsbox{
-        vertical-align:bottom;
+        vertical-align: bottom;
         
     }
     
@@ -472,6 +457,20 @@ ajkiger@gmail.com
     var redStarTexture;
     var blueStarTexture;
     var blackStarTexture;
+    
+    var containerScale = true;
+    var browserWidth;
+    var browserHeight;
+    var pixelRatio;
+    var tempScale;
+    var tempScaleW;
+    var tempScaleH;
+    var mvp;
+    var agent;
+    var isFireFoxDesktop;
+    var isWindowsPhone;
+    var cWidth;
+    var iWinConsole = false;
 
     function initGL(canvas) {
         
@@ -483,8 +482,8 @@ ajkiger@gmail.com
             return;
         }
         validCanvas = true;
-        gl.viewportWidth = canvas.width;
-        gl.viewportHeight = canvas.height;
+        //gl.viewportWidth = canvas.width;
+        //gl.viewportHeight = canvas.height;
         
     }
 
@@ -665,9 +664,12 @@ ajkiger@gmail.com
     var soundTrack;
     var soundEffects;
     var SoundInstanceBM;
+    var initialFontSize;
     //var testContext = true;
     
     function webGLStart() {
+        
+        
         
         //soundTrack = true;
         validCanvas = true;
@@ -678,7 +680,8 @@ ajkiger@gmail.com
             "webglcontextlost", handleContextLost, false);
         canvas.addEventListener(
             "webglcontextrestored", handleContextRestored, false);
-    
+        
+        initialFontSize = "20px";
         initGL(canvas);
         
         agent = navigator.userAgent.toLowerCase();
@@ -746,6 +749,8 @@ ajkiger@gmail.com
                     }
 
                 }
+                
+                setGameDimensions();
                 sceneControllerLoadScene();
                  } );
                  
@@ -775,7 +780,7 @@ ajkiger@gmail.com
 
                 }
                 
-                
+                setGameDimensions();
                 sceneControllerLoadScene();
             }
             
@@ -792,6 +797,9 @@ ajkiger@gmail.com
                 
                 iConsole.game.ready().result( function( resultData ) {
                
+                    setGameDimensions();
+                    
+                    
                 } );
 
                 iConsole.game.loadProgress( { progress: 1, file: '' } );
@@ -799,6 +807,10 @@ ajkiger@gmail.com
                 iConsole.game.loaded( {
                    success: true
                 } );
+                
+            }
+            else{
+                setGameDimensions();
                 
             }
             
@@ -1427,24 +1439,17 @@ ajkiger@gmail.com
         
     }
     */
-    
-    
-</script>
-
-
-
-</head>
-
-<body onload="loadAssets();">
-    
-    <script>
-        
+   
+   function setGameDimensions(){
+       
         agent = navigator.userAgent.toLowerCase();
         isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
-        
+
         browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        
+        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+
         tempScaleW = browserWidth / 640;
         tempScaleH = browserHeight / 842;
         if(tempScaleH < tempScaleW){
@@ -1456,204 +1461,33 @@ ajkiger@gmail.com
         cWidth = 640 * tempScale;
         cWidth = parseFloat(Math.round(cWidth * 100) / 100).toFixed(0);
         
-    </script>
-    
-    
-    <div data-role="page" id="pageWH">
-        
-        <div data-role="header" id="topHeader">
-            <table id="btnTable">
-                <tr>
 
-                    <td ><button id = "btnhints" type="button"><img id = "imghints" alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button>
-                    <label id="xcoord" ></label>
-                    </td>
-                    <td ><button id = "btnsettings" type="button"><img id = "imgsettings" alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button>
-                    <label id="xcoord2" ></label>
-                    </td>
-                    <td ><button id = "btngames" type="button"><img id = "imggames" alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button>
-                    <label id="ycoord" ></label>
-                    </td>
-                    <td ><button id = "btninfo" type="button"><img id = "imginfo" alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
-                    <label id="ycoord2" ></label>
-                    </td>
-                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" alt="Blue" title=" 3 Stars/Letter ">
-                    <!--<label id="contextStatus" >&nbsp;</label>-->
-                    </td>
-                    
-                    <td id = "srsbox"><label id="scoreratebox" title=" Score Rate "></label><label id="scorebox" title=" Score "></label></td>
-                    
-                </tr>
-                
-            </table>
-             
-	</div><!-- /header -->
-        
-        
-        <div id="container">
-            <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
-	</div>
-        <script>
-        
-            var mvcontent = document.getElementById('WordCubed-canvas');
+        var mvcontent = document.getElementById('WordCubed-canvas');
+        if(validCanvas){
             if(tempScale > 1){
                 mvcontent.setAttribute('width',cWidth);
                 mvcontent.setAttribute('height',cWidth);
             }
+            else{
+                mvcontent.setAttribute('width',640);
+                mvcontent.setAttribute('height',640);
+            }
             mvcontent.style.width = cWidth + "px";
             mvcontent.style.height = cWidth + "px";
             
-            var gContainer = document.getElementById('container');
-            gContainer.style.width = cWidth + "px";
-            gContainer.style.height = cWidth + "px";
+            gl.viewportWidth = canvas.width;
+            gl.viewportHeight = canvas.height;
+        }
+        //initialFontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        //document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
+        //document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
+        
 
-
-            //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
-            //mvp = document.getElementById('viewport');
-            //mvp.setAttribute('content',tempScale);
-
-
-            //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
-            //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
-            //document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
-            //document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
-
-            document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
-            document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
-
-
-        </script>
-        
-        
-        
-        
-        <div data-role="footer" id="bottomFooter" title=" Tap to see all Words ">
-            <p id="wordbox"></p>
-	</div><!-- /footer -->
-        
-        
-        <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:600px" data-dismissible="false">
-            <p id="wordboxpopup"></p>
-            <a id="closepopup1" href="#"  onclick="ClosePopupBasic()" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
-        </div>
-        
-         
-        <div data-role="popup" id="popupHints" class="ui-content" style="max-width:500px" data-dismissible="false">
-            <div id="popupHeader2" data-role="header" data-theme="b" style="font-size:32px">
-                <h1>Hints</h1>
-            </div>
-            <p><a id="showHint" href="#"  onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
-            <p><a id="solveTheCube" href="#"  onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
-            <a id="closepopup2" href="#"  onclick="ClosePopupHints();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
-        </div>
-        
-        
-        <div data-role="popup" id="popupSettings" class="ui-content" style="max-width:500px" data-dismissible="false">
-            <div id="popupHeader3" data-role="header" data-theme="b" style="font-size:32px">
-                <h1>Settings</h1>
-            </div>
-            <p id="placeCheck3" class="ui-shadow ui-corner-all" ><input id="check3" type="checkbox" onclick="ToggleMusic();"><label id="check3id" for="check3">Background Music</label></p>
-            <p id="placeCheck4" class="ui-shadow ui-corner-all" ><input id="check4" type="checkbox" onclick="ToggleSound();"><label id="check4id" for="check4">Sounds</label></p>
-            <p id="placeCheck1" class="ui-shadow ui-corner-all" ><input id="check1" type="checkbox" onclick="ToggleDensity();"><label id="check1id" for="check1">High Word Density</label></p>
-            <p id="placeCheck2" class="ui-shadow ui-corner-all" ><input id="check2" type="checkbox" onclick="ToggleInverse();"><label id="check2id" for="check2">Inverse Colors</label></p>
-            <p><a id="buttonNewGame" href="#"  onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
-            <a id="closepopup3" href="#"  onclick="ClosePopupSettings();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
-        </div>
-        
-        
-        <div data-role="popup" id="popupGames" class="ui-widget" style="max-width:600px" data-dismissible="false">
-            <table id="users" class="ui-widget ui-widget-content">
-              <thead>
-                <tr class="ui-widget-header ">
-                  <th id="popupHeader41">Puzzle</th>
-                  <th id="popupHeader42">Cube</th>
-                  <th id="popupHeader43">High Score</th>
-                  <th id="popupHeader44">Score Rate</th>
-                </tr>
-              </thead>
-              <tbody id="usersTBody"></tbody>
-            </table>
-        </div>
-        
-        
-        <div data-role="popup" id="popupTabs" class="ui-content" style="max-width:600px" data-dismissible="false">
-            <div id="popupHeader50" data-role="tabs">
-                <ul>
-                  <li><a id="popupHeader51" href="#tabs-1" onclick="PlayBloop();">Instructions</a></li>
-                  <li><a id="popupHeader52" href="#tabs-2" onclick="PlayBloop();">Scoring</a></li>
-                  <li><a id="popupHeader53" href="#tabs-3" onclick="PlayBloop();">Hints</a></li>
-                  <li><a id="popupHeader54" href="#tabs-4" onclick="PlayBloop();">Credits</a></li>
-                </ul>
-
-                <div id="tabs-1">
-                  <p id="tabs-1x">Rotate the cube to find the words listed at the bottom of the screen. &nbsp; Once a word is found, maneuver the cube so the first and last letters of the word are visible, and then lightly double tap the screen to freeze the cube. &nbsp; Tap the first and last letters of the word or drag your finger from one end letter to the other. &nbsp; Selecting words will score <img id="image54" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image55" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image56" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> points. &nbsp; Lightly double tap the screen again to put the cube back in free rotate mode. &nbsp; Continue to look for and select words until all words are found. &nbsp; Then find the hidden word to win the game.<br></p>
-                </div>
-                <div id="tabs-2">
-                  <p id="tabs-2x">Each star <img id="image51" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image52" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image53" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> scores 10 points. &nbsp; First word selected will always score 3 stars per letter. &nbsp; Words selected within 30 seconds of last successful selection will score 3 stars per letter; within 60 seconds, 2 stars per letter; longer than 60 seconds, 1 star per letter. &nbsp; Taking a word hint will score minus 10 points per letter, and when the word is selected, will only score 1 star per letter. &nbsp; Once cube is cleared, any duplicate words selected will always score 3 stars per letter. &nbsp; Score Rate reflects your score against a perfect score.</p>
-                </div>
-                <div id="tabs-3">
-                  <p id="tabs-3x">1. Check word list to identify possible duplicate words. &nbsp; For example, the words <q>FLY</q> and <q>FIREFLY</q> both have the word <q>FLY</q> in them. &nbsp; Every instance of a word is scorable.<br>2. Star symbol <img id="image57" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image58" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image59" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> at top of screen indicates current stars per letter. &nbsp; To maximize points, select shorter words when Yellow star is showing, longer words when Blue star is showing.<br>3. To select words, always ensure Blue selection marker highlights an end letter before selecting other end letter.</p>
-                </div>
-                <div id="tabs-4">
-                    
-                    <div>
-                    <p id="tabs-1w">Copyright &copy; 2014 JWACK APPS<br>All rights reserved<br>http://jwackapps.com<br><br>Word Cubed Weekly was created using HTML5, javascript and WebGL.<br><br>Questions, comments, and issues may be directed to wordheader@gmail.com<br><br>
-                        3D Word Games available on the App Store<br></p>
-                    </div>
-                    <div>
-                    <table style="width: 100%;">
-                        <tr>
-                            <td>
-                                <img id="image60" alt="Hints" src="images/WCIcon152x152.png" width="120" height="120">
-                            </td>
-                            <td>
-                                <img id="image61" alt="Hints" src="images/icon03-152x152.png" width="120" height="120">
-                            </td>
-                        </tr>
-                        <tr id="tabs-2w">
-                            <td>
-                                Word Cubed
-                            </td>
-                            <td>
-                                Word Head
-                            </td>
-                        </tr>
-                    </table>
-                    <table style="width: 100%;">
-                        <tr>
-                            <td>
-                                <img id="image62" alt="Hints" src="images/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="135" height="40">
-                            </td>
-                        </tr>
-                    </table>
-                    </div>
-                </div>
-
-                <a href="#" id="closepopup5" onclick="ClosePopupTabs();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
-            </div>
-        </div>
-        
-        
-        
-        <div data-role="popup" id="popupWin" class="ui-content" style="max-width:500px" data-dismissible="false">
-            <div id="popupHeader6" data-role="header" data-theme="b" style="font-size:32px">
-                <h1>Congratulation!</h1>
-            </div>
-            <p id="Winmessage" style="font-size:30px"></p>
-            <a id="closepopup6" href="#"  onclick="ClosePopupWin();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
-            <a id="btnNewGame" href="#"  onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Play Again</a>
-        </div>
-        
-        
-        <div id="agentdisplay">
-	</div>
-        <div id="agentdisplay2">
-	</div>
-        
-    </div> <!--/WH page -->
-        
-    <script>
-        
+        var gContainer = document.getElementById('container');
+        gContainer.style.width = cWidth + "px";
+        gContainer.style.height = cWidth + "px";
+       
         
         var gTopHeader = document.getElementById('topHeader');
         gTopHeader.style.width = cWidth + "px";
@@ -1859,10 +1693,194 @@ ajkiger@gmail.com
         gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
         gPopup = document.getElementById('btnNewGame');
         gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+       
+       
+        
+        //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
+        //mvp = document.getElementById('viewport');
+        //mvp.setAttribute('content',tempScale);
+
+
+        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        //document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
+        //document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
+
+        //document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+        //document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+   }
+    
+    
+</script>
+
+
+
+</head>
+
+<body onload="loadAssets();">
+    
+    
+    <div data-role="page" id="pageWH">
+        
+        <div data-role="header" id="topHeader">
+            <table id="btnTable">
+                <tr>
+
+                    <td ><button id = "btnhints" type="button"><img id = "imghints" alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button>
+                    <label id="xcoord" ></label>
+                    </td>
+                    <td ><button id = "btnsettings" type="button"><img id = "imgsettings" alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button>
+                    <label id="xcoord2" ></label>
+                    </td>
+                    <td ><button id = "btngames" type="button"><img id = "imggames" alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button>
+                    <label id="ycoord" ></label>
+                    </td>
+                    <td ><button id = "btninfo" type="button"><img id = "imginfo" alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
+                    <label id="ycoord2" ></label>
+                    </td>
+                    <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" alt="Blue" title=" 3 Stars/Letter ">
+                    <!--<label id="contextStatus" >&nbsp;</label>-->
+                    </td>
+                    
+                    <td id = "srsbox"><label id="scoreratebox" title=" Score Rate ">&nbsp;&nbsp;</label><label id="scorebox" title=" Score ">&nbsp;&nbsp;</label></td>
+                    
+                </tr>
+                
+            </table>
+             
+	</div><!-- /header -->
+        
+        
+        <div id="container">
+            <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
+	</div>
+        
+        
+        <div data-role="footer" id="bottomFooter" title=" Tap to see all Words ">
+            <p id="wordbox"></p>
+	</div><!-- /footer -->
+        
+        
+        <div data-role="popup" id="popupBasic" class="ui-content" style="max-width:600px" data-dismissible="false">
+            <p id="wordboxpopup"></p>
+            <a id="closepopup1" href="#"  onclick="ClosePopupBasic()" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
+        </div>
+        
+         
+        <div data-role="popup" id="popupHints" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div id="popupHeader2" data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Hints</h1>
+            </div>
+            <p><a id="showHint" href="#"  onclick="showHint();" class="ui-btn ui-shadow ui-corner-all">Take a Hint</a></p>
+            <p><a id="solveTheCube" href="#"  onclick="SolveTheCube();" class="ui-btn ui-shadow ui-corner-all">Solve Cube</a></p>
+            <a id="closepopup2" href="#"  onclick="ClosePopupHints();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
+        </div>
+        
+        
+        <div data-role="popup" id="popupSettings" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div id="popupHeader3" data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Settings</h1>
+            </div>
+            <p id="placeCheck3" class="ui-shadow ui-corner-all" ><input id="check3" type="checkbox" onclick="ToggleMusic();"><label id="check3id" for="check3">Background Music</label></p>
+            <p id="placeCheck4" class="ui-shadow ui-corner-all" ><input id="check4" type="checkbox" onclick="ToggleSound();"><label id="check4id" for="check4">Sounds</label></p>
+            <p id="placeCheck1" class="ui-shadow ui-corner-all" ><input id="check1" type="checkbox" onclick="ToggleDensity();"><label id="check1id" for="check1">High Word Density</label></p>
+            <p id="placeCheck2" class="ui-shadow ui-corner-all" ><input id="check2" type="checkbox" onclick="ToggleInverse();"><label id="check2id" for="check2">Inverse Colors</label></p>
+            <p><a id="buttonNewGame" href="#"  onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all">New Game</a></p>
+            <a id="closepopup3" href="#"  onclick="ClosePopupSettings();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
+        </div>
+        
+        
+        <div data-role="popup" id="popupGames" class="ui-widget" style="max-width:600px" data-dismissible="false">
+            <table id="users" class="ui-widget ui-widget-content">
+              <thead>
+                <tr class="ui-widget-header ">
+                  <th id="popupHeader41">Puzzle</th>
+                  <th id="popupHeader42">Cube</th>
+                  <th id="popupHeader43">High Score</th>
+                  <th id="popupHeader44">Score Rate</th>
+                </tr>
+              </thead>
+              <tbody id="usersTBody"></tbody>
+            </table>
+        </div>
+        
+        
+        <div data-role="popup" id="popupTabs" class="ui-content" style="max-width:600px" data-dismissible="false">
+            <div id="popupHeader50" data-role="tabs">
+                <ul>
+                  <li><a id="popupHeader51" href="#tabs-1" onclick="PlayBloop();">Instructions</a></li>
+                  <li><a id="popupHeader52" href="#tabs-2" onclick="PlayBloop();">Scoring</a></li>
+                  <li><a id="popupHeader53" href="#tabs-3" onclick="PlayBloop();">Hints</a></li>
+                  <li><a id="popupHeader54" href="#tabs-4" onclick="PlayBloop();">Credits</a></li>
+                </ul>
+
+                <div id="tabs-1">
+                  <p id="tabs-1x">Rotate the cube to find the words listed at the bottom of the screen. &nbsp; Once a word is found, maneuver the cube so the first and last letters of the word are visible, and then lightly double tap the screen to freeze the cube. &nbsp; Tap the first and last letters of the word or drag your finger from one end letter to the other. &nbsp; Selecting words will score <img id="image54" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image55" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image56" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> points. &nbsp; Lightly double tap the screen again to put the cube back in free rotate mode. &nbsp; Continue to look for and select words until all words are found. &nbsp; Then find the hidden word to win the game.<br></p>
+                </div>
+                <div id="tabs-2">
+                  <p id="tabs-2x">Each star <img id="image51" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image52" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image53" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> scores 10 points. &nbsp; First word selected will always score 3 stars per letter. &nbsp; Words selected within 30 seconds of last successful selection will score 3 stars per letter; within 60 seconds, 2 stars per letter; longer than 60 seconds, 1 star per letter. &nbsp; Taking a word hint will score minus 10 points per letter, and when the word is selected, will only score 1 star per letter. &nbsp; Once cube is cleared, any duplicate words selected will always score 3 stars per letter. &nbsp; Score Rate reflects your score against a perfect score.</p>
+                </div>
+                <div id="tabs-3">
+                  <p id="tabs-3x">1. Check word list to identify possible duplicate words. &nbsp; For example, the words <q>FLY</q> and <q>FIREFLY</q> both have the word <q>FLY</q> in them. &nbsp; Every instance of a word is scorable.<br>2. Star symbol <img id="image57" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image58" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image59" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> at top of screen indicates current stars per letter. &nbsp; To maximize points, select shorter words when Yellow star is showing, longer words when Blue star is showing.<br>3. To select words, always ensure Blue selection marker highlights an end letter before selecting other end letter.</p>
+                </div>
+                <div id="tabs-4">
+                    
+                    <div>
+                    <p id="tabs-1w">Copyright &copy; 2014 JWACK APPS<br>All rights reserved<br>http://jwackapps.com<br><br>Word Cubed Weekly was created using HTML5, javascript and WebGL.<br><br>Questions, comments, and issues may be directed to wordheader@gmail.com<br><br>
+                        3D Word Games available on the App Store<br></p>
+                    </div>
+                    <div>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <img id="image60" alt="Hints" src="images/WCIcon152x152.png" width="120" height="120">
+                            </td>
+                            <td>
+                                <img id="image61" alt="Hints" src="images/icon03-152x152.png" width="120" height="120">
+                            </td>
+                        </tr>
+                        <tr id="tabs-2w">
+                            <td>
+                                Word Cubed
+                            </td>
+                            <td>
+                                Word Head
+                            </td>
+                        </tr>
+                    </table>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <img id="image62" alt="Hints" src="images/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="135" height="40">
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                </div>
+
+                <a href="#" id="closepopup5" onclick="ClosePopupTabs();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
+            </div>
+        </div>
         
         
         
-    </script>
+        <div data-role="popup" id="popupWin" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div id="popupHeader6" data-role="header" data-theme="b" style="font-size:32px">
+                <h1>Congratulation!</h1>
+            </div>
+            <p id="Winmessage" style="font-size:30px"></p>
+            <a id="closepopup6" href="#"  onclick="ClosePopupWin();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
+            <a id="btnNewGame" href="#"  onclick="ButtonNewGame();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Play Again</a>
+        </div>
+        
+        
+        <div id="agentdisplay">
+	</div>
+        <div id="agentdisplay2">
+	</div>
+        
+    </div> <!--/WH page -->
+        
    
 </body>
 

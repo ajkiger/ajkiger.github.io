@@ -67,8 +67,8 @@ WebGLUtils = function() {
  */
 var makeFailHTML = function(msg) {
   return '' +
-    '<table style="background-color: #8CE; width: 100%; height: 100%; font-size: 28px;"><tr>' +
-    '<td align="center">' +
+    '<table style="background-color: #8CE; width: 100%; height: 100%; font-size: ' + initialFontSize + ';"><tr>' +
+    '<td align="center" style="vertical-align: top;">' +
     '<div style="display: table-cell; vertical-align: middle;">' +
     '<div style="">' + msg + '</div>' +
     '</div>' +
@@ -82,7 +82,8 @@ var makeFailHTML = function(msg) {
 var GET_A_WEBGL_BROWSER = '' +
   "Word Cubed Weekly requires WebGL to function.<br/>" +
   'Visit http://get.webgl.org to upgrade your browser.' +
-  '<br/><br/><br/><br/>3D Word Games available for<br/>iOS devices in the App Store.<br/><br/>' +
+  '<br/><br/>3D Word Games available for<br/>iOS devices in the App Store.<br/>' +
+  '<br/>Word Cubed&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWord Head<br/>' +
   '<img alt="Hints" src="images/WCIcon152x152.png" width="152" height="152" title=" Word Cubed ">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img alt="Hints" src="images/icon03-152x152.png" width="152" height="152" title=" Word Head ">' +
   '<br/>Word Cubed&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWord Head<br/>';
 
@@ -94,7 +95,8 @@ var OTHER_PROBLEM = '' +
   "Word Cubed Weekly requires WebGL to function.<br/>" +
   "It doesn't appear your device can support WebGL.<br/>" +
   'Visit http://get.webgl.org for more information.' +
-  '<br/><br/><br/><br/>3D Word Games available for<br/>iOS devices in the App Store.<br/><br/>' +
+  '<br/><br/>3D Word Games available for<br/>iOS devices in the App Store.<br/>' +
+  '<br/>Word Cubed&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWord Head<br/>' +
   '<img alt="Hints" src="images/WCIcon152x152.png" width="152" height="152" title=" Word Cubed ">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img alt="Hints" src="images/icon03-152x152.png" width="152" height="152" title=" Word Head ">' +
   '<br/>Word Cubed&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWord Head<br/>';
 
