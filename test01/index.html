@@ -18,7 +18,9 @@ ajkiger@gmail.com
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-
+<script type="text/javascript">
+    var iWinConsole = false;
+</script>
 
 <!--<script src="webgl-debug.js"></script>-->
 <link rel="apple-touch-icon" sizes="60x60" href="images/apple-touch-icon.png">
@@ -470,7 +472,6 @@ ajkiger@gmail.com
     var isFireFoxDesktop;
     var isWindowsPhone;
     var cWidth;
-    var iWinConsole = false;
 
     function initGL(canvas) {
         
@@ -669,6 +670,11 @@ ajkiger@gmail.com
     
     function webGLStart() {
         
+        agent = navigator.userAgent.toLowerCase();
+        isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
+        isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
+        //document.getElementById('agentdisplay').innerHTML = agent;
+        
         if(iWinConsole){
             
             iConsole.game.ready().result( function( resultData ) {
@@ -705,9 +711,6 @@ ajkiger@gmail.com
         initialFontSize = "20px";
         initGL(canvas);
 
-        agent = navigator.userAgent.toLowerCase();
-        isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
-
         lowLag.init({'urlPrefix':'sounds/'});
         lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
         lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
@@ -737,20 +740,23 @@ ajkiger@gmail.com
 
             sceneControllerInit();
 
-            SoundInstanceBM.play({loop:-1});
-            if(typeof(Storage)!=="undefined")
-            {
-                soundTrack = localStorage.getItem("tMusic");
-                if(soundTrack === "false"){
-                    soundTrack = false;
-                    SoundInstanceBM.pause();
-                }
-                else{
-                    soundTrack = true;
+            if(!isWindowsPhone){
+                SoundInstanceBM.play({loop:-1});
+                if(typeof(Storage)!=="undefined")
+                {
+                    soundTrack = localStorage.getItem("tMusic");
+                    if(soundTrack === "false"){
+                        soundTrack = false;
+                        SoundInstanceBM.pause();
+                    }
+                    else{
+                        soundTrack = true;
+
+                    }
 
                 }
-
             }
+            
             setGameDimensions();
             sceneControllerLoadScene();
 
@@ -837,7 +843,25 @@ ajkiger@gmail.com
     };
     
     function handleComplete(event) {
-        initBackGroundMusic();
+        
+        if(isWindowsPhone){
+            if(iWinConsole){
+                iConsole.game.loadProgress( { progress: 1, file: '' } );
+
+                iConsole.game.loaded( {
+                   success: true
+                } );
+            }
+            else{
+
+                webGLStartNoiWin();
+
+            }
+        }
+        else{
+            
+            initBackGroundMusic();
+        }
         
     }
     
@@ -1403,9 +1427,6 @@ ajkiger@gmail.com
    
    function setGameDimensions(){
        
-        agent = navigator.userAgent.toLowerCase();
-        isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
-
         browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
         //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
