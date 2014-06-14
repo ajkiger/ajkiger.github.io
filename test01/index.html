@@ -669,52 +669,61 @@ ajkiger@gmail.com
     
     function webGLStart() {
         
+        if(iWinConsole){
+            
+            iConsole.game.ready().result( function( resultData ) {
+            
+                webGLStartMain();
+
+            } );
+            
+        }
         
+        loadAssets();
         
-        //soundTrack = true;
+    }
+    
+    
+    function webGLStartNoiWin() {
+        
+        webGLStartMain();
+        
+    }
+    
+    
+    function webGLStartMain() {
+        
         validCanvas = true;
         canvas = document.getElementById("WordCubed-canvas");
         //canvas = WebGLDebugUtils.makeLostContextSimulatingCanvas(canvas); //Remove
-        
+
         canvas.addEventListener(
             "webglcontextlost", handleContextLost, false);
         canvas.addEventListener(
             "webglcontextrestored", handleContextRestored, false);
-        
+
         initialFontSize = "20px";
         initGL(canvas);
-        
+
         agent = navigator.userAgent.toLowerCase();
         isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
-        
-        //document.getElementById('agentdisplay').innerHTML = agent;
-        
+
         lowLag.init({'urlPrefix':'sounds/'});
         lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
         lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
-        
-        
+
         if(validCanvas){
-            
-            //initBackGroundMusic();
-           
+
             initShaders();
             initContext();
-            //$( "#container" ).fadeTo(400, 1.0);
 
-            //canvas.onmousedown = handleMouseDownonCanvas;
-            //canvas.onmousemove = handleMouseMoveonCanvas;
-            //canvas.onmouseup = handleMouseUponCanvas;
-            //canvas.onmouseout = handleMouseOutonCanvas;
-            
             //document.onkeydown = handleKeyDown; //Remove
             //document.onkeyup = handleKeyUp; //Remove
-            
+
             if(isFireFoxDesktop){
                 canvas.ondblclick = handleMouseDblClickonCanvas;
             }
-            
-            //sceneController = new Object();
+
             var tImage1 = preload.getResult("image1");
             yellowStarTexture = loadTexture(tImage1);
             var tImage2 = preload.getResult("image2");
@@ -725,100 +734,38 @@ ajkiger@gmail.com
             redStarTexture = loadTexture(tImage4);
             var tImage0 = preload.getResult("image0");
             allLettersTexture = loadTexture(tImage0);
-            
-            
+
             sceneControllerInit();
-            
-            if(iWinConsole){
-                iConsole.game.ready().result( function( resultData ) {
-                    
-                //document.getElementById('agentdisplay').innerHTML = resultData.user;
-                
-                SoundInstanceBM.play({loop:-1});
-        
-                if(typeof(Storage)!=="undefined")
-                {
-                    soundTrack = localStorage.getItem("tMusic");
-                    if(soundTrack === "false"){
-                        soundTrack = false;
-                        SoundInstanceBM.pause();
-                    }
-                    else{
-                        soundTrack = true;
 
-                    }
+            SoundInstanceBM.play({loop:-1});
+            if(typeof(Storage)!=="undefined")
+            {
+                soundTrack = localStorage.getItem("tMusic");
+                if(soundTrack === "false"){
+                    soundTrack = false;
+                    SoundInstanceBM.pause();
+                }
+                else{
+                    soundTrack = true;
 
                 }
-                
-                setGameDimensions();
-                sceneControllerLoadScene();
-                 } );
-                 
-                iConsole.game.loadProgress( { progress: 1, file: '' } );
 
-                iConsole.game.loaded( {
-                   success: true
-                } );
-                 
-                 
             }
-            else{
-                
-                SoundInstanceBM.play({loop:-1});
-        
-                if(typeof(Storage)!=="undefined")
-                {
-                    soundTrack = localStorage.getItem("tMusic");
-                    if(soundTrack === "false"){
-                        soundTrack = false;
-                        SoundInstanceBM.pause();
-                    }
-                    else{
-                        soundTrack = true;
+            setGameDimensions();
+            sceneControllerLoadScene();
 
-                    }
-
-                }
-                
-                setGameDimensions();
-                sceneControllerLoadScene();
-            }
-            
-            //document.getElementById('contextStatus').innerHTML = "&nbsp&nbsp";
-            
-            
-            
             startTimer = setTimeout(function(){GameLoop();}, 1500);
-            
         }
-        else{
-            
-            if(iWinConsole){
-                
-                iConsole.game.ready().result( function( resultData ) {
-               
-                    setGameDimensions();
-                    
-                    
-                } );
+        else{ // No valid context for canvas
 
-                iConsole.game.loadProgress( { progress: 1, file: '' } );
+            setGameDimensions();
 
-                iConsole.game.loaded( {
-                   success: true
-                } );
-                
-            }
-            else{
-                setGameDimensions();
-                
-            }
-            
-            
         }
-        
         
     }
+    
+    
+    
     
     function ClosePopupHints(){
         $( "#popupHints" ).popup("close");
@@ -891,7 +838,7 @@ ajkiger@gmail.com
     
     function handleComplete(event) {
         initBackGroundMusic();
-        //webGLStart();
+        
     }
     
     
@@ -915,8 +862,22 @@ ajkiger@gmail.com
     function handleLoad(event) {
         
         SoundInstanceBM = createjs.Sound.createInstance("BackGroundMusic");
-        webGLStart();
+        
+        if(iWinConsole){
+            iConsole.game.loadProgress( { progress: 1, file: '' } );
+
+            iConsole.game.loaded( {
+               success: true
+            } );
+        }
+        else{
+            
+            webGLStartNoiWin();
+            
+        }
+        
     }
+    
     
     
     $(function() {
@@ -1717,7 +1678,7 @@ ajkiger@gmail.com
 
 </head>
 
-<body onload="loadAssets();">
+<body onload="webGLStart();">
     
     
     <div data-role="page" id="pageWH">
