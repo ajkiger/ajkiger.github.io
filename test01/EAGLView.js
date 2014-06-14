@@ -10,7 +10,8 @@ ajkiger@gmail.com
 function initContext(){
     
     
-    gl.clearColor(238/255, 238/255, 238/255, 1.0);
+    //gl.clearColor(238/255, 238/255, 238/255, 1.0);
+    gl.clearColor(146/255, 139/255, 123/255, 1.0);
     gl.enable(gl.DEPTH_TEST);
     
     
