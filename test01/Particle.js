@@ -7,4 +7,271 @@ ajkiger@gmail.com
 */
 
 
-eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('u d(){3.v=9;3.b=9;3.7=9;3.f=9;3.i=9;3.j=9;3.k=9;3.l=9;3.c=9;3.w=9;3.A=9;3.E=9;3.F=9;3.s=9;3.G=9;3.H=9};d.e.v=9;d.e.b=9;d.e.7=9;d.e.f=9;d.e.i=9;d.e.j=9;d.e.k=9;d.e.l=9;d.e.c=9;d.e.w=9;d.e.A=9;d.e.E=9;d.e.F=9;d.e.s=9;d.e.G=9;d.e.H=9;d.e.P=u(){Q a=t R(0,0,0);a.x=3.b.x;a.y=3.b.y;a.z=3.b.z;3.b.x=a.x+3.7.x;3.b.y=a.y+3.7.y;3.b.z=a.z+3.7.z;m(3.s===0||3.s===1||3.s===4){I(3.c){n 0:3.c=3.c+1;3.i=0.0;3.j=0.o;3.k=0.0;3.l=0.o;h;n 2:3.c=3.c+1;3.i=0.o;3.j=0.5;3.k=0.0;3.l=0.o;h;n 4:3.c=3.c+1;3.i=0.5;3.j=0.p;3.k=0.0;3.l=0.o;h;n 6:3.c=3.c+1;3.i=0.p;3.j=1.0;3.k=0.0;3.l=0.o;h;n 8:3.c=3.c+1;3.i=0.0;3.j=0.o;3.k=0.o;3.l=0.5;h;n S:3.c=3.c+1;3.i=0.o;3.j=0.5;3.k=0.o;3.l=0.5;h;n T:3.c=3.c+1;3.i=0.p;3.j=1.0;3.k=0.o;3.l=0.5;h;n U:3.c=3.c+1;3.i=0.0;3.j=0.o;3.k=0.5;3.l=0.p;h;n V:3.c=3.c+1;3.i=0.o;3.j=0.5;3.k=0.5;3.l=0.p;h;n W:3.c=3.c+1;3.i=0.5;3.j=0.p;3.k=0.5;3.l=0.p;h;n X:3.c=-1;3.i=0.p;3.j=1.0;3.k=0.5;3.l=0.p;h;J:3.c=3.c+1;h}}Y{3.i=1.0;3.k=1.0;3.j=0.0;3.l=0.0}I(3.s){n 0:m(a.x-3.f.x>3.b.x-3.f.x){3.7.x=-3.7.x}m(a.y-3.f.y>3.b.y-3.f.y){3.7.y=-3.7.y}m(a.z-3.f.z>3.b.z-3.f.z){3.7.z=-3.7.z}m(3.b.x<3.f.x){K=L;3.7.x=3.7.x+B(t C(-0.5,2));3.7.x=((g.q*5-3.b.x)/(g.q*5))*3.7.x*0.D}m(3.b.y<3.f.y){3.7.y=3.7.y+B(t C(-0.5,2));3.7.y=((g.r*5-3.b.y)/(g.r*5))*3.7.y*0.D}m(3.b.x>g.q/2||3.b.y>g.r/2||3.b.x<g.q/-2||3.b.y<g.r/-2){3.w=-1;3.A=0.0;3.M()}h;n 4:m(a.x-3.f.x>3.b.x-3.f.x){3.7.x=-3.7.x}m(a.y-3.f.y>3.b.y-3.f.y){3.7.y=-3.7.y}m(a.z-3.f.z>3.b.z-3.f.z){3.7.z=-3.7.z}m(3.b.x<3.f.x){K=L;3.7.x=3.7.x+B(t C(-0.5,2));3.7.x=((g.q*5-3.b.x)/(g.q*5))*3.7.x*0.D}m(3.b.y<3.f.y){3.7.y=3.7.y+B(t C(-0.5,2));3.7.y=((g.r*5-3.b.y)/(g.r*5))*3.7.y*0.D}m(3.b.x>g.q/2||3.b.y>g.r/2||3.b.x<g.q/-2||3.b.y<g.r/-2){3.w=-1;3.A=0.0;3.N()}h;J:h}};d.e.M=u(){O(3.v)};d.e.N=u(){O(-(3.v))};',61,61,'|||this||||velocity||null||position|currentParticleAtlas|Particle|prototype|endLocation|gl|break|minU|maxU|minV|maxV|if|case|25|75|viewportWidth|viewportHeight|pType|new|function|STARPOINTS|life||||size|BBRandomFloat|BBRangeMake|98|grow|decay|shrinkP|killP|switch|default|containerScale|true|scorePoints|minusPoints|updateGameScore|update|var|BBPointMake|10|12|14|16|18|20|else'.split('|'),0,{}))
+function Particle(){
+    
+    this.STARPOINTS = null;
+    this.position = null;
+    this.velocity = null;
+    this.endLocation = null;
+    this.minU = null;
+    this.maxU = null;
+    this.minV = null;
+    this.maxV = null;
+    this.currentParticleAtlas = null;
+    this.life = null;
+    this.size = null;
+    this.grow = null;
+    this.decay = null;
+    this.pType = null;
+    this.shrinkP = null;
+    this.killP = null;
+};
+
+Particle.prototype.STARPOINTS = null;
+Particle.prototype.position = null;
+Particle.prototype.velocity = null;
+Particle.prototype.endLocation = null;
+Particle.prototype.minU = null;
+Particle.prototype.maxU = null;
+Particle.prototype.minV = null;
+Particle.prototype.maxV = null;
+Particle.prototype.currentParticleAtlas = null;
+Particle.prototype.life = null;
+Particle.prototype.size = null;
+Particle.prototype.grow = null;
+Particle.prototype.decay = null;
+Particle.prototype.pType = null;
+Particle.prototype.shrinkP = null;
+Particle.prototype.killP = null;
+
+
+
+Particle.prototype.update = function(){
+
+    
+    var OldPosition = new BBPointMake(0, 0, 0);
+    
+    OldPosition.x = this.position.x;
+    OldPosition.y = this.position.y;
+    OldPosition.z = this.position.z;
+    
+    //var OldPosition = this.position;
+    
+    this.position.x =  OldPosition.x + this.velocity.x;
+    this.position.y =  OldPosition.y + this.velocity.y;
+    this.position.z =  OldPosition.z + this.velocity.z;
+
+
+
+    //Update Particle Atlas
+    if (this.pType === 0 || this.pType === 1 || this.pType === 4) //pType == 0 || 
+    {
+        switch (this.currentParticleAtlas)
+        {
+            case 0:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.0;
+                this.maxU = 0.25;
+                this.minV = 0.0;
+                this.maxV = 0.25;
+                break;
+            case 2:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.25;
+                this.maxU = 0.5;
+                this.minV = 0.0;
+                this.maxV = 0.25;
+                break;
+            case 4:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.5;
+                this.maxU = 0.75;
+                this.minV = 0.0;
+                this.maxV = 0.25;
+                break;
+            case 6:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.75;
+                this.maxU = 1.0;
+                this.minV = 0.0;
+                this.maxV = 0.25;
+                break;
+            case 8:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.0;
+                this.maxU = 0.25;
+                this.minV = 0.25;
+                this.maxV = 0.5;
+                break;
+
+            case 10:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.25;
+                this.maxU = 0.5;
+                this.minV = 0.25;
+                this.maxV = 0.5;
+                break;
+
+            case 12:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.75;
+                this.maxU = 1.0;
+                this.minV = 0.25;
+                this.maxV = 0.5;
+                break;
+
+            case 14:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.0;
+                this.maxU = 0.25;
+                this.minV = 0.5;
+                this.maxV = 0.75;
+                break;
+            case 16:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.25;
+                this.maxU = 0.5;
+                this.minV = 0.5;
+                this.maxV = 0.75;
+                break;
+            case 18:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                this.minU = 0.5;
+                this.maxU = 0.75;
+                this.minV = 0.5;
+                this.maxV = 0.75;
+                break;
+            case 20:
+                this.currentParticleAtlas = -1;
+                this.minU = 0.75;
+                this.maxU = 1.0;
+                this.minV = 0.5;
+                this.maxV = 0.75;
+                break;
+            default:
+                this.currentParticleAtlas = this.currentParticleAtlas + 1;
+                break;
+        }
+    }
+    else
+    {
+        this.minU = 1.0;
+        this.minV = 1.0;
+        this.maxU = 0.0;
+        this.maxV = 0.0;
+    }
+
+
+    switch (this.pType)
+    {
+        case 0: //Score Stars
+            if (OldPosition.x - this.endLocation.x > this.position.x - this.endLocation.x)
+            {
+                this.velocity.x = -this.velocity.x;
+            }
+            if (OldPosition.y - this.endLocation.y > this.position.y - this.endLocation.y)
+            {
+                this.velocity.y = -this.velocity.y;
+            }
+
+
+            if (OldPosition.z - this.endLocation.z > this.position.z - this.endLocation.z)
+            {
+                this.velocity.z = -this.velocity.z;
+            }
+
+            if (this.position.x < this.endLocation.x)
+            {
+                containerScale = true;
+                //this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5, 2));
+                this.velocity.x = ((gl.viewportWidth * 5 - this.position.x) / (gl.viewportWidth * 5)) * this.velocity.x * 0.98;
+                
+            }
+
+            if (this.position.y < this.endLocation.y)
+            {
+                //this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5, 2));
+                this.velocity.y = ((gl.viewportHeight * 5 - this.position.y) / (gl.viewportHeight * 5)) * this.velocity.y * 0.98;
+                
+            }
+
+
+            if (this.position.x > gl.viewportWidth/2 || this.position.y > gl.viewportHeight/2 || this.position.x < gl.viewportWidth/-2 || this.position.y < gl.viewportHeight/-2)
+            {
+                this.life = -1;
+                this.size = 0.0;
+                this.scorePoints();
+                
+            }
+
+            break;
+
+        case 4: //Hint Stars
+            if (OldPosition.x - this.endLocation.x > this.position.x - this.endLocation.x)
+            {
+                this.velocity.x = -this.velocity.x;
+            }
+            if (OldPosition.y - this.endLocation.y > this.position.y - this.endLocation.y)
+            {
+                this.velocity.y = -this.velocity.y;
+            }
+
+
+            if (OldPosition.z - this.endLocation.z > this.position.z - this.endLocation.z)
+            {
+                this.velocity.z = -this.velocity.z;
+            }
+
+            if (this.position.x < this.endLocation.x)
+            {
+                containerScale = true;
+                //this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                this.velocity.x = this.velocity.x + BBRandomFloat(new BBRangeMake(-0.5, 2));
+                this.velocity.x = ((gl.viewportWidth * 5 - this.position.x) / (gl.viewportWidth * 5)) * this.velocity.x * 0.98;
+            }
+
+            if (this.position.y < this.endLocation.y)
+            {
+                //this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5 * tempScale, 2 * tempScale));
+                this.velocity.y = this.velocity.y + BBRandomFloat(new BBRangeMake(-0.5, 2));
+                this.velocity.y = ((gl.viewportHeight * 5 - this.position.y) / (gl.viewportHeight * 5)) * this.velocity.y * 0.98;
+            }
+
+
+            if (this.position.x > gl.viewportWidth/2 || this.position.y > gl.viewportHeight/2 || this.position.x < gl.viewportWidth/-2 || this.position.y < gl.viewportHeight/-2)
+            {
+                this.life = -1;
+                this.size = 0.0;
+                this.minusPoints();
+
+            }
+
+            break;
+
+        default:
+            break;
+    }
+
+};
+
+
+
+Particle.prototype.scorePoints = function(){
+    
+    updateGameScore(this.STARPOINTS);
+    
+};
+
+
+
+Particle.prototype.minusPoints = function(){
+    
+    updateGameScore(-(this.STARPOINTS));
+    
+};
+
+
+
+ 
