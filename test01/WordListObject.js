@@ -100,7 +100,8 @@ function UpdateTextAreaView(wordList){
     
     //tempWd.effect("fade", "swing", "300", function() {
     //tempWd.effect("fade", function() {
-    tempWd.fadeTo(300, 0.0);
+    //tempWd.fadeTo(300, 0.0);
+    tempWd.fadeOut(300);
     setTimeout(function() {
  
         if (!sceneController.solveCube) {
@@ -197,7 +198,8 @@ function UpdateTextAreaView(wordList){
 
         //tempWd.show({effect: "fade", duration: 300});
         //tempWd.show({effect: "fade"});
-        tempWd.fadeTo(300, 1.0);
+        //tempWd.fadeTo(300, 1.0);
+        tempWd.fadeIn(300);
     
     }, 300); 
     
