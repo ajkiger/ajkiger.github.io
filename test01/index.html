@@ -1115,6 +1115,7 @@ ajkiger@gmail.com
     
     
     $(document).ready(function(){
+        
         $("*").dblclick(function(e){
             e.preventDefault();
         });
@@ -1129,12 +1130,14 @@ ajkiger@gmail.com
     );
     
     
-    /*
+    
     $(document).on(
-        "touchmove", function(e){ e.preventDefault();
+        "touchmove", function(e){
+            
+        $( "#popupIHelp" ).popup("close");
     
     });
-    */
+    
    
    /*
     $(function() {
