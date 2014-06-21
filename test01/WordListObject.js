@@ -174,27 +174,31 @@ function UpdateTextAreaView(wordList){
 
         }
 
-    }
-
-    if (sceneController.gameOver || sceneController.giveUpOnHiddenWord || sceneController.solveCube)
-    {
-        // Add all Words back to text view
-        displayText = displayText = " ";
-        for (var i = 0; i < wordList.length; i++) 
-        {
-            var tempWord2 = wordList[i];
-            displayText = displayText + tempWord2.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
         }
 
-    }
+        if (sceneController.gameOver || sceneController.giveUpOnHiddenWord || sceneController.solveCube)
+        {
+            // Add all Words back to text view
+            displayText = displayText = " ";
+            for (var i = 0; i < wordList.length; i++) 
+            {
+                var tempWord2 = wordList[i];
+                displayText = displayText + tempWord2.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
+            }
 
-    tempWdX.innerHTML = displayText;
+        }
+
+        tempWdX.innerHTML = displayText;
+
+
+
+        tempWd.show({
+            effect: "fade",
+            duration: 300
+        });
+    
     
     }); 
     
-    tempWd.show({
-            effect: "fade",
-            duration: 300
-          });
     
 }
