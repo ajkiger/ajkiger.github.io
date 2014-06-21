@@ -253,36 +253,51 @@ function  resetGameScore(){
 function updateScoreStar(stars){
     
     var tempStar = $("#starbox");
-    //tempStar.effect("fade", function() {
- 
-        switch (stars) {
-            case "BlueStars":
-                numberStars = 3;
-                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
-                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
-                break;
-            case "RedStars":
-                numberStars = 2;
-                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/redStar40x40.png\" alt=\"Red\" title=\" 2 Stars/Letter \">";
-                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
-                
-                break;
-            case "YellowStars":
-                numberStars = 1;
-                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/yellowStar40x40.png\" alt=\"Yellow\" title=\" 1 Star/Letter \">";
-                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
-                
-                break;
-        }
+    
+    if(isiOSMobile){
         
-        var gStar = document.getElementById('starimage');
-        gStar.style.width = (50 * tempScale) + "px";
-        gStar.style.height = (50 * tempScale) + "px";
+        executeUpdateScoreStar(stars);
+    }
+    else{
+        
+        tempStar.effect("fade", function() {
+
+            executeUpdateScoreStar(stars);
+
+        }); 
+
+        //tempStar.show({effect: "fade", duration: 300});
+        tempStar.show({effect: "fade"});
+        
+    }
     
-    //}); 
+}
+
+function executeUpdateScoreStar(stars){
     
-    //tempStar.show({effect: "fade", duration: 300});
-    //tempStar.show({effect: "fade"});
+    switch (stars) {
+        case "BlueStars":
+            numberStars = 3;
+            document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+            //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
+            break;
+        case "RedStars":
+            numberStars = 2;
+            document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/redStar40x40.png\" alt=\"Red\" title=\" 2 Stars/Letter \">";
+            //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/redStar40x40.png\" width=\"50\" height=\"50\" alt=\"Red\" title=\" 2 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
+
+            break;
+        case "YellowStars":
+            numberStars = 1;
+            document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/yellowStar40x40.png\" alt=\"Yellow\" title=\" 1 Star/Letter \">";
+            //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/yellowStar40x40.png\" width=\"50\" height=\"50\" alt=\"Yellow\" title=\" 1 Star/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
+
+            break;
+    }
+
+    var gStar = document.getElementById('starimage');
+    gStar.style.width = (50 * tempScale) + "px";
+    gStar.style.height = (50 * tempScale) + "px";
     
 }
 

@@ -56,152 +56,130 @@ WordListObject.prototype.init = function(){
     
 };
 
-/*
-function UpdateTextAreaViewX(aList){
-    
-    var returnString = " - ";
-    
-    for (var i = 0; i < aList.length; i++)
-    {
-        var tempWW = aList[i];
-        if(!tempWW.alphabetQuestHiddenWord){
-            
-            returnString = returnString + tempWW.wordName + " - ";
-        }
-        
-    }
-    
-    document.getElementById('xcoord').innerHTML = "Post: " + returnString;
-}
-
-function UpdateTextAreaViewY(aList){
-    
-    var returnString = " - ";
-    
-    for (var i = 0; i < aList.length; i++)
-    {
-        var tempWW = aList[i];
-        if(!tempWW.alphabetQuestHiddenWord){
-            
-            returnString = returnString + tempWW.wordName + " - ";
-        }
-        
-    }
-    
-    document.getElementById('ycoord').innerHTML = "Pre: " + returnString;
-}
-*/
 
 function UpdateTextAreaView(wordList){
+    
+    
+    if(isiOSMobile){
         
+        executeUpdate(wordList);
+    }
+    else{
+        
+        //tempWd.effect("fade", "swing", "300", function() {
+        //tempWd.effect("fade", function() {
+        //tempWd.fadeTo(300, 0.0);
+        tempWd.fadeOut(300);
+        setTimeout(function() {
+
+            executeUpdate(wordList);
+
+            //tempWd.show({effect: "fade", duration: 300});
+            //tempWd.show({effect: "fade"});
+            //tempWd.fadeTo(300, 1.0);
+            tempWd.fadeIn(300);
+
+
+        }, 300);
+    }
+    
+}
+
+
+function executeUpdate(wordList){
+    
     var displayText = " ";
     var tempWord;
-    //var tempWd = $("#wordbox");
     
-    //tempWd.effect("fade", "swing", "300", function() {
-    //tempWd.effect("fade", function() {
-    //tempWd.fadeTo(300, 0.0);
-    tempWd.fadeOut(300);
-    setTimeout(function() {
- 
-        if (!sceneController.solveCube) {
+    if (!sceneController.solveCube) {
 
+    for (var i = 0; i < wordList.length; i++)
+    {
+        tempWord = wordList[i];
+
+        if (!tempWord.wordPlacedScrollView && !tempWord.alphabetQuestHiddenWord) // First time placed on list
+        {
+            // Place on text view first time (All Non Hidden Words)
+            tempWord.wordPlacedScrollView = true;
+            displayText = displayText + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp "; //" &nbsp&nbsp&nbsp&nbsp&nbsp "
+        }
+        else if (tempWord.wordFound && !tempWord.wordStrikedScrollView  && !tempWord.alphabetQuestHiddenWord)  // Word Just Found (Not Hidden Word)
+        {
+            // Don't place on text view
+            tempWord.wordStrikedScrollView = true;
+        }
+        else if (!tempWord.wordFound && !tempWord.alphabetQuestHiddenWord) // Not hidden word
+        {
+            // Replace Words not found and not Hidden Word
+            displayText = displayText + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
+        }
+
+    }
+
+
+    if (displayText === " ") // All Words found - need to look for hidden word
+    {
+        var displayText2 = " &nbsp&nbsp ";
         for (var i = 0; i < wordList.length; i++)
         {
             tempWord = wordList[i];
-
-            if (!tempWord.wordPlacedScrollView && !tempWord.alphabetQuestHiddenWord) // First time placed on list
+            if (!tempWord.alphabetQuestHiddenWord) // Not hidden word
             {
-                // Place on text view first time (All Non Hidden Words)
-                tempWord.wordPlacedScrollView = true;
-                displayText = displayText + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp "; //" &nbsp&nbsp&nbsp&nbsp&nbsp "
+                displayText2 = displayText2 + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
             }
-            else if (tempWord.wordFound && !tempWord.wordStrikedScrollView  && !tempWord.alphabetQuestHiddenWord)  // Word Just Found (Not Hidden Word)
-            {
-                // Don't place on text view
-                tempWord.wordStrikedScrollView = true;
-            }
-            else if (!tempWord.wordFound && !tempWord.alphabetQuestHiddenWord) // Not hidden word
-            {
-                // Replace Words not found and not Hidden Word
-                displayText = displayText + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
-            }
-
         }
-        
-        
-        if (displayText === " ") // All Words found - need to look for hidden word
+
+
+        var hiddenWordFound = false;
+        for (var i = 0; i < wordList.length; i++)
         {
-            var displayText2 = " &nbsp&nbsp ";
-            for (var i = 0; i < wordList.length; i++)
+            tempWord = wordList[i];
+            if (tempWord.alphabetQuestHiddenWord)
             {
-                tempWord = wordList[i];
-                if (!tempWord.alphabetQuestHiddenWord) // Not hidden word
-                {
-                    displayText2 = displayText2 + tempWord.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
-                }
-            }
-            
-            
-            var hiddenWordFound = false;
-            for (var i = 0; i < wordList.length; i++)
-            {
-                tempWord = wordList[i];
-                if (tempWord.alphabetQuestHiddenWord)
-                {
-                    tempWord.alphabetQuestHiddenWord = false;
-                    hiddenWordFound = true;
-                    var FirstLetterHW = tempWord.wordName.substring(0, 1);
-                    var LengthHW = tempWord.wordLength;
+                tempWord.alphabetQuestHiddenWord = false;
+                hiddenWordFound = true;
+                var FirstLetterHW = tempWord.wordName.substring(0, 1);
+                var LengthHW = tempWord.wordLength;
 
-                    displayText = "Hidden word begins with the letter" + "<br>" + " \"" + FirstLetterHW + "\"" + " and is " +
-                            LengthHW + " letters long." + "<br>" + "It will match the theme of the following words:" + "<br>" + displayText2;
-                    
-                    //displayText = "HIDDEN WORD BEGINS WITH THE LETTER " + " \"" + FirstLetterHW + "\"" + "<br>" + "AND IS " +
-                            //LengthHW + " LETTERS LONG." + "<br>" + "IT WILL MATCH THEME OF FOLLOWING WORDS:" + "<br>" + displayText2;
-                    
-                    break;
-                }
+                displayText = "Hidden word begins with the letter" + "<br>" + " \"" + FirstLetterHW + "\"" + " and is " +
+                        LengthHW + " letters long." + "<br>" + "It will match the theme of the following words:" + "<br>" + displayText2;
 
-            }
+                //displayText = "HIDDEN WORD BEGINS WITH THE LETTER " + " \"" + FirstLetterHW + "\"" + "<br>" + "AND IS " +
+                        //LengthHW + " LETTERS LONG." + "<br>" + "IT WILL MATCH THEME OF FOLLOWING WORDS:" + "<br>" + displayText2;
 
-            if (!hiddenWordFound)  // Won Game
-            {
-                sceneController.gameOver = true;
-                clearTimeout(starTimer1);
-                clearTimeout(starTimer2);
-                
-                
-                
-                
+                break;
             }
 
         }
 
-        }
-
-        if (sceneController.gameOver || sceneController.giveUpOnHiddenWord || sceneController.solveCube)
+        if (!hiddenWordFound)  // Won Game
         {
-            // Add all Words back to text view
-            displayText = displayText = " ";
-            for (var i = 0; i < wordList.length; i++) 
-            {
-                var tempWord2 = wordList[i];
-                displayText = displayText + tempWord2.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
-            }
+            sceneController.gameOver = true;
+            clearTimeout(starTimer1);
+            clearTimeout(starTimer2);
+
+
+
 
         }
 
-        tempWdX.innerHTML = displayText;
+    }
+
+    }
+
+    if (sceneController.gameOver || sceneController.giveUpOnHiddenWord || sceneController.solveCube)
+    {
+        // Add all Words back to text view
+        displayText = displayText = " ";
+        for (var i = 0; i < wordList.length; i++) 
+        {
+            var tempWord2 = wordList[i];
+            displayText = displayText + tempWord2.wordDisplayName + " &nbsp&nbsp&nbsp&nbsp&nbsp ";
+        }
+
+    }
+
+    tempWdX.innerHTML = displayText;
 
 
-
-        //tempWd.show({effect: "fade", duration: 300});
-        //tempWd.show({effect: "fade"});
-        //tempWd.fadeTo(300, 1.0);
-        tempWd.fadeIn(300);
-    
-    }, 300); 
-    
-    
 }

@@ -28,7 +28,7 @@ ajkiger@gmail.com
     var agent = navigator.userAgent.toLowerCase();
     var isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
     var isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
-    //var isFireFoxDesktop = (agent.indexOf('firefox') > -1);
+    var isiOSMobile = ((agent.indexOf('iphone') > -1 || agent.indexOf('ipad') > -1) && agent.indexOf('mobile') > -1 );
     if (isFireFoxDesktop){
         firstTimeThru1 = true;
     }
@@ -244,6 +244,16 @@ ajkiger@gmail.com
         font-weight:  700;// bold;
         -ms-touch-action: none;
         
+    }
+    
+    #popupIHelp {
+        
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 2px;
+        padding-right: 2px;
+        
+        background-color: #C8BEB7;
     }
     
     
@@ -801,10 +811,14 @@ ajkiger@gmail.com
             fpsInterval = 1000/30;
             then = Date.now();
             startTime = then;
+            
             if(!isFireFoxDesktop){
-                $( "#popupTabs" ).show();
-                $( "#popupTabs" ).tabs();
-                $( "#popupTabs" ).popup("open", { positionTo: "#topAlign", transition: "pop" });
+                //$( "#popupTabs" ).show();
+                //$( "#popupTabs" ).tabs();
+                //$( "#popupTabs" ).popup("open", { positionTo: "#topAlign", transition: "pop" });
+                dismisInstruction = false;
+                $( "#container" ).fadeTo(3000, 1.0);
+                startTimer = setTimeout(function(){GameLoop();}, 500);
             }
             else{
                 dismisInstruction = false;
@@ -812,8 +826,8 @@ ajkiger@gmail.com
                 startTimer = setTimeout(function(){GameLoop();}, 500);
             }
             //startTimer = setTimeout(function(){GameLoop();}, 1500);
-            
-            
+            //$( "#popupIHelp" ).popup("open", { positionTo: "#ycoord2", transition: "pop"});
+            //setTimeout(function(){$( "#popupIHelp" ).popup("close", { transition: "pop"});}, 4000);
         }
         else{ // No valid context for canvas
 
@@ -863,7 +877,7 @@ ajkiger@gmail.com
             
         }
         
-        $( "#popupTabs" ).popup("close", {transition: "pop"});
+        $( "#popupTabs" ).popup("close");
         PlayBloop();
     }
     
@@ -1159,8 +1173,6 @@ ajkiger@gmail.com
     $(function() {
         $( document ).tooltip();
     });
-    
-    
     
     
     
@@ -1895,7 +1907,15 @@ ajkiger@gmail.com
         gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
         gPopup = document.getElementById('btnNewGame');
         gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
-       
+        
+        
+        gPopup = document.getElementById('popupIHelp');
+        gPopup.style.maxWidth = (130 * tempScale) + "px";
+        gPopup.style.width = (130 * tempScale) + "px";
+        gPopup = document.getElementById('popupHeader7');
+        gPopup.style.fontSize = parseFloat(Math.round(16 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
         
         tempWd = $("#wordbox");
         tempWdX = document.getElementById('wordbox');
@@ -1932,16 +1952,16 @@ ajkiger@gmail.com
                 <tr>
 
                     <td ><button id = "btnhints" type="button"><img id = "imghints" alt="Hints" src="images/hint2.png" width="60" height="60" title=" Hints "></button>
-                    <!--<label id="xcoord" ></label>-->
+                    <label id="xcoord" ></label>
                     </td>
                     <td ><button id = "btnsettings" type="button"><img id = "imgsettings" alt="Settings" src="images/settings2.png" width="60" height="60" title=" Settings "></button>
-                    <!--<label id="xcoord2" ></label>-->
+                    <label id="xcoord2" ></label>
                     </td>
                     <td ><button id = "btngames" type="button"><img id = "imggames" alt="Games" src="images/games2.png" width="60" height="60" title=" Games "></button>
-                    <!--<label id="ycoord" ></label>-->
+                    <label id="ycoord" ></label>
                     </td>
                     <td ><button id = "btninfo" type="button"><img id = "imginfo" alt="Info" src="images/instructions2.png" width="60" height="60" title=" Info "></button>
-                    <!--<label id="ycoord2" ></label>-->
+                    <label id="ycoord2" ></label>
                     </td>
                     <td id = "starbox"><img id="starimage" src="images/blueStar40x40.png" alt="Blue" title=" 3 Stars/Letter ">
                     <!--<label id="contextStatus" >&nbsp;</label>-->
@@ -2073,6 +2093,13 @@ ajkiger@gmail.com
             <p id="Winmessage" style="font-size:30px"></p>
             <a id="closepopup6" href="#"  onclick="ClosePopupWin();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
             <a id="btnNewGame" href="#"  onclick="ButtonNewGameWin();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Play Again</a>
+        </div>
+        
+        <div data-role="popup" id="popupIHelp" data-arrow="t" class="ui-content">
+            <div id="popupHeader7" data-role="header" data-theme="a" class="ui-corner-all">
+                <h1>Instructions</h1>
+            </div>
+            
         </div>
         
         <!--
