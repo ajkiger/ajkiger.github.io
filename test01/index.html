@@ -755,10 +755,10 @@ ajkiger@gmail.com
         canvas = document.getElementById("WordCubed-canvas");
         //canvas = WebGLDebugUtils.makeLostContextSimulatingCanvas(canvas); //Remove
 
-        //canvas.addEventListener(
-            //"webglcontextlost", handleContextLost, false);
-        //canvas.addEventListener(
-            //"webglcontextrestored", handleContextRestored, false);
+        canvas.addEventListener(
+            "webglcontextlost", handleContextLost, false);
+        canvas.addEventListener(
+            "webglcontextrestored", handleContextRestored, false);
 
         initialFontSize = "20px";
         initGL(canvas);
