@@ -216,7 +216,7 @@ function  resetGameScore(){
     clearTimeout(starTimer2);
     
     if(!(numberStars === 3)){
-        $("#starbox").effect("fade", "swing", "300", function() {
+        $("#starbox").effect("fade", function() {
             numberStars = 3;
             document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
             //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
@@ -226,31 +226,26 @@ function  resetGameScore(){
             gStar.style.height = (50 * tempScale) + "px";
             
         }); 
-        $("#starbox").show({
-          effect: "fade",
-          duration: 300
-        });
+        //$("#starbox").show({effect: "fade", duration: 300});
+        $("#starbox").show({effect: "fade"});
     }
     
-    $("#scorebox").effect("fade", "swing", "300", function() {
+    $("#scorebox").effect("fade", function() {
         
         document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
         //document.getElementById('scorebox').innerHTML = "Temp";
     });
-    $("#scoreratebox").effect("fade", "swing", "300", function() {
+    $("#scoreratebox").effect("fade", function() {
         
         document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
         //document.getElementById('scoreratebox').innerHTML = "Temp";
     });
     
-    $("#scorebox").show({
-      effect: "fade",
-      duration: 300
-    });
-    $("#scoreratebox").show({
-      effect: "fade",
-      duration: 300
-    });
+    //$("#scorebox").show({effect: "fade", duration: 300});
+    //$("#scoreratebox").show({effect: "fade", duration: 300});
+    $("#scorebox").show({effect: "fade"});
+    $("#scoreratebox").show({effect: "fade"});
+    
 }
     
  
@@ -258,7 +253,7 @@ function  resetGameScore(){
 function updateScoreStar(stars){
     
     var tempStar = $("#starbox");
-    tempStar.effect("fade", "swing", "300", function() {
+    tempStar.effect("fade", function() {
  
         switch (stars) {
             case "BlueStars":
@@ -286,11 +281,9 @@ function updateScoreStar(stars){
     
     }); 
     
-    tempStar.show({
-            effect: "fade",
-            duration: 300
-          });
-          
+    //tempStar.show({effect: "fade", duration: 300});
+    tempStar.show({effect: "fade"});
+    
 }
 
 

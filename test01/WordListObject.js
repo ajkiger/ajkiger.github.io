@@ -99,6 +99,7 @@ function UpdateTextAreaView(wordList){
     //var tempWd = $("#wordbox");
     
     //tempWd.effect("fade", "swing", "300", function() {
+    tempWd.effect("fade", function() {
  
         if (!sceneController.solveCube) {
 
@@ -192,13 +193,10 @@ function UpdateTextAreaView(wordList){
 
 
 
-        //tempWd.show({
-            //effect: "fade",
-            //duration: 300
-        //});
+        //tempWd.show({effect: "fade", duration: 300});
+        tempWd.show({effect: "fade"});
     
-    
-    //}); 
+    }); 
     
     
 }
