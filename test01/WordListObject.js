@@ -56,7 +56,7 @@ WordListObject.prototype.init = function(){
     
 };
 
-
+/*
 function UpdateTextAreaViewX(aList){
     
     var returnString = " - ";
@@ -90,13 +90,14 @@ function UpdateTextAreaViewY(aList){
     
     document.getElementById('ycoord').innerHTML = "Pre: " + returnString;
 }
-
+*/
 
 function UpdateTextAreaView(wordList){
         
     var displayText = " ";
     var tempWord;
-    var tempWd = $("#wordbox");
+    //var tempWd = $("#wordbox");
+    
     tempWd.effect("fade", "swing", "300", function() {
  
         if (!sceneController.solveCube) {
@@ -187,8 +188,7 @@ function UpdateTextAreaView(wordList){
 
     }
 
-    document.getElementById('wordbox').innerHTML = displayText;
-        
+    tempWdX.innerHTML = displayText;
     
     }); 
     

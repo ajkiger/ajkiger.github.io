@@ -727,6 +727,8 @@ function ButtonNewGameWin(){
 
 function ButtonNewGameSettings(){
     
+    tappedHWDCheckBox = false;
+    tappedICCheckBox = false;
     ClosePopupSettings();
     
     if($('#check1').prop('checked')){

@@ -27,8 +27,8 @@ ajkiger@gmail.com
     var firstTimeThru1;
     var agent = navigator.userAgent.toLowerCase();
     var isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
-    //var isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
-    var isFireFoxDesktop = (agent.indexOf('firefox') > -1);
+    var isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
+    //var isFireFoxDesktop = (agent.indexOf('firefox') > -1);
     if (isFireFoxDesktop){
         firstTimeThru1 = true;
     }
@@ -335,7 +335,7 @@ ajkiger@gmail.com
     
     div#popupGames { width: 600px; margin: 1px 0;}
     div#popupGames table { margin: 1em 0; padding: 1em 0; border-collapse: collapse; width: 100%; }
-    div#popupGames table td, div#popupGames table th { border: 1px solid #eee; padding: .6em 10px; text-align: center; font-size: 20px; font-weight: 700;}
+    div#popupGames table td, div#popupGames table th, div#popupGames table tfoot { border: 1px solid #eee; padding: .6em 10px; text-align: center; font-size: 20px; font-weight: 700;}
     
     
     div#popupGames table tbody tr:hover {
@@ -504,6 +504,9 @@ ajkiger@gmail.com
     //var isFireFoxDesktop;
     //var isWindowsPhone;
     var cWidth;
+    
+    var tappedHWDCheckBox = false;
+    var tappedICCheckBox = false;
 
     function initGL(canvas) {
         
@@ -829,8 +832,21 @@ ajkiger@gmail.com
     }
     
     function ClosePopupSettings(){
-        $( "#popupSettings" ).popup("close");
+        
+        if(tappedHWDCheckBox || tappedICCheckBox){
+            
+            tappedHWDCheckBox = false;
+            tappedICCheckBox = false;
+            
+            ButtonNewGameSettings();
+        }
+        else{
+            
+            $( "#popupSettings" ).popup("close");
+        }
+        
         PlayBloop();
+        
     }
     
     function ClosePopupTabs(){
@@ -1225,6 +1241,26 @@ ajkiger@gmail.com
                                                 transition: "pop" 
                                             
                 });
+                
+                
+                $(function(){
+                    $("#check1id").on( "tap", function( event ){
+                      
+                      console.log('Tapped Check Box High Word Density');
+                      tappedHWDCheckBox = !tappedHWDCheckBox;
+    
+                    });      
+                });
+                
+                $(function(){
+                    $("#check2id").on( "tap", function( event ){
+                      
+                      console.log('Tapped Check Box Inverse Colors');
+                      tappedICCheckBox = !tappedICCheckBox;
+                      
+                    });      
+                });
+                
           }
           
         });
@@ -1404,7 +1440,7 @@ ajkiger@gmail.com
               
             PlayBloop();
               
-            document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
+            document.getElementById('wordboxpopup').innerHTML = tempWdX.innerHTML;
             $( "#popupBasic" ).popup("open", { positionTo: "#container", transition: "pop" });
             
           }
@@ -1421,7 +1457,7 @@ ajkiger@gmail.com
             
             PlayBloop();
             
-            document.getElementById('wordboxpopup').innerHTML = document.getElementById('wordbox').innerHTML;
+            document.getElementById('wordboxpopup').innerHTML = tempWdX.innerHTML;
             $( "#popupBasic" ).popup("open", { positionTo: "#container", transition: "pop" });
             
           }
@@ -1601,6 +1637,10 @@ ajkiger@gmail.com
     }
     */
    
+   
+   var tempWd;
+   var tempWdX;
+   
    function setGameDimensions(){
        
        
@@ -1767,6 +1807,8 @@ ajkiger@gmail.com
         gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
         gPopup = document.getElementById('popupHeader44');
         gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader45');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
         
         
         gPopup = document.getElementById('popupTabs');
@@ -1820,24 +1862,24 @@ ajkiger@gmail.com
         gPopup = document.getElementById('image56');
         gPopup.style.width = (30 * tempScale) + "px";
         gPopup.style.height = (30 * tempScale) + "px";
-        gPopup = document.getElementById('image57');
-        gPopup.style.width = (30 * tempScale) + "px";
-        gPopup.style.height = (30 * tempScale) + "px";
-        gPopup = document.getElementById('image58');
-        gPopup.style.width = (30 * tempScale) + "px";
-        gPopup.style.height = (30 * tempScale) + "px";
-        gPopup = document.getElementById('image59');
-        gPopup.style.width = (30 * tempScale) + "px";
-        gPopup.style.height = (30 * tempScale) + "px";
+        //gPopup = document.getElementById('image57');
+        //gPopup.style.width = (30 * tempScale) + "px";
+        //gPopup.style.height = (30 * tempScale) + "px";
+        //gPopup = document.getElementById('image58');
+        //gPopup.style.width = (30 * tempScale) + "px";
+        //gPopup.style.height = (30 * tempScale) + "px";
+        //gPopup = document.getElementById('image59');
+        //gPopup.style.width = (30 * tempScale) + "px";
+        //gPopup.style.height = (30 * tempScale) + "px";
         gPopup = document.getElementById('image60');
-        gPopup.style.width = (120 * tempScale) + "px";
-        gPopup.style.height = (120 * tempScale) + "px";
-        gPopup = document.getElementById('image61');
-        gPopup.style.width = (120 * tempScale) + "px";
-        gPopup.style.height = (120 * tempScale) + "px";
-        gPopup = document.getElementById('image62');
-        gPopup.style.width = (135 * tempScale) + "px";
-        gPopup.style.height = (40 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup.style.height = (375 * tempScale) + "px";
+        //gPopup = document.getElementById('image61');
+        //gPopup.style.width = (120 * tempScale) + "px";
+        //gPopup.style.height = (120 * tempScale) + "px";
+        //gPopup = document.getElementById('image62');
+        //gPopup.style.width = (135 * tempScale) + "px";
+        //gPopup.style.height = (40 * tempScale) + "px";
         
         
         
@@ -1853,7 +1895,9 @@ ajkiger@gmail.com
         gPopup = document.getElementById('btnNewGame');
         gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
        
-       
+        
+        tempWd = $("#wordbox");
+        tempWdX = document.getElementById('wordbox');
         
         //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
         //mvp = document.getElementById('viewport');
@@ -1960,6 +2004,11 @@ ajkiger@gmail.com
                   <th id="popupHeader44">Score Rate</th>
                 </tr>
               </thead>
+              <tfoot>
+                <tr>
+                  <td id="popupHeader45" colspan="4">Tap pink bar to return to current game.</td>
+                </tr>
+              </tfoot>
               <tbody id="usersTBody"></tbody>
             </table>
         </div>
@@ -1981,43 +2030,33 @@ ajkiger@gmail.com
                   <p id="tabs-2x">Each star <img id="image51" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image52" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image53" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> scores 10 points. &nbsp; First word selected will always score 3 stars per letter. &nbsp; Words selected within 30 seconds of last successful selection will score 3 stars per letter; within 60 seconds, 2 stars per letter; longer than 60 seconds, 1 star per letter. &nbsp; Taking a word hint will score minus 10 points per letter, and when the word is selected, will only score 1 star per letter. &nbsp; Once cube is cleared, any duplicate words selected will always score 3 stars per letter. &nbsp; Score Rate reflects your score against a perfect score.</p>
                 </div>
                 <div id="tabs-3">
-                  <p id="tabs-3x">1. Check word list to identify possible duplicate words. &nbsp; For example, the words <q>FLY</q> and <q>FIREFLY</q> both have the word <q>FLY</q> in them. &nbsp; Every instance of a word is scorable.<br>2. Star symbol <img id="image57" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image58" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image59" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> at top of screen indicates current stars per letter. &nbsp; To maximize points, select shorter words when Yellow star is showing, longer words when Blue star is showing.<br>3. To select words, always ensure Blue selection marker highlights an end letter before selecting other end letter.</p>
+                    <p id="tabs-3x">1. When selecting a hint, one randomly selected word will have its first letter marked with a Red box. &nbsp; Maneuver the cube to find this letter and then identify the word from your word list at bottom of screen.<br>2. To select words, always ensure a Blue selection marker highlights an end letter before selecting the other end letter.<br>3. Check word list to identify possible duplicate words. &nbsp; For example, the words <q>FLY</q> and <q>FIREFLY</q> both have the word <q>FLY</q> in them. &nbsp; Every instance of a word is scorable.</p>
                 </div>
+                <!--
+                <div id="tabs-5">
+                  <p id="tabs-5x">1. Check word list to identify possible duplicate words. &nbsp; For example, the words <q>FLY</q> and <q>FIREFLY</q> both have the word <q>FLY</q> in them. &nbsp; Every instance of a word is scorable.<br>2. Star symbol <img id="image57" src="images/blueStar40x40.png" width="30" height="30" alt="Blue"> <img id="image58" src="images/redStar40x40.png" width="30" height="30" alt="Red"> <img id="image59" src="images/yellowStar40x40.png" width="30" height="30" alt="Yellow"> at top of screen indicates current stars per letter. &nbsp; To maximize points, select shorter words when Yellow star is showing, longer words when Blue star is showing.<br>3. To select words, always ensure Blue selection marker highlights an end letter before selecting other end letter.</p>
+                </div>
+                -->
                 <div id="tabs-4">
                     
                     <div>
-                    <p id="tabs-1w">Copyright &copy; 2014 JWACK APPS<br>All rights reserved<br>http://jwackapps.com<br><br>Word Cubed Weekly was created using HTML5, javascript and WebGL.<br><br>Questions, comments, and issues may be directed to wordheader@gmail.com<br><br>
-                        3D Word Games available on the App Store<br></p>
+                        <p id="tabs-1w">Copyright &copy; 2014 JWACKAPPS.COM<br>All rights reserved.<br></p>
                     </div>
                     <div>
-                    <table style="width: 100%;">
-                        <tr>
-                            <td>
-                                <img id="image60" alt="Hints" src="images/WCIcon152x152.png" width="120" height="120">
-                            </td>
-                            <td>
-                                <img id="image61" alt="Hints" src="images/icon03-152x152.png" width="120" height="120">
-                            </td>
-                        </tr>
-                        <tr id="tabs-2w">
-                            <td>
-                                Word Cubed
-                            </td>
-                            <td>
-                                Word Head
-                            </td>
-                        </tr>
-                    </table>
-                    <table style="width: 100%;">
-                        <tr>
-                            <td>
-                                <img id="image62" alt="Hints" src="images/Download_on_the_App_Store_Badge_US-UK_135x40.png" width="135" height="40">
-                            </td>
-                        </tr>
-                    </table>
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>
+                                    <img id="image60" alt="Word Cubed Weekly" src="images/WordCubedLogo-500x375.png" width="500" height="375">
+                                </td>
+                            </tr>
+                        </table>
                     </div>
+                    
+                    <div>
+                        <p id="tabs-2w">Questions, comments, and issues may be directed to support.iwin.com</p>
+                    </div>
+                    
                 </div>
-
                 <a href="#" id="closepopup5" onclick="ClosePopupTabs();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px">Close</a>
             </div>
         </div>
