@@ -1165,8 +1165,12 @@ function cObjectUpdate() {
             firstTouch = false;
             cLImage.makeVisible = true;
             
-            $( "#popupIHelp" ).popup("open", { positionTo: "#ycoord2", transition: "pop"});
-            //setTimeout(function(){$( "#popupIHelp" ).popup("close", { transition: "pop"});}, 3000);
+            if(iHelp){
+                iHelp = false;
+                $( "#popupIHelp" ).popup("open", { positionTo: "#ycoord2", transition: "pop"});
+                //setTimeout(function(){$( "#popupIHelp" ).popup("close", { transition: "pop"});}, 3000);
+            }
+            
         }
 
 
