@@ -518,6 +518,7 @@ ajkiger@gmail.com
     var tappedHWDCheckBox = false;
     var tappedICCheckBox = false;
     var iHelp = true;
+    var iHelpOpen = undefined;
 
     function initGL(canvas) {
         
@@ -1135,8 +1136,11 @@ ajkiger@gmail.com
     $(document).on(
         "touchmove", function(e){
             
-        $( "#popupIHelp" ).popup("close");
-    
+            if(iHelpOpen){
+                iHelpOpen = undefined;
+                $( "#popupIHelp" ).popup("close");
+            }
+        
     });
     
    
