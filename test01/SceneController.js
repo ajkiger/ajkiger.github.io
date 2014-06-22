@@ -215,39 +215,61 @@ function  resetGameScore(){
     clearTimeout(starTimer1);
     clearTimeout(starTimer2);
     
-    if(!(numberStars === 3)){
-        //$("#starbox").effect("fade", function() {
+    if(isiOSMobile){
+        
+        if(!(numberStars === 3)){
             numberStars = 3;
             document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
             //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
-            
+
             var gStar = document.getElementById('starimage');
             gStar.style.width = (50 * tempScale) + "px";
             gStar.style.height = (50 * tempScale) + "px";
-            
-        //}); 
-        //$("#starbox").show({effect: "fade", duration: 300});
-        //$("#starbox").show({effect: "fade"});
+        }
+
+        document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+        document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+        
+    }
+    else{
+        
+        if(!(numberStars === 3)){
+            $("#starbox").effect("fade", function() {
+                numberStars = 3;
+                document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" alt=\"Blue\" title=\" 3 Stars/Letter \">";
+                //document.getElementById('starbox').innerHTML = "<img id=\"starimage\" src=\"images/blueStar40x40.png\" width=\"50\" height=\"50\" alt=\"Blue\" title=\" 3 Stars/Letter \"><label id=\"contextStatus\" >&nbsp;</label>";
+
+                var gStar = document.getElementById('starimage');
+                gStar.style.width = (50 * tempScale) + "px";
+                gStar.style.height = (50 * tempScale) + "px";
+
+                //$("#starbox").show({effect: "fade", duration: 300});
+                $("#starbox").show({effect: "fade"});
+            }); 
+        }
+
+        $("#scorebox").effect("fade", function() {
+
+            document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+
+            //$("#scorebox").show({effect: "fade", duration: 300});
+            $("#scorebox").show({effect: "fade"});
+
+        });
+
+        $("#scoreratebox").effect("fade", function() {
+
+            document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+
+            //$("#scoreratebox").show({effect: "fade", duration: 300});
+            $("#scoreratebox").show({effect: "fade"});
+
+        });
+        
     }
     
-    //$("#scorebox").effect("fade", function() {
-        
-        document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
-        //document.getElementById('scorebox').innerHTML = "Temp";
-    //});
-    //$("#scoreratebox").effect("fade", function() {
-        
-        document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
-        //document.getElementById('scoreratebox').innerHTML = "Temp";
-    //});
-    
-    //$("#scorebox").show({effect: "fade", duration: 300});
-    //$("#scoreratebox").show({effect: "fade", duration: 300});
-    //$("#scorebox").show({effect: "fade"});
-    //$("#scoreratebox").show({effect: "fade"});
-    
 }
-    
+
  
    
 function updateScoreStar(stars){
