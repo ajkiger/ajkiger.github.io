@@ -1169,6 +1169,10 @@ function cObjectUpdate() {
                 iHelp = false;
                 iHelpOpen = $( "#popupIHelp" ).popup("open", { positionTo: "#ycoord2", transition: "pop"});
                 //setTimeout(function(){$( "#popupIHelp" ).popup("close", { transition: "pop"});}, 3000);
+                
+                if(isSafariDesktop && iWinConsole){
+                    $( "#popupIHelp" ).popup("close");
+                }
             }
             
         }
