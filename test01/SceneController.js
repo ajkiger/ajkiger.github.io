@@ -1015,7 +1015,7 @@ function SceneControllerUpdateModel(){
             //$( "#dialogWin" ).dialog( "open" );
             
             
-            document.getElementById('Winmessage').innerHTML = "Cube Cleared!<br><br>Score: " + cScore + "<br>" + "Score Rate: " + cScoreRate + "<br><br>Continue game to score any duplicate words. &nbsp; Get the highest score possible!";
+            document.getElementById('Winmessage').innerHTML = "Cube Cleared!<br><br>Score: " + cScore + "<br>" + "Score Rate: " + cScoreRate + "<br><br>Try to raise your score! &nbsp; Continue game to score possible duplicate words.";
             $( "#popupWin" ).popup("open", { positionTo: "#topHeader",
                                                 transition: "pop" 
                                             
