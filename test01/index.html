@@ -1612,8 +1612,17 @@ ajkiger@gmail.com
         document.getElementById('tabs-1x').innerHTML = readGameStrings.tab1;
         document.getElementById('tabs-2x').innerHTML = readGameStrings.tab2;
         document.getElementById('tabs-3x').innerHTML = readGameStrings.tab3;
-        document.getElementById('tabs-1w').innerHTML = readGameStrings.tab4a;
-        document.getElementById('tabs-2w').innerHTML = readGameStrings.tab4b;
+        
+        if(iWinConsole){
+            document.getElementById('tabs-1w').innerHTML = "Copyright &copy; 2014 JWACK APPS<br>All rights reserved.<br>";
+            document.getElementById('tabs-2w').innerHTML = "Questions, comments, and issues may be directed to <a href=\"mailto:support@iwin.com?Subject=Word%20Cubed%20Weekly\" target=\"_top\">support@iwin.com</a>";
+        }
+        else{
+            document.getElementById('tabs-1w').innerHTML = "Copyright &copy; 2014 <a href=\"http://jwackapps.com\"  target=\"_blank\">JWACK APPS</a><br>All rights reserved.<br>";
+            document.getElementById('tabs-2w').innerHTML = "Questions, comments, and issues may be directed to <a href=\"mailto:wordheader@gmail.com?Subject=Word%20Cubed%20Weekly\" target=\"_top\">wordheader@gmail.com</a>";
+        }
+        document.getElementById('tabs-3w').innerHTML = "<img id=\"image60\" alt=\"Word Cubed Weekly\" src=\"images/WordCubedLogo-500x375.png\" width=\"500\" height=\"375\">";                  
+        
         
         gPopup = document.getElementById('image51');
         gPopup.style.width = (30 * tempScale) + "px";
@@ -1633,7 +1642,9 @@ ajkiger@gmail.com
         gPopup = document.getElementById('image56');
         gPopup.style.width = (30 * tempScale) + "px";
         gPopup.style.height = (30 * tempScale) + "px";
-        
+        gPopup = document.getElementById('image60');
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup.style.height = (375 * tempScale) + "px";
         
         
         
@@ -1880,6 +1891,7 @@ ajkiger@gmail.com
    
    var tempWd;
    var tempWdX;
+   var gPopup;
    
    function setGameDimensions(){
        
@@ -1976,7 +1988,7 @@ ajkiger@gmail.com
         
         
         
-        var gPopup = document.getElementById('popupBasic');
+        gPopup = document.getElementById('popupBasic');
         gPopup.style.maxWidth = (600 * tempScale) + "px";
         gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
         gPopup = document.getElementById('closepopup1');
@@ -2084,44 +2096,7 @@ ajkiger@gmail.com
         gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
         gPopup = document.getElementById('tabs-2w');
         gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
-        /*
-        gPopup = document.getElementById('image51');
-        gPopup.style.width = (30 * tempScale) + "px";
-        gPopup.style.height = (30 * tempScale) + "px";
-        gPopup = document.getElementById('image52');
-        gPopup.style.width = (30 * tempScale) + "px";
-        gPopup.style.height = (30 * tempScale) + "px";
-        gPopup = document.getElementById('image53');
-        gPopup.style.width = (30 * tempScale) + "px";
-        gPopup.style.height = (30 * tempScale) + "px";
-        gPopup = document.getElementById('image54');
-        gPopup.style.width = (30 * tempScale) + "px";
-        gPopup.style.height = (30 * tempScale) + "px";
-        gPopup = document.getElementById('image55');
-        gPopup.style.width = (30 * tempScale) + "px";
-        gPopup.style.height = (30 * tempScale) + "px";
-        gPopup = document.getElementById('image56');
-        gPopup.style.width = (30 * tempScale) + "px";
-        gPopup.style.height = (30 * tempScale) + "px";
-        */
-        //gPopup = document.getElementById('image57');
-        //gPopup.style.width = (30 * tempScale) + "px";
-        //gPopup.style.height = (30 * tempScale) + "px";
-        //gPopup = document.getElementById('image58');
-        //gPopup.style.width = (30 * tempScale) + "px";
-        //gPopup.style.height = (30 * tempScale) + "px";
-        //gPopup = document.getElementById('image59');
-        //gPopup.style.width = (30 * tempScale) + "px";
-        //gPopup.style.height = (30 * tempScale) + "px";
-        gPopup = document.getElementById('image60');
-        gPopup.style.width = (500 * tempScale) + "px";
-        gPopup.style.height = (375 * tempScale) + "px";
-        //gPopup = document.getElementById('image61');
-        //gPopup.style.width = (120 * tempScale) + "px";
-        //gPopup.style.height = (120 * tempScale) + "px";
-        //gPopup = document.getElementById('image62');
-        //gPopup.style.width = (135 * tempScale) + "px";
-        //gPopup.style.height = (40 * tempScale) + "px";
+        
         
         
         
@@ -2304,8 +2279,7 @@ ajkiger@gmail.com
                     <div>
                         <table style="width: 100%;">
                             <tr>
-                                <td>
-                                    <img id="image60" alt="Word Cubed Weekly" src="images/WordCubedLogo-500x375.png" width="500" height="375">
+                                <td id="tabs-3w">
                                 </td>
                             </tr>
                         </table>
