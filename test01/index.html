@@ -848,9 +848,11 @@ ajkiger@gmail.com
                 startTimer = setTimeout(function(){
                     
                     $( "#container" ).fadeTo(3000, 1.0);
-                    $( "#progressbar" ).fadeTo(500, 0.0, function() {
-                        $('#progressbar').remove();
-                    });
+                    if(!iWinConsole){
+                        $( "#progressbar" ).fadeTo(500, 0.0, function() {
+                            $('#progressbar').remove();
+                        });
+                    }
                     $( "#splash" ).fadeTo(500, 0.0, function() {
                         $('#splash').remove();
                     });
@@ -864,9 +866,11 @@ ajkiger@gmail.com
                 startTimer = setTimeout(function(){
                     
                     $( "#container" ).fadeTo(3000, 1.0);
-                    $( "#progressbar" ).fadeTo(500, 0.0, function() {
-                        $('#progressbar').remove();
-                    });
+                    if(!iWinConsole){
+                        $( "#progressbar" ).fadeTo(500, 0.0, function() {
+                            $('#progressbar').remove();
+                        });
+                    }
                     $( "#splash" ).fadeTo(500, 0.0, function() {
                         $('#splash').remove();
                     });
@@ -882,7 +886,9 @@ ajkiger@gmail.com
         else{ // No valid context for canvas
 
             //setGameDimensions();
-            $('#progressbar').remove();
+            if(!iWinConsole){
+                $('#progressbar').remove();
+            }
             $('#splash').remove();
 
         }
@@ -961,6 +967,9 @@ ajkiger@gmail.com
         getMeter1 = document.getElementById('meter1');
         getMeter1.style.width = "0%";
         addToMeter = 0;
+        if(iWinConsole){
+            $('#progressbar').remove();
+        }
         
         var manifest = [
             {src:"LettersTA1024x1024.png", id:"image0"},
@@ -1110,8 +1119,12 @@ ajkiger@gmail.com
     
     
     function handleFileLoad(event) {
-        addToMeter = addToMeter + 5;
-        getMeter1.style.width = addToMeter + "%";
+        
+        if(!iWinConsole){
+            addToMeter = addToMeter + 5;
+            getMeter1.style.width = addToMeter + "%";
+        }
+        
     }
     
     
