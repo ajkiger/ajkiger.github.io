@@ -112,6 +112,30 @@ ajkiger@gmail.com
         
     }
     
+    #progressbar {
+        position: fixed;
+        top: 50%; 
+        left: 0; 
+        right: 0; 
+        bottom: 50%;
+        width: 75%;
+        margin: auto;
+        z-index: 15;
+    }
+
+    #progressbar > div {
+        background-color: black;
+        border-radius: 13px; /* (height of inner div) / 2 + padding */
+        padding: 3px;
+    }
+    
+    #progressbar > div > div {
+        background-color:  darkgoldenrod;
+        width: 0%; /* Adjust with JavaScript */
+        height: 20px;
+        border-radius: 10px;
+    }
+    
     
     body, html {
         
@@ -824,6 +848,9 @@ ajkiger@gmail.com
                 startTimer = setTimeout(function(){
                     
                     $( "#container" ).fadeTo(3000, 1.0);
+                    $( "#progressbar" ).fadeTo(500, 0.0, function() {
+                        $('#progressbar').remove();
+                    });
                     $( "#splash" ).fadeTo(500, 0.0, function() {
                         $('#splash').remove();
                     });
@@ -837,6 +864,9 @@ ajkiger@gmail.com
                 startTimer = setTimeout(function(){
                     
                     $( "#container" ).fadeTo(3000, 1.0);
+                    $( "#progressbar" ).fadeTo(500, 0.0, function() {
+                        $('#progressbar').remove();
+                    });
                     $( "#splash" ).fadeTo(500, 0.0, function() {
                         $('#splash').remove();
                     });
@@ -852,6 +882,7 @@ ajkiger@gmail.com
         else{ // No valid context for canvas
 
             //setGameDimensions();
+            $('#progressbar').remove();
             $('#splash').remove();
 
         }
@@ -921,8 +952,15 @@ ajkiger@gmail.com
 
     };
     
+    
     var preload;
+    var getMeter1;
+    var addToMeter;
     function loadAssets(){
+        
+        getMeter1 = document.getElementById('meter1');
+        getMeter1.style.width = "0%";
+        addToMeter = 0;
         
         var manifest = [
             {src:"LettersTA1024x1024.png", id:"image0"},
@@ -942,7 +980,7 @@ ajkiger@gmail.com
 
         //preload.on("progress", handleProgress);
         preload.on("complete", handleComplete);
-        //preload.on("fileload", handleFileLoad);
+        preload.on("fileload", handleFileLoad);
         preload.loadManifest(manifest);
         
         
@@ -968,7 +1006,7 @@ ajkiger@gmail.com
         
         //preload.on("progress", handleProgress);
         preload2.on("complete", handleComplete2);
-        //preload.on("fileload", handleFileLoad);
+        preload2.on("fileload", handleFileLoad);
         preload2.loadManifest(manifest2);
         
     };
@@ -1046,12 +1084,14 @@ ajkiger@gmail.com
         
         //preload.on("progress", handleProgress);
         preload3.on("complete", handleComplete3);
-        //preload.on("fileload", handleFileLoad);
+        preload3.on("fileload", handleFileLoad);
         preload3.loadManifest(manifest3);
         
     };
     
     function handleComplete3(event) {
+        
+        getMeter1.style.width = "100%";
         
         if(iWinConsole){
             iConsole.game.loadProgress( { progress: 1, file: '' } );
@@ -1066,6 +1106,12 @@ ajkiger@gmail.com
 
         }
         
+    }
+    
+    
+    function handleFileLoad(event) {
+        addToMeter = addToMeter + 5;
+        getMeter1.style.width = addToMeter + "%";
     }
     
     
@@ -2114,6 +2160,12 @@ ajkiger@gmail.com
 </head>
 
 <body onload="webGLStart();">
+    
+    <div id="progressbar">
+        <div>
+            <div id="meter1"></div>
+        </div>
+    </div>
     
     <div id="splash">
         <img alt="" src="images/WordCubedLogo-500x375.png">
