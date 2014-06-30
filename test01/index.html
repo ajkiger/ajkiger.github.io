@@ -1266,8 +1266,12 @@ ajkiger@gmail.com
         
         if(event.orientation === "landscape"){
             
-            
-            
+            $( "#popupHints" ).popup("close");
+            $( "#popupSettings" ).popup("close");
+            $( "#popupGames" ).popup( "close" );
+            $( "#popupTabs" ).popup("close");
+            $( "#popupWin" ).popup("close");
+            $( "#popupBasic" ).popup("close");
             
             var gLogoImage2 = preload.getResult("WordCubedLogo2");
             gLogoImage2.id = "splash";
