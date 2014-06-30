@@ -1264,7 +1264,7 @@ ajkiger@gmail.com
             case "landscape":
                             var gLogoImage2 = preload.getResult("WordCubedLogo");
                             gLogoImage2.id = "splash";
-                            document.appendChild(gLogoImage2);
+                            document.body.appendChild(gLogoImage2);
                 
             case "portrait":
                             $('#splash').remove();
@@ -1772,6 +1772,19 @@ ajkiger@gmail.com
                    GameLoop();
                }
                */
+              /*
+              PlayBloop();
+              if(testFrame){
+                   testFrame = false;
+                   var gLogoImage2 = preload.getResult("WordCubedLogo");
+                   gLogoImage2.id = "splash";
+                   document.body.appendChild(gLogoImage2);
+               }
+               else{
+                   testFrame = true;
+                   $('#splash').remove();
+               }
+              */
                
             }
           
