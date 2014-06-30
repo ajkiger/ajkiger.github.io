@@ -1258,7 +1258,19 @@ ajkiger@gmail.com
     
     $(window).on("orientationchange",function(event){
         
-        alert("The orientation has changed to: " + event.orientation);
+        //alert("The orientation has changed to: " + event.orientation);
+        
+        switch(event.orientation) {
+            case "landscape":
+                            var gLogoImage2 = preload.getResult("WordCubedLogo");
+                            gLogoImage2.id = "splash";
+                            document.appendChild(gLogoImage2);
+                
+            case "portrait":
+                            $('#splash').remove();
+                            
+        }
+        
         
     });
     
