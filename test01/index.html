@@ -1307,9 +1307,6 @@ ajkiger@gmail.com
         }
         else{
             
-            setGameDimensions();
-            
-            
             $('#splash').remove();
         }
         
@@ -2015,11 +2012,15 @@ ajkiger@gmail.com
    
    function setGameDimensions(){
        
-       
         browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
-        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        
+        if(browserHeight < browserWidth && isiOSMobile){
+            var tempHold = browserHeight;
+            browserHeight = browserWidth;
+            browserWidth = tempHold;
+        }
+        
 
         tempScaleW = browserWidth / 640;
         tempScaleH = browserHeight / 842;
