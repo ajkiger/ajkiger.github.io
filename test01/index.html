@@ -13,12 +13,6 @@ ajkiger@gmail.com
 <title>WC-Weekly</title>
 <meta charset="utf-8">
 
-<meta http-equiv="cache-control" content="max-age=0">
-<meta http-equiv="cache-control" content="no-cache">
-<meta http-equiv="expires" content="0">
-<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT">
-<meta http-equiv="pragma" content="no-cache">
-
 <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui">
 <!--
 <meta name="MobileOptimized" content="640">
@@ -30,8 +24,22 @@ ajkiger@gmail.com
 <!--<script  type="text/javascript" src="console-log-viewer.js"></script>-->
 
 <script type="text/javascript">
+    var iWinConsole = false;
     
-    var iWinConsole=false;var readGameStrings;var firstTimeThru1;var agent=navigator.userAgent.toLowerCase();var isWindowsPhone=(agent.indexOf('msie')>-1&&((agent.indexOf('windows')>-1)||(agent.indexOf('macintosh')>-1)||(agent.indexOf('linux')>-1))&&agent.indexOf('touch')>-1);var isFireFoxDesktop=(agent.indexOf('firefox')>-1&&((agent.indexOf('windows')>-1)||(agent.indexOf('macintosh')>-1)||(agent.indexOf('linux')>-1))&&agent.indexOf('mobile')<0);var isiOSMobile=((agent.indexOf('iphone')>-1||agent.indexOf('ipad')>-1)&&agent.indexOf('mobile')>-1);var isSafariDesktop=(agent.indexOf('safari')>-1&&((agent.indexOf('windows')>-1)||(agent.indexOf('macintosh')>-1)||(agent.indexOf('linux')>-1))&&agent.indexOf('chrome')<0&&agent.indexOf('mobile')<0);if(isFireFoxDesktop){firstTimeThru1=true}else{firstTimeThru1=false}console.log('firstTimeThru1: '+firstTimeThru1);
+    var readGameStrings;
+    var firstTimeThru1;
+    var agent = navigator.userAgent.toLowerCase();
+    var isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
+    var isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
+    var isiOSMobile = ((agent.indexOf('iphone') > -1 || agent.indexOf('ipad') > -1) && agent.indexOf('mobile') > -1 );
+    var isSafariDesktop = (agent.indexOf('safari') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('chrome') < 0 && agent.indexOf('mobile') < 0);
+    if (isFireFoxDesktop){
+        firstTimeThru1 = true;
+    }
+    else{
+        firstTimeThru1 = false;
+    }
+    console.log('firstTimeThru1: ' + firstTimeThru1);
     
 </script>
 
@@ -514,7 +522,1762 @@ ajkiger@gmail.com
 <script type="text/javascript">
 
     
-    eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('m t;m 14;m 3k;m 2v;m 2y;m 2z;m 2A;m 6A=P;m 3l;m 2B;m 6B;m p;m 2C;m 2D;m 6C;m 11;m 1v=O;m 1y=O;m 2E=P;m 2F=2G;r 4f(a){t=6D.6E(a);s(!t){$("#1g").1n(6F,1.0);Y=O;1h}Y=P}r 3m(a,b){m c=5.7(b);s(!c){1h 1Z}m d="";m k=c.6G;6H(k){s(k.6I===3){d+=k.6J}k=k.6K}m e;s(c.S==="x-2H/x-6L"){e=a.4g(a.6M)}F s(c.S==="x-2H/x-6N"){e=a.4g(a.6O)}F{1h 1Z}a.6P(e,d);a.6Q(e);s(!a.6R(e,a.6S)&&!a.4h()){4i(a.6T(e));1h 1Z}1h e}m C;r 3n(){m a=3m(t,"2H-6U");m b=3m(t,"2H-6V");C=t.6W();t.4j(C,b);t.4j(C,a);t.6X(C);s(!t.6Y(C,t.6Z)&&!t.4h()){4i("70 71 72 73")}t.74(C);C.4k=t.21(C,"75");t.23(C.4k);C.4l=t.21(C,"76");t.23(C.4l);C.4m=t.21(C,"77");t.23(C.4m);C.4n=t.21(C,"78");t.23(C.4n);C.4o=t.21(C,"79");t.23(C.4o);C.4p=t.1i(C,"7a");C.4q=t.1i(C,"7b");C.4r=t.1i(C,"7c");C.7d=t.1i(C,"7e");C.7f=t.1i(C,"7g");C.7h=t.1i(C,"7i");C.7j=t.1i(C,"7k");C.7l=t.1i(C,"7m");C.7n=t.1i(C,"7o")}m 25=2I.2J();m 2K=[];m 4s=2I.2J();r 7p(){m a=2I.2J();2I.3o(a,25);2K.1z(a)}r 7q(){s(2K.1b===0){7r"7s 7t!";}25=2K.19()}r 7u(){t.4t(C.4p,O,4s);t.4t(C.4q,O,25);m a=3p.2J();3p.7v(a);3p.7w(a,25);t.7x(C.4r,O,a)}r 7y(a){1h a*u.7z/7A}m 26;m 7B=0;m 7C=0;m 7D=15 2L().7E();m 7F,2M,4u,1N,27,2N;r 1O(){26=29.7G(1O,14);1N=2L.1N();2N=1N-27;s(2N>2M){27=1N-(2N%2M);7H();7I()}}m 2O;m Y;m 1P;m 3q;m 2P;m 4v;m 2a=P;r 7J(){s(1j){2Q.3r.4w().4x(r(a){2R()})}4y()}r 4z(){2R()}r 2R(){Y=P;14=5.7("4A-14");14.3s("7K",4B,O);14.3s("7L",4C,O);4D();4f(14);2S.2b({\'7M\':\'4E/\'});2S.4F([\'2c-1c.3t\',\'2c-1c.4G\',\'2c-1c.4H\'],"2c");2S.4F([\'3u-1c.3t\',\'3u-1c.4G\',\'3u-1c.4H\'],"7N");s(Y){t.7O=14.D;t.7P=14.J;s(!7Q){4I()}3n();4J();s(2d){14.4K=3v}m a=H.I("3y");2v=1a(a);m b=H.I("3z");2z=1a(b);m c=H.I("3A");2A=1a(c);m d=H.I("3B");2y=1a(d);m e=H.I("3C");3k=1a(e);7R();7S();2M=7T/30;27=2L.1N();4u=27;s(!2d){2a=O;2O=1k(r(){$("#1g").1n(3D,1.0);s(!1j){$("#1Q").1n(Z,0.0,r(){$(\'#1Q\').1o()})}$("#1A").1n(Z,0.0,r(){$(\'#1A\').1o()});1O()},4L)}F{2a=O;2O=1k(r(){$("#1g").1n(3D,1.0);s(!1j){$("#1Q").1n(Z,0.0,r(){$(\'#1Q\').1o()})}$("#1A").1n(Z,0.0,r(){$(\'#1A\').1o()});1O()},4L)}}F{s(!1j){$(\'#1Q\').1o()}$(\'#1A\').1o()}}r 7U(){$("#2T").L("V");13()}r 7V(){s(1v||1y){1v=O;1y=O;7W()}F{$("#2U").L("V");13();s($(\'#1B\').4M(\'1R\')){Q.3E="1S 1d 1C"}F{Q.3E="7X 1d 1C"}s($(\'#1D\').4M(\'1R\')){Q.3F="1T"}F{Q.3F="7Y"}1k(r(){5.7(\'2e\').B="";5.7(\'2f\').B="";5.7(\'2g\').B="";5.7(\'2h\').B=""},9)}}r 7Z(){s(2a){2a=O;$("#1g").1n(3D,1.0);2O=1k(r(){1O()},Z);s(!2d){$("#1E").L("V",{1p:"19"})}}$("#1E").L("V");13()}r 80(){$("#2i").L("V");13()}r 4N(){$("#3G").L("V");13()}r 13(){s(3q){2S.4O("2c")}};m H;m 2j;m 2k;r 4y(){2j=5.7(\'81\');2j.o.D="0%";2k=0;s(1j){$(\'#1Q\').1o()}m a=[{K:"82.N",z:"3C"},{K:"2V-83-2W.N",z:"3y"},{K:"2V-84-2W.N",z:"3z"},{K:"2V-85-2W.N",z:"3A"},{K:"2V-87-2W.N",z:"3B"},{K:"3H.N",z:"3H"},{K:"3I.N",z:"3I"},{K:"3J.N",z:"3J"},{K:"3K.N",z:"3K"},{K:"3L.N",z:"4P"},{K:"3M.N",z:"88"},{K:"3N.N",z:"89"},{K:"3L.N",z:"4Q"},{K:"3M.N",z:"4R"},{K:"3N.N",z:"4S"},{K:"3L.N",z:"4T"},{K:"3M.N",z:"4U"},{K:"3N.N",z:"4V"},{K:"2X-4W.N",z:"2X"},{K:"2X-4W.N",z:"4X"}];H=15 1F.3O(P,"8a/");H.W("3P",4Y);H.W("2Y",2Z);H.3Q(a)};r 4Y(a){4Z()}m 1G;r 4Z(){m a=[{K:"8b.31",z:"51"},{K:"8c.8d",z:"52"}];1G=15 1F.3O(P,"53/");1G.W("3P",54);1G.W("2Y",2Z);1G.3Q(a)};r 54(a){55()}m 2l;m M=15 3R();m 1U;r 55(){E=1G.I("52");56=1G.I("51");1U=56.8e("\\n");m a=57();X(m i=0;i<1U.1b;i=i+3){m b=15 33();b.2b();b.1e=1U[i];b.1l=1U[i+1];b.1H=1U[i+2];M.1z(b)}X(m i=M.1b-1;i>=0;i=i-1){m c=M[i];s(c.1e===a){58}F{M.19()}}s(M.1b>12){m d=M.1b-12;X(m i=0;i<d;i++){M.8f(0,1)}}m e=15 3R();m f=M.1b;X(m i=0;i<f;i++){m g=M.19();e.1z(g)}M=e;s(M.1b===0){m b=15 33();b.2b();b.1e="1V  1";b.1l="59";b.1H="1V.31";M.1z(b);m h=15 33();h.2b();h.1e="1V  2";h.1l="5a";h.1H="1V.31";M.1z(h);m j=15 33();j.2b();j.1e="1V  3";j.1l="5b";j.1H="1V.31";M.1z(j)}m k=15 3R();X(m i=0;i<M.1b;i++){m g=M[i];m l={K:g.1H,z:g.1H};k.1z(l)}2l=15 1F.3O(P,"53/");2l.W("3P",5c);2l.W("2Y",2Z);2l.3Q(k)};r 5c(a){2j.o.D="9%";s(1j){2Q.3r.8g({8h:1,8i:\'\'});2Q.3r.8j({8k:P})}F{4z()}}r 2Z(a){s(!1j){2k=2k+3;2j.o.D=2k+"%"}}r 57(){m a=15 2L();m b=a.8l();m c=a.8m()+1;m d=a.8n();s(b<10){b=\'0\'+b}s(c<10){c=\'0\'+c}d=\'/\'+d;d=d.8o(3,2);a=c+\'/\'+b+\'/\'+d;1h a}r 4I(){s(!1F.1c.8p()){1h}m a="4E/";m b=[{z:"5d",K:"8q.3t"}];1F.1c.3s("2Y",5e);1F.1c.8r(b,a)};r 5e(a){2P=1F.1c.8s("5d");2P.4O({8t:-1});s(8u(8v)!=="2G"){1P=8w.8x("8y");s(1P==="O"){1P=O;2P.8z()}F{1P=P}}}$(r(){8A.8B(5.34)});$(29).W("8C",r(a){s(a.8D==="8E"){$("#2T").L("V");$("#2U").L("V");$("#2m").L("V");$("#1E").L("V");$("#3G").L("V");$("#2i").L("V");m b=H.I("4X");b.z="1A";b.8F="8G";b.8H="35";b.8I="35";b.8J="35";b.8K="35";b.8L="8M";b.D="9%";b.J="9%";5.34.R(b)}F{$(\'#1A\').1o()}});$(5).4w(r(){$("*").8N(r(e){e.3S()})});$(5).3T(\'5f\',r(e){e.3S()});$(5).W("5f",r(e){s(2F){$("#3U").L("V");2F=2G}});$(r(){$("#1g").W({"8O 8P":r(e){s(2E){5.7(\'5g\').B=E.5g;2E=O;2F=$("#3U").L("1I",{1J:"#8Q",1p:"19"})}}})});$(r(){$(5).8R()});r 8S(){s(Y){5.7(\'5h\').B=E.5h;5.7(\'3V\').B=E.3V;5.7(\'3W\').B=E.3W;5.7(\'3X\').B=E.3X;13();$("#2T").L("1I",{1J:"#3Y",1p:"19"})}}r 8T(){s(Y){13();5.7(\'2e\').B="";5.7(\'2f\').B="";5.7(\'2g\').B="";5.7(\'2h\').B="";s(Q.3E==="1S 1d 1C"){$("#2e").1f("<1q S=\\"1r\\" 1s=\\"5i();\\" z=\\"1B\\" 1R><T z=\\"1K\\" X=\\"1B\\">1S 1d 1C</T>")}F{$("#2e").1f("<1q S=\\"1r\\" 1s=\\"5i();\\" z=\\"1B\\"><T z=\\"1K\\" X=\\"1B\\">1S 1d 1C</T>")}s(Q.3F==="1T"){$("#2f").1f("<1q S=\\"1r\\" 1s=\\"5j();\\" z=\\"1D\\" 1R><T z=\\"1L\\" X=\\"1D\\">1T 36</T>")}F{$("#2f").1f("<1q S=\\"1r\\" 1s=\\"5j();\\" z=\\"1D\\"><T z=\\"1L\\" X=\\"1D\\">1T 36</T>")}s(1P===P){$("#2g").1f("<1q S=\\"1r\\" 1s=\\"5k();\\" z=\\"2n\\" 1R><T z=\\"1W\\" X=\\"2n\\">5l 5m</T>")}F{$("#2g").1f("<1q S=\\"1r\\" 1s=\\"5k();\\" z=\\"2n\\"><T z=\\"1W\\" X=\\"2n\\">5l 5m</T>")}s(3q===P){$("#2h").1f("<1q S=\\"1r\\" 1s=\\"5n();\\" z=\\"2o\\" 1R><T z=\\"1X\\" X=\\"2o\\">5o</T>")}F{$("#2h").1f("<1q S=\\"1r\\" 1s=\\"5n();\\" z=\\"2o\\"><T z=\\"1X\\" X=\\"2o\\">5o</T>")}6=5.7(\'1W\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'1X\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'1K\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'1L\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";5.7(\'5p\').B=E.5p;5.7(\'1K\').B=E.1K;5.7(\'1L\').B=E.1L;5.7(\'1W\').B=E.1W;5.7(\'1X\').B=E.1X;5.7(\'3Z\').B=E.3Z;5.7(\'40\').B=E.40;$("#2U").L("1I",{1J:"#3Y",1p:"19"});$(r(){$("#1K").W("1m",r(a){37.38(\'39 3a 3b 1S 1d 1C\');1v=!1v})});$(r(){$("#1B").W("1m",r(a){37.38(\'39 3a 3b 1S 1d 1C\');1v=!1v})});$(r(){$("#1L").W("1m",r(a){37.38(\'39 3a 3b 1T 36\');1y=!1y})});$(r(){$("#1D").W("1m",r(a){37.38(\'39 3a 3b 1T 36\');1y=!1y})})}}r 8U(){s(Y){13();41()}}r 41(){s(Y){5.7(\'42\').B=E.42;5.7(\'43\').B=E.43;5.7(\'44\').B=E.44;5.7(\'45\').B=E.45;5.7(\'46\').B=E.46;m f=v(u.w(20*p*9)/9).y(0)+"q";5.7(\'3c\').B="";X(m i=0;i<M.1b;i++){m g=M[i];s(g.1e===Q.2p){$("#5q 5r").1f("<2q o=\\"5s: #8V\\">"+"<U o=\\"1t-1u:"+f+"\\">"+g.1e+"</U>"+"<U o=\\"1t-1u:"+f+"\\">"+g.1l+"</U>"+"<U o=\\"1t-1u:"+f+"\\">"+g.5t+"</U>"+"<U o=\\"1t-1u:"+f+"\\">"+g.5u+"</U>"+"</2q>")}F{$("#5q 5r").1f("<2q>"+"<U o=\\"1t-1u:"+f+"\\">"+g.1e+"</U>"+"<U o=\\"1t-1u:"+f+"\\">"+g.1l+"</U>"+"<U o=\\"1t-1u:"+f+"\\">"+g.5t+"</U>"+"<U o=\\"1t-1u:"+f+"\\">"+g.5u+"</U>"+"</2q>")}}s(Q.2p!==1Z){$("#2m").L("1I",{1J:"#5v",1p:"19"})}$(r(){$("#3c 2q").W("1m",r(b){m c;m d=$(5w).8W();d=d.8X(0,8);13();$(5w).8Y("5s-8Z","#90");s(!(Q.2p===d)){c=P}F{c=O}s(!(Q.2p===d)){X(m i=0;i<M.1b;i++){m e=M[i];s(e.1e===d){s(e.1l==="59"){Q.47=96}F s(e.1l==="5a"){Q.47=91}F s(e.1l==="5b"){Q.47=92}Q.93=e.1H;Q.2p=e.1e;58}}1k(r(){$("#2m").L("V");s(1j){2Q.94.5x({S:\'95\'}).4x(r(a){Q.5y=P})}F{Q.5y=P}1k(r(){5.7(\'3c\').B=""},9)},5z)}F{1k(r(){$("#2m").L("V");1k(r(){5.7(\'3c\').B=""},9)},5z)}})})}}r 97(){4N();1k(r(){41()},Z)}r 98(){5.7(\'48\').B=E.48;5.7(\'49\').B=E.49;5.7(\'4a\').B=E.4a;5.7(\'4b\').B=E.4b;5.7(\'4c\').B=E.4c;5.7(\'G-1x\').B="";m a=H.I("4T");a.z="5A";a.18="4d";m b=H.I("4U");b.z="5B";b.18="5C";m c=H.I("4V");c.z="5D";c.18="5E";5.7(\'G-1x\').R(5.3d(E.99));5.7(\'G-1x\').R(a);5.7(\'G-1x\').R(b);5.7(\'G-1x\').R(c);5.7(\'G-1x\').R(5.3d(E.9a));5.7(\'G-2x\').B="";m d=H.I("4Q");d.z="5F";d.18="4d";m e=H.I("4R");e.z="5G";e.18="5C";m f=H.I("4S");f.z="5H";f.18="5E";5.7(\'G-2x\').R(5.3d(E.9b));5.7(\'G-2x\').R(d);5.7(\'G-2x\').R(e);5.7(\'G-2x\').R(f);5.7(\'G-2x\').R(5.3d(E.9c));5.7(\'G-3x\').B=E.9d;s(1j){5.7(\'G-1w\').B="5I &3o; 5J 5K 5L<3e>5M 5N 5O.<3e>";5.7(\'G-2w\').B="5P, 5Q, 5R 5S 5T 5U 5V 5W <a 4e=\\"5X:5Y@5Z.2r?61=1d%62%63\\" 2s=\\"64\\">5Y@5Z.2r</a>"}F{5.7(\'G-1w\').B="5I &3o; 5J <a 4e=\\"9e://9f.2r\\"  2s=\\"9g\\">5K 5L</a><3e>5M 5N 5O.<3e>";5.7(\'G-2w\').B="5P, 5Q, 5R 5S 5T 5U 5V 5W <a 4e=\\"5X:65@66.2r?61=1d%62%63\\" 2s=\\"64\\">65@66.2r</a>"}5.7(\'G-3w\').B="";m g=H.I("2X");g.z="67";g.18="1d 9h 9i";g.D="Z";g.J="68";5.7(\'G-3w\').R(g);6=5.7(\'5F\');6.o.D=(30*p)+"q";6.o.J=(30*p)+"q";6=5.7(\'5G\');6.o.D=(30*p)+"q";6.o.J=(30*p)+"q";6=5.7(\'5H\');6.o.D=(30*p)+"q";6.o.J=(30*p)+"q";6=5.7(\'5A\');6.o.D=(30*p)+"q";6.o.J=(30*p)+"q";6=5.7(\'5B\');6.o.D=(30*p)+"q";6.o.J=(30*p)+"q";6=5.7(\'5D\');6.o.D=(30*p)+"q";6.o.J=(30*p)+"q";6=5.7(\'67\');6.o.D=(Z*p)+"q";6.o.J=(68*p)+"q";2E=O;13();$("#1E").5x();$("#1E").G();$("#1E").L("1I",{1J:"#5v",1p:"19"})}$(r(){$("#69").3T("1m",r(a){$(a.2s).6a("1m");s(Y){5.7(\'2t\').B=E.2t;13();5.7(\'6b\').B=3f.B;$("#2i").L("1I",{1J:"#1g",1p:"19"})}})});m 9j=P;$(r(){$("#6c").3T("1m",r(a){$(a.2s).6a("1m");s(Y){5.7(\'2t\').B=E.2t;13();5.7(\'6b\').B=3f.B;$("#2i").L("1I",{1J:"#1g",1p:"19"})}})});$(r(){$("#1g").W("6d 6e 6f 6g 6h",r(a){s(Y){s(a.S==="6d"){9k(a)}F s(a.S==="6e"){9l(a)}F s(a.S==="6f"){9m(a)}F s(a.S==="6g"){9n(a)}F s(a.S==="6h"){s(!2d){3v(a)}}}})});r 4B(a){a.3S();s(26){29.9o(26);26=2G}}r 4C(a){s(Y){3n();4J();s(2d){14.4K=3v}m b=H.I("3y");2v=1a(b);m c=H.I("3z");2z=1a(c);m d=H.I("3A");2A=1a(d);m e=H.I("3B");2y=1a(e);m f=H.I("3C");3k=1a(f);s(6i){6i.3g(2v);9p.3g(2y);9q.3g(2z);9r.3g(2A);1O()}F{2R()}}}r 1a(a){m b=t.9s();b.6j=a;6k(b);1h b}r 6k(a){t.6l(t.1Y,a);t.9t(t.9u,P);t.9v(t.1Y,0,t.6m,t.6m,t.9w,a.6j);t.6n(t.1Y,t.9x,t.9y);t.6n(t.1Y,t.9z,t.9A);t.9B(t.1Y);t.6l(t.1Y,1Z)}m 6o;m 3f;m 6;m 6p;r 4D(){3l=29.9C||5.6q.6r||5.34.6r;2B=29.9D||5.6q.6s||5.34.6s;2C=3l/3h;2D=2B/9E;s(2D<2C){p=2D}F{p=2C}11=3h*p;11=v(u.w(11*9)/9).y(0);m a=5.7(\'4A-14\');s(Y){s(p>1){a.3i(\'D\',11);a.3i(\'J\',11)}F{a.3i(\'D\',3h);a.3i(\'J\',3h)}a.o.D=11+"q";a.o.J=11+"q"}4v=v(u.w(28*p*9)/9).y(0)+"q";m b=5.7(\'1g\');b.o.D=11+"q";b.o.J=11+"q";m c=5.7(\'3Y\');c.o.D=11+"q";m d=H.I("3H");d.z="9F";d.18="6t";d.2u=" 6t ";d.D=(60*p);d.J=(60*p);m e=5.7(\'9G\');e.o.D=(86*p)+"q";e.o.J=(86*p)+"q";e.R(d);d=H.I("3I");d.z="9H";d.18="6u";d.2u=" 6u ";d.D=(60*p);d.J=(60*p);e=5.7(\'9I\');e.o.D=(86*p)+"q";e.o.J=(86*p)+"q";e.R(d);d=H.I("3J");d.z="9J";d.18="6v";d.2u=" 6v ";d.D=(60*p);d.J=(60*p);e=5.7(\'9K\');e.o.D=(86*p)+"q";e.o.J=(86*p)+"q";e.R(d);d=H.I("3K");d.z="9L";d.18="6w";d.2u=" 6w ";d.D=(60*p);d.J=(60*p);e=5.7(\'9M\');e.o.D=(86*p)+"q";e.o.J=(86*p)+"q";e.R(d);d=H.I("4P");d.z="6x";d.18="4d";d.2u=" 3 9N/9O ";e=5.7(\'6c\');e.R(d);6p=d;e=5.7(\'6x\');e.o.D=(50*p)+"q";e.o.J=(50*p)+"q";e=5.7(\'9P\');e.o.A=v(u.w(32*p*9)/9).y(0)+"q";e=5.7(\'9Q\');e.o.A=v(u.w(32*p*9)/9).y(0)+"q";m f=2B-(86*p)-11-v(u.w(32*p*9)/9).y(0);m g=5.7(\'69\');g.o.D=(11-10)+"q";g.o.A=v(u.w(32*p*9)/9).y(0)+"q";g.o.J=f+"q";6=5.7(\'2i\');6.o.1M=(9R*p)+"q";6.o.A=v(u.w(32*p*9)/9).y(0)+"q";6=5.7(\'2t\');6.o.A=v(u.w(22*p*9)/9).y(0)+"q";6=5.7(\'2T\');6.o.1M=(Z*p)+"q";6.o.D=(Z*p)+"q";6=5.7(\'3X\');6.o.A=v(u.w(22*p*9)/9).y(0)+"q";6=5.7(\'9S\');6.o.A=v(u.w(32*p*9)/9).y(0)+"q";6=5.7(\'3V\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'3W\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'2U\');6.o.1M=(Z*p)+"q";6.o.D=(Z*p)+"q";6=5.7(\'40\');6.o.A=v(u.w(22*p*9)/9).y(0)+"q";6=5.7(\'9T\');6.o.A=v(u.w(32*p*9)/9).y(0)+"q";6=5.7(\'1W\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'1X\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'1K\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'1L\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'3Z\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'2g\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'2h\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'2e\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'2f\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'2n\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'2o\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'1B\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'1D\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'2m\');6.o.1M=(3j*p)+"q";6.o.D=(3j*p)+"q";6=5.7(\'42\');6.o.A=v(u.w(20*p*9)/9).y(0)+"q";6=5.7(\'43\');6.o.A=v(u.w(20*p*9)/9).y(0)+"q";6=5.7(\'44\');6.o.A=v(u.w(20*p*9)/9).y(0)+"q";6=5.7(\'45\');6.o.A=v(u.w(20*p*9)/9).y(0)+"q";6=5.7(\'46\');6.o.A=v(u.w(20*p*9)/9).y(0)+"q";6=5.7(\'1E\');6.o.1M=(3j*p)+"q";6.o.D=(3j*p)+"q";6=5.7(\'48\');6.o.A=v(u.w(17*p*9)/9).y(0)+"q";6=5.7(\'49\');6.o.A=v(u.w(17*p*9)/9).y(0)+"q";6=5.7(\'4a\');6.o.A=v(u.w(17*p*9)/9).y(0)+"q";6=5.7(\'4b\');6.o.A=v(u.w(17*p*9)/9).y(0)+"q";6=5.7(\'G-1\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'G-1x\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'G-2\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'G-2x\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'G-3\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'G-3x\');6.o.A=v(u.w(28*p*9)/9).y(0)+"q";6=5.7(\'4c\');6.o.A=v(u.w(22*p*9)/9).y(0)+"q";6=5.7(\'G-4\');6.o.A=v(u.w(24*p*9)/9).y(0)+"q";6=5.7(\'G-1w\');6.o.A=v(u.w(24*p*9)/9).y(0)+"q";6=5.7(\'G-2w\');6.o.A=v(u.w(24*p*9)/9).y(0)+"q";6=5.7(\'3G\');6.o.1M=(Z*p)+"q";6.o.D=(Z*p)+"q";6=5.7(\'9U\');6.o.A=v(u.w(32*p*9)/9).y(0)+"q";6=5.7(\'9V\');6.o.A=v(u.w(30*p*9)/9).y(0)+"q";6=5.7(\'9W\');6.o.A=v(u.w(22*p*9)/9).y(0)+"q";6=5.7(\'9X\');6.o.A=v(u.w(22*p*9)/9).y(0)+"q";6=5.7(\'9Y\');6.o.A=v(u.w(22*p*9)/9).y(0)+"q";6=5.7(\'3U\');6.o.1M=(6y*p)+"q";6.o.D=(6y*p)+"q";6=5.7(\'9Z\');6.o.A=v(u.w(16*p*9)/9).y(0)+"q";6o=$("#6z");3f=5.7(\'6z\')}',62,620,'|||||document|gPopup|getElementById||100|||||||||||||var||style|tempScale|px|function|if|gl|Math|parseFloat|round||toFixed|id|fontSize|innerHTML|shaderProgram|width|readGameStrings|else|tabs|preload|getResult|height|src|popup|weeklyWordLists|png|false|true|sceneController|appendChild|type|label|td|close|on|for|validCanvas|500||cWidth||PlayBloop|canvas|new|||alt|pop|loadTexture|length|Sound|Word|date|append|container|return|getUniformLocation|iWinConsole|setTimeout|cubeSize|tap|fadeTo|remove|transition|input|checkbox|onclick|font|size|tappedHWDCheckBox|||tappedICCheckBox|push|splash|check1|Density|check2|popupTabs|createjs|preload2|wordList|open|positionTo|check1id|check2id|maxWidth|now|GameLoop|soundTrack|progressbar|checked|High|Inverse|weeklyLists|Fruit|check3id|check4id|TEXTURE_2D|null||getAttribLocation||enableVertexAttribArray||mvMatrix|requestId|then||window|dismisInstruction|init|Blop|isFireFoxDesktop|placeCheck1|placeCheck2|placeCheck3|placeCheck4|popupBasic|getMeter1|addToMeter|preload3|popupGames|check3|check4|currentGame|tr|com|target|closepopup1|title|yellowStarTexture|||redStarTexture|blueStarTexture|blackStarTexture|browserHeight|tempScaleW|tempScaleH|iHelp|iHelpOpen|undefined|shader|mat4|create|mvMatrixStack|Date|fpsInterval|elapsed|startTimer|SoundInstanceBM|iConsole|webGLStartMain|lowLag|popupHints|popupSettings|particle|atlas|WordCubedLogo|fileload|handleFileLoad||txt||TableRowObject|body|0px|Colors|console|log|Tapped|Check|Box|usersTBody|createTextNode|br|tempWdX|setParticleX|640|setAttribute|580|allLettersTexture|browserWidth|getShader|initShaders|copy|mat3|soundEffects|game|addEventListener|mp3|Star|handleMouseDblClickonCanvas|||image1|image2|image3|image4|image0|3000|maxWordKey|cubeColorKey|popupWin|hint2|settings2|games2|instructions2|blueStar40x40|redStar40x40|yellowStar40x40|LoadQueue|complete|loadManifest|Array|preventDefault|bind|popupIHelp|showHint|solveTheCube|closepopup2|topHeader|buttonNewGame|closepopup3|ShowAllGames|popupHeader41|popupHeader42|popupHeader43|popupHeader44|popupHeader45|preCubeSize|popupHeader51|popupHeader52|popupHeader53|popupHeader54|closepopup5|Blue|href|initGL|createShader|isContextLost|alert|attachShader|vertexPositionAttribute|vertexColorAttribute|vertexNormalAttribute|textureCoordAttribute|textureCoordAttributeuv|pMatrixUniform|mvMatrixUniform|nMatrixUniform|pMatrix|uniformMatrix4fv|startTime|initialFontSize|ready|result|loadAssets|webGLStartNoiWin|WordCubed|handleContextLost|handleContextRestored|setGameDimensions|sounds|load|wav|ogg|initBackGroundMusic|initContext|ondblclick|2000|prop|ClosePopupWin|play|blueStar|blueStar2|redStar2|yellowStar2|blueStar3|redStar3|yellowStar3|1024|WordCubedLogo2|handleComplete|loadAssets2||list0|gStrings|wordlists|handleComplete2|loadAssets3|wordListString|getTodaysDate|break|4x4|5x5|6x6|handleComplete3|BackGroundMusic|handleLoad|touchmove|header4|header1|ToggleDensity|ToggleInverse|ToggleMusic|Background|Music|ToggleSound|Sounds|header2|users|tbody|background|highScore|scoreRate|topAlign|this|show|endAnimationActive|300|image54|image55|Red|image56|Yellow|image51|image52|image53|Copyright|2014|JWACK|APPS|All|rights|reserved|Questions|comments|and|issues|may|be|directed|to|mailto|support|iwin||Subject|20Cubed|20Weekly|_top|wordheader|gmail|image60|375|bottomFooter|addClass|wordboxpopup|starbox|vmousedown|vmousemove|vmouseup|vmouseout|doubletap|particleEmitterYellow|image|handleLoadedTexture|bindTexture|RGBA|texParameteri|tempWd|gOldImage|documentElement|clientWidth|clientHeight|Hints|Settings|Games|Info|starimage|130|wordbox|containerScale|pixelRatio|mvp|WebGLUtils|setupWebGL|400|firstChild|while|nodeType|textContent|nextSibling|fragment|FRAGMENT_SHADER|vertex|VERTEX_SHADER|shaderSource|compileShader|getShaderParameter|COMPILE_STATUS|getShaderInfoLog|fs|vs|createProgram|linkProgram|getProgramParameter|LINK_STATUS|Could|not|initialise|shaders|useProgram|aVertexPosition|aVertexColor|aVertexNormal|aTextureCoord|aTextureCoorduv|uPMatrix|uMVMatrix|uNMatrix|samplerUniform|uSampler|lightPositionUniform|uLightPosition|ambientLightColorUniform|uAmbientLightColor|diffuseLightColorUniform|uDiffuseLightColor|specularLightColorUniform|uSpecularLightColor|alphaUniform|uAlpha|mvPushMatrix|mvPopMatrix|throw|Invalid|popMatrix|setMatrixUniforms|identity|normalFromMat4|uniformMatrix3fv|degToRad|PI|180|elapsedTime|frameCount|lastTime|getTime|fps|requestAnimFrame|SceneControllerUpdateModel|SceneControllerRenderScene|webGLStart|webglcontextlost|webglcontextrestored|urlPrefix|StarSound|viewportWidth|viewportHeight|isWindowsPhone|sceneControllerInit|sceneControllerLoadScene|1000|ClosePopupHints|ClosePopupSettings|ButtonNewGameSettings|Low|Normal|ClosePopupTabs|ClosePopupBasic|meter1|LettersTA1024x1024|yellow12|blue12|black12||red12|redStar|yellowStar|images|MonthlyIput|gameStrings|json|split|splice|loadProgress|progress|file|loaded|success|getDate|getMonth|getFullYear|substr|initializeDefaultPlugins|WordCubedMelody|registerManifest|createInstance|loop|typeof|Storage|localStorage|getItem|tMusic|pause|FastClick|attach|orientationchange|orientation|landscape|position|absolute|left|right|top|bottom|margin|auto|dblclick|touchend|mouseup|ycoord2|tooltip|tapHintsButton|tapSettingsButton|tapGamesButton|ffccff|text|substring|css|color|cccccc|150|216|wordListPlay|ads|interstitial||ShowAllGamesClose|tapInfoButton|tab11|tab12|tab21|tab22|tab3|http|jwackapps|_blank|Cubed|Weekly|testFrame|handleMouseDownonCanvas|handleMouseMoveonCanvas|handleMouseUponCanvas|handleMouseOutonCanvas|cancelAnimFrame|particleEmitterRed|particleEmitterBlue|particleEmitterBlack|createTexture|pixelStorei|UNPACK_FLIP_Y_WEBGL|texImage2D|UNSIGNED_BYTE|TEXTURE_MAG_FILTER|LINEAR|TEXTURE_MIN_FILTER|LINEAR_MIPMAP_NEAREST|generateMipmap|innerWidth|innerHeight|842|imghints|btnhints|imgsettings|btnsettings|imggames|btngames|imginfo|btninfo|Stars|Letter|scoreratebox|scorebox|600|popupHeader2|popupHeader3|popupHeader6|Winmessage|closepopup6|btnNewGame|btnSwitchGame|popupHeader7'.split('|'),0,{}))
+    var gl;
+    var canvas;
+    var allLettersTexture;
+    var yellowStarTexture;
+    var redStarTexture;
+    var blueStarTexture;
+    var blackStarTexture;
+    
+    var containerScale = true;
+    var browserWidth;
+    var browserHeight;
+    var pixelRatio;
+    var tempScale;
+    var tempScaleW;
+    var tempScaleH;
+    var mvp;
+    //var agent;
+    //var isFireFoxDesktop;
+    //var isWindowsPhone;
+    var cWidth;
+    
+    var tappedHWDCheckBox = false;
+    var tappedICCheckBox = false;
+    var iHelp = true;
+    var iHelpOpen = undefined;
+
+    function initGL(canvas) {
+        
+        gl = WebGLUtils.setupWebGL(canvas);
+        if (!gl) {
+            //alert("Could not initialise WebGL, sorry :-(");
+            $( "#container" ).fadeTo(400, 1.0);
+            validCanvas = false;
+            return;
+        }
+        validCanvas = true;
+        //gl.viewportWidth = canvas.width;
+        //gl.viewportHeight = canvas.height;
+        
+    }
+
+
+    function getShader(gl, id) {
+        var shaderScript = document.getElementById(id);
+        if (!shaderScript) {
+            return null;
+        }
+
+        var str = "";
+        var k = shaderScript.firstChild;
+        while (k) {
+            if (k.nodeType === 3) {
+                str += k.textContent;
+            }
+            k = k.nextSibling;
+        }
+
+        var shader;
+        if (shaderScript.type === "x-shader/x-fragment") {
+            shader = gl.createShader(gl.FRAGMENT_SHADER);
+        } else if (shaderScript.type === "x-shader/x-vertex") {
+            shader = gl.createShader(gl.VERTEX_SHADER);
+        } else {
+            return null;
+        }
+
+        gl.shaderSource(shader, str);
+        gl.compileShader(shader);
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS) && !gl.isContextLost()) {
+            alert(gl.getShaderInfoLog(shader));
+            return null;
+        }
+
+        return shader;
+    }
+
+
+    var shaderProgram;
+
+    function initShaders() {
+        var fragmentShader = getShader(gl, "shader-fs");
+        var vertexShader = getShader(gl, "shader-vs");
+
+        shaderProgram = gl.createProgram();
+        gl.attachShader(shaderProgram, vertexShader);
+        gl.attachShader(shaderProgram, fragmentShader);
+        gl.linkProgram(shaderProgram);
+
+        if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS) && !gl.isContextLost()) {
+            alert("Could not initialise shaders");
+        }
+
+        gl.useProgram(shaderProgram);
+
+        shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+        gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+        shaderProgram.vertexColorAttribute = gl.getAttribLocation(shaderProgram, "aVertexColor");
+        gl.enableVertexAttribArray(shaderProgram.vertexColorAttribute);
+        
+        shaderProgram.vertexNormalAttribute = gl.getAttribLocation(shaderProgram, "aVertexNormal");
+        gl.enableVertexAttribArray(shaderProgram.vertexNormalAttribute);
+        
+        shaderProgram.textureCoordAttribute = gl.getAttribLocation(shaderProgram, "aTextureCoord");
+        gl.enableVertexAttribArray(shaderProgram.textureCoordAttribute);
+        
+        shaderProgram.textureCoordAttributeuv = gl.getAttribLocation(shaderProgram, "aTextureCoorduv");
+        gl.enableVertexAttribArray(shaderProgram.textureCoordAttributeuv);
+        
+        shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+        shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
+        shaderProgram.nMatrixUniform = gl.getUniformLocation(shaderProgram, "uNMatrix");
+        shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
+        
+        shaderProgram.lightPositionUniform = gl.getUniformLocation(shaderProgram, "uLightPosition");
+        shaderProgram.ambientLightColorUniform = gl.getUniformLocation(shaderProgram, "uAmbientLightColor");
+        shaderProgram.diffuseLightColorUniform = gl.getUniformLocation(shaderProgram, "uDiffuseLightColor");
+        shaderProgram.specularLightColorUniform = gl.getUniformLocation(shaderProgram, "uSpecularLightColor");
+        
+        shaderProgram.alphaUniform = gl.getUniformLocation(shaderProgram, "uAlpha");
+        //shaderProgram.rAngleUniform = gl.getUniformLocation(shaderProgram, "uRAngle");
+        //shaderProgram.xUminUniform = gl.getUniformLocation(shaderProgram, "xUmin");
+        //shaderProgram.xVminUniform = gl.getUniformLocation(shaderProgram, "xVmin");
+    }
+
+
+
+
+    var mvMatrix = mat4.create();
+    var mvMatrixStack = [];
+    var pMatrix = mat4.create();
+    
+
+    function mvPushMatrix() {
+        var copyM = mat4.create();
+        mat4.copy(copyM, mvMatrix);
+        mvMatrixStack.push(copyM);
+    }
+
+    function mvPopMatrix() {
+        if (mvMatrixStack.length === 0) {
+            throw "Invalid popMatrix!";
+        }
+        mvMatrix = mvMatrixStack.pop();
+    }
+
+
+    function setMatrixUniforms() {
+        gl.uniformMatrix4fv(shaderProgram.pMatrixUniform, false, pMatrix);
+        gl.uniformMatrix4fv(shaderProgram.mvMatrixUniform, false, mvMatrix);
+        
+        var normalMatrix = mat3.create();
+        mat3.identity(normalMatrix);
+        mat3.normalFromMat4(normalMatrix, mvMatrix);
+        gl.uniformMatrix3fv(shaderProgram.nMatrixUniform, false, normalMatrix);
+    }
+
+
+    function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+
+    var requestId;
+    var elapsedTime = 0;
+    var frameCount = 0;
+    var lastTime = new Date().getTime();
+    
+    
+    var fps,fpsInterval,startTime,now,then,elapsed;
+    
+    
+    function GameLoop() {  //Game Loop
+        requestId = window.requestAnimFrame(GameLoop, canvas);
+        
+        //handleKeys(); //Remove
+            
+        /*
+        var now = new Date().getTime();
+
+        frameCount++;
+        elapsedTime += (now - lastTime);
+
+        lastTime = now;
+
+        if(elapsedTime >= 1000) {
+            fps = frameCount;
+            frameCount = 0;
+            elapsedTime -= 1000;
+
+            document.getElementById('ycoord2').innerHTML = "FPS: " + fps;
+        }
+
+        lastTime = new Date().getTime();
+        */
+
+        now = Date.now();
+        elapsed = now - then;
+
+        // if enough time has elapsed, draw the next frame
+
+        if (elapsed > fpsInterval) {
+
+            // Get ready for next frame by setting then=now, but also adjust for your
+            // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
+            then = now - (elapsed % fpsInterval);
+
+            // Put your drawing code here
+            SceneControllerUpdateModel();
+            SceneControllerRenderScene();
+
+        }
+        
+    }
+    
+
+    var startTimer;
+    var validCanvas;
+    var soundTrack;
+    var soundEffects;
+    var SoundInstanceBM;
+    var initialFontSize;
+    var dismisInstruction = true;
+    //var testContext = true;
+    
+    
+    function webGLStart() {
+        
+        if(iWinConsole){
+
+            iConsole.game.ready().result( function( resultData ) {
+
+
+                webGLStartMain();
+
+            } );
+
+        }
+
+        loadAssets();
+        
+    }
+    
+    
+    function webGLStartNoiWin() {
+        
+        webGLStartMain();
+        
+    }
+    
+    
+    function webGLStartMain() {
+        //document.getElementById('agentdisplay').innerHTML = agent;
+        
+        
+        validCanvas = true;
+        canvas = document.getElementById("WordCubed-canvas");
+        //canvas = WebGLDebugUtils.makeLostContextSimulatingCanvas(canvas); //Remove
+
+        canvas.addEventListener(
+            "webglcontextlost", handleContextLost, false);
+        canvas.addEventListener(
+            "webglcontextrestored", handleContextRestored, false);
+
+        setGameDimensions();
+        
+        initGL(canvas);
+        
+        /*
+        if(testContext){
+            testContext = false;
+            canvas.loseContextInNCalls(1);
+        }
+        */
+       
+        lowLag.init({'urlPrefix':'sounds/'});
+        lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
+        lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
+        
+        if(validCanvas){
+            gl.viewportWidth = canvas.width;
+            gl.viewportHeight = canvas.height;
+            
+            if(!isWindowsPhone){
+                initBackGroundMusic();
+            }
+            
+            
+            initShaders();
+            initContext();
+            
+            //document.onkeydown = handleKeyDown; //Remove
+            //document.onkeyup = handleKeyUp; //Remove
+
+            if(isFireFoxDesktop){
+                canvas.ondblclick = handleMouseDblClickonCanvas;
+            }
+            
+            var tImage1 = preload.getResult("image1");
+            yellowStarTexture = loadTexture(tImage1);
+            var tImage2 = preload.getResult("image2");
+            blueStarTexture = loadTexture(tImage2);
+            var tImage3 = preload.getResult("image3");
+            blackStarTexture = loadTexture(tImage3);
+            var tImage4 = preload.getResult("image4");
+            redStarTexture = loadTexture(tImage4);
+            var tImage0 = preload.getResult("image0");
+            allLettersTexture = loadTexture(tImage0);
+            
+            sceneControllerInit();
+            
+            //setGameDimensions();
+            
+            sceneControllerLoadScene();
+            
+            fpsInterval = 1000/30;
+            then = Date.now();
+            startTime = then;
+            
+            if(!isFireFoxDesktop){
+                //$( "#popupTabs" ).show();
+                //$( "#popupTabs" ).tabs();
+                //$( "#popupTabs" ).popup("open", { positionTo: "#topAlign", transition: "pop" });
+                dismisInstruction = false;
+                //$( "#container" ).fadeTo(3000, 1.0);
+                startTimer = setTimeout(function(){
+                    
+                    $( "#container" ).fadeTo(3000, 1.0);
+                    if(!iWinConsole){
+                        $( "#progressbar" ).fadeTo(500, 0.0, function() {
+                            $('#progressbar').remove();
+                        });
+                    }
+                    $( "#splash" ).fadeTo(500, 0.0, function() {
+                        $('#splash').remove();
+                    });
+                    
+                    GameLoop();
+                }, 2000);
+            }
+            else{
+                dismisInstruction = false;
+                //$( "#container" ).fadeTo(3000, 1.0);
+                startTimer = setTimeout(function(){
+                    
+                    $( "#container" ).fadeTo(3000, 1.0);
+                    if(!iWinConsole){
+                        $( "#progressbar" ).fadeTo(500, 0.0, function() {
+                            $('#progressbar').remove();
+                        });
+                    }
+                    $( "#splash" ).fadeTo(500, 0.0, function() {
+                        $('#splash').remove();
+                    });
+                    
+                    GameLoop();
+                }, 2000);
+            }
+            
+            //startTimer = setTimeout(function(){GameLoop();}, 1500);
+            //$( "#popupIHelp" ).popup("open", { positionTo: "#ycoord2", transition: "pop"});
+            //setTimeout(function(){$( "#popupIHelp" ).popup("close");}, 4000);
+        }
+        else{ // No valid context for canvas
+
+            //setGameDimensions();
+            if(!iWinConsole){
+                $('#progressbar').remove();
+            }
+            $('#splash').remove();
+
+        }
+        
+    }
+    
+    
+    
+    
+    function ClosePopupHints(){
+        $( "#popupHints" ).popup("close");
+        PlayBloop();
+    }
+    
+    
+    function ClosePopupSettings(){
+        
+        if(tappedHWDCheckBox || tappedICCheckBox){
+            
+            tappedHWDCheckBox = false;
+            tappedICCheckBox = false;
+            
+            ButtonNewGameSettings();
+        }
+        else{
+            
+            $( "#popupSettings" ).popup("close");
+            PlayBloop();
+            
+            if($('#check1').prop('checked')){
+                sceneController.maxWordKey = "High Word Density";
+            }
+            else
+            {
+                sceneController.maxWordKey = "Low Word Density";
+            }
+            if($('#check2').prop('checked')){
+                sceneController.cubeColorKey = "Inverse";
+            }
+            else
+            {
+                sceneController.cubeColorKey = "Normal";
+            }
+            
+            setTimeout(function(){
+                document.getElementById('placeCheck1').innerHTML = "";
+                document.getElementById('placeCheck2').innerHTML = "";
+                document.getElementById('placeCheck3').innerHTML = "";
+                document.getElementById('placeCheck4').innerHTML = "";
+            }, 100);
+            
+        }
+        
+    }
+    
+    
+    function ClosePopupTabs(){
+        
+        if(dismisInstruction){
+            dismisInstruction = false;
+            $( "#container" ).fadeTo(3000, 1.0);
+            startTimer = setTimeout(function(){GameLoop();}, 500);
+            
+            if(!isFireFoxDesktop){
+                $( "#popupTabs" ).popup("close", {transition: "pop"});
+            }
+            
+        }
+        
+        $( "#popupTabs" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupBasic(){
+        $( "#popupBasic" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupWin(){
+        $( "#popupWin" ).popup("close");
+        PlayBloop();
+    }
+    
+    
+    function PlayBloop(){
+
+        if(soundEffects){
+            lowLag.play("Blop");
+        }
+
+    };
+    
+    
+    var preload;
+    var getMeter1;
+    var addToMeter;
+    function loadAssets(){
+        
+        getMeter1 = document.getElementById('meter1');
+        getMeter1.style.width = "0%";
+        addToMeter = 0;
+        if(iWinConsole){
+            $('#progressbar').remove();
+        }
+        
+        var manifest = [
+            {src:"LettersTA1024x1024.png", id:"image0"},
+            {src:"particle-yellow12-atlas.png", id:"image1"},
+            {src:"particle-blue12-atlas.png", id:"image2"},
+            {src:"particle-black12-atlas.png", id:"image3"},
+            {src:"particle-red12-atlas.png", id:"image4"},
+            {src:"hint2.png", id:"hint2"},
+            {src:"settings2.png", id:"settings2"},
+            {src:"games2.png", id:"games2"},
+            {src:"instructions2.png", id:"instructions2"},
+            {src:"blueStar40x40.png", id:"blueStar"},
+            {src:"redStar40x40.png", id:"redStar"},
+            {src:"yellowStar40x40.png", id:"yellowStar"},
+            {src:"blueStar40x40.png", id:"blueStar2"},
+            {src:"redStar40x40.png", id:"redStar2"},
+            {src:"yellowStar40x40.png", id:"yellowStar2"},
+            {src:"blueStar40x40.png", id:"blueStar3"},
+            {src:"redStar40x40.png", id:"redStar3"},
+            {src:"yellowStar40x40.png", id:"yellowStar3"},
+            {src:"WordCubedLogo-1024.png", id:"WordCubedLogo"},
+            {src:"WordCubedLogo-1024.png", id:"WordCubedLogo2"}
+        ];
+        
+        
+        preload = new createjs.LoadQueue(true, "images/");
+        
+        
+
+        // Use this instead to use tag loading
+        //preload = new createjs.PreloadJS(false);
+
+        //preload.on("progress", handleProgress);
+        preload.on("complete", handleComplete);
+        preload.on("fileload", handleFileLoad);
+        preload.loadManifest(manifest);
+        
+        
+    };
+    
+    
+    function handleComplete(event) {
+        
+        loadAssets2();
+    }
+    
+    
+    var preload2;
+    // Monthly List
+    function loadAssets2(){
+        
+        var manifest2 = [
+            {src:"MonthlyIput.txt", id:"list0"},
+            {src:"gameStrings.json", id:"gStrings"}
+        ];
+        
+        preload2 = new createjs.LoadQueue(true, "wordlists/");
+        
+        //preload.on("progress", handleProgress);
+        preload2.on("complete", handleComplete2);
+        preload2.on("fileload", handleFileLoad);
+        preload2.loadManifest(manifest2);
+        
+    };
+    
+    function handleComplete2(event) {
+        
+        loadAssets3();
+    }
+    
+    
+    var preload3;
+    var weeklyWordLists = new Array();
+    var weeklyLists;
+    
+    // All Word Lists
+    function loadAssets3(){
+        
+        readGameStrings = preload2.getResult("gStrings");
+        
+        wordListString = preload2.getResult("list0");
+        weeklyLists = wordListString.split("\n");
+        var gameDate = getTodaysDate();
+
+        for(var i = 0; i < weeklyLists.length; i=i+3){
+            var tableElement = new TableRowObject();
+            tableElement.init();
+            tableElement.date = weeklyLists[i];
+            tableElement.cubeSize = weeklyLists[i+1];
+            tableElement.wordList = weeklyLists[i+2];
+            weeklyWordLists.push(tableElement);
+        }
+
+        // get current date plus last 12 days of puzzles
+        for(var i = weeklyWordLists.length - 1; i >= 0; i=i-1){
+            var checkGame = weeklyWordLists[i];
+            if(checkGame.date === gameDate){
+
+                break;
+            }
+            else
+            {
+                weeklyWordLists.pop();
+            }
+        }
+        if(weeklyWordLists.length > 12){
+            var rCount = weeklyWordLists.length - 12;
+            for(var i = 0; i < rCount; i++){
+                weeklyWordLists.splice(0,1);
+            }
+        }
+        var tempRowArray = new Array();
+        var tLength = weeklyWordLists.length;
+        for(var i = 0; i < tLength; i++){
+            var tempE = weeklyWordLists.pop();
+            tempRowArray.push(tempE);
+        }
+        weeklyWordLists = tempRowArray;
+        
+        if(weeklyWordLists.length === 0){
+            var tableElement = new TableRowObject();
+            tableElement.init();
+            tableElement.date = "Fruit  1";
+            tableElement.cubeSize = "4x4";
+            tableElement.wordList = "Fruit.txt";
+            weeklyWordLists.push(tableElement);
+            var tableElement2 = new TableRowObject();
+            tableElement2.init();
+            tableElement2.date = "Fruit  2";
+            tableElement2.cubeSize = "5x5";
+            tableElement2.wordList = "Fruit.txt";
+            weeklyWordLists.push(tableElement2);
+            var tableElement3 = new TableRowObject();
+            tableElement3.init();
+            tableElement3.date = "Fruit  3";
+            tableElement3.cubeSize = "6x6";
+            tableElement3.wordList = "Fruit.txt";
+            weeklyWordLists.push(tableElement3);
+        }
+        
+        var manifest3 = new Array();
+        for(var i = 0; i < weeklyWordLists.length; i++){
+            var tempE = weeklyWordLists[i];
+            var tempM = {
+                src: tempE.wordList,
+                id: tempE.wordList
+            };
+            
+            manifest3.push(tempM);
+        }
+        
+        //var manifest3 = [
+            //{src:"MonthlyIput.txt", id:"list0"}
+        //];
+        
+        preload3 = new createjs.LoadQueue(true, "wordlists/");
+        
+        //preload.on("progress", handleProgress);
+        preload3.on("complete", handleComplete3);
+        preload3.on("fileload", handleFileLoad);
+        preload3.loadManifest(manifest3);
+        
+    };
+    
+    function handleComplete3(event) {
+        
+        getMeter1.style.width = "100%";
+        
+        if(iWinConsole){
+            iConsole.game.loadProgress( { progress: 1, file: '' } );
+
+            iConsole.game.loaded( {
+               success: true
+            } );
+        }
+        else{
+
+            webGLStartNoiWin();
+
+        }
+        
+    }
+    
+    
+    function handleFileLoad(event) {
+        
+        if(!iWinConsole){
+            addToMeter = addToMeter + 3;
+            getMeter1.style.width = addToMeter + "%";
+        }
+        
+    }
+    
+    
+    function getTodaysDate(){
+    
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if(dd<10) {
+            dd='0'+dd;
+        } 
+
+        if(mm<10) {
+            mm='0'+mm;
+        } 
+
+        yyyy = '/'+yyyy;
+        yyyy = yyyy.substr(3,2);
+
+        today = mm+'/'+dd+'/'+yyyy;
+
+        return today;
+    }
+    
+    
+    function initBackGroundMusic(){
+        
+        // if initializeDefaultPlugins returns false, we cannot play sound in this browser
+        if (!createjs.Sound.initializeDefaultPlugins()) {return;}
+
+        var audioPath = "sounds/";
+        var manifest = [
+            {id:"BackGroundMusic", src:"WordCubedMelody.mp3"}
+        ];
+
+        //createjs.Sound.alternateExtensions = ["ogg"];
+        createjs.Sound.addEventListener("fileload", handleLoad);
+        createjs.Sound.registerManifest(manifest, audioPath);
+        
+    };
+    
+    
+    function handleLoad(event) {
+        
+        SoundInstanceBM = createjs.Sound.createInstance("BackGroundMusic");
+        
+        SoundInstanceBM.play({loop:-1});
+        if(typeof(Storage)!=="undefined")
+        {
+            soundTrack = localStorage.getItem("tMusic");
+            if(soundTrack === "false"){
+                soundTrack = false;
+                SoundInstanceBM.pause();
+            }
+            else{
+                soundTrack = true;
+
+            }
+
+        }
+        
+    }
+    
+    
+    
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    
+    
+    
+    $(window).on("orientationchange",function(event){
+        
+        //alert("The orientation has changed to: " + event.orientation);
+        
+        if(event.orientation === "landscape"){
+            
+            $( "#popupHints" ).popup("close");
+            $( "#popupSettings" ).popup("close");
+            $( "#popupGames" ).popup( "close" );
+            $( "#popupTabs" ).popup("close");
+            $( "#popupWin" ).popup("close");
+            $( "#popupBasic" ).popup("close");
+            
+            var gLogoImage2 = preload.getResult("WordCubedLogo2");
+            gLogoImage2.id = "splash";
+            gLogoImage2.position = "absolute";
+            gLogoImage2.left = "0px";
+            gLogoImage2.right = "0px";
+            gLogoImage2.top = "0px";
+            gLogoImage2.bottom = "0px";
+            gLogoImage2.margin = "auto";
+            gLogoImage2.width = "100%";
+            gLogoImage2.height = "100%";
+            
+            
+            document.body.appendChild(gLogoImage2);
+        }
+        else{
+            
+            setGameDimensions();
+            
+            
+            $('#splash').remove();
+        }
+        
+    });
+    
+    
+    
+    
+    $(document).ready(function(){
+        
+        $("*").dblclick(function(e){
+            e.preventDefault();
+        });
+    });
+
+    
+    
+    $(document).bind(
+        'touchmove', function(e) {
+            e.preventDefault();
+        }
+    );
+    
+    
+    
+    $(document).on(
+        "touchmove", function(e){
+            
+            if(iHelpOpen){
+                $( "#popupIHelp" ).popup("close");
+                iHelpOpen = undefined;
+            }
+            
+    });
+    
+   
+   $(function() {
+        $( "#container" ).on({
+            "touchend mouseup" : function(e){ 
+                
+                if(iHelp){
+                    
+                    document.getElementById('header4').innerHTML = readGameStrings.header4;
+                    
+                    iHelp = false;
+                    iHelpOpen = $( "#popupIHelp" ).popup("open", { positionTo: "#ycoord2", transition: "pop"});
+                    //setTimeout(function(){$( "#popupIHelp" ).popup("close", { transition: "pop"});}, 3000);
+
+                    //if(isSafariDesktop && iWinConsole){
+                        //$( "#popupIHelp" ).popup("close");
+                    //}
+                }
+                
+            }
+        });
+    });
+   
+   
+    
+    
+    $(function() {
+        $( document ).tooltip();
+    });
+    
+    
+    
+    function tapHintsButton(){
+        
+        if(validCanvas){
+            
+            document.getElementById('header1').innerHTML = readGameStrings.header1;
+            document.getElementById('showHint').innerHTML = readGameStrings.showHint;
+            document.getElementById('solveTheCube').innerHTML = readGameStrings.solveTheCube;
+            document.getElementById('closepopup2').innerHTML = readGameStrings.closepopup2;
+            
+            PlayBloop();
+
+            $( "#popupHints" ).popup("open", { positionTo: "#topHeader",
+                                               transition: "pop"
+
+            });
+        }
+        
+    }
+    
+    
+    function tapSettingsButton(){
+        
+        if(validCanvas){
+            
+            
+            
+            PlayBloop();
+
+            
+            //$( "#placeCheck1" ).empty();
+            //$( "#placeCheck2" ).empty();
+            //$( "#placeCheck3" ).empty();
+            //$( "#placeCheck4" ).empty();
+            document.getElementById('placeCheck1').innerHTML = "";
+            document.getElementById('placeCheck2').innerHTML = "";
+            document.getElementById('placeCheck3').innerHTML = "";
+            document.getElementById('placeCheck4').innerHTML = "";
+
+            if(sceneController.maxWordKey === "High Word Density"){
+                //document.getElementById('placeCheck1').innerHTML = "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\" checked><label id=\"check1id\" for=\"check1\">High Word Density</label>";
+                $( "#placeCheck1" ).append( "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\" checked><label id=\"check1id\" for=\"check1\">High Word Density</label>" );
+            }
+            else{
+                //document.getElementById('placeCheck1').innerHTML = "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\"><label id=\"check1id\" for=\"check1\">High Word Density</label>";
+                $( "#placeCheck1" ).append( "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\"><label id=\"check1id\" for=\"check1\">High Word Density</label>" );
+            }
+
+            if(sceneController.cubeColorKey === "Inverse"){
+                $( "#placeCheck2" ).append( "<input type=\"checkbox\" onclick=\"ToggleInverse();\" id=\"check2\" checked><label id=\"check2id\" for=\"check2\">Inverse Colors</label>" );
+            }
+            else{
+                $( "#placeCheck2" ).append( "<input type=\"checkbox\" onclick=\"ToggleInverse();\" id=\"check2\"><label id=\"check2id\" for=\"check2\">Inverse Colors</label>" );
+            }
+
+            if(soundTrack === true){
+                $( "#placeCheck3" ).append( "<input type=\"checkbox\" onclick=\"ToggleMusic();\" id=\"check3\" checked><label id=\"check3id\" for=\"check3\">Background Music</label>" );
+            }
+            else{
+                $( "#placeCheck3" ).append( "<input type=\"checkbox\" onclick=\"ToggleMusic();\" id=\"check3\"><label id=\"check3id\" for=\"check3\">Background Music</label>" );
+            }
+
+            if(soundEffects === true){
+                $( "#placeCheck4" ).append( "<input type=\"checkbox\" onclick=\"ToggleSound();\" id=\"check4\" checked><label id=\"check4id\" for=\"check4\">Sounds</label>" );
+            }
+            else{
+                $( "#placeCheck4" ).append( "<input type=\"checkbox\" onclick=\"ToggleSound();\" id=\"check4\"><label id=\"check4id\" for=\"check4\">Sounds</label>" );
+            }
+
+            gPopup = document.getElementById('check3id');
+            gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+            gPopup = document.getElementById('check4id');
+            gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+            gPopup = document.getElementById('check1id');
+            gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+            gPopup = document.getElementById('check2id');
+            gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+            
+            document.getElementById('header2').innerHTML = readGameStrings.header2;
+            document.getElementById('check1id').innerHTML = readGameStrings.check1id;
+            document.getElementById('check2id').innerHTML = readGameStrings.check2id;
+            document.getElementById('check3id').innerHTML = readGameStrings.check3id;
+            document.getElementById('check4id').innerHTML = readGameStrings.check4id;
+            document.getElementById('buttonNewGame').innerHTML = readGameStrings.buttonNewGame;
+            document.getElementById('closepopup3').innerHTML = readGameStrings.closepopup3;
+            
+            $( "#popupSettings" ).popup("open", { positionTo: "#topHeader",
+                                            transition: "pop" 
+
+            });
+
+
+            $(function(){
+                $("#check1id").on( "tap", function( event ){
+
+                  console.log('Tapped Check Box High Word Density');
+                  tappedHWDCheckBox = !tappedHWDCheckBox;
+
+                });      
+            });
+
+            $(function(){
+                $("#check1").on( "tap", function( event ){
+
+                  console.log('Tapped Check Box High Word Density');
+                  tappedHWDCheckBox = !tappedHWDCheckBox;
+
+                });      
+            });
+
+            $(function(){
+                $("#check2id").on( "tap", function( event ){
+
+                  console.log('Tapped Check Box Inverse Colors');
+                  tappedICCheckBox = !tappedICCheckBox;
+
+                });      
+            });
+
+            $(function(){
+                $("#check2").on( "tap", function( event ){
+
+                  console.log('Tapped Check Box Inverse Colors');
+                  tappedICCheckBox = !tappedICCheckBox;
+
+                });      
+            });
+                
+        }
+        
+    }
+    
+    
+    function tapGamesButton(){
+        
+        if(validCanvas){
+                
+            PlayBloop();
+
+            ShowAllGames();
+
+        }
+        
+    }
+    
+    
+    function ShowAllGames(){
+        
+        if(validCanvas){
+            
+            document.getElementById('popupHeader41').innerHTML = readGameStrings.popupHeader41;
+            document.getElementById('popupHeader42').innerHTML = readGameStrings.popupHeader42;
+            document.getElementById('popupHeader43').innerHTML = readGameStrings.popupHeader43;
+            document.getElementById('popupHeader44').innerHTML = readGameStrings.popupHeader44;
+            document.getElementById('popupHeader45').innerHTML = readGameStrings.popupHeader45;
+            
+            
+            var tFontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+
+            //$( "#users tbody" ).empty();
+            document.getElementById('usersTBody').innerHTML = "";
+            
+            for(var i = 0; i < weeklyWordLists.length; i++){
+                var tElement = weeklyWordLists[i];
+                if(tElement.date === sceneController.currentGame){
+                   $( "#users tbody" ).append( "<tr style=\"background: #ffccff\">" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.date + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.cubeSize + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.highScore + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.scoreRate + "</td>" +
+                    "</tr>" );
+                }
+                else{
+                    $( "#users tbody" ).append( "<tr>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.date + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.cubeSize + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.highScore + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.scoreRate + "</td>" +
+                    "</tr>" );
+                }
+
+            }
+
+
+            if(sceneController.currentGame !== null){
+
+                $( "#popupGames" ).popup("open", { positionTo: "#topAlign",
+                                                  transition: "pop" 
+
+                });
+            }
+
+
+
+            $(function(){
+                $("#usersTBody tr").on( "tap", function( event ){
+                  //$( event.target ).addClass( "tap" );
+                        var listChanged;
+                        var selectedList = $( this ).text();
+                        selectedList = selectedList.substring(0, 8);
+
+                        PlayBloop();
+
+                        $( this ).css("background-color", "#cccccc");
+
+
+                        if(!(sceneController.currentGame === selectedList)){
+                            listChanged = true;
+                            
+                        }
+                        else {
+                            
+                            listChanged = false;
+                        }
+
+
+                        if(!(sceneController.currentGame === selectedList)){
+                            for(var i = 0; i < weeklyWordLists.length; i++){
+                                var tElement = weeklyWordLists[i];
+                                if(tElement.date === selectedList){
+
+                                    if (tElement.cubeSize === "4x4"){
+                                        sceneController.preCubeSize = 96;
+                                    }
+                                    else if (tElement.cubeSize === "5x5"){
+                                        sceneController.preCubeSize = 150;
+                                    }
+                                    else if (tElement.cubeSize === "6x6"){
+                                        sceneController.preCubeSize = 216;
+                                    }
+                                    //sceneController.wordListPlay = "wordlists/" + tElement.wordList;
+                                    sceneController.wordListPlay = tElement.wordList;
+                                    sceneController.currentGame = tElement.date;
+                                    break;
+                                }
+                            }
+                            
+                            
+                            setTimeout(function(){
+
+                                $( "#popupGames" ).popup( "close" );
+
+                                if(iWinConsole){
+
+                                    iConsole.ads.show( {
+                                        type: 'interstitial'
+                                    } ).result( function( resultData ) {
+                                        sceneController.endAnimationActive = true;
+                                    } );
+
+                                }
+                                else{
+                                    sceneController.endAnimationActive = true;
+                                }
+                                
+                                setTimeout(function(){
+                                    document.getElementById('usersTBody').innerHTML = "";
+                                }, 100);
+                                
+                                
+                            }, 300);
+
+                        }
+                        else{
+                            setTimeout(function(){$( "#popupGames" ).popup( "close" );
+                                
+                                setTimeout(function(){
+                                    document.getElementById('usersTBody').innerHTML = "";
+                                }, 100);
+                                
+                            }, 300);
+                        }
+
+
+                  });
+
+            });
+
+
+        }
+        
+    }
+    
+    
+    function ShowAllGamesClose(){
+        
+        ClosePopupWin();
+        setTimeout(function(){ShowAllGames();}, 500);
+        
+        
+    }
+    
+    
+    function tapInfoButton(){
+        
+        document.getElementById('popupHeader51').innerHTML = readGameStrings.popupHeader51;
+        document.getElementById('popupHeader52').innerHTML = readGameStrings.popupHeader52;
+        document.getElementById('popupHeader53').innerHTML = readGameStrings.popupHeader53;
+        document.getElementById('popupHeader54').innerHTML = readGameStrings.popupHeader54;
+        document.getElementById('closepopup5').innerHTML = readGameStrings.closepopup5;
+        
+        
+        document.getElementById('tabs-1x').innerHTML = "";
+        var gBlueStarImage = preload.getResult("blueStar3");
+        gBlueStarImage.id = "image54";
+        gBlueStarImage.alt= "Blue";
+        var gRedStarImage = preload.getResult("redStar3");
+        gRedStarImage.id = "image55";
+        gRedStarImage.alt= "Red";
+        var gYellowStarImage = preload.getResult("yellowStar3");
+        gYellowStarImage.id = "image56";
+        gYellowStarImage.alt= "Yellow";
+        document.getElementById('tabs-1x').appendChild(document.createTextNode(readGameStrings.tab11));
+        document.getElementById('tabs-1x').appendChild(gBlueStarImage);
+        document.getElementById('tabs-1x').appendChild(gRedStarImage);
+        document.getElementById('tabs-1x').appendChild(gYellowStarImage);
+        document.getElementById('tabs-1x').appendChild(document.createTextNode(readGameStrings.tab12));
+        
+        document.getElementById('tabs-2x').innerHTML = "";
+        var hgBlueStarImage2 = preload.getResult("blueStar2");
+        hgBlueStarImage2.id = "image51";
+        hgBlueStarImage2.alt= "Blue";
+        var hgRedStarImage2 = preload.getResult("redStar2");
+        hgRedStarImage2.id = "image52";
+        hgRedStarImage2.alt= "Red";
+        var hgYellowStarImage2 = preload.getResult("yellowStar2");
+        hgYellowStarImage2.id = "image53";
+        hgYellowStarImage2.alt= "Yellow";
+        document.getElementById('tabs-2x').appendChild(document.createTextNode(readGameStrings.tab21));
+        document.getElementById('tabs-2x').appendChild(hgBlueStarImage2);
+        document.getElementById('tabs-2x').appendChild(hgRedStarImage2);
+        document.getElementById('tabs-2x').appendChild(hgYellowStarImage2);
+        document.getElementById('tabs-2x').appendChild(document.createTextNode(readGameStrings.tab22));
+        
+        document.getElementById('tabs-3x').innerHTML = readGameStrings.tab3;
+        
+        
+        if(iWinConsole){
+            document.getElementById('tabs-1w').innerHTML = "Copyright &copy; 2014 JWACK APPS<br>All rights reserved.<br>";
+            document.getElementById('tabs-2w').innerHTML = "Questions, comments, and issues may be directed to <a href=\"mailto:support@iwin.com?Subject=Word%20Cubed%20Weekly\" target=\"_top\">support@iwin.com</a>";
+        }
+        else{
+            document.getElementById('tabs-1w').innerHTML = "Copyright &copy; 2014 <a href=\"http://jwackapps.com\"  target=\"_blank\">JWACK APPS</a><br>All rights reserved.<br>";
+            document.getElementById('tabs-2w').innerHTML = "Questions, comments, and issues may be directed to <a href=\"mailto:wordheader@gmail.com?Subject=Word%20Cubed%20Weekly\" target=\"_top\">wordheader@gmail.com</a>";
+        }
+        
+        document.getElementById('tabs-3w').innerHTML = "";
+        var gLogoImage = preload.getResult("WordCubedLogo");
+        gLogoImage.id = "image60";
+        gLogoImage.alt = "Word Cubed Weekly";
+        gLogoImage.width = "500";
+        gLogoImage.height = "375";
+        document.getElementById('tabs-3w').appendChild(gLogoImage);
+        //<img id="image60" alt="Word Cubed Weekly" src="images/WordCubedLogo-1024.png" width="512" height="384">
+        
+        gPopup = document.getElementById('image51');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image52');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image53');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image54');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image55');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image56');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image60');
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup.style.height = (375 * tempScale) + "px";
+        
+        
+        
+        iHelp = false;
+        PlayBloop();
+
+        $("#popupTabs").show();
+        $("#popupTabs").tabs();
+
+        $( "#popupTabs" ).popup("open", { positionTo: "#topAlign",
+                                              transition: "pop" 
+
+        });
+        
+    }
+    
+    
+    
+    $(function(){
+        $( "#bottomFooter" ).bind( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          if(validCanvas){
+            
+            document.getElementById('closepopup1').innerHTML = readGameStrings.closepopup1;
+            
+            PlayBloop();
+              
+            document.getElementById('wordboxpopup').innerHTML = tempWdX.innerHTML;
+            $( "#popupBasic" ).popup("open", { positionTo: "#container", transition: "pop" });
+            
+          }
+          
+        });
+    });
+    
+    var testFrame = true;
+    $(function(){
+        $( "#starbox" ).bind( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+            if(validCanvas){
+                
+                document.getElementById('closepopup1').innerHTML = readGameStrings.closepopup1;
+                
+                PlayBloop();
+
+                document.getElementById('wordboxpopup').innerHTML = tempWdX.innerHTML;
+                $( "#popupBasic" ).popup("open", { positionTo: "#container", transition: "pop" });
+                
+               
+               /*
+               if(testFrame){
+                   testFrame = false;
+                   window.cancelAnimFrame(requestId);
+                   requestId = undefined;
+               }
+               else{
+                   testFrame = true;
+                   GameLoop();
+               }
+               */
+              /*
+              PlayBloop();
+              if(testFrame){
+                   testFrame = false;
+                   var gLogoImage2 = preload.getResult("WordCubedLogo");
+                   gLogoImage2.id = "splash";
+                   document.body.appendChild(gLogoImage2);
+               }
+               else{
+                   testFrame = true;
+                   $('#splash').remove();
+               }
+              */
+               
+            }
+          
+        });
+    });
+    
+   
+    
+   
+   
+    $(function(){
+        
+        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
+       
+            if(validCanvas){
+
+
+                if (event.type === "vmousedown") {  //"vmousedown"
+
+                    handleMouseDownonCanvas(event);
+
+                } else if (event.type === "vmousemove") {  //"vmousemove"
+
+                    handleMouseMoveonCanvas(event);
+
+                } else if (event.type === "vmouseup") {  //"vmouseup"
+
+                    handleMouseUponCanvas(event);
+
+                } else if (event.type === "vmouseout") {
+
+                    handleMouseOutonCanvas(event);
+
+                } else if (event.type === "doubletap") {
+
+                    if(!isFireFoxDesktop){
+                        handleMouseDblClickonCanvas(event);
+                    }
+                }
+
+            }
+        
+        });
+        
+        
+    });
+    
+    
+    /*
+    $(function(){
+
+        $( "#container" ).on( "doubletap", function( event ){  
+
+            if(validCanvas){
+                
+                if (event.type === "doubletap") {
+
+                    handleMouseDblClickonCanvas(event);
+
+                }
+                
+            }
+
+        });
+
+    });
+    */
+   
+   
+   
+   
+    function handleContextLost(event) {
+        
+        //document.getElementById('contextStatus').innerHTML = "Context";
+        
+        event.preventDefault();
+        
+        if(requestId){
+            //cancelRequestAnimationFrame(requestId);
+            
+            window.cancelAnimFrame(requestId);
+            requestId = undefined;
+        }
+        
+    }
+
+    
+    function handleContextRestored(event) {
+        
+        //document.getElementById('contextStatus').innerHTML = "Restore";
+        
+        if(validCanvas){
+            
+            initShaders();
+            initContext();
+            
+            //document.onkeydown = handleKeyDown;
+            //document.onkeyup = handleKeyUp;
+            
+            if(isFireFoxDesktop){
+                canvas.ondblclick = handleMouseDblClickonCanvas;
+            }
+            
+            var tImage1 = preload.getResult("image1");
+            yellowStarTexture = loadTexture(tImage1);
+
+            var tImage2 = preload.getResult("image2");
+            blueStarTexture = loadTexture(tImage2);
+
+            var tImage3 = preload.getResult("image3");
+            blackStarTexture = loadTexture(tImage3);
+
+            var tImage4 = preload.getResult("image4");
+            redStarTexture = loadTexture(tImage4);
+
+            var tImage0 = preload.getResult("image0");
+            allLettersTexture = loadTexture(tImage0);
+            
+            if (particleEmitterYellow){
+                particleEmitterYellow.setParticleX(yellowStarTexture);
+                particleEmitterRed.setParticleX(redStarTexture);
+                particleEmitterBlue.setParticleX(blueStarTexture);
+                particleEmitterBlack.setParticleX(blackStarTexture);
+                
+                GameLoop();
+            }
+            else{
+                
+                webGLStartMain();
+            }
+            
+        }
+        
+    }
+    
+    function loadTexture(str) {
+
+        var newTexture = gl.createTexture();
+        //newTexture.image = new Image();
+        newTexture.image = str;
+
+        //newTexture.image.onload = function() {
+            handleLoadedTexture(newTexture);
+        //};
+
+        //newTexture.image.src = str;
+
+        return newTexture;
+    }
+
+
+    function handleLoadedTexture(texture) {
+
+
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+        gl.generateMipmap(gl.TEXTURE_2D);
+
+        gl.bindTexture(gl.TEXTURE_2D, null);
+
+    }
+    
+    /*
+    // Remove
+    function handleKeys() {
+        if (currentlyPressedKeys[33]) {
+          // Page Up
+          canvas.loseContext();
+          canvas.setRestoreTimeout(-1);
+        }
+        if (currentlyPressedKeys[34]) {
+          // Page Down
+          canvas.restoreContext();
+        }
+        
+    }
+    */
+   
+   
+   var tempWd;
+   var tempWdX;
+   var gPopup;
+   var gOldImage;
+   
+   function setGameDimensions(){
+       
+       
+        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+
+        tempScaleW = browserWidth / 640;
+        tempScaleH = browserHeight / 842;
+        if(tempScaleH < tempScaleW){
+            tempScale = tempScaleH;
+        }
+        else {
+            tempScale = tempScaleW;
+        }
+        cWidth = 640 * tempScale;
+        cWidth = parseFloat(Math.round(cWidth * 100) / 100).toFixed(0);
+        
+
+        var mvcontent = document.getElementById('WordCubed-canvas');
+        if(validCanvas){
+            if(tempScale > 1){
+                mvcontent.setAttribute('width',cWidth);
+                mvcontent.setAttribute('height',cWidth);
+            }
+            else{
+                mvcontent.setAttribute('width',640);
+                mvcontent.setAttribute('height',640);
+            }
+            mvcontent.style.width = cWidth + "px";
+            mvcontent.style.height = cWidth + "px";
+            
+            //gl.viewportWidth = canvas.width;
+            //gl.viewportHeight = canvas.height;
+        }
+        initialFontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        //document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
+        //document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
+        
+
+        var gContainer = document.getElementById('container');
+        gContainer.style.width = cWidth + "px";
+        gContainer.style.height = cWidth + "px";
+        
+        
+        var gTopHeader = document.getElementById('topHeader');
+        gTopHeader.style.width = cWidth + "px";
+        
+        
+        //<img id = "imghints" alt="Hints" src="images/hint2.png" title=" Hints ">
+        var gButtonImage = preload.getResult("hint2");
+        gButtonImage.id = "imghints";
+        gButtonImage.alt = "Hints";
+        gButtonImage.title = " Hints ";
+        gButtonImage.width = (60 * tempScale);
+        gButtonImage.height = (60 * tempScale);
+        var gButton = document.getElementById('btnhints');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton.appendChild(gButtonImage);
+        
+        
+        //<img id = "imgsettings" alt="Settings" src="images/settings2.png" title=" Settings ">
+        gButtonImage = preload.getResult("settings2");
+        gButtonImage.id = "imgsettings";
+        gButtonImage.alt = "Settings";
+        gButtonImage.title = " Settings ";
+        gButtonImage.width = (60 * tempScale);
+        gButtonImage.height = (60 * tempScale);
+        gButton = document.getElementById('btnsettings');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton.appendChild(gButtonImage);
+        
+        
+        //<img id = "imggames" alt="Games" src="images/games2.png" title=" Games ">
+        gButtonImage = preload.getResult("games2");
+        gButtonImage.id = "imggames";
+        gButtonImage.alt = "Games";
+        gButtonImage.title = " Games ";
+        gButtonImage.width = (60 * tempScale);
+        gButtonImage.height = (60 * tempScale);
+        gButton = document.getElementById('btngames');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton.appendChild(gButtonImage);
+        
+        
+        //<img id = "imginfo" alt="Info" src="images/instructions2.png" title=" Info ">
+        gButtonImage = preload.getResult("instructions2");
+        gButtonImage.id = "imginfo";
+        gButtonImage.alt = "Info";
+        gButtonImage.title = " Info ";
+        gButtonImage.width = (60 * tempScale);
+        gButtonImage.height = (60 * tempScale);
+        gButton = document.getElementById('btninfo');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton.appendChild(gButtonImage);
+        
+        
+        //<img id="starimage" src="images/blueStar40x40.png" alt="Blue" title=" 3 Stars/Letter ">
+        gButtonImage = preload.getResult("blueStar");
+        gButtonImage.id = "starimage";
+        gButtonImage.alt = "Blue";
+        gButtonImage.title = " 3 Stars/Letter ";
+        gButton = document.getElementById('starbox');
+        gButton.appendChild(gButtonImage);
+        gOldImage = gButtonImage;
+        gButton = document.getElementById('starimage');
+        gButton.style.width = (50 * tempScale) + "px";
+        gButton.style.height = (50 * tempScale) + "px";
+        
+        
+        
+        
+        gButton = document.getElementById('scoreratebox');
+        gButton.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        gButton = document.getElementById('scorebox');
+        gButton.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        var theightLeft = browserHeight - (86 * tempScale) - cWidth - parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0);
+        var gBottomFooter = document.getElementById('bottomFooter');
+        gBottomFooter.style.width = (cWidth - 10) + "px";
+        gBottomFooter.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gBottomFooter.style.height = theightLeft + "px"; //"auto"; //(85 * tempScale) + "px";
+        
+        
+        
+        gPopup = document.getElementById('popupBasic');
+        gPopup.style.maxWidth = (600 * tempScale) + "px";
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('closepopup1');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        gPopup = document.getElementById('popupHints');
+        gPopup.style.maxWidth = (500 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup = document.getElementById('closepopup2');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader2');
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('showHint');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('solveTheCube');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        gPopup = document.getElementById('popupSettings');
+        gPopup.style.maxWidth = (500 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup = document.getElementById('closepopup3');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader3');
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check3id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check4id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check1id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check2id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('buttonNewGame');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        gPopup = document.getElementById('placeCheck3');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('placeCheck4');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('placeCheck1');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('placeCheck2');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check3');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check4');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check1');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check2');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        gPopup = document.getElementById('popupGames');
+        gPopup.style.maxWidth = (580 * tempScale) + "px";
+        gPopup.style.width = (580 * tempScale) + "px";
+        gPopup = document.getElementById('popupHeader41');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader42');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader43');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader44');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader45');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        gPopup = document.getElementById('popupTabs');
+        gPopup.style.maxWidth = (580 * tempScale) + "px";
+        gPopup.style.width = (580 * tempScale) + "px";
+        
+        gPopup = document.getElementById('popupHeader51');
+        gPopup.style.fontSize = parseFloat(Math.round(17 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader52');
+        gPopup.style.fontSize = parseFloat(Math.round(17 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader53');
+        gPopup.style.fontSize = parseFloat(Math.round(17 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader54');
+        gPopup.style.fontSize = parseFloat(Math.round(17 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        gPopup = document.getElementById('tabs-1');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-1x');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-2');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-2x');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-3');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-3x');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('closepopup5');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-4');
+        gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-1w');
+        gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-2w');
+        gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        
+        gPopup = document.getElementById('popupWin');
+        gPopup.style.maxWidth = (500 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup = document.getElementById('popupHeader6');
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('Winmessage');
+        gPopup.style.fontSize = parseFloat(Math.round(30 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('closepopup6');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('btnNewGame');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('btnSwitchGame');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        gPopup = document.getElementById('popupIHelp');
+        gPopup.style.maxWidth = (130 * tempScale) + "px";
+        gPopup.style.width = (130 * tempScale) + "px";
+        gPopup = document.getElementById('popupHeader7');
+        gPopup.style.fontSize = parseFloat(Math.round(16 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        tempWd = $("#wordbox");
+        tempWdX = document.getElementById('wordbox');
+        
+        //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
+        //mvp = document.getElementById('viewport');
+        //mvp.setAttribute('content',tempScale);
+
+
+        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        //document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
+        //document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
+
+        //document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+        //document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+   }
     
     
 </script>
@@ -524,8 +2287,6 @@ ajkiger@gmail.com
 </head>
 
 <body onload="webGLStart();">
-    
-    <!--<script  type="text/javascript" src="console-log-viewer.js"></script>-->
     
     <div id="progressbar">
         <div>
