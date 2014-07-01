@@ -789,6 +789,24 @@ ajkiger@gmail.com
 
         setGameDimensions();
         
+        var mvcontent = document.getElementById('WordCubed-canvas');
+        if(validCanvas){
+            if(tempScale > 1){
+                mvcontent.setAttribute('width',cWidth);
+                mvcontent.setAttribute('height',cWidth);
+            }
+            else{
+                mvcontent.setAttribute('width',640);
+                mvcontent.setAttribute('height',640);
+            }
+            mvcontent.style.width = cWidth + "px";
+            mvcontent.style.height = cWidth + "px";
+            
+            //gl.viewportWidth = canvas.width;
+            //gl.viewportHeight = canvas.height;
+        }
+        initialFontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
         initGL(canvas);
         
         /*
@@ -2015,23 +2033,7 @@ ajkiger@gmail.com
         cWidth = parseFloat(Math.round(cWidth * 100) / 100).toFixed(0);
         
 
-        var mvcontent = document.getElementById('WordCubed-canvas');
-        if(validCanvas){
-            if(tempScale > 1){
-                mvcontent.setAttribute('width',cWidth);
-                mvcontent.setAttribute('height',cWidth);
-            }
-            else{
-                mvcontent.setAttribute('width',640);
-                mvcontent.setAttribute('height',640);
-            }
-            mvcontent.style.width = cWidth + "px";
-            mvcontent.style.height = cWidth + "px";
-            
-            //gl.viewportWidth = canvas.width;
-            //gl.viewportHeight = canvas.height;
-        }
-        initialFontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
         
         //document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
         //document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
