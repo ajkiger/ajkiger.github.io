@@ -874,9 +874,12 @@ ajkiger@gmail.com
                             $('#progressbar').remove();
                         });
                     }
-                    $( "#splash" ).fadeTo(500, 0.0, function() {
-                        $('#splash').remove();
-                    });
+                    if (Math.abs(window.orientation) !== 90){
+                        $( "#splash" ).fadeTo(500, 0.0, function() {
+                            $('#splash').remove();
+                        });
+                    }
+                    
                     
                     GameLoop();
                 }, 2000);
@@ -892,9 +895,11 @@ ajkiger@gmail.com
                             $('#progressbar').remove();
                         });
                     }
-                    $( "#splash" ).fadeTo(500, 0.0, function() {
-                        $('#splash').remove();
-                    });
+                    if (Math.abs(window.orientation) !== 90){
+                        $( "#splash" ).fadeTo(500, 0.0, function() {
+                            $('#splash').remove();
+                        });
+                    }
                     
                     GameLoop();
                 }, 2000);
@@ -1301,8 +1306,6 @@ ajkiger@gmail.com
             gLogoImage2.margin = "auto";
             gLogoImage2.width = "100%";
             gLogoImage2.height = "100%";
-            
-            
             document.body.appendChild(gLogoImage2);
         }
         else{
@@ -2014,13 +2017,19 @@ ajkiger@gmail.com
        
         browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-        
+        /*
         if(browserHeight < browserWidth && isiOSMobile){
             var tempHold = browserHeight;
             browserHeight = browserWidth;
             browserWidth = tempHold;
         }
-        
+        */
+        if (Math.abs(window.orientation) === 90) {
+            var tempHold = browserHeight;
+            browserHeight = browserWidth;
+            browserWidth = tempHold;
+            
+        }
 
         tempScaleW = browserWidth / 640;
         tempScaleH = browserHeight / 842;
