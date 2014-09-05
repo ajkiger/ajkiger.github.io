@@ -1,0 +1,122 @@
+anchovy
+angel shark
+angelfish
+barb
+barracuda
+basking shark
+bass
+blenny
+blowfish
+blue fin tuna
+blue shark
+bonito
+bony fish
+bull shark
+carp
+catfish
+chub
+clownfish
+cod
+coelacanth
+crappie
+darter
+devil ray
+dogfish
+dory
+dragon fish
+eel
+electric eel
+Emperor angelfish
+fish
+flounder
+flying fish
+Galapagos shark
+gar
+glassfish
+goby
+goldfish
+grayling
+great white shark
+Greenland shark
+grouper
+grunion
+gulper eel
+guppy
+haddock
+hagfish
+hake
+halibut
+hammerhead shark
+hatchet fish
+herring
+ice fish
+jackfish
+john dory
+lake trout
+lamprey
+lantern fish
+lemon shark
+ling cod
+loach
+luminous shark
+lungfish
+mackerel
+manta ray
+marlin
+minnow
+monkfish
+moray eel
+mullet
+needlefish
+nurse shark
+oarfish
+paddlefish
+parrotfish
+perch
+pike
+pilot fish
+piranha
+Pollock
+pompano
+porgy
+puffer fish
+pupfish
+queen triggerfish
+quill fish
+ray
+remora
+rockfish
+sailfish
+salmon
+sardine
+sawfish
+sea bass
+sea dragon
+seahorse
+shad
+shark
+skate
+smelt
+snapper
+sole
+stingray
+sturgeon
+sunfish
+swordfish
+tarpon
+tetra
+thresher shark
+tiger shark
+triggerfish
+trout
+tuna
+turbot
+velvet fish
+viperfish
+walleye
+whale shark
+whiting
+wrasse
+yellow jack
+yellowtail
+zebra fish

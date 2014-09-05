@@ -1,0 +1,86 @@
+A Coruña
+Alaquàs
+Albacete
+Alcalá de Henares
+Alcorcón
+Alicante
+Almería
+Andalusia
+Aragon
+Asturias
+Badajoz
+Badalona
+Badia del Vallès
+Balearic
+Barañáin
+Barcelona
+Basauri
+Basque
+Benetússer
+Bilbao
+Burgos
+Burjassot
+Cádiz
+Canary
+Cantabria
+Cartagena
+Castelldefels
+Castile-La Mancha
+Catalonia
+Córdoba
+Coslada
+El Masnou
+Elche
+Extremadura
+Fuengirola
+Fuenlabrada
+Galicia
+Getafe
+Getxo
+Gijón
+Granada
+Huelva
+La Llagosta
+La Rioja
+Las Palmas
+Leganés
+León
+Lleida
+Logroño
+Madrid
+Málaga
+Marbella
+Mataró
+Mislata
+Mollet del Vallès
+Móstoles
+Murcia
+Navarre
+Oviedo
+Paiporta
+Palma
+Pamplona
+Portugalete
+Premià de Mar
+Ripollet
+Sabadell
+Salamanca
+Salt
+Sant Joan Despí
+Santander
+Santurtzi
+Sedaví
+Sestao
+Seville
+Tarragona
+Tavernes Blanques
+Terrassa
+Torrent
+Valencia
+Valencian
+Valladolid
+Vigo
+Vilassar de Mar
+Vitoria-Gasteiz
+Xirivella
+Zaragoza

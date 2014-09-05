@@ -1,0 +1,95 @@
+airbus
+airship
+ambulance
+barge
+bicycle
+biplane
+Blimp
+bomber
+bulldozer
+bullet train
+bus
+canoe
+car
+carriage
+catamaran
+concrete mixer
+container truck
+crane truck
+dinghy
+dogsled
+dredger
+dugout
+dump truck
+ferry
+ferryboat
+fighter
+fire engine
+freighter
+galley
+glider
+go-kart
+golf cart
+gondola
+gyroplane
+hang glider
+helicopter
+horse
+hovercraft
+hydrofoil
+icebreaker
+jeep
+jet
+jogging
+jumbo
+kayak
+maglev
+minibus
+monorail
+monter truck
+motorboat
+motorcycle
+outrigger
+passenger ship
+plane
+police car
+raft
+rafts
+road grader
+rocket
+row boat
+rowboat
+running
+sailboat
+sampan
+scooter
+elevator
+seaplane
+ship
+sidecar
+escalator
+ski lift
+sled
+snowplow
+speedboat
+sports car
+sprinting
+streetcar
+submarine
+subway
+surfboard
+swimming
+tank
+tanker
+taxi
+taxicab
+tractor
+train
+tricycle
+trolley
+truck
+tugboat
+unicycle
+wing suit
+wrecker
+yacht

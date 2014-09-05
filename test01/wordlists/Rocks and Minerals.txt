@@ -1,0 +1,129 @@
+Agate
+Alexandrite
+Amber
+Amethyst
+Andensite
+Anorthosite
+Aplite
+Aquamarine
+Arkose
+Aventurine
+Azurite
+Basalt
+Basanite
+Beryl
+Boninite
+Breccia
+Calcite
+Carbonate
+Carbonatite
+Carnelian
+Chalcedony
+Chalk
+Charnockite
+Citrine
+Claystone
+Coal
+Conglomerate
+Coquina
+Coral
+Dacite
+Diabase
+Diamond
+Diorite
+Dolomite
+Druze
+Dunite
+Emerald
+Feldspar
+Felsite
+Fire opal
+Flint
+Fluorite
+Fool's gold
+Gabbro
+Garnet
+Gneiss
+Gossan
+Granite
+Granodiorite
+Granulite
+Gravel
+Gritstone
+Gypsum
+Hematite
+Hornblendite
+Hornfels
+Hyaloclastite
+Igneous rock
+Ignimbrite
+Ijolite
+Itacolumite
+Jade
+Jadeite
+Jasper
+Jaspillite
+Jet
+Kimberlite
+Kunzite
+Lamproite
+Lapidary
+Lapis lazuli
+Latite
+Lignite
+Limestone
+Loess
+Magnetite
+Malachite
+Marl
+Metamorphic rock
+Mica
+Monzogranite
+Moonstone
+Moss agate
+Nephrite
+Norite
+Obsidian
+Oil Shale
+Oolite
+Opal
+Orthoclase
+Pebble
+Pegamatite
+Petrified wood
+Phyllite
+Pumice
+Pyrite
+Quartz
+Rose quartz
+Ruby
+Sandstone
+Sapphire
+Sardonyx
+Schist
+Scoria
+Sedimentary rock
+Serpentine
+Silica
+Slate
+Soapstone
+Sovite
+Stalactite
+Suevite
+Talc
+Talus
+Tephrite
+Tiger's eye
+Topaz
+Tourmaline
+Trachyte
+Ttalagmite
+Tuff
+Turquoise
+Vitreous
+Volcanic bomb
+Volcanic glass
+Vulcanite
+Wackestone
+Websterite
+Zircon

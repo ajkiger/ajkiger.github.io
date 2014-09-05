@@ -1,0 +1,69 @@
+allspice
+angelica
+anise
+annatto
+basil
+bay
+borage
+capers
+caraway
+carob
+cayenne pepper
+celery seed
+chervil
+chicory
+chili pepper
+chives
+cicely
+cilantro
+cinnamon
+clove
+coriander
+curry leaf
+dill
+fennel
+fenugreek
+galangal
+garlic
+garlic chives
+ginger
+green onion
+horseradish
+hyssop
+jasmine flowers
+jerk spice
+juniper berry
+lavender
+lemon balm
+lemon verbena
+licorice
+mace
+marjoram
+mint
+mustard seed
+nasturtium
+nutmeg
+onion
+oregano
+paprika
+parsley
+pepper
+peppermint
+rosemary
+rue
+saffron
+sage
+salad burnet
+sassafras
+savory
+spearmint
+star anise
+sumac
+tarragon
+thyme
+vanilla
+wasabi
+watercress
+wintergreen
+woodruff
+yellow mustard
