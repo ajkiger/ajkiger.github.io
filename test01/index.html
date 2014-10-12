@@ -23,7 +23,23 @@ ajkiger@gmail.com
 
 <script type="text/javascript">
     
-    var iWinConsole=false;var readGameStrings;var firstTimeThru1;var agent=navigator.userAgent.toLowerCase();var isWindowsPhone=(agent.indexOf('msie')>-1&&((agent.indexOf('windows')>-1)||(agent.indexOf('macintosh')>-1)||(agent.indexOf('linux')>-1))&&agent.indexOf('touch')>-1);var isFireFoxDesktop=(agent.indexOf('firefox')>-1&&((agent.indexOf('windows')>-1)||(agent.indexOf('macintosh')>-1)||(agent.indexOf('linux')>-1))&&agent.indexOf('mobile')<0);var isiOSMobile=((agent.indexOf('iphone')>-1||agent.indexOf('ipad')>-1)&&agent.indexOf('mobile')>-1);var isSafariDesktop=(agent.indexOf('safari')>-1&&((agent.indexOf('windows')>-1)||(agent.indexOf('macintosh')>-1)||(agent.indexOf('linux')>-1))&&agent.indexOf('chrome')<0&&agent.indexOf('mobile')<0);if(isFireFoxDesktop){firstTimeThru1=true}else{firstTimeThru1=false}console.log('firstTimeThru1: '+firstTimeThru1);
+    var iWinConsole = false;
+    var readGameStrings;
+    var firstTimeThru1;
+    var agent = navigator.userAgent.toLowerCase();
+    var isWindowsPhone = (agent.indexOf('msie') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('touch') > -1);
+    var isFireFoxDesktop = (agent.indexOf('firefox') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('mobile') < 0);
+    var isiOSMobile = ((agent.indexOf('iphone') > -1 || agent.indexOf('ipad') > -1) && agent.indexOf('mobile') > -1 );
+    var isSafariDesktop = (agent.indexOf('safari') > -1 && ((agent.indexOf('windows') > -1) || (agent.indexOf('macintosh') > -1) || (agent.indexOf('linux') > -1)) && agent.indexOf('chrome') < 0 && agent.indexOf('mobile') < 0);
+    
+    //isFireFoxDesktop = false;
+    if (isFireFoxDesktop){
+        firstTimeThru1 = true;
+    }
+    else{
+        firstTimeThru1 = false;
+    }
+    console.log('firstTimeThru1: ' + firstTimeThru1);
     
 </script>
 
@@ -57,6 +73,7 @@ ajkiger@gmail.com
 <script type="text/javascript" src="gl-matrix-min.js"></script>
 <script type="text/javascript" src="webgl-utils.js"></script>
 
+<script src="https://cdn.flurry.com/js/flurry.js"></script>
 
 <script type="text/javascript" src="EAGLView.js"></script>
 <script type="text/javascript" src="SceneController.js"></script>
@@ -223,7 +240,7 @@ ajkiger@gmail.com
         
     }
     
-    #popupHints, #popupSettings, #popupWin {
+    #popupHints, #popupSettings, #popupWin, #popupWelcome {
         width: 500px;
         font-family: arial, Helvetica, sans-serif;
         -ms-touch-action: none;
@@ -388,6 +405,11 @@ ajkiger@gmail.com
         text-align: center;
     }
     
+    /*
+    div#popupWelcome table td{
+        text-align: left;
+    }
+    */
     
     div#popupTabs table td{
         text-align: center;
@@ -520,8 +542,1942 @@ ajkiger@gmail.com
 <script type="text/javascript">
 
     
-    eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('9 v;9 1a;9 3o;9 2G;9 2H;9 2I;9 2J;9 70=T;9 2c;9 1S;9 71;9 q;9 2K;9 2L;9 72;9 14;9 1B=R;9 1C=R;9 4q=R;9 73=3p;s 4r(a){v=74.75(a);t(!v){$("#1r").1s(76,1.0);Y=R;1f}Y=T}s 3q(a,b){9 c=5.6(b);t(!c){1f 2d}9 d="";9 k=c.77;78(k){t(k.79===3){d+=k.7a}k=k.7b}9 e;t(c.U==="x-2M/x-7c"){e=a.4s(a.7d)}H t(c.U==="x-2M/x-7e"){e=a.4s(a.7f)}H{1f 2d}a.7g(e,d);a.7h(e);t(!a.7i(e,a.7j)&&!a.4t()){4u(a.7k(e));1f 2d}1f e}9 D;s 3r(){9 a=3q(v,"2M-7l");9 b=3q(v,"2M-7m");D=v.7n();v.4v(D,b);v.4v(D,a);v.7o(D);t(!v.7p(D,v.7q)&&!v.4t()){4u("7r 7s 7t 7u")}v.7v(D);D.4x=v.2e(D,"7w");v.2f(D.4x);D.4y=v.2e(D,"7x");v.2f(D.4y);D.4z=v.2e(D,"7y");v.2f(D.4z);D.4A=v.2e(D,"7z");v.2f(D.4A);D.4B=v.2e(D,"7A");v.2f(D.4B);D.4C=v.1m(D,"7B");D.4D=v.1m(D,"7C");D.4E=v.1m(D,"7D");D.7E=v.1m(D,"7F");D.7G=v.1m(D,"7H");D.7I=v.1m(D,"7J");D.7K=v.1m(D,"7L");D.7M=v.1m(D,"7N");D.7O=v.1m(D,"7P")}9 2g=2N.2O();9 2P=[];9 4F=2N.2O();s 7Q(){9 a=2N.2O();2N.3s(a,2g);2P.1D(a)}s 7R(){t(2P.1g===0){7S"7T 7U!";}2g=2P.1h()}s 7V(){v.4G(D.4C,R,4F);v.4G(D.4D,R,2g);9 a=3t.2O();3t.7W(a);3t.7X(a,2g);v.7Y(D.4E,R,a)}s 7Z(a){1f a*u.80/81}9 2h;9 82=0;9 83=0;9 84=Z 1T().85();9 87,2Q,4H,1U,2i,2R;s 1V(){2h=1i.88(1V,1a);1U=1T.1U();2R=1U-2i;t(2R>2Q){2i=1U-(2R%2Q);89();8a()}}9 2S;9 Y;9 1W;9 3u;9 2T;9 4I;9 2j=T;s 8b(){t(1n){2U.3v.4J().4K(s(a){2V()})}4L()}s 4M(){2V()}s 2V(){Y=T;1a=5.6("4N-1a");1a.3y("8c",4O,R);1a.3y("8d",4P,R);4Q();9 b=5.6(\'4N-1a\');t(Y){t(q>1){b.2W(\'E\',14);b.2W(\'K\',14)}H{b.2W(\'E\',2X);b.2W(\'K\',2X)}b.o.E=14+"r";b.o.K=14+"r"}4I=w(u.y(28*q*p)/p).z(0)+"r";4r(1a);2Y.2k({\'8e\':\'4R/\'});2Y.4S([\'2l-1j.3z\',\'2l-1j.4T\',\'2l-1j.4U\'],"2l");2Y.4S([\'3A-1j.3z\',\'3A-1j.4T\',\'3A-1j.4U\'],"8f");t(Y){v.8g=1a.E;v.8h=1a.K;t(!8i){4V()}3r();4W();t(2m){1a.4X=3B}9 c=G.I("3C");2G=1d(c);9 d=G.I("3E");2I=1d(d);9 e=G.I("3F");2J=1d(e);9 f=G.I("3G");2H=1d(f);9 g=G.I("3H");3o=1d(g);8j();8k();2Q=3I/30;2i=1T.1U();4H=2i;t(!2m){2j=R;2S=1e(s(){$("#1r").1s(3J,1.0);t(!1n){$("#M").1s(1b,0.0,s(){$(\'#M\').1o()})}t(u.3K(1i.2Z)!==90){$("#1E").1s(1b,0.0,s(){$(\'#1E\').1o()})}H{1e(s(){9 a=G.I("31");a.A="M";5.1F.O(a);5.6(\'M\').o.E=(1X*q)+"r";5.6(\'M\').o.K=(1X*q)+"r";5.6(\'M\').o.3L="65%";5.6(\'M\').o.3M="35%"},3I)}1V()},4Y)}H{2j=R;2S=1e(s(){$("#1r").1s(3J,1.0);t(!1n){$("#M").1s(1b,0.0,s(){$(\'#M\').1o()})}t(u.3K(1i.2Z)!==90){$("#1E").1s(1b,0.0,s(){$(\'#1E\').1o()})}H{1e(s(){9 a=G.I("31");a.A="M";5.1F.O(a);5.6(\'M\').o.E=(1X*q)+"r";5.6(\'M\').o.K=(1X*q)+"r";5.6(\'M\').o.3L="65%";5.6(\'M\').o.3M="35%"},3I)}1V()},4Y)}}H{t(!1n){$(\'#M\').1o()}$(\'#1E\').1o()}}s 8l(){$("#33").Q("11");15()}s 8m(){t(1B||1C){1B=R;1C=R;8n()}H{$("#34").Q("11");15();t($(\'#1G\').4Z(\'1Y\')){S.3N="1Z 13 1H"}H{S.3N="8o 13 1H"}t($(\'#1I\').4Z(\'1Y\')){S.3O="21"}H{S.3O="8p"}1e(s(){5.6(\'2n\').C="";5.6(\'2o\').C="";5.6(\'2p\').C="";5.6(\'2q\').C=""},p)}}s 8q(){t(2j){2j=R;$("#1r").1s(3J,1.0);2S=1e(s(){1V()},1b);t(!2m){$("#1J").Q("11",{1K:"1h"})}}$("#1J").Q("11");15()}s 8r(){$("#2r").Q("11");15()}s 51(){$("#3P").Q("11");15()}s 15(){t(3u){2Y.52("2l")}};9 G;9 2s;9 2t;s 4L(){2s=5.6(\'8s\');2s.o.E="0%";2t=0;t(1n){$(\'#M\').1o()}9 a=[{L:"8t.N",A:"3H"},{L:"36-8u-37.N",A:"3C"},{L:"36-8v-37.N",A:"3E"},{L:"36-8w-37.N",A:"3F"},{L:"36-8x-37.N",A:"3G"},{L:"3Q.N",A:"3Q"},{L:"3R.N",A:"3R"},{L:"3S.N",A:"3S"},{L:"3T.N",A:"3T"},{L:"3U.N",A:"53"},{L:"3V.N",A:"8y"},{L:"3W.N",A:"8z"},{L:"3U.N",A:"54"},{L:"3V.N",A:"55"},{L:"3W.N",A:"56"},{L:"3U.N",A:"57"},{L:"3V.N",A:"58"},{L:"3W.N",A:"59"},{L:"8A-8B.N",A:"5a"},{L:"8C.N",A:"31"},{L:"8D-8E.N",A:"5b"},{L:"8F.N",A:"5c"}];G=Z 1L.3X(T,"8G/");G.18("3Y",5d);G.18("38",39);G.3Z(a)};s 5d(a){5e()}9 1M;s 5e(){9 a=[{L:"8H.3a",A:"5f"},{L:"8I.8J",A:"5g"}];1M=Z 1L.3X(T,"5h/");1M.18("3Y",5i);1M.18("38",39);1M.3Z(a)};s 5i(a){5j()}9 2u;9 P=Z 40();9 23;s 5j(){J=1M.I("5g");5k=1M.I("5f");23=5k.8K("\\n");9 a=5l();9 b=41(1);9 c=41(2);V(9 i=0;i<23.1g;i=i+3){9 d=Z 3b();d.2k();d.1c=23[i];d.1p=23[i+1];d.1N=23[i+2];P.1D(d)}V(9 i=P.1g-1;i>=0;i=i-1){9 e=P[i];t(e.1c===a||e.1c===b||e.1c===c){5m}H{P.1h()}}t(P.1g>12){9 f=P.1g-12;V(9 i=0;i<f;i++){P.8L(0,1)}}9 g=Z 40();9 h=P.1g;V(9 i=0;i<h;i++){9 j=P.1h();g.1D(j)}P=g;t(P.1g===0){9 d=Z 3b();d.2k();d.1c="25  1";d.1p="5n";d.1N="25.3a";P.1D(d);9 k=Z 3b();k.2k();k.1c="25  2";k.1p="5o";k.1N="25.3a";P.1D(k);9 l=Z 3b();l.2k();l.1c="25  3";l.1p="5p";l.1N="25.3a";P.1D(l)}9 m=Z 40();V(9 i=0;i<P.1g;i++){9 j=P[i];9 n={L:j.1N,A:j.1N};m.1D(n)}2u=Z 1L.3X(T,"5h/");2u.18("3Y",5q);2u.18("38",39);2u.3Z(m)};s 5q(a){2s.o.E="p%";t(1n){2U.3v.8M({8N:1,8O:\'\'});2U.3v.8P({8Q:T})}H{4M()}}s 39(a){t(!1n){2t=2t+2.8;2s.o.E=2t+"%"}}s 5l(){9 a=Z 1T();9 b=a.42();9 c=a.5r()+1;9 d=a.5s();t(b<10){b=\'0\'+b}t(c<10){c=\'0\'+c}d=\'/\'+d;d=d.5t(3,2);a=c+\'/\'+b+\'/\'+d;1f a}s 41(a){9 b=Z 1T();9 c=Z 1T(b);c.8R(c.42()-a);9 d=c.42();9 e=c.5r()+1;9 f=c.5s();t(d<10){d=\'0\'+d}t(e<10){e=\'0\'+e}f=\'/\'+f;f=f.5t(3,2);c=e+\'/\'+d+\'/\'+f;1f c}s 4V(){t(!1L.1j.8S()){1f}9 a="4R/";9 b=[{A:"5u",L:"8T.3z"}];1L.1j.3y("38",5v);1L.1j.8U(b,a)};s 5v(a){2T=1L.1j.8V("5u");2T.52({8W:-1});t(8X(8Y)!=="3p"){1W=8Z.91("92");t(1W==="R"){1W=R;2T.93()}H{1W=T}}}$(s(){94.95(5.1F)});$(1i).18("97",s(a){t(a.2Z==="98"){$("#33").Q("11");$("#34").Q("11");$("#2v").Q("11");$("#1J").Q("11");$("#3P").Q("11");$("#2r").Q("11");9 b=G.I("5a");b.A="1E";5.1F.O(b);9 c=G.I("31");c.A="M";5.1F.O(c);5.6(\'M\').o.E=(1X*q)+"r";5.6(\'M\').o.K=(1X*q)+"r";5.6(\'M\').o.3L="65%";5.6(\'M\').o.3M="35%"}H{$(\'#1E\').1o();$(\'#M\').1o()}});$(5).4J(s(){$("*").99(s(e){e.43()})});$(5).44(\'9a\',s(e){e.43()});$(s(){$(5).9b()});s 9c(){t(Y){5.6(\'5w\').C=J.5w;5.6(\'45\').C=J.45;5.6(\'46\').C=J.46;5.6(\'47\').C=J.47;15();$("#33").Q("26",{27:"#48",1K:"1h"})}}s 9d(){t(Y){15();5.6(\'2n\').C="";5.6(\'2o\').C="";5.6(\'2p\').C="";5.6(\'2q\').C="";t(S.3N==="1Z 13 1H"){$("#2n").1k("<1t U=\\"1u\\" 1l=\\"5x();\\" A=\\"1G\\" 1Y><W A=\\"1O\\" V=\\"1G\\">1Z 13 1H</W>")}H{$("#2n").1k("<1t U=\\"1u\\" 1l=\\"5x();\\" A=\\"1G\\"><W A=\\"1O\\" V=\\"1G\\">1Z 13 1H</W>")}t(S.3O==="21"){$("#2o").1k("<1t U=\\"1u\\" 1l=\\"5y();\\" A=\\"1I\\" 1Y><W A=\\"1P\\" V=\\"1I\\">21 3c</W>")}H{$("#2o").1k("<1t U=\\"1u\\" 1l=\\"5y();\\" A=\\"1I\\"><W A=\\"1P\\" V=\\"1I\\">21 3c</W>")}t(1W===T){$("#2p").1k("<1t U=\\"1u\\" 1l=\\"5z();\\" A=\\"2y\\" 1Y><W A=\\"29\\" V=\\"2y\\">5A 5B</W>")}H{$("#2p").1k("<1t U=\\"1u\\" 1l=\\"5z();\\" A=\\"2y\\"><W A=\\"29\\" V=\\"2y\\">5A 5B</W>")}t(3u===T){$("#2q").1k("<1t U=\\"1u\\" 1l=\\"5C();\\" A=\\"2z\\" 1Y><W A=\\"2a\\" V=\\"2z\\">5D</W>")}H{$("#2q").1k("<1t U=\\"1u\\" 1l=\\"5C();\\" A=\\"2z\\"><W A=\\"2a\\" V=\\"2z\\">5D</W>")}7=5.6(\'29\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'2a\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'1O\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'1P\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";5.6(\'5E\').C=J.5E;5.6(\'1O\').C=J.1O;5.6(\'1P\').C=J.1P;5.6(\'29\').C=J.29;5.6(\'2a\').C=J.2a;5.6(\'49\').C=J.49;5.6(\'4a\').C=J.4a;$("#34").Q("26",{27:"#48",1K:"1h"});$(s(){$("#1O").18("1q",s(a){3e.3f(\'3g 3h 3i 1Z 13 1H\');1B=!1B})});$(s(){$("#1G").18("1q",s(a){3e.3f(\'3g 3h 3i 1Z 13 1H\');1B=!1B})});$(s(){$("#1P").18("1q",s(a){3e.3f(\'3g 3h 3i 21 3c\');1C=!1C})});$(s(){$("#1I").18("1q",s(a){3e.3f(\'3g 3h 3i 21 3c\');1C=!1C})})}}s 9e(){t(Y){15();4b()}}s 4b(){t(Y){5.6(\'4c\').C=J.4c;5.6(\'4d\').C=J.4d;5.6(\'4e\').C=J.4e;5.6(\'4f\').C=J.4f;5.6(\'4g\').C=J.4g;9 f=w(u.y(20*q*p)/p).z(0)+"r";5.6(\'3j\').C="";V(9 i=0;i<P.1g;i++){9 g=P[i];t(g.1c===S.2A){$("#5F 5G").1k("<2B o=\\"5H: #9f\\">"+"<X o=\\"1v-1y:"+f+"\\">"+g.1c+"</X>"+"<X o=\\"1v-1y:"+f+"\\">"+g.1p+"</X>"+"<X o=\\"1v-1y:"+f+"\\">"+g.5I+"</X>"+"<X o=\\"1v-1y:"+f+"\\">"+g.5J+"</X>"+"</2B>")}H{$("#5F 5G").1k("<2B>"+"<X o=\\"1v-1y:"+f+"\\">"+g.1c+"</X>"+"<X o=\\"1v-1y:"+f+"\\">"+g.1p+"</X>"+"<X o=\\"1v-1y:"+f+"\\">"+g.5I+"</X>"+"<X o=\\"1v-1y:"+f+"\\">"+g.5J+"</X>"+"</2B>")}}t(S.2A!==2d){$("#2v").Q("26",{27:"#5K",1K:"1h"})}$(s(){$("#3j 2B").18("1q",s(b){9 c;9 d=$(5L).9g();d=d.9h(0,8);15();$(5L).9i("5H-9j","#9k");t(!(S.2A===d)){c=T}H{c=R}t(!(S.2A===d)){V(9 i=0;i<P.1g;i++){9 e=P[i];t(e.1c===d){t(e.1p==="5n"){S.4h=96}H t(e.1p==="5o"){S.4h=9l}H t(e.1p==="5p"){S.4h=9m}S.9n=e.1N;S.2A=e.1c;5m}}1e(s(){$("#2v").Q("11");t(1n){2U.9o.5M({U:\'9p\'}).4K(s(a){S.5N=T})}H{S.5N=T}1e(s(){5.6(\'3j\').C=""},p)},5O)}H{1e(s(){$("#2v").Q("11");1e(s(){5.6(\'3j\').C=""},p)},5O)}})})}}s 9q(){51();1e(s(){4b()},1b)}s 9r(){5.6(\'4i\').C=J.4i;5.6(\'4j\').C=J.4j;5.6(\'4k\').C=J.4k;5.6(\'4l\').C=J.4l;5.6(\'4m\').C=J.4m;5.6(\'F-1x\').C="";9 a=G.I("57");a.A="5P";a.19="4n";9 b=G.I("58");b.A="5Q";b.19="5R";9 c=G.I("59");c.A="5S";c.19="5T";5.6(\'F-1x\').O(5.3k(J.9s));5.6(\'F-1x\').O(a);5.6(\'F-1x\').O(b);5.6(\'F-1x\').O(c);5.6(\'F-1x\').O(5.3k(J.9t));5.6(\'F-2x\').C="";9 d=G.I("54");d.A="5U";d.19="4n";9 e=G.I("55");e.A="5V";e.19="5R";9 f=G.I("56");f.A="5W";f.19="5T";5.6(\'F-2x\').O(5.3k(J.9u));5.6(\'F-2x\').O(d);5.6(\'F-2x\').O(e);5.6(\'F-2x\').O(f);5.6(\'F-2x\').O(5.3k(J.9v));5.6(\'F-3x\').C=J.9w;t(1n){5.6(\'F-1w\').C="5X &3s; 5Y 5Z 61<1z>62 63 64.<1z>";5.6(\'F-2w\').C="66, 67, 68 69 6a 6b 6c 6d <a 2C=\\"6e:6f@6g.1Q?6h=13%6i%6j\\" 2D=\\"6k\\">6f@6g.1Q</a>"}H{5.6(\'F-1w\').C="5X &3s; 5Y <a 2C=\\"9x://9y.1Q\\"  2D=\\"9z\\">5Z 61</a><1z>62 63 64.<1z><1z><1z>3D 13 4o 9A V 9B 9C 9D 9E 9F.";5.6(\'F-2w\').C="<1z><1z>66, 67, 68 69 6a 6b 6c 6d <a 2C=\\"6e:6l@6m.1Q?6h=13%6i%6j\\" 2D=\\"6k\\">6l@6m.1Q</a>";5.6(\'F-6n\').C="13 6o";5.6(\'F-6p\').C="13 6q"}5.6(\'F-3w\').C="";9 g=G.I("5c");g.A="6r";g.19="13 6o";g.E="1A";g.K="1A";g.1l=s(){1i.6s.2C=\'6t://6u.6v.1Q/6w/6x/4p-9G-3d-4p-9H/9I?6y=8\'};5.6(\'F-3w\').O(g);5.6(\'F-4w\').C="";9 h=G.I("5b");h.A="6z";h.19="13 6q";h.E="1A";h.K="1A";h.1l=s(){1i.6s.2C=\'6t://6u.6v.1Q/6w/6x/4p-9J/9K?6y=8\'};5.6(\'F-4w\').O(h);7=5.6(\'5U\');7.o.E=(30*q)+"r";7.o.K=(30*q)+"r";7=5.6(\'5V\');7.o.E=(30*q)+"r";7.o.K=(30*q)+"r";7=5.6(\'5W\');7.o.E=(30*q)+"r";7.o.K=(30*q)+"r";7=5.6(\'5P\');7.o.E=(30*q)+"r";7.o.K=(30*q)+"r";7=5.6(\'5Q\');7.o.E=(30*q)+"r";7.o.K=(30*q)+"r";7=5.6(\'5S\');7.o.E=(30*q)+"r";7.o.K=(30*q)+"r";7=5.6(\'6r\');7.o.E=(1A*q)+"r";7.o.K=(1A*q)+"r";7=5.6(\'6z\');7.o.E=(1A*q)+"r";7.o.K=(1A*q)+"r";4q=R;15();$("#1J").5M();$("#1J").F();$("#1J").Q("26",{27:"#5K",1K:"1h"})}$(s(){$("#6A").44("1q",s(a){$(a.2D).6B("1q");t(Y){5.6(\'2E\').C=J.2E;15();5.6(\'6C\').C=3l.C;$("#2r").Q("26",{27:"#1r",1K:"1h"})}})});9 9L=T;$(s(){$("#6D").44("1q",s(a){$(a.2D).6B("1q");t(Y){5.6(\'2E\').C=J.2E;15();5.6(\'6C\').C=3l.C;$("#2r").Q("26",{27:"#1r",1K:"1h"})}})});$(s(){$("#1r").18("6E 6F 6G 6H 6I",s(a){t(Y){t(a.U==="6E"){9M(a)}H t(a.U==="6F"){9N(a)}H t(a.U==="6G"){9O(a)}H t(a.U==="6H"){9P(a)}H t(a.U==="6I"){t(!2m){3B(a)}}}})});s 4O(a){a.43();t(2h){1i.9Q(2h);2h=3p}}s 4P(a){t(Y){3r();4W();t(2m){1a.4X=3B}9 b=G.I("3C");2G=1d(b);9 c=G.I("3E");2I=1d(c);9 d=G.I("3F");2J=1d(d);9 e=G.I("3G");2H=1d(e);9 f=G.I("3H");3o=1d(f);t(6J){6J.3m(2G);9R.3m(2H);9S.3m(2I);9T.3m(2J);1V()}H{2V()}}}s 1d(a){9 b=v.9U();b.6K=a;6L(b);1f b}s 6L(a){v.6M(v.2b,a);v.9V(v.9W,T);v.9X(v.2b,0,v.6N,v.6N,v.9Y,a.6K);v.6O(v.2b,v.9Z,v.a0);v.6O(v.2b,v.a1,v.a2);v.a3(v.2b);v.6M(v.2b,2d)}9 6P;9 3l;9 7;9 6Q;s 4Q(){2c=1i.a4||5.6R.6S||5.1F.6S;1S=1i.a5||5.6R.6T||5.1F.6T;t(u.3K(1i.2Z)===90){9 a=1S;1S=2c;2c=a}2K=2c/2X;2L=1S/a6;t(2L<2K){q=2L}H{q=2K}14=2X*q;14=w(u.y(14*p)/p).z(0);9 b=5.6(\'1r\');b.o.E=14+"r";b.o.K=14+"r";9 c=5.6(\'48\');c.o.E=14+"r";9 d=G.I("3Q");d.A="a7";d.19="6U";d.2F=" 6U ";d.E=(60*q);d.K=(60*q);9 e=5.6(\'a8\');e.o.E=(86*q)+"r";e.o.K=(86*q)+"r";e.O(d);d=G.I("3R");d.A="a9";d.19="6V";d.2F=" 6V ";d.E=(60*q);d.K=(60*q);e=5.6(\'aa\');e.o.E=(86*q)+"r";e.o.K=(86*q)+"r";e.O(d);d=G.I("3S");d.A="ab";d.19="4o";d.2F=" 4o ";d.E=(60*q);d.K=(60*q);e=5.6(\'ac\');e.o.E=(86*q)+"r";e.o.K=(86*q)+"r";e.O(d);d=G.I("3T");d.A="ad";d.19="6W";d.2F=" 6W ";d.E=(60*q);d.K=(60*q);e=5.6(\'ae\');e.o.E=(86*q)+"r";e.o.K=(86*q)+"r";e.O(d);d=G.I("53");d.A="6X";d.19="4n";d.2F=" 3 af/ag ";e=5.6(\'6D\');e.O(d);6Q=d;e=5.6(\'6X\');e.o.E=(50*q)+"r";e.o.K=(50*q)+"r";e=5.6(\'ah\');e.o.B=w(u.y(32*q*p)/p).z(0)+"r";e=5.6(\'ai\');e.o.B=w(u.y(32*q*p)/p).z(0)+"r";9 f=1S-(86*q)-14-w(u.y(32*q*p)/p).z(0);9 g=5.6(\'6A\');g.o.E=(14-10)+"r";g.o.B=w(u.y(32*q*p)/p).z(0)+"r";g.o.K=f+"r";7=5.6(\'2r\');7.o.1R=(aj*q)+"r";7.o.B=w(u.y(32*q*p)/p).z(0)+"r";7=5.6(\'2E\');7.o.B=w(u.y(22*q*p)/p).z(0)+"r";7=5.6(\'33\');7.o.1R=(1b*q)+"r";7.o.E=(1b*q)+"r";7=5.6(\'47\');7.o.B=w(u.y(22*q*p)/p).z(0)+"r";7=5.6(\'ak\');7.o.B=w(u.y(32*q*p)/p).z(0)+"r";7=5.6(\'45\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'46\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'34\');7.o.1R=(1b*q)+"r";7.o.E=(1b*q)+"r";7=5.6(\'4a\');7.o.B=w(u.y(22*q*p)/p).z(0)+"r";7=5.6(\'al\');7.o.B=w(u.y(32*q*p)/p).z(0)+"r";7=5.6(\'29\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'2a\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'1O\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'1P\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'49\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'2p\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'2q\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'2n\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'2o\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'2y\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'2z\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'1G\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'1I\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'2v\');7.o.1R=(3n*q)+"r";7.o.E=(3n*q)+"r";7=5.6(\'4c\');7.o.B=w(u.y(20*q*p)/p).z(0)+"r";7=5.6(\'4d\');7.o.B=w(u.y(20*q*p)/p).z(0)+"r";7=5.6(\'4e\');7.o.B=w(u.y(20*q*p)/p).z(0)+"r";7=5.6(\'4f\');7.o.B=w(u.y(20*q*p)/p).z(0)+"r";7=5.6(\'4g\');7.o.B=w(u.y(20*q*p)/p).z(0)+"r";7=5.6(\'1J\');7.o.1R=(3n*q)+"r";7.o.E=(3n*q)+"r";7=5.6(\'4i\');7.o.B=w(u.y(17*q*p)/p).z(0)+"r";7=5.6(\'4j\');7.o.B=w(u.y(17*q*p)/p).z(0)+"r";7=5.6(\'4k\');7.o.B=w(u.y(17*q*p)/p).z(0)+"r";7=5.6(\'4l\');7.o.B=w(u.y(17*q*p)/p).z(0)+"r";7=5.6(\'F-1\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'F-1x\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'F-2\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'F-2x\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'F-3\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'F-3x\');7.o.B=w(u.y(28*q*p)/p).z(0)+"r";7=5.6(\'4m\');7.o.B=w(u.y(22*q*p)/p).z(0)+"r";7=5.6(\'F-4\');7.o.B=w(u.y(24*q*p)/p).z(0)+"r";7=5.6(\'F-1w\');7.o.B=w(u.y(24*q*p)/p).z(0)+"r";7=5.6(\'F-2w\');7.o.B=w(u.y(24*q*p)/p).z(0)+"r";7=5.6(\'F-6n\');7.o.B=w(u.y(24*q*p)/p).z(0)+"r";7=5.6(\'F-6p\');7.o.B=w(u.y(24*q*p)/p).z(0)+"r";7=5.6(\'3P\');7.o.1R=(1b*q)+"r";7.o.E=(1b*q)+"r";7=5.6(\'am\');7.o.B=w(u.y(32*q*p)/p).z(0)+"r";7=5.6(\'an\');7.o.B=w(u.y(30*q*p)/p).z(0)+"r";7=5.6(\'ao\');7.o.B=w(u.y(22*q*p)/p).z(0)+"r";7=5.6(\'ap\');7.o.B=w(u.y(22*q*p)/p).z(0)+"r";7=5.6(\'aq\');7.o.B=w(u.y(22*q*p)/p).z(0)+"r";7=5.6(\'ar\');7.o.1R=(6Y*q)+"r";7.o.E=(6Y*q)+"r";7=5.6(\'as\');7.o.B=w(u.y(16*q*p)/p).z(0)+"r";6P=$("#6Z");3l=5.6(\'6Z\')}',62,649,'|||||document|getElementById|gPopup||var|||||||||||||||style|100|tempScale|px|function|if|Math|gl|parseFloat||round|toFixed|id|fontSize|innerHTML|shaderProgram|width|tabs|preload|else|getResult|readGameStrings|height|src|progressbar|png|appendChild|weeklyWordLists|popup|false|sceneController|true|type|for|label|td|validCanvas|new||close||Word|cWidth|PlayBloop|||on|alt|canvas|500|date|loadTexture|setTimeout|return|length|pop|window|Sound|append|onclick|getUniformLocation|iWinConsole|remove|cubeSize|tap|container|fadeTo|input|checkbox|font|||size|br|152|tappedHWDCheckBox|tappedICCheckBox|push|splash|body|check1|Density|check2|popupTabs|transition|createjs|preload2|wordList|check1id|check2id|com|maxWidth|browserHeight|Date|now|GameLoop|soundTrack|240|checked|High||Inverse||weeklyLists||Fruit|open|positionTo||check3id|check4id|TEXTURE_2D|browserWidth|null|getAttribLocation|enableVertexAttribArray|mvMatrix|requestId|then|dismisInstruction|init|Blop|isFireFoxDesktop|placeCheck1|placeCheck2|placeCheck3|placeCheck4|popupBasic|getMeter1|addToMeter|preload3|popupGames|||check3|check4|currentGame|tr|href|target|closepopup1|title|yellowStarTexture|redStarTexture|blueStarTexture|blackStarTexture|tempScaleW|tempScaleH|shader|mat4|create|mvMatrixStack|fpsInterval|elapsed|startTimer|SoundInstanceBM|iConsole|webGLStartMain|setAttribute|640|lowLag|orientation||portraitImage||popupHints|popupSettings||particle|atlas|fileload|handleFileLoad|txt|TableRowObject|Colors||console|log|Tapped|Check|Box|usersTBody|createTextNode|tempWdX|setParticleX|580|allLettersTexture|undefined|getShader|initShaders|copy|mat3|soundEffects|game|||addEventListener|mp3|Star|handleMouseDblClickonCanvas|image1||image2|image3|image4|image0|1000|3000|abs|top|bottom|maxWordKey|cubeColorKey|popupWin|hint2|settings2|games2|instructions2|blueStar40x40|redStar40x40|yellowStar40x40|LoadQueue|complete|loadManifest|Array|getPreviousDate|getDate|preventDefault|bind|showHint|solveTheCube|closepopup2|topHeader|buttonNewGame|closepopup3|ShowAllGames|popupHeader41|popupHeader42|popupHeader43|popupHeader44|popupHeader45|preCubeSize|popupHeader51|popupHeader52|popupHeader53|popupHeader54|closepopup5|Blue|Games|word|iHelp|initGL|createShader|isContextLost|alert|attachShader||vertexPositionAttribute|vertexColorAttribute|vertexNormalAttribute|textureCoordAttribute|textureCoordAttributeuv|pMatrixUniform|mvMatrixUniform|nMatrixUniform|pMatrix|uniformMatrix4fv|startTime|initialFontSize|ready|result|loadAssets|webGLStartNoiWin|WordCubed|handleContextLost|handleContextRestored|setGameDimensions|sounds|load|wav|ogg|initBackGroundMusic|initContext|ondblclick|2000|prop||ClosePopupWin|play|blueStar|blueStar2|redStar2|yellowStar2|blueStar3|redStar3|yellowStar3|WordCubedLogo2|WHIcon|WCIcon|handleComplete|loadAssets2|list0|gStrings|wordlists|handleComplete2|loadAssets3|wordListString|getTodaysDate|break|4x4|5x5|6x6|handleComplete3|getMonth|getFullYear|substr|BackGroundMusic|handleLoad|header1|ToggleDensity|ToggleInverse|ToggleMusic|Background|Music|ToggleSound|Sounds|header2|users|tbody|background|highScore|scoreRate|topAlign|this|show|endAnimationActive|300|image54|image55|Red|image56|Yellow|image51|image52|image53|Copyright|2014|JWACK||APPS|All|rights|reserved||Questions|comments|and|issues|may|be|directed|to|mailto|support|iwin|Subject|20Cubed|20Weekly|_top|wordheader|gmail|3ww|Cubed|4ww|Head|image60|location|https|itunes|apple|us|app|mt|image61|bottomFooter|addClass|wordboxpopup|starbox|vmousedown|vmousemove|vmouseup|vmouseout|doubletap|particleEmitterYellow|image|handleLoadedTexture|bindTexture|RGBA|texParameteri|tempWd|gOldImage|documentElement|clientWidth|clientHeight|Hints|Settings|Info|starimage|130|wordbox|containerScale|pixelRatio|mvp|iHelpOpen|WebGLUtils|setupWebGL|400|firstChild|while|nodeType|textContent|nextSibling|fragment|FRAGMENT_SHADER|vertex|VERTEX_SHADER|shaderSource|compileShader|getShaderParameter|COMPILE_STATUS|getShaderInfoLog|fs|vs|createProgram|linkProgram|getProgramParameter|LINK_STATUS|Could|not|initialise|shaders|useProgram|aVertexPosition|aVertexColor|aVertexNormal|aTextureCoord|aTextureCoorduv|uPMatrix|uMVMatrix|uNMatrix|samplerUniform|uSampler|lightPositionUniform|uLightPosition|ambientLightColorUniform|uAmbientLightColor|diffuseLightColorUniform|uDiffuseLightColor|specularLightColorUniform|uSpecularLightColor|alphaUniform|uAlpha|mvPushMatrix|mvPopMatrix|throw|Invalid|popMatrix|setMatrixUniforms|identity|normalFromMat4|uniformMatrix3fv|degToRad|PI|180|elapsedTime|frameCount|lastTime|getTime||fps|requestAnimFrame|SceneControllerUpdateModel|SceneControllerRenderScene|webGLStart|webglcontextlost|webglcontextrestored|urlPrefix|StarSound|viewportWidth|viewportHeight|isWindowsPhone|sceneControllerInit|sceneControllerLoadScene|ClosePopupHints|ClosePopupSettings|ButtonNewGameSettings|Low|Normal|ClosePopupTabs|ClosePopupBasic|meter1|LettersTA1024x1024|yellow12|blue12|black12|red12|redStar|yellowStar|WordCubedLogo|1024|portrait|icon03|152x152|WCIcon152x152|images|MonthlyIput|gameStrings|json|split|splice|loadProgress|progress|file|loaded|success|setDate|initializeDefaultPlugins|WordCubedMelody|registerManifest|createInstance|loop|typeof|Storage|localStorage||getItem|tMusic|pause|FastClick|attach||orientationchange|landscape|dblclick|touchmove|tooltip|tapHintsButton|tapSettingsButton|tapGamesButton|ffccff|text|substring|css|color|cccccc|150|216|wordListPlay|ads|interstitial|ShowAllGamesClose|tapInfoButton|tab11|tab12|tab21|tab22|tab3|http|jwackapps|_blank|available|iOS|in|the|App|Store|cubed|search|id672401704|head|id561785863|testFrame|handleMouseDownonCanvas|handleMouseMoveonCanvas|handleMouseUponCanvas|handleMouseOutonCanvas|cancelAnimFrame|particleEmitterRed|particleEmitterBlue|particleEmitterBlack|createTexture|pixelStorei|UNPACK_FLIP_Y_WEBGL|texImage2D|UNSIGNED_BYTE|TEXTURE_MAG_FILTER|LINEAR|TEXTURE_MIN_FILTER|LINEAR_MIPMAP_NEAREST|generateMipmap|innerWidth|innerHeight|842|imghints|btnhints|imgsettings|btnsettings|imggames|btngames|imginfo|btninfo|Stars|Letter|scoreratebox|scorebox|600|popupHeader2|popupHeader3|popupHeader6|Winmessage|closepopup6|btnNewGame|btnSwitchGame|popupIHelp|popupHeader7'.split('|'),0,{}))
+    var gl;
+    var canvas;
+    var allLettersTexture;
+    var yellowStarTexture;
+    var redStarTexture;
+    var blueStarTexture;
+    var blackStarTexture;
     
+    var containerScale = true;
+    var browserWidth;
+    var browserHeight;
+    var pixelRatio;
+    var tempScale;
+    var tempScaleW;
+    var tempScaleH;
+    var mvp;
+    //var agent;
+    //var isFireFoxDesktop;
+    //var isWindowsPhone;
+    var cWidth;
+    
+    var tappedHWDCheckBox = false;
+    var tappedICCheckBox = false;
+    //var iHelp = true;
+    var iHelp = false;
+    var iHelpOpen = undefined;
+    
+    var friendCache = {};
+    
+    
+    var loggedIntoFaceBook = false;
+
+    function initGL(canvas) {
+        
+        gl = WebGLUtils.setupWebGL(canvas);
+        if (!gl) {
+            //alert("Could not initialise WebGL, sorry :-(");
+            $( "#container" ).fadeTo(400, 1.0);
+            validCanvas = false;
+            return;
+        }
+        validCanvas = true;
+        //gl.viewportWidth = canvas.width;
+        //gl.viewportHeight = canvas.height;
+        
+    }
+
+
+    function getShader(gl, id) {
+        var shaderScript = document.getElementById(id);
+        if (!shaderScript) {
+            return null;
+        }
+
+        var str = "";
+        var k = shaderScript.firstChild;
+        while (k) {
+            if (k.nodeType === 3) {
+                str += k.textContent;
+            }
+            k = k.nextSibling;
+        }
+
+        var shader;
+        if (shaderScript.type === "x-shader/x-fragment") {
+            shader = gl.createShader(gl.FRAGMENT_SHADER);
+        } else if (shaderScript.type === "x-shader/x-vertex") {
+            shader = gl.createShader(gl.VERTEX_SHADER);
+        } else {
+            return null;
+        }
+
+        gl.shaderSource(shader, str);
+        gl.compileShader(shader);
+
+        if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS) && !gl.isContextLost()) {
+            alert(gl.getShaderInfoLog(shader));
+            return null;
+        }
+
+        return shader;
+    }
+
+
+    var shaderProgram;
+
+    function initShaders() {
+        var fragmentShader = getShader(gl, "shader-fs");
+        var vertexShader = getShader(gl, "shader-vs");
+
+        shaderProgram = gl.createProgram();
+        gl.attachShader(shaderProgram, vertexShader);
+        gl.attachShader(shaderProgram, fragmentShader);
+        gl.linkProgram(shaderProgram);
+
+        if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS) && !gl.isContextLost()) {
+            alert("Could not initialise shaders");
+        }
+
+        gl.useProgram(shaderProgram);
+
+        shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+        gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+        shaderProgram.vertexColorAttribute = gl.getAttribLocation(shaderProgram, "aVertexColor");
+        gl.enableVertexAttribArray(shaderProgram.vertexColorAttribute);
+        
+        shaderProgram.vertexNormalAttribute = gl.getAttribLocation(shaderProgram, "aVertexNormal");
+        gl.enableVertexAttribArray(shaderProgram.vertexNormalAttribute);
+        
+        shaderProgram.textureCoordAttribute = gl.getAttribLocation(shaderProgram, "aTextureCoord");
+        gl.enableVertexAttribArray(shaderProgram.textureCoordAttribute);
+        
+        shaderProgram.textureCoordAttributeuv = gl.getAttribLocation(shaderProgram, "aTextureCoorduv");
+        gl.enableVertexAttribArray(shaderProgram.textureCoordAttributeuv);
+        
+        shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+        shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
+        shaderProgram.nMatrixUniform = gl.getUniformLocation(shaderProgram, "uNMatrix");
+        shaderProgram.samplerUniform = gl.getUniformLocation(shaderProgram, "uSampler");
+        
+        shaderProgram.lightPositionUniform = gl.getUniformLocation(shaderProgram, "uLightPosition");
+        shaderProgram.ambientLightColorUniform = gl.getUniformLocation(shaderProgram, "uAmbientLightColor");
+        shaderProgram.diffuseLightColorUniform = gl.getUniformLocation(shaderProgram, "uDiffuseLightColor");
+        shaderProgram.specularLightColorUniform = gl.getUniformLocation(shaderProgram, "uSpecularLightColor");
+        
+        shaderProgram.alphaUniform = gl.getUniformLocation(shaderProgram, "uAlpha");
+        //shaderProgram.rAngleUniform = gl.getUniformLocation(shaderProgram, "uRAngle");
+        //shaderProgram.xUminUniform = gl.getUniformLocation(shaderProgram, "xUmin");
+        //shaderProgram.xVminUniform = gl.getUniformLocation(shaderProgram, "xVmin");
+    }
+
+
+
+
+    var mvMatrix = mat4.create();
+    var mvMatrixStack = [];
+    var pMatrix = mat4.create();
+    
+
+    function mvPushMatrix() {
+        var copyM = mat4.create();
+        mat4.copy(copyM, mvMatrix);
+        mvMatrixStack.push(copyM);
+    }
+
+    function mvPopMatrix() {
+        if (mvMatrixStack.length === 0) {
+            throw "Invalid popMatrix!";
+        }
+        mvMatrix = mvMatrixStack.pop();
+    }
+
+
+    function setMatrixUniforms() {
+        gl.uniformMatrix4fv(shaderProgram.pMatrixUniform, false, pMatrix);
+        gl.uniformMatrix4fv(shaderProgram.mvMatrixUniform, false, mvMatrix);
+        
+        var normalMatrix = mat3.create();
+        mat3.identity(normalMatrix);
+        mat3.normalFromMat4(normalMatrix, mvMatrix);
+        gl.uniformMatrix3fv(shaderProgram.nMatrixUniform, false, normalMatrix);
+    }
+
+
+    function degToRad(degrees) {
+        return degrees * Math.PI / 180;
+    }
+
+
+    var requestId;
+    var elapsedTime = 0;
+    var frameCount = 0;
+    var lastTime = new Date().getTime();
+    
+    
+    var fps,fpsInterval,startTime,now,then,elapsed;
+    
+    
+    function GameLoop() {  //Game Loop
+        requestId = window.requestAnimFrame(GameLoop, canvas);
+        
+        //handleKeys(); //Remove
+            
+        /*
+        var now = new Date().getTime();
+
+        frameCount++;
+        elapsedTime += (now - lastTime);
+
+        lastTime = now;
+
+        if(elapsedTime >= 1000) {
+            fps = frameCount;
+            frameCount = 0;
+            elapsedTime -= 1000;
+
+            document.getElementById('ycoord2').innerHTML = "FPS: " + fps;
+        }
+
+        lastTime = new Date().getTime();
+        */
+
+        now = Date.now();
+        elapsed = now - then;
+
+        // if enough time has elapsed, draw the next frame
+
+        if (elapsed > fpsInterval) {
+
+            // Get ready for next frame by setting then=now, but also adjust for your
+            // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
+            then = now - (elapsed % fpsInterval);
+
+            // Put your drawing code here
+            SceneControllerUpdateModel();
+            SceneControllerRenderScene();
+
+        }
+        
+    }
+    
+
+    var startTimer;
+    var validCanvas;
+    var soundTrack;
+    var soundEffects;
+    var SoundInstanceBM;
+    var initialFontSize;
+    var dismisInstruction = true;
+    //var testContext = true;
+    
+    
+    function webGLStart() {
+        
+        if(iWinConsole){
+
+            iConsole.game.ready().result( function( resultData ) {
+
+
+                webGLStartMain();
+
+            } );
+
+        }
+
+        loadAssets();
+        
+    }
+    
+    
+    function webGLStartNoiWin() {
+        
+        webGLStartMain();
+        
+    }
+    
+    
+    function webGLStartMain() {
+        //document.getElementById('agentdisplay').innerHTML = agent;
+        
+        
+        validCanvas = true;
+        canvas = document.getElementById("WordCubed-canvas");
+        //canvas = WebGLDebugUtils.makeLostContextSimulatingCanvas(canvas); //Remove
+
+        canvas.addEventListener(
+            "webglcontextlost", handleContextLost, false);
+        canvas.addEventListener(
+            "webglcontextrestored", handleContextRestored, false);
+
+        setGameDimensions();
+        
+        var mvcontent = document.getElementById('WordCubed-canvas');
+        if(validCanvas){
+            if(tempScale > 1){
+                mvcontent.setAttribute('width',cWidth);
+                mvcontent.setAttribute('height',cWidth);
+            }
+            else{
+                mvcontent.setAttribute('width',640);
+                mvcontent.setAttribute('height',640);
+            }
+            mvcontent.style.width = cWidth + "px";
+            mvcontent.style.height = cWidth + "px";
+            
+            //gl.viewportWidth = canvas.width;
+            //gl.viewportHeight = canvas.height;
+        }
+        initialFontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        initGL(canvas);
+        
+        /*
+        if(testContext){
+            testContext = false;
+            canvas.loseContextInNCalls(1);
+        }
+        */
+       
+        
+        
+        if(validCanvas){
+            gl.viewportWidth = canvas.width;
+            gl.viewportHeight = canvas.height;
+            
+            if(!isWindowsPhone){
+                initBackGroundMusic();
+            }
+            
+            
+            initShaders();
+            initContext();
+            
+            //document.onkeydown = handleKeyDown; //Remove
+            //document.onkeyup = handleKeyUp; //Remove
+
+            if(isFireFoxDesktop){
+                canvas.ondblclick = handleMouseDblClickonCanvas;
+            }
+            
+            var tImage1 = preload.getResult("image1");
+            yellowStarTexture = loadTexture(tImage1);
+            var tImage2 = preload.getResult("image2");
+            blueStarTexture = loadTexture(tImage2);
+            var tImage3 = preload.getResult("image3");
+            blackStarTexture = loadTexture(tImage3);
+            var tImage4 = preload.getResult("image4");
+            redStarTexture = loadTexture(tImage4);
+            var tImage0 = preload.getResult("image0");
+            allLettersTexture = loadTexture(tImage0);
+            
+            //Test Key: TFJY3DXMS8P63BVYFBN3
+            FlurryAgent.startSession("TFJY3DXMS8P63BVYFBN3");
+            FlurryAgent.setAppVersion("1.01");
+            
+            sceneControllerInit();
+            
+            //setGameDimensions();
+            
+            sceneControllerLoadScene();
+            
+            fpsInterval = 1000/30;
+            then = Date.now();
+            startTime = then;
+            
+            
+            if(loggedIntoFaceBook){
+                dismisInstruction = false;
+                startTimer = setTimeout(function(){
+                    
+                    $( "#container" ).fadeTo(3000, 1.0);
+                    if(!iWinConsole){
+                        $( "#progressbar" ).fadeTo(500, 0.0, function() {
+                            $('#progressbar').remove();
+                        });
+                    }
+                    if (Math.abs(window.orientation) !== 90){
+                        $( "#splash" ).fadeTo(500, 0.0, function() {
+                            $('#splash').remove();
+                        });
+                    }
+                    else{
+                        setTimeout(function(){
+                            var gPortrait = preload.getResult("portraitImage");
+                            gPortrait.id = "progressbar";
+                            document.body.appendChild(gPortrait);
+                            document.getElementById('progressbar').style.width = (240 * tempScale) + "px";
+                            document.getElementById('progressbar').style.height = (240 * tempScale) + "px";
+                            document.getElementById('progressbar').style.top = "65%";
+                            document.getElementById('progressbar').style.bottom = "35%";
+                        }, 1000);
+                    }
+                    
+                    lowLag.init({'urlPrefix':'sounds/'});
+                    lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
+                    lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
+                    
+                    
+                    welcomeMessage();
+                    GameLoop();
+                }, 2000);
+            }
+            else{
+                if(!iWinConsole){
+                    $( "#progressbar" ).fadeTo(500, 0.0, function() {
+                        $('#progressbar').remove();
+                    });
+                }
+                
+                lowLag.init({'urlPrefix':'sounds/'});
+                lowLag.load(['Blop-Sound.mp3','Blop-Sound.wav','Blop-Sound.ogg'], "Blop");
+                lowLag.load(['Star-Sound.mp3','Star-Sound.wav','Star-Sound.ogg'], "StarSound");
+                
+                pleaseLogintoFacebook();
+                
+            }
+            
+            //startTimer = setTimeout(function(){GameLoop();}, 1500);
+            //$( "#popupIHelp" ).popup("open", { positionTo: "#ycoord2", transition: "pop"});
+            //setTimeout(function(){$( "#popupIHelp" ).popup("close");}, 4000);
+        }
+        else{ // No valid context for canvas
+
+            //setGameDimensions();
+            if(!iWinConsole){
+                $('#progressbar').remove();
+            }
+            $('#splash').remove();
+
+        }
+        
+    }
+    
+    
+    
+    
+    function ClosePopupHints(){
+        $( "#popupHints" ).popup("close");
+        PlayBloop();
+    }
+    
+    
+    function ClosePopupSettings(){
+        
+        if(tappedHWDCheckBox || tappedICCheckBox){
+            
+            tappedHWDCheckBox = false;
+            tappedICCheckBox = false;
+            
+            ButtonNewGameSettings();
+        }
+        else{
+            
+            $( "#popupSettings" ).popup("close");
+            PlayBloop();
+            
+            if($('#check1').prop('checked')){
+                sceneController.maxWordKey = "High Word Density";
+            }
+            else
+            {
+                sceneController.maxWordKey = "Low Word Density";
+            }
+            if($('#check2').prop('checked')){
+                sceneController.cubeColorKey = "Inverse";
+            }
+            else
+            {
+                sceneController.cubeColorKey = "Normal";
+            }
+            
+            setTimeout(function(){
+                document.getElementById('placeCheck1').innerHTML = "";
+                document.getElementById('placeCheck2').innerHTML = "";
+                document.getElementById('placeCheck3').innerHTML = "";
+                document.getElementById('placeCheck4').innerHTML = "";
+            }, 100);
+            
+        }
+        
+    }
+    
+    
+    function ClosePopupTabs(){
+        
+        if(dismisInstruction){
+            dismisInstruction = false;
+            $( "#container" ).fadeTo(3000, 1.0);
+            startTimer = setTimeout(function(){GameLoop();}, 500);
+            
+            if(!isFireFoxDesktop){
+                $( "#popupTabs" ).popup("close", {transition: "pop"});
+            }
+            
+        }
+        
+        $( "#popupTabs" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupBasic(){
+        $( "#popupBasic" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupWin(){
+        $( "#popupWin" ).popup("close");
+        PlayBloop();
+    }
+    
+    function ClosePopupWelcome(){
+        $( "#popupWelcome" ).popup("close");
+        PlayBloop();
+        
+        if(!loggedIntoFaceBook){
+            //alert('Going to FaceBook');
+            top.location.href = 'http://www.facebook.com/appcenter/wc-weekly';
+        }
+        
+    }
+    
+    
+    function PlayBloop(){
+
+        if(soundEffects){
+            lowLag.play("Blop");
+        }
+
+    };
+    
+    
+    
+    function StartFaceBook(){
+        
+        
+        
+    }
+    
+    
+    var preload;
+    var getMeter1;
+    var addToMeter;
+    function loadAssets(){
+        
+        getMeter1 = document.getElementById('meter1');
+        getMeter1.style.width = "0%";
+        addToMeter = 0;
+        if(iWinConsole){
+            $('#progressbar').remove();
+        }
+        
+        var manifest = [
+            {src:"LettersTA1024x1024.png", id:"image0"},
+            {src:"particle-yellow12-atlas.png", id:"image1"},
+            {src:"particle-blue12-atlas.png", id:"image2"},
+            {src:"particle-black12-atlas.png", id:"image3"},
+            {src:"particle-red12-atlas.png", id:"image4"},
+            {src:"hint2.png", id:"hint2"},
+            {src:"settings2.png", id:"settings2"},
+            {src:"games2.png", id:"games2"},
+            {src:"instructions2.png", id:"instructions2"},
+            {src:"blueStar40x40.png", id:"blueStar"},
+            {src:"redStar40x40.png", id:"redStar"},
+            {src:"yellowStar40x40.png", id:"yellowStar"},
+            {src:"blueStar40x40.png", id:"blueStar2"},
+            {src:"redStar40x40.png", id:"redStar2"},
+            {src:"yellowStar40x40.png", id:"yellowStar2"},
+            {src:"blueStar40x40.png", id:"blueStar3"},
+            {src:"redStar40x40.png", id:"redStar3"},
+            {src:"yellowStar40x40.png", id:"yellowStar3"},
+            //{src:"WordCubedLogo-1024.png", id:"WordCubedLogo"},
+            {src:"WordCubedLogo-1024.png", id:"WordCubedLogo2"},
+            {src:"portrait.png", id:"portraitImage"},
+            {src:"icon03-152x152.png", id:"WHIcon"},
+            {src:"WCIcon152x152.png", id:"WCIcon"}
+        ];
+        
+        
+        preload = new createjs.LoadQueue(true, "images/");
+        
+        
+
+        // Use this instead to use tag loading
+        //preload = new createjs.PreloadJS(false);
+
+        //preload.on("progress", handleProgress);
+        preload.on("complete", handleComplete);
+        preload.on("fileload", handleFileLoad);
+        preload.loadManifest(manifest);
+        
+        
+    };
+    
+    
+    function handleComplete(event) {
+        
+        loadAssets2();
+    }
+    
+    
+    var preload2;
+    // Monthly List
+    function loadAssets2(){
+        
+        var manifest2 = [
+            {src:"MonthlyIput.txt", id:"list0"},
+            {src:"gameStrings.json", id:"gStrings"}
+        ];
+        
+        preload2 = new createjs.LoadQueue(true, "wordlists/");
+        
+        //preload.on("progress", handleProgress);
+        preload2.on("complete", handleComplete2);
+        preload2.on("fileload", handleFileLoad);
+        preload2.loadManifest(manifest2);
+        
+    };
+    
+    function handleComplete2(event) {
+        
+        loadAssets3();
+    }
+    
+    
+    var preload3;
+    var weeklyWordLists = new Array();
+    var weeklyLists;
+    
+    // All Word Lists
+    function loadAssets3(){
+        
+        readGameStrings = preload2.getResult("gStrings");
+        
+        wordListString = preload2.getResult("list0");
+        weeklyLists = wordListString.split("\n");
+        var gameDate = getTodaysDate();
+        var yesterday = getPreviousDate(1);
+        var twoDaysAgo = getPreviousDate(2);
+        
+        for(var i = 0; i < weeklyLists.length; i=i+3){
+            var tableElement = new TableRowObject();
+            tableElement.init();
+            tableElement.date = weeklyLists[i];
+            tableElement.cubeSize = weeklyLists[i+1];
+            tableElement.wordList = weeklyLists[i+2];
+            weeklyWordLists.push(tableElement);
+        }
+
+        // get current date plus last 12 days of puzzles
+        for(var i = weeklyWordLists.length - 1; i >= 0; i=i-1){
+            var checkGame = weeklyWordLists[i];
+            if(checkGame.date === gameDate || checkGame.date === yesterday || checkGame.date === twoDaysAgo){
+
+                break;
+            }
+            else
+            {
+                weeklyWordLists.pop();
+            }
+        }
+        if(weeklyWordLists.length > 12){
+            var rCount = weeklyWordLists.length - 12;
+            for(var i = 0; i < rCount; i++){
+                weeklyWordLists.splice(0,1);
+            }
+        }
+        var tempRowArray = new Array();
+        var tLength = weeklyWordLists.length;
+        for(var i = 0; i < tLength; i++){
+            var tempE = weeklyWordLists.pop();
+            tempRowArray.push(tempE);
+        }
+        weeklyWordLists = tempRowArray;
+        
+        if(weeklyWordLists.length === 0){
+            var tableElement = new TableRowObject();
+            tableElement.init();
+            tableElement.date = "Fruit  1";
+            tableElement.cubeSize = "4x4";
+            tableElement.wordList = "Fruit.txt";
+            weeklyWordLists.push(tableElement);
+            var tableElement2 = new TableRowObject();
+            tableElement2.init();
+            tableElement2.date = "Fruit  2";
+            tableElement2.cubeSize = "5x5";
+            tableElement2.wordList = "Fruit.txt";
+            weeklyWordLists.push(tableElement2);
+            var tableElement3 = new TableRowObject();
+            tableElement3.init();
+            tableElement3.date = "Fruit  3";
+            tableElement3.cubeSize = "6x6";
+            tableElement3.wordList = "Fruit.txt";
+            weeklyWordLists.push(tableElement3);
+        }
+        
+        var manifest3 = new Array();
+        for(var i = 0; i < weeklyWordLists.length; i++){
+            var tempE = weeklyWordLists[i];
+            var tempM = {
+                src: tempE.wordList,
+                id: tempE.wordList
+            };
+            
+            manifest3.push(tempM);
+        }
+        
+        //var manifest3 = [
+            //{src:"MonthlyIput.txt", id:"list0"}
+        //];
+        
+        preload3 = new createjs.LoadQueue(true, "wordlists/");
+        
+        //preload.on("progress", handleProgress);
+        preload3.on("complete", handleComplete3);
+        preload3.on("fileload", handleFileLoad);
+        preload3.loadManifest(manifest3);
+        
+    };
+    
+    function handleComplete3(event) {
+        
+        getMeter1.style.width = "100%";
+        
+        if(iWinConsole){
+            iConsole.game.loadProgress( { progress: 1, file: '' } );
+
+            iConsole.game.loaded( {
+               success: true
+            } );
+        }
+        else{
+
+            webGLStartNoiWin();
+
+        }
+        
+    }
+    
+    
+    function handleFileLoad(event) {
+        
+        if(!iWinConsole){
+            addToMeter = addToMeter + 2.8;
+            getMeter1.style.width = addToMeter + "%";
+        }
+        
+    }
+    
+    
+    function getTodaysDate(){
+    
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if(dd<10) {
+            dd='0'+dd;
+        } 
+
+        if(mm<10) {
+            mm='0'+mm;
+        } 
+
+        yyyy = '/'+yyyy;
+        yyyy = yyyy.substr(3,2);
+
+        today = mm+'/'+dd+'/'+yyyy;
+
+        return today;
+    }
+    
+    
+    function getPreviousDate(minusDays){
+    
+        var today = new Date();
+        var newdate = new Date(today);
+        newdate.setDate(newdate.getDate() - minusDays);
+        
+        var dd = newdate.getDate();
+        var mm = newdate.getMonth()+1; //January is 0!
+        var yyyy = newdate.getFullYear();
+
+        if(dd<10) {
+            dd='0'+dd;
+        } 
+
+        if(mm<10) {
+            mm='0'+mm;
+        } 
+
+        yyyy = '/'+yyyy;
+        yyyy = yyyy.substr(3,2);
+
+        newdate = mm+'/'+dd+'/'+yyyy;
+
+        return newdate;
+    }
+    
+    
+    function initBackGroundMusic(){
+        
+        // if initializeDefaultPlugins returns false, we cannot play sound in this browser
+        if (!createjs.Sound.initializeDefaultPlugins()) {return;}
+
+        var audioPath = "sounds/";
+        var manifest = [
+            {id:"BackGroundMusic", src:"WordCubedMelody.mp3"}
+        ];
+
+        //createjs.Sound.alternateExtensions = ["ogg"];
+        createjs.Sound.addEventListener("fileload", handleLoad);
+        createjs.Sound.registerManifest(manifest, audioPath);
+        
+    };
+    
+    
+    function handleLoad(event) {
+        
+        SoundInstanceBM = createjs.Sound.createInstance("BackGroundMusic");
+        
+        SoundInstanceBM.play({loop:-1});
+        if(typeof(Storage)!=="undefined")
+        {
+            soundTrack = localStorage.getItem("tMusic");
+            if(soundTrack === "false"){
+                soundTrack = false;
+                SoundInstanceBM.pause();
+            }
+            else{
+                soundTrack = true;
+
+            }
+
+        }
+        
+    }
+    
+    
+    
+    $(function() {
+        FastClick.attach(document.body);
+    });
+    
+    
+    
+    $(window).on("orientationchange",function(event){
+        
+        if(event.orientation === "landscape"){
+            
+            $( "#popupHints" ).popup("close");
+            $( "#popupSettings" ).popup("close");
+            $( "#popupGames" ).popup( "close" );
+            $( "#popupTabs" ).popup("close");
+            $( "#popupWin" ).popup("close");
+            $( "#popupBasic" ).popup("close");
+            
+            var gLogoImage2 = preload.getResult("WordCubedLogo2");
+            gLogoImage2.id = "splash";
+            document.body.appendChild(gLogoImage2);
+
+            var gPortrait = preload.getResult("portraitImage");
+            gPortrait.id = "progressbar";
+            document.body.appendChild(gPortrait);
+            document.getElementById('progressbar').style.width = (240 * tempScale) + "px";
+            document.getElementById('progressbar').style.height = (240 * tempScale) + "px";
+            document.getElementById('progressbar').style.top = "65%";
+            document.getElementById('progressbar').style.bottom = "35%";
+            
+        }
+        else{
+            
+            $('#splash').remove();
+            $('#progressbar').remove();
+        }
+        
+    });
+    
+    
+    
+    
+    $(document).ready(function(){
+        
+        $("*").dblclick(function(e){
+            e.preventDefault();
+        });
+    });
+
+    
+    
+    $(document).bind(
+        'touchmove', function(e) {
+            e.preventDefault();
+        }
+    );
+    
+    
+    /*
+    $(document).on(
+        "touchmove", function(e){
+            
+            if(iHelpOpen){
+                $( "#popupIHelp" ).popup("close");
+                iHelpOpen = undefined;
+            }
+            
+    });
+    
+   
+   $(function() {
+        $( "#container" ).on({
+            "touchend mouseup" : function(e){ 
+                
+                if(iHelp){
+                    
+                    document.getElementById('header4').innerHTML = readGameStrings.header4;
+                    
+                    iHelp = false;
+                    iHelpOpen = $( "#popupIHelp" ).popup("open", { positionTo: "#ycoord2", transition: "pop"});
+                    
+                }
+                
+            }
+        });
+    });
+    */
+   
+    
+    
+    $(function() {
+        $( document ).tooltip();
+    });
+    
+    
+    
+    function tapHintsButton(){
+        
+        if(validCanvas){
+            
+            document.getElementById('header1').innerHTML = readGameStrings.header1;
+            document.getElementById('showHint').innerHTML = readGameStrings.showHint;
+            document.getElementById('solveTheCube').innerHTML = readGameStrings.solveTheCube;
+            document.getElementById('closepopup2').innerHTML = readGameStrings.closepopup2;
+            
+            PlayBloop();
+
+            $( "#popupHints" ).popup("open", { positionTo: "#topHeader",
+                                               transition: "pop"
+
+            });
+        }
+        
+    }
+    
+    
+    function tapSettingsButton(){
+        
+        if(validCanvas){
+            
+            
+            
+            PlayBloop();
+
+            
+            //$( "#placeCheck1" ).empty();
+            //$( "#placeCheck2" ).empty();
+            //$( "#placeCheck3" ).empty();
+            //$( "#placeCheck4" ).empty();
+            document.getElementById('placeCheck1').innerHTML = "";
+            document.getElementById('placeCheck2').innerHTML = "";
+            document.getElementById('placeCheck3').innerHTML = "";
+            document.getElementById('placeCheck4').innerHTML = "";
+
+            if(sceneController.maxWordKey === "High Word Density"){
+                //document.getElementById('placeCheck1').innerHTML = "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\" checked><label id=\"check1id\" for=\"check1\">High Word Density</label>";
+                $( "#placeCheck1" ).append( "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\" checked><label id=\"check1id\" for=\"check1\">High Word Density</label>" );
+            }
+            else{
+                //document.getElementById('placeCheck1').innerHTML = "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\"><label id=\"check1id\" for=\"check1\">High Word Density</label>";
+                $( "#placeCheck1" ).append( "<input type=\"checkbox\" onclick=\"ToggleDensity();\" id=\"check1\"><label id=\"check1id\" for=\"check1\">High Word Density</label>" );
+            }
+
+            if(sceneController.cubeColorKey === "Inverse"){
+                $( "#placeCheck2" ).append( "<input type=\"checkbox\" onclick=\"ToggleInverse();\" id=\"check2\" checked><label id=\"check2id\" for=\"check2\">Inverse Colors</label>" );
+            }
+            else{
+                $( "#placeCheck2" ).append( "<input type=\"checkbox\" onclick=\"ToggleInverse();\" id=\"check2\"><label id=\"check2id\" for=\"check2\">Inverse Colors</label>" );
+            }
+
+            if(soundTrack === true){
+                $( "#placeCheck3" ).append( "<input type=\"checkbox\" onclick=\"ToggleMusic();\" id=\"check3\" checked><label id=\"check3id\" for=\"check3\">Background Music</label>" );
+            }
+            else{
+                $( "#placeCheck3" ).append( "<input type=\"checkbox\" onclick=\"ToggleMusic();\" id=\"check3\"><label id=\"check3id\" for=\"check3\">Background Music</label>" );
+            }
+
+            if(soundEffects === true){
+                $( "#placeCheck4" ).append( "<input type=\"checkbox\" onclick=\"ToggleSound();\" id=\"check4\" checked><label id=\"check4id\" for=\"check4\">Sounds</label>" );
+            }
+            else{
+                $( "#placeCheck4" ).append( "<input type=\"checkbox\" onclick=\"ToggleSound();\" id=\"check4\"><label id=\"check4id\" for=\"check4\">Sounds</label>" );
+            }
+
+            gPopup = document.getElementById('check3id');
+            gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+            gPopup = document.getElementById('check4id');
+            gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+            gPopup = document.getElementById('check1id');
+            gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+            gPopup = document.getElementById('check2id');
+            gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+            
+            document.getElementById('header2').innerHTML = readGameStrings.header2;
+            document.getElementById('check1id').innerHTML = readGameStrings.check1id;
+            document.getElementById('check2id').innerHTML = readGameStrings.check2id;
+            document.getElementById('check3id').innerHTML = readGameStrings.check3id;
+            document.getElementById('check4id').innerHTML = readGameStrings.check4id;
+            document.getElementById('buttonNewGame').innerHTML = readGameStrings.buttonNewGame;
+            document.getElementById('closepopup3').innerHTML = readGameStrings.closepopup3;
+            
+            $( "#popupSettings" ).popup("open", { positionTo: "#topHeader",
+                                            transition: "pop" 
+
+            });
+
+
+            $(function(){
+                $("#check1id").on( "tap", function( event ){
+
+                  console.log('Tapped Check Box High Word Density');
+                  tappedHWDCheckBox = !tappedHWDCheckBox;
+
+                });      
+            });
+
+            $(function(){
+                $("#check1").on( "tap", function( event ){
+
+                  console.log('Tapped Check Box High Word Density');
+                  tappedHWDCheckBox = !tappedHWDCheckBox;
+
+                });      
+            });
+
+            $(function(){
+                $("#check2id").on( "tap", function( event ){
+
+                  console.log('Tapped Check Box Inverse Colors');
+                  tappedICCheckBox = !tappedICCheckBox;
+
+                });      
+            });
+
+            $(function(){
+                $("#check2").on( "tap", function( event ){
+
+                  console.log('Tapped Check Box Inverse Colors');
+                  tappedICCheckBox = !tappedICCheckBox;
+
+                });      
+            });
+                
+        }
+        
+    }
+    
+    
+    function tapGamesButton(){
+        
+        if(validCanvas){
+                
+            PlayBloop();
+
+            ShowAllGames();
+
+        }
+        
+    }
+    
+    
+    function ShowAllGames(){
+        
+        if(validCanvas){
+            
+            document.getElementById('popupHeader41').innerHTML = readGameStrings.popupHeader41;
+            document.getElementById('popupHeader42').innerHTML = readGameStrings.popupHeader42;
+            document.getElementById('popupHeader43').innerHTML = readGameStrings.popupHeader43;
+            document.getElementById('popupHeader44').innerHTML = readGameStrings.popupHeader44;
+            document.getElementById('popupHeader45').innerHTML = readGameStrings.popupHeader45;
+            
+            
+            var tFontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+
+            //$( "#users tbody" ).empty();
+            document.getElementById('usersTBody').innerHTML = "";
+            
+            for(var i = 0; i < weeklyWordLists.length; i++){
+                var tElement = weeklyWordLists[i];
+                if(tElement.date === sceneController.currentGame){
+                   $( "#users tbody" ).append( "<tr style=\"background: #ffccff\">" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.date + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.cubeSize + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.highScore + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.scoreRate + "</td>" +
+                    "</tr>" );
+                }
+                else{
+                    $( "#users tbody" ).append( "<tr>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.date + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.cubeSize + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.highScore + "</td>" +
+                    "<td style=\"font-size:" + tFontSize + "\">" + tElement.scoreRate + "</td>" +
+                    "</tr>" );
+                }
+
+            }
+
+
+            if(sceneController.currentGame !== null){
+
+                $( "#popupGames" ).popup("open", { positionTo: "#topAlign",
+                                                  transition: "pop" 
+
+                });
+            }
+
+
+
+            $(function(){
+                $("#usersTBody tr").on( "tap", function( event ){
+                  //$( event.target ).addClass( "tap" );
+                        var listChanged;
+                        var selectedList = $( this ).text();
+                        selectedList = selectedList.substring(0, 8);
+
+                        PlayBloop();
+
+                        $( this ).css("background-color", "#cccccc");
+
+
+                        if(!(sceneController.currentGame === selectedList)){
+                            listChanged = true;
+                            
+                        }
+                        else {
+                            
+                            listChanged = false;
+                        }
+
+
+                        if(!(sceneController.currentGame === selectedList)){
+                            for(var i = 0; i < weeklyWordLists.length; i++){
+                                var tElement = weeklyWordLists[i];
+                                if(tElement.date === selectedList){
+
+                                    if (tElement.cubeSize === "4x4"){
+                                        sceneController.preCubeSize = 96;
+                                    }
+                                    else if (tElement.cubeSize === "5x5"){
+                                        sceneController.preCubeSize = 150;
+                                    }
+                                    else if (tElement.cubeSize === "6x6"){
+                                        sceneController.preCubeSize = 216;
+                                    }
+                                    //sceneController.wordListPlay = "wordlists/" + tElement.wordList;
+                                    sceneController.wordListPlay = tElement.wordList;
+                                    sceneController.currentGame = tElement.date;
+                                    break;
+                                }
+                            }
+                            
+                            
+                            setTimeout(function(){
+
+                                $( "#popupGames" ).popup( "close" );
+
+                                if(iWinConsole){
+
+                                    iConsole.ads.show( {
+                                        type: 'interstitial'
+                                    } ).result( function( resultData ) {
+                                        sceneController.endAnimationActive = true;
+                                    } );
+
+                                }
+                                else{
+                                    sceneController.endAnimationActive = true;
+                                }
+                                
+                                setTimeout(function(){
+                                    document.getElementById('usersTBody').innerHTML = "";
+                                }, 100);
+                                
+                                
+                            }, 300);
+
+                        }
+                        else{
+                            setTimeout(function(){$( "#popupGames" ).popup( "close" );
+                                
+                                setTimeout(function(){
+                                    document.getElementById('usersTBody').innerHTML = "";
+                                }, 100);
+                                
+                            }, 300);
+                        }
+
+
+                  });
+
+            });
+
+
+        }
+        
+    }
+    
+    
+    function ShowAllGamesClose(){
+        
+        ClosePopupWin();
+        setTimeout(function(){ShowAllGames();}, 500);
+        
+        
+    }
+    
+    
+    function tapInfoButton(){
+        
+        document.getElementById('popupHeader51').innerHTML = readGameStrings.popupHeader51;
+        document.getElementById('popupHeader52').innerHTML = readGameStrings.popupHeader52;
+        document.getElementById('popupHeader53').innerHTML = readGameStrings.popupHeader53;
+        document.getElementById('popupHeader54').innerHTML = readGameStrings.popupHeader54;
+        document.getElementById('closepopup5').innerHTML = readGameStrings.closepopup5;
+        
+        
+        document.getElementById('tabs-1x').innerHTML = "";
+        var gBlueStarImage = preload.getResult("blueStar3");
+        gBlueStarImage.id = "image54";
+        gBlueStarImage.alt= "Blue";
+        var gRedStarImage = preload.getResult("redStar3");
+        gRedStarImage.id = "image55";
+        gRedStarImage.alt= "Red";
+        var gYellowStarImage = preload.getResult("yellowStar3");
+        gYellowStarImage.id = "image56";
+        gYellowStarImage.alt= "Yellow";
+        document.getElementById('tabs-1x').appendChild(document.createTextNode(readGameStrings.tab11));
+        document.getElementById('tabs-1x').appendChild(gBlueStarImage);
+        document.getElementById('tabs-1x').appendChild(gRedStarImage);
+        document.getElementById('tabs-1x').appendChild(gYellowStarImage);
+        document.getElementById('tabs-1x').appendChild(document.createTextNode(readGameStrings.tab12));
+        
+        document.getElementById('tabs-2x').innerHTML = "";
+        var hgBlueStarImage2 = preload.getResult("blueStar2");
+        hgBlueStarImage2.id = "image51";
+        hgBlueStarImage2.alt= "Blue";
+        var hgRedStarImage2 = preload.getResult("redStar2");
+        hgRedStarImage2.id = "image52";
+        hgRedStarImage2.alt= "Red";
+        var hgYellowStarImage2 = preload.getResult("yellowStar2");
+        hgYellowStarImage2.id = "image53";
+        hgYellowStarImage2.alt= "Yellow";
+        document.getElementById('tabs-2x').appendChild(document.createTextNode(readGameStrings.tab21));
+        document.getElementById('tabs-2x').appendChild(hgBlueStarImage2);
+        document.getElementById('tabs-2x').appendChild(hgRedStarImage2);
+        document.getElementById('tabs-2x').appendChild(hgYellowStarImage2);
+        document.getElementById('tabs-2x').appendChild(document.createTextNode(readGameStrings.tab22));
+        
+        document.getElementById('tabs-3x').innerHTML = readGameStrings.tab3;
+        
+        
+        if(iWinConsole){
+            document.getElementById('tabs-1w').innerHTML = "Copyright &copy; 2014 JWACK APPS<br>All rights reserved.<br>";
+            document.getElementById('tabs-2w').innerHTML = "Questions, comments, and issues may be directed to <a href=\"mailto:support@iwin.com?Subject=Word%20Cubed%20Weekly\" target=\"_top\">support@iwin.com</a>";
+        }
+        else{
+            document.getElementById('tabs-1w').innerHTML = "Copyright &copy; 2014 <a href=\"http://jwackapps.com\"  target=\"_blank\">JWACK APPS</a><br>All rights reserved.<br><br><br>3D Word Games available for iOS in the App Store.";
+            document.getElementById('tabs-2w').innerHTML = "<br><br>Questions, comments, and issues may be directed to <a href=\"mailto:wordheader@gmail.com?Subject=Word%20Cubed%20Weekly\" target=\"_top\">wordheader@gmail.com</a>";
+            document.getElementById('tabs-3ww').innerHTML = "Word Cubed";
+            document.getElementById('tabs-4ww').innerHTML = "Word Head";
+        }
+        
+        /*
+        document.getElementById('tabs-3w').innerHTML = "";
+        var gLogoImage = preload.getResult("WordCubedLogo");
+        gLogoImage.id = "image60";
+        gLogoImage.alt = "Word Cubed Weekly";
+        gLogoImage.width = "500";
+        gLogoImage.height = "375";
+        document.getElementById('tabs-3w').appendChild(gLogoImage);
+        */
+       
+        document.getElementById('tabs-3w').innerHTML = "";
+        var gLogoImage = preload.getResult("WCIcon");
+        gLogoImage.id = "image60";
+        gLogoImage.alt = "Word Cubed";
+        gLogoImage.width = "152";
+        gLogoImage.height = "152";
+        gLogoImage.onclick = function() {
+            window.location.href = 'https://itunes.apple.com/us/app/word-cubed-3d-word-search/id672401704?mt=8';
+        };
+        document.getElementById('tabs-3w').appendChild(gLogoImage);
+        
+        document.getElementById('tabs-4w').innerHTML = "";
+        var gLogoImage2 = preload.getResult("WHIcon");
+        gLogoImage2.id = "image61";
+        gLogoImage2.alt = "Word Head";
+        gLogoImage2.width = "152";
+        gLogoImage2.height = "152";
+        gLogoImage2.onclick = function() {
+            window.location.href = 'https://itunes.apple.com/us/app/word-head/id561785863?mt=8';
+        };
+        document.getElementById('tabs-4w').appendChild(gLogoImage2);
+        
+        
+        gPopup = document.getElementById('image51');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image52');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image53');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image54');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image55');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image56');
+        gPopup.style.width = (30 * tempScale) + "px";
+        gPopup.style.height = (30 * tempScale) + "px";
+        gPopup = document.getElementById('image60');
+        gPopup.style.width = (152 * tempScale) + "px";
+        gPopup.style.height = (152 * tempScale) + "px";
+        gPopup = document.getElementById('image61');
+        gPopup.style.width = (152 * tempScale) + "px";
+        gPopup.style.height = (152 * tempScale) + "px";
+        
+        /*
+        if (loggedIntoFaceBook) {
+            document.getElementById('FBLogIn').innerHTML = "";
+        }
+        */
+       
+        iHelp = false;
+        PlayBloop();
+
+        $("#popupTabs").show();
+        $("#popupTabs").tabs();
+
+        $( "#popupTabs" ).popup("open", { positionTo: "#topAlign",
+                                              transition: "pop" 
+
+        });
+        
+    }
+    
+    
+    
+    $(function(){
+        $( "#bottomFooter" ).bind( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+          if(validCanvas){
+            
+            document.getElementById('closepopup1').innerHTML = readGameStrings.closepopup1;
+            
+            PlayBloop();
+              
+            document.getElementById('wordboxpopup').innerHTML = tempWdX.innerHTML;
+            $( "#popupBasic" ).popup("open", { positionTo: "#container", transition: "pop" });
+            
+          }
+          
+        });
+    });
+    
+    var testFrame = true;
+    $(function(){
+        $( "#starbox" ).bind( "tap", function( event ){
+          $( event.target ).addClass( "tap" );
+          
+            if(validCanvas){
+                
+                document.getElementById('closepopup1').innerHTML = readGameStrings.closepopup1;
+                
+                PlayBloop();
+
+                document.getElementById('wordboxpopup').innerHTML = tempWdX.innerHTML;
+                $( "#popupBasic" ).popup("open", { positionTo: "#container", transition: "pop" });
+                
+               
+               /*
+               if(testFrame){
+                   testFrame = false;
+                   window.cancelAnimFrame(requestId);
+                   requestId = undefined;
+               }
+               else{
+                   testFrame = true;
+                   GameLoop();
+               }
+               */
+              /*
+              PlayBloop();
+              if(testFrame){
+                   testFrame = false;
+                   
+                    var gLogoImage2 = preload.getResult("WordCubedLogo2");
+                    gLogoImage2.id = "splash";
+                    document.body.appendChild(gLogoImage2);
+                    
+                    var gPortrait = preload.getResult("portraitImage");
+                    gPortrait.id = "progressbar";
+                    document.body.appendChild(gPortrait);
+                    document.getElementById('progressbar').style.width = (320 * tempScale) + "px";
+                    document.getElementById('progressbar').style.height = (320 * tempScale) + "px";
+                    document.getElementById('progressbar').style.top = "65%";
+                    document.getElementById('progressbar').style.bottom = "35%";
+                    
+               }
+               else{
+                   testFrame = true;
+                   $('#splash').remove();
+               }
+              */
+               
+            }
+          
+        });
+    });
+    
+   
+    
+   
+   
+    $(function(){
+        
+        $( "#container" ).on( "vmousedown vmousemove vmouseup vmouseout doubletap", function( event ){ 
+       
+            if(validCanvas){
+
+
+                if (event.type === "vmousedown") {  //"vmousedown"
+
+                    handleMouseDownonCanvas(event);
+
+                } else if (event.type === "vmousemove") {  //"vmousemove"
+
+                    handleMouseMoveonCanvas(event);
+
+                } else if (event.type === "vmouseup") {  //"vmouseup"
+
+                    handleMouseUponCanvas(event);
+
+                } else if (event.type === "vmouseout") {
+
+                    handleMouseOutonCanvas(event);
+
+                } else if (event.type === "doubletap") {
+
+                    if(!isFireFoxDesktop){
+                        handleMouseDblClickonCanvas(event);
+                    }
+                }
+
+            }
+        
+        });
+        
+        
+    });
+    
+    
+    /*
+    $(function(){
+
+        $( "#container" ).on( "doubletap", function( event ){  
+
+            if(validCanvas){
+                
+                if (event.type === "doubletap") {
+
+                    handleMouseDblClickonCanvas(event);
+
+                }
+                
+            }
+
+        });
+
+    });
+    */
+   
+   
+   
+   
+    function handleContextLost(event) {
+        
+        //document.getElementById('contextStatus').innerHTML = "Context";
+        
+        event.preventDefault();
+        
+        if(requestId){
+            //cancelRequestAnimationFrame(requestId);
+            
+            window.cancelAnimFrame(requestId);
+            requestId = undefined;
+        }
+        
+    }
+
+    
+    function handleContextRestored(event) {
+        
+        //document.getElementById('contextStatus').innerHTML = "Restore";
+        
+        if(validCanvas){
+            
+            initShaders();
+            initContext();
+            
+            //document.onkeydown = handleKeyDown;
+            //document.onkeyup = handleKeyUp;
+            
+            if(isFireFoxDesktop){
+                canvas.ondblclick = handleMouseDblClickonCanvas;
+            }
+            
+            var tImage1 = preload.getResult("image1");
+            yellowStarTexture = loadTexture(tImage1);
+
+            var tImage2 = preload.getResult("image2");
+            blueStarTexture = loadTexture(tImage2);
+
+            var tImage3 = preload.getResult("image3");
+            blackStarTexture = loadTexture(tImage3);
+
+            var tImage4 = preload.getResult("image4");
+            redStarTexture = loadTexture(tImage4);
+
+            var tImage0 = preload.getResult("image0");
+            allLettersTexture = loadTexture(tImage0);
+            
+            if (particleEmitterYellow){
+                particleEmitterYellow.setParticleX(yellowStarTexture);
+                particleEmitterRed.setParticleX(redStarTexture);
+                particleEmitterBlue.setParticleX(blueStarTexture);
+                particleEmitterBlack.setParticleX(blackStarTexture);
+                
+                GameLoop();
+            }
+            else{
+                
+                webGLStartMain();
+            }
+            
+        }
+        
+    }
+    
+    function loadTexture(str) {
+
+        var newTexture = gl.createTexture();
+        //newTexture.image = new Image();
+        newTexture.image = str;
+
+        //newTexture.image.onload = function() {
+            handleLoadedTexture(newTexture);
+        //};
+
+        //newTexture.image.src = str;
+
+        return newTexture;
+    }
+
+
+    function handleLoadedTexture(texture) {
+
+
+        gl.bindTexture(gl.TEXTURE_2D, texture);
+        gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+        gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_NEAREST);
+        gl.generateMipmap(gl.TEXTURE_2D);
+
+        gl.bindTexture(gl.TEXTURE_2D, null);
+
+    }
+    
+    /*
+    // Remove
+    function handleKeys() {
+        if (currentlyPressedKeys[33]) {
+          // Page Up
+          canvas.loseContext();
+          canvas.setRestoreTimeout(-1);
+        }
+        if (currentlyPressedKeys[34]) {
+          // Page Down
+          canvas.restoreContext();
+        }
+        
+    }
+    */
+   
+   
+   var tempWd;
+   var tempWdX;
+   var gPopup;
+   var gOldImage;
+   
+   function setGameDimensions(){
+       
+        browserWidth=window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        browserHeight=window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        /*
+        if(browserHeight < browserWidth && isiOSMobile){
+            var tempHold = browserHeight;
+            browserHeight = browserWidth;
+            browserWidth = tempHold;
+        }
+        */
+        if (Math.abs(window.orientation) === 90) {
+            var tempHold = browserHeight;
+            browserHeight = browserWidth;
+            browserWidth = tempHold;
+            
+        }
+
+        tempScaleW = browserWidth / 640;
+        tempScaleH = browserHeight / 842;
+        if(tempScaleH < tempScaleW){
+            tempScale = tempScaleH;
+        }
+        else {
+            tempScale = tempScaleW;
+        }
+        cWidth = 640 * tempScale;
+        cWidth = parseFloat(Math.round(cWidth * 100) / 100).toFixed(0);
+        
+
+        
+        
+        //document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
+        //document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
+        
+
+        var gContainer = document.getElementById('container');
+        gContainer.style.width = cWidth + "px";
+        gContainer.style.height = cWidth + "px";
+        
+        
+        var gTopHeader = document.getElementById('topHeader');
+        gTopHeader.style.width = cWidth + "px";
+        
+        
+        //<img id = "imghints" alt="Hints" src="images/hint2.png" title=" Hints ">
+        var gButtonImage = preload.getResult("hint2");
+        gButtonImage.id = "imghints";
+        gButtonImage.alt = "Hints";
+        gButtonImage.title = " Hints ";
+        gButtonImage.width = (60 * tempScale);
+        gButtonImage.height = (60 * tempScale);
+        var gButton = document.getElementById('btnhints');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton.appendChild(gButtonImage);
+        
+        
+        //<img id = "imgsettings" alt="Settings" src="images/settings2.png" title=" Settings ">
+        gButtonImage = preload.getResult("settings2");
+        gButtonImage.id = "imgsettings";
+        gButtonImage.alt = "Settings";
+        gButtonImage.title = " Settings ";
+        gButtonImage.width = (60 * tempScale);
+        gButtonImage.height = (60 * tempScale);
+        gButton = document.getElementById('btnsettings');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton.appendChild(gButtonImage);
+        
+        
+        //<img id = "imggames" alt="Games" src="images/games2.png" title=" Games ">
+        gButtonImage = preload.getResult("games2");
+        gButtonImage.id = "imggames";
+        gButtonImage.alt = "Games";
+        gButtonImage.title = " Games ";
+        gButtonImage.width = (60 * tempScale);
+        gButtonImage.height = (60 * tempScale);
+        gButton = document.getElementById('btngames');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton.appendChild(gButtonImage);
+        
+        
+        //<img id = "imginfo" alt="Info" src="images/instructions2.png" title=" Info ">
+        gButtonImage = preload.getResult("instructions2");
+        gButtonImage.id = "imginfo";
+        gButtonImage.alt = "Info";
+        gButtonImage.title = " Info ";
+        gButtonImage.width = (60 * tempScale);
+        gButtonImage.height = (60 * tempScale);
+        gButton = document.getElementById('btninfo');
+        gButton.style.width = (86 * tempScale) + "px";
+        gButton.style.height = (86 * tempScale) + "px";
+        gButton.appendChild(gButtonImage);
+        
+        
+        //<img id="starimage" src="images/blueStar40x40.png" alt="Blue" title=" 3 Stars/Letter ">
+        gButtonImage = preload.getResult("blueStar");
+        gButtonImage.id = "starimage";
+        gButtonImage.alt = "Blue";
+        gButtonImage.title = " 3 Stars/Letter ";
+        gButton = document.getElementById('starbox');
+        gButton.appendChild(gButtonImage);
+        gOldImage = gButtonImage;
+        gButton = document.getElementById('starimage');
+        gButton.style.width = (50 * tempScale) + "px";
+        gButton.style.height = (50 * tempScale) + "px";
+        
+        
+        
+        
+        gButton = document.getElementById('scoreratebox');
+        gButton.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        gButton = document.getElementById('scorebox');
+        gButton.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        var theightLeft = browserHeight - (86 * tempScale) - cWidth - parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0);
+        var gBottomFooter = document.getElementById('bottomFooter');
+        gBottomFooter.style.width = (cWidth - 10) + "px";
+        gBottomFooter.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gBottomFooter.style.height = theightLeft + "px"; //"auto"; //(85 * tempScale) + "px";
+        
+        
+        
+        gPopup = document.getElementById('popupBasic');
+        gPopup.style.maxWidth = (600 * tempScale) + "px";
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('closepopup1');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        gPopup = document.getElementById('popupHints');
+        gPopup.style.maxWidth = (500 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup = document.getElementById('closepopup2');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader2');
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('showHint');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('solveTheCube');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        gPopup = document.getElementById('popupSettings');
+        gPopup.style.maxWidth = (500 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup = document.getElementById('closepopup3');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader3');
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check3id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check4id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check1id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check2id');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('buttonNewGame');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        gPopup = document.getElementById('placeCheck3');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('placeCheck4');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('placeCheck1');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('placeCheck2');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check3');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check4');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check1');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('check2');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        gPopup = document.getElementById('popupGames');
+        gPopup.style.maxWidth = (580 * tempScale) + "px";
+        gPopup.style.width = (580 * tempScale) + "px";
+        gPopup = document.getElementById('popupHeader41');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader42');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader43');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader44');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader45');
+        gPopup.style.fontSize = parseFloat(Math.round(20 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        gPopup = document.getElementById('popupTabs');
+        gPopup.style.maxWidth = (580 * tempScale) + "px";
+        gPopup.style.width = (580 * tempScale) + "px";
+        
+        gPopup = document.getElementById('popupHeader51');
+        gPopup.style.fontSize = parseFloat(Math.round(17 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader52');
+        gPopup.style.fontSize = parseFloat(Math.round(17 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader53');
+        gPopup.style.fontSize = parseFloat(Math.round(17 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('popupHeader54');
+        gPopup.style.fontSize = parseFloat(Math.round(17 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        gPopup = document.getElementById('tabs-1');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-1x');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-2');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-2x');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-3');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-3x');
+        gPopup.style.fontSize = parseFloat(Math.round(28 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('closepopup5');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-4');
+        gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-1w');
+        gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-2w');
+        gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-3ww');
+        gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('tabs-4ww');
+        gPopup.style.fontSize = parseFloat(Math.round(24 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        
+        gPopup = document.getElementById('popupWin');
+        gPopup.style.maxWidth = (500 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup = document.getElementById('popupHeader6');
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('Winmessage');
+        gPopup.style.fontSize = parseFloat(Math.round(30 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('closepopup6');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('btnNewGame');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('btnSwitchGame');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        gPopup = document.getElementById('popupIHelp');
+        gPopup.style.maxWidth = (130 * tempScale) + "px";
+        gPopup.style.width = (130 * tempScale) + "px";
+        gPopup = document.getElementById('popupHeader7');
+        gPopup.style.fontSize = parseFloat(Math.round(16 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        gPopup = document.getElementById('popupWelcome');
+        gPopup.style.maxWidth = (500 * tempScale) + "px";
+        gPopup.style.width = (500 * tempScale) + "px";
+        gPopup = document.getElementById('popupHeaderWelcome');
+        gPopup.style.fontSize = parseFloat(Math.round(32 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('Welcomemessage');
+        gPopup.style.fontSize = parseFloat(Math.round(30 * tempScale * 100) / 100).toFixed(0) + "px";
+        gPopup = document.getElementById('closepopupWelcome');
+        gPopup.style.fontSize = parseFloat(Math.round(22 * tempScale * 100) / 100).toFixed(0) + "px";
+        
+        
+        
+        
+        tempWd = $("#wordbox");
+        tempWdX = document.getElementById('wordbox');
+        
+        //tempScale = "width=640, initial-scale=" + tempScale + ", maximum-scale=" + tempScale + ", minimum-scale=" + tempScale;// +  ", minimal-ui"; // + ", user-scalable=no";
+        //mvp = document.getElementById('viewport');
+        //mvp.setAttribute('content',tempScale);
+
+
+        //document.getElementById('xcoord').innerHTML = "W: " + browserWidth;
+        //document.getElementById('xcoord2').innerHTML = "H: " + browserHeight;
+        //document.getElementById('ycoord').innerHTML = "S: " + parseFloat(Math.round(tempScale * 100) / 100).toFixed(2);
+        //document.getElementById('ycoord2').innerHTML = "C: " + cWidth;
+
+        //document.getElementById('scorebox').innerHTML = "&nbsp&nbsp";
+        //document.getElementById('scoreratebox').innerHTML = "&nbsp&nbsp";
+   }
+   
+    function welcomeMessage(){
+        
+        var welcome = document.getElementById('WelcomeImage');
+        
+        document.getElementById('headerWelcome').innerHTML = "Welcome";
+        document.getElementById('closepopupWelcome').innerHTML = "Play Now";
+        
+        FB.api('/me', {fields: 'id,name,first_name,picture.width(120).height(120)'}, function(response){
+            if( !response.error ) {
+              friendCache.me = response;
+              //console.log(response);
+              
+              welcome.style.width = (120 * tempScale) + "px";
+              welcome.style.height = (120 * tempScale) + "px";
+              welcome.setAttribute('src',friendCache.me.picture.data.url);
+              
+              document.getElementById('Welcomemessage').innerHTML = "&nbsp&nbspHi " + friendCache.me.first_name + "!" + "<br><br>" + "&nbsp&nbspYour Cube is ready.";
+              
+              $( "#popupWelcome" ).popup("open", { positionTo: "#topHeader",
+                                              transition: "pop" 
+
+                });
+              
+              
+            } else {
+              console.error('/me', response);
+            }
+        });
+        
+       
+    }
+    
+    
+    
+    function pleaseLogintoFacebook(){
+        
+        document.getElementById('headerWelcome').innerHTML = "Please Login";
+        document.getElementById('closepopupWelcome').innerHTML = "Facebook App Center";
+        document.getElementById('Welcomemessage').innerHTML = "You must be logged into Facebook to play Word Cubed Weekly";
+        
+        $( "#popupWelcome" ).popup("open", { positionTo: "#topHeader",
+                                              transition: "pop" 
+
+          });
+    }
     
 </script>
 
@@ -529,8 +2485,79 @@ ajkiger@gmail.com
 
 </head>
 
-<body onload="webGLStart();">
+<body>
+<!--<body onload="webGLStart();">-->
     
+    <div id="fb-root"></div>
+    <script>
+        
+      /*
+      function statusChangeCallback(response) {
+        //console.log('statusChangeCallback');
+        //console.log(response);
+        if (response.status === 'connected') {
+          // Logged into your app and Facebook.
+          loggedIntoFaceBook = true;
+        } else if (response.status === 'not_authorized') {
+          // The person is logged into Facebook, but not your app.
+          top.location.href = 'http://www.facebook.com/appcenter/wc-weekly';
+        } else {
+          // The person is not logged into Facebook, so we're not sure if
+          // they are logged into this app or not.
+          top.location.href = 'http://www.facebook.com/appcenter/wc-weekly';
+        }
+      }
+    
+      
+      function checkLoginState() {
+          FB.getLoginStatus(function(response) {
+            statusChangeCallback(response);
+          });
+      }
+      */
+     
+      
+      
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '470353466440355',
+          status     : false,
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+        
+        
+        
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+              loggedIntoFaceBook = true;
+              console.log('Access Token: ' + response.authResponse.accessToken);
+              webGLStart();
+            }
+            else {
+              loggedIntoFaceBook = false;
+              //top.location.href = 'http://www.facebook.com/appcenter/wc-weekly';
+              webGLStart();
+            }
+        });
+        
+        
+        //loggedIntoFaceBook = true; // Remove
+        //webGLStart(); // Remove
+      };
+        
+        
+        
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+       
+    </script>
     
     
     <div id="progressbar">
@@ -554,6 +2581,7 @@ ajkiger@gmail.com
 
                     <td ><button id = "btnhints" type="button" onclick="tapHintsButton();"></button>
                     <label id="xcoord" ></label>
+                    
                     </td>
                     <td ><button id = "btnsettings" type="button" onclick="tapSettingsButton();"></button>
                     <label id="xcoord2" ></label>
@@ -565,10 +2593,13 @@ ajkiger@gmail.com
                     <label id="ycoord2" ></label>
                     </td>
                     <td id = "starbox">
+                        
                     <!--<label id="contextStatus" >&nbsp;</label>-->
                     </td>
                     
-                    <td id = "srsbox"><label id="scoreratebox" title=" Score Rate ">&nbsp;&nbsp;</label><label id="scorebox" title=" Score ">&nbsp;&nbsp;</label></td>
+                    <td id = "srsbox"><label id="scoreratebox" title=" Score Rate ">&nbsp;&nbsp;</label><label id="scorebox" title=" Score ">&nbsp;&nbsp;</label>
+                    
+                    </td>
                     
                 </tr>
                 
@@ -577,9 +2608,11 @@ ajkiger@gmail.com
 	</div><!-- /header -->
         
         
+        
         <div id="container">
+            
             <canvas id="WordCubed-canvas" style="border: none;" width="640" height="640"></canvas>
-        </div>
+	</div>
         
         
         <div data-role="footer" id="bottomFooter" class="ui-shadow-inset ui-corner-bottom" title=" Tap to see all words ">
@@ -682,13 +2715,13 @@ ajkiger@gmail.com
                     <table style="width: 100%;">
                         <tr>
                             <td style="text-align: left;"><a href="#" id="closepopup5" onclick="ClosePopupTabs();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px"></a></td>
-                            <td><div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div></td>
-                        </tr>
+                            <!--<td id="FBLogIn"><div class="fb-login-button" data-max-rows="1" data-size="large" onlogin="checkLoginState();" data-show-faces="false" data-auto-logout-link="false"></div></td>-->
+                        </tr> 
                     </table>
                 </div>
+                
             </div>
         </div>
-        
         
         
         <div data-role="popup" id="popupWin" class="ui-content" style="max-width:500px" data-dismissible="false">
@@ -716,6 +2749,30 @@ ajkiger@gmail.com
             </div>
         </div>
         
+        
+        <div data-role="popup" id="popupWelcome" class="ui-content" style="max-width:500px" data-dismissible="false">
+            <div id="popupHeaderWelcome" data-role="header" data-theme="b" style="font-size:32px">
+                <h1 id="headerWelcome"></h1>
+            </div>
+            <br>
+            <div>
+                <table style="width: 100%;">
+                    <tr>
+                        <td>
+                            <img id="WelcomeImage" alt="" src="">
+                        </td>
+                        <td>
+                            <p id="Welcomemessage" style="font-size:30px"></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <a id="closepopupWelcome" href="#"  onclick="ClosePopupWelcome();" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-btn-inline" style="font-size:22px"></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
         
         
         <div data-role="popup" id="popupIHelp" data-arrow="t" class="ui-content">
